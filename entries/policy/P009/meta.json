@@ -1,0 +1,94 @@
+{
+  "id": "P009",
+  "title": "Drug Decriminalization Displacement",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Drug decriminalization — removing criminal penalties for personal possession — aims to treat addiction as a health issue rather than a criminal one. Portugal's 2001 decriminalization is the model: drug deaths dropped, HIV infections fell, and treatment uptake increased. Oregon followed in 2020 with Measure 110. But Oregon's experience diverged sharply from Portugal's. Portugal paired decriminalization with massive investment in treatment infrastructure and mandatory referral to dissuasion commissions. Oregon decriminalized without building adequate treatment capacity. The result: open drug use increased, treatment uptake remained low (only 1% of citations led to treatment calls), and public drug markets expanded. Oregon repealed Measure 110 in 2024. The lesson isn't that decriminalization fails — it's that decriminalization without treatment infrastructure displaces the problem from the criminal justice system to the streets.",
+
+  "hypothesis": "Decriminalizing drugs reduces harm by treating addiction as a health issue.",
+
+  "chain": {
+    "root": "Decriminalize personal drug possession",
+    "effects": [
+      {
+        "label": "Without treatment infrastructure, usage becomes more visible",
+        "impact": "Open drug use increases in public spaces",
+        "direction": "negative",
+        "children": [
+          { "label": "Public drug markets expand without criminal deterrent", "direction": "negative" },
+          { "label": "Community quality of life in affected areas declines", "direction": "negative" },
+          { "label": "Political backlash threatens the policy", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Treatment uptake remains low without mandatory referral",
+        "impact": "Oregon: 1% of citations led to treatment calls",
+        "direction": "negative",
+        "children": [
+          { "label": "Voluntary treatment insufficient for severe addiction", "direction": "negative" },
+          { "label": "Treatment capacity not built before decriminalization", "direction": "negative" },
+          { "label": "Harm reduction services overwhelmed", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Portugal model works when paired with infrastructure",
+        "impact": "Drug deaths and HIV infections dropped significantly",
+        "direction": "positive",
+        "children": [
+          { "label": "Mandatory dissuasion commissions connect users to services", "direction": "positive" },
+          { "label": "Treatment capacity built before and during decriminalization", "direction": "positive" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Drug overdose deaths (Portugal)", "before": "Baseline", "after": "-80% over 20 years", "delta": "-80%", "direction": "positive" },
+    { "metric": "Drug overdose deaths (Oregon)", "before": "Baseline", "after": "+40% in first 2 years", "delta": "+40%", "direction": "negative" },
+    { "metric": "Treatment uptake (Oregon)", "before": "Expected increase", "after": "1% of citations led to treatment", "delta": "Failed", "direction": "negative" },
+    { "metric": "Incarceration for drug possession", "before": "Thousands annually", "after": "Near zero", "delta": "-95%", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're decriminalizing without building treatment infrastructure first",
+      "Your decriminalization model relies entirely on voluntary treatment uptake"
+    ],
+    "ifYouMust": [
+      "Build treatment capacity before or simultaneously with decriminalization",
+      "Include mandatory referral mechanisms (Portugal's dissuasion commissions)",
+      "Fund harm reduction services at scale — naloxone, safe consumption sites, outreach",
+      "Measure outcomes (deaths, treatment uptake, HIV) not just arrests"
+    ],
+    "alternatives": [
+      { "name": "Portugal model (full)", "note": "Decriminalization + mandatory dissuasion + massive treatment investment" },
+      { "name": "Diversion programs", "note": "Redirect drug offenders to treatment within the criminal justice system" },
+      { "name": "Harm reduction first", "note": "Build treatment and harm reduction infrastructure before changing criminal penalties" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Transform Drug Policy Foundation: Portugal Drug Policy", "note": "Comprehensive analysis of Portugal's decriminalization model and outcomes over 20 years" },
+    { "title": "Oregon Measure 110 Repeal Analysis", "note": "Analysis of why Oregon's decriminalization failed and was repealed in 2024" },
+    { "title": "The Lancet: Drug Decriminalization Outcomes", "note": "Systematic review of decriminalization outcomes across jurisdictions" },
+    { "title": "Oregon Health Authority: Measure 110 Data", "note": "Data showing 1% treatment referral rate from decriminalization citations" }
+  ],
+
+  "falsifiability": [
+    "Drug decriminalization without treatment infrastructure reduces overdose deaths and drug-related harm",
+    "Voluntary treatment uptake after decriminalization exceeds 20% of identified users",
+    "Public drug use and drug market activity don't increase after decriminalization"
+  ],
+
+  "tags": ["decriminalization", "drug-policy", "harm-reduction", "treatment", "public-health", "portugal"],
+  "crossReferences": ["P005", "P017", "H001"],
+
+  "seo": {
+    "description": "Drug decriminalization works in Portugal (-80% deaths) but failed in Oregon (+40% deaths). The difference: treatment infrastructure. Decriminalization without services displaces the problem.",
+    "keywords": ["drug decriminalization displacement", "decriminalization hidden costs", "drug policy second order effects"]
+  }
+}

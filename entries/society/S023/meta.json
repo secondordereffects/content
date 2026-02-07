@@ -1,0 +1,81 @@
+{
+  "id": "S023",
+  "title": "Parental Tracking App Trust Erosion",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Parents install location-tracking apps on children's phones for safety — knowing where your child is provides peace of mind. The technology is frictionless: real-time GPS, geofencing alerts, movement history. But constant surveillance fundamentally alters the parent-child relationship. Children who know they're tracked develop evasion strategies rather than judgment. They leave phones with friends, use secondary devices, or simply stop going places that might trigger parental concern. The tracking app replaces the trust-building conversations that actually keep children safe, and when children eventually gain independence (college, first job), they lack the internal navigation skills that unsurveilled adolescence develops.",
+  "hypothesis": "Location sharing and tracking apps keep children safe.",
+  "chain": {
+    "root": "Parents install tracking apps on children's devices",
+    "effects": [
+      {
+        "label": "Children develop evasion strategies",
+        "impact": "60%+ of tracked teens find workarounds",
+        "direction": "negative",
+        "children": [
+          { "label": "Phone left with friends while going elsewhere", "direction": "negative" },
+          { "label": "Secondary devices or borrowed phones used", "direction": "negative" },
+          { "label": "Children become better at deception, not safer", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Trust-building conversations replaced by surveillance",
+        "impact": "Communication quality declines",
+        "direction": "negative",
+        "children": [
+          { "label": "Children stop sharing voluntarily when they know they're monitored", "direction": "negative" },
+          { "label": "Parents check app instead of asking questions", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Risk assessment skills underdeveloped",
+        "impact": "No practice making independent decisions",
+        "direction": "negative",
+        "children": [
+          { "label": "College-age children lack navigation and safety judgment", "direction": "negative" },
+          { "label": "Anxiety spikes when tracking is removed", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Teen evasion of tracking", "before": "0%", "after": "60%+ find workarounds", "delta": "+60%", "direction": "negative" },
+    { "metric": "Parent-child communication quality", "before": "Conversation-based", "after": "Surveillance-based", "delta": "Qualitative decline", "direction": "negative" },
+    { "metric": "Independent risk assessment ability", "before": "Developed through experience", "after": "Underdeveloped due to monitoring", "delta": "Significant deficit", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "Your child is old enough to develop independent judgment (typically 14+)",
+      "You're using tracking as a substitute for communication about safety"
+    ],
+    "ifYouMust": [
+      "Make tracking mutual — share your location too, framing it as family safety",
+      "Set a clear timeline for phasing out tracking as trust is demonstrated",
+      "Use tracking for emergencies only, not routine monitoring"
+    ],
+    "alternatives": [
+      { "name": "Check-in agreements", "note": "Voluntary text check-ins build communication habits" },
+      { "name": "Graduated independence", "note": "Expand boundaries progressively as judgment develops" },
+      { "name": "Emergency-only location sharing", "note": "Available when needed, not constant surveillance" }
+    ]
+  },
+  "sources": [
+    { "title": "Pew Research: Parenting and Technology", "url": "https://www.pewresearch.org/internet/2020/07/28/parenting-children-in-the-age-of-screens/", "note": "Data on parental monitoring practices and teen responses" },
+    { "title": "Journal of Adolescence: Parental Monitoring and Trust", "url": "https://www.sciencedirect.com/journal/journal-of-adolescence", "note": "Research linking surveillance to decreased trust and increased secrecy" },
+    { "title": "Common Sense Media: Family Tech Report", "url": "https://www.commonsensemedia.org/research", "note": "Survey data on tracking app usage and family dynamics" }
+  ],
+  "falsifiability": [
+    "Tracked children show better safety outcomes than untracked peers in controlled studies",
+    "Tracking apps do not increase evasion behavior or decrease voluntary communication",
+    "Children who were tracked develop equivalent independent judgment to untracked peers"
+  ],
+  "tags": ["parental-tracking", "surveillance", "trust", "child-development", "privacy"],
+  "crossReferences": ["S004", "P020"],
+  "seo": {
+    "description": "Over 60% of tracked teens develop evasion strategies. Tracking apps replace trust-building conversations and leave children without independent safety judgment skills.",
+    "keywords": ["parental tracking trust erosion", "location tracking children hidden costs", "parental monitoring second order effects"]
+  }
+}

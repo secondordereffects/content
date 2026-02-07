@@ -1,0 +1,82 @@
+{
+  "id": "P022",
+  "title": "Mandatory Disclosure Compliance Theater",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Regulators mandate disclosure requirements — financial reports, privacy policies, terms of service, ingredient labels, risk warnings — believing transparency empowers informed decisions. The volume of mandatory disclosures has grown exponentially. But humans have finite attention. When everything must be disclosed, nothing is effectively communicated. Companies comply with the letter of disclosure laws while burying meaningful information in hundreds of pages of boilerplate. The disclosure regime creates an illusion of transparency that actually reduces accountability, because companies can claim they disclosed risks that no reasonable person would have found or understood.",
+  "hypothesis": "Mandatory disclosure requirements increase transparency and accountability.",
+  "chain": {
+    "root": "Regulators mandate comprehensive disclosure requirements",
+    "effects": [
+      {
+        "label": "Disclosure volume overwhelms human attention",
+        "impact": "Average person encounters 500+ pages/year of disclosures",
+        "direction": "negative",
+        "children": [
+          { "label": "Nobody reads disclosures — click-through rates near 100%", "direction": "negative" },
+          { "label": "Important information buried in boilerplate", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Companies optimize for legal compliance, not communication",
+        "impact": "Disclosures written by lawyers for lawyers",
+        "direction": "negative",
+        "children": [
+          { "label": "Readability decreases as legal precision increases", "direction": "negative" },
+          { "label": "Disclosure becomes a liability shield, not a transparency tool", "direction": "negative" },
+          { "label": "Compliance industry grows to manage disclosure burden", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Accountability actually decreases",
+        "impact": "We disclosed it defense",
+        "direction": "negative",
+        "children": [
+          { "label": "Courts accept disclosure as evidence of informed consent", "direction": "negative" },
+          { "label": "Companies take more risks knowing they can point to disclosures", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Disclosure readership rate", "before": "Expected: high", "after": "Actual: <1%", "delta": "-99%", "direction": "negative" },
+    { "metric": "Average privacy policy length", "before": "1,000 words (2000)", "after": "4,000+ words (2024)", "delta": "+300%", "direction": "negative" },
+    { "metric": "Compliance cost for companies", "before": "Minimal", "after": "$2-10M/year for large firms", "delta": "Significant", "direction": "negative" },
+    { "metric": "Consumer understanding of disclosed risks", "before": "Expected: informed", "after": "Actual: near-zero", "delta": "No improvement", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You believe adding more disclosure requirements will improve consumer understanding",
+      "Your disclosure is written by lawyers for legal protection rather than for reader comprehension"
+    ],
+    "ifYouMust": [
+      "Mandate standardized, machine-readable disclosure formats",
+      "Require plain-language summaries with readability score requirements",
+      "Cap disclosure length and require the most material risks upfront"
+    ],
+    "alternatives": [
+      { "name": "Standardized labels", "note": "Nutrition-facts-style labels for financial products and privacy" },
+      { "name": "Default protections", "note": "Protect consumers by default rather than requiring them to read disclosures" },
+      { "name": "Fiduciary duties", "note": "Require companies to act in customer interest, not just disclose risks" }
+    ]
+  },
+  "sources": [
+    { "title": "Omri Ben-Shahar: More Than You Wanted to Know (book)", "url": "https://press.princeton.edu/books/hardcover/9780691161709/more-than-you-wanted-to-know", "note": "Comprehensive analysis of mandatory disclosure failure" },
+    { "title": "Carnegie Mellon: Privacy Policy Research", "url": "https://www.cylab.cmu.edu/", "note": "Reading all privacy policies would take 76 work days per year" },
+    { "title": "SEC: Disclosure Effectiveness Review", "url": "https://www.sec.gov/disclosure/effectiveness", "note": "SEC's own assessment of disclosure regime limitations" }
+  ],
+  "falsifiability": [
+    "Consumers regularly read and understand mandatory disclosures before making decisions",
+    "Increased disclosure requirements correlate with improved consumer outcomes",
+    "Companies do not use disclosure compliance as a legal shield against accountability"
+  ],
+  "tags": ["disclosure", "transparency", "compliance", "regulation", "consumer-protection"],
+  "crossReferences": ["P001", "T030"],
+  "seo": {
+    "description": "Mandatory disclosures are read by less than 1% of recipients. Privacy policies grew 300% in length while consumer understanding remained near zero. Disclosure becomes a liability shield.",
+    "keywords": ["mandatory disclosure failure", "compliance theater hidden costs", "disclosure second order effects"]
+  }
+}

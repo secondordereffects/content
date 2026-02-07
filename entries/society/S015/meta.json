@@ -1,0 +1,81 @@
+{
+  "id": "S015",
+  "title": "Subscription Fatigue Identity Crisis",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "The subscription economy promises access over ownership — subscribe to what you love, cancel anytime. Consumers accumulate subscriptions for streaming, music, news, fitness, software, and meal kits. The average American household now pays for 12+ subscriptions totaling $200-300/month. But subscription fatigue creates a paradox: people subscribe to signal identity (the kind of person who reads The Atlantic, uses Peloton, watches arthouse films) but engage with a fraction of what they pay for. The subscriptions become identity markers rather than utility, and canceling feels like abandoning part of who you are.",
+  "hypothesis": "Subscribe to what you love — subscriptions provide better value than ownership.",
+  "chain": {
+    "root": "Consumer accumulates multiple subscriptions",
+    "effects": [
+      {
+        "label": "Subscription spending becomes invisible",
+        "impact": "$200-300/month average household",
+        "direction": "negative",
+        "children": [
+          { "label": "Auto-renewal masks true cost of unused services", "direction": "negative" },
+          { "label": "Cancellation friction designed to prevent churn", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Subscriptions become identity markers",
+        "impact": "Emotional attachment exceeds utility",
+        "direction": "negative",
+        "children": [
+          { "label": "Canceling feels like identity loss, not cost saving", "direction": "negative" },
+          { "label": "Social pressure to maintain subscriptions peers use", "direction": "negative" },
+          { "label": "Engagement drops but payments continue", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Content fragmentation forces more subscriptions",
+        "impact": "Exclusive content across 8+ platforms",
+        "direction": "negative",
+        "children": [
+          { "label": "Piracy increases as legal access becomes expensive", "direction": "negative" },
+          { "label": "Consumers rotate subscriptions monthly, reducing platform value", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Average household subscriptions", "before": "2-3 (2015)", "after": "12+ (2024)", "delta": "+300-500%", "direction": "negative" },
+    { "metric": "Monthly subscription spend", "before": "$30-50", "after": "$200-300", "delta": "+400-500%", "direction": "negative" },
+    { "metric": "Subscription utilization rate", "before": "Expected: high", "after": "Actual: 30-40%", "delta": "60-70% waste", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You're subscribing to signal identity rather than for actual regular use",
+      "You haven't audited your subscriptions in the past 6 months"
+    ],
+    "ifYouMust": [
+      "Audit all subscriptions quarterly and cancel anything unused for 30+ days",
+      "Use subscription tracking tools to make total spend visible",
+      "Rotate subscriptions monthly rather than maintaining all simultaneously"
+    ],
+    "alternatives": [
+      { "name": "Library and free alternatives", "note": "Libraries offer streaming, ebooks, and more at zero cost" },
+      { "name": "Ownership for core content", "note": "Buy what you'll revisit, subscribe only to what's truly ephemeral" },
+      { "name": "Subscription rotation", "note": "One streaming service at a time, rotate monthly" }
+    ]
+  },
+  "sources": [
+    { "title": "C+R Research: Subscription Spending Survey", "url": "https://www.crresearch.com/blog/the-real-cost-of-subscriptions", "note": "Average American underestimates subscription spending by 2.5x" },
+    { "title": "Deloitte: Digital Media Trends Survey", "url": "https://www2.deloitte.com/us/en/insights/industry/technology/digital-media-trends-consumption-habits-survey.html", "note": "Subscription fatigue and churn patterns across demographics" },
+    { "title": "Zuora: Subscription Economy Index", "url": "https://www.zuora.com/resource/subscription-economy-index/", "note": "Growth and saturation trends in subscription business models" }
+  ],
+  "falsifiability": [
+    "Consumers actively use more than 70% of their active subscriptions monthly",
+    "Subscription spending does not exceed what consumers would spend on equivalent ownership",
+    "Cancellation decisions are driven purely by utility, not identity attachment"
+  ],
+  "tags": ["subscriptions", "subscription-fatigue", "identity", "consumer-spending", "streaming"],
+  "crossReferences": ["M008", "S009"],
+  "seo": {
+    "description": "Average households pay $200-300/month for 12+ subscriptions but use only 30-40%. Subscriptions become identity markers that feel impossible to cancel despite low engagement.",
+    "keywords": ["subscription fatigue", "subscription economy hidden costs", "subscription second order effects"]
+  }
+}

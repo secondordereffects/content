@@ -1,0 +1,82 @@
+{
+  "id": "P018",
+  "title": "Sanctions Dedollarization Acceleration",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Western nations use financial sanctions as a primary foreign policy tool, leveraging dollar dominance to punish adversaries. Sanctions work in the short term — targeted economies suffer. But each sanctions episode teaches the rest of the world a lesson: dollar dependency is a strategic vulnerability. Countries accelerate development of alternative payment systems, bilateral currency agreements, and reserve diversification. China's CIPS, Russia's SPFS, and BRICS settlement mechanisms all gained momentum after major sanctions events. The weapon works, but each use dulls it and accelerates the very dedollarization it was designed to prevent.",
+  "hypothesis": "Financial sanctions effectively punish bad actors and change behavior.",
+  "chain": {
+    "root": "Western nations impose financial sanctions using dollar system",
+    "effects": [
+      {
+        "label": "Targeted economy suffers immediate pain",
+        "impact": "GDP contraction, currency collapse",
+        "direction": "positive",
+        "children": [
+          { "label": "Sanctioned country develops workarounds", "direction": "negative" },
+          { "label": "Black market and crypto channels emerge", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Non-sanctioned countries observe and hedge",
+        "impact": "60+ countries diversifying reserves",
+        "direction": "negative",
+        "children": [
+          { "label": "Central banks increase gold reserves at record pace", "direction": "negative" },
+          { "label": "Bilateral currency swap agreements multiply", "direction": "negative" },
+          { "label": "Alternative payment systems gain adoption", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Dollar share of global reserves declines",
+        "impact": "From 72% (2000) to 58% (2024)",
+        "direction": "negative",
+        "children": [
+          { "label": "US borrowing costs gradually increase", "direction": "negative" },
+          { "label": "Sanctions become less effective with each use", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Dollar share of global reserves", "before": "72% (2000)", "after": "58% (2024)", "delta": "-14pp", "direction": "negative" },
+    { "metric": "Central bank gold purchases", "before": "400 tons/year avg", "after": "1,000+ tons/year (2022-2024)", "delta": "+150%", "direction": "negative" },
+    { "metric": "CIPS transaction volume", "before": "Minimal (2015)", "after": "$15T+ annually (2024)", "delta": "Exponential growth", "direction": "negative" },
+    { "metric": "Bilateral currency agreements", "before": "Rare", "after": "30+ active agreements", "delta": "Rapid proliferation", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You assume sanctions have no cost to the sanctioning country's financial hegemony",
+      "You're using sanctions as a first resort rather than last resort"
+    ],
+    "ifYouMust": [
+      "Target sanctions narrowly to minimize demonstration effect on neutral countries",
+      "Pair sanctions with diplomatic off-ramps to limit duration",
+      "Monitor dedollarization metrics as a cost of sanctions policy"
+    ],
+    "alternatives": [
+      { "name": "Targeted individual sanctions", "note": "Narrower scope reduces systemic hedging incentive" },
+      { "name": "Trade policy tools", "note": "Tariffs and export controls without weaponizing financial system" },
+      { "name": "Diplomatic engagement", "note": "Address root causes without triggering financial system alternatives" }
+    ]
+  },
+  "sources": [
+    { "title": "IMF: Currency Composition of Official Foreign Exchange Reserves", "url": "https://data.imf.org/regular.aspx?key=41175", "note": "Tracks dollar share decline from 72% to 58%" },
+    { "title": "World Gold Council: Central Bank Gold Demand", "url": "https://www.gold.org/goldhub/research/gold-demand-trends", "note": "Record central bank gold purchases post-sanctions" },
+    { "title": "Atlantic Council: Dollar Dominance Monitor", "url": "https://www.atlanticcouncil.org/programs/geoeconomics-center/dollar-dominance-monitor/", "note": "Comprehensive tracking of dedollarization trends" }
+  ],
+  "falsifiability": [
+    "Dollar share of global reserves stabilizes or increases despite continued sanctions use",
+    "Alternative payment systems fail to gain meaningful transaction volume",
+    "Sanctions effectiveness does not diminish with repeated use"
+  ],
+  "tags": ["sanctions", "dedollarization", "dollar-hegemony", "geopolitics", "financial-system"],
+  "crossReferences": ["P014", "M025"],
+  "seo": {
+    "description": "Each sanctions episode accelerates dedollarization. Dollar reserve share fell from 72% to 58% while central banks bought record gold and alternative payment systems surged.",
+    "keywords": ["sanctions dedollarization", "dollar hegemony hidden costs", "sanctions second order effects"]
+  }
+}

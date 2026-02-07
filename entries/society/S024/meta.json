@@ -1,0 +1,81 @@
+{
+  "id": "S024",
+  "title": "Digital Detox Rebound Effect",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "People overwhelmed by screen time and social media take digital detoxes — weekend phone fasts, social media breaks, tech-free vacations. The wellness industry promotes these as resets. Initial results feel transformative: better sleep, more presence, reduced anxiety. But detoxes treat symptoms without addressing the structural dependencies that created the problem. When the detox ends, people return to the same digital environment with the same design patterns optimized for engagement. Usage often rebounds to higher levels than before, as accumulated notifications, messages, and FOMO create a binge-purge cycle that mirrors disordered eating patterns.",
+  "hypothesis": "Taking a break from technology resets your relationship with screens.",
+  "chain": {
+    "root": "Person takes a digital detox break",
+    "effects": [
+      {
+        "label": "Short-term wellbeing improvement",
+        "impact": "Better sleep, reduced anxiety",
+        "direction": "positive",
+        "children": [
+          { "label": "Person attributes all problems to technology", "direction": "negative" },
+          { "label": "Underlying behavioral patterns unaddressed", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Accumulated notifications create rebound binge",
+        "impact": "Usage spikes 20-30% post-detox",
+        "direction": "negative",
+        "children": [
+          { "label": "FOMO intensifies during absence", "direction": "negative" },
+          { "label": "Catch-up behavior exceeds pre-detox usage", "direction": "negative" },
+          { "label": "Guilt from binge triggers another detox — cycle begins", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Structural dependencies unchanged",
+        "impact": "Same apps, same design patterns",
+        "direction": "negative",
+        "children": [
+          { "label": "Work requires digital tools — full disconnection impossible", "direction": "negative" },
+          { "label": "Social connections mediated through platforms", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Post-detox usage", "before": "Baseline", "after": "+20-30% in first week back", "delta": "+20-30%", "direction": "negative" },
+    { "metric": "Long-term behavior change", "before": "Expected: permanent", "after": "Returns to baseline within 2-4 weeks", "delta": "No lasting change", "direction": "negative" },
+    { "metric": "Detox-binge cycle frequency", "before": "N/A", "after": "3-4 cycles/year for repeat detoxers", "delta": "Chronic pattern", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You're using detoxes as a substitute for changing your daily digital habits",
+      "You expect a weekend break to undo months of compulsive usage patterns"
+    ],
+    "ifYouMust": [
+      "Combine detox with permanent environmental changes (app deletions, notification settings)",
+      "Gradually reduce usage rather than going cold turkey",
+      "Address the underlying needs that technology fills (boredom, loneliness, anxiety)"
+    ],
+    "alternatives": [
+      { "name": "Digital minimalism", "note": "Permanently restructure technology use around values, not periodic abstinence" },
+      { "name": "Environment design", "note": "Remove triggers (notifications, home screen apps) rather than willpower-based abstinence" },
+      { "name": "Intentional usage schedules", "note": "Designated times for social media rather than all-or-nothing" }
+    ]
+  },
+  "sources": [
+    { "title": "Journal of Social and Clinical Psychology: Social Media Breaks", "url": "https://guilfordjournals.com/journal/jscp", "note": "Research on temporary vs sustained behavior change from digital breaks" },
+    { "title": "Cal Newport: Digital Minimalism", "url": "https://www.calnewport.com/books/digital-minimalism/", "note": "Framework for sustainable technology use vs periodic detox" },
+    { "title": "Pew Research: Social Media Use and Breaks", "url": "https://www.pewresearch.org/internet/", "note": "Data on social media break frequency and rebound patterns" }
+  ],
+  "falsifiability": [
+    "Digital detoxes produce lasting reductions in screen time beyond 30 days post-detox",
+    "Post-detox usage does not exceed pre-detox levels in the first week back",
+    "Periodic detoxes are as effective as permanent habit changes for long-term wellbeing"
+  ],
+  "tags": ["digital-detox", "screen-time", "rebound-effect", "technology-habits", "wellbeing"],
+  "crossReferences": ["S009", "S003"],
+  "seo": {
+    "description": "Digital detoxes spike post-break usage by 20-30% as accumulated FOMO creates binge-purge cycles. Behavior returns to baseline within 2-4 weeks without structural changes.",
+    "keywords": ["digital detox rebound effect", "screen time break hidden costs", "digital detox second order effects"]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "id": "M013",
+  "title": "ESG Greenwashing Equilibrium",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Institutional investors pour trillions into ESG-labeled funds, believing capital allocation can drive corporate responsibility. Fund managers respond by creating ESG products that maximize inflows while minimizing portfolio disruption. The result is an equilibrium where ESG ratings become a compliance exercise rather than a change mechanism. Companies hire sustainability officers, publish glossy reports, and optimize for rating agency criteria without fundamentally altering operations. Meanwhile, the ESG label commands premium fees, creating a financial incentive to maintain the appearance of responsibility over its substance.",
+
+  "hypothesis": "ESG investing drives corporate responsibility and environmental improvement.",
+
+  "chain": {
+    "root": "Institutional adoption of ESG investing criteria",
+    "effects": [
+      {
+        "label": "Fund managers create ESG products to capture inflows",
+        "impact": "$35T in ESG assets by 2025",
+        "direction": "neutral",
+        "children": [
+          { "label": "ESG funds charge higher fees for similar portfolios", "direction": "negative" },
+          { "label": "Rating agencies gain outsized influence over corporate behavior", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Companies optimize for ESG ratings, not outcomes",
+        "impact": "Ratings diverge from actual impact",
+        "direction": "negative",
+        "children": [
+          { "label": "Sustainability reporting becomes a compliance industry", "direction": "negative" },
+          { "label": "Greenwashing becomes sophisticated and hard to detect", "direction": "negative" },
+          { "label": "Actual polluters with good PR score higher than genuine innovators", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "ESG rating disagreement undermines credibility",
+        "impact": "0.54 correlation between major raters",
+        "direction": "negative",
+        "children": [
+          { "label": "Investors lose trust in ESG labels entirely", "direction": "negative" },
+          { "label": "Political backlash frames ESG as ideological", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Capital allocation barely changes",
+        "impact": "ESG funds hold 80%+ same stocks as conventional",
+        "direction": "negative",
+        "children": [
+          { "label": "Fossil fuel companies remain fully funded through other channels", "direction": "negative" },
+          { "label": "Real climate action delayed by false sense of progress", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "ESG fund overlap with conventional", "before": "N/A", "after": "80%+", "delta": "Minimal differentiation", "direction": "negative" },
+    { "metric": "ESG rating correlation between agencies", "before": "Expected >0.9", "after": "0.54", "delta": "-0.36", "direction": "negative" },
+    { "metric": "ESG fund fees vs conventional", "before": "0.10% avg", "after": "0.20-0.40%", "delta": "+100-300%", "direction": "negative" },
+    { "metric": "Corporate emissions from ESG-rated firms", "before": "Baseline", "after": "No significant reduction", "delta": "~0%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You believe ESG fund labels alone drive meaningful corporate change",
+      "You're paying premium fees for ESG funds that mirror conventional indices"
+    ],
+    "ifYouMust": [
+      "Evaluate fund holdings directly rather than relying on ESG labels",
+      "Focus on engagement and proxy voting records over portfolio screening",
+      "Use multiple ESG rating sources and understand their methodology differences"
+    ],
+    "alternatives": [
+      { "name": "Impact investing", "note": "Direct capital to measurable outcomes, not ratings" },
+      { "name": "Shareholder activism", "note": "Use ownership to force specific changes via proxy votes" },
+      { "name": "Divestment with public commitment", "note": "Actual exclusion with transparent criteria" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Berg, Kölbel & Rigobon: Aggregate Confusion — ESG Rating Disagreement", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3438533", "note": "Landmark study showing 0.54 correlation between major ESG raters" },
+    { "title": "Bloomberg: ESG Fund Holdings Analysis", "url": "https://www.bloomberg.com/professional/insights/esg/", "note": "ESG funds hold largely the same stocks as conventional funds" },
+    { "title": "Harvard Business Review: An Inconvenient Truth About ESG Investing", "url": "https://hbr.org/2022/03/an-inconvenient-truth-about-esg-investing", "note": "ESG funds have not demonstrably improved corporate behavior" }
+  ],
+
+  "falsifiability": [
+    "ESG-rated companies show measurably lower emissions than non-ESG peers in the same sector",
+    "ESG fund portfolios diverge significantly (less than 50% overlap) from conventional index funds",
+    "Major ESG rating agencies converge to correlation above 0.8"
+  ],
+
+  "tags": ["esg", "greenwashing", "sustainable-investing", "corporate-responsibility", "rating-agencies"],
+  "crossReferences": ["M012", "P008"],
+
+  "seo": {
+    "description": "ESG funds hold 80%+ the same stocks as conventional indices while charging 2-3x fees. Rating agencies correlate at just 0.54, undermining the entire framework.",
+    "keywords": ["esg greenwashing", "esg investing hidden costs", "esg second order effects"]
+  }
+}

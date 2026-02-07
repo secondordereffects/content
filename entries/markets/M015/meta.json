@@ -1,0 +1,100 @@
+{
+  "id": "M015",
+  "title": "Private Credit Opacity Risk",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "As banks retreat from lending due to post-2008 regulation, private credit funds fill the gap, growing from $500B to $1.7T in assets by 2024. Institutional investors chase higher yields in a low-rate hangover environment. But private credit lacks the transparency, mark-to-market discipline, and regulatory oversight of public markets. Loans are valued by the lenders themselves, defaults are restructured quietly, and correlations between funds are unknown. The opacity that makes private credit attractive to borrowers also makes systemic risk invisible until it materializes.",
+
+  "hypothesis": "Private credit offers better risk-adjusted returns than public fixed income.",
+
+  "chain": {
+    "root": "Institutional capital shifts to private credit",
+    "effects": [
+      {
+        "label": "Loans valued by lenders, not markets",
+        "impact": "Artificial low volatility",
+        "direction": "negative",
+        "children": [
+          { "label": "NAV stability is an illusion — losses hidden until realization", "direction": "negative" },
+          { "label": "Investors underestimate actual risk exposure", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Borrowers with weak credit access capital",
+        "impact": "Lower lending standards",
+        "direction": "negative",
+        "children": [
+          { "label": "Default rates higher than reported", "direction": "negative" },
+          { "label": "Covenant-lite structures reduce lender protections", "direction": "negative" },
+          { "label": "Zombie companies survive longer on private credit lifelines", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Systemic interconnections invisible",
+        "impact": "No public reporting requirements",
+        "direction": "negative",
+        "children": [
+          { "label": "Regulators cannot assess concentration risk", "direction": "negative" },
+          { "label": "Correlated exposures across funds unknown", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Liquidity mismatch grows",
+        "impact": "Quarterly redemptions on illiquid assets",
+        "direction": "negative",
+        "children": [
+          { "label": "Redemption gates trigger in downturns", "direction": "negative" },
+          { "label": "Fire sales cascade when multiple funds gate simultaneously", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Private credit AUM", "before": "$500B (2018)", "after": "$1.7T (2024)", "delta": "+240%", "direction": "neutral" },
+    { "metric": "Reported volatility vs public credit", "before": "Public: 5-8%", "after": "Private: 2-3%", "delta": "Artificially low", "direction": "negative" },
+    { "metric": "Covenant-lite share of deals", "before": "20% (2015)", "after": "60%+ (2024)", "delta": "+40pp", "direction": "negative" },
+    { "metric": "Regulatory visibility", "before": "Full (banks)", "after": "Minimal (private)", "delta": "Near-zero oversight", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You need liquidity or transparent mark-to-market pricing",
+      "You cannot independently assess the underlying loan quality"
+    ],
+    "ifYouMust": [
+      "Demand independent third-party valuations, not manager self-marks",
+      "Stress-test portfolio assuming 3x reported default rates",
+      "Limit private credit to a defined allocation cap with no drift allowance"
+    ],
+    "alternatives": [
+      { "name": "Public high-yield bonds", "note": "Similar yields with daily liquidity and transparent pricing" },
+      { "name": "Bank loan ETFs", "note": "Floating rate exposure with public market discipline" },
+      { "name": "Direct lending co-investments", "note": "More control and transparency than blind pool funds" }
+    ]
+  },
+
+  "sources": [
+    { "title": "IMF Global Financial Stability Report 2024", "url": "https://www.imf.org/en/Publications/GFSR", "note": "Flags private credit opacity as emerging systemic risk" },
+    { "title": "Federal Reserve Financial Stability Report", "url": "https://www.federalreserve.gov/publications/financial-stability-report.htm", "note": "Highlights interconnections between private credit and banking system" },
+    { "title": "Preqin Private Credit Market Report", "url": "https://www.preqin.com/insights/research/reports", "note": "Documents $1.7T AUM growth and structural trends" }
+  ],
+
+  "falsifiability": [
+    "Private credit default rates remain below public high-yield through a full credit cycle",
+    "Manager self-valuations prove accurate within 5% when loans are eventually realized",
+    "No systemic contagion event originates from private credit in the next decade"
+  ],
+
+  "tags": ["private-credit", "systemic-risk", "opacity", "lending", "financial-stability"],
+  "crossReferences": ["M004", "M005"],
+
+  "seo": {
+    "description": "Private credit grew to $1.7T with minimal oversight. Loans valued by lenders themselves create artificial stability that masks systemic risk until it materializes.",
+    "keywords": ["private credit risk", "private credit hidden costs", "private credit second order effects"]
+  }
+}

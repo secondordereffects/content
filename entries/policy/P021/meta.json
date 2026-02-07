@@ -1,0 +1,81 @@
+{
+  "id": "P021",
+  "title": "Crypto Regulation Innovation Flight",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Regulators impose strict rules on cryptocurrency to protect consumers from fraud, money laundering, and market manipulation. The intentions are sound — crypto markets have seen spectacular frauds and billions in consumer losses. But aggressive regulation in one jurisdiction doesn't eliminate crypto activity; it relocates it. Companies move to crypto-friendly jurisdictions (Dubai, Singapore, Switzerland), taking jobs, tax revenue, and regulatory influence with them. The regulating country loses oversight of the very activity it tried to control, while citizens access the same services through offshore platforms with even less consumer protection.",
+  "hypothesis": "Crypto regulation protects consumers and reduces financial crime.",
+  "chain": {
+    "root": "Country implements strict cryptocurrency regulation",
+    "effects": [
+      {
+        "label": "Crypto companies relocate to friendlier jurisdictions",
+        "impact": "80%+ of major exchanges offshore",
+        "direction": "negative",
+        "children": [
+          { "label": "Jobs and tax revenue follow companies abroad", "direction": "negative" },
+          { "label": "Regulatory influence over the industry lost", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Citizens access offshore platforms anyway",
+        "impact": "VPNs and non-KYC platforms",
+        "direction": "negative",
+        "children": [
+          { "label": "Consumer protection worse on offshore platforms", "direction": "negative" },
+          { "label": "Regulatory arbitrage becomes the norm", "direction": "negative" },
+          { "label": "Enforcement becomes nearly impossible", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Innovation ecosystem migrates permanently",
+        "impact": "Developers, VCs, talent leave",
+        "direction": "negative",
+        "children": [
+          { "label": "Country falls behind in financial technology", "direction": "negative" },
+          { "label": "Blockchain infrastructure built elsewhere", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Crypto company relocations", "before": "Domestic", "after": "80%+ offshore", "delta": "Mass exodus", "direction": "negative" },
+    { "metric": "Consumer access to crypto", "before": "Regulated domestic", "after": "Unregulated offshore", "delta": "Less protection", "direction": "negative" },
+    { "metric": "Regulatory oversight", "before": "Full domestic control", "after": "Near-zero for offshore activity", "delta": "-90%+", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "Your regulation makes domestic operation impossible while offshore access remains easy",
+      "You assume banning crypto domestically eliminates citizen participation"
+    ],
+    "ifYouMust": [
+      "Create clear, workable regulatory frameworks that companies can comply with",
+      "Coordinate internationally to reduce arbitrage opportunities",
+      "Focus on fraud enforcement rather than blanket activity restrictions"
+    ],
+    "alternatives": [
+      { "name": "Regulatory sandboxes", "note": "Allow innovation under supervision rather than driving it offshore" },
+      { "name": "International coordination", "note": "Harmonized rules reduce arbitrage incentive" },
+      { "name": "Risk-based regulation", "note": "Proportionate rules based on activity risk, not blanket bans" }
+    ]
+  },
+  "sources": [
+    { "title": "Chainalysis: Geography of Cryptocurrency Report", "url": "https://www.chainalysis.com/blog/2023-geography-of-cryptocurrency-report/", "note": "Maps crypto activity migration in response to regulation" },
+    { "title": "Cambridge Centre for Alternative Finance", "url": "https://www.jbs.cam.ac.uk/faculty-research/centres/alternative-finance/", "note": "Research on crypto regulation and industry migration patterns" },
+    { "title": "IMF: Regulating Crypto Assets", "url": "https://www.imf.org/en/Topics/fintech/Regulating-Crypto-Assets", "note": "Framework for effective crypto regulation without innovation flight" }
+  ],
+  "falsifiability": [
+    "Strict crypto regulation reduces domestic crypto activity without increasing offshore usage",
+    "Crypto companies remain in strictly regulated jurisdictions rather than relocating",
+    "Consumer losses decrease in countries with strict crypto regulation"
+  ],
+  "tags": ["crypto", "regulation", "innovation-flight", "regulatory-arbitrage", "fintech"],
+  "crossReferences": ["M006", "P015"],
+  "seo": {
+    "description": "Strict crypto regulation drives 80%+ of companies offshore while citizens access unregulated platforms via VPNs. The regulating country loses oversight and tax revenue.",
+    "keywords": ["crypto regulation innovation flight", "cryptocurrency regulation hidden costs", "crypto regulation second order effects"]
+  }
+}

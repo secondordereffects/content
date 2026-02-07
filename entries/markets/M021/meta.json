@@ -1,0 +1,81 @@
+{
+  "id": "M021",
+  "title": "Late-Stage Private Market Illiquidity",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Startups stay private longer to avoid public market scrutiny, quarterly earnings pressure, and regulatory burden. The median time to IPO stretched from 4 years (2000) to 12+ years (2024). Founders and VCs celebrate this as strategic patience. But extended private timelines create a liquidity crisis for employees, early investors, and the companies themselves. Employee stock options expire or get taxed before they can be exercised. Early investors are locked in for a decade-plus. And companies build cultures around paper valuations that may never be realized, creating misaligned incentives throughout the organization.",
+  "hypothesis": "Staying private longer avoids public market pressure and creates better outcomes.",
+  "chain": {
+    "root": "Company delays IPO to stay private longer",
+    "effects": [
+      {
+        "label": "Employee equity becomes illiquid for 8-12+ years",
+        "impact": "Options expire, tax events without liquidity",
+        "direction": "negative",
+        "children": [
+          { "label": "Top talent leaves for companies with liquid equity", "direction": "negative" },
+          { "label": "Employees take on tax liability for paper gains", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Secondary markets emerge with steep discounts",
+        "impact": "20-40% discount to last round",
+        "direction": "negative",
+        "children": [
+          { "label": "Price discovery reveals valuation gaps", "direction": "negative" },
+          { "label": "Information asymmetry between insiders and secondary buyers", "direction": "negative" },
+          { "label": "Company loses control of cap table", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Paper valuations distort company culture",
+        "impact": "Decisions optimized for next round, not fundamentals",
+        "direction": "negative",
+        "children": [
+          { "label": "Growth at all costs to justify valuation", "direction": "negative" },
+          { "label": "Down round becomes existential threat to morale", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Median time to IPO", "before": "4 years (2000)", "after": "12+ years (2024)", "delta": "+200%", "direction": "negative" },
+    { "metric": "Secondary market discount", "before": "N/A", "after": "20-40% below last round", "delta": "Significant value destruction", "direction": "negative" },
+    { "metric": "Employee option exercise window", "before": "90 days post-departure", "after": "Options expire worthless", "delta": "-100%", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "Your employees cannot afford to hold illiquid equity for 10+ years",
+      "Your valuation depends on avoiding public market price discovery"
+    ],
+    "ifYouMust": [
+      "Offer regular tender offers so employees can access partial liquidity",
+      "Extend post-departure exercise windows to 5-10 years",
+      "Provide transparent valuation updates, not just last-round pricing"
+    ],
+    "alternatives": [
+      { "name": "Earlier IPO or direct listing", "note": "Public market discipline with employee liquidity" },
+      { "name": "Structured secondary programs", "note": "Company-managed liquidity at fair valuations" },
+      { "name": "Profit sharing", "note": "Cash compensation reduces dependency on equity outcomes" }
+    ]
+  },
+  "sources": [
+    { "title": "Pitchbook: Time to IPO Analysis", "url": "https://pitchbook.com/news/reports", "note": "Documents median time to IPO stretching from 4 to 12+ years" },
+    { "title": "Carta: Employee Equity Report", "url": "https://carta.com/blog/equity-report/", "note": "Data on employee option exercise rates and expiration" },
+    { "title": "Forge Global: Private Market Report", "url": "https://forgeglobal.com/reports/", "note": "Secondary market pricing and discount data" }
+  ],
+  "falsifiability": [
+    "Companies that stay private longer achieve higher total returns for all stakeholders including employees",
+    "Employee equity retention rates remain above 80% despite extended private timelines",
+    "Secondary market discounts narrow to less than 10% as private markets mature"
+  ],
+  "tags": ["private-markets", "ipo", "liquidity", "employee-equity", "secondary-markets"],
+  "crossReferences": ["M011", "M018"],
+  "seo": {
+    "description": "Median time to IPO stretched from 4 to 12+ years. Employee options expire worthless while secondary markets price shares at 20-40% discounts to last round.",
+    "keywords": ["late stage private market", "ipo delay hidden costs", "private market second order effects"]
+  }
+}

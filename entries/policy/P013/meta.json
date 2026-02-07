@@ -1,0 +1,81 @@
+{
+  "id": "P013",
+  "title": "Immigration Restriction Brain Drain",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Countries restrict immigration to protect domestic workers from wage competition and preserve cultural cohesion. The first-order logic is straightforward: fewer immigrants means less labor supply competition. But the second-order effects run in the opposite direction. Skilled immigrants disproportionately start companies, file patents, and fill critical STEM gaps. Restricting them doesn't protect domestic workers — it pushes entire industries offshore. Companies that can't hire talent domestically open offices in countries that welcome it. The talent doesn't disappear; it relocates, taking jobs, tax revenue, and innovation ecosystems with it.",
+  "hypothesis": "Immigration restrictions protect domestic workers and preserve jobs.",
+  "chain": {
+    "root": "Country tightens immigration restrictions",
+    "effects": [
+      {
+        "label": "Skilled workers redirected to competing countries",
+        "impact": "Canada, UK, Australia gain talent",
+        "direction": "negative",
+        "children": [
+          { "label": "Innovation clusters form in competitor nations", "direction": "negative" },
+          { "label": "Patent filings shift to countries with open immigration", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Companies open offices abroad to access talent",
+        "impact": "Remote engineering hubs in Canada, EU, India",
+        "direction": "negative",
+        "children": [
+          { "label": "Jobs move offshore — more than immigration would have displaced", "direction": "negative" },
+          { "label": "Tax revenue follows companies abroad", "direction": "negative" },
+          { "label": "Domestic offices shrink as foreign offices grow", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Startup formation declines",
+        "impact": "Immigrants found 25% of US startups",
+        "direction": "negative",
+        "children": [
+          { "label": "Fewer new companies means fewer jobs for domestic workers", "direction": "negative" },
+          { "label": "Venture capital follows founders to other countries", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Immigrant-founded companies (US)", "before": "25% of all startups", "after": "Declining with restrictions", "delta": "Fewer startups, fewer jobs", "direction": "negative" },
+    { "metric": "STEM job vacancies", "before": "Partially filled by immigrants", "after": "Unfilled or offshored", "delta": "+40% vacancy rate", "direction": "negative" },
+    { "metric": "Offshore engineering offices", "before": "Cost arbitrage only", "after": "Talent access driven", "delta": "+60% growth", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "Your economy depends on immigrant-founded companies and STEM talent",
+      "You assume restricting immigration keeps jobs domestic rather than pushing them offshore"
+    ],
+    "ifYouMust": [
+      "Create fast-track visas for high-skill workers to prevent talent diversion",
+      "Invest heavily in domestic STEM education to reduce dependency on immigrant talent",
+      "Monitor offshoring rates as a leading indicator of restriction impact"
+    ],
+    "alternatives": [
+      { "name": "Skills-based immigration", "note": "Select for economic contribution rather than blanket restriction" },
+      { "name": "Startup visas", "note": "Attract founders who create jobs for domestic workers" },
+      { "name": "Domestic workforce development", "note": "Long-term investment in education and retraining" }
+    ]
+  },
+  "sources": [
+    { "title": "NFAP: Immigrant Founders of Billion-Dollar Companies", "url": "https://nfap.com/research/", "note": "55% of US billion-dollar startups have immigrant founder or co-founder" },
+    { "title": "Brookings: Immigration and Innovation", "url": "https://www.brookings.edu/articles/immigration-and-innovation/", "note": "Immigrants file patents at 2x rate of native-born workers" },
+    { "title": "NBER: The Effects of High-Skilled Immigration Policy", "url": "https://www.nber.org/papers/w25706", "note": "H-1B restrictions lead to offshoring, not domestic hiring" }
+  ],
+  "falsifiability": [
+    "Immigration restrictions lead to measurable increases in domestic worker employment in restricted sectors",
+    "Companies do not increase offshoring in response to immigration restrictions",
+    "Startup formation rates remain stable or increase after immigration tightening"
+  ],
+  "tags": ["immigration", "brain-drain", "talent", "offshoring", "startups", "stem"],
+  "crossReferences": ["P014", "P018"],
+  "seo": {
+    "description": "Immigration restrictions push talent and companies offshore. Immigrants found 25% of US startups — restricting them destroys more domestic jobs than it protects.",
+    "keywords": ["immigration restriction brain drain", "immigration hidden costs", "immigration second order effects"]
+  }
+}

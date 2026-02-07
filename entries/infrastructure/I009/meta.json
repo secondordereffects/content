@@ -1,0 +1,81 @@
+{
+  "id": "I009",
+  "title": "Autonomous Vehicle Infrastructure Redesign",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Autonomous vehicles promise to reduce accidents, eliminate parking needs, and optimize traffic flow. Cities plan for this future by investing in smart infrastructure, V2X communication systems, and AV-ready road designs. But the transition period — decades of mixed human and autonomous traffic — creates infrastructure demands that neither system was designed for. Roads need both traditional signage and digital communication. Parking structures built for human drivers become stranded assets while new pickup/dropoff zones create congestion. The infrastructure investment required for the transition may exceed the cost of the final autonomous state, and cities that invest early risk building for a future that arrives differently than planned.",
+  "hypothesis": "Self-driving cars will reduce accidents and transform urban infrastructure for the better.",
+  "chain": {
+    "root": "Cities invest in autonomous vehicle infrastructure",
+    "effects": [
+      {
+        "label": "Mixed traffic period lasts decades",
+        "impact": "Human and AV traffic coexist poorly",
+        "direction": "negative",
+        "children": [
+          { "label": "Infrastructure must serve both paradigms simultaneously", "direction": "negative" },
+          { "label": "AV-optimized roads confuse human drivers", "direction": "negative" },
+          { "label": "Transition costs exceed steady-state savings", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Parking infrastructure becomes stranded assets",
+        "impact": "$200B+ in US parking structures",
+        "direction": "negative",
+        "children": [
+          { "label": "Garages built for 50-year lifespan become obsolete in 20", "direction": "negative" },
+          { "label": "Urban land locked in parking cannot be repurposed quickly", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Pickup/dropoff zones create new congestion",
+        "impact": "Curb space becomes scarce resource",
+        "direction": "negative",
+        "children": [
+          { "label": "Double-parking by AVs waiting for passengers", "direction": "negative" },
+          { "label": "Zero-occupancy vehicle miles increase as AVs circle", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Transition infrastructure cost", "before": "Expected: offset by savings", "after": "2-3x steady-state cost", "delta": "+100-200%", "direction": "negative" },
+    { "metric": "Parking asset stranding risk", "before": "$200B+ invested", "after": "Potentially obsolete", "delta": "Massive write-down", "direction": "negative" },
+    { "metric": "Zero-occupancy vehicle miles", "before": "0%", "after": "Up to 40% of AV miles", "delta": "+40%", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You're making 50-year infrastructure investments based on uncertain AV adoption timelines",
+      "You assume AVs will eliminate the need for parking within the next decade"
+    ],
+    "ifYouMust": [
+      "Design flexible infrastructure that serves both human and autonomous traffic",
+      "Build parking structures that can be converted to other uses",
+      "Invest in curb management systems before AV adoption reaches critical mass"
+    ],
+    "alternatives": [
+      { "name": "Adaptive infrastructure", "note": "Modular designs that evolve with adoption rates" },
+      { "name": "Transit-first investment", "note": "Public transit improvements work regardless of AV timeline" },
+      { "name": "Congestion pricing", "note": "Manage demand rather than building for uncertain supply changes" }
+    ]
+  },
+  "sources": [
+    { "title": "RAND Corporation: Autonomous Vehicle Policy", "url": "https://www.rand.org/topics/autonomous-vehicles.html", "note": "Analysis of transition period challenges and infrastructure costs" },
+    { "title": "NACTO: Blueprint for Autonomous Urbanism", "url": "https://nacto.org/publication/bau2/", "note": "Urban planning framework for AV transition" },
+    { "title": "UC Davis: Three Revolutions in Urban Transportation", "url": "https://its.ucdavis.edu/research/publications/", "note": "Research on zero-occupancy miles and induced demand from AVs" }
+  ],
+  "falsifiability": [
+    "Mixed human-AV traffic operates safely without dedicated infrastructure investment",
+    "AV adoption follows a rapid S-curve that minimizes the transition period",
+    "Zero-occupancy vehicle miles remain below 10% of total AV miles traveled"
+  ],
+  "tags": ["autonomous-vehicles", "infrastructure", "urban-planning", "transition-costs", "parking"],
+  "crossReferences": ["I003", "I010"],
+  "seo": {
+    "description": "The AV transition period costs 2-3x the steady-state savings. $200B in parking becomes stranded assets while zero-occupancy miles add 40% more traffic.",
+    "keywords": ["autonomous vehicle infrastructure", "self driving car hidden costs", "autonomous vehicle second order effects"]
+  }
+}

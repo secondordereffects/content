@@ -1,0 +1,100 @@
+{
+  "id": "M018",
+  "title": "Venture Debt Acceleration Trap",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Startups take venture debt to extend runway without dilution, treating it as cheap capital between equity rounds. Lenders market it as founder-friendly financing. But venture debt comes with covenants, warrants, and acceleration clauses that activate precisely when companies are most vulnerable. If the next equity round doesn't materialize or comes at a lower valuation, debt covenants trigger, forcing repayment when cash is scarce. The non-dilutive financing that was supposed to preserve founder equity often ends up destroying more value than a down round would have.",
+
+  "hypothesis": "Venture debt extends runway without dilution and is cheaper than equity.",
+
+  "chain": {
+    "root": "Startup takes venture debt between equity rounds",
+    "effects": [
+      {
+        "label": "Runway extends 6-12 months",
+        "impact": "Delays fundraising pressure",
+        "direction": "positive",
+        "children": [
+          { "label": "Company delays hard decisions about burn rate", "direction": "negative" },
+          { "label": "False confidence in current trajectory", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Covenants create hidden constraints",
+        "impact": "Revenue and cash minimums",
+        "direction": "negative",
+        "children": [
+          { "label": "Strategic pivots become legally constrained", "direction": "negative" },
+          { "label": "Reporting burden increases for cash-strapped team", "direction": "negative" },
+          { "label": "Covenant breach triggers acceleration at worst possible time", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Next round doesn't materialize as planned",
+        "impact": "40-60% of venture-backed startups",
+        "direction": "negative",
+        "children": [
+          { "label": "Debt repayment competes with operating expenses", "direction": "negative" },
+          { "label": "Down round triggers debt acceleration clauses", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Warrants dilute more than expected equity round would have",
+        "impact": "1-2% warrant coverage compounds",
+        "direction": "negative",
+        "children": [
+          { "label": "Total cost of capital exceeds equity alternative", "direction": "negative" },
+          { "label": "Founder equity destroyed by forced liquidation preference stacking", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Startups facing debt acceleration", "before": "0% at signing", "after": "25-35% within 24 months", "delta": "+25-35%", "direction": "negative" },
+    { "metric": "Effective cost of capital", "before": "8-12% stated rate", "after": "25-40% with warrants and fees", "delta": "+100-300%", "direction": "negative" },
+    { "metric": "Founder equity preservation", "before": "Expected: higher", "after": "Often lower than equity round", "delta": "Net negative", "direction": "negative" },
+    { "metric": "Strategic flexibility", "before": "Full", "after": "Covenant-constrained", "delta": "Significantly reduced", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your next equity round is uncertain or more than 12 months away",
+      "You're taking debt to avoid confronting a valuation reset"
+    ],
+    "ifYouMust": [
+      "Model the worst case: what happens if the next round doesn't close",
+      "Negotiate acceleration clause triggers to exclude down rounds",
+      "Keep debt below 25% of last equity round to limit covenant leverage"
+    ],
+    "alternatives": [
+      { "name": "Revenue-based financing", "note": "Repayment tied to revenue, no acceleration clauses" },
+      { "name": "Bridge round from existing investors", "note": "Aligned incentives, no covenants" },
+      { "name": "Aggressive cost cutting", "note": "Extend runway without adding capital structure complexity" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Kruze Consulting: Venture Debt Analysis", "url": "https://kruzeconsulting.com/blog/venture-debt/", "note": "Documents true cost of venture debt including warrants and fees" },
+    { "title": "Pitchbook: Venture Debt Market Report", "url": "https://pitchbook.com/news/reports", "note": "Market data on venture debt growth and default rates" },
+    { "title": "Carta: Startup Financing Trends", "url": "https://carta.com/blog/", "note": "Data on venture debt outcomes and founder equity impact" }
+  ],
+
+  "falsifiability": [
+    "Majority of venture debt borrowers successfully raise follow-on equity without covenant issues",
+    "Total cost of venture debt (including warrants) remains below equivalent equity dilution",
+    "Acceleration clause triggers occur in fewer than 10% of venture debt facilities"
+  ],
+
+  "tags": ["venture-debt", "startup-financing", "covenants", "dilution", "acceleration-clauses"],
+  "crossReferences": ["M003", "M011"],
+
+  "seo": {
+    "description": "Venture debt promises non-dilutive runway but 25-35% of borrowers face acceleration clauses. True cost with warrants reaches 25-40%, often exceeding equity alternatives.",
+    "keywords": ["venture debt trap", "venture debt hidden costs", "startup debt second order effects"]
+  }
+}

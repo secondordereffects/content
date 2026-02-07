@@ -1,0 +1,100 @@
+{
+  "id": "M017",
+  "title": "SaaS Metric Manipulation",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "SaaS companies live and die by metrics: ARR, NDR, CAC payback, Rule of 40. Investors use these as shorthand for health, and founders optimize accordingly. But when metrics become the goal rather than a proxy for value, companies learn to game them. Multi-year contracts inflate ARR without proving retention. Professional services revenue gets bundled into subscriptions. Churn is masked by expansion revenue from price increases. The metrics look healthy while the underlying business deteriorates, and the gap only becomes visible during downturns when renewals actually test customer commitment.",
+
+  "hypothesis": "ARR growth is the best measure of SaaS health and future value.",
+
+  "chain": {
+    "root": "SaaS companies optimize for investor-facing metrics",
+    "effects": [
+      {
+        "label": "Multi-year contracts inflate ARR",
+        "impact": "Masks true annual retention",
+        "direction": "negative",
+        "children": [
+          { "label": "Churn hidden until contract cliff", "direction": "negative" },
+          { "label": "Heavy discounting to secure multi-year deals erodes unit economics", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Net dollar retention inflated by price increases",
+        "impact": "NDR >120% without new usage",
+        "direction": "negative",
+        "children": [
+          { "label": "Customers paying more for same value become churn risks", "direction": "negative" },
+          { "label": "Expansion revenue conflated with organic growth", "direction": "negative" },
+          { "label": "True product-market fit obscured", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "CAC payback gamed through channel manipulation",
+        "impact": "Reported 12mo vs actual 24mo+",
+        "direction": "negative",
+        "children": [
+          { "label": "Sales costs shifted to other line items", "direction": "negative" },
+          { "label": "Professional services subsidize initial adoption", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Downturn reveals true metrics",
+        "impact": "30-50% valuation corrections",
+        "direction": "negative",
+        "children": [
+          { "label": "Renewal rates collapse when contracts expire simultaneously", "direction": "negative" },
+          { "label": "Investor trust in SaaS metrics erodes broadly", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Reported vs actual NDR gap", "before": "Reported >120%", "after": "Actual 90-100%", "delta": "-20-30pp", "direction": "negative" },
+    { "metric": "Multi-year contract share", "before": "20% (2019)", "after": "50%+ (2024)", "delta": "+30pp", "direction": "negative" },
+    { "metric": "SaaS valuation multiples post-correction", "before": "20-40x ARR", "after": "5-10x ARR", "delta": "-60-75%", "direction": "negative" },
+    { "metric": "CAC payback accuracy", "before": "Reported 12mo", "after": "Actual 18-30mo", "delta": "+50-150%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're evaluating SaaS companies using only headline ARR and NDR numbers",
+      "You assume multi-year contract ARR equals proven annual retention"
+    ],
+    "ifYouMust": [
+      "Decompose NDR into price increases vs genuine usage expansion",
+      "Ask for logo retention rate alongside dollar retention",
+      "Analyze cohort-level retention, not blended portfolio metrics"
+    ],
+    "alternatives": [
+      { "name": "Cohort analysis", "note": "Track each customer vintage separately to see true retention curves" },
+      { "name": "Logo retention rate", "note": "Counts customers, not dollars — harder to game" },
+      { "name": "Gross margin-adjusted metrics", "note": "Strips out professional services padding" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Bessemer Venture Partners: State of the Cloud 2024", "url": "https://www.bvp.com/atlas/state-of-the-cloud-2024", "note": "Documents SaaS metric benchmarks and manipulation patterns" },
+    { "title": "Jamin Ball: Clouded Judgement Newsletter", "url": "https://cloudedjudgement.substack.com/", "note": "Ongoing analysis of SaaS metric inflation and valuation corrections" },
+    { "title": "McKinsey: SaaS Growth and Profitability", "url": "https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights", "note": "Analysis of gap between reported and actual SaaS unit economics" }
+  ],
+
+  "falsifiability": [
+    "SaaS companies with high reported NDR maintain equivalent retention through economic downturns",
+    "Multi-year contract ARR converts to annual renewals at rates above 90%",
+    "Reported CAC payback periods prove accurate when measured with fully-loaded costs"
+  ],
+
+  "tags": ["saas", "metrics", "arr", "net-dollar-retention", "valuation", "investor-relations"],
+  "crossReferences": ["M009", "M011"],
+
+  "seo": {
+    "description": "SaaS companies game ARR, NDR, and CAC metrics through multi-year contracts and price increases. The gap between reported and actual health reaches 20-30 percentage points.",
+    "keywords": ["saas metric manipulation", "arr hidden costs", "saas second order effects"]
+  }
+}

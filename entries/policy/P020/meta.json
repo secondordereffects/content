@@ -1,0 +1,81 @@
+{
+  "id": "P020",
+  "title": "Age Verification Privacy Paradox",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Governments mandate age verification for online platforms to protect children from harmful content. The goal is straightforward: keep kids off adult sites and social media. But effective age verification requires proving identity, which means collecting government IDs, biometric data, or third-party verification tokens. The system designed to protect children creates a mass surveillance infrastructure that tracks adult browsing habits, creates honeypot databases for hackers, and chills free expression. Adults avoid verified platforms, pushing activity to unverified corners of the internet where children are even less protected.",
+  "hypothesis": "Age verification protects children from harmful online content.",
+  "chain": {
+    "root": "Government mandates online age verification",
+    "effects": [
+      {
+        "label": "Platforms collect identity documents for verification",
+        "impact": "Millions of IDs stored centrally",
+        "direction": "negative",
+        "children": [
+          { "label": "Honeypot databases become high-value hacking targets", "direction": "negative" },
+          { "label": "Browsing habits linked to real identities", "direction": "negative" },
+          { "label": "Third-party verification companies gain surveillance power", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Adults avoid verified platforms",
+        "impact": "20-30% traffic decline on verified sites",
+        "direction": "negative",
+        "children": [
+          { "label": "Activity migrates to VPNs and unverified platforms", "direction": "negative" },
+          { "label": "Free expression chilled on verified platforms", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Children use VPNs and workarounds",
+        "impact": "Tech-savvy kids bypass easily",
+        "direction": "negative",
+        "children": [
+          { "label": "Determined minors access content on less-regulated platforms", "direction": "negative" },
+          { "label": "Verification creates false sense of security for parents", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Identity data breach risk", "before": "Minimal", "after": "Millions of IDs centralized", "delta": "Massive new attack surface", "direction": "negative" },
+    { "metric": "Adult platform usage", "before": "Baseline", "after": "-20-30% on verified platforms", "delta": "-20-30%", "direction": "negative" },
+    { "metric": "Minor access to harmful content", "before": "Easy", "after": "Slightly harder, VPN workarounds", "delta": "Marginal improvement", "direction": "neutral" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "Your verification system requires centralized storage of identity documents",
+      "You assume children cannot bypass technical age gates"
+    ],
+    "ifYouMust": [
+      "Use zero-knowledge proof systems that verify age without revealing identity",
+      "Mandate data deletion immediately after verification — no retention",
+      "Focus on device-level parental controls rather than platform-level verification"
+    ],
+    "alternatives": [
+      { "name": "Device-level parental controls", "note": "Parents control access without platform surveillance" },
+      { "name": "Zero-knowledge age proofs", "note": "Cryptographic verification without identity disclosure" },
+      { "name": "Digital literacy education", "note": "Teach children to navigate online risks rather than gate access" }
+    ]
+  },
+  "sources": [
+    { "title": "EFF: Age Verification and Privacy", "url": "https://www.eff.org/deeplinks/2023/03/age-verification-mandates-would-undermine-anonymity-online", "note": "Analysis of privacy costs of age verification mandates" },
+    { "title": "UK ICO: Age Assurance Guidance", "url": "https://ico.org.uk/for-organisations/childrens-code-hub/", "note": "Regulatory framework and privacy considerations" },
+    { "title": "Stanford Internet Observatory: Age Verification Research", "url": "https://cyber.fsi.stanford.edu/", "note": "Technical analysis of verification bypass rates and privacy risks" }
+  ],
+  "falsifiability": [
+    "Age verification systems do not create significant privacy risks or data breach targets",
+    "Minors cannot easily bypass age verification using VPNs or shared credentials",
+    "Adult usage of verified platforms does not decline meaningfully after mandates"
+  ],
+  "tags": ["age-verification", "privacy", "child-safety", "surveillance", "identity"],
+  "crossReferences": ["P016", "P017"],
+  "seo": {
+    "description": "Age verification mandates create mass identity databases while children bypass with VPNs. Adult platform usage drops 20-30% as privacy costs outweigh child safety gains.",
+    "keywords": ["age verification privacy paradox", "online age verification hidden costs", "age verification second order effects"]
+  }
+}

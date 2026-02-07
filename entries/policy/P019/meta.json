@@ -1,0 +1,81 @@
+{
+  "id": "P019",
+  "title": "Net Neutrality Tiered Internet",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Net neutrality rules require ISPs to treat all internet traffic equally. Proponents argue this preserves innovation and prevents gatekeeping. But the debate obscures second-order effects on both sides. With net neutrality, ISPs cannot invest in quality-of-service tiers that could improve latency-sensitive applications like telemedicine and autonomous vehicles. Without it, ISPs create fast lanes that entrench incumbents and raise costs for startups. The binary framing misses the real effect: regardless of which policy wins, the regulatory uncertainty itself freezes infrastructure investment and pushes innovation to the application layer where neither policy applies.",
+  "hypothesis": "Net neutrality ensures equal access and preserves internet innovation.",
+  "chain": {
+    "root": "Net neutrality regulation implemented or repealed",
+    "effects": [
+      {
+        "label": "Regulatory uncertainty freezes ISP investment",
+        "impact": "Policy oscillates with administrations",
+        "direction": "negative",
+        "children": [
+          { "label": "Infrastructure upgrades delayed pending regulatory clarity", "direction": "negative" },
+          { "label": "Rural broadband investment deprioritized", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "With neutrality: QoS innovation blocked",
+        "impact": "All traffic treated identically",
+        "direction": "negative",
+        "children": [
+          { "label": "Latency-sensitive applications (telemedicine, AV) cannot get priority", "direction": "negative" },
+          { "label": "Heavy users subsidized by light users", "direction": "negative" },
+          { "label": "ISPs shift to data caps as alternative monetization", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Without neutrality: fast lanes entrench incumbents",
+        "impact": "Pay-to-play internet",
+        "direction": "negative",
+        "children": [
+          { "label": "Startups cannot afford fast lane access", "direction": "negative" },
+          { "label": "ISPs become gatekeepers of application success", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "ISP capital expenditure during uncertainty", "before": "Growing", "after": "Flat or declining", "delta": "-10-15%", "direction": "negative" },
+    { "metric": "Startup costs with tiered internet", "before": "Equal access", "after": "+$50-200K/year for fast lane", "delta": "Barrier to entry", "direction": "negative" },
+    { "metric": "Rural broadband investment", "before": "Planned", "after": "Delayed pending regulation", "delta": "Years of delay", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You frame net neutrality as a simple binary with one clearly correct answer",
+      "You ignore the investment effects of regulatory uncertainty itself"
+    ],
+    "ifYouMust": [
+      "Create stable, long-term regulatory frameworks rather than oscillating policies",
+      "Allow limited QoS tiers for genuinely latency-sensitive applications with transparency requirements",
+      "Separate consumer protection (no blocking/throttling) from commercial arrangement rules"
+    ],
+    "alternatives": [
+      { "name": "Transparency-based regulation", "note": "Require ISPs to disclose all traffic management, let market respond" },
+      { "name": "Municipal broadband", "note": "Public infrastructure removes ISP gatekeeping incentive" },
+      { "name": "Application-layer innovation", "note": "Build around ISP limitations rather than depending on regulation" }
+    ]
+  },
+  "sources": [
+    { "title": "FCC: Open Internet Orders and Repeal", "url": "https://www.fcc.gov/general/open-internet", "note": "Primary regulatory documents and policy history" },
+    { "title": "Brookings: Net Neutrality and Investment", "url": "https://www.brookings.edu/articles/net-neutrality/", "note": "Analysis of ISP investment patterns under different regulatory regimes" },
+    { "title": "EFF: Net Neutrality Analysis", "url": "https://www.eff.org/issues/net-neutrality", "note": "Consumer advocacy perspective on tiered internet risks" }
+  ],
+  "falsifiability": [
+    "Net neutrality rules do not reduce ISP infrastructure investment",
+    "Removing net neutrality does not lead to fast lane pricing that disadvantages startups",
+    "Regulatory oscillation has no measurable effect on broadband deployment timelines"
+  ],
+  "tags": ["net-neutrality", "internet-regulation", "isp", "broadband", "infrastructure-investment"],
+  "crossReferences": ["P016", "I002"],
+  "seo": {
+    "description": "Net neutrality debate obscures the real cost: regulatory uncertainty freezes ISP investment by 10-15%. Both outcomes create second-order harms the binary framing misses.",
+    "keywords": ["net neutrality hidden costs", "tiered internet effects", "net neutrality second order effects"]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "id": "M020",
+  "title": "Aggregator Theory Endgame",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Digital aggregators (Google, Amazon, Uber, Airbnb) win by owning demand and commoditizing supply. The theory says aggregators create value by reducing transaction costs and improving matching. Initially this is true — consumers get better prices and selection, suppliers get access to customers. But as aggregators achieve dominance, the dynamic inverts. Suppliers become dependent and lose pricing power. Consumers face reduced choice as the aggregator optimizes for its own margins. The platform that started by serving both sides begins extracting from both sides, and switching costs make escape nearly impossible.",
+
+  "hypothesis": "Aggregators win by owning demand and create lasting value for all participants.",
+
+  "chain": {
+    "root": "Digital aggregator achieves market dominance",
+    "effects": [
+      {
+        "label": "Suppliers become dependent on aggregator for demand",
+        "impact": "70-90% of revenue from single platform",
+        "direction": "negative",
+        "children": [
+          { "label": "Supplier margins compressed as platform takes larger cut", "direction": "negative" },
+          { "label": "Suppliers lose direct customer relationships", "direction": "negative" },
+          { "label": "Platform can change terms unilaterally", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Take rate increases over time",
+        "impact": "15% → 30%+ over 5-10 years",
+        "direction": "negative",
+        "children": [
+          { "label": "Quality of supply degrades as margins shrink", "direction": "negative" },
+          { "label": "Suppliers cut corners to maintain profitability", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Consumer choice narrows despite appearance of abundance",
+        "impact": "Algorithm favors platform economics",
+        "direction": "negative",
+        "children": [
+          { "label": "Sponsored results displace organic quality", "direction": "negative" },
+          { "label": "Private label products compete with suppliers using their own data", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Innovation stalls as aggregator optimizes extraction",
+        "impact": "R&D shifts from product to monetization",
+        "direction": "negative",
+        "children": [
+          { "label": "New entrants cannot compete without aggregator access", "direction": "negative" },
+          { "label": "Entire industries restructure around aggregator constraints", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Platform take rate", "before": "15% at launch", "after": "30-40% at maturity", "delta": "+100-167%", "direction": "negative" },
+    { "metric": "Supplier revenue dependency", "before": "Diversified", "after": "70-90% single platform", "delta": "Critical dependency", "direction": "negative" },
+    { "metric": "Consumer price benefit", "before": "Significant savings", "after": "Eroding as take rates rise", "delta": "Diminishing", "direction": "negative" },
+    { "metric": "Market entry barriers", "before": "Low (pre-aggregator)", "after": "Extreme (must go through aggregator)", "delta": "Near-impossible", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're building a business entirely dependent on a single aggregator for demand",
+      "You assume the aggregator's current take rate will remain stable"
+    ],
+    "ifYouMust": [
+      "Build direct customer relationships in parallel from day one",
+      "Diversify across multiple platforms to reduce single-platform dependency",
+      "Track take rate trends and model profitability at 2x current rates"
+    ],
+    "alternatives": [
+      { "name": "Direct-to-consumer channels", "note": "Own the customer relationship, even if growth is slower" },
+      { "name": "Protocol-based marketplaces", "note": "Decentralized alternatives with capped take rates" },
+      { "name": "Cooperative platforms", "note": "Supplier-owned aggregators that align incentives" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Ben Thompson: Aggregation Theory", "url": "https://stratechery.com/concept/aggregation-theory/", "note": "Original framework for understanding digital aggregator dynamics" },
+    { "title": "Lina Khan: Amazon's Antitrust Paradox", "url": "https://www.yalelawjournal.org/note/amazons-antitrust-paradox", "note": "Legal analysis of aggregator market power and consumer harm" },
+    { "title": "ILSR: Amazon Marketplace Report", "url": "https://ilsr.org/amazon-tollbooth/", "note": "Documents Amazon's rising take rate from 19% to 34% over a decade" }
+  ],
+
+  "falsifiability": [
+    "Aggregator take rates stabilize or decrease as platforms mature",
+    "Suppliers on dominant platforms maintain or improve margins over 5-year periods",
+    "New market entrants successfully compete without aggregator platform access"
+  ],
+
+  "tags": ["aggregator-theory", "platform-economics", "take-rate", "market-power", "supplier-dependency"],
+  "crossReferences": ["M010", "M016"],
+
+  "seo": {
+    "description": "Digital aggregators start by serving suppliers and consumers but end up extracting from both. Take rates double from 15% to 30%+ as platform dependency becomes inescapable.",
+    "keywords": ["aggregator theory endgame", "platform economics hidden costs", "aggregator second order effects"]
+  }
+}

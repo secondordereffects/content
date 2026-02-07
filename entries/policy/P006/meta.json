@@ -1,0 +1,93 @@
+{
+  "id": "P006",
+  "title": "Antitrust Breakup Hydra Effect",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Antitrust regulators propose breaking up big tech companies to increase competition — separate Google Search from Chrome, Instagram from Facebook, AWS from Amazon retail. The logic follows historical precedent: AT&T's breakup created competition in telecom. But digital platforms are fundamentally different from industrial monopolies. Network effects mean that broken-up pieces either recombine (users migrate to the dominant fragment) or each fragment becomes a smaller monopoly in its niche. Breaking up Facebook into Facebook, Instagram, and WhatsApp creates three companies that still dominate their respective categories. The data advantages that created the monopoly persist in each fragment. And the breakup process takes 5-10 years of litigation, during which the market evolves past the remedy. By the time Google is broken up, AI may have made search irrelevant.",
+
+  "hypothesis": "Breaking up big tech companies increases competition and benefits consumers.",
+
+  "chain": {
+    "root": "Break up dominant tech platform",
+    "effects": [
+      {
+        "label": "Fragments retain network effects and data advantages",
+        "impact": "Each piece remains dominant in its niche",
+        "direction": "negative",
+        "children": [
+          { "label": "Users migrate to the largest fragment, recreating concentration", "direction": "negative" },
+          { "label": "Data moats persist in each separated entity", "direction": "negative" },
+          { "label": "Smaller competitors still can't match fragment's scale", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Litigation takes 5-10 years, market evolves past remedy",
+        "impact": "Remedy designed for today's market applied to tomorrow's",
+        "direction": "negative",
+        "children": [
+          { "label": "Technology shifts make the breakup target irrelevant", "direction": "negative" },
+          { "label": "New monopolies form in adjacent markets during litigation", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Consumer experience degrades from lost integration",
+        "impact": "Seamless product ecosystems fragmented",
+        "direction": "negative",
+        "children": [
+          { "label": "Cross-product features that users rely on disappear", "direction": "negative" },
+          { "label": "Data portability between fragments creates privacy risks", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Market concentration post-breakup", "before": "One dominant player", "after": "2-3 dominant fragments", "delta": "Modest improvement", "direction": "neutral" },
+    { "metric": "Time to implement breakup", "before": "N/A", "after": "5-10 years of litigation", "delta": "Slow", "direction": "negative" },
+    { "metric": "Consumer product integration", "before": "Seamless ecosystem", "after": "Fragmented experience", "delta": "Degraded", "direction": "negative" },
+    { "metric": "New competitor entry", "before": "Blocked by incumbent", "after": "Still blocked by fragment scale", "delta": "Minimal improvement", "direction": "neutral" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your breakup remedy doesn't address the underlying network effects and data advantages",
+      "The litigation timeline exceeds the technology cycle of the market being regulated"
+    ],
+    "ifYouMust": [
+      "Pair structural remedies with behavioral requirements (data portability, interoperability)",
+      "Design remedies that address network effects, not just corporate structure",
+      "Use faster regulatory tools (consent decrees, interoperability mandates) alongside breakup",
+      "Include sunset provisions that adapt the remedy as markets evolve"
+    ],
+    "alternatives": [
+      { "name": "Interoperability mandates", "note": "Force platforms to interoperate rather than breaking them up" },
+      { "name": "Data portability requirements", "note": "Let users take their data to competitors, reducing switching costs" },
+      { "name": "Non-discrimination rules", "note": "Prevent platforms from favoring their own products in their marketplace" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Tim Wu: The Curse of Bigness", "note": "Analysis of antitrust history and the challenges of applying industrial-era remedies to digital platforms" },
+    { "title": "US DOJ v Google Antitrust Case", "note": "Ongoing antitrust case illustrating the multi-year timeline of tech antitrust enforcement" },
+    { "title": "European Commission: Digital Markets Act", "note": "EU's alternative approach using behavioral regulation rather than structural breakup" },
+    { "title": "AT&T Breakup Retrospective", "note": "Historical analysis showing AT&T breakup succeeded partly because telecom lacks digital network effects" }
+  ],
+
+  "falsifiability": [
+    "Tech platform breakups produce sustained competition with 3+ viable competitors within 5 years",
+    "Broken-up platform fragments don't recombine or individually dominate their niches",
+    "Antitrust litigation timelines are shorter than the technology cycle of the market being regulated"
+  ],
+
+  "tags": ["antitrust", "big-tech", "breakup", "competition", "regulation", "network-effects"],
+  "crossReferences": ["P016", "P001", "M010"],
+
+  "seo": {
+    "description": "Breaking up big tech creates a hydra — each fragment retains network effects and data advantages. Litigation takes 5-10 years while the market evolves past the remedy.",
+    "keywords": ["antitrust breakup hydra effect", "big tech breakup hidden costs", "antitrust second order effects"]
+  }
+}

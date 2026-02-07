@@ -1,0 +1,81 @@
+{
+  "id": "O026",
+  "title": "Internal Mobility Poaching Conflict",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Companies promote internal mobility programs to retain talent and reduce hiring costs. HR builds internal job boards, encourages cross-team transfers, and celebrates internal moves as career development. But the system creates perverse incentives at the manager level. Managers who invest in developing employees lose them to other teams. High performers become targets for internal poaching. Managers respond by hoarding talent, blocking transfers, or stopping investment in employee growth. The program designed to retain talent at the company level destroys talent development at the team level.",
+  "hypothesis": "Internal mobility programs retain talent and reduce external hiring costs.",
+  "chain": {
+    "root": "Organization launches internal mobility program",
+    "effects": [
+      {
+        "label": "Managers lose best people to internal transfers",
+        "impact": "Top performers transfer first",
+        "direction": "negative",
+        "children": [
+          { "label": "Managers stop investing in employee development", "direction": "negative" },
+          { "label": "Managers hoard information to make employees less transferable", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Internal poaching creates team instability",
+        "impact": "Receiving teams gain, sending teams suffer",
+        "direction": "negative",
+        "children": [
+          { "label": "Knowledge transfer gaps as employees move", "direction": "negative" },
+          { "label": "Remaining team members absorb extra workload", "direction": "negative" },
+          { "label": "Project continuity disrupted by mid-cycle transfers", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Managers game the system to block transfers",
+        "impact": "Informal blocking despite official policy",
+        "direction": "negative",
+        "children": [
+          { "label": "Employees discover mobility is theoretical, not actual", "direction": "negative" },
+          { "label": "Trust in HR programs erodes", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Manager investment in development", "before": "Active coaching", "after": "Reduced to avoid losing people", "delta": "Significant decline", "direction": "negative" },
+    { "metric": "Internal transfer success rate", "before": "Expected: high", "after": "30-40% blocked informally", "delta": "-30-40%", "direction": "negative" },
+    { "metric": "Team stability", "before": "Stable", "after": "Disrupted by transfers", "delta": "Reduced", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You haven't solved the manager incentive problem — losing people must not hurt managers",
+      "Your teams are too small to absorb transfer-related knowledge loss"
+    ],
+    "ifYouMust": [
+      "Reward managers for developing people who transfer — make it a positive metric",
+      "Require minimum tenure before transfer eligibility to protect team investments",
+      "Build structured handoff processes to minimize knowledge loss during transfers"
+    ],
+    "alternatives": [
+      { "name": "Rotation programs", "note": "Structured, time-limited cross-team exposure without permanent transfers" },
+      { "name": "20% time projects", "note": "Cross-team collaboration without leaving the home team" },
+      { "name": "Manager development incentives", "note": "Explicitly reward managers whose reports grow and advance" }
+    ]
+  },
+  "sources": [
+    { "title": "Harvard Business Review: The Talent Curse", "url": "https://hbr.org/2018/05/the-talent-curse", "note": "Documents manager hoarding behavior in internal mobility programs" },
+    { "title": "Gartner: Internal Mobility Research", "url": "https://www.gartner.com/en/human-resources", "note": "Data on internal transfer rates and manager blocking patterns" },
+    { "title": "Deloitte: Internal Talent Marketplace Report", "url": "https://www2.deloitte.com/us/en/insights/focus/human-capital-trends.html", "note": "Analysis of internal mobility program outcomes and challenges" }
+  ],
+  "falsifiability": [
+    "Internal mobility programs do not reduce manager investment in employee development",
+    "Managers actively support transfers without informal blocking in majority of cases",
+    "Teams maintain productivity and knowledge continuity through internal transfers"
+  ],
+  "tags": ["internal-mobility", "talent-management", "manager-incentives", "retention", "poaching"],
+  "crossReferences": ["O006", "O010"],
+  "seo": {
+    "description": "Internal mobility programs cause managers to hoard talent and block 30-40% of transfers informally. The retention tool destroys team-level development incentives.",
+    "keywords": ["internal mobility hidden costs", "talent poaching effects", "internal mobility second order effects"]
+  }
+}

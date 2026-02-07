@@ -1,0 +1,81 @@
+{
+  "id": "P011",
+  "title": "Student Loan Forgiveness Moral Hazard",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Governments propose student loan forgiveness to address the $1.7T student debt crisis. The immediate relief is real — millions of borrowers freed from crushing payments. But forgiveness without structural reform creates a moral hazard loop. Universities, knowing loans will be forgiven, have no incentive to control costs. Future students borrow more aggressively expecting forgiveness. Taxpayers who didn't attend college or already repaid loans subsidize the system. And the fundamental problem — tuition inflation outpacing wage growth by 3-4x — remains unaddressed, requiring repeated forgiveness cycles.",
+  "hypothesis": "Student loan forgiveness reduces inequality and helps borrowers escape debt traps.",
+  "chain": {
+    "root": "Government implements broad student loan forgiveness",
+    "effects": [
+      {
+        "label": "Universities face no cost pressure",
+        "impact": "Tuition continues rising 5-8% annually",
+        "direction": "negative",
+        "children": [
+          { "label": "Administrative bloat accelerates", "direction": "negative" },
+          { "label": "Amenities arms race intensifies", "direction": "negative" },
+          { "label": "Tuition-to-wage ratio worsens for next generation", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Future students borrow more aggressively",
+        "impact": "Moral hazard in borrowing decisions",
+        "direction": "negative",
+        "children": [
+          { "label": "Low-ROI degree programs see increased enrollment", "direction": "negative" },
+          { "label": "Students choose expensive schools over affordable alternatives", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Political constituency for repeated forgiveness forms",
+        "impact": "Forgiveness becomes recurring expectation",
+        "direction": "negative",
+        "children": [
+          { "label": "Each cycle requires larger forgiveness amounts", "direction": "negative" },
+          { "label": "Structural reform becomes politically impossible", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Tuition growth rate post-forgiveness", "before": "5-8% annually", "after": "No change or acceleration", "delta": "0% improvement", "direction": "negative" },
+    { "metric": "Future borrowing behavior", "before": "Some cost sensitivity", "after": "Reduced cost sensitivity", "delta": "Increased moral hazard", "direction": "negative" },
+    { "metric": "Debt-to-income ratio (next cohort)", "before": "Current levels", "after": "Higher due to continued tuition inflation", "delta": "+15-25%", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You're implementing forgiveness without simultaneous cost control reforms",
+      "You expect one-time forgiveness to solve a structural pricing problem"
+    ],
+    "ifYouMust": [
+      "Pair forgiveness with tuition caps or funding formula changes",
+      "Implement income-driven repayment as the default, not forgiveness",
+      "Require institutional skin in the game — schools share default risk"
+    ],
+    "alternatives": [
+      { "name": "Income-share agreements", "note": "Align school incentives with student outcomes" },
+      { "name": "Tuition price controls", "note": "Address the root cause of cost inflation" },
+      { "name": "Institutional risk sharing", "note": "Schools pay when graduates can't repay" }
+    ]
+  },
+  "sources": [
+    { "title": "Federal Reserve: Student Loan Debt Statistics", "url": "https://www.federalreserve.gov/publications/2023-economic-well-being-of-us-households-in-2022-student-loans.htm", "note": "$1.7T in outstanding student debt" },
+    { "title": "NBER: Bennett Hypothesis Research", "url": "https://www.nber.org/papers/w23888", "note": "Evidence that federal aid increases tuition (the Bennett Hypothesis)" },
+    { "title": "Brookings: Student Loan Forgiveness Analysis", "url": "https://www.brookings.edu/topic/student-loans/", "note": "Distributional analysis of who benefits from forgiveness" }
+  ],
+  "falsifiability": [
+    "Tuition growth rates decline following loan forgiveness implementation",
+    "Future student borrowing decreases after forgiveness signals are sent",
+    "One-time forgiveness eliminates the need for subsequent forgiveness programs"
+  ],
+  "tags": ["student-loans", "moral-hazard", "tuition-inflation", "higher-education", "forgiveness"],
+  "crossReferences": ["P007", "P012"],
+  "seo": {
+    "description": "Student loan forgiveness without reform creates moral hazard. Universities keep raising tuition 5-8% annually while future students borrow more aggressively expecting forgiveness.",
+    "keywords": ["student loan forgiveness moral hazard", "student debt hidden costs", "loan forgiveness second order effects"]
+  }
+}

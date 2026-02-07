@@ -1,0 +1,94 @@
+{
+  "id": "P004",
+  "title": "Right to Repair Ecosystem Shift",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Right to repair legislation requires manufacturers to provide parts, tools, and documentation for consumers and independent repair shops. The EU, several US states, and other jurisdictions are passing these laws. The consumer benefit is clear: cheaper repairs, longer device lifespans, less e-waste. But manufacturers respond strategically. Apple introduced self-service repair — but the parts cost nearly as much as professional repair, the tools require a $1,200 rental deposit, and the process is deliberately complex. Manufacturers redesign products to be technically repairable but practically unrepairable — parts paired to serial numbers, software locks on replacement components, diagnostic tools withheld. The letter of the law is met while the spirit is defeated. Right to repair becomes right to attempt repair.",
+
+  "hypothesis": "Right to repair empowers consumers to fix their own devices affordably.",
+
+  "chain": {
+    "root": "Pass right to repair legislation",
+    "effects": [
+      {
+        "label": "Manufacturers comply minimally while maintaining control",
+        "impact": "Parts available but priced near professional repair cost",
+        "direction": "negative",
+        "children": [
+          { "label": "Self-repair parts cost 80-90% of professional repair price", "direction": "negative" },
+          { "label": "Software locks on replacement parts require manufacturer activation", "direction": "negative" },
+          { "label": "Repair process deliberately complex to discourage DIY", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Independent repair shops gain some access",
+        "impact": "Parts and manuals available but with restrictions",
+        "direction": "positive",
+        "children": [
+          { "label": "Third-party repair becomes legally protected", "direction": "positive" },
+          { "label": "Diagnostic tools still restricted or expensive", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Product design shifts toward harder-to-repair architectures",
+        "impact": "More glue, more integration, fewer modular components",
+        "direction": "negative",
+        "children": [
+          { "label": "Components soldered rather than socketed", "direction": "negative" },
+          { "label": "Proprietary fasteners and adhesives increase", "direction": "negative" },
+          { "label": "Thinness and integration prioritized over repairability", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Parts availability", "before": "Manufacturer-only", "after": "Available (at high prices)", "delta": "Improved", "direction": "positive" },
+    { "metric": "Self-repair cost vs professional", "before": "N/A", "after": "80-90% of professional cost", "delta": "Minimal savings", "direction": "negative" },
+    { "metric": "Independent repair shop viability", "before": "Legally risky", "after": "Legally protected", "delta": "Improved", "direction": "positive" },
+    { "metric": "Device repairability scores", "before": "Declining", "after": "Stabilizing (with loopholes)", "delta": "Modest improvement", "direction": "neutral" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your right to repair law doesn't address software locks and parts pairing",
+      "You're not requiring reasonable pricing for repair parts"
+    ],
+    "ifYouMust": [
+      "Include anti-circumvention provisions that prevent software locks on replacement parts",
+      "Require parts pricing at reasonable margins, not near-retail device cost",
+      "Mandate repairability scores on product labels (like EU energy labels)",
+      "Include provisions for diagnostic tool access, not just parts and manuals"
+    ],
+    "alternatives": [
+      { "name": "Repairability index mandates", "note": "France's approach — scored repairability labels influence purchasing decisions" },
+      { "name": "Extended producer responsibility", "note": "Make manufacturers financially responsible for end-of-life, incentivizing repairability" },
+      { "name": "Modular design standards", "note": "Require minimum modularity standards for key components" }
+    ]
+  },
+
+  "sources": [
+    { "title": "iFixit: Self-Service Repair Program Analysis", "url": "https://www.ifixit.com/", "note": "Detailed analysis of Apple's self-service repair program showing minimal consumer benefit" },
+    { "title": "EU Right to Repair Directive", "note": "European legislation requiring manufacturers to provide repair access for consumer electronics" },
+    { "title": "FTC: Nixing the Fix Report", "note": "Federal Trade Commission report on manufacturer repair restrictions and consumer harm" },
+    { "title": "PIRG: Right to Repair State Legislation Tracker", "note": "Tracking right to repair legislation across US states and manufacturer compliance" }
+  ],
+
+  "falsifiability": [
+    "Right to repair legislation reduces average repair costs by more than 30% for consumers",
+    "Manufacturers respond to repair legislation by making products genuinely easier to repair",
+    "Self-repair programs achieve adoption rates above 20% among device owners"
+  ],
+
+  "tags": ["right-to-repair", "consumer-rights", "e-waste", "regulation", "manufacturing", "sustainability"],
+  "crossReferences": ["P001", "S009", "I017"],
+
+  "seo": {
+    "description": "Right to repair laws pass but manufacturers comply minimally — self-repair parts cost 80-90% of professional repair while software locks and design choices defeat the spirit.",
+    "keywords": ["right to repair ecosystem shift", "right to repair hidden costs", "right to repair second order effects"]
+  }
+}

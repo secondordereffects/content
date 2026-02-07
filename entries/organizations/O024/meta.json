@@ -1,0 +1,82 @@
+{
+  "id": "O024",
+  "title": "Four-Day Work Week Intensity Compression",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Companies adopt four-day work weeks promising better work-life balance and equal productivity. Early trials show promising results — employees report higher satisfaction and output per hour increases. But the mechanism behind maintaining output in fewer hours is often intensity compression: meetings get shorter but more packed, breaks disappear, lunch becomes optional, and the social fabric of work erodes. Employees trade one form of burnout (long hours) for another (relentless intensity). The extra day off becomes recovery from the compressed four days rather than genuine leisure.",
+  "hypothesis": "Four-day work weeks improve work-life balance while maintaining productivity.",
+  "chain": {
+    "root": "Organization adopts four-day work week",
+    "effects": [
+      {
+        "label": "Work intensity increases to maintain output",
+        "impact": "20-25% more tasks per hour",
+        "direction": "negative",
+        "children": [
+          { "label": "Breaks and informal interactions eliminated", "direction": "negative" },
+          { "label": "Meetings compressed but more cognitively demanding", "direction": "negative" },
+          { "label": "Deep work sessions become exhausting marathons", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Social and mentoring time disappears first",
+        "impact": "Informal knowledge transfer drops",
+        "direction": "negative",
+        "children": [
+          { "label": "Junior employees lose learning opportunities", "direction": "negative" },
+          { "label": "Team cohesion weakens over time", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Fifth day becomes recovery, not enrichment",
+        "impact": "Employees too drained for personal goals",
+        "direction": "negative",
+        "children": [
+          { "label": "Net wellbeing improvement smaller than expected", "direction": "negative" },
+          { "label": "Some employees secretly work on the fifth day", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Work intensity per hour", "before": "Baseline", "after": "+20-25%", "delta": "+20-25%", "direction": "negative" },
+    { "metric": "Informal interaction time", "before": "2-3 hrs/week", "after": "<30 min/week", "delta": "-80%", "direction": "negative" },
+    { "metric": "Employee satisfaction (initial)", "before": "Baseline", "after": "+15-20%", "delta": "+15-20%", "direction": "positive" },
+    { "metric": "Employee satisfaction (12 months)", "before": "+15-20%", "after": "+5-8%", "delta": "Gains erode", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "Your work requires significant mentoring, collaboration, or creative ideation time",
+      "You plan to maintain the same output targets in fewer hours without process changes"
+    ],
+    "ifYouMust": [
+      "Reduce scope and output expectations proportionally, not just hours",
+      "Protect informal interaction time — schedule it if necessary",
+      "Monitor intensity metrics (meeting density, break frequency) not just output"
+    ],
+    "alternatives": [
+      { "name": "Flexible hours", "note": "Let employees choose when to work rather than mandating fewer days" },
+      { "name": "Meeting-free days", "note": "Reduce intensity without reducing total hours" },
+      { "name": "Results-only work environment", "note": "Focus on outcomes, let employees manage their own time" }
+    ]
+  },
+  "sources": [
+    { "title": "4 Day Week Global: Pilot Results", "url": "https://www.4dayweek.com/research", "note": "Largest trial showing productivity maintained but intensity questions remain" },
+    { "title": "Autonomy Research: UK Four-Day Week Trial", "url": "https://autonomy.work/portfolio/uk4dwpilot/", "note": "Documents satisfaction gains and intensity compression concerns" },
+    { "title": "Harvard Business Review: The Case for the 4-Day Workweek", "url": "https://hbr.org/2023/10/its-time-to-try-a-4-day-workweek", "note": "Analysis of benefits and hidden costs of compressed schedules" }
+  ],
+  "falsifiability": [
+    "Four-day work week employees maintain lower stress levels than five-day peers after 12 months",
+    "Informal interaction and mentoring time remains stable after schedule compression",
+    "Satisfaction gains from four-day weeks do not erode significantly over 2+ years"
+  ],
+  "tags": ["four-day-week", "work-life-balance", "intensity", "burnout", "productivity"],
+  "crossReferences": ["O012", "O022"],
+  "seo": {
+    "description": "Four-day work weeks compress intensity by 20-25% per hour. Informal interaction drops 80% and satisfaction gains erode from +20% to +5% within 12 months.",
+    "keywords": ["four day work week hidden costs", "compressed work week effects", "four day week second order effects"]
+  }
+}

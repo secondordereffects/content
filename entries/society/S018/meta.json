@@ -1,0 +1,81 @@
+{
+  "id": "S018",
+  "title": "Nostalgia Economy Stagnation",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Entertainment and consumer industries increasingly rely on nostalgia — reboots, remakes, sequels, retro aesthetics, and legacy IP. Studios greenlight known properties over original ideas because nostalgia reduces financial risk. Audiences reward this with their wallets. But the nostalgia economy creates a cultural stagnation loop: investment flows to the past, starving original creators of funding and attention. New cultural movements struggle to emerge when every platform slot is filled by a reboot. The generation that grew up on original content now consumes recycled versions, while the next generation inherits a culture that looks backward instead of forward.",
+  "hypothesis": "Give people what they loved before — nostalgia content is what audiences want.",
+  "chain": {
+    "root": "Entertainment industry prioritizes nostalgia-driven content",
+    "effects": [
+      {
+        "label": "Investment concentrates in legacy IP",
+        "impact": "80%+ of major studio budgets on sequels/reboots",
+        "direction": "negative",
+        "children": [
+          { "label": "Original creators cannot get funding", "direction": "negative" },
+          { "label": "New IP development atrophies", "direction": "negative" },
+          { "label": "Creative talent migrates to indie or international markets", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Audiences develop nostalgia dependency",
+        "impact": "Familiar content preferred over novel",
+        "direction": "negative",
+        "children": [
+          { "label": "Risk tolerance for new ideas decreases", "direction": "negative" },
+          { "label": "Cultural conversation revolves around past rather than future", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Nostalgia returns diminish with each cycle",
+        "impact": "Sequel fatigue sets in",
+        "direction": "negative",
+        "children": [
+          { "label": "Each reboot performs worse than the last", "direction": "negative" },
+          { "label": "Industry doubles down on nostalgia rather than innovating", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Original IP share of major releases", "before": "60%+ (1990s)", "after": "<20% (2024)", "delta": "-40pp", "direction": "negative" },
+    { "metric": "Sequel/reboot box office share", "before": "30% (2000)", "after": "70%+ (2024)", "delta": "+40pp", "direction": "negative" },
+    { "metric": "New franchise creation rate", "before": "5-10/year (major)", "after": "1-2/year", "delta": "-70-80%", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "Your content strategy relies entirely on existing IP with no investment in original creation",
+      "You assume past success guarantees future audience interest"
+    ],
+    "ifYouMust": [
+      "Allocate a fixed percentage of budget to original IP development",
+      "Use nostalgia properties to fund and platform new creators",
+      "Set sunset criteria — stop rebooting properties after diminishing returns"
+    ],
+    "alternatives": [
+      { "name": "Portfolio approach", "note": "Balance nostalgia cash cows with original IP bets" },
+      { "name": "Creator-first platforms", "note": "Fund creators, not properties — new voices create new IP" },
+      { "name": "International content", "note": "Import fresh perspectives from non-Western entertainment industries" }
+    ]
+  },
+  "sources": [
+    { "title": "Box Office Mojo: Franchise Performance Data", "url": "https://www.boxofficemojo.com/franchise/", "note": "Tracks sequel and reboot dominance of box office" },
+    { "title": "The Atlantic: The Nostalgia Trap", "url": "https://www.theatlantic.com/culture/", "note": "Cultural analysis of nostalgia economy effects" },
+    { "title": "Variety: Studio Greenlight Analysis", "url": "https://variety.com/", "note": "Documents shift from original to IP-based content investment" }
+  ],
+  "falsifiability": [
+    "Original IP consistently outperforms nostalgia content at the box office",
+    "Studios increase investment in original content despite nostalgia availability",
+    "Audiences show no preference for familiar IP over novel content in controlled studies"
+  ],
+  "tags": ["nostalgia", "entertainment", "cultural-stagnation", "reboots", "creative-economy"],
+  "crossReferences": ["S011", "M010"],
+  "seo": {
+    "description": "Original IP dropped from 60% to under 20% of major releases as studios chase nostalgia. Each reboot cycle performs worse while starving new creators of funding.",
+    "keywords": ["nostalgia economy stagnation", "reboot culture hidden costs", "nostalgia second order effects"]
+  }
+}

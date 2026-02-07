@@ -1,0 +1,95 @@
+{
+  "id": "P007",
+  "title": "Universal Basic Income Inflation Pass-Through",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.70,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Universal Basic Income proposes giving every citizen a regular cash payment with no conditions. Proponents argue it eliminates poverty, reduces bureaucracy, and provides a safety net for automation-displaced workers. Pilot programs in Finland, Kenya, Stockton, and elsewhere show positive results: reduced stress, improved health, modest increases in entrepreneurship. But pilots are fundamentally different from universal programs. When everyone in an economy receives additional income simultaneously, prices adjust. Landlords raise rents knowing tenants have more money. Essential goods and services increase in price. The UBI payment gets partially or fully absorbed by inflation in inelastic markets — housing, healthcare, education. The purchasing power increase is smaller than the nominal payment, and the inflation disproportionately harms those just above the UBI threshold who don't receive it.",
+
+  "hypothesis": "Universal Basic Income eliminates poverty by providing unconditional cash to all citizens.",
+
+  "chain": {
+    "root": "Implement universal basic income",
+    "effects": [
+      {
+        "label": "Prices adjust upward in inelastic markets",
+        "impact": "Housing, healthcare, education costs absorb UBI",
+        "direction": "negative",
+        "children": [
+          { "label": "Landlords raise rents knowing tenants have additional income", "direction": "negative" },
+          { "label": "Essential goods pricing adjusts to new income floor", "direction": "negative" },
+          { "label": "Purchasing power increase smaller than nominal UBI amount", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Labor market effects are complex and uncertain",
+        "impact": "Some workers reduce hours, others start businesses",
+        "direction": "neutral",
+        "children": [
+          { "label": "Modest reduction in labor supply for low-wage work", "direction": "negative" },
+          { "label": "Increased entrepreneurship and risk-taking", "direction": "positive" },
+          { "label": "Caregiving and volunteer work increases", "direction": "positive" }
+        ]
+      },
+      {
+        "label": "Fiscal sustainability requires massive funding",
+        "impact": "$3-4 trillion annually for US at $1,000/month",
+        "direction": "negative",
+        "children": [
+          { "label": "Tax increases or deficit spending required", "direction": "negative" },
+          { "label": "Political sustainability questionable across election cycles", "direction": "negative" },
+          { "label": "Existing safety net programs may be cut to fund UBI", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Poverty rate", "before": "Baseline", "after": "Reduced (amount depends on inflation pass-through)", "delta": "Improved", "direction": "positive" },
+    { "metric": "Housing costs in UBI areas", "before": "Market rate", "after": "+10-20% (estimated)", "delta": "+15%", "direction": "negative" },
+    { "metric": "Mental health and stress", "before": "Baseline", "after": "Improved in pilots", "delta": "Positive", "direction": "positive" },
+    { "metric": "Annual fiscal cost (US)", "before": "Current safety net", "after": "$3-4 trillion", "delta": "Massive", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're implementing UBI without addressing housing supply constraints that will absorb the payment",
+      "You're cutting targeted safety net programs to fund UBI without analyzing who loses"
+    ],
+    "ifYouMust": [
+      "Pair UBI with housing supply expansion to prevent rent absorption",
+      "Phase in gradually to measure and mitigate inflationary effects",
+      "Maintain targeted programs for populations with needs beyond what UBI covers",
+      "Fund through progressive taxation rather than cutting existing safety nets"
+    ],
+    "alternatives": [
+      { "name": "Negative income tax", "note": "Targeted cash transfers that phase out with income — more fiscally efficient" },
+      { "name": "Universal basic services", "note": "Provide housing, healthcare, education directly rather than cash" },
+      { "name": "Earned income tax credit expansion", "note": "Supplement low wages without universal payments" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Finland Basic Income Experiment Results", "note": "Two-year pilot showing improved wellbeing but modest employment effects" },
+    { "title": "Stockton SEED Program Results", "note": "US pilot showing reduced income volatility and improved mental health" },
+    { "title": "NBER: Universal Basic Income and Inflation", "note": "Economic modeling of inflationary effects of universal cash transfers" },
+    { "title": "GiveDirectly: Kenya UBI Study", "note": "Largest UBI experiment showing positive results in developing-country context" }
+  ],
+
+  "falsifiability": [
+    "Universal (not pilot) UBI implementation shows no measurable inflation in housing and essential goods",
+    "UBI at scale reduces poverty rates proportionally to the payment amount without inflation offset",
+    "UBI is fiscally sustainable without cutting existing safety net programs or running unsustainable deficits"
+  ],
+
+  "tags": ["ubi", "basic-income", "inflation", "poverty", "fiscal-policy", "labor-market"],
+  "crossReferences": ["P010", "P012", "P003"],
+
+  "seo": {
+    "description": "UBI pilots show positive results but universal implementation faces inflation pass-through — landlords and essential services absorb payments, reducing real purchasing power gains.",
+    "keywords": ["universal basic income inflation", "ubi hidden costs", "basic income second order effects"]
+  }
+}
