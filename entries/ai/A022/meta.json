@@ -1,0 +1,102 @@
+{
+  "id": "A022",
+  "title": "AI Art Devaluation Cascade",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Generative AI image tools like Midjourney, DALL-E, and Stable Diffusion have made visual content creation nearly free and instant. Stock photography revenue has cratered. Freelance illustration rates have dropped 30-50%. But the deeper effect is a fundamental shift in how society values visual art. When anyone can generate a photorealistic image in seconds, the perceived value of all visual work — including human-created art — collapses. Art schools report declining enrollment. Professional illustrators pivot to AI-assisted workflows or leave the field. The irony: AI art models were trained on the very human art they're now devaluing, creating a feedback loop where the training data source dries up.",
+
+  "hypothesis": "AI democratizes art creation and empowers more people to be creative.",
+
+  "chain": {
+    "root": "Generative AI makes image creation nearly free",
+    "effects": [
+      {
+        "label": "Commercial illustration and stock photo markets collapse",
+        "impact": "-40% revenue in 2 years",
+        "direction": "negative",
+        "children": [
+          { "label": "Freelance illustrators lose primary income", "direction": "negative" },
+          { "label": "Stock photo agencies pivot or shut down", "direction": "negative" },
+          { "label": "Art school enrollment declines", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Perceived value of all visual art decreases",
+        "impact": "Human art conflated with AI output",
+        "direction": "negative",
+        "children": [
+          { "label": "Clients refuse to pay human rates for illustration", "direction": "negative" },
+          { "label": "Provenance and authenticity become new value signals", "direction": "neutral" }
+        ]
+      },
+      {
+        "label": "Training data feedback loop degrades model quality",
+        "impact": "Model collapse risk within 3-5 years",
+        "direction": "negative",
+        "children": [
+          { "label": "New human art production declines as artists leave field", "direction": "negative" },
+          { "label": "Models increasingly train on AI-generated images", "direction": "negative" },
+          { "label": "Aesthetic homogenization across AI outputs", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Content flood overwhelms visual platforms",
+        "impact": "10x increase in image uploads",
+        "direction": "negative",
+        "children": [
+          { "label": "Discovery of human art becomes harder", "direction": "negative" },
+          { "label": "Platform curation costs increase", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Stock photography revenue", "before": "$4B annually", "after": "$2.4B", "delta": "-40%", "direction": "negative" },
+    { "metric": "Freelance illustration rates", "before": "$50-200/hr", "after": "$25-100/hr", "delta": "-50%", "direction": "negative" },
+    { "metric": "Image generation cost", "before": "$50-500 per image", "after": "$0.01-0.10", "delta": "-99%", "direction": "positive" },
+    { "metric": "Visual content volume", "before": "Baseline", "after": "10x increase", "delta": "+900%", "direction": "neutral" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're replacing human artists without acknowledging the economic impact on creative professionals",
+      "Your AI art pipeline trains on copyrighted work without licensing"
+    ],
+    "ifYouMust": [
+      "Use AI for ideation and drafts, commission humans for final work",
+      "Clearly label AI-generated content to maintain trust",
+      "Support artist compensation models for training data usage"
+    ],
+    "alternatives": [
+      { "name": "AI-assisted human workflows", "note": "AI generates concepts, humans refine and add soul" },
+      { "name": "Provenance-verified art platforms", "note": "Blockchain or attestation-based proof of human creation" },
+      { "name": "Licensed training data models", "note": "Adobe Firefly approach — trained only on licensed content" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Getty Images vs Stability AI Lawsuit", "note": "Landmark case establishing that AI training on copyrighted images raises legal liability" },
+    { "title": "Cara Platform Launch and Artist Migration", "url": "https://cara.app", "note": "Anti-AI art platform gained 700K users in one week, showing artist community backlash" },
+    { "title": "Bureau of Labor Statistics: Graphic Designers Outlook", "note": "Employment projected to decline 3% as AI tools reduce demand for traditional design roles" },
+    { "title": "Midjourney Usage Statistics 2025", "note": "Over 16 million users generating billions of images, dwarfing human art production" }
+  ],
+
+  "falsifiability": [
+    "Professional illustrator employment and rates stabilize or increase despite AI art tool adoption",
+    "AI-generated art develops genuinely novel aesthetic movements not derived from training data",
+    "Art school enrollment remains stable as students adapt to AI-augmented creative workflows"
+  ],
+
+  "tags": ["ai", "art", "creative-economy", "devaluation", "copyright", "model-collapse"],
+  "crossReferences": ["A004", "A031", "M019"],
+
+  "seo": {
+    "description": "AI art tools crashed stock photo revenue 40% and freelance rates 50%. The training data feedback loop threatens both artist livelihoods and model quality.",
+    "keywords": ["ai art devaluation", "generative ai hidden costs", "ai art second order effects"]
+  }
+}

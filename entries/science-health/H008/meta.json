@@ -1,0 +1,94 @@
+{
+  "id": "H008",
+  "title": "Microbiome Disruption from Sanitization",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Modern hygiene practices — antibacterial soaps, hand sanitizers, antimicrobial surfaces, sterile environments — have dramatically reduced infectious disease. This is an unambiguous public health triumph. But the hygiene hypothesis, now supported by decades of research, suggests we've overshot. The human microbiome — trillions of bacteria that regulate immune function, digestion, and even mental health — evolved in a microbially rich environment. Excessive sanitization disrupts this ecosystem. Children raised in hyper-clean environments develop more allergies, asthma, and autoimmune conditions. The post-COVID sanitization surge amplified this trend. Hand sanitizer use increased 600%. Antimicrobial product sales doubled. The immune systems of an entire generation of children were trained in an unusually sterile environment during critical developmental windows.",
+
+  "hypothesis": "More hygiene and sanitization prevents disease and improves health.",
+
+  "chain": {
+    "root": "Increase sanitization and antimicrobial product use",
+    "effects": [
+      {
+        "label": "Beneficial microbiome diversity decreases",
+        "impact": "Gut microbiome diversity declining generationally",
+        "direction": "negative",
+        "children": [
+          { "label": "Immune system lacks training from microbial exposure", "direction": "negative" },
+          { "label": "Gut-brain axis disruption linked to anxiety and depression", "direction": "negative" },
+          { "label": "Digestive disorders increase in sanitized populations", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Allergic and autoimmune conditions increase",
+        "impact": "Allergy rates doubled in developed nations since 1990",
+        "direction": "negative",
+        "children": [
+          { "label": "Childhood asthma rates 3x higher in urban vs rural environments", "direction": "negative" },
+          { "label": "Food allergies increasing 50% per decade in children", "direction": "negative" },
+          { "label": "Autoimmune conditions rising 3-9% annually in Western countries", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Antimicrobial resistance accelerates",
+        "impact": "Triclosan and similar agents drive resistance",
+        "direction": "negative",
+        "children": [
+          { "label": "Antibacterial products create selection pressure for resistant strains", "direction": "negative" },
+          { "label": "Environmental contamination from antimicrobial chemicals", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Infectious disease mortality", "before": "High (pre-hygiene)", "after": "-95%", "delta": "-95%", "direction": "positive" },
+    { "metric": "Allergy prevalence", "before": "Baseline (1990)", "after": "Doubled", "delta": "+100%", "direction": "negative" },
+    { "metric": "Childhood asthma", "before": "3% (1970)", "after": "10% (2024)", "delta": "+233%", "direction": "negative" },
+    { "metric": "Autoimmune disease incidence", "before": "Baseline", "after": "+3-9% annually", "delta": "Rising", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're using antibacterial products for routine cleaning where regular soap suffices",
+      "You're raising children in environments sterilized beyond what infection control requires"
+    ],
+    "ifYouMust": [
+      "Use regular soap and water instead of antibacterial products for routine hygiene",
+      "Allow children age-appropriate exposure to outdoor environments and animals",
+      "Reserve antimicrobial products for clinical settings where they're genuinely needed",
+      "Support microbiome health through diverse diet and limited unnecessary antibiotic use"
+    ],
+    "alternatives": [
+      { "name": "Targeted hygiene", "note": "Sanitize high-risk surfaces and moments, not everything all the time" },
+      { "name": "Microbiome-conscious living", "note": "Regular soap, outdoor exposure, diverse diet, pets" },
+      { "name": "Probiotic supplementation", "note": "Restore microbiome diversity through targeted probiotics when disrupted" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Nature Reviews Immunology: The Hygiene Hypothesis Revisited", "note": "Comprehensive review of evidence linking reduced microbial exposure to immune dysregulation" },
+    { "title": "Journal of Allergy and Clinical Immunology: Allergy Prevalence Trends", "note": "Data showing allergy rates doubled in developed nations over 30 years" },
+    { "title": "The Lancet: Microbiome and Immune Development", "note": "Research on critical windows for microbial exposure in childhood immune system development" },
+    { "title": "FDA: Antibacterial Soap Ban (2016)", "url": "https://www.fda.gov/news-events/press-announcements/fda-issues-final-rule-safety-and-effectiveness-antibacterial-soaps", "note": "FDA banned triclosan from consumer soaps, finding no benefit over regular soap and potential harm" }
+  ],
+
+  "falsifiability": [
+    "Populations with high sanitization practices show equal or lower rates of allergic and autoimmune conditions",
+    "Microbiome diversity is unaffected by antimicrobial product use in controlled studies",
+    "Children raised in hyper-clean environments develop immune systems equivalent to those raised in microbially diverse environments"
+  ],
+
+  "tags": ["microbiome", "hygiene-hypothesis", "immune-system", "allergies", "autoimmune", "sanitization"],
+  "crossReferences": ["H001", "H017", "S009"],
+
+  "seo": {
+    "description": "Excessive sanitization disrupts the human microbiome, doubling allergy rates and tripling childhood asthma since 1990. The hygiene that prevents infection may cause immune dysfunction.",
+    "keywords": ["microbiome disruption sanitization", "hygiene hypothesis hidden costs", "sanitization second order effects"]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "id": "T014",
+  "title": "Event-Driven Debugging Nightmare",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Teams adopt event-driven architecture to decouple services, improve scalability, and enable independent deployment. The pitch is compelling: services publish events, consumers react asynchronously, and the system scales naturally. But event-driven systems trade visible complexity for invisible complexity. When a request flows through a synchronous call chain, you can trace it. When it flows through a series of events across message brokers, queues, and consumers, the execution path becomes invisible. Debugging a production issue means reconstructing a causal chain across multiple services, message brokers, dead letter queues, and retry mechanisms. Correlation IDs help in theory but are inconsistently propagated in practice. The system works beautifully until something goes wrong — and then nobody can figure out what happened.",
+
+  "hypothesis": "Event-driven architecture decouples services and improves scalability.",
+
+  "chain": {
+    "root": "Adopt event-driven architecture",
+    "effects": [
+      {
+        "label": "Execution flow becomes invisible",
+        "impact": "No single trace shows full request path",
+        "direction": "negative",
+        "children": [
+          { "label": "Debugging requires reconstructing event chains manually", "direction": "negative" },
+          { "label": "Correlation IDs inconsistently propagated across services", "direction": "negative" },
+          { "label": "Time-based ordering assumptions break under load", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Eventual consistency creates subtle data bugs",
+        "impact": "Race conditions appear under load",
+        "direction": "negative",
+        "children": [
+          { "label": "Users see stale data during propagation delays", "direction": "negative" },
+          { "label": "Compensating transactions add complexity", "direction": "negative" },
+          { "label": "Testing eventual consistency is extremely difficult", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Dead letter queues become data graveyards",
+        "impact": "Failed events accumulate without resolution",
+        "direction": "negative",
+        "children": [
+          { "label": "Poison messages block queue processing", "direction": "negative" },
+          { "label": "Retry storms amplify failures", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Schema evolution becomes a distributed coordination problem",
+        "impact": "Event format changes require multi-team coordination",
+        "direction": "negative",
+        "children": [
+          { "label": "Backward compatibility constraints accumulate", "direction": "negative" },
+          { "label": "Event versioning adds permanent complexity", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Mean time to debug production issues", "before": "30 min (synchronous)", "after": "2-4 hours (event-driven)", "delta": "+400%", "direction": "negative" },
+    { "metric": "Observability tooling cost", "before": "Basic APM", "after": "Distributed tracing + event replay", "delta": "+300%", "direction": "negative" },
+    { "metric": "Service coupling", "before": "Direct (visible)", "after": "Indirect (invisible)", "delta": "Shifted not reduced", "direction": "neutral" },
+    { "metric": "Scalability", "before": "Synchronous bottlenecks", "after": "Async scaling", "delta": "Improved", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your team lacks distributed systems debugging experience",
+      "Your domain requires strong consistency and you'd be fighting eventual consistency constantly"
+    ],
+    "ifYouMust": [
+      "Invest in distributed tracing infrastructure before writing the first event",
+      "Enforce correlation ID propagation as a hard requirement, not a guideline",
+      "Build event replay and dead letter queue monitoring from day one",
+      "Use event sourcing patterns that make the event chain reconstructable"
+    ],
+    "alternatives": [
+      { "name": "Synchronous with async fallback", "note": "Default to sync calls, use events only for truly async workflows" },
+      { "name": "Choreography with saga pattern", "note": "Structured event flows with explicit compensation logic" },
+      { "name": "Request-driven with webhooks", "note": "Simpler async pattern without full event infrastructure" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Martin Fowler: Event-Driven Architecture Pitfalls", "url": "https://martinfowler.com/articles/201701-event-driven.html", "note": "Comprehensive analysis of hidden complexity in event-driven systems" },
+    { "title": "Uber Engineering: Event-Driven Architecture at Scale", "note": "Uber's experience with debugging challenges in their event-driven microservices" },
+    { "title": "Confluent: Event Streaming Patterns and Anti-Patterns", "note": "Common failure modes in Kafka-based event-driven architectures" },
+    { "title": "AWS re:Invent: Lessons from Event-Driven Architectures", "note": "Production war stories from large-scale event-driven systems on AWS" }
+  ],
+
+  "falsifiability": [
+    "Teams using event-driven architecture report equal or faster debugging times compared to synchronous architectures",
+    "Distributed tracing tools fully reconstruct event chains automatically without manual correlation",
+    "Eventual consistency bugs occur at rates comparable to synchronous consistency bugs"
+  ],
+
+  "tags": ["event-driven", "debugging", "distributed-systems", "eventual-consistency", "observability"],
+  "crossReferences": ["T002", "T020", "T009"],
+
+  "seo": {
+    "description": "Event-driven architecture trades visible complexity for invisible complexity. Debugging time increases 400% as execution flows become untraceable across services.",
+    "keywords": ["event-driven debugging nightmare", "event-driven architecture hidden costs", "event-driven second order effects"]
+  }
+}

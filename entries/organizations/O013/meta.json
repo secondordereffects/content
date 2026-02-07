@@ -1,0 +1,94 @@
+{
+  "id": "O013",
+  "title": "Founder Mode Scaling Ceiling",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Startup founders who stay deeply hands-on — reviewing every PR, attending every customer call, making every product decision — often build exceptional early-stage companies. This 'founder mode' creates speed, coherence, and quality that professional managers can't match. But it doesn't scale. At 30-50 employees, the founder becomes the bottleneck. Every decision waits for their input. Talented leaders leave because they have no real authority. The organization develops learned helplessness — nobody makes decisions because the founder might override them. The very quality that made the company successful becomes the thing that prevents it from growing. Paul Graham's 2024 essay popularized the term, but the pattern has been destroying companies for decades.",
+
+  "hypothesis": "Founders should stay hands-on to maintain quality and vision as the company grows.",
+
+  "chain": {
+    "root": "Founder maintains direct control over all decisions",
+    "effects": [
+      {
+        "label": "Founder becomes decision bottleneck",
+        "impact": "Decision latency increases 3-5x at 30+ employees",
+        "direction": "negative",
+        "children": [
+          { "label": "Teams wait days for founder approval on routine decisions", "direction": "negative" },
+          { "label": "Parallel workstreams blocked by single-threaded decision maker", "direction": "negative" },
+          { "label": "Founder context-switches constantly, quality of each decision drops", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Organizational learned helplessness develops",
+        "impact": "Employees stop making decisions independently",
+        "direction": "negative",
+        "children": [
+          { "label": "Middle managers become message relays, not leaders", "direction": "negative" },
+          { "label": "Initiative and ownership atrophy across the organization", "direction": "negative" },
+          { "label": "Founder burnout accelerates from unsustainable load", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Senior talent leaves due to lack of autonomy",
+        "impact": "Executive turnover 2x industry average",
+        "direction": "negative",
+        "children": [
+          { "label": "Experienced leaders won't join a company where they can't lead", "direction": "negative" },
+          { "label": "Remaining team is increasingly junior and dependent", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Decision latency", "before": "Hours (small team)", "after": "Days (30+ employees)", "delta": "+400%", "direction": "negative" },
+    { "metric": "Executive retention", "before": "Industry average", "after": "2x turnover", "delta": "-50%", "direction": "negative" },
+    { "metric": "Product quality", "before": "High (founder touch)", "after": "Declining (founder spread thin)", "delta": "-20%", "direction": "negative" },
+    { "metric": "Organizational resilience", "before": "Founder-dependent", "after": "Single point of failure", "delta": "Critical risk", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your company has more than 30 employees and you're still approving routine decisions",
+      "You've lost 2+ senior leaders who cited lack of autonomy"
+    ],
+    "ifYouMust": [
+      "Define which decisions require founder input and which don't — write it down",
+      "Hire leaders you trust and give them real authority with clear boundaries",
+      "Accept that delegated decisions will be 80% as good but 5x faster",
+      "Build decision-making frameworks that encode your judgment without requiring your presence"
+    ],
+    "alternatives": [
+      { "name": "Selective founder mode", "note": "Stay hands-on for strategy and culture, delegate operations" },
+      { "name": "Decision frameworks", "note": "Encode founder judgment into principles others can apply" },
+      { "name": "Founder as coach", "note": "Develop leaders who can make founder-quality decisions independently" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Paul Graham: Founder Mode", "url": "http://paulgraham.com/foundermode.html", "note": "2024 essay arguing founders should stay more involved, sparking debate about scaling limits" },
+    { "title": "Ben Horowitz: The Hard Thing About Hard Things", "note": "Extensive documentation of the founder-to-CEO transition challenges" },
+    { "title": "First Round Review: Founder Bottleneck Patterns", "note": "Analysis of how founder-centric decision making breaks down at scale" },
+    { "title": "Harvard Business Review: When Founders Go Too Far", "note": "Research on the inflection point where founder control becomes organizational liability" }
+  ],
+
+  "falsifiability": [
+    "Founder-led companies at 100+ employees consistently outperform professionally managed companies of similar size",
+    "Founders maintaining direct control over all decisions show no increase in decision latency as headcount grows",
+    "Senior executive retention at founder-mode companies matches or exceeds industry averages"
+  ],
+
+  "tags": ["founder-mode", "scaling", "leadership", "delegation", "organizational-design", "bottleneck"],
+  "crossReferences": ["O010", "O014", "O008"],
+
+  "seo": {
+    "description": "Founder mode creates exceptional early-stage companies but hits a scaling ceiling at 30-50 employees. Decision latency increases 400% as the founder becomes the bottleneck.",
+    "keywords": ["founder mode scaling ceiling", "founder mode hidden costs", "founder mode second order effects"]
+  }
+}

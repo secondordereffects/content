@@ -1,0 +1,94 @@
+{
+  "id": "M011",
+  "title": "Unicorn Valuation Gravity",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Reaching a $1B+ valuation — unicorn status — became the defining goal of the startup ecosystem. VCs push for it because it validates their fund thesis. Founders chase it because it attracts talent, press, and follow-on funding. But the unicorn valuation creates its own gravity. Once a company is valued at $1B+, it can't raise a down round without devastating consequences — employee morale collapses, option pools become worthless, and the signal to the market is toxic. So the company must grow into its valuation or die trying. This forces unsustainable growth spending, delays profitability indefinitely, and creates zombie unicorns — companies valued at billions that can't IPO, can't be acquired (too expensive), and can't raise (valuation too high). The valuation that was supposed to signal success becomes a trap.",
+
+  "hypothesis": "High valuations attract talent, customers, and signal company strength.",
+
+  "chain": {
+    "root": "Achieve unicorn ($1B+) valuation",
+    "effects": [
+      {
+        "label": "Down round becomes existentially threatening",
+        "impact": "Company must grow into valuation or die",
+        "direction": "negative",
+        "children": [
+          { "label": "Unsustainable growth spending to justify valuation", "direction": "negative" },
+          { "label": "Profitability delayed indefinitely to maintain growth narrative", "direction": "negative" },
+          { "label": "Employee options underwater if valuation drops", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Exit options narrow dramatically",
+        "impact": "Too expensive to acquire, not ready to IPO",
+        "direction": "negative",
+        "children": [
+          { "label": "Potential acquirers priced out by inflated valuation", "direction": "negative" },
+          { "label": "IPO requires sustained growth metrics most unicorns can't show", "direction": "negative" },
+          { "label": "Zombie unicorn state — can't exit, can't raise, can't die", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Talent retention becomes valuation-dependent",
+        "impact": "Employees joined for equity upside that may never materialize",
+        "direction": "negative",
+        "children": [
+          { "label": "Key employees leave when equity value stagnates", "direction": "negative" },
+          { "label": "New hires demand higher cash compensation as equity becomes uncertain", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Unicorn companies globally", "before": "39 (2013)", "after": "1,200+ (2024)", "delta": "+3,000%", "direction": "neutral" },
+    { "metric": "Unicorns that achieved profitable exit", "before": "Expected majority", "after": "<30%", "delta": "-70%", "direction": "negative" },
+    { "metric": "Average time from unicorn to IPO", "before": "3-4 years", "after": "7-10 years", "delta": "+150%", "direction": "negative" },
+    { "metric": "Down round frequency", "before": "5% of rounds (2021)", "after": "20%+ of rounds (2024)", "delta": "+300%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your company's unit economics don't support the valuation within a reasonable timeline",
+      "You're raising at a high valuation primarily for press and recruiting rather than business need"
+    ],
+    "ifYouMust": [
+      "Negotiate valuation with realistic exit scenarios in mind",
+      "Build a path to profitability that doesn't depend on continuous fundraising",
+      "Structure employee equity with realistic valuation expectations",
+      "Consider lower valuations with better terms over headline unicorn status"
+    ],
+    "alternatives": [
+      { "name": "Profitable growth", "note": "Grow at a sustainable rate funded by revenue, not valuation" },
+      { "name": "Zebra companies", "note": "Build for profitability and sustainability, not unicorn status" },
+      { "name": "Revenue-based financing", "note": "Non-dilutive funding that doesn't create valuation pressure" }
+    ]
+  },
+
+  "sources": [
+    { "title": "CB Insights: Global Unicorn Club", "note": "Tracking 1,200+ unicorns globally, with data on exit rates and down rounds" },
+    { "title": "PitchBook: Venture Capital Valuations Report", "note": "Data showing down round frequency tripled from 2021 to 2024" },
+    { "title": "Harvard Business Review: The Unicorn Trap", "note": "Analysis of how high valuations constrain strategic options for startups" },
+    { "title": "Carta: Startup Equity Compensation Trends", "note": "Data showing employee equity value erosion in overvalued startups" }
+  ],
+
+  "falsifiability": [
+    "Majority of unicorn-valued companies achieve profitable exits at or above their last private valuation",
+    "High private valuations correlate with better long-term outcomes than lower valuations for similar companies",
+    "Employee equity in unicorn companies delivers returns matching or exceeding public market alternatives"
+  ],
+
+  "tags": ["unicorn", "valuation", "venture-capital", "startup", "exit", "zombie-companies"],
+  "crossReferences": ["M022", "M005", "M009"],
+
+  "seo": {
+    "description": "Unicorn valuations trap companies — too expensive to acquire, not ready to IPO. Less than 30% achieve profitable exits while down rounds tripled from 2021 to 2024.",
+    "keywords": ["unicorn valuation gravity", "unicorn trap hidden costs", "startup valuation second order effects"]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "id": "S009",
+  "title": "Convenience Dependency Spiral",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Technology makes life more convenient — food delivery, ride-hailing, smart home automation, one-click purchasing. Each convenience individually seems harmless and beneficial. But convenience is additive and compounding. Each layer of convenience removes a small friction that previously served a purpose: walking to the store provided exercise, cooking built a life skill, navigating without GPS developed spatial reasoning. As convenience layers accumulate, basic life competencies atrophy. People who can't cook, can't navigate, can't fix basic things, can't entertain themselves without a screen. The dependency isn't on any single service — it's on the entire convenience infrastructure. When it fails (delivery app outage, power outage, internet down), the impact is disproportionate because the underlying skills have atrophied.",
+
+  "hypothesis": "Technology makes life more convenient and frees time for what matters.",
+
+  "chain": {
+    "root": "Adopt convenience technology across daily life",
+    "effects": [
+      {
+        "label": "Basic life skills atrophy from disuse",
+        "impact": "Cooking, navigation, repair skills declining generationally",
+        "direction": "negative",
+        "children": [
+          { "label": "Cooking skills decline — 60% of meals now involve delivery or prepared food", "direction": "negative" },
+          { "label": "Spatial navigation ability degrades with GPS dependency", "direction": "negative" },
+          { "label": "Basic repair and maintenance skills lost", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Financial cost of convenience compounds",
+        "impact": "Convenience premium 30-50% over self-service",
+        "direction": "negative",
+        "children": [
+          { "label": "Delivery fees, subscription costs, and tips accumulate", "direction": "negative" },
+          { "label": "Convenience spending invisible because it's distributed across many small transactions", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Resilience to disruption decreases",
+        "impact": "Service outages cause disproportionate impact",
+        "direction": "negative",
+        "children": [
+          { "label": "Power outages reveal dependency on smart home infrastructure", "direction": "negative" },
+          { "label": "App outages leave people unable to perform basic tasks", "direction": "negative" },
+          { "label": "Natural disasters expose populations with no self-sufficiency skills", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Physical health impacts from reduced activity",
+        "impact": "Steps per day declining 15% per decade",
+        "direction": "negative",
+        "children": [
+          { "label": "Incidental exercise from errands eliminated", "direction": "negative" },
+          { "label": "Sedentary behavior increases as friction removed from daily tasks", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Home cooking frequency", "before": "70% of meals (2000)", "after": "40% of meals (2025)", "delta": "-43%", "direction": "negative" },
+    { "metric": "Average daily steps", "before": "7,500 (2010)", "after": "5,500 (2024)", "delta": "-27%", "direction": "negative" },
+    { "metric": "Monthly convenience spending", "before": "$50 (2015)", "after": "$300+ (2025)", "delta": "+500%", "direction": "negative" },
+    { "metric": "Self-reported life skill confidence", "before": "Baseline", "after": "-35% among under-30s", "delta": "-35%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You've lost the ability to perform basic daily tasks without technology assistance",
+      "Your monthly convenience spending exceeds 15% of discretionary income"
+    ],
+    "ifYouMust": [
+      "Audit convenience spending monthly — aggregate the small transactions",
+      "Maintain baseline skills: cook 3 meals/week, navigate without GPS monthly",
+      "Have analog fallbacks for critical daily functions",
+      "Treat convenience as a tool, not a default — choose friction sometimes"
+    ],
+    "alternatives": [
+      { "name": "Selective convenience", "note": "Use convenience for low-value tasks, maintain skills for important ones" },
+      { "name": "Intentional friction", "note": "Deliberately choose harder options to maintain competence and health" },
+      { "name": "Skill maintenance practice", "note": "Regular practice of analog skills as a form of resilience building" }
+    ]
+  },
+
+  "sources": [
+    { "title": "USDA: Food Away from Home Spending Trends", "note": "Americans now spend more on food away from home than groceries for the first time in history" },
+    { "title": "Nature: GPS Use and Spatial Memory Decline", "note": "Research showing regular GPS use correlates with reduced hippocampal activity and spatial reasoning" },
+    { "title": "Stanford Medicine: Declining Physical Activity Trends", "note": "Average daily steps declining across all demographics, correlated with convenience technology adoption" },
+    { "title": "McKinsey: The Convenience Economy", "note": "Analysis of how convenience spending has grown to a multi-trillion dollar market" }
+  ],
+
+  "falsifiability": [
+    "Populations with high convenience technology adoption maintain equivalent life skills to low-adoption populations",
+    "Convenience technology users show equal or better physical health outcomes than non-users",
+    "Service disruptions cause no greater impact in high-convenience-adoption populations than low-adoption ones"
+  ],
+
+  "tags": ["convenience", "dependency", "life-skills", "resilience", "technology-adoption", "health"],
+  "crossReferences": ["S021", "S022", "H018"],
+
+  "seo": {
+    "description": "Convenience technology atrophies life skills generationally. Home cooking down 43%, daily steps down 27%, convenience spending up 500% — and resilience to disruption plummets.",
+    "keywords": ["convenience dependency spiral", "convenience technology hidden costs", "convenience second order effects"]
+  }
+}

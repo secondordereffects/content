@@ -1,0 +1,94 @@
+{
+  "id": "M014",
+  "title": "Algorithmic Trading Herding",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Algorithmic trading now accounts for 60-70% of US equity volume. The promise was efficiency — algorithms process information faster, reduce spreads, and provide liquidity. And in normal conditions, they do. But most trading algorithms are trained on similar data, use similar signals, and optimize for similar objectives. When market conditions shift, they react simultaneously in the same direction. This creates herding behavior at machine speed. Flash crashes, liquidity vacuums, and cascading sell-offs happen in milliseconds, faster than any human circuit breaker can respond. The 2010 Flash Crash, the 2015 ETF dislocation, and the 2020 COVID crash all showed algorithmic herding amplifying volatility rather than dampening it. The market is more efficient on average but more fragile at the extremes.",
+
+  "hypothesis": "Algorithmic trading provides market efficiency and better price discovery.",
+
+  "chain": {
+    "root": "Algorithmic trading dominates market volume",
+    "effects": [
+      {
+        "label": "Similar algorithms create correlated behavior",
+        "impact": "60-70% of volume moves in sync during stress",
+        "direction": "negative",
+        "children": [
+          { "label": "Momentum signals trigger simultaneous selling", "direction": "negative" },
+          { "label": "Mean-reversion algorithms withdraw liquidity at worst moments", "direction": "negative" },
+          { "label": "Crowded trades unwind simultaneously", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Flash crashes occur at machine speed",
+        "impact": "Market drops 5-10% in minutes, recovers in hours",
+        "direction": "negative",
+        "children": [
+          { "label": "Stop-loss cascades amplify initial moves", "direction": "negative" },
+          { "label": "Retail investors hit by price dislocations", "direction": "negative" },
+          { "label": "Circuit breakers too slow for algorithmic speed", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Liquidity becomes illusory",
+        "impact": "Deep order books vanish during stress",
+        "direction": "negative",
+        "children": [
+          { "label": "Market makers pull quotes simultaneously", "direction": "negative" },
+          { "label": "Bid-ask spreads explode during volatility", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Average bid-ask spread", "before": "Pre-algo baseline", "after": "-50% (normal conditions)", "delta": "Improved", "direction": "positive" },
+    { "metric": "Flash crash frequency", "before": "Rare", "after": "Multiple per year", "delta": "+500%", "direction": "negative" },
+    { "metric": "Liquidity during stress events", "before": "Reduced but present", "after": "Vanishes completely", "delta": "-90%", "direction": "negative" },
+    { "metric": "Intraday volatility", "before": "Baseline", "after": "+40% during stress", "delta": "+40%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your trading algorithm uses the same signals and data as the majority of market participants",
+      "Your strategy assumes liquidity will be available during market stress"
+    ],
+    "ifYouMust": [
+      "Build algorithms that reduce exposure during crowded-trade conditions",
+      "Implement kill switches that activate before exchange circuit breakers",
+      "Stress test against flash crash scenarios, not just normal volatility",
+      "Diversify signal sources to avoid herding with similar algorithms"
+    ],
+    "alternatives": [
+      { "name": "Slower-frequency strategies", "note": "Trade on fundamentals over days/weeks, not milliseconds" },
+      { "name": "Anti-herding algorithms", "note": "Strategies that profit from algorithmic crowding and mean reversion" },
+      { "name": "Human-in-the-loop trading", "note": "Algorithmic execution with human oversight for risk management" }
+    ]
+  },
+
+  "sources": [
+    { "title": "SEC/CFTC Report on the 2010 Flash Crash", "note": "Official investigation documenting how algorithmic trading amplified the May 6, 2010 crash" },
+    { "title": "Bank for International Settlements: Algorithmic Trading and Market Quality", "note": "Research showing algorithms improve liquidity in normal conditions but amplify stress" },
+    { "title": "Journal of Finance: Algorithmic Trading and the Market for Liquidity", "note": "Academic evidence that algorithmic market makers withdraw during volatility" },
+    { "title": "Bloomberg: The Rise of Machine Trading", "note": "Analysis of algorithmic trading's growing share of market volume and systemic risk implications" }
+  ],
+
+  "falsifiability": [
+    "Algorithmic trading reduces market volatility during stress events compared to human-dominated markets",
+    "Flash crash frequency decreases as algorithmic trading share increases",
+    "Algorithmic market makers maintain liquidity provision during extreme volatility events"
+  ],
+
+  "tags": ["algorithmic-trading", "market-structure", "flash-crash", "liquidity", "systemic-risk", "herding"],
+  "crossReferences": ["M004", "M001", "M024"],
+
+  "seo": {
+    "description": "Algorithmic trading handles 60-70% of equity volume but creates herding at machine speed. Flash crashes increased 500% as liquidity vanishes during stress events.",
+    "keywords": ["algorithmic trading herding", "algorithmic trading hidden costs", "flash crash second order effects"]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "id": "S020",
+  "title": "Echo Chamber Epistemic Closure",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "People are told to curate their information diet — follow experts, mute noise, subscribe to quality sources. The advice sounds reasonable. But curation algorithms and human confirmation bias work together to create echo chambers where people only encounter information that confirms their existing beliefs. Social media platforms optimize for engagement, and agreement is more engaging than challenge. Over time, users develop epistemic closure — a state where no external evidence can change their beliefs because the information ecosystem has been purged of contradicting viewpoints. The person inside the echo chamber doesn't feel uninformed; they feel extremely well-informed. They've read hundreds of articles, all confirming the same narrative. The volume of confirming information creates false confidence.",
+
+  "hypothesis": "Curating your information diet leads to better-informed decisions.",
+
+  "chain": {
+    "root": "Curate information sources to reduce noise",
+    "effects": [
+      {
+        "label": "Algorithms amplify confirmation bias",
+        "impact": "80%+ of recommended content confirms existing views",
+        "direction": "negative",
+        "children": [
+          { "label": "Engagement optimization serves agreement over accuracy", "direction": "negative" },
+          { "label": "Dissenting sources gradually filtered out", "direction": "negative" },
+          { "label": "Users unfollow or mute challenging perspectives", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Epistemic closure develops",
+        "impact": "No external evidence can update beliefs",
+        "direction": "negative",
+        "children": [
+          { "label": "Contradicting evidence dismissed as propaganda or bias", "direction": "negative" },
+          { "label": "Volume of confirming content creates false confidence", "direction": "negative" },
+          { "label": "Shared vocabulary and framing makes cross-group communication impossible", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Political and social polarization accelerates",
+        "impact": "Partisan gap widened 40% since 2010",
+        "direction": "negative",
+        "children": [
+          { "label": "Compromise becomes impossible when groups share no common facts", "direction": "negative" },
+          { "label": "Moderate voices drowned out by extremes in each chamber", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Institutional trust collapses",
+        "impact": "Trust in media, science, government at historic lows",
+        "direction": "negative",
+        "children": [
+          { "label": "Each echo chamber has its own 'trusted' institutions", "direction": "negative" },
+          { "label": "Shared epistemic authority disappears", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Cross-partisan information exposure", "before": "Mixed media diet", "after": "80%+ confirming content", "delta": "-60%", "direction": "negative" },
+    { "metric": "Political polarization", "before": "Baseline (2010)", "after": "+40%", "delta": "+40%", "direction": "negative" },
+    { "metric": "Trust in mainstream media", "before": "53% (2000)", "after": "32% (2024)", "delta": "-40%", "direction": "negative" },
+    { "metric": "Belief update rate from new evidence", "before": "Normal Bayesian updating", "after": "Near zero for core beliefs", "delta": "-90%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your information diet consists entirely of sources you agree with",
+      "You can't articulate the strongest version of the opposing argument"
+    ],
+    "ifYouMust": [
+      "Deliberately follow 2-3 high-quality sources from opposing perspectives",
+      "Practice steelmanning — construct the strongest version of arguments you disagree with",
+      "Use ground-truth data sources (primary research, raw data) rather than interpretive media",
+      "Periodically audit your information diet for viewpoint diversity"
+    ],
+    "alternatives": [
+      { "name": "Adversarial collaboration", "note": "Engage directly with people who disagree, seeking shared evidence" },
+      { "name": "Ground-truth information diet", "note": "Primary sources, academic papers, raw data over commentary" },
+      { "name": "Ideological Turing test", "note": "Can you describe the opposing view so well its holders would agree with your description?" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Pew Research: Political Polarization in the American Public", "url": "https://www.pewresearch.org/politics/2024/", "note": "Longitudinal data showing partisan gap widened 40% since 2010, correlated with social media adoption" },
+    { "title": "Eli Pariser: The Filter Bubble", "note": "Original framework for understanding how algorithmic curation creates information silos" },
+    { "title": "Gallup: Trust in Media", "note": "Trust in mass media at historic low of 32%, with sharp partisan divergence" },
+    { "title": "Nature Human Behaviour: Exposure to Opposing Views on Social Media", "note": "Study showing exposure to opposing views on Twitter actually increased polarization rather than reducing it" }
+  ],
+
+  "falsifiability": [
+    "Social media users who curate their feeds show greater viewpoint diversity than non-curators",
+    "Algorithmic content recommendation increases exposure to challenging perspectives over time",
+    "Political polarization decreases in populations with high social media usage"
+  ],
+
+  "tags": ["echo-chambers", "polarization", "epistemic-closure", "social-media", "information-diet", "confirmation-bias"],
+  "crossReferences": ["S002", "S014", "S021"],
+
+  "seo": {
+    "description": "Information curation creates echo chambers where 80%+ of content confirms existing beliefs. Epistemic closure makes belief updating nearly impossible, driving 40% more polarization.",
+    "keywords": ["echo chamber epistemic closure", "information bubble hidden costs", "echo chamber second order effects"]
+  }
+}

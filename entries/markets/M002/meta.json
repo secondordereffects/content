@@ -1,0 +1,94 @@
+{
+  "id": "M002",
+  "title": "Zero-Fee Brokerage Model",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Robinhood pioneered commission-free stock trading in 2015, and by 2020 every major brokerage had followed. The pitch was democratization — remove the $7-10 per trade barrier and let everyone participate in markets. Trading volumes exploded. Millions of new retail investors opened accounts. But free trading isn't free. The revenue shifted from commissions to payment for order flow (PFOF), where brokerages sell customer orders to market makers like Citadel Securities. This creates a structural conflict of interest: the brokerage's customer is the market maker, not the retail investor. Worse, zero friction encourages overtrading. Retail investors who would have thought twice about a $7 trade now execute dozens of speculative trades daily. The gamification of trading — confetti animations, push notifications, fractional shares — turned investing into entertainment, and entertainment into losses.",
+
+  "hypothesis": "Free trading democratizes markets and helps retail investors build wealth.",
+
+  "chain": {
+    "root": "Eliminate trading commissions",
+    "effects": [
+      {
+        "label": "Revenue shifts to payment for order flow",
+        "impact": "Brokerages earn from market makers, not investors",
+        "direction": "negative",
+        "children": [
+          { "label": "Structural conflict of interest — customer is the market maker", "direction": "negative" },
+          { "label": "Price improvement for retail orders decreases", "direction": "negative" },
+          { "label": "Execution quality becomes opaque", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Zero friction encourages overtrading",
+        "impact": "Retail trading volume up 300%",
+        "direction": "negative",
+        "children": [
+          { "label": "Speculative day trading replaces long-term investing", "direction": "negative" },
+          { "label": "Options trading by inexperienced investors surges", "direction": "negative" },
+          { "label": "Average retail investor underperforms index by 4-6%/yr", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Gamification turns investing into entertainment",
+        "impact": "Confetti, streaks, push notifications drive engagement",
+        "direction": "negative",
+        "children": [
+          { "label": "Behavioral addiction patterns emerge in trading apps", "direction": "negative" },
+          { "label": "Financial literacy doesn't improve despite increased participation", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Retail trading volume", "before": "Baseline", "after": "+300%", "delta": "+300%", "direction": "neutral" },
+    { "metric": "Average retail investor returns vs index", "before": "-2%/yr (with commissions)", "after": "-4-6%/yr (overtrading)", "delta": "-3%", "direction": "negative" },
+    { "metric": "New brokerage accounts", "before": "Baseline", "after": "+150M accounts (2020-2024)", "delta": "Massive increase", "direction": "positive" },
+    { "metric": "Options trading by retail", "before": "5% of volume", "after": "25% of volume", "delta": "+400%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're building a trading platform and your primary revenue is payment for order flow",
+      "Your app design encourages frequent trading through gamification mechanics"
+    ],
+    "ifYouMust": [
+      "Disclose payment for order flow prominently, not buried in terms of service",
+      "Show users their total trading costs including spread, not just commissions",
+      "Add friction to high-risk trades like options and margin",
+      "Display long-term performance comparisons against index funds"
+    ],
+    "alternatives": [
+      { "name": "Low-cost index investing", "note": "Vanguard model — low fees, long-term focus, no gamification" },
+      { "name": "Subscription-based brokerages", "note": "Flat monthly fee aligns incentives with investor outcomes" },
+      { "name": "Direct indexing", "note": "Custom index portfolios without trading temptation" }
+    ]
+  },
+
+  "sources": [
+    { "title": "SEC Report on Payment for Order Flow", "note": "SEC analysis showing PFOF creates conflicts of interest and may reduce execution quality for retail investors" },
+    { "title": "FINRA: Retail Trading Activity During COVID", "note": "Data showing 300% increase in retail trading volume correlated with zero-commission adoption" },
+    { "title": "Barber & Odean: Trading Is Hazardous to Your Wealth", "note": "Seminal research showing individual investors who trade most earn the lowest returns" },
+    { "title": "Massachusetts Securities Division: Robinhood Complaint", "url": "https://www.sec.state.ma.us/sct/current/sctrobinhood/MSD-Robinhood-Complaint-20201216.pdf", "note": "Regulatory complaint documenting gamification strategies and their impact on investor behavior" }
+  ],
+
+  "falsifiability": [
+    "Retail investors using zero-commission platforms achieve returns matching or exceeding index funds over 5+ years",
+    "Payment for order flow provides better execution quality for retail investors than commission-based models",
+    "Increased trading frequency correlates with improved financial outcomes for retail investors"
+  ],
+
+  "tags": ["markets", "retail-investing", "gamification", "payment-for-order-flow", "trading", "fintech"],
+  "crossReferences": ["M024", "M010", "M001"],
+
+  "seo": {
+    "description": "Zero-fee trading increased retail volume 300% but shifted revenue to payment for order flow. Overtrading costs retail investors 4-6% annually vs index funds.",
+    "keywords": ["zero-fee brokerage hidden costs", "commission-free trading second order effects", "payment for order flow consequences"]
+  }
+}

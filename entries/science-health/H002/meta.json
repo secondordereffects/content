@@ -1,0 +1,94 @@
+{
+  "id": "H002",
+  "title": "Telemedicine Access vs Quality Tradeoff",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "The COVID-19 pandemic accelerated telemedicine adoption by a decade. Virtual visits went from 1% to 40% of outpatient encounters almost overnight. Regulatory barriers fell — interstate licensing, prescribing restrictions, reimbursement parity. The access gains were real: rural patients could see specialists, chronically ill patients avoided dangerous waiting rooms, mental health services reached underserved populations. But telemedicine also introduced systematic quality tradeoffs. Physical examination is impossible over video. Subtle diagnostic cues — skin color, gait, affect — are lost through a screen. Doctors report higher rates of diagnostic uncertainty in virtual visits. Antibiotic and controlled substance prescribing increased as doctors, unable to examine patients, defaulted to treatment over watchful waiting. The convenience that improved access also created a two-tier system: complex cases still require in-person visits, but patients now expect the convenience of virtual care for everything.",
+
+  "hypothesis": "Telemedicine improves healthcare access without compromising quality of care.",
+
+  "chain": {
+    "root": "Adopt telemedicine as primary care delivery channel",
+    "effects": [
+      {
+        "label": "Physical examination eliminated from virtual visits",
+        "impact": "30-40% of diagnostic information lost",
+        "direction": "negative",
+        "children": [
+          { "label": "Subtle diagnostic cues missed through video", "direction": "negative" },
+          { "label": "Doctors default to prescribing over watchful waiting", "direction": "negative" },
+          { "label": "Antibiotic prescribing increases 20-30% in virtual visits", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Access dramatically improves for underserved populations",
+        "impact": "Rural specialist access up 300%",
+        "direction": "positive",
+        "children": [
+          { "label": "Mental health services reach previously unserved areas", "direction": "positive" },
+          { "label": "Chronic disease management improves with frequent check-ins", "direction": "positive" }
+        ]
+      },
+      {
+        "label": "Two-tier care system emerges",
+        "impact": "In-person for complex, virtual for routine",
+        "direction": "negative",
+        "children": [
+          { "label": "Patients resist in-person visits even when clinically necessary", "direction": "negative" },
+          { "label": "Doctor-patient relationship becomes transactional", "direction": "negative" },
+          { "label": "Continuity of care declines as patients see whoever is available", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Healthcare access (rural)", "before": "Limited specialist access", "after": "+300% specialist consultations", "delta": "+300%", "direction": "positive" },
+    { "metric": "Diagnostic accuracy", "before": "In-person baseline", "after": "-15-20% for conditions requiring physical exam", "delta": "-18%", "direction": "negative" },
+    { "metric": "Antibiotic prescribing rate", "before": "In-person baseline", "after": "+20-30% in virtual visits", "delta": "+25%", "direction": "negative" },
+    { "metric": "Patient satisfaction", "before": "Baseline", "after": "+40% (convenience)", "delta": "+40%", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The condition requires physical examination for accurate diagnosis",
+      "You're prescribing controlled substances or antibiotics without in-person evaluation"
+    ],
+    "ifYouMust": [
+      "Establish clear clinical guidelines for which conditions are appropriate for virtual care",
+      "Implement antibiotic stewardship protocols specific to telemedicine encounters",
+      "Ensure continuity of care by assigning patients to consistent providers",
+      "Use remote monitoring devices to supplement virtual examination"
+    ],
+    "alternatives": [
+      { "name": "Hybrid care models", "note": "Virtual for follow-ups and triage, in-person for diagnosis and complex care" },
+      { "name": "Remote patient monitoring", "note": "Connected devices that provide objective data during virtual visits" },
+      { "name": "Community health hubs", "note": "Local clinics with telemedicine equipment and basic diagnostic tools" }
+    ]
+  },
+
+  "sources": [
+    { "title": "JAMA: Telemedicine and Antibiotic Prescribing", "note": "Study showing 20-30% higher antibiotic prescribing rates in telemedicine vs in-person visits" },
+    { "title": "New England Journal of Medicine: Telemedicine After COVID", "note": "Analysis of telemedicine quality tradeoffs and the persistence of virtual care post-pandemic" },
+    { "title": "McKinsey: Telehealth After COVID-19", "note": "Data showing telemedicine stabilized at 38x pre-pandemic levels with significant access improvements" },
+    { "title": "American Medical Association: Telemedicine Practice Guidelines", "note": "Clinical guidelines for appropriate use of telemedicine across specialties" }
+  ],
+
+  "falsifiability": [
+    "Telemedicine diagnostic accuracy matches in-person visits across all condition types",
+    "Antibiotic prescribing rates in telemedicine visits equal or fall below in-person rates",
+    "Patient outcomes for conditions managed primarily via telemedicine match in-person management outcomes"
+  ],
+
+  "tags": ["telemedicine", "healthcare-access", "diagnostic-quality", "antibiotic-resistance", "digital-health"],
+  "crossReferences": ["H001", "H014", "S009"],
+
+  "seo": {
+    "description": "Telemedicine boosted rural specialist access 300% but increased antibiotic prescribing 25% and reduced diagnostic accuracy 18% by eliminating physical examination.",
+    "keywords": ["telemedicine access quality tradeoff", "telemedicine hidden costs", "telemedicine second order effects"]
+  }
+}

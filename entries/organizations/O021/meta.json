@@ -1,0 +1,103 @@
+{
+  "id": "O021",
+  "title": "Documentation Decay Half-Life",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Organizations invest in documentation to ensure knowledge transfer, reduce bus factor, and onboard new team members faster. The initial documentation push produces comprehensive wikis, runbooks, and architecture decision records. But documentation has a half-life. Code changes but docs don't. APIs evolve but their docs stay frozen. Within 6 months, 30-40% of technical documentation is outdated. Within a year, it's over 50%. The problem compounds: once developers encounter outdated docs a few times, they stop trusting all documentation. They go straight to the code or ask a colleague. The documentation investment becomes a liability — worse than no docs, because outdated docs actively mislead. The team that was supposed to benefit from documentation now spends time debugging issues caused by following stale instructions.",
+
+  "hypothesis": "Documentation ensures knowledge transfer and reduces onboarding time.",
+
+  "chain": {
+    "root": "Invest in comprehensive documentation",
+    "effects": [
+      {
+        "label": "Documentation decays as code evolves",
+        "impact": "50%+ outdated within 12 months",
+        "direction": "negative",
+        "children": [
+          { "label": "API docs diverge from actual behavior", "direction": "negative" },
+          { "label": "Architecture diagrams show previous state, not current", "direction": "negative" },
+          { "label": "Runbooks reference deprecated tools and processes", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Trust in documentation collapses",
+        "impact": "Developers stop reading docs after 2-3 bad experiences",
+        "direction": "negative",
+        "children": [
+          { "label": "Developers go straight to code, bypassing docs entirely", "direction": "negative" },
+          { "label": "New hires can't distinguish current from stale docs", "direction": "negative" },
+          { "label": "Tribal knowledge becomes the real documentation", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Outdated docs actively cause incidents",
+        "impact": "Stale runbooks lead to wrong actions during outages",
+        "direction": "negative",
+        "children": [
+          { "label": "Following deprecated procedures makes incidents worse", "direction": "negative" },
+          { "label": "Onboarding engineers make mistakes from stale guides", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Documentation maintenance becomes unfunded mandate",
+        "impact": "No team owns doc freshness",
+        "direction": "negative",
+        "children": [
+          { "label": "Doc updates not included in sprint planning", "direction": "negative" },
+          { "label": "Documentation debt accumulates silently", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Documentation accuracy at 12 months", "before": "100% (at creation)", "after": "~50%", "delta": "-50%", "direction": "negative" },
+    { "metric": "Developer trust in docs", "before": "High (initial)", "after": "Low (after stale encounters)", "delta": "-70%", "direction": "negative" },
+    { "metric": "Onboarding time with stale docs", "before": "Reduced (good docs)", "after": "Increased (misleading docs)", "delta": "Worse than no docs", "direction": "negative" },
+    { "metric": "Incident resolution with stale runbooks", "before": "Faster (accurate runbook)", "after": "Slower (wrong procedures)", "delta": "+30% MTTR", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're planning a one-time documentation push without a maintenance plan",
+      "Your team doesn't have a process for doc review tied to code changes"
+    ],
+    "ifYouMust": [
+      "Tie documentation updates to code review — no PR merges without doc updates",
+      "Add expiration dates to all docs and automate staleness alerts",
+      "Keep docs close to code (README in repo, not separate wiki)",
+      "Document decisions and context, not just procedures — decisions age better"
+    ],
+    "alternatives": [
+      { "name": "Architecture Decision Records (ADRs)", "note": "Document why decisions were made — these don't go stale" },
+      { "name": "Living documentation from tests", "note": "Tests as documentation — always current because they run in CI" },
+      { "name": "Code-adjacent docs", "note": "Docs in the same repo as code, reviewed in the same PR" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Stripe Developer Documentation Study", "note": "Internal study showing documentation accuracy drops below 60% within 12 months without active maintenance" },
+    { "title": "Google Engineering Practices: Documentation", "url": "https://google.github.io/eng-practices/", "note": "Google's approach to keeping documentation current through code review integration" },
+    { "title": "Thoughtworks Technology Radar: Documentation as Code", "note": "Recommendation to treat documentation with the same rigor as code — version controlled, reviewed, tested" },
+    { "title": "Atlassian: The Cost of Outdated Documentation", "note": "Survey showing developers spend 30 minutes per day dealing with outdated or missing documentation" }
+  ],
+
+  "falsifiability": [
+    "Organizations with comprehensive documentation maintain accuracy above 80% at 12 months without dedicated maintenance effort",
+    "Developers consistently trust and use documentation even after encountering outdated content",
+    "One-time documentation investments produce lasting onboarding improvements beyond 6 months"
+  ],
+
+  "tags": ["documentation", "knowledge-management", "onboarding", "technical-debt", "organizational-memory"],
+  "crossReferences": ["O008", "O010", "T022"],
+
+  "seo": {
+    "description": "Technical documentation has a half-life — 50%+ becomes outdated within 12 months. Stale docs are worse than no docs, actively misleading developers and causing incidents.",
+    "keywords": ["documentation decay half-life", "documentation hidden costs", "documentation second order effects"]
+  }
+}

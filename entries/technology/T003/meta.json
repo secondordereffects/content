@@ -1,0 +1,103 @@
+{
+  "id": "T003",
+  "title": "TypeScript Migration Momentum",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Teams adopt TypeScript to catch bugs at compile time and improve code maintainability. The migration starts with a few files, strict mode off, liberal use of 'any'. Initial results are promising — IDE autocomplete improves, some bugs are caught early. But the migration creates a two-speed codebase. Typed and untyped code coexist, creating a boundary tax at every interface. The 'any' escape hatch becomes structural — teams use it to avoid blocking work, then never come back to fix it. Strict mode gets delayed indefinitely because enabling it would surface thousands of errors. Meanwhile, the type system's complexity grows: generics, conditional types, mapped types, template literal types. Senior engineers spend increasing time on type gymnastics rather than business logic. The migration that was supposed to take 3 months is still ongoing 2 years later.",
+
+  "hypothesis": "TypeScript catches bugs at compile time and improves code quality.",
+
+  "chain": {
+    "root": "Migrate JavaScript codebase to TypeScript",
+    "effects": [
+      {
+        "label": "Two-speed codebase emerges (typed vs untyped)",
+        "impact": "Boundary tax at every interface",
+        "direction": "negative",
+        "children": [
+          { "label": "'any' becomes structural escape hatch", "direction": "negative" },
+          { "label": "Type safety is partial and misleading", "direction": "negative" },
+          { "label": "Strict mode perpetually deferred", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Type complexity absorbs senior engineer time",
+        "impact": "15-25% of dev time on type gymnastics",
+        "direction": "negative",
+        "children": [
+          { "label": "Generic type puzzles replace business logic work", "direction": "negative" },
+          { "label": "Junior developers blocked by type errors they don't understand", "direction": "negative" },
+          { "label": "Build times increase 2-3x", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Migration timeline expands indefinitely",
+        "impact": "3-month estimate becomes 2+ years",
+        "direction": "negative",
+        "children": [
+          { "label": "Migration fatigue sets in, momentum stalls", "direction": "negative" },
+          { "label": "New features written in TS while old code stays JS", "direction": "neutral" }
+        ]
+      },
+      {
+        "label": "False sense of safety from partial typing",
+        "impact": "Runtime errors still occur at type boundaries",
+        "direction": "negative",
+        "children": [
+          { "label": "Teams reduce testing because 'TypeScript catches it'", "direction": "negative" },
+          { "label": "API boundary validation neglected", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Migration timeline", "before": "3 months estimated", "after": "2+ years actual", "delta": "+700%", "direction": "negative" },
+    { "metric": "Senior engineer time on types", "before": "0%", "after": "15-25%", "delta": "+20%", "direction": "negative" },
+    { "metric": "Build time", "before": "Baseline", "after": "2-3x slower", "delta": "+150%", "direction": "negative" },
+    { "metric": "Compile-time bugs caught", "before": "0", "after": "10-15% of total bugs", "delta": "+12%", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your team lacks TypeScript expertise and you can't afford the learning curve",
+      "Your codebase is small enough that runtime testing catches most bugs"
+    ],
+    "ifYouMust": [
+      "Start with strict mode on from day one — never plan to 'enable it later'",
+      "Ban 'any' in new code via ESLint rules, not just guidelines",
+      "Set a hard deadline for migration completion and cut scope if needed",
+      "Use runtime validation at API boundaries regardless of TypeScript types"
+    ],
+    "alternatives": [
+      { "name": "JSDoc type annotations", "note": "Type checking without migration — works with TypeScript compiler" },
+      { "name": "Greenfield TypeScript", "note": "New services in TypeScript, leave existing JS alone" },
+      { "name": "Runtime validation libraries", "note": "Zod, io-ts — validate at boundaries where bugs actually occur" }
+    ]
+  },
+
+  "sources": [
+    { "title": "State of JS Survey 2024: TypeScript Adoption", "url": "https://stateofjs.com", "note": "89% of JS developers use TypeScript, but satisfaction with migration experience is declining" },
+    { "title": "Airbnb TypeScript Migration Postmortem", "note": "Multi-year migration effort that required dedicated team and tooling investment" },
+    { "title": "DHH: Turbo 8 Drops TypeScript", "note": "High-profile decision to remove TypeScript from Turbo framework, citing complexity overhead" },
+    { "title": "Bloomberg Engineering: TypeScript at Scale", "note": "Build time and type complexity challenges at large codebase scale" }
+  ],
+
+  "falsifiability": [
+    "Teams completing TypeScript migrations report net positive ROI within the first year including migration costs",
+    "TypeScript strict mode adoption rate exceeds 70% among teams that started migration",
+    "Bug density reduction from TypeScript exceeds the engineering time invested in type maintenance"
+  ],
+
+  "tags": ["typescript", "migration", "type-safety", "developer-productivity", "technical-debt"],
+  "crossReferences": ["T010", "T002", "A015"],
+
+  "seo": {
+    "description": "TypeScript migrations estimated at 3 months take 2+ years. Senior engineers spend 15-25% of time on type gymnastics while 'any' becomes a structural escape hatch.",
+    "keywords": ["typescript migration hidden costs", "typescript second order effects", "typescript migration problems"]
+  }
+}

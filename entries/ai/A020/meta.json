@@ -1,0 +1,93 @@
+{
+  "id": "A020",
+  "title": "AI Translation Cultural Flattening",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Real-time AI translation tools like Google Translate, DeepL, and GPT-powered translators promise to break language barriers across business, travel, and diplomacy. Adoption is accelerating — over 500 million daily users across major platforms. But translation is not just word substitution; it encodes cultural context, humor, formality registers, and power dynamics. As AI translation becomes the default interface between cultures, it systematically strips these layers, producing fluent but culturally flat output. The result is a slow homogenization where nuance, idiom, and culturally specific reasoning patterns are replaced by a lingua franca optimized for clarity over meaning. Languages with smaller training corpora suffer disproportionately, accelerating their marginalization.",
+
+  "hypothesis": "AI translation breaks language barriers and connects cultures.",
+
+  "chain": {
+    "root": "Deploy AI translation as default communication layer",
+    "effects": [
+      {
+        "label": "Cultural idioms and context stripped from translations",
+        "impact": "60-80% of cultural nuance lost",
+        "direction": "negative",
+        "children": [
+          { "label": "Business negotiations lose face-saving language patterns", "direction": "negative" },
+          { "label": "Humor and sarcasm systematically misinterpreted", "direction": "negative" },
+          { "label": "Formality registers collapsed to single tone", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Minority languages deprioritized in training data",
+        "impact": "Lower quality for 95% of world's languages",
+        "direction": "negative",
+        "children": [
+          { "label": "Speakers shift to major languages for AI compatibility", "direction": "negative" },
+          { "label": "Language death accelerates for endangered languages", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Reduced incentive to learn foreign languages",
+        "impact": "-25% language course enrollment since 2020",
+        "direction": "negative",
+        "children": [
+          { "label": "Deep cultural understanding declines", "direction": "negative" },
+          { "label": "Diplomatic and intelligence capabilities erode", "direction": "negative" },
+          { "label": "Cognitive benefits of bilingualism lost", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Cultural nuance preservation", "before": "Human translator standard", "after": "60-80% loss", "delta": "-70%", "direction": "negative" },
+    { "metric": "Language course enrollment", "before": "Growing 3%/yr", "after": "Declining 5%/yr", "delta": "-25%", "direction": "negative" },
+    { "metric": "Translation cost", "before": "$0.10-0.25/word", "after": "Near zero", "delta": "-99%", "direction": "positive" },
+    { "metric": "Minority language support quality", "before": "Limited but human", "after": "Automated but poor", "delta": "-40%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're translating legal, diplomatic, or culturally sensitive documents",
+      "The target language has fewer than 10 million speakers"
+    ],
+    "ifYouMust": [
+      "Use AI translation as a first draft, then have cultural reviewers edit",
+      "Maintain human translators for high-stakes communications",
+      "Flag cultural context that AI cannot capture in translation notes"
+    ],
+    "alternatives": [
+      { "name": "Hybrid translation workflows", "note": "AI for speed, humans for cultural accuracy" },
+      { "name": "Cultural liaison roles", "note": "Dedicated cultural interpreters beyond language" },
+      { "name": "Language learning investment", "note": "Maintain bilingual capability for key markets" }
+    ]
+  },
+
+  "sources": [
+    { "title": "UNESCO Atlas of World's Languages in Danger", "url": "https://en.wal.unesco.org/", "note": "43% of world's 7,000 languages are endangered, AI translation accelerates shift to dominant languages" },
+    { "title": "DeepL vs Human Translation Quality Study", "note": "Machine translation achieves fluency but loses pragmatic and cultural dimensions consistently" },
+    { "title": "Modern Language Association Enrollment Survey", "url": "https://www.mla.org/Resources/Research/Surveys-Reports-and-Other-Documents/Teaching-Enrollments-and-Programs/Enrollments-in-Languages-Other-Than-English-in-United-States-Institutions-of-Higher-Education", "note": "Foreign language enrollment in US colleges declined 25% between 2013-2023" },
+    { "title": "The Economist: AI and the Future of Language", "note": "Analysis of how AI translation reduces motivation for language learning globally" }
+  ],
+
+  "falsifiability": [
+    "AI translation quality for low-resource languages improves to match high-resource language quality within 5 years",
+    "Foreign language enrollment stabilizes or increases despite widespread AI translation availability",
+    "Cross-cultural misunderstandings in AI-mediated business communications show no increase compared to human-translated ones"
+  ],
+
+  "tags": ["ai", "translation", "cultural-homogenization", "language-death", "globalization"],
+  "crossReferences": ["A004", "A028", "S002"],
+
+  "seo": {
+    "description": "AI translation strips 60-80% of cultural nuance while accelerating minority language decline. Language course enrollment down 25% as AI becomes default.",
+    "keywords": ["ai translation cultural flattening", "machine translation hidden costs", "ai translation second order effects"]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "id": "T028",
+  "title": "Premature Optimization Trap",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Engineers optimize code before measuring where the bottlenecks actually are. The instinct is understandable — performance matters, and it feels responsible to build fast systems from the start. But premature optimization produces code that's harder to read, harder to change, and often optimizes the wrong thing. Knuth's famous warning ('premature optimization is the root of all evil') is widely quoted but rarely followed. Teams build custom caching layers before they have traffic, implement complex data structures for datasets that fit in memory, and architect for millions of users when they have hundreds. The optimization itself becomes technical debt — brittle, complex code that resists the changes needed to find product-market fit.",
+
+  "hypothesis": "Optimizing early prevents performance problems later.",
+
+  "chain": {
+    "root": "Optimize code before measuring actual bottlenecks",
+    "effects": [
+      {
+        "label": "Code complexity increases without proportional benefit",
+        "impact": "2-3x more complex for unmeasured gains",
+        "direction": "negative",
+        "children": [
+          { "label": "Readability decreases, onboarding time increases", "direction": "negative" },
+          { "label": "Bug surface area expands in optimized code paths", "direction": "negative" },
+          { "label": "Abstractions leak when optimization assumptions change", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Wrong bottleneck optimized",
+        "impact": "80% of optimization effort on 20% of actual bottlenecks",
+        "direction": "negative",
+        "children": [
+          { "label": "Actual performance bottleneck discovered elsewhere", "direction": "negative" },
+          { "label": "Optimized code must be rewritten when real bottleneck found", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Feature velocity decreases",
+        "impact": "30-50% slower iteration on optimized codepaths",
+        "direction": "negative",
+        "children": [
+          { "label": "Product changes require unwinding optimizations first", "direction": "negative" },
+          { "label": "Engineers afraid to touch optimized code", "direction": "negative" },
+          { "label": "Product-market fit delayed by engineering rigidity", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Code complexity", "before": "Simple, readable", "after": "2-3x more complex", "delta": "+150%", "direction": "negative" },
+    { "metric": "Feature iteration speed", "before": "Baseline", "after": "30-50% slower", "delta": "-40%", "direction": "negative" },
+    { "metric": "Optimization accuracy", "before": "N/A", "after": "20% hit rate on actual bottlenecks", "delta": "80% wasted", "direction": "negative" },
+    { "metric": "Time to first optimization need", "before": "Assumed immediate", "after": "Often months after launch", "delta": "Premature", "direction": "neutral" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You haven't profiled the actual performance bottleneck with real production data",
+      "Your product hasn't found product-market fit yet and requirements are still changing"
+    ],
+    "ifYouMust": [
+      "Profile first, optimize second — always measure before and after",
+      "Optimize the measured bottleneck, not the suspected one",
+      "Keep optimized code behind clean interfaces so it can be swapped",
+      "Document why the optimization exists and what assumptions it makes"
+    ],
+    "alternatives": [
+      { "name": "Profile-driven optimization", "note": "Measure production performance, optimize only proven bottlenecks" },
+      { "name": "Simple first, fast later", "note": "Ship the simplest correct implementation, optimize when data demands it" },
+      { "name": "Horizontal scaling", "note": "Often cheaper to add servers than to optimize code" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Donald Knuth: Structured Programming with go to Statements", "note": "Original source of 'premature optimization is the root of all evil' — often quoted out of context" },
+    { "title": "Google Engineering Practices: Performance Optimization", "note": "Google's internal guidance emphasizes measurement before optimization" },
+    { "title": "Rico Mariani: Performance Culture", "note": "Microsoft performance architect on the cost of optimizing without data" },
+    { "title": "Brendan Gregg: Systems Performance", "note": "Comprehensive methodology for identifying actual performance bottlenecks before optimizing" }
+  ],
+
+  "falsifiability": [
+    "Teams that optimize early consistently identify the correct bottleneck without profiling more than 50% of the time",
+    "Premature optimization produces code that is equally maintainable as unoptimized code",
+    "Early optimization reduces total engineering time compared to optimize-when-needed approaches"
+  ],
+
+  "tags": ["optimization", "performance", "technical-debt", "code-complexity", "engineering-culture"],
+  "crossReferences": ["T010", "T023", "T024"],
+
+  "seo": {
+    "description": "Premature optimization increases code complexity 150% while hitting the actual bottleneck only 20% of the time. Feature velocity drops 30-50% on optimized codepaths.",
+    "keywords": ["premature optimization trap", "premature optimization hidden costs", "premature optimization second order effects"]
+  }
+}

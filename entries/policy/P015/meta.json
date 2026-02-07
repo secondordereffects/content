@@ -1,0 +1,103 @@
+{
+  "id": "P015",
+  "title": "EU AI Act Innovation Chill",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "The EU AI Act, effective 2024, is the world's first comprehensive AI regulation framework. It classifies AI systems by risk level and imposes requirements ranging from transparency obligations to outright bans. The intent is laudable — prevent AI harms before they occur. But regulation of a fast-moving technology creates a chilling effect on innovation. European AI startups face compliance costs that US and Chinese competitors don't. Large language model developers must navigate complex classification systems. The definition of 'high-risk AI' is broad enough to capture many beneficial applications. Companies choose to launch in the US first, or skip the EU entirely. The Brussels Effect — where EU regulation becomes global standard — may export compliance costs worldwide, but it may also export innovation suppression.",
+
+  "hypothesis": "AI regulation ensures safety and builds public trust in AI systems.",
+
+  "chain": {
+    "root": "Implement comprehensive AI regulation (EU AI Act)",
+    "effects": [
+      {
+        "label": "Compliance costs disproportionately burden startups",
+        "impact": "€200K-2M compliance cost for high-risk classification",
+        "direction": "negative",
+        "children": [
+          { "label": "European AI startups relocate to US or UK", "direction": "negative" },
+          { "label": "Venture capital for EU AI companies declines", "direction": "negative" },
+          { "label": "Large incumbents benefit from regulatory moat", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Broad 'high-risk' classification captures beneficial AI",
+        "impact": "Medical, educational, and accessibility AI face heavy regulation",
+        "direction": "negative",
+        "children": [
+          { "label": "AI-powered medical diagnostics delayed by compliance requirements", "direction": "negative" },
+          { "label": "Educational AI tools avoid EU market", "direction": "negative" },
+          { "label": "Accessibility tools classified as high-risk due to disability data processing", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Innovation shifts to less regulated jurisdictions",
+        "impact": "EU share of global AI investment declining",
+        "direction": "negative",
+        "children": [
+          { "label": "AI talent migrates to US and UK", "direction": "negative" },
+          { "label": "EU becomes AI consumer rather than AI producer", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Brussels Effect exports compliance costs globally",
+        "impact": "Companies build to EU standard for global products",
+        "direction": "neutral",
+        "children": [
+          { "label": "Global AI safety improves through regulatory floor", "direction": "positive" },
+          { "label": "Innovation pace slows globally, not just in EU", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "EU AI startup formation", "before": "Growing", "after": "Declining relative to US", "delta": "-20%", "direction": "negative" },
+    { "metric": "Compliance cost per AI product", "before": "Zero (pre-regulation)", "after": "€200K-2M", "delta": "New cost", "direction": "negative" },
+    { "metric": "Time to market for AI products in EU", "before": "Baseline", "after": "+6-18 months for compliance", "delta": "+50%", "direction": "negative" },
+    { "metric": "AI safety incidents", "before": "Unregulated", "after": "Potentially reduced", "delta": "TBD", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your AI regulation doesn't include exemptions or fast-tracks for beneficial applications",
+      "Compliance costs exceed the revenue potential for startups in your jurisdiction"
+    ],
+    "ifYouMust": [
+      "Create regulatory sandboxes for AI startups to test without full compliance burden",
+      "Narrow high-risk classification to genuinely dangerous applications",
+      "Provide compliance toolkits and subsidies for small companies",
+      "Build sunset clauses that force re-evaluation as technology evolves"
+    ],
+    "alternatives": [
+      { "name": "Sector-specific AI regulation", "note": "Regulate AI in healthcare, finance separately rather than one-size-fits-all" },
+      { "name": "Outcome-based regulation", "note": "Regulate AI harms, not AI technology — focus on results not methods" },
+      { "name": "Regulatory sandboxes", "note": "Allow experimentation with reduced compliance in controlled environments" }
+    ]
+  },
+
+  "sources": [
+    { "title": "EU AI Act Official Text", "url": "https://artificialintelligenceact.eu/", "note": "Full text of the regulation with risk classification framework" },
+    { "title": "Stanford HAI: EU AI Act Impact Assessment", "note": "Analysis of compliance costs and innovation impact across EU AI ecosystem" },
+    { "title": "Atomico State of European Tech 2024", "note": "Data showing EU AI investment declining relative to US, with regulation cited as factor" },
+    { "title": "Centre for Data Innovation: EU AI Act Compliance Costs", "note": "Estimated compliance costs of €200K-2M per high-risk AI system" }
+  ],
+
+  "falsifiability": [
+    "EU AI startup formation and investment increases after AI Act implementation",
+    "Compliance costs for the AI Act are offset by increased consumer trust and market expansion",
+    "EU maintains or increases its share of global AI talent and investment post-regulation"
+  ],
+
+  "tags": ["ai-regulation", "eu-ai-act", "innovation", "compliance", "brussels-effect", "policy"],
+  "crossReferences": ["A006", "P001", "P016"],
+
+  "seo": {
+    "description": "The EU AI Act imposes €200K-2M compliance costs per high-risk AI system, chilling startup formation and pushing AI innovation to less regulated jurisdictions.",
+    "keywords": ["eu ai act innovation chill", "ai regulation hidden costs", "eu ai act second order effects"]
+  }
+}

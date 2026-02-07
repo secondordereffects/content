@@ -1,0 +1,95 @@
+{
+  "id": "S006",
+  "title": "Meritocracy Myth Reinforcement",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "The meritocracy narrative — that success comes from hard work and talent — is foundational to modern capitalism. It motivates effort, justifies inequality, and provides a framework for social mobility. But research consistently shows that outcomes correlate more strongly with starting conditions (family wealth, zip code, network access) than with individual effort or ability. The meritocracy myth creates a double bind: those who succeed attribute it to merit (ignoring structural advantages), and those who fail blame themselves (ignoring structural barriers). This self-reinforcing narrative makes systemic reform harder because both winners and losers internalize the framework. The myth doesn't just describe reality inaccurately — it actively shapes behavior in ways that perpetuate the inequality it claims to solve.",
+
+  "hypothesis": "Success comes primarily from hard work and talent in a meritocratic system.",
+
+  "chain": {
+    "root": "Promote meritocracy as the organizing principle of society",
+    "effects": [
+      {
+        "label": "Structural advantages become invisible",
+        "impact": "Winners attribute success entirely to personal merit",
+        "direction": "negative",
+        "children": [
+          { "label": "Wealthy families' advantages (education, networks, capital) unacknowledged", "direction": "negative" },
+          { "label": "Survivorship bias dominates success narratives", "direction": "negative" },
+          { "label": "Policy discussions focus on individual behavior, not systemic factors", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Failure becomes personal moral failing",
+        "impact": "Mental health impact on those who 'don't make it'",
+        "direction": "negative",
+        "children": [
+          { "label": "Poverty stigmatized as laziness rather than structural outcome", "direction": "negative" },
+          { "label": "Depression and anxiety increase among those who internalize failure", "direction": "negative" },
+          { "label": "Support for social safety nets erodes — 'they should work harder'", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Social mobility actually decreases",
+        "impact": "Intergenerational income elasticity increasing",
+        "direction": "negative",
+        "children": [
+          { "label": "Meritocratic framing reduces support for redistributive policies", "direction": "negative" },
+          { "label": "Education system reinforces existing class structure", "direction": "negative" },
+          { "label": "Network-based opportunity hoarding increases", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Intergenerational income elasticity (US)", "before": "0.3 (1970s)", "after": "0.5 (2020s)", "delta": "+67%", "direction": "negative" },
+    { "metric": "Belief in meritocracy", "before": "Baseline", "after": "70%+ believe hard work leads to success", "delta": "Persistent", "direction": "neutral" },
+    { "metric": "Support for redistributive policy", "before": "Higher in meritocratic framing", "after": "Lower — 'they should earn it'", "delta": "-25%", "direction": "negative" },
+    { "metric": "Mental health impact of perceived failure", "before": "External attribution", "after": "Internal attribution (self-blame)", "delta": "Increased distress", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your organization's success narrative ignores structural advantages like funding, timing, and network access",
+      "Your hiring and promotion processes claim to be purely merit-based without auditing for bias"
+    ],
+    "ifYouMust": [
+      "Acknowledge structural factors alongside individual effort in success narratives",
+      "Audit promotion and compensation systems for bias that masquerades as merit",
+      "Invest in genuine opportunity creation (mentorship, sponsorship) not just meritocratic rhetoric",
+      "Separate effort recognition from outcome attribution"
+    ],
+    "alternatives": [
+      { "name": "Contributionism", "note": "Value contributions to collective good, not just individual achievement" },
+      { "name": "Structural opportunity investment", "note": "Create access to networks, capital, and education that enable merit to matter" },
+      { "name": "Honest success narratives", "note": "Acknowledge luck, timing, and privilege alongside effort and talent" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Raj Chetty: Equality of Opportunity Project", "url": "https://opportunityinsights.org/", "note": "Landmark research showing zip code predicts economic outcomes more than individual effort" },
+    { "title": "Michael Sandel: The Tyranny of Merit", "note": "Philosophical analysis of how meritocratic framing increases inequality and erodes solidarity" },
+    { "title": "Daniel Markovits: The Meritocracy Trap", "note": "Research showing meritocracy has become a mechanism for elite reproduction rather than social mobility" },
+    { "title": "World Economic Forum: Global Social Mobility Index", "note": "Data showing social mobility declining in most developed nations despite meritocratic rhetoric" }
+  ],
+
+  "falsifiability": [
+    "Individual effort and talent predict economic outcomes more strongly than family wealth and zip code",
+    "Countries with stronger meritocratic beliefs show higher social mobility than those without",
+    "Meritocratic framing increases rather than decreases support for policies that create genuine equal opportunity"
+  ],
+
+  "tags": ["meritocracy", "inequality", "social-mobility", "structural-advantage", "mental-health", "narrative"],
+  "crossReferences": ["S017", "S005", "O006"],
+
+  "seo": {
+    "description": "The meritocracy myth makes structural advantages invisible while turning failure into personal shame. Social mobility has declined 67% even as belief in meritocracy persists.",
+    "keywords": ["meritocracy myth reinforcement", "meritocracy hidden costs", "meritocracy second order effects"]
+  }
+}

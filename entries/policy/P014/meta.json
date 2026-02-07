@@ -1,0 +1,95 @@
+{
+  "id": "P014",
+  "title": "Data Localization Balkanization",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Countries increasingly require that citizen data be stored within national borders — India's data localization rules, China's Cybersecurity Law, Russia's Federal Law 242, the EU's evolving data sovereignty framework. The rationale is sovereignty and security: governments want jurisdiction over their citizens' data. But data localization fragments the global internet. Companies must build redundant infrastructure in every jurisdiction. Startups face prohibitive compliance costs. Cloud providers must build local data centers, passing costs to customers. Cross-border services become legally complex. The internet, designed as a borderless network, is being carved into national data territories. The irony: localization often doesn't improve security (local data centers can be less secure than global cloud providers) and creates new attack surfaces through data replication.",
+
+  "hypothesis": "Data sovereignty and localization protect citizens' data and national security.",
+
+  "chain": {
+    "root": "Mandate data localization within national borders",
+    "effects": [
+      {
+        "label": "Infrastructure costs multiply for global companies",
+        "impact": "30-60% increase in cloud infrastructure costs",
+        "direction": "negative",
+        "children": [
+          { "label": "Redundant data centers required in each jurisdiction", "direction": "negative" },
+          { "label": "Costs passed to consumers through higher prices", "direction": "negative" },
+          { "label": "Startups priced out of international markets", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Internet fragments into national data territories",
+        "impact": "Cross-border services legally complex",
+        "direction": "negative",
+        "children": [
+          { "label": "Global SaaS products must maintain separate instances per country", "direction": "negative" },
+          { "label": "Data sharing for research and collaboration restricted", "direction": "negative" },
+          { "label": "Innovation slows as companies avoid multi-jurisdiction complexity", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Security doesn't necessarily improve",
+        "impact": "Local infrastructure often less secure than global cloud",
+        "direction": "negative",
+        "children": [
+          { "label": "Local data centers may lack security expertise of global providers", "direction": "negative" },
+          { "label": "Data replication across jurisdictions creates more attack surfaces", "direction": "negative" },
+          { "label": "Government access to localized data easier, not harder", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Cloud infrastructure costs", "before": "Global deployment", "after": "+30-60% for localization compliance", "delta": "+45%", "direction": "negative" },
+    { "metric": "Startup international expansion", "before": "Deploy globally from day one", "after": "Jurisdiction-by-jurisdiction compliance", "delta": "+200% legal costs", "direction": "negative" },
+    { "metric": "Cross-border data flows", "before": "Relatively free", "after": "Restricted in 75+ countries", "delta": "-40%", "direction": "negative" },
+    { "metric": "Data breach rates in localized vs global infrastructure", "before": "Global cloud baseline", "after": "No measurable improvement", "delta": "Neutral", "direction": "neutral" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your data localization mandate doesn't include security standards for local infrastructure",
+      "You're requiring localization without assessing whether it actually improves data protection"
+    ],
+    "ifYouMust": [
+      "Pair localization requirements with minimum security standards for local infrastructure",
+      "Create mutual recognition agreements with allied nations to reduce fragmentation",
+      "Exempt small businesses and startups from full localization requirements",
+      "Focus on data access controls rather than data location as the security mechanism"
+    ],
+    "alternatives": [
+      { "name": "Data access controls", "note": "Control who can access data regardless of where it's stored" },
+      { "name": "Mutual recognition frameworks", "note": "Bilateral agreements allowing data flow between trusted jurisdictions" },
+      { "name": "Encryption-based sovereignty", "note": "Data can be stored anywhere if encryption keys are nationally controlled" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Brookings Institution: The Cost of Data Localization", "note": "Analysis showing data localization reduces GDP growth by 0.7-1.7% in implementing countries" },
+    { "title": "OECD: Cross-Border Data Flows Report", "note": "Comprehensive study of how data localization fragments the global digital economy" },
+    { "title": "Information Technology and Innovation Foundation: Data Localization Barriers", "url": "https://itif.org/publications/2021/07/19/how-barriers-cross-border-data-flows-are-spreading-globally/", "note": "Tracking 75+ countries with data localization measures and their economic impact" },
+    { "title": "European Commission: Data Strategy Impact Assessment", "note": "EU's own assessment of costs and benefits of data sovereignty measures" }
+  ],
+
+  "falsifiability": [
+    "Countries with strict data localization show measurably lower data breach rates than countries without",
+    "Data localization costs are offset by economic benefits within 5 years of implementation",
+    "Cross-border data flow restrictions don't reduce international startup formation rates"
+  ],
+
+  "tags": ["data-localization", "sovereignty", "internet-fragmentation", "regulation", "privacy", "infrastructure"],
+  "crossReferences": ["P001", "P020", "I005"],
+
+  "seo": {
+    "description": "Data localization mandates increase cloud costs 30-60% and fragment the global internet into national territories — often without improving actual data security.",
+    "keywords": ["data localization balkanization", "data sovereignty hidden costs", "data localization second order effects"]
+  }
+}

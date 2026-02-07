@@ -1,0 +1,94 @@
+{
+  "id": "I012",
+  "title": "CDN Centralization Fragility",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Content Delivery Networks were designed to make the internet faster and more reliable by distributing content across global edge servers. And they do — for normal operations. But the CDN market has consolidated dramatically. Cloudflare, Akamai, and Fastly together serve a majority of internet traffic. When one of these providers has an outage, it doesn't take down one website — it takes down thousands simultaneously. The June 2021 Fastly outage knocked out Amazon, Reddit, the UK government, and major news sites for an hour. The Cloudflare outage in June 2022 disrupted Discord, Shopify, and thousands of businesses. The infrastructure designed to prevent single points of failure has itself become a single point of failure, just at a higher level of abstraction.",
+
+  "hypothesis": "CDNs make the internet faster and more reliable.",
+
+  "chain": {
+    "root": "Consolidate internet traffic through major CDN providers",
+    "effects": [
+      {
+        "label": "CDN market consolidates to 3-4 dominant providers",
+        "impact": "Top 3 CDNs serve majority of web traffic",
+        "direction": "negative",
+        "children": [
+          { "label": "Single CDN outage affects thousands of sites simultaneously", "direction": "negative" },
+          { "label": "Correlated failures across unrelated services", "direction": "negative" },
+          { "label": "DDoS attacks target CDN infrastructure for maximum impact", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Websites lose ability to function without CDN",
+        "impact": "Origin servers can't handle direct traffic",
+        "direction": "negative",
+        "children": [
+          { "label": "Origin infrastructure downsized because CDN handles load", "direction": "negative" },
+          { "label": "CDN becomes required infrastructure, not optional optimization", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Configuration errors cascade globally",
+        "impact": "Single misconfiguration affects millions of users",
+        "direction": "negative",
+        "children": [
+          { "label": "BGP misconfigurations propagate through CDN network", "direction": "negative" },
+          { "label": "SSL certificate issues affect all sites on shared infrastructure", "direction": "negative" },
+          { "label": "WAF rule changes can block legitimate traffic globally", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Average page load time", "before": "3-5 seconds", "after": "1-2 seconds", "delta": "-60%", "direction": "positive" },
+    { "metric": "Blast radius of CDN outage", "before": "Single site", "after": "Thousands of sites", "delta": "+10,000%", "direction": "negative" },
+    { "metric": "Internet resilience", "before": "Distributed", "after": "Concentrated in 3-4 providers", "delta": "Fragile", "direction": "negative" },
+    { "metric": "Major CDN outages per year", "before": "Rare", "after": "4-6 significant incidents", "delta": "Increasing", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your entire infrastructure depends on a single CDN with no fallback",
+      "Your origin servers can't handle any direct traffic without CDN"
+    ],
+    "ifYouMust": [
+      "Implement multi-CDN failover for critical services",
+      "Maintain origin server capacity to handle degraded traffic during CDN outages",
+      "Use DNS-based failover that can route around CDN outages",
+      "Test CDN failure scenarios regularly in disaster recovery drills"
+    ],
+    "alternatives": [
+      { "name": "Multi-CDN architecture", "note": "Use 2+ CDN providers with automatic failover" },
+      { "name": "Edge computing at origin", "note": "Distribute origin servers geographically rather than relying on CDN edge" },
+      { "name": "Graceful degradation", "note": "Design sites to function (slowly) without CDN rather than fail completely" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Fastly Outage Post-Incident Report (June 2021)", "note": "Single configuration error took down Amazon, Reddit, UK government sites for ~1 hour" },
+    { "title": "Cloudflare Outage Report (June 2022)", "note": "BGP configuration change disrupted Discord, Shopify, and thousands of businesses" },
+    { "title": "W3Techs: CDN Market Share", "url": "https://w3techs.com/technologies/overview/content_delivery", "note": "Market concentration data showing top 3 CDNs serve majority of web traffic" },
+    { "title": "ACM: The Consolidation of Internet Infrastructure", "note": "Academic analysis of how CDN consolidation creates systemic risk for the internet" }
+  ],
+
+  "falsifiability": [
+    "CDN market diversifies to 10+ providers with roughly equal market share",
+    "Major CDN outages decrease in frequency and blast radius over time",
+    "Websites maintain full functionality during CDN provider outages without multi-CDN architecture"
+  ],
+
+  "tags": ["cdn", "infrastructure", "centralization", "resilience", "outages", "internet"],
+  "crossReferences": ["I001", "I005", "T002"],
+
+  "seo": {
+    "description": "CDNs make the internet faster but 3 providers serve most traffic. A single CDN outage now takes down thousands of sites simultaneously — fragility at scale.",
+    "keywords": ["cdn centralization fragility", "cdn outage hidden costs", "cdn second order effects"]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "id": "A025",
+  "title": "MCP Protocol Fragmentation",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.70,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "The Model Context Protocol (MCP) was introduced by Anthropic to standardize how AI models interact with external tools and data sources. The promise: a universal interface that lets any AI agent use any tool, reducing integration complexity. But standardization attempts in fast-moving ecosystems often produce the opposite effect. Multiple competing implementations emerge. OpenAI, Google, and others develop their own tool-use protocols. MCP itself forks into incompatible versions as different communities extend it for their needs. The result mirrors the XKCD 'Standards' comic — instead of one universal protocol, we get N+1 protocols, each claiming to be the standard.",
+
+  "hypothesis": "MCP standardizes AI tool use and reduces integration complexity.",
+
+  "chain": {
+    "root": "Introduce MCP as universal AI tool protocol",
+    "effects": [
+      {
+        "label": "Competing protocols emerge from other AI labs",
+        "impact": "3-5 competing standards within 18 months",
+        "direction": "negative",
+        "children": [
+          { "label": "Tool developers must support multiple protocols", "direction": "negative" },
+          { "label": "Integration complexity increases rather than decreases", "direction": "negative" },
+          { "label": "Vendor lock-in through protocol choice", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "MCP itself fragments into incompatible extensions",
+        "impact": "Community forks for specialized use cases",
+        "direction": "negative",
+        "children": [
+          { "label": "Enterprise MCP diverges from open-source MCP", "direction": "negative" },
+          { "label": "Security models differ across implementations", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Middleware and adapter layer emerges",
+        "impact": "New abstraction layer adds latency and complexity",
+        "direction": "neutral",
+        "children": [
+          { "label": "Protocol translation becomes a business", "direction": "neutral" },
+          { "label": "Debugging tool interactions becomes harder", "direction": "negative" },
+          { "label": "Performance overhead from protocol bridging", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Tool integration complexity", "before": "N custom integrations", "after": "N protocols × M tools", "delta": "Increased", "direction": "negative" },
+    { "metric": "Time to integrate new tool", "before": "Days (custom)", "after": "Days (per protocol)", "delta": "No improvement", "direction": "neutral" },
+    { "metric": "Protocol maintenance burden", "before": "Zero (no standard)", "after": "Multiple standards to track", "delta": "+300%", "direction": "negative" },
+    { "metric": "Interoperability", "before": "None (ad hoc)", "after": "Partial (protocol-specific)", "delta": "+30%", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're betting your entire tool ecosystem on a single protocol before the market settles",
+      "You're building protocol-specific tools without an abstraction layer"
+    ],
+    "ifYouMust": [
+      "Build tool integrations behind an abstraction layer that can swap protocols",
+      "Support the protocol your primary AI provider uses, but design for portability",
+      "Monitor protocol evolution and avoid deep coupling to implementation details"
+    ],
+    "alternatives": [
+      { "name": "Protocol-agnostic tool layer", "note": "Abstract tool definitions that compile to any protocol" },
+      { "name": "REST/GraphQL tool APIs", "note": "Standard web APIs that any protocol can wrap" },
+      { "name": "Wait-and-see approach", "note": "Let the market pick a winner before committing deeply" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Anthropic MCP Specification", "url": "https://modelcontextprotocol.io/", "note": "Original protocol specification for AI tool interaction standardization" },
+    { "title": "XKCD 927: Standards", "url": "https://xkcd.com/927/", "note": "The classic illustration of how standardization attempts multiply standards" },
+    { "title": "OpenAI Function Calling vs MCP Comparison", "note": "Analysis showing fundamental design differences between competing AI tool protocols" },
+    { "title": "History of Protocol Wars: USB, Charging Standards, IM Protocols", "note": "Historical pattern where competing standards delay adoption by 3-5 years" }
+  ],
+
+  "falsifiability": [
+    "MCP achieves 80%+ adoption across major AI providers within 2 years without significant forks",
+    "Tool developers report reduced integration complexity after MCP adoption compared to pre-MCP custom integrations",
+    "No competing protocol from OpenAI, Google, or Meta gains significant market share"
+  ],
+
+  "tags": ["ai", "protocols", "standardization", "fragmentation", "interoperability", "mcp"],
+  "crossReferences": ["A009", "A024", "T005"],
+
+  "seo": {
+    "description": "MCP aims to standardize AI tool use but risks the classic standards trap — competing protocols from major labs may increase rather than reduce complexity.",
+    "keywords": ["mcp protocol fragmentation", "ai tool standardization hidden costs", "model context protocol second order effects"]
+  }
+}

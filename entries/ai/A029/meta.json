@@ -1,0 +1,93 @@
+{
+  "id": "A029",
+  "title": "Autonomous Driving Moral Outsourcing",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Self-driving vehicles are marketed on safety — human error causes 94% of crashes. The logic seems clear: remove the human, remove the error. But autonomous driving doesn't eliminate moral decisions; it pre-encodes them into algorithms. When a crash is unavoidable, the vehicle's software has already decided who bears the risk — the occupant, the pedestrian, the cyclist. These decisions, previously made in split-second human reactions, are now made months earlier by engineers in conference rooms, then frozen into code. Society hasn't consented to this transfer of moral agency. Liability frameworks haven't adapted. And the trolley problem, once a philosophy thought experiment, becomes a product specification.",
+
+  "hypothesis": "Self-driving cars are safer than human drivers and will reduce traffic deaths.",
+
+  "chain": {
+    "root": "Deploy autonomous vehicles at scale",
+    "effects": [
+      {
+        "label": "Moral decisions pre-encoded into algorithms",
+        "impact": "Ethics become product specifications",
+        "direction": "negative",
+        "children": [
+          { "label": "Engineers make life-death tradeoffs without public input", "direction": "negative" },
+          { "label": "Different manufacturers encode different ethical frameworks", "direction": "negative" },
+          { "label": "Trolley problem becomes a real product decision", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Liability shifts from driver to manufacturer/software",
+        "impact": "Legal frameworks lag 5-10 years",
+        "direction": "negative",
+        "children": [
+          { "label": "Insurance models break down", "direction": "negative" },
+          { "label": "Crash victims face corporate legal teams instead of individual drivers", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Human driving skills atrophy during transition period",
+        "impact": "Manual override capability degrades",
+        "direction": "negative",
+        "children": [
+          { "label": "Handoff moments become most dangerous phase", "direction": "negative" },
+          { "label": "Drivers unable to take control in edge cases", "direction": "negative" },
+          { "label": "Complacency accidents increase during semi-autonomous phase", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Traffic fatalities", "before": "38,000/yr (US)", "after": "Projected -50% at full autonomy", "delta": "-50%", "direction": "positive" },
+    { "metric": "Liability clarity", "before": "Driver at fault (clear)", "after": "Manufacturer/software/driver (unclear)", "delta": "Ambiguous", "direction": "negative" },
+    { "metric": "Moral agency transparency", "before": "Individual human judgment", "after": "Opaque algorithmic decision", "delta": "-100%", "direction": "negative" },
+    { "metric": "Transition period risk", "before": "Human-only driving", "after": "Mixed human/autonomous traffic", "delta": "+15% edge case risk", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your autonomous system lacks transparent documentation of ethical decision frameworks",
+      "You're deploying in mixed traffic without robust handoff protocols"
+    ],
+    "ifYouMust": [
+      "Publish the ethical framework your autonomous system uses for unavoidable harm scenarios",
+      "Design handoff protocols that account for human skill atrophy",
+      "Advocate for updated liability frameworks before mass deployment"
+    ],
+    "alternatives": [
+      { "name": "Advanced driver assistance (ADAS)", "note": "Augment human driving rather than replace it" },
+      { "name": "Geofenced autonomy", "note": "Full autonomy only in controlled environments like highways" },
+      { "name": "Public transit investment", "note": "Reduce individual vehicle dependency entirely" }
+    ]
+  },
+
+  "sources": [
+    { "title": "NHTSA: Critical Reasons for Crashes", "url": "https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812115", "note": "94% of serious crashes involve human error, the core safety argument for autonomous vehicles" },
+    { "title": "MIT Moral Machine Experiment", "url": "https://www.nature.com/articles/s41586-018-0637-6", "note": "Global survey revealing deep cultural disagreements on autonomous vehicle ethical decisions" },
+    { "title": "Tesla Autopilot NHTSA Investigation Reports", "note": "Multiple investigations into crashes during semi-autonomous operation, highlighting handoff dangers" },
+    { "title": "Waymo Safety Report 2024", "note": "Data showing autonomous vehicles perform better than human drivers in controlled conditions but struggle with edge cases" }
+  ],
+
+  "falsifiability": [
+    "Autonomous vehicles achieve lower fatality rates than human drivers across all conditions including edge cases within 5 years of deployment",
+    "Clear liability frameworks for autonomous vehicle accidents are established and adopted across major markets",
+    "Public acceptance of algorithmic moral decisions in autonomous vehicles reaches majority approval"
+  ],
+
+  "tags": ["ai", "autonomous-vehicles", "ethics", "liability", "safety", "moral-agency"],
+  "crossReferences": ["A018", "A009", "I009"],
+
+  "seo": {
+    "description": "Self-driving cars don't eliminate moral decisions — they pre-encode them into algorithms. Liability, ethics, and skill atrophy create hidden risks in the transition.",
+    "keywords": ["autonomous driving moral outsourcing", "self-driving car ethics", "autonomous vehicle second order effects"]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "id": "O001",
+  "title": "Remote Work Coordination Cost",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "The post-pandemic remote work revolution promised flexibility, reduced commutes, and access to global talent. Companies embraced distributed teams, closed offices, and hired across time zones. Productivity metrics initially looked great — individual output increased. But coordination costs were quietly compounding. Synchronous overlap windows shrank as teams spanned more time zones. Decisions that took a 5-minute hallway conversation now required scheduling a meeting 3 days out. Context was lost in async handoffs. New hires took 2x longer to onboard without osmotic learning. The coordination tax wasn't visible in any dashboard, but it showed up in slower shipping velocity, more misaligned work, and a growing sense that everyone was busy but nothing was moving.",
+
+  "hypothesis": "Remote work increases flexibility and productivity without meaningful tradeoffs.",
+
+  "chain": {
+    "root": "Adopt fully remote/distributed work model",
+    "effects": [
+      {
+        "label": "Synchronous overlap windows shrink across time zones",
+        "impact": "2-4 hours of overlap for global teams",
+        "direction": "negative",
+        "children": [
+          { "label": "Decisions delayed by async communication cycles", "direction": "negative" },
+          { "label": "Meetings compressed into narrow windows, creating meeting fatigue", "direction": "negative" },
+          { "label": "Urgent issues wait hours for the right person to come online", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Osmotic learning disappears",
+        "impact": "New hire ramp time doubles",
+        "direction": "negative",
+        "children": [
+          { "label": "Junior engineers miss informal mentoring", "direction": "negative" },
+          { "label": "Tribal knowledge stays siloed in individuals", "direction": "negative" },
+          { "label": "Documentation burden increases but compliance doesn't", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Social bonds weaken, trust erodes",
+        "impact": "Cross-team collaboration declines 25%",
+        "direction": "negative",
+        "children": [
+          { "label": "Conflict resolution harder without face-to-face rapport", "direction": "negative" },
+          { "label": "Serendipitous innovation from hallway conversations lost", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Individual productivity increases but team throughput stalls",
+        "impact": "+15% individual, -10% team velocity",
+        "direction": "neutral",
+        "children": [
+          { "label": "More code written but more rework from misalignment", "direction": "negative" },
+          { "label": "Managers mistake individual busyness for team progress", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Individual productivity", "before": "Baseline", "after": "+15%", "delta": "+15%", "direction": "positive" },
+    { "metric": "Team shipping velocity", "before": "Baseline", "after": "-10%", "delta": "-10%", "direction": "negative" },
+    { "metric": "New hire onboarding time", "before": "3 months", "after": "6 months", "delta": "+100%", "direction": "negative" },
+    { "metric": "Cross-team collaboration", "before": "Baseline", "after": "-25%", "delta": "-25%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your team is building a new product that requires rapid iteration and tight feedback loops",
+      "You have more than 3 time zones of spread without dedicated async-first processes"
+    ],
+    "ifYouMust": [
+      "Invest heavily in async-first documentation and decision-making processes",
+      "Limit time zone spread to 4-5 hours maximum for core teams",
+      "Schedule regular in-person offsites for relationship building",
+      "Pair new hires with mentors who have dedicated synchronous overlap time"
+    ],
+    "alternatives": [
+      { "name": "Hybrid model", "note": "2-3 days in office for coordination, remote for deep work" },
+      { "name": "Hub-based remote", "note": "Remote but clustered in 1-2 time zones" },
+      { "name": "Async-first with sync rituals", "note": "Default async with intentional synchronous touchpoints" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Microsoft Research: The Effects of Remote Work on Collaboration", "url": "https://www.nature.com/articles/s41562-021-01196-4", "note": "Study of 61,000 Microsoft employees showing remote work reduced cross-group collaboration 25%" },
+    { "title": "GitLab Remote Work Report 2024", "note": "Largest all-remote company documenting coordination challenges and mitigation strategies" },
+    { "title": "Harvard Business Review: Remote Work Productivity Paradox", "note": "Individual productivity gains offset by coordination costs and reduced innovation" },
+    { "title": "Buffer State of Remote Work 2024", "note": "Survey showing collaboration and communication as top challenges for remote workers" }
+  ],
+
+  "falsifiability": [
+    "Fully remote teams consistently ship features faster than co-located teams of similar size and skill",
+    "New hire onboarding time in remote companies matches co-located companies within 10%",
+    "Cross-team collaboration metrics remain stable or improve after transition to fully remote"
+  ],
+
+  "tags": ["remote-work", "coordination", "productivity", "team-dynamics", "distributed-teams"],
+  "crossReferences": ["O022", "O023", "O008"],
+
+  "seo": {
+    "description": "Remote work boosts individual productivity 15% but reduces team shipping velocity 10%. New hire onboarding doubles and cross-team collaboration drops 25%.",
+    "keywords": ["remote work coordination cost", "remote work hidden costs", "remote work second order effects"]
+  }
+}

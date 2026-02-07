@@ -1,0 +1,94 @@
+{
+  "id": "O006",
+  "title": "Culture Fit Homogeneity Trap",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Companies hire for 'culture fit' to build cohesive teams and reduce friction. The intent is reasonable — teams that share values and communication styles work together more smoothly. But 'culture fit' is often a proxy for demographic and cognitive similarity. Interviewers unconsciously select candidates who look, think, and communicate like themselves. Over time, the organization becomes increasingly homogeneous. Dissenting viewpoints disappear. Groupthink sets in. The company loses the cognitive diversity needed to spot blind spots, challenge assumptions, and innovate. The very cohesion that culture fit creates becomes a vulnerability — the team agrees quickly but agrees on the wrong things.",
+
+  "hypothesis": "Hiring for culture fit builds stronger, more cohesive teams.",
+
+  "chain": {
+    "root": "Prioritize culture fit in hiring decisions",
+    "effects": [
+      {
+        "label": "Demographic and cognitive homogeneity increases",
+        "impact": "Team diversity declines 20-30% over 3 years",
+        "direction": "negative",
+        "children": [
+          { "label": "Interviewers select candidates similar to themselves", "direction": "negative" },
+          { "label": "Underrepresented candidates filtered out as 'not a fit'", "direction": "negative" },
+          { "label": "Referral networks amplify existing demographics", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Groupthink replaces healthy debate",
+        "impact": "Dissenting viewpoints suppressed",
+        "direction": "negative",
+        "children": [
+          { "label": "Bad decisions go unchallenged", "direction": "negative" },
+          { "label": "Blind spots become organizational blind spots", "direction": "negative" },
+          { "label": "Innovation declines as conformity increases", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Legal and reputational risk accumulates",
+        "impact": "Discrimination lawsuits and PR crises",
+        "direction": "negative",
+        "children": [
+          { "label": "Culture fit used as cover for discriminatory hiring", "direction": "negative" },
+          { "label": "Employer brand suffers among diverse candidates", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Team cognitive diversity", "before": "Baseline", "after": "-25%", "delta": "-25%", "direction": "negative" },
+    { "metric": "Decision quality", "before": "Diverse perspectives", "after": "Groupthink-prone", "delta": "-20%", "direction": "negative" },
+    { "metric": "Team cohesion (short-term)", "before": "Baseline", "after": "+15%", "delta": "+15%", "direction": "positive" },
+    { "metric": "Innovation output", "before": "Baseline", "after": "-18%", "delta": "-18%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your 'culture fit' criteria can't be articulated as specific, measurable behaviors",
+      "Your interview panel lacks demographic diversity"
+    ],
+    "ifYouMust": [
+      "Replace 'culture fit' with 'culture add' — what new perspective does this person bring?",
+      "Define culture as specific values and behaviors, not vibes",
+      "Use structured interviews with rubrics to reduce bias",
+      "Track hiring demographics against culture fit scores to detect proxy discrimination"
+    ],
+    "alternatives": [
+      { "name": "Culture add hiring", "note": "Hire for what's missing, not what's already there" },
+      { "name": "Values-based hiring", "note": "Assess alignment with explicit values, not implicit social norms" },
+      { "name": "Structured behavioral interviews", "note": "Evaluate specific competencies with standardized questions and rubrics" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Harvard Business Review: Why Culture Fit Is Killing Your Company", "note": "Analysis showing culture fit hiring reduces diversity and innovation over time" },
+    { "title": "Kellogg School of Management: Cognitive Diversity and Team Performance", "note": "Research demonstrating cognitively diverse teams outperform homogeneous teams on complex problems" },
+    { "title": "EEOC: Discrimination in Hiring Practices", "note": "Legal framework showing culture fit can constitute disparate impact discrimination" },
+    { "title": "McKinsey: Diversity Wins Report", "url": "https://www.mckinsey.com/featured-insights/diversity-and-inclusion/diversity-wins-how-inclusion-matters", "note": "Companies in top quartile for diversity are 36% more likely to outperform on profitability" }
+  ],
+
+  "falsifiability": [
+    "Companies hiring primarily for culture fit maintain or increase cognitive diversity over 3+ years",
+    "Culture fit hiring produces better long-term team performance than culture add hiring",
+    "Culture fit assessments show no correlation with candidate demographics"
+  ],
+
+  "tags": ["hiring", "culture", "diversity", "groupthink", "organizational-design", "bias"],
+  "crossReferences": ["O009", "O004", "A012"],
+
+  "seo": {
+    "description": "Culture fit hiring reduces cognitive diversity 25% over 3 years, enabling groupthink and reducing innovation 18%. What feels like cohesion becomes a blind spot factory.",
+    "keywords": ["culture fit homogeneity trap", "culture fit hidden costs", "culture fit second order effects"]
+  }
+}

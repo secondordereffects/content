@@ -1,0 +1,103 @@
+{
+  "id": "T006",
+  "title": "Monorepo Gravity Well",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Teams adopt monorepos to simplify dependency management, enable atomic cross-project changes, and share code easily. Google and Meta run massive monorepos, so it must work. But those companies built custom tooling costing millions — Bazel, Buck, custom VCS. Most teams adopt monorepos with off-the-shelf tools (npm workspaces, Turborepo, Nx) and hit scaling walls within 12-18 months. CI pipelines slow to a crawl as every change triggers builds across the entire repo. Git operations degrade as the repo grows. Ownership boundaries blur — everyone can change everything, so nobody owns anything. The monorepo becomes a gravity well: easy to add projects, nearly impossible to extract them.",
+
+  "hypothesis": "Monorepos simplify dependency management and improve code sharing.",
+
+  "chain": {
+    "root": "Consolidate projects into a monorepo",
+    "effects": [
+      {
+        "label": "CI/CD pipeline complexity explodes",
+        "impact": "Build times 5-10x longer within 18 months",
+        "direction": "negative",
+        "children": [
+          { "label": "Every PR triggers cross-project builds", "direction": "negative" },
+          { "label": "Flaky tests in unrelated projects block merges", "direction": "negative" },
+          { "label": "CI costs scale superlinearly with repo size", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Ownership boundaries dissolve",
+        "impact": "Shared code becomes nobody's responsibility",
+        "direction": "negative",
+        "children": [
+          { "label": "Breaking changes propagate silently across teams", "direction": "negative" },
+          { "label": "Code review bottlenecks on shared packages", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Git performance degrades at scale",
+        "impact": "Clone, checkout, status operations slow 3-5x",
+        "direction": "negative",
+        "children": [
+          { "label": "Developers need sparse checkout workarounds", "direction": "negative" },
+          { "label": "IDE indexing becomes painfully slow", "direction": "negative" },
+          { "label": "New developer onboarding time increases", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Extraction becomes prohibitively expensive",
+        "impact": "Tightly coupled code resists separation",
+        "direction": "negative",
+        "children": [
+          { "label": "Projects that should be independent can't be extracted", "direction": "negative" },
+          { "label": "Monorepo becomes permanent architectural constraint", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "CI build time", "before": "5-10 min per project", "after": "30-60 min monorepo", "delta": "+500%", "direction": "negative" },
+    { "metric": "Git clone time", "before": "Seconds", "after": "Minutes to hours", "delta": "+1000%", "direction": "negative" },
+    { "metric": "Cross-project code sharing", "before": "Package publishing", "after": "Direct imports", "delta": "Simplified", "direction": "positive" },
+    { "metric": "Project extraction cost", "before": "N/A", "after": "Weeks to months of work", "delta": "Prohibitive", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your team is under 20 engineers and projects have clear boundaries",
+      "You don't have dedicated build infrastructure engineering capacity"
+    ],
+    "ifYouMust": [
+      "Invest in build caching and affected-project detection from day one",
+      "Enforce strict ownership boundaries with CODEOWNERS files",
+      "Use sparse checkout and partial clone to manage repo size",
+      "Define extraction criteria before projects enter the monorepo"
+    ],
+    "alternatives": [
+      { "name": "Polyrepo with shared packages", "note": "Publish shared code as packages, keep projects independent" },
+      { "name": "Focused monorepos", "note": "Group tightly coupled projects only, not everything" },
+      { "name": "Git submodules", "note": "Shared code as submodules — ugly but maintains boundaries" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Google Monorepo Paper: Why Google Stores Billions of Lines in a Single Repository", "url": "https://research.google/pubs/pub45424/", "note": "Google's monorepo works because of massive custom tooling investment most companies can't replicate" },
+    { "title": "Uber's Monorepo Migration Challenges", "note": "Uber documented significant CI/CD scaling challenges after monorepo adoption" },
+    { "title": "Nx and Turborepo Performance Benchmarks", "note": "Build tools help but can't fully solve the fundamental scaling challenges of large monorepos" },
+    { "title": "Microsoft 1ES: Lessons from the Largest Git Repo", "note": "Microsoft's Windows repo required custom VFS for Git to function at scale" }
+  ],
+
+  "falsifiability": [
+    "Teams adopting monorepos with off-the-shelf tooling report sustained CI performance at scale beyond 50 projects",
+    "Monorepo adoption correlates with improved code ownership clarity rather than ownership diffusion",
+    "Project extraction from monorepos is routinely accomplished in under one week"
+  ],
+
+  "tags": ["monorepo", "build-systems", "ci-cd", "developer-experience", "scaling", "architecture"],
+  "crossReferences": ["T002", "T012", "T010"],
+
+  "seo": {
+    "description": "Monorepos promise simpler dependency management but create CI build time explosions of 500%+, Git performance degradation, and projects that can never be extracted.",
+    "keywords": ["monorepo gravity well", "monorepo hidden costs", "monorepo second order effects"]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "id": "I003",
+  "title": "EV Charging Grid Strain",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Electric vehicles are positioned as the solution to transportation emissions. Governments worldwide mandate EV adoption — the EU bans new ICE vehicle sales from 2035, California from 2035, and dozens of countries have similar targets. But the electrical grid wasn't designed for millions of vehicles charging simultaneously. A single Level 2 home charger draws as much power as an entire house. A DC fast charger draws as much as a small commercial building. When an entire neighborhood plugs in after the evening commute, local transformers overload. The grid needs massive upgrades — new transformers, substations, transmission lines — that take 5-10 years to build. The EV mandate timeline and the grid upgrade timeline are fundamentally misaligned. And the electricity itself still comes largely from fossil fuels in most grids, shifting emissions from tailpipes to power plants.",
+
+  "hypothesis": "Electric vehicles reduce emissions and can be supported by existing infrastructure.",
+
+  "chain": {
+    "root": "Mandate mass EV adoption",
+    "effects": [
+      {
+        "label": "Evening charging creates massive demand spikes",
+        "impact": "Peak demand increases 30-50% in residential areas",
+        "direction": "negative",
+        "children": [
+          { "label": "Local transformers overload in high-adoption neighborhoods", "direction": "negative" },
+          { "label": "Grid operators forced into expensive peak-demand pricing", "direction": "negative" },
+          { "label": "Brownouts and blackouts in areas with aging infrastructure", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Grid upgrade timeline misaligned with EV mandate timeline",
+        "impact": "5-10 year infrastructure gap",
+        "direction": "negative",
+        "children": [
+          { "label": "Transformer and substation manufacturing can't keep pace", "direction": "negative" },
+          { "label": "Permitting and construction delays compound the gap", "direction": "negative" },
+          { "label": "Rural and low-income areas last to receive upgrades", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Emissions shift from tailpipe to power plant",
+        "impact": "Net emissions reduction depends entirely on grid mix",
+        "direction": "neutral",
+        "children": [
+          { "label": "Coal-heavy grids see minimal net emissions benefit", "direction": "negative" },
+          { "label": "Renewable grids see significant benefit", "direction": "positive" },
+          { "label": "Lifecycle emissions including battery manufacturing often underreported", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Residential peak demand", "before": "Baseline", "after": "+30-50% with mass EV adoption", "delta": "+40%", "direction": "negative" },
+    { "metric": "Grid upgrade investment needed", "before": "Maintenance level", "after": "$100B+ in US alone", "delta": "Massive", "direction": "negative" },
+    { "metric": "Tailpipe emissions", "before": "ICE baseline", "after": "Zero (at vehicle)", "delta": "-100%", "direction": "positive" },
+    { "metric": "Net lifecycle emissions", "before": "ICE baseline", "after": "-30-70% depending on grid", "delta": "Variable", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your EV mandate timeline doesn't account for grid upgrade lead times",
+      "Your grid is primarily coal-powered and you're claiming EVs are zero-emission"
+    ],
+    "ifYouMust": [
+      "Align EV adoption mandates with grid upgrade investment and timelines",
+      "Incentivize off-peak and smart charging to flatten demand curves",
+      "Invest in grid-scale battery storage to buffer peak demand",
+      "Report lifecycle emissions honestly, including grid mix and battery manufacturing"
+    ],
+    "alternatives": [
+      { "name": "Smart charging mandates", "note": "Require EVs to charge during off-peak hours by default" },
+      { "name": "Vehicle-to-grid (V2G)", "note": "Use EV batteries as distributed grid storage during peak demand" },
+      { "name": "Hybrid approach", "note": "PHEVs as transition technology while grid catches up" }
+    ]
+  },
+
+  "sources": [
+    { "title": "National Renewable Energy Laboratory: EV Grid Impact Study", "url": "https://www.nrel.gov/transportation/", "note": "Modeling showing residential peak demand increases 30-50% with mass EV adoption" },
+    { "title": "McKinsey: The Grid Edge", "note": "Analysis of $100B+ grid investment needed in US alone to support EV mandates" },
+    { "title": "MIT Energy Initiative: Lifecycle Emissions of EVs", "note": "Comprehensive lifecycle analysis showing net emissions depend heavily on grid electricity source" },
+    { "title": "IEEE: Distribution Transformer Capacity and EV Charging", "note": "Technical analysis of residential transformer overload risks from clustered EV charging" }
+  ],
+
+  "falsifiability": [
+    "Existing electrical grids support mass EV adoption without significant infrastructure upgrades",
+    "Evening EV charging demand is manageable without smart charging or time-of-use pricing",
+    "EV lifecycle emissions are lower than ICE vehicles regardless of grid electricity source"
+  ],
+
+  "tags": ["ev", "electrical-grid", "infrastructure", "emissions", "energy-transition", "charging"],
+  "crossReferences": ["I016", "I013", "I018"],
+
+  "seo": {
+    "description": "Mass EV adoption increases residential peak demand 30-50% but grid upgrades take 5-10 years. The mandate timeline and infrastructure timeline are fundamentally misaligned.",
+    "keywords": ["ev charging grid strain", "electric vehicle infrastructure hidden costs", "ev grid second order effects"]
+  }
+}
