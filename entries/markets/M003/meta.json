@@ -1,0 +1,94 @@
+{
+  "id": "M003",
+  "title": "Venture Signaling Cascade",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.70,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Top-tier VC backing is treated as validation — if Sequoia or a16z invested, the company must be good. This signal cascades through the ecosystem. Follow-on investors pile in based on the lead investor's reputation rather than independent diligence. Talent joins because the VC brand signals success. Customers sign because the funding signals stability. But the signal is circular: the company looks good because top VCs invested, and top VCs look good because their companies look good. When the signal breaks — as it did with FTX (Sequoia), WeWork (SoftBank), and Theranos (multiple top VCs) — the cascade reverses. The same herd behavior that inflated the company accelerates its collapse. The venture signaling system optimizes for pattern matching, not truth.",
+
+  "hypothesis": "Top VC backing validates the company and predicts success.",
+
+  "chain": {
+    "root": "Receive investment from top-tier VC firm",
+    "effects": [
+      {
+        "label": "Follow-on investors rely on lead VC signal instead of diligence",
+        "impact": "Due diligence depth decreases 40-60%",
+        "direction": "negative",
+        "children": [
+          { "label": "FOMO-driven investment rounds close in days", "direction": "negative" },
+          { "label": "Red flags overlooked because 'Sequoia did diligence'", "direction": "negative" },
+          { "label": "Valuation inflates beyond fundamentals", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Talent and customers join based on VC brand",
+        "impact": "Hiring and sales easier but expectations inflated",
+        "direction": "neutral",
+        "children": [
+          { "label": "Employees expect unicorn trajectory", "direction": "negative" },
+          { "label": "Customers assume stability that may not exist", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Signal reversal cascades when problems emerge",
+        "impact": "Same herd behavior accelerates collapse",
+        "direction": "negative",
+        "children": [
+          { "label": "Follow-on investors flee at first sign of trouble", "direction": "negative" },
+          { "label": "Talent exodus when narrative breaks", "direction": "negative" },
+          { "label": "VC reputation damage creates overcorrection in sector", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Follow-on investor diligence depth", "before": "Full diligence", "after": "-40-60% when top VC leads", "delta": "-50%", "direction": "negative" },
+    { "metric": "Round closing speed", "before": "Weeks-months", "after": "Days (FOMO-driven)", "delta": "-80%", "direction": "neutral" },
+    { "metric": "Startup failure rate (VC-backed)", "before": "Expected lower", "after": "75% fail regardless of VC tier", "delta": "No improvement", "direction": "negative" },
+    { "metric": "Collapse speed when signal breaks", "before": "Gradual", "after": "Rapid cascade", "delta": "+300%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're investing primarily based on who else invested rather than your own analysis",
+      "You're joining a company primarily because of its investor list"
+    ],
+    "ifYouMust": [
+      "Conduct independent diligence regardless of lead investor reputation",
+      "Evaluate the business fundamentals, not the investor brand",
+      "Discount VC signaling in hot sectors where FOMO drives investment",
+      "Look at VC's actual track record, not just brand name"
+    ],
+    "alternatives": [
+      { "name": "Independent diligence", "note": "Evaluate every investment on its own merits regardless of co-investors" },
+      { "name": "Revenue-based evaluation", "note": "Focus on business metrics rather than investor signals" },
+      { "name": "Customer reference checks", "note": "Talk to actual customers rather than relying on investor validation" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Sequoia Capital: FTX Investment Writedown", "note": "Sequoia wrote down $150M FTX investment to zero, demonstrating top-tier VC signal failure" },
+    { "title": "SoftBank Vision Fund: WeWork Investment Postmortem", "note": "SoftBank's $18.5B WeWork investment became a cautionary tale of signal-driven investing" },
+    { "title": "Journal of Financial Economics: Herding in Venture Capital", "note": "Academic evidence of herding behavior among VCs following top-tier firm investment decisions" },
+    { "title": "Cambridge Associates: VC Returns by Fund Tier", "note": "Data showing top-tier VC brand doesn't guarantee top-tier returns at the portfolio company level" }
+  ],
+
+  "falsifiability": [
+    "Companies backed by top-tier VCs have significantly higher success rates than those backed by lower-tier VCs",
+    "Follow-on investors who rely on lead VC signal achieve better returns than those conducting independent diligence",
+    "VC brand signal accurately predicts company quality more than 50% of the time"
+  ],
+
+  "tags": ["venture-capital", "signaling", "herding", "fomo", "due-diligence", "startup"],
+  "crossReferences": ["M011", "M022", "M004"],
+
+  "seo": {
+    "description": "Top VC backing reduces follow-on diligence 50% through signaling cascades. When the signal breaks — FTX, WeWork, Theranos — the same herd behavior accelerates collapse.",
+    "keywords": ["venture signaling cascade", "vc signaling hidden costs", "venture capital second order effects"]
+  }
+}

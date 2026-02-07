@@ -1,0 +1,94 @@
+{
+  "id": "T035",
+  "title": "AI-Assisted Code Review Rubber Stamping",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Teams adopt AI code review tools to catch bugs, enforce standards, and speed up the review process. The tools flag potential issues, suggest improvements, and even auto-approve simple changes. Initial results look promising — review turnaround time drops, more issues caught. But AI code review creates a subtle problem: human reviewers start deferring to the AI. If the AI didn't flag it, it must be fine. Reviewers spend less time understanding the code's intent, architecture implications, and business logic correctness — the things AI can't evaluate. The review becomes a rubber stamp: AI checks pass, human approves. The deep thinking that code review was supposed to encourage — understanding someone else's design decisions, questioning assumptions, sharing knowledge — atrophies. Code review becomes a checkbox, not a conversation.",
+
+  "hypothesis": "AI code review catches bugs and improves code quality.",
+
+  "chain": {
+    "root": "Adopt AI-assisted code review tools",
+    "effects": [
+      {
+        "label": "Human reviewers defer to AI judgment",
+        "impact": "Review depth decreases 30-40%",
+        "direction": "negative",
+        "children": [
+          { "label": "If AI didn't flag it, reviewers assume it's fine", "direction": "negative" },
+          { "label": "Time spent understanding code intent decreases", "direction": "negative" },
+          { "label": "Architecture and design review disappears", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Knowledge sharing through review declines",
+        "impact": "Review becomes checkbox, not conversation",
+        "direction": "negative",
+        "children": [
+          { "label": "Junior developers miss mentoring opportunities in reviews", "direction": "negative" },
+          { "label": "Cross-team knowledge transfer through review stops", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "AI catches syntax but misses semantics",
+        "impact": "Business logic errors pass through",
+        "direction": "negative",
+        "children": [
+          { "label": "Correct code that does the wrong thing approved", "direction": "negative" },
+          { "label": "Security vulnerabilities in business logic missed", "direction": "negative" },
+          { "label": "Performance implications of design choices unreviewed", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Review turnaround time", "before": "24-48 hours", "after": "2-4 hours", "delta": "-85%", "direction": "positive" },
+    { "metric": "Human review depth", "before": "Thorough", "after": "-30-40% time spent", "delta": "-35%", "direction": "negative" },
+    { "metric": "Syntax/style issues caught", "before": "Variable", "after": "+60%", "delta": "+60%", "direction": "positive" },
+    { "metric": "Business logic errors caught", "before": "Baseline", "after": "-20% (human deferral)", "delta": "-20%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your team treats AI review approval as sufficient without human review",
+      "AI review is replacing rather than augmenting human code review"
+    ],
+    "ifYouMust": [
+      "Use AI for style and syntax checks, require humans for logic and design review",
+      "Set minimum review time expectations that prevent rubber-stamping",
+      "Require reviewers to comment on design intent, not just correctness",
+      "Track review comment quality, not just review speed"
+    ],
+    "alternatives": [
+      { "name": "AI pre-review + human deep review", "note": "AI handles the mundane, humans focus on what matters" },
+      { "name": "Pair programming", "note": "Real-time review that can't be rubber-stamped" },
+      { "name": "Architecture review boards", "note": "Separate design review from code review" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Microsoft Research: AI-Assisted Code Review Study", "note": "Study showing AI review tools reduce human review depth while catching more surface-level issues" },
+    { "title": "Google Engineering: Code Review Best Practices", "note": "Google's emphasis on code review as knowledge sharing, not just bug catching" },
+    { "title": "ACM: The Role of Code Review in Software Development", "note": "Research on how code review serves multiple purposes beyond defect detection" },
+    { "title": "GitHub Copilot Code Review Beta Analysis", "note": "Early data on how AI review changes human reviewer behavior" }
+  ],
+
+  "falsifiability": [
+    "Human code review depth remains unchanged after AI review tool adoption",
+    "AI-assisted code review catches business logic errors at rates comparable to human-only review",
+    "Knowledge sharing through code review is maintained when AI tools handle initial review"
+  ],
+
+  "tags": ["code-review", "ai", "rubber-stamping", "knowledge-sharing", "developer-productivity"],
+  "crossReferences": ["A001", "A015", "T011"],
+
+  "seo": {
+    "description": "AI code review speeds turnaround 85% but reduces human review depth 35%. Business logic errors pass through as reviewers defer to AI judgment on correctness.",
+    "keywords": ["ai code review rubber stamping", "ai code review hidden costs", "automated code review second order effects"]
+  }
+}

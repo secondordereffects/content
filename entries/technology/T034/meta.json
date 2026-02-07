@@ -1,0 +1,94 @@
+{
+  "id": "T034",
+  "title": "Containerization Sprawl",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Containers promised consistent environments — build once, run anywhere. Docker made packaging applications trivial. But the ease of creating containers led to sprawl. Organizations now run thousands of container images, many based on different base images with different vulnerability profiles. Images aren't updated after initial creation. Base images with known CVEs persist in production for months. Container registries accumulate terabytes of unused images. The orchestration layer (Kubernetes) adds its own complexity. Each container needs resource limits, health checks, network policies, and security contexts. The simplicity of 'docker run' at development time becomes operational complexity at scale that requires dedicated platform teams to manage.",
+
+  "hypothesis": "Containers simplify deployment and ensure consistency across environments.",
+
+  "chain": {
+    "root": "Containerize all applications and services",
+    "effects": [
+      {
+        "label": "Container image sprawl accumulates",
+        "impact": "Thousands of images, many outdated",
+        "direction": "negative",
+        "children": [
+          { "label": "Base images with known CVEs persist in production", "direction": "negative" },
+          { "label": "Different teams use different base images, fragmenting security posture", "direction": "negative" },
+          { "label": "Registry storage costs grow unbounded", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Orchestration complexity requires dedicated teams",
+        "impact": "Kubernetes expertise becomes bottleneck",
+        "direction": "negative",
+        "children": [
+          { "label": "Resource limits, health checks, network policies for every container", "direction": "negative" },
+          { "label": "Debugging containerized applications harder than bare metal", "direction": "negative" },
+          { "label": "Local development diverges from production container environment", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Security surface area expands",
+        "impact": "Each container is an attack surface",
+        "direction": "negative",
+        "children": [
+          { "label": "Container escape vulnerabilities affect all workloads", "direction": "negative" },
+          { "label": "Secrets management across containers adds complexity", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Container images in production", "before": "0", "after": "Hundreds to thousands", "delta": "Sprawl", "direction": "negative" },
+    { "metric": "Images with known CVEs", "before": "N/A", "after": "30-50% at any given time", "delta": "Persistent risk", "direction": "negative" },
+    { "metric": "Deployment consistency", "before": "Environment-dependent", "after": "Consistent (when managed)", "delta": "Improved", "direction": "positive" },
+    { "metric": "Operational complexity", "before": "Server management", "after": "Container + orchestration management", "delta": "+200%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're containerizing a simple application that runs fine on a single server",
+      "You don't have the team to manage container security and orchestration"
+    ],
+    "ifYouMust": [
+      "Standardize on a single hardened base image and enforce it",
+      "Automate image scanning and block deployment of images with critical CVEs",
+      "Implement image lifecycle policies — auto-delete unused images after 90 days",
+      "Start with simple container orchestration before jumping to Kubernetes"
+    ],
+    "alternatives": [
+      { "name": "Serverless/FaaS", "note": "Let the platform manage containers — you deploy functions" },
+      { "name": "PaaS deployment", "note": "Heroku/Railway/Fly.io — container benefits without container management" },
+      { "name": "VM-based deployment", "note": "Simpler operational model for teams without container expertise" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Sysdig Container Security Report", "note": "75% of container images contain high or critical vulnerabilities, 30% are never patched" },
+    { "title": "CNCF Survey: Kubernetes Adoption Challenges", "note": "Complexity and security cited as top challenges by 40%+ of Kubernetes adopters" },
+    { "title": "Docker: State of Application Development", "note": "Data on container image sprawl and registry management challenges" },
+    { "title": "Aqua Security: Cloud Native Threat Report", "note": "Analysis of container-specific attack vectors and security challenges at scale" }
+  ],
+
+  "falsifiability": [
+    "Organizations maintain all container images at current patch levels without dedicated security automation",
+    "Container orchestration complexity doesn't require specialized platform engineering teams",
+    "Container sprawl is self-managing and doesn't require active lifecycle policies"
+  ],
+
+  "tags": ["containers", "docker", "kubernetes", "sprawl", "security", "devops"],
+  "crossReferences": ["T001", "T002", "T022"],
+
+  "seo": {
+    "description": "Container sprawl leaves 30-50% of production images with known CVEs. The simplicity of docker run becomes operational complexity requiring dedicated platform teams at scale.",
+    "keywords": ["containerization sprawl", "container security hidden costs", "docker second order effects"]
+  }
+}

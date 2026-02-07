@@ -1,0 +1,94 @@
+{
+  "id": "O020",
+  "title": "Promotion-Driven Architecture",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "In many tech companies, promotion to senior or staff engineer requires demonstrating 'impact' through large-scale technical projects. The incentive is clear: build something big, get promoted. But this creates a systematic bias toward complexity. Engineers propose microservice decompositions, platform rewrites, and new infrastructure not because the business needs them, but because they're promotion-worthy projects. A simple solution that works doesn't get you promoted; a complex solution that requires a team does. The architecture of the system becomes a reflection of the promotion criteria, not the business requirements. Google engineers coined the term 'promo-driven development' to describe this pattern. The result is over-engineered systems that serve career advancement more than customer needs.",
+
+  "hypothesis": "Senior engineers make better architecture decisions because they have more experience.",
+
+  "chain": {
+    "root": "Tie promotions to large-scale technical impact",
+    "effects": [
+      {
+        "label": "Engineers propose complex solutions for simple problems",
+        "impact": "Architecture complexity exceeds business requirements",
+        "direction": "negative",
+        "children": [
+          { "label": "Microservice decomposition proposed when monolith suffices", "direction": "negative" },
+          { "label": "Platform rewrites initiated for career advancement, not technical need", "direction": "negative" },
+          { "label": "New infrastructure built when existing tools would work", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Simple, effective solutions undervalued",
+        "impact": "Maintainable code doesn't get you promoted",
+        "direction": "negative",
+        "children": [
+          { "label": "Engineers avoid simple solutions because they're not 'impactful' enough", "direction": "negative" },
+          { "label": "Maintenance and reliability work deprioritized vs new systems", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Technical debt accumulates from abandoned promo projects",
+        "impact": "Engineers move on after promotion, leaving complex systems",
+        "direction": "negative",
+        "children": [
+          { "label": "Promoted engineer moves to new team, leaving system to juniors", "direction": "negative" },
+          { "label": "Complex system becomes unmaintainable without original author", "direction": "negative" },
+          { "label": "Next engineer proposes rewrite for their own promotion", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "System complexity", "before": "Business-driven", "after": "Promotion-driven", "delta": "+200%", "direction": "negative" },
+    { "metric": "Architecture decisions aligned with business needs", "before": "High", "after": "-40% (career incentives dominate)", "delta": "-40%", "direction": "negative" },
+    { "metric": "Technical debt from abandoned promo projects", "before": "Baseline", "after": "Significant accumulation", "delta": "+100%", "direction": "negative" },
+    { "metric": "Promotion rate for simplifiers", "before": "Expected equal", "after": "50% lower than builders", "delta": "-50%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your promotion criteria only reward building new systems, not maintaining or simplifying existing ones",
+      "Engineers can't get promoted by making things simpler"
+    ],
+    "ifYouMust": [
+      "Include 'simplification' and 'maintenance' as promotion-worthy impact categories",
+      "Require architecture proposals to justify complexity against simpler alternatives",
+      "Evaluate engineers on outcomes (reliability, user impact) not outputs (systems built)",
+      "Mandate that architects maintain their systems for 12+ months post-launch"
+    ],
+    "alternatives": [
+      { "name": "Outcome-based promotions", "note": "Promote based on business outcomes, not technical complexity" },
+      { "name": "Simplification bonuses", "note": "Explicitly reward reducing complexity and removing systems" },
+      { "name": "Architecture review boards", "note": "Independent review of whether proposed complexity is justified" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Google: Promo-Driven Development (internal term)", "note": "Google engineers coined this term to describe architecture decisions driven by promotion criteria" },
+    { "title": "Will Larson: Staff Engineer", "note": "Analysis of how promotion incentives shape technical decisions at senior levels" },
+    { "title": "Charity Majors: The Engineer/Manager Pendulum", "note": "Discussion of how career incentives create perverse technical decisions" },
+    { "title": "Kellan Elliott-McCrea: Architecture and Incentives", "note": "Former Etsy CTO on how organizational incentives shape system architecture" }
+  ],
+
+  "falsifiability": [
+    "Architecture decisions in promotion-driven cultures are equally aligned with business needs as in outcome-driven cultures",
+    "Engineers who build complex systems produce better long-term outcomes than those who simplify",
+    "Promotion criteria don't measurably influence the complexity of proposed technical solutions"
+  ],
+
+  "tags": ["promotion", "architecture", "incentives", "complexity", "technical-debt", "career"],
+  "crossReferences": ["T010", "T002", "O009"],
+
+  "seo": {
+    "description": "Promotion criteria that reward building new systems create architecture 200% more complex than business needs require. Simple solutions don't get you promoted — complex ones do.",
+    "keywords": ["promotion-driven architecture", "promo-driven development hidden costs", "promotion architecture second order effects"]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "id": "M007",
+  "title": "SPV/SPAC Misalignment",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "SPACs (Special Purpose Acquisition Companies) were marketed as democratizing IPO access — retail investors could invest alongside sponsors in pre-IPO companies. Between 2020-2021, over 600 SPACs raised $160B+. The pitch was compelling: skip the traditional IPO process, go public faster, with forward-looking projections that traditional IPOs can't include. But the incentive structure is fundamentally misaligned. SPAC sponsors get 20% of the company (the 'promote') regardless of post-merger performance. Sponsors are incentivized to complete any deal before the deadline, not to find good deals. The forward projections that attracted retail investors were wildly optimistic — 75% of SPACs that completed mergers traded below their $10 trust value within a year. Retail investors provided the capital; sponsors captured the returns.",
+
+  "hypothesis": "SPACs democratize IPO access and let retail investors invest in pre-IPO companies.",
+
+  "chain": {
+    "root": "Invest in SPAC as retail investor",
+    "effects": [
+      {
+        "label": "Sponsor incentives misaligned with investor returns",
+        "impact": "20% promote regardless of performance",
+        "direction": "negative",
+        "children": [
+          { "label": "Sponsors incentivized to complete any deal before deadline", "direction": "negative" },
+          { "label": "Deal quality secondary to deal completion", "direction": "negative" },
+          { "label": "Sponsor dilution reduces investor returns by 20%+ at inception", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Forward projections wildly optimistic",
+        "impact": "75% of SPACs trade below $10 trust value post-merger",
+        "direction": "negative",
+        "children": [
+          { "label": "Revenue projections missed by 50%+ on average", "direction": "negative" },
+          { "label": "Retail investors bought on projections that never materialized", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Institutional investors redeem, retail investors hold",
+        "impact": "Smart money exits before merger, retail holds the bag",
+        "direction": "negative",
+        "children": [
+          { "label": "Institutional investors redeem at $10 trust value before merger", "direction": "negative" },
+          { "label": "Post-merger float is mostly retail investors", "direction": "negative" },
+          { "label": "Retail investors bear all downside risk", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "SPAC post-merger returns (median)", "before": "Expected positive", "after": "-40% within 12 months", "delta": "-40%", "direction": "negative" },
+    { "metric": "Revenue projection accuracy", "before": "Projected growth", "after": "Missed by 50%+ on average", "delta": "-50%", "direction": "negative" },
+    { "metric": "Sponsor returns", "before": "N/A", "after": "20% promote + warrants", "delta": "Guaranteed positive", "direction": "negative" },
+    { "metric": "Retail investor capital at risk", "before": "$10 trust value", "after": "$160B+ deployed in SPACs", "delta": "Massive exposure", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're investing in a SPAC based on forward revenue projections without independent verification",
+      "You don't understand the sponsor promote structure and its dilutive impact"
+    ],
+    "ifYouMust": [
+      "Evaluate the sponsor's track record with previous SPACs, not just their reputation",
+      "Discount forward projections by 50%+ based on historical SPAC accuracy",
+      "Understand the redemption mechanics and who is redeeming before merger",
+      "Consider buying post-merger at market price rather than pre-merger at trust value"
+    ],
+    "alternatives": [
+      { "name": "Traditional IPO investment", "note": "Better disclosure requirements and underwriter accountability" },
+      { "name": "Direct listings", "note": "No dilution from sponsor promotes or underwriter fees" },
+      { "name": "Late-stage private funds", "note": "Access pre-IPO companies through regulated fund structures" }
+    ]
+  },
+
+  "sources": [
+    { "title": "SEC: SPAC Investor Alert", "note": "SEC warning about SPAC sponsor incentive misalignment and retail investor risks" },
+    { "title": "Stanford Law Review: SPAC Returns Analysis", "note": "Research showing median SPAC returns of -40% within 12 months of merger" },
+    { "title": "Renaissance Capital: SPAC Performance Tracker", "note": "Data showing 75% of post-merger SPACs trading below $10 trust value" },
+    { "title": "Harvard Law School: The SPAC Bubble", "note": "Analysis of how SPAC structure systematically transfers value from retail to sponsors" }
+  ],
+
+  "falsifiability": [
+    "SPAC post-merger returns match or exceed traditional IPO returns for retail investors",
+    "SPAC forward revenue projections are achieved within 20% accuracy by majority of companies",
+    "Sponsor promote structure doesn't materially impact retail investor returns"
+  ],
+
+  "tags": ["spac", "ipo", "retail-investing", "incentive-misalignment", "markets", "regulation"],
+  "crossReferences": ["M002", "M011", "M003"],
+
+  "seo": {
+    "description": "SPACs promised democratized IPO access but delivered -40% median returns for retail investors. Sponsors capture 20% regardless of performance while projections miss by 50%+.",
+    "keywords": ["spac misalignment", "spac hidden costs", "spac second order effects"]
+  }
+}

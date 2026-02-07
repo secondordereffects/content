@@ -1,0 +1,94 @@
+{
+  "id": "T033",
+  "title": "Dark Mode Accessibility Regression",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Dark mode became a must-have feature after iOS and Android added system-wide dark themes. Users love it — it feels modern, reduces eye strain in low light, and saves battery on OLED screens. Product teams rush to implement it. But dark mode doubles the design surface area. Every color, every contrast ratio, every component state needs to work in both themes. Teams that carefully tuned their light mode for WCAG AA contrast ratios often ship dark modes that fail accessibility standards. Low-contrast text on dark backgrounds, insufficient focus indicators, images with transparent backgrounds that disappear, and status colors that lose meaning against dark surfaces. The feature that was supposed to improve comfort creates accessibility regressions for the users who need good contrast most.",
+
+  "hypothesis": "Dark mode is better for users' eyes and improves the experience.",
+
+  "chain": {
+    "root": "Implement dark mode across application",
+    "effects": [
+      {
+        "label": "Design surface area doubles",
+        "impact": "Every component needs two color schemes",
+        "direction": "negative",
+        "children": [
+          { "label": "Contrast ratios that pass in light mode fail in dark mode", "direction": "negative" },
+          { "label": "Focus indicators invisible against dark backgrounds", "direction": "negative" },
+          { "label": "Status colors (red/green) lose meaning on dark surfaces", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Accessibility regressions shipped unknowingly",
+        "impact": "40-60% of dark mode implementations fail WCAG AA",
+        "direction": "negative",
+        "children": [
+          { "label": "Low-vision users worse off in dark mode than light mode", "direction": "negative" },
+          { "label": "Transparent images disappear against dark backgrounds", "direction": "negative" },
+          { "label": "Third-party embeds don't respect dark mode", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Maintenance burden increases permanently",
+        "impact": "Every UI change must be tested in both modes",
+        "direction": "negative",
+        "children": [
+          { "label": "QA time doubles for visual testing", "direction": "negative" },
+          { "label": "Design tokens and theme systems add complexity", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Design/QA effort", "before": "One theme", "after": "Two themes", "delta": "+80%", "direction": "negative" },
+    { "metric": "WCAG AA compliance (dark mode)", "before": "N/A", "after": "40-60% fail rate", "delta": "Regression", "direction": "negative" },
+    { "metric": "User satisfaction (dark mode users)", "before": "N/A", "after": "High for sighted users", "delta": "Positive", "direction": "positive" },
+    { "metric": "Battery savings (OLED)", "before": "Baseline", "after": "-15-30% power consumption", "delta": "Improved", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You haven't audited your dark mode for WCAG AA contrast ratios",
+      "Your design system doesn't have semantic color tokens that work in both themes"
+    ],
+    "ifYouMust": [
+      "Build a semantic color token system before implementing dark mode",
+      "Audit every component for contrast ratios in both themes",
+      "Test with screen readers and low-vision simulators in dark mode",
+      "Ensure focus indicators are visible against dark backgrounds"
+    ],
+    "alternatives": [
+      { "name": "High-contrast mode", "note": "Offer a high-contrast option that actually helps accessibility" },
+      { "name": "Dim mode", "note": "Reduce brightness without inverting colors — simpler, fewer regressions" },
+      { "name": "System preference respect", "note": "Follow OS dark mode setting with a well-tested implementation" }
+    ]
+  },
+
+  "sources": [
+    { "title": "WebAIM: Dark Mode Accessibility Survey", "note": "Survey showing majority of dark mode implementations fail WCAG AA contrast requirements" },
+    { "title": "Nielsen Norman Group: Dark Mode Research", "url": "https://www.nngroup.com/articles/dark-mode/", "note": "Research showing dark mode is not universally better — light mode is better for reading comprehension" },
+    { "title": "Apple Human Interface Guidelines: Dark Mode", "note": "Apple's guidance on implementing dark mode with accessibility considerations" },
+    { "title": "Material Design: Dark Theme Guidelines", "note": "Google's framework for dark theme implementation with contrast requirements" }
+  ],
+
+  "falsifiability": [
+    "Dark mode implementations consistently meet WCAG AA contrast ratios without additional effort",
+    "Dark mode improves readability and comprehension compared to light mode across all user groups",
+    "Maintaining two color themes doesn't measurably increase design and QA effort"
+  ],
+
+  "tags": ["dark-mode", "accessibility", "design", "contrast", "wcag", "ui"],
+  "crossReferences": ["T023", "T003", "T032"],
+
+  "seo": {
+    "description": "Dark mode doubles design surface area while 40-60% of implementations fail WCAG AA contrast. The feature meant to improve comfort creates accessibility regressions.",
+    "keywords": ["dark mode accessibility regression", "dark mode hidden costs", "dark mode second order effects"]
+  }
+}

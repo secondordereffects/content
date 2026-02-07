@@ -1,0 +1,94 @@
+{
+  "id": "M006",
+  "title": "Crypto Regulatory Arbitrage",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Cryptocurrency projects market decentralization as a feature that transcends national regulation. When one jurisdiction tightens rules, projects move to friendlier ones — from the US to Singapore, from China to Dubai, from the EU to the Cayman Islands. This regulatory arbitrage was supposed to prove that decentralized finance couldn't be regulated. Instead, it created a race to the bottom where the least regulated jurisdictions attract the most capital and the most fraud. FTX operated from the Bahamas specifically to avoid US oversight. Terraform Labs was based in Singapore. The consumers who lose money in these lightly-regulated jurisdictions have no recourse. Meanwhile, legitimate crypto projects in regulated jurisdictions face compliance costs that offshore competitors don't, creating an uneven playing field that rewards regulatory evasion.",
+
+  "hypothesis": "Decentralization means crypto can't and shouldn't be regulated by any single jurisdiction.",
+
+  "chain": {
+    "root": "Crypto projects exploit regulatory arbitrage across jurisdictions",
+    "effects": [
+      {
+        "label": "Race to the bottom in regulatory standards",
+        "impact": "Least regulated jurisdictions attract most capital",
+        "direction": "negative",
+        "children": [
+          { "label": "Fraud concentrates in lightly-regulated jurisdictions", "direction": "negative" },
+          { "label": "Consumer protection effectively zero for offshore users", "direction": "negative" },
+          { "label": "Small nations compete to attract crypto with lax rules", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Legitimate projects face unfair compliance burden",
+        "impact": "Regulated projects at cost disadvantage",
+        "direction": "negative",
+        "children": [
+          { "label": "US-based crypto companies spend millions on compliance", "direction": "negative" },
+          { "label": "Offshore competitors offer same services without compliance costs", "direction": "negative" },
+          { "label": "Innovation moves offshore, leaving regulated markets behind", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Regulatory crackdowns become whack-a-mole",
+        "impact": "Projects relocate faster than regulators can act",
+        "direction": "negative",
+        "children": [
+          { "label": "Enforcement actions in one jurisdiction push activity to another", "direction": "negative" },
+          { "label": "International coordination on crypto regulation is slow", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Crypto fraud losses", "before": "Baseline", "after": "$14B in 2023 (mostly offshore)", "delta": "Concentrated in low-regulation zones", "direction": "negative" },
+    { "metric": "Compliance cost for regulated projects", "before": "Zero (pre-regulation)", "after": "$1-10M annually", "delta": "Competitive disadvantage", "direction": "negative" },
+    { "metric": "Jurisdictions with crypto-friendly regulation", "before": "Few", "after": "50+ competing for crypto business", "delta": "Race to bottom", "direction": "negative" },
+    { "metric": "Consumer protection for offshore users", "before": "Assumed by users", "after": "Effectively zero", "delta": "-100%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're choosing a jurisdiction specifically to avoid consumer protection requirements",
+      "Your users are in regulated jurisdictions but your entity is offshore to avoid compliance"
+    ],
+    "ifYouMust": [
+      "Comply with regulations in jurisdictions where your users are located, not just where you're incorporated",
+      "Implement consumer protection measures voluntarily even if not legally required",
+      "Support international regulatory coordination efforts",
+      "Be transparent about your regulatory status and what protections users have"
+    ],
+    "alternatives": [
+      { "name": "Proactive compliance", "note": "Build for the strictest regulatory standard — it's coming everywhere eventually" },
+      { "name": "International regulatory frameworks", "note": "Support FATF and similar bodies creating consistent global standards" },
+      { "name": "Self-regulatory organizations", "note": "Industry-led standards that provide consumer protection without waiting for legislation" }
+    ]
+  },
+
+  "sources": [
+    { "title": "FTX Collapse and Bahamas Regulatory Failure", "note": "FTX chose Bahamas specifically for light regulation, resulting in $8B+ in customer losses" },
+    { "title": "Chainalysis: Crypto Crime Report 2024", "note": "Data showing crypto fraud concentrated in jurisdictions with weakest regulatory oversight" },
+    { "title": "FATF: Virtual Asset Regulatory Framework", "note": "International body's attempt to create consistent crypto regulation across jurisdictions" },
+    { "title": "IMF: Crypto Regulatory Arbitrage Analysis", "note": "Analysis of how regulatory differences across jurisdictions create systemic risks" }
+  ],
+
+  "falsifiability": [
+    "Crypto regulatory arbitrage decreases as international coordination improves",
+    "Lightly-regulated jurisdictions show lower fraud rates than heavily-regulated ones",
+    "Offshore crypto projects provide equivalent consumer protection to regulated onshore projects"
+  ],
+
+  "tags": ["crypto", "regulation", "arbitrage", "fraud", "consumer-protection", "jurisdiction"],
+  "crossReferences": ["M024", "P021", "M002"],
+
+  "seo": {
+    "description": "Crypto regulatory arbitrage concentrates fraud in lightly-regulated jurisdictions while legitimate projects bear compliance costs. FTX chose the Bahamas for a reason.",
+    "keywords": ["crypto regulatory arbitrage", "crypto regulation hidden costs", "crypto jurisdiction second order effects"]
+  }
+}

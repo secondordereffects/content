@@ -1,0 +1,94 @@
+{
+  "id": "M004",
+  "title": "Liquidity Illusion",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Modern markets appear deeply liquid — tight spreads, deep order books, instant execution. Investors build portfolios assuming they can exit positions quickly at current prices. But market liquidity is a fair-weather friend. It's abundant when you don't need it and vanishes when you do. During the March 2020 COVID crash, even US Treasury markets — the most liquid in the world — seized up. Corporate bond ETFs traded at 5% discounts to NAV. Crypto markets regularly experience 20-30% drops in minutes as liquidity evaporates. The illusion is created by algorithmic market makers who provide liquidity in calm conditions but withdraw simultaneously during stress. The order book that showed 10,000 shares at the bid disappears in milliseconds when volatility spikes. Investors who sized positions based on normal liquidity find they can't exit without massive slippage.",
+
+  "hypothesis": "Markets are always liquid enough to exit positions at reasonable prices.",
+
+  "chain": {
+    "root": "Assume market liquidity is persistent and reliable",
+    "effects": [
+      {
+        "label": "Positions sized based on normal-condition liquidity",
+        "impact": "Exit costs 10-50x higher during stress",
+        "direction": "negative",
+        "children": [
+          { "label": "Portfolio models assume instant execution at mid-price", "direction": "negative" },
+          { "label": "Risk models underestimate tail-event exit costs", "direction": "negative" },
+          { "label": "Leverage amplifies the liquidity gap", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Algorithmic market makers withdraw simultaneously",
+        "impact": "Order book depth vanishes in milliseconds",
+        "direction": "negative",
+        "children": [
+          { "label": "Bid-ask spreads explode 10-100x during stress", "direction": "negative" },
+          { "label": "Stop-loss orders execute at prices far below trigger", "direction": "negative" },
+          { "label": "ETF NAV discounts emerge as underlying assets become illiquid", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Correlated liquidity crises across asset classes",
+        "impact": "Diversification fails when everything becomes illiquid",
+        "direction": "negative",
+        "children": [
+          { "label": "Flight to cash creates selling pressure across all assets", "direction": "negative" },
+          { "label": "Margin calls force selling into illiquid markets", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Normal bid-ask spread", "before": "Tight (1-5 bps)", "after": "Explodes 10-100x during stress", "delta": "+1000%", "direction": "negative" },
+    { "metric": "Order book depth during stress", "before": "Assumed stable", "after": "-90% in minutes", "delta": "-90%", "direction": "negative" },
+    { "metric": "ETF NAV discount during stress", "before": "0-0.1%", "after": "3-5%", "delta": "+3000%", "direction": "negative" },
+    { "metric": "Portfolio exit cost during crisis", "before": "Modeled at 0.1%", "after": "Actual 2-10%", "delta": "+5000%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your risk model assumes you can exit positions at current market prices during a crisis",
+      "You're using leverage based on normal-condition liquidity assumptions"
+    ],
+    "ifYouMust": [
+      "Stress-test portfolio exit costs at 10x normal spreads",
+      "Size positions assuming you can't exit for days during a crisis",
+      "Maintain cash reserves for margin calls during liquidity events",
+      "Use limit orders, not market orders, during volatile periods"
+    ],
+    "alternatives": [
+      { "name": "Liquidity-adjusted position sizing", "note": "Size positions based on stressed liquidity, not normal liquidity" },
+      { "name": "Barbell strategy", "note": "Highly liquid core + small illiquid satellite — never forced to sell illiquid positions" },
+      { "name": "Options-based hedging", "note": "Buy protection before you need it — options provide guaranteed exit prices" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Federal Reserve: March 2020 Treasury Market Stress", "note": "Even US Treasuries — the world's most liquid market — experienced severe liquidity disruption" },
+    { "title": "BIS: Market Liquidity: Resilient or Fleeting?", "note": "Bank for International Settlements analysis of how modern market structure creates liquidity illusions" },
+    { "title": "BlackRock: ETF Liquidity During Market Stress", "note": "Analysis of ETF NAV discounts during the March 2020 crisis" },
+    { "title": "Journal of Finance: The Illusion of Liquidity", "note": "Academic research on how algorithmic market making creates apparent but fragile liquidity" }
+  ],
+
+  "falsifiability": [
+    "Market liquidity remains stable during stress events with less than 2x spread widening",
+    "Algorithmic market makers maintain order book depth during high-volatility periods",
+    "Portfolio exit costs during crises are within 2x of normal-condition estimates"
+  ],
+
+  "tags": ["liquidity", "market-structure", "risk", "crisis", "algorithmic-trading", "etf"],
+  "crossReferences": ["M014", "M001", "M024"],
+
+  "seo": {
+    "description": "Market liquidity vanishes when you need it most — spreads explode 10-100x during stress while order book depth drops 90% in minutes. The illusion costs investors 2-10% in crisis exits.",
+    "keywords": ["liquidity illusion", "market liquidity hidden costs", "liquidity crisis second order effects"]
+  }
+}

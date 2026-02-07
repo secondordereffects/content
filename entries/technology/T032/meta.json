@@ -1,0 +1,94 @@
+{
+  "id": "T032",
+  "title": "Vendor SDK Dependency Trap",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Teams integrate vendor SDKs for payments, analytics, auth, messaging, and dozens of other services. The SDK promises easy integration — a few lines of code and you're connected. But each SDK is a black box that brings its own dependencies, its own update cycle, and its own breaking changes. SDKs bundle transitive dependencies that conflict with yours. They phone home with telemetry you didn't consent to. They break on major framework upgrades because the vendor's update cycle doesn't match yours. Over time, vendor SDKs become the most fragile parts of your codebase — you can't read the source, you can't fix bugs, and you're at the mercy of the vendor's release schedule. The 'easy integration' becomes a permanent maintenance liability.",
+
+  "hypothesis": "Using the official SDK is the fastest and most reliable way to integrate.",
+
+  "chain": {
+    "root": "Integrate multiple vendor SDKs into application",
+    "effects": [
+      {
+        "label": "Dependency conflicts accumulate",
+        "impact": "SDK transitive dependencies clash with app dependencies",
+        "direction": "negative",
+        "children": [
+          { "label": "Version pinning creates security vulnerability windows", "direction": "negative" },
+          { "label": "Multiple SDKs require incompatible versions of shared libraries", "direction": "negative" },
+          { "label": "Bundle size bloats with duplicate dependencies", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Framework upgrades blocked by SDK compatibility",
+        "impact": "Major upgrades delayed 6-12 months waiting for SDK updates",
+        "direction": "negative",
+        "children": [
+          { "label": "React/Next.js upgrades blocked by vendor SDK compatibility", "direction": "negative" },
+          { "label": "Security patches delayed because SDK doesn't support new runtime", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Black box debugging when SDK fails",
+        "impact": "Can't read source, can't fix bugs",
+        "direction": "negative",
+        "children": [
+          { "label": "Support tickets to vendor take days to weeks", "direction": "negative" },
+          { "label": "Workarounds accumulate as permanent code", "direction": "negative" },
+          { "label": "SDK telemetry sends data you didn't authorize", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Framework upgrade delay", "before": "Days", "after": "6-12 months (waiting for SDK)", "delta": "+1000%", "direction": "negative" },
+    { "metric": "Bundle size per SDK", "before": "N/A", "after": "50-200KB each", "delta": "Cumulative bloat", "direction": "negative" },
+    { "metric": "Integration time (initial)", "before": "Weeks (custom)", "after": "Hours (SDK)", "delta": "-90%", "direction": "positive" },
+    { "metric": "Long-term maintenance cost", "before": "Controlled (custom)", "after": "Uncontrolled (vendor-dependent)", "delta": "+200%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The vendor SDK bundles more than 500KB of dependencies for a simple integration",
+      "The SDK hasn't been updated in 6+ months while the vendor's API has changed"
+    ],
+    "ifYouMust": [
+      "Wrap vendor SDKs behind your own abstraction layer",
+      "Pin SDK versions and test upgrades in isolation",
+      "Audit SDK telemetry and network calls before deploying",
+      "Have a fallback plan for when the SDK breaks on framework upgrades"
+    ],
+    "alternatives": [
+      { "name": "Direct API integration", "note": "Call the vendor's REST API directly — more work upfront, less maintenance" },
+      { "name": "Thin wrapper libraries", "note": "Community-maintained lightweight alternatives to official SDKs" },
+      { "name": "API gateway abstraction", "note": "Centralize vendor integrations behind your own API layer" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Sentry SDK Size and Dependency Analysis", "note": "Analysis of how monitoring SDKs add significant bundle size and transitive dependencies" },
+    { "title": "npm Dependency Hell: Left-Pad Incident", "note": "How transitive dependencies in the npm ecosystem create fragile dependency chains" },
+    { "title": "Stripe SDK vs Direct API Integration Comparison", "note": "Comparison showing direct API integration is more maintainable long-term despite higher initial effort" },
+    { "title": "React Native SDK Compatibility Issues", "note": "Documented cases of vendor SDKs blocking React Native version upgrades for months" }
+  ],
+
+  "falsifiability": [
+    "Vendor SDKs consistently update within 2 weeks of major framework releases",
+    "SDK dependency conflicts occur in fewer than 5% of projects using multiple vendor SDKs",
+    "Long-term maintenance cost of SDK integration is lower than direct API integration"
+  ],
+
+  "tags": ["sdk", "vendor-lock-in", "dependencies", "maintenance", "integration", "technical-debt"],
+  "crossReferences": ["T004", "T005", "T032"],
+
+  "seo": {
+    "description": "Vendor SDKs promise easy integration but block framework upgrades for 6-12 months, create dependency conflicts, and become unmaintainable black boxes over time.",
+    "keywords": ["vendor sdk dependency trap", "sdk integration hidden costs", "vendor sdk second order effects"]
+  }
+}

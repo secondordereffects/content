@@ -1,0 +1,94 @@
+{
+  "id": "O015",
+  "title": "Internal Platform Mandate",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Leadership mandates that all teams use the internal platform — internal auth system, internal deployment pipeline, internal monitoring stack. The rationale is consistency: one way to do things reduces cognitive load and enables shared tooling. But mandates without market feedback create captive customers. The internal platform team has no competitive pressure to improve. Product teams can't choose better alternatives. Feature requests go into a backlog that's prioritized by the platform team's roadmap, not by product team urgency. Teams that could ship in days using off-the-shelf tools wait weeks for internal platform features. The mandate creates resentment, shadow IT, and a growing gap between what the platform provides and what teams actually need.",
+
+  "hypothesis": "Mandating internal platforms ensures consistency and reduces duplication.",
+
+  "chain": {
+    "root": "Mandate use of internal platform for all teams",
+    "effects": [
+      {
+        "label": "Captive customers with no competitive pressure",
+        "impact": "Platform quality stagnates without market feedback",
+        "direction": "negative",
+        "children": [
+          { "label": "Feature requests deprioritized against platform team's own roadmap", "direction": "negative" },
+          { "label": "No incentive to improve UX when users can't leave", "direction": "negative" },
+          { "label": "Platform team becomes bureaucratic gatekeeper", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Product teams blocked by platform limitations",
+        "impact": "Shipping velocity drops 20-30%",
+        "direction": "negative",
+        "children": [
+          { "label": "Teams wait weeks for platform features they could build in days", "direction": "negative" },
+          { "label": "Workarounds and hacks accumulate to bypass platform limitations", "direction": "negative" },
+          { "label": "Shadow IT emerges as teams secretly use external tools", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Consistency achieved at the cost of innovation",
+        "impact": "All teams constrained to platform's lowest common denominator",
+        "direction": "negative",
+        "children": [
+          { "label": "Teams can't adopt new technologies until platform supports them", "direction": "negative" },
+          { "label": "Best practices frozen at platform's design-time assumptions", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Product team shipping velocity", "before": "Baseline", "after": "-20-30%", "delta": "-25%", "direction": "negative" },
+    { "metric": "Platform satisfaction score", "before": "Expected high", "after": "40-50% satisfaction", "delta": "Low", "direction": "negative" },
+    { "metric": "Shadow IT usage", "before": "0%", "after": "30-40% of teams use unauthorized tools", "delta": "+35%", "direction": "negative" },
+    { "metric": "Tooling consistency", "before": "Fragmented", "after": "Consistent (on paper)", "delta": "Improved", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your internal platform satisfaction score is below 60%",
+      "Product teams are building workarounds faster than the platform team ships features"
+    ],
+    "ifYouMust": [
+      "Treat the internal platform as a product — measure adoption, satisfaction, and NPS",
+      "Allow teams to opt out with documented justification rather than mandating",
+      "Give product teams a voice in platform roadmap prioritization",
+      "Set SLAs for platform feature requests and honor them"
+    ],
+    "alternatives": [
+      { "name": "Recommended defaults with opt-out", "note": "Strong defaults that teams can override with justification" },
+      { "name": "Thin platform layer", "note": "Minimal platform that wraps standard tools rather than replacing them" },
+      { "name": "Inner source model", "note": "Platform is open-source internally — teams can contribute and extend" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Amazon: Bezos API Mandate", "note": "Amazon's mandate that all teams expose APIs worked because it enabled, not constrained, team autonomy" },
+    { "title": "Thoughtworks: Platform as a Product", "note": "Framework for treating internal platforms as products with real customer feedback loops" },
+    { "title": "Team Topologies: Platform Team Patterns", "note": "Research on when platform mandates help vs when they create bottlenecks" },
+    { "title": "Gartner: Internal Platform Adoption Failures", "note": "Data showing 60% of mandated internal platforms fail to achieve target adoption" }
+  ],
+
+  "falsifiability": [
+    "Mandated internal platforms achieve 90%+ genuine adoption (not just compliance) within 12 months",
+    "Product teams using mandated platforms ship faster than those using self-selected tools",
+    "Shadow IT usage remains below 10% in organizations with platform mandates"
+  ],
+
+  "tags": ["platform", "mandate", "internal-tools", "developer-experience", "organizational-design"],
+  "crossReferences": ["T026", "O014", "O010"],
+
+  "seo": {
+    "description": "Internal platform mandates create captive customers — shipping velocity drops 25% while 35% of teams secretly use unauthorized tools. Consistency without quality is just constraint.",
+    "keywords": ["internal platform mandate", "internal platform hidden costs", "platform mandate second order effects"]
+  }
+}

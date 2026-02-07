@@ -1,0 +1,94 @@
+{
+  "id": "O004",
+  "title": "Hiring Bar Inflation",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Companies adopt the mantra 'only hire the best' and raise the hiring bar continuously. Each new hire must be better than the average of the existing team. Interview processes expand to 5-8 rounds. Take-home projects consume 10-20 hours. The bar rises until it filters out qualified candidates who could do the job well but don't perform optimally in artificial interview conditions. The process selects for interview skills, not job skills. Meanwhile, positions stay open for months, existing team members burn out covering the gap, and the company loses candidates to competitors with faster processes. The irony: the 'best' candidates — those with multiple offers — are the ones most likely to drop out of a lengthy process. The hiring bar that was supposed to ensure quality actually selects for candidates who have the luxury of time and the specific skill of interviewing well.",
+
+  "hypothesis": "Only hiring the best ensures a high-performing team.",
+
+  "chain": {
+    "root": "Continuously raise the hiring bar",
+    "effects": [
+      {
+        "label": "Interview process expands to 5-8 rounds",
+        "impact": "Candidate drop-off rate 40-60%",
+        "direction": "negative",
+        "children": [
+          { "label": "Best candidates with multiple offers drop out first", "direction": "negative" },
+          { "label": "Take-home projects filter for free time, not ability", "direction": "negative" },
+          { "label": "Process selects for interview skills, not job skills", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Positions stay open for months",
+        "impact": "Average time-to-fill doubles",
+        "direction": "negative",
+        "children": [
+          { "label": "Existing team burns out covering the gap", "direction": "negative" },
+          { "label": "Projects delayed waiting for headcount", "direction": "negative" },
+          { "label": "Cost of vacancy exceeds cost of a 'good enough' hire", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Homogeneity increases through pattern matching",
+        "impact": "Hiring for 'culture fit' disguised as 'bar'",
+        "direction": "negative",
+        "children": [
+          { "label": "Non-traditional backgrounds filtered out", "direction": "negative" },
+          { "label": "Interviewers hire people who remind them of themselves", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Time to fill position", "before": "30-45 days", "after": "90-180 days", "delta": "+300%", "direction": "negative" },
+    { "metric": "Candidate drop-off rate", "before": "20%", "after": "40-60%", "delta": "+100%", "direction": "negative" },
+    { "metric": "Team burnout during vacancy", "before": "Manageable", "after": "Significant", "delta": "+50%", "direction": "negative" },
+    { "metric": "Hire quality (actual job performance)", "before": "Baseline", "after": "No measurable improvement", "delta": "Neutral", "direction": "neutral" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your interview process takes more than 2 weeks end-to-end",
+      "You can't demonstrate that your hiring bar correlates with actual job performance"
+    ],
+    "ifYouMust": [
+      "Measure correlation between interview performance and actual job performance",
+      "Cap interview rounds at 4 and total candidate time at 5 hours",
+      "Track cost of vacancy alongside cost of a 'wrong' hire",
+      "Use structured interviews with rubrics to reduce bias and increase signal"
+    ],
+    "alternatives": [
+      { "name": "Trial periods", "note": "Hire faster with a 90-day evaluation period — real work beats interviews" },
+      { "name": "Structured interviews only", "note": "4 rounds max with standardized questions and rubrics" },
+      { "name": "Hire for potential", "note": "Hire people who can grow into the role, not just those who already fit perfectly" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Google: Rethinking the Hiring Process", "note": "Google found that interview scores beyond 4 rounds added no predictive value for job performance" },
+    { "title": "Harvard Business Review: The Cost of a Bad Hire vs Empty Seat", "note": "Research showing the cost of an unfilled position often exceeds the cost of a mediocre hire" },
+    { "title": "Greenhouse: Hiring Process Length and Candidate Experience", "note": "Data showing candidate drop-off increases 10% for each additional interview round" },
+    { "title": "Frank Schmidt: Validity of Selection Methods", "note": "Meta-analysis showing structured interviews predict job performance better than unstructured multi-round processes" }
+  ],
+
+  "falsifiability": [
+    "Companies with 6+ interview rounds hire measurably better performers than those with 3-4 rounds",
+    "Raising the hiring bar reduces time-to-fill rather than increasing it",
+    "Interview performance strongly predicts actual job performance (r > 0.5)"
+  ],
+
+  "tags": ["hiring", "interviews", "talent", "organizational-design", "bias", "productivity"],
+  "crossReferences": ["O006", "T031", "O009"],
+
+  "seo": {
+    "description": "Hiring bar inflation extends time-to-fill 300% while candidate drop-off hits 60%. The process selects for interview skills, not job skills — and the best candidates leave first.",
+    "keywords": ["hiring bar inflation", "hiring process hidden costs", "hiring bar second order effects"]
+  }
+}
