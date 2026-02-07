@@ -1,0 +1,103 @@
+{
+  "id": "T024",
+  "title": "Caching Invalidation Cascade",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Phil Karlton famously said there are only two hard things in computer science: cache invalidation and naming things. He was right about the first one. Caching is the default answer to performance problems. Slow database query? Cache it. Slow API? Cache it. Slow page load? Cache it. Each individual caching decision is rational. But caching layers compound. A typical production system has browser cache, CDN cache, reverse proxy cache, application cache, ORM cache, and database query cache. When data changes, the invalidation signal must propagate through all layers correctly, in the right order, within acceptable staleness windows. It almost never does. The result is a system that's fast but wrong — serving stale data that causes subtle bugs, inconsistent user experiences, and data integrity issues that are nearly impossible to reproduce or debug.",
+
+  "hypothesis": "Adding caching layers improves application performance.",
+
+  "chain": {
+    "root": "Add caching layers to improve performance",
+    "effects": [
+      {
+        "label": "Multiple cache layers create invalidation complexity explosion",
+        "impact": "6+ cache layers in typical production stack",
+        "direction": "negative",
+        "children": [
+          { "label": "Invalidation must propagate through all layers in correct order", "direction": "negative" },
+          { "label": "Each layer has different TTL, eviction policy, and consistency guarantees", "direction": "negative" },
+          { "label": "Cache key design becomes a critical architecture decision that's hard to change", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Stale data bugs are subtle, intermittent, and nearly impossible to reproduce",
+        "impact": "Cache-related bugs take 3-5x longer to diagnose than other bugs",
+        "direction": "negative",
+        "children": [
+          { "label": "User sees outdated data but refreshing 'fixes' it — bug report dismissed", "direction": "negative" },
+          { "label": "Race conditions between cache write and invalidation create inconsistent states", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Cache becomes load-bearing — removal causes cascading failure",
+        "impact": "Cache failure = database overwhelmed = full outage",
+        "direction": "negative",
+        "children": [
+          { "label": "Thundering herd: cache expiry causes all requests to hit database simultaneously", "direction": "negative" },
+          { "label": "System can't function without cache — original performance problem is now worse", "direction": "negative" },
+          { "label": "Cache warming after outage takes minutes to hours, extending downtime", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Development velocity decreases as cache interactions must be considered for every change",
+        "impact": "Every data model change requires cache invalidation audit",
+        "direction": "negative",
+        "children": [
+          { "label": "New features must account for 6+ cache layers or risk stale data", "direction": "negative" },
+          { "label": "Testing cache behavior requires production-like infrastructure", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Response time (with cache)", "before": "500ms", "after": "50ms", "delta": "-90%", "direction": "positive" },
+    { "metric": "Time to diagnose cache-related bugs", "before": "Hours (non-cache bugs)", "after": "Days (cache bugs)", "delta": "3-5x longer", "direction": "negative" },
+    { "metric": "System resilience to cache failure", "before": "Degraded but functional", "after": "Full outage", "delta": "Critical dependency", "direction": "negative" },
+    { "metric": "Developer cognitive load per feature", "before": "Business logic only", "after": "Business logic + cache invalidation", "delta": "+40-60%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're adding cache to fix a problem that should be solved by query optimization or better data modeling",
+      "You can't articulate the invalidation strategy before implementing the cache"
+    ],
+    "ifYouMust": [
+      "Define invalidation strategy before implementing cache — if you can't explain when data expires, don't cache it",
+      "Use a single cache layer when possible — each additional layer multiplies invalidation complexity",
+      "Implement cache stampede protection (locking, probabilistic early expiration)",
+      "Monitor cache hit rates and stale-serve rates — if hit rate is below 80%, the cache may not be worth the complexity"
+    ],
+    "alternatives": [
+      { "name": "Query optimization", "note": "Fix the slow query instead of caching its results — indexes, query rewriting, denormalization" },
+      { "name": "Read replicas", "note": "Scale reads at the database level without introducing cache invalidation complexity" },
+      { "name": "Materialized views", "note": "Database-managed precomputed results with built-in consistency guarantees" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Facebook Engineering: Scaling Memcache", "url": "https://research.facebook.com/publications/scaling-memcache-at-facebook/", "note": "Facebook's cache invalidation challenges at scale — billions of invalidations per day" },
+    { "title": "AWS: Caching Best Practices", "url": "https://aws.amazon.com/caching/best-practices/", "note": "Industry guidance on cache invalidation strategies and common failure modes" },
+    { "title": "Martin Kleppmann: Designing Data-Intensive Applications", "url": "https://dataintensive.net/", "note": "Comprehensive analysis of caching tradeoffs, consistency models, and invalidation patterns" },
+    { "title": "Cloudflare Blog: Cache Invalidation at Scale", "url": "https://blog.cloudflare.com/tag/cache/", "note": "Real-world examples of cache invalidation challenges at CDN scale" }
+  ],
+
+  "falsifiability": [
+    "Multi-layer caching systems show no increase in bug diagnosis time compared to non-cached systems",
+    "Cache invalidation across 6+ layers achieves 99.99% consistency without significant engineering overhead",
+    "Systems with aggressive caching show equal or better resilience to cache infrastructure failures"
+  ],
+
+  "tags": ["caching", "cache-invalidation", "performance", "distributed-systems", "stale-data", "thundering-herd"],
+  "crossReferences": ["T002", "T009", "T020"],
+
+  "seo": {
+    "description": "Caching cuts response times 90% but creates invalidation complexity across 6+ layers. Cache-related bugs take 3-5x longer to diagnose and cache failure causes full outages.",
+    "keywords": ["cache invalidation second order effects", "caching hidden costs", "cache invalidation cascade"]
+  }
+}

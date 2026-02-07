@@ -1,0 +1,103 @@
+{
+  "id": "A014",
+  "title": "AI Personalization Filter Bubble",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "AI-powered recommendation engines now mediate what billions of people see, read, watch, and buy. Netflix, TikTok, YouTube, Spotify, Amazon, and Google all use deep learning to personalize content feeds. The pitch is compelling: show people more of what they like, less of what they don't. But personalization algorithms optimize for engagement, not for breadth. They learn your preferences and then narrow your world to match them. Over time, users exist inside increasingly tight information bubbles where their existing beliefs are reinforced, their tastes calcify, and their exposure to challenging or novel ideas shrinks. The filter bubble isn't a bug — it's the inevitable output of optimizing for click-through rates on a per-user basis.",
+
+  "hypothesis": "AI personalization improves user experience by showing people what they want.",
+
+  "chain": {
+    "root": "Deploy AI recommendation engine optimized for engagement",
+    "effects": [
+      {
+        "label": "Content feeds narrow to match existing preferences",
+        "impact": "80% of Netflix views from recommendations",
+        "direction": "negative",
+        "children": [
+          { "label": "Users stop discovering content outside their comfort zone", "direction": "negative" },
+          { "label": "Niche creators get amplified to niche audiences only", "direction": "negative" },
+          { "label": "Mainstream shared cultural experiences fragment", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Belief reinforcement creates epistemic closure",
+        "impact": "Political content polarization +40% since 2016",
+        "direction": "negative",
+        "children": [
+          { "label": "Users encounter fewer opposing viewpoints over time", "direction": "negative" },
+          { "label": "Confidence in wrong beliefs increases through repetition", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Engagement optimization selects for emotional intensity",
+        "impact": "Outrage content gets 6x more engagement",
+        "direction": "negative",
+        "children": [
+          { "label": "Algorithms learn that anger and fear drive clicks", "direction": "negative" },
+          { "label": "Moderate, nuanced content gets algorithmically suppressed", "direction": "negative" },
+          { "label": "Users' emotional baseline shifts toward anxiety and outrage", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Commercial filter bubbles distort purchasing decisions",
+        "impact": "Recommendation-driven purchases have 30% higher return rates",
+        "direction": "negative",
+        "children": [
+          { "label": "Price comparison and alternative discovery suppressed by personalized results", "direction": "negative" },
+          { "label": "Users pay more for products they could find cheaper outside the bubble", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Content diversity in user feeds", "before": "Broad (editorial curation)", "after": "Narrow (algorithmic)", "delta": "-60% topic diversity", "direction": "negative" },
+    { "metric": "Cross-partisan content exposure", "before": "30% of feed", "after": "10% of feed", "delta": "-20pp", "direction": "negative" },
+    { "metric": "Engagement per session", "before": "Baseline", "after": "+35%", "delta": "+35%", "direction": "positive" },
+    { "metric": "User-reported satisfaction (long-term)", "before": "Moderate", "after": "Declining", "delta": "-20%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your platform serves news, education, or civic information where diversity of perspective matters",
+      "You're optimizing purely for session time without measuring long-term user satisfaction"
+    ],
+    "ifYouMust": [
+      "Build diversity metrics into recommendation quality alongside engagement",
+      "Offer users transparent controls to adjust how aggressively personalization narrows their feed",
+      "Inject serendipity — deliberately surface content outside the user's established preferences",
+      "Measure long-term retention and satisfaction, not just short-term engagement"
+    ],
+    "alternatives": [
+      { "name": "Editorial curation with algorithmic assist", "note": "Human editors set content mix, algorithms optimize within guardrails" },
+      { "name": "Exploration-exploitation balance", "note": "Dedicate 20-30% of feed to novel content outside user's established preferences" },
+      { "name": "Community-based recommendations", "note": "Recommend based on trusted social connections rather than behavioral similarity" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Eli Pariser: The Filter Bubble", "url": "https://www.ted.com/talks/eli_pariser_beware_online_filter_bubbles", "note": "Foundational work on how personalization algorithms create information bubbles" },
+    { "title": "Nature: Exposure to Opposing Views on Social Media", "url": "https://www.nature.com/articles/s41586-023-06297-w", "note": "Exposure to opposing views on social media can increase political polarization" },
+    { "title": "Wall Street Journal: Facebook Files — The Algorithm", "url": "https://www.wsj.com/articles/the-facebook-files-11631713039", "note": "Internal Facebook research showing algorithm amplifies divisive content for engagement" },
+    { "title": "MIT Technology Review: How Recommendation Algorithms Run the World", "url": "https://www.technologyreview.com/2023/04/19/1071789/how-recommendation-algorithms-run-the-world/", "note": "Analysis of recommendation engine impact across platforms" }
+  ],
+
+  "falsifiability": [
+    "Users exposed to highly personalized feeds show equal or greater diversity of information consumption compared to non-personalized feeds",
+    "Engagement-optimized algorithms produce no measurable increase in political polarization over a 3-year period",
+    "Long-term user satisfaction increases proportionally with personalization intensity"
+  ],
+
+  "tags": ["ai", "filter-bubble", "personalization", "polarization", "recommendation-algorithms", "engagement"],
+  "crossReferences": ["S002", "S003", "A004"],
+
+  "seo": {
+    "description": "AI recommendation engines narrow content diversity by 60% while boosting engagement 35%. The filter bubble isn't a bug — it's the inevitable output of optimizing for clicks.",
+    "keywords": ["ai personalization filter bubble", "recommendation algorithm second order effects", "filter bubble hidden costs"]
+  }
+}

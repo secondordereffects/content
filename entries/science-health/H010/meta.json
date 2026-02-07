@@ -1,0 +1,103 @@
+{
+  "id": "H010",
+  "title": "Nutrition Science Whiplash",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Eggs are bad. No, eggs are fine. Fat is the enemy. Actually, sugar is the enemy. Butter will kill you. Wait, margarine is worse. Red wine is heart-healthy. No, any alcohol is harmful. Nutrition science has reversed its major recommendations so frequently that the public has developed a rational response: ignore all of it. The problem is structural. Most nutrition research relies on observational studies, food frequency questionnaires (notoriously inaccurate), and short-term interventions that can't capture decades-long health effects. Industry funding biases results — the sugar industry funded research blaming fat for heart disease for 50 years. The result is a field where confident public health recommendations are built on weak evidence, and when they reverse, they erode trust not just in nutrition science but in scientific authority broadly.",
+
+  "hypothesis": "Following the latest nutrition research leads to better health outcomes.",
+
+  "chain": {
+    "root": "Public health agencies issue confident dietary recommendations based on observational studies",
+    "effects": [
+      {
+        "label": "Recommendations reverse every 10-15 years on major food groups",
+        "impact": "Fat, eggs, salt, coffee, red wine — all reversed",
+        "direction": "negative",
+        "children": [
+          { "label": "Public loses trust in dietary guidelines entirely", "direction": "negative" },
+          { "label": "People default to eating whatever they want — 'science can't make up its mind'", "direction": "negative" },
+          { "label": "Fad diets fill the credibility vacuum left by institutional science", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Industry funding systematically biases research",
+        "impact": "Industry-funded studies 4-8x more likely to favor sponsor's product",
+        "direction": "negative",
+        "children": [
+          { "label": "Sugar industry funded anti-fat research for 50 years, causing the low-fat diet disaster", "direction": "negative" },
+          { "label": "Supplement industry funds studies with small samples and favorable designs", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Weak methodology produces unreliable results",
+        "impact": "Food frequency questionnaires have 30-50% error rates",
+        "direction": "negative",
+        "children": [
+          { "label": "Observational studies can't establish causation but are reported as if they do", "direction": "negative" },
+          { "label": "Confounding variables (wealth, education, lifestyle) are inadequately controlled", "direction": "negative" },
+          { "label": "Media amplifies preliminary findings as definitive — 'study shows X causes cancer'", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Trust erosion spreads beyond nutrition to science broadly",
+        "impact": "Trust in scientific institutions declining 5-10% per decade",
+        "direction": "negative",
+        "children": [
+          { "label": "Vaccine hesitancy partly rooted in 'science keeps changing its mind'", "direction": "negative" },
+          { "label": "Climate science skepticism borrows from nutrition science distrust", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Major dietary recommendation reversals (since 1970)", "before": "N/A", "after": "6+ major reversals", "delta": "Chronic instability", "direction": "negative" },
+    { "metric": "Public trust in dietary guidelines", "before": "High (1980s)", "after": "Low (2020s)", "delta": "-50%", "direction": "negative" },
+    { "metric": "Obesity rate (US, during guideline era)", "before": "15% (1980)", "after": "42% (2024)", "delta": "+27pp", "direction": "negative" },
+    { "metric": "Industry-funded study bias", "before": "Unknown", "after": "4-8x more likely to favor sponsor", "delta": "Systematic", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're making major dietary changes based on a single study reported in mainstream media",
+      "The nutrition advice comes from someone selling a supplement, book, or diet program"
+    ],
+    "ifYouMust": [
+      "Wait for meta-analyses and systematic reviews before changing behavior — single studies are noise",
+      "Check funding sources on any nutrition study before trusting its conclusions",
+      "Prefer randomized controlled trials over observational studies when available",
+      "Default to simple heuristics: eat whole foods, mostly plants, not too much — Michael Pollan's rule"
+    ],
+    "alternatives": [
+      { "name": "Evidence hierarchy approach", "note": "Only act on systematic reviews and RCTs, ignore individual observational studies" },
+      { "name": "Ancestral diet heuristic", "note": "Eat foods that existed 200 years ago, avoid industrial processed foods — simple and robust" },
+      { "name": "Personal biomarker tracking", "note": "Use blood tests and metabolic markers to evaluate what works for your body, not population averages" }
+    ]
+  },
+
+  "sources": [
+    { "title": "JAMA Internal Medicine: Sugar Industry and Coronary Heart Disease Research", "url": "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2548255", "note": "Sugar industry paid scientists to blame fat for heart disease, shaping 50 years of dietary policy" },
+    { "title": "PLOS Medicine: Systematic Bias in Industry-Funded Nutrition Research", "url": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0040005", "note": "Industry-funded studies 4-8x more likely to produce results favorable to sponsor" },
+    { "title": "BMJ: Food Frequency Questionnaires and Measurement Error", "url": "https://www.bmj.com/content/360/bmj.k822", "note": "Self-reported dietary data has 30-50% error rates, undermining observational study validity" },
+    { "title": "Ioannidis: Why Most Published Research Findings Are False", "url": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124", "note": "Foundational paper on research methodology failures, heavily applicable to nutrition science" }
+  ],
+
+  "falsifiability": [
+    "Major dietary recommendations remain stable for 20+ years without reversal",
+    "Nutrition research funded by industry shows no systematic bias compared to independently funded research",
+    "Public trust in dietary guidelines increases over a 10-year period"
+  ],
+
+  "tags": ["nutrition-science", "dietary-guidelines", "research-methodology", "industry-funding", "trust", "public-health"],
+  "crossReferences": ["H003", "H001", "S016"],
+
+  "seo": {
+    "description": "Nutrition science has reversed major recommendations 6+ times since 1970. Industry-funded studies are 4-8x more likely to favor sponsors. Public trust in dietary guidelines has collapsed.",
+    "keywords": ["nutrition science whiplash", "dietary guidelines second order effects", "nutrition research hidden costs"]
+  }
+}

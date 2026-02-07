@@ -1,0 +1,103 @@
+{
+  "id": "T015",
+  "title": "Low-Code Platform Lock-in",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Low-code and no-code platforms (Retool, Bubble, OutSystems, Mendix, Appsmith) promise to democratize software development. Business users build apps without engineers. Internal tools ship in days instead of months. The productivity gains are real — for the first 6-12 months. Then the walls close in. The platform's abstraction layer that made building fast now makes customization impossible. Business logic lives in a proprietary visual editor with no version control, no code review, no testing framework, and no export path. When you outgrow the platform — and you will — you face a total rewrite because nothing you built is portable. The low-code platform didn't eliminate engineering complexity. It deferred it while adding vendor lock-in.",
+
+  "hypothesis": "Low-code platforms accelerate development and reduce engineering dependency.",
+
+  "chain": {
+    "root": "Adopt low-code platform for internal tools or customer-facing apps",
+    "effects": [
+      {
+        "label": "Initial development velocity is genuinely impressive",
+        "impact": "5-10x faster for simple CRUD apps",
+        "direction": "positive",
+        "children": [
+          { "label": "Success creates pressure to build more complex apps on the platform", "direction": "negative" },
+          { "label": "Organization shifts budget from engineering to platform licenses", "direction": "neutral" },
+          { "label": "Institutional knowledge concentrates in platform-specific skills", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Customization ceiling hits hard at 70-80% of requirements",
+        "impact": "Last 20% takes 80% of effort — worse than code",
+        "direction": "negative",
+        "children": [
+          { "label": "Workarounds and hacks accumulate to bypass platform limitations", "direction": "negative" },
+          { "label": "Engineers hired to maintain low-code apps — defeating the original purpose", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Vendor lock-in becomes total — no export, no portability",
+        "impact": "Migration cost: full rewrite (3-12 months)",
+        "direction": "negative",
+        "children": [
+          { "label": "Business logic trapped in proprietary visual editor with no version control", "direction": "negative" },
+          { "label": "Platform pricing increases with no competitive alternative", "direction": "negative" },
+          { "label": "Platform deprecation or acquisition forces emergency migration", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Shadow IT proliferates as business users build unsanctioned apps",
+        "impact": "40% of low-code apps built without IT oversight",
+        "direction": "negative",
+        "children": [
+          { "label": "Security vulnerabilities in apps built by non-engineers", "direction": "negative" },
+          { "label": "Data governance breaks down across dozens of ungoverned apps", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Initial development speed (simple apps)", "before": "Weeks-months", "after": "Days", "delta": "5-10x faster", "direction": "positive" },
+    { "metric": "Customization beyond platform limits", "before": "Possible (code)", "after": "Impossible or hacky", "delta": "Blocked", "direction": "negative" },
+    { "metric": "Migration cost when outgrowing platform", "before": "N/A", "after": "Full rewrite", "delta": "3-12 months", "direction": "negative" },
+    { "metric": "Per-seat licensing cost at scale", "before": "$0 (open source)", "after": "$50-200/user/month", "delta": "+$600-2400/user/year", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The app will need custom business logic beyond basic CRUD within 12 months",
+      "You're building customer-facing products where you need full control over UX and performance"
+    ],
+    "ifYouMust": [
+      "Limit low-code to internal tools and prototypes — never customer-facing production apps",
+      "Choose platforms with code export or API-first architecture for eventual migration",
+      "Maintain engineering capability to rebuild critical apps if the platform fails",
+      "Set a complexity threshold — when an app exceeds it, migrate to code immediately"
+    ],
+    "alternatives": [
+      { "name": "Open-source admin frameworks", "note": "Refine, AdminJS, or React Admin — code-based but fast for internal tools, fully portable" },
+      { "name": "Rapid application frameworks", "note": "Rails, Django, Next.js — slightly slower to start but no ceiling and no lock-in" },
+      { "name": "Low-code for prototyping only", "note": "Use low-code to validate ideas, then rebuild in code for production" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Gartner: Low-Code Development Technologies", "url": "https://www.gartner.com/en/documents/4007520", "note": "By 2025, 70% of new applications will use low-code — but lock-in risk is the top concern" },
+    { "title": "Forrester: The State of Low-Code Platforms", "url": "https://www.forrester.com/report/the-state-of-low-code-platforms/RES176570", "note": "Vendor lock-in and customization limits are the primary reasons for low-code project failure" },
+    { "title": "InfoWorld: The Hidden Costs of Low-Code", "url": "https://www.infoworld.com/article/3669477/the-hidden-costs-of-low-code-development.html", "note": "Analysis of total cost of ownership including licensing, migration, and shadow IT risks" },
+    { "title": "ThoughtWorks Technology Radar: Low-Code Platforms", "url": "https://www.thoughtworks.com/radar/platforms", "note": "Low-code platforms consistently flagged for lock-in risk and governance challenges" }
+  ],
+
+  "falsifiability": [
+    "Organizations using low-code platforms for 3+ years report lower total cost of ownership than equivalent code-based solutions",
+    "Low-code platforms provide full code export that enables migration to standard frameworks in under 2 weeks",
+    "Complex applications built on low-code platforms match the performance and customizability of code-based equivalents"
+  ],
+
+  "tags": ["low-code", "vendor-lock-in", "shadow-it", "platform-dependency", "internal-tools", "technical-debt"],
+  "crossReferences": ["T005", "T010", "O015"],
+
+  "seo": {
+    "description": "Low-code platforms deliver 5-10x speed for simple apps but create total vendor lock-in. When you outgrow the platform, the only path out is a full rewrite.",
+    "keywords": ["low-code platform lock-in", "no-code hidden costs", "low-code second order effects"]
+  }
+}

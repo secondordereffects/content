@@ -1,0 +1,103 @@
+{
+  "id": "I007",
+  "title": "Space Debris Kessler Syndrome",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "SpaceX launches Starlink satellites at a pace of 40-60 per month. Amazon's Project Kuiper, OneWeb, and dozens of other operators are adding thousands more. The total number of active satellites has grown from 2,000 in 2019 to over 10,000 in 2025, with plans for 100,000+ by 2030. Each satellite operates in low Earth orbit (LEO) for 5-7 years before deorbiting. But collisions, failures, and fragmentation create debris that doesn't deorbit. NASA tracks 30,000+ debris objects larger than 10cm, and estimates 100 million+ fragments too small to track but large enough to destroy a satellite. The Kessler Syndrome — a cascading chain reaction where debris from one collision creates more debris that causes more collisions — is no longer theoretical. At current launch rates, orbital density in popular LEO bands may cross the threshold where cascading collisions become self-sustaining within 20-30 years.",
+
+  "hypothesis": "More satellites improve global connectivity and benefit humanity.",
+
+  "chain": {
+    "root": "Launch thousands of satellites into low Earth orbit annually",
+    "effects": [
+      {
+        "label": "Orbital debris density increases exponentially",
+        "impact": "30,000+ tracked objects, 100M+ untracked fragments",
+        "direction": "negative",
+        "children": [
+          { "label": "Collision probability doubles every 5-7 years at current launch rates", "direction": "negative" },
+          { "label": "Each collision creates thousands of new debris fragments", "direction": "negative" },
+          { "label": "Debris in LEO takes 5-25 years to naturally deorbit", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Active satellites must maneuver to avoid debris constantly",
+        "impact": "ISS performs 2-3 avoidance maneuvers per year, increasing",
+        "direction": "negative",
+        "children": [
+          { "label": "Fuel spent on avoidance reduces satellite operational lifespan", "direction": "negative" },
+          { "label": "Collision avoidance coordination between operators is ad hoc and unreliable", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Kessler Syndrome threshold approaches",
+        "impact": "Self-sustaining collision cascade possible within 20-30 years",
+        "direction": "negative",
+        "children": [
+          { "label": "Certain orbital bands become unusable for decades or centuries", "direction": "negative" },
+          { "label": "GPS, weather satellites, and communications infrastructure at risk", "direction": "negative" },
+          { "label": "Human spaceflight becomes prohibitively dangerous", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "No governance framework for orbital commons",
+        "impact": "Outer Space Treaty (1967) predates satellite mega-constellations",
+        "direction": "negative",
+        "children": [
+          { "label": "No enforceable liability for debris creation", "direction": "negative" },
+          { "label": "Tragedy of the commons — each operator's launches are rational individually but destructive collectively", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Active satellites in orbit", "before": "2,000 (2019)", "after": "10,000+ (2025)", "delta": "+400%", "direction": "negative" },
+    { "metric": "Tracked debris objects (>10cm)", "before": "20,000 (2019)", "after": "30,000+ (2025)", "delta": "+50%", "direction": "negative" },
+    { "metric": "Collision avoidance maneuvers (ISS, annual)", "before": "1 (2015)", "after": "3+ (2025)", "delta": "+200%", "direction": "negative" },
+    { "metric": "Planned satellites by 2030", "before": "10,000", "after": "100,000+", "delta": "+900%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your satellite constellation plan has no end-of-life deorbit strategy with >95% reliability",
+      "You're launching into orbital bands already approaching debris density thresholds"
+    ],
+    "ifYouMust": [
+      "Design satellites with active deorbit capability and 99%+ deorbit reliability",
+      "Contribute to space situational awareness by sharing tracking data openly",
+      "Support and comply with emerging debris mitigation guidelines (25-year rule minimum)",
+      "Fund active debris removal research proportional to constellation size"
+    ],
+    "alternatives": [
+      { "name": "Fewer, more capable satellites", "note": "Higher-capacity satellites in fewer numbers reduce collision probability per unit of bandwidth" },
+      { "name": "Higher orbit with longer deorbit planning", "note": "MEO orbits have more space and longer operational life, reducing replacement frequency" },
+      { "name": "Ground-based alternatives", "note": "Fiber optic and terrestrial wireless for areas where ground infrastructure is feasible" }
+    ]
+  },
+
+  "sources": [
+    { "title": "NASA Orbital Debris Program Office", "url": "https://orbitaldebris.jsc.nasa.gov/", "note": "Official tracking of 30,000+ debris objects and modeling of collision probability" },
+    { "title": "ESA Space Debris Office: Annual Report", "url": "https://www.esa.int/Space_Safety/Space_Debris", "note": "European Space Agency analysis of debris environment and Kessler Syndrome risk" },
+    { "title": "Kessler & Cour-Palais: Collision Frequency of Artificial Satellites", "url": "https://doi.org/10.1029/JA083iA06p02637", "note": "Original 1978 paper describing the cascading collision scenario" },
+    { "title": "Nature: The Growing Threat of Space Debris", "url": "https://www.nature.com/articles/s41550-023-01969-9", "note": "Current analysis of mega-constellation impact on orbital debris environment" }
+  ],
+
+  "falsifiability": [
+    "Orbital debris density stabilizes or decreases despite continued satellite launches through 2035",
+    "Active debris removal technology scales to remove debris faster than new debris is created",
+    "Collision avoidance systems achieve 100% effectiveness, preventing any cascading debris events"
+  ],
+
+  "tags": ["space-debris", "kessler-syndrome", "satellites", "orbital-commons", "starlink", "infrastructure"],
+  "crossReferences": ["I005", "I001", "I016"],
+
+  "seo": {
+    "description": "10,000+ satellites in orbit with 100,000+ planned by 2030. Collision probability doubles every 5-7 years. The Kessler Syndrome threshold may be crossed within 20-30 years.",
+    "keywords": ["space debris kessler syndrome", "satellite constellation second order effects", "orbital debris hidden costs"]
+  }
+}

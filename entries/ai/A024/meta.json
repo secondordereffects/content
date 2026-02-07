@@ -1,0 +1,103 @@
+{
+  "id": "A024",
+  "title": "AI Dependency Single Point of Failure",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Thousands of startups and enterprises have built their core products on top of OpenAI, Anthropic, or Google AI APIs. The integration is fast, the capabilities are impressive, and the alternative — training your own models — costs millions. But this creates a dependency pattern that would terrify any infrastructure engineer if it were a database or cloud provider. A single API provider controls your model quality, pricing, rate limits, content policy, and uptime. When OpenAI has an outage, entire product categories go dark simultaneously. When they change their content filtering, products break without warning. When they raise prices, your unit economics shift overnight. The AI API layer has become the most concentrated single point of failure in modern software, and most companies have no fallback.",
+
+  "hypothesis": "Building on OpenAI/Anthropic APIs is the fastest path to AI-powered products.",
+
+  "chain": {
+    "root": "Build core product on a single AI API provider",
+    "effects": [
+      {
+        "label": "Provider outages cascade to all dependent products simultaneously",
+        "impact": "OpenAI outages affect 2M+ developers and their users",
+        "direction": "negative",
+        "children": [
+          { "label": "No graceful degradation — product is fully broken during AI outage", "direction": "negative" },
+          { "label": "Customer trust erodes from outages you can't control or explain", "direction": "negative" },
+          { "label": "SLA guarantees to your customers exceed what your provider guarantees you", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Pricing changes destroy unit economics without warning",
+        "impact": "GPT-4 pricing changed 3x in first 18 months",
+        "direction": "negative",
+        "children": [
+          { "label": "Margin compression when provider raises prices", "direction": "negative" },
+          { "label": "Competitive moat evaporates when provider lowers prices and competitors catch up", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Content policy changes break product features overnight",
+        "impact": "Policy updates with <48 hours notice",
+        "direction": "negative",
+        "children": [
+          { "label": "Use cases that worked yesterday get blocked by new safety filters", "direction": "negative" },
+          { "label": "No appeal process — provider's policy is final", "direction": "negative" },
+          { "label": "Product roadmap becomes hostage to provider's content decisions", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Model quality changes are invisible and uncontrollable",
+        "impact": "Model updates change behavior without versioning",
+        "direction": "negative",
+        "children": [
+          { "label": "Regression testing is impossible when the model changes under you", "direction": "negative" },
+          { "label": "Prompt engineering that worked last month fails silently", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Products affected by single provider outage", "before": "N/A", "after": "Millions of end users", "delta": "Correlated failure", "direction": "negative" },
+    { "metric": "API pricing stability", "before": "Fixed contracts", "after": "3+ changes/year", "delta": "Unpredictable", "direction": "negative" },
+    { "metric": "Time to switch providers", "before": "N/A", "after": "2-6 months (prompt rewriting, eval, testing)", "delta": "High switching cost", "direction": "negative" },
+    { "metric": "Control over core product behavior", "before": "Full (own code)", "after": "Partial (provider-dependent)", "delta": "Reduced", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your core product value is entirely a thin wrapper around a single AI API",
+      "You have no fallback plan and your SLA to customers exceeds your provider's SLA to you"
+    ],
+    "ifYouMust": [
+      "Abstract the AI layer behind an internal interface that supports multiple providers",
+      "Build evaluation suites that detect model behavior changes automatically",
+      "Maintain prompt compatibility with at least two providers at all times",
+      "Cache responses aggressively and build graceful degradation for outages"
+    ],
+    "alternatives": [
+      { "name": "Multi-provider abstraction layer", "note": "Route requests across OpenAI, Anthropic, and open-source models based on cost, latency, and availability" },
+      { "name": "Fine-tuned open-source models", "note": "Llama, Mistral, or similar as primary, with commercial APIs as fallback" },
+      { "name": "Hybrid architecture", "note": "Use commercial APIs for complex tasks, run smaller open-source models for routine operations" }
+    ]
+  },
+
+  "sources": [
+    { "title": "OpenAI Status Page: Historical Incidents", "url": "https://status.openai.com/", "note": "Multiple major outages affecting millions of dependent applications" },
+    { "title": "The Information: OpenAI API Pricing Changes", "url": "https://www.theinformation.com/articles/openai-api-pricing", "note": "Repeated pricing changes forcing startups to restructure unit economics" },
+    { "title": "a]6z: The AI Infrastructure Stack", "url": "https://a16z.com/emerging-architectures-for-llm-applications/", "note": "Analysis of AI application architecture patterns and dependency risks" },
+    { "title": "Hacker News: OpenAI Outage Discussion Threads", "url": "https://news.ycombinator.com/item?id=38132016", "note": "Developer community documenting cascading failures from AI API dependencies" }
+  ],
+
+  "falsifiability": [
+    "AI API providers achieve 99.99% uptime consistently over 24 months with no breaking changes",
+    "Switching between AI providers takes less than 1 week with no quality degradation",
+    "AI API pricing remains stable (within 10%) for 24+ months across major providers"
+  ],
+
+  "tags": ["ai", "api-dependency", "single-point-of-failure", "vendor-lock-in", "resilience", "infrastructure"],
+  "crossReferences": ["I001", "A001", "T005"],
+
+  "seo": {
+    "description": "Building on a single AI API creates correlated failure risk across millions of products. Outages, pricing changes, and policy shifts are uncontrollable and unpredictable.",
+    "keywords": ["ai api dependency risk", "openai single point of failure", "ai vendor lock-in second order effects"]
+  }
+}

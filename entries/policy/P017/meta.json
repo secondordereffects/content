@@ -1,0 +1,103 @@
+{
+  "id": "P017",
+  "title": "Surveillance State Normalization",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Governments deploy surveillance technologies — CCTV networks, facial recognition, license plate readers, phone metadata collection, social media monitoring — with a consistent justification: public safety. After every terrorist attack, mass shooting, or crime wave, surveillance budgets expand. The technology is presented as a tradeoff: sacrifice some privacy for more security. But the ratchet only turns one direction. Surveillance infrastructure deployed for terrorism is repurposed for immigration enforcement, then protest monitoring, then petty crime, then political opposition tracking. The UK has 6 million CCTV cameras for 67 million people. China's social credit system started as a financial trustworthiness tool. The NSA's post-9/11 metadata program expanded far beyond its original scope. Once surveillance infrastructure exists, its use always expands beyond its original justification.",
+
+  "hypothesis": "Surveillance technology prevents crime and terrorism, making society safer.",
+
+  "chain": {
+    "root": "Deploy mass surveillance infrastructure for public safety",
+    "effects": [
+      {
+        "label": "Scope creep — surveillance expands beyond original justification",
+        "impact": "100% of surveillance programs expand scope within 5 years",
+        "direction": "negative",
+        "children": [
+          { "label": "Counter-terrorism tools repurposed for immigration, protests, petty crime", "direction": "negative" },
+          { "label": "Mission creep is invisible — no public debate when scope expands", "direction": "negative" },
+          { "label": "Legal frameworks lag technology by 5-10 years", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Chilling effect on legitimate behavior",
+        "impact": "Protest attendance drops 10-15% in heavily surveilled areas",
+        "direction": "negative",
+        "children": [
+          { "label": "Self-censorship increases — people modify behavior when watched", "direction": "negative" },
+          { "label": "Journalists and whistleblowers face increased risk of identification", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "False positive rates create injustice at scale",
+        "impact": "Facial recognition error rate: 10-35% for dark-skinned individuals",
+        "direction": "negative",
+        "children": [
+          { "label": "Wrongful stops, detentions, and arrests from misidentification", "direction": "negative" },
+          { "label": "Racial and demographic bias baked into surveillance algorithms", "direction": "negative" },
+          { "label": "Burden of proof shifts — citizens must prove they're not the person flagged", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Public acceptance normalizes through gradual exposure",
+        "impact": "70% accept surveillance cameras, up from 30% in 2001",
+        "direction": "negative",
+        "children": [
+          { "label": "Each generation accepts more surveillance as baseline normal", "direction": "negative" },
+          { "label": "Privacy expectations erode — 'if you have nothing to hide' becomes default", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "CCTV cameras per capita (UK)", "before": "1 per 70 (2000)", "after": "1 per 11 (2024)", "delta": "+536%", "direction": "negative" },
+    { "metric": "Crime reduction from CCTV (meta-analysis)", "before": "Expected: significant", "after": "Actual: 13% in parking lots, negligible elsewhere", "delta": "Minimal", "direction": "negative" },
+    { "metric": "Facial recognition false positive rate (dark skin)", "before": "N/A", "after": "10-35%", "delta": "Disproportionate", "direction": "negative" },
+    { "metric": "Public acceptance of surveillance", "before": "30% (2001)", "after": "70% (2024)", "delta": "+40pp", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The surveillance system has no sunset clause, independent oversight, or public audit mechanism",
+      "The technology is being deployed without addressing known demographic bias in the algorithms"
+    ],
+    "ifYouMust": [
+      "Mandate sunset clauses — every surveillance program must be reauthorized every 3 years with public review",
+      "Require independent audits of scope, accuracy, and demographic impact annually",
+      "Prohibit repurposing surveillance data beyond its original authorized use without new authorization",
+      "Publish transparency reports showing how surveillance data is accessed and by whom"
+    ],
+    "alternatives": [
+      { "name": "Community policing investment", "note": "Invest in human relationships and neighborhood presence rather than technological monitoring" },
+      { "name": "Environmental design (CPTED)", "note": "Design physical spaces to reduce crime through lighting, sightlines, and natural surveillance" },
+      { "name": "Targeted warrants over mass collection", "note": "Surveillance of specific suspects with judicial oversight rather than population-wide monitoring" }
+    ]
+  },
+
+  "sources": [
+    { "title": "ACLU: The Surveillance State", "url": "https://www.aclu.org/issues/national-security/privacy-and-surveillance", "note": "Comprehensive documentation of surveillance scope creep in the United States" },
+    { "title": "Campbell Systematic Reviews: CCTV and Crime", "url": "https://onlinelibrary.wiley.com/doi/10.4073/csr.2008.17", "note": "Meta-analysis showing CCTV has modest effect on crime in parking lots, negligible effect elsewhere" },
+    { "title": "NIST: Face Recognition Vendor Test — Demographic Effects", "url": "https://www.nist.gov/programs-projects/face-recognition-vendor-test-frvt", "note": "Facial recognition error rates 10-100x higher for dark-skinned individuals" },
+    { "title": "Brennan Center for Justice: Mass Surveillance", "url": "https://www.brennancenter.org/issues/protect-liberty-security/mass-surveillance", "note": "Analysis of how surveillance programs consistently expand beyond original authorization" }
+  ],
+
+  "falsifiability": [
+    "Mass surveillance programs demonstrate measurable crime reduction exceeding 30% in controlled studies",
+    "Surveillance scope remains limited to its original authorization for 10+ years without expansion",
+    "Facial recognition achieves equal accuracy across all demographic groups with false positive rates below 1%"
+  ],
+
+  "tags": ["surveillance", "privacy", "facial-recognition", "civil-liberties", "scope-creep", "public-safety"],
+  "crossReferences": ["S016", "A012", "P001"],
+
+  "seo": {
+    "description": "Surveillance infrastructure deployed for terrorism always expands to protests, immigration, and political monitoring. CCTV shows negligible crime reduction despite 536% growth.",
+    "keywords": ["surveillance state second order effects", "mass surveillance hidden costs", "facial recognition unintended consequences"]
+  }
+}
