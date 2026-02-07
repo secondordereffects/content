@@ -7,7 +7,7 @@
   "added": "2026-02-07",
   "updated": "2026-02-07",
 
-  "context": "Developers adopt 'vibe coding' — using AI to generate entire features by describing intent in natural language, accepting output with minimal review. The approach feels magical: describe what you want, get working code. Ship fast. But the codebase accumulates debt at a rate that traditional development never could.",
+  "context": "Developers adopt 'vibe coding' — using AI to generate entire features by describing intent in natural language, accepting output with minimal review. The approach feels magical: describe what you want, get working code. Ship fast. But the codebase accumulates debt at a rate that traditional development never could. Code churn rates double or triple as AI-generated code gets patched, replaced, and rewritten. Developers lose the ability to reason about their own systems because they never understood the generated code in the first place. Within months, the codebase becomes a black box that nobody can maintain.",
 
   "hypothesis": "Vibe coding with AI lets developers ship features 10x faster with acceptable quality.",
 

@@ -7,7 +7,7 @@
   "added": "2026-02-07",
   "updated": "2026-02-07",
 
-  "context": "Engineering teams adopt AI coding assistants (GitHub Copilot, Cursor, etc.) to boost productivity. Initial metrics look great: faster code output, fewer boilerplate tasks, higher PR velocity. But 6-12 months in, a different pattern emerges. The skills that made senior engineers senior are quietly eroding.",
+  "context": "Engineering teams adopt AI coding assistants (GitHub Copilot, Cursor, etc.) to boost productivity. Initial metrics look great: faster code output, fewer boilerplate tasks, higher PR velocity. But 6-12 months in, a different pattern emerges. The skills that made senior engineers senior — debugging from first principles, reading unfamiliar code, reasoning about system design — are quietly eroding. Developers accept AI suggestions at 60-70% rates without deep review, and the muscle memory of problem-solving atrophies from disuse.",
 
   "hypothesis": "AI coding assistants make developers more productive without meaningful downsides.",
 

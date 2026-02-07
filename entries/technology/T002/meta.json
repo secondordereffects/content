@@ -7,7 +7,7 @@
   "added": "2026-02-07",
   "updated": "2026-02-07",
 
-  "context": "A growing engineering team decides to break their monolith into microservices. The promise: independent deployments, team autonomy, technology flexibility. The reality: every function call that was once in-process now crosses a network boundary. The communication tax compounds with every new service.",
+  "context": "A growing engineering team decides to break their monolith into microservices. The promise: independent deployments, team autonomy, technology flexibility. The reality: every function call that was once in-process now crosses a network boundary. The communication tax compounds with every new service. P99 latency jumps 300-900% as requests hop across services. Simple database transactions become distributed sagas. Debugging a production issue that once meant reading a stack trace now requires distributed tracing across dozens of services. Amazon Prime Video famously moved back to a monolith and cut costs 90%. Segment did the same. The pattern repeats across the industry.",
 
   "hypothesis": "Microservices give teams independence and allow faster, safer deployments.",
 

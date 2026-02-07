@@ -7,7 +7,7 @@
   "added": "2026-02-04",
   "updated": "2026-02-07",
 
-  "context": "Organization with 10-50 engineers. The monolith is showing scaling pain. Someone proposes Kubernetes. The pitch sounds right: better scaling, deployment flexibility, industry-standard infrastructure. What they don't model is the cascade that follows. The decision to adopt K8s triggers a chain of second-order effects that compound over 12-24 months.",
+  "context": "Organization with 10-50 engineers. The monolith is showing scaling pain. Someone proposes Kubernetes. The pitch sounds right: better scaling, deployment flexibility, industry-standard infrastructure. What they don't model is the cascade that follows. The decision to adopt K8s triggers a chain of second-order effects that compound over 12-24 months. Suddenly you need Helm for packaging, Istio for service mesh, ArgoCD for GitOps, Prometheus for monitoring. Your infra team doubles. Onboarding goes from 2 weeks to 6. Debugging a production issue now means tracing through pods, services, ingress controllers, and network policies instead of reading a stack trace.",
 
   "hypothesis": "Kubernetes will give us better scaling, deployment flexibility, and industry-standard infrastructure.",
 
