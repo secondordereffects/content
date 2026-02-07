@@ -1,0 +1,94 @@
+{
+  "id": "S007",
+  "title": "Remote Education Inequality Amplifier",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Online education was supposed to democratize access — anyone with an internet connection could learn from the best teachers. MOOCs, virtual classrooms, and educational apps promised to level the playing field. COVID-19 forced the experiment at scale. The results were devastating for equity. Students with stable internet, quiet study spaces, engaged parents, and personal devices thrived. Students without those resources fell further behind. Learning loss was 2-3x greater for low-income students. The digital divide became an education divide. Even post-pandemic, the shift toward hybrid and online learning persists, and the students who were already disadvantaged continue to fall behind. The technology that promised to democratize education amplified the very inequalities it was supposed to solve.",
+
+  "hypothesis": "Online education democratizes access and levels the playing field.",
+
+  "chain": {
+    "root": "Shift education to online/hybrid delivery",
+    "effects": [
+      {
+        "label": "Digital divide becomes education divide",
+        "impact": "Learning loss 2-3x greater for low-income students",
+        "direction": "negative",
+        "children": [
+          { "label": "Students without reliable internet can't participate", "direction": "negative" },
+          { "label": "Shared devices and noisy homes reduce learning quality", "direction": "negative" },
+          { "label": "Parents who can't work from home can't supervise learning", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Engagement and completion rates plummet",
+        "impact": "MOOC completion rates 5-15%",
+        "direction": "negative",
+        "children": [
+          { "label": "Self-directed learning requires skills that disadvantaged students lack", "direction": "negative" },
+          { "label": "Social isolation reduces motivation", "direction": "negative" },
+          { "label": "Screen fatigue degrades attention and retention", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Socialization and development gaps emerge",
+        "impact": "Social skills development delayed 1-2 years",
+        "direction": "negative",
+        "children": [
+          { "label": "Peer interaction critical for development replaced by screens", "direction": "negative" },
+          { "label": "Mental health deterioration among isolated students", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Learning loss (low-income)", "before": "Baseline", "after": "2-3x greater than high-income peers", "delta": "+200%", "direction": "negative" },
+    { "metric": "MOOC completion rate", "before": "Expected high", "after": "5-15%", "delta": "-90%", "direction": "negative" },
+    { "metric": "Education access (geographic)", "before": "Limited by location", "after": "Available anywhere with internet", "delta": "Improved", "direction": "positive" },
+    { "metric": "Achievement gap", "before": "Existing", "after": "Widened 30-40%", "delta": "+35%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your online education program doesn't address the digital divide for disadvantaged students",
+      "You're replacing in-person education entirely without measuring equity impact"
+    ],
+    "ifYouMust": [
+      "Provide devices and internet access to all students before going online",
+      "Design for the lowest-bandwidth, most-distracted learning environment",
+      "Maintain in-person options for students who need them",
+      "Measure learning outcomes by demographic group, not just overall"
+    ],
+    "alternatives": [
+      { "name": "Hybrid with equity focus", "note": "Online supplements in-person, with extra support for disadvantaged students" },
+      { "name": "Community learning hubs", "note": "Local spaces with internet, devices, and supervision for remote learners" },
+      { "name": "Flipped classroom", "note": "Online content for homework, in-person time for interaction and support" }
+    ]
+  },
+
+  "sources": [
+    { "title": "McKinsey: COVID-19 and Education Learning Loss", "note": "Analysis showing learning loss 2-3x greater for low-income and minority students" },
+    { "title": "NBER: The Impact of COVID-19 on Student Achievement", "note": "Research documenting widening achievement gaps during remote education" },
+    { "title": "MIT: MOOC Completion Rate Analysis", "note": "Data showing 5-15% completion rates across major MOOC platforms" },
+    { "title": "UNESCO: Education Disruption and Response", "note": "Global data on how school closures disproportionately affected disadvantaged populations" }
+  ],
+
+  "falsifiability": [
+    "Online education reduces the achievement gap between high-income and low-income students",
+    "MOOC completion rates exceed 50% for students from disadvantaged backgrounds",
+    "Remote learning produces equivalent learning outcomes across all socioeconomic groups"
+  ],
+
+  "tags": ["education", "inequality", "digital-divide", "remote-learning", "equity", "mooc"],
+  "crossReferences": ["S004", "S006", "I002"],
+
+  "seo": {
+    "description": "Online education amplifies inequality — learning loss is 2-3x greater for low-income students. MOOC completion rates of 5-15% show democratization failed at scale.",
+    "keywords": ["remote education inequality", "online education hidden costs", "remote learning second order effects"]
+  }
+}

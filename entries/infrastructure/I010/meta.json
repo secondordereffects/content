@@ -1,0 +1,94 @@
+{
+  "id": "I010",
+  "title": "5G Coverage vs Capacity Tradeoff",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "5G was marketed as revolutionary — 100x faster than 4G, enabling autonomous vehicles, remote surgery, and IoT at scale. Carriers spent $100B+ on spectrum and deployment. But 5G comes in three flavors with very different characteristics. Low-band 5G is barely faster than 4G. Mid-band offers meaningful improvement but requires 3-4x more cell sites. High-band mmWave delivers the promised speeds but has a range of only 500 meters and can't penetrate walls. The 5G that was marketed — multi-gigabit speeds everywhere — is physically impossible without a cell site on every block. Most consumers experience 5G as a slightly faster version of 4G with a new icon on their phone. The revolutionary use cases (remote surgery, autonomous vehicles) require the mmWave variant that covers less than 1% of the country.",
+
+  "hypothesis": "5G provides dramatically faster internet for everyone.",
+
+  "chain": {
+    "root": "Deploy 5G networks nationwide",
+    "effects": [
+      {
+        "label": "Three 5G variants create confusion",
+        "impact": "Consumer experience varies 10-100x depending on band",
+        "direction": "negative",
+        "children": [
+          { "label": "Low-band 5G barely faster than 4G LTE", "direction": "negative" },
+          { "label": "mmWave 5G available in less than 1% of coverage area", "direction": "negative" },
+          { "label": "Marketing doesn't distinguish between 5G variants", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Infrastructure cost far exceeds 4G deployment",
+        "impact": "3-4x more cell sites needed for mid-band coverage",
+        "direction": "negative",
+        "children": [
+          { "label": "Carriers pass costs to consumers through higher plans", "direction": "negative" },
+          { "label": "Rural 5G deployment economically unviable", "direction": "negative" },
+          { "label": "Permitting for new cell sites faces local opposition", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Revolutionary use cases remain theoretical",
+        "impact": "Remote surgery, autonomous vehicles still not viable on 5G",
+        "direction": "negative",
+        "children": [
+          { "label": "Latency requirements for critical applications not met by real-world 5G", "direction": "negative" },
+          { "label": "Coverage gaps make reliability-dependent applications impossible", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Average 5G speed (real-world)", "before": "4G: 30-50 Mbps", "after": "5G: 50-200 Mbps (low/mid-band)", "delta": "+100-300%", "direction": "positive" },
+    { "metric": "mmWave coverage", "before": "N/A", "after": "<1% of coverage area", "delta": "Negligible", "direction": "negative" },
+    { "metric": "Carrier infrastructure investment", "before": "4G baseline", "after": "$100B+ for 5G", "delta": "Massive", "direction": "negative" },
+    { "metric": "Revolutionary use cases enabled", "before": "Promised many", "after": "Near zero at scale", "delta": "Unfulfilled", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're building applications that depend on mmWave 5G speeds being available everywhere",
+      "Your business case assumes 5G coverage equals 5G capacity"
+    ],
+    "ifYouMust": [
+      "Design applications for mid-band 5G speeds, not mmWave theoretical maximums",
+      "Build fallback to 4G for any application requiring reliability",
+      "Focus on 5G benefits that work with mid-band: capacity for dense areas, improved latency",
+      "Don't promise consumers revolutionary experiences that require mmWave"
+    ],
+    "alternatives": [
+      { "name": "4G LTE Advanced", "note": "Continued 4G investment provides 80% of 5G benefits at fraction of cost" },
+      { "name": "Wi-Fi 6E/7", "note": "For indoor high-speed needs, Wi-Fi is more practical than 5G" },
+      { "name": "Fixed wireless access", "note": "5G for home internet in underserved areas — a practical use case" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Ookla Speedtest: 5G Performance Report", "note": "Real-world 5G speeds averaging 50-200 Mbps, far below marketed multi-gigabit claims" },
+    { "title": "GSMA: 5G Deployment Economics", "note": "Analysis showing 3-4x more cell sites needed for equivalent mid-band 5G coverage vs 4G" },
+    { "title": "IEEE: 5G mmWave Propagation Challenges", "note": "Technical analysis of mmWave range limitations and building penetration failures" },
+    { "title": "Deloitte: 5G Reality Check", "note": "Assessment showing gap between 5G marketing promises and real-world consumer experience" }
+  ],
+
+  "falsifiability": [
+    "mmWave 5G achieves coverage comparable to mid-band within 5 years of deployment",
+    "5G enables at least one revolutionary use case (remote surgery, autonomous vehicles) at commercial scale",
+    "Average real-world 5G speeds exceed 1 Gbps for majority of users"
+  ],
+
+  "tags": ["5g", "telecommunications", "infrastructure", "coverage", "capacity", "marketing"],
+  "crossReferences": ["I002", "I015", "I004"],
+
+  "seo": {
+    "description": "5G comes in three variants — the revolutionary mmWave covers less than 1% of the country. Most consumers get slightly faster 4G with a new icon while carriers spent $100B+.",
+    "keywords": ["5g coverage capacity tradeoff", "5g hidden costs", "5g second order effects"]
+  }
+}

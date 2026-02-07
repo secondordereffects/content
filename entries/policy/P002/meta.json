@@ -1,0 +1,94 @@
+{
+  "id": "P002",
+  "title": "Gig Economy Classification",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Governments reclassify gig workers as employees to provide benefits — health insurance, minimum wage, unemployment insurance, workers' compensation. The intent is protection: gig workers are vulnerable to exploitation. California's AB5, the EU's Platform Work Directive, and UK court rulings all push toward employee classification. But reclassification creates cascading effects. Platforms respond by reducing worker flexibility — the very thing that attracted workers to gig work. Algorithms schedule shifts rather than letting workers choose. Some platforms exit markets entirely rather than comply. Workers who valued flexibility over benefits find themselves with neither. The workers who most need protection — those doing gig work as a primary income — may benefit, but the majority who gig for supplemental income lose the flexibility that made it worthwhile.",
+
+  "hypothesis": "Reclassifying gig workers as employees protects vulnerable workers.",
+
+  "chain": {
+    "root": "Reclassify gig workers as employees",
+    "effects": [
+      {
+        "label": "Platforms reduce worker flexibility to match employee model",
+        "impact": "Scheduled shifts replace on-demand work",
+        "direction": "negative",
+        "children": [
+          { "label": "Workers can't choose when and how much to work", "direction": "negative" },
+          { "label": "Algorithmic scheduling replaces worker autonomy", "direction": "negative" },
+          { "label": "Part-time gig workers forced into structured schedules", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Platforms exit markets or reduce workforce",
+        "impact": "20-30% reduction in gig opportunities",
+        "direction": "negative",
+        "children": [
+          { "label": "Uber/Lyft reduce driver pools in regulated markets", "direction": "negative" },
+          { "label": "Freelance platforms restrict access to comply with classification", "direction": "negative" },
+          { "label": "Small platforms can't afford compliance costs", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Benefits reach some workers but not all",
+        "impact": "Full-time gig workers benefit, part-time lose access",
+        "direction": "neutral",
+        "children": [
+          { "label": "Workers doing gig work as primary income gain protections", "direction": "positive" },
+          { "label": "Workers doing gig work for supplemental income lose opportunity", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Worker flexibility", "before": "Choose hours freely", "after": "Scheduled shifts", "delta": "-60%", "direction": "negative" },
+    { "metric": "Gig work opportunities", "before": "Baseline", "after": "-20-30% in regulated markets", "delta": "-25%", "direction": "negative" },
+    { "metric": "Benefits for full-time gig workers", "before": "None", "after": "Health, minimum wage, unemployment", "delta": "Significant improvement", "direction": "positive" },
+    { "metric": "Platform operating costs", "before": "Contractor model", "after": "+20-40% for employee benefits", "delta": "+30%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your reclassification doesn't distinguish between full-time gig workers and occasional supplemental workers",
+      "You haven't modeled the impact on gig work availability in your market"
+    ],
+    "ifYouMust": [
+      "Create a third classification between employee and contractor for platform workers",
+      "Provide portable benefits that follow workers across platforms",
+      "Allow workers to choose their classification based on their work pattern",
+      "Phase in requirements to give platforms time to adapt"
+    ],
+    "alternatives": [
+      { "name": "Portable benefits", "note": "Benefits tied to the worker, not the platform — funded by all platforms proportionally" },
+      { "name": "Third worker classification", "note": "New legal category with some benefits and maintained flexibility" },
+      { "name": "Platform-funded safety net", "note": "Platforms contribute to a fund that provides benefits without employee classification" }
+    ]
+  },
+
+  "sources": [
+    { "title": "California AB5 Impact Analysis", "note": "Data showing reduced gig opportunities and platform market exits after reclassification" },
+    { "title": "EU Platform Work Directive", "note": "European approach to gig worker classification with presumption of employment" },
+    { "title": "UK Supreme Court: Uber BV v Aslam", "note": "Landmark ruling classifying Uber drivers as workers with minimum wage and holiday rights" },
+    { "title": "Brookings Institution: Gig Economy Worker Classification", "note": "Analysis of tradeoffs between worker protection and flexibility in classification approaches" }
+  ],
+
+  "falsifiability": [
+    "Gig worker reclassification increases total gig work opportunities rather than reducing them",
+    "Reclassified gig workers maintain equivalent schedule flexibility to contractor-classified workers",
+    "Platform operating cost increases from reclassification are not passed to consumers or workers"
+  ],
+
+  "tags": ["gig-economy", "worker-classification", "labor", "regulation", "flexibility", "benefits"],
+  "crossReferences": ["M016", "P010", "P001"],
+
+  "seo": {
+    "description": "Gig worker reclassification provides benefits but reduces flexibility 60% and gig opportunities 25%. Platforms respond with scheduled shifts and market exits.",
+    "keywords": ["gig economy classification", "gig worker reclassification hidden costs", "gig economy second order effects"]
+  }
+}

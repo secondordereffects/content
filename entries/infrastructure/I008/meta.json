@@ -1,0 +1,94 @@
+{
+  "id": "I008",
+  "title": "Nuclear Power Renaissance Waste Problem",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Nuclear power is experiencing a renaissance driven by climate goals and AI data center energy demands. Microsoft, Google, and Amazon are signing nuclear power agreements. Small modular reactors (SMRs) promise cheaper, faster deployment. The argument is compelling: nuclear provides reliable, carbon-free baseload power that renewables can't match. But the waste problem remains unsolved after 70 years. No country has a permanent repository for high-level nuclear waste. The US spent $15B on Yucca Mountain before abandoning it. Spent fuel sits in temporary storage at reactor sites — some for decades. Each new reactor adds to the waste inventory with no disposal path. SMRs may actually produce more waste per unit of energy than conventional reactors. The renaissance is building new reactors on the assumption that future generations will solve the waste problem — the same assumption made in the 1950s.",
+
+  "hypothesis": "Nuclear is clean energy that can solve the climate crisis.",
+
+  "chain": {
+    "root": "Expand nuclear power generation",
+    "effects": [
+      {
+        "label": "Waste inventory grows with no permanent disposal solution",
+        "impact": "90,000+ metric tons of spent fuel in US alone",
+        "direction": "negative",
+        "children": [
+          { "label": "Spent fuel stored in temporary pools and dry casks at reactor sites", "direction": "negative" },
+          { "label": "No country has opened a permanent high-level waste repository", "direction": "negative" },
+          { "label": "Waste remains radioactive for 10,000-100,000 years", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Construction costs and timelines consistently overrun",
+        "impact": "2-3x budget, 5-10 year delays typical",
+        "direction": "negative",
+        "children": [
+          { "label": "Vogtle Units 3&4: $14B over budget, 7 years late", "direction": "negative" },
+          { "label": "SMRs unproven at commercial scale — NuScale cancelled first project", "direction": "negative" },
+          { "label": "Regulatory approval process adds years to timeline", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Decommissioning costs deferred to future generations",
+        "impact": "$500M-1B per reactor decommissioning",
+        "direction": "negative",
+        "children": [
+          { "label": "Decommissioning funds often underfunded", "direction": "negative" },
+          { "label": "Process takes 20-60 years per reactor", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Carbon emissions per kWh", "before": "Fossil fuel baseline", "after": "Near zero (operational)", "delta": "-95%", "direction": "positive" },
+    { "metric": "Spent fuel inventory", "before": "Existing stockpile", "after": "Growing with no disposal path", "delta": "Accumulating", "direction": "negative" },
+    { "metric": "Construction cost overrun", "before": "Budget", "after": "2-3x typical", "delta": "+150%", "direction": "negative" },
+    { "metric": "Baseload reliability", "before": "Fossil fuel baseline", "after": "90%+ capacity factor", "delta": "Excellent", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're building new reactors without a funded plan for waste disposal",
+      "Your nuclear cost projections don't include decommissioning and waste management"
+    ],
+    "ifYouMust": [
+      "Fund waste disposal research and repository development alongside new construction",
+      "Include full lifecycle costs (construction, operation, decommissioning, waste) in economic analysis",
+      "Invest in advanced reactor designs that reduce waste volume and radioactivity",
+      "Support international cooperation on waste disposal solutions"
+    ],
+    "alternatives": [
+      { "name": "Renewables + storage", "note": "Solar/wind with battery storage approaching nuclear reliability at lower cost" },
+      { "name": "Geothermal", "note": "Reliable baseload power without waste or proliferation concerns" },
+      { "name": "Existing reactor life extension", "note": "Extend current reactor lifespans rather than building new ones" }
+    ]
+  },
+
+  "sources": [
+    { "title": "US Government Accountability Office: Nuclear Waste Management", "note": "Federal assessment of the unsolved nuclear waste disposal challenge after 70 years" },
+    { "title": "Vogtle Nuclear Plant Cost Overruns", "note": "Units 3&4 cost $35B vs $14B budget, delivered 7 years late" },
+    { "title": "Nature Energy: SMR Waste Analysis", "note": "Research showing small modular reactors may produce more waste per unit energy than conventional reactors" },
+    { "title": "Finland Onkalo Repository", "note": "The world's first permanent nuclear waste repository, expected to open 2025 — the only one globally" }
+  ],
+
+  "falsifiability": [
+    "A permanent high-level nuclear waste repository opens and operates successfully in the US within 20 years",
+    "New nuclear construction projects consistently meet budget and timeline targets",
+    "SMRs achieve commercial deployment at costs competitive with renewables plus storage"
+  ],
+
+  "tags": ["nuclear", "energy", "waste", "climate", "infrastructure", "decommissioning"],
+  "crossReferences": ["I013", "I016", "I003"],
+
+  "seo": {
+    "description": "Nuclear power's renaissance builds new reactors while 90,000+ metric tons of spent fuel sit in temporary storage with no permanent disposal solution after 70 years of trying.",
+    "keywords": ["nuclear power waste problem", "nuclear energy hidden costs", "nuclear renaissance second order effects"]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "id": "P003",
+  "title": "Zoning Affordability Paradox",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Zoning laws restrict what can be built where — single-family zones, height limits, setback requirements, parking minimums. The stated goal is preserving neighborhood character, managing density, and protecting property values. But restrictive zoning is the primary driver of the housing affordability crisis in major cities. By limiting supply in high-demand areas, zoning artificially inflates housing costs. San Francisco, where 38% of land is zoned exclusively for single-family homes, has median home prices above $1.3M. The people zoning claims to protect — existing homeowners — benefit from rising property values. The people it harms — renters, young families, essential workers — are priced out entirely. Zoning has become the most effective mechanism for economic segregation in America, more powerful than any explicit discriminatory policy.",
+
+  "hypothesis": "Zoning preserves neighborhood character and protects community quality of life.",
+
+  "chain": {
+    "root": "Implement restrictive zoning in high-demand areas",
+    "effects": [
+      {
+        "label": "Housing supply constrained below demand",
+        "impact": "Prices rise 2-5x above construction cost",
+        "direction": "negative",
+        "children": [
+          { "label": "New housing construction blocked by zoning restrictions", "direction": "negative" },
+          { "label": "Existing homeowners benefit from artificial scarcity", "direction": "neutral" },
+          { "label": "Housing costs consume 40-60% of income for renters", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Economic segregation by neighborhood",
+        "impact": "Income sorting more extreme than any explicit policy",
+        "direction": "negative",
+        "children": [
+          { "label": "Essential workers can't afford to live near their jobs", "direction": "negative" },
+          { "label": "School quality tied to property values creates education inequality", "direction": "negative" },
+          { "label": "Racial segregation maintained through economic exclusion", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Urban sprawl and long commutes",
+        "impact": "Workers pushed to distant suburbs",
+        "direction": "negative",
+        "children": [
+          { "label": "Average commute times increase as workers live further from jobs", "direction": "negative" },
+          { "label": "Car dependency increases, emissions rise", "direction": "negative" },
+          { "label": "Infrastructure costs spread over larger area", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Housing cost to income ratio", "before": "3x (1970s)", "after": "8-12x in major cities", "delta": "+300%", "direction": "negative" },
+    { "metric": "Housing units permitted vs needed", "before": "Balanced", "after": "30-50% of needed units built", "delta": "-60%", "direction": "negative" },
+    { "metric": "Neighborhood character preservation", "before": "Changing", "after": "Preserved (for existing residents)", "delta": "Achieved", "direction": "positive" },
+    { "metric": "Economic mobility", "before": "Moderate", "after": "Declining in zoned cities", "delta": "-25%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your zoning restricts housing supply in areas with severe affordability problems",
+      "Your zoning effectively excludes low and middle-income residents from entire neighborhoods"
+    ],
+    "ifYouMust": [
+      "Allow accessory dwelling units (ADUs) in all residential zones",
+      "Eliminate parking minimums near transit",
+      "Upzone along transit corridors for medium-density housing",
+      "Require affordability impact assessments for new zoning restrictions"
+    ],
+    "alternatives": [
+      { "name": "Form-based codes", "note": "Regulate building form (height, setback) not use — allows mixed-use naturally" },
+      { "name": "Japanese zoning model", "note": "National zoning with fewer restrictions — Japan builds enough housing to keep prices stable" },
+      { "name": "Inclusionary zoning", "note": "Allow density in exchange for affordable unit requirements" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Edward Glaeser: Triumph of the City", "note": "Economist's analysis of how zoning restrictions drive housing unaffordability in productive cities" },
+    { "title": "White House: Housing Supply Action Plan", "note": "Federal acknowledgment that restrictive zoning is the primary barrier to housing affordability" },
+    { "title": "Brookings: Exclusionary Zoning Impact", "note": "Research showing zoning's role in economic and racial segregation across US cities" },
+    { "title": "Japan Housing Policy Comparison", "note": "Japan's national zoning system produces sufficient housing supply, keeping prices stable despite urbanization" }
+  ],
+
+  "falsifiability": [
+    "Cities with restrictive zoning maintain housing affordability comparable to cities with permissive zoning",
+    "Upzoning in high-demand areas doesn't increase housing supply or reduce prices",
+    "Restrictive zoning doesn't correlate with economic or racial segregation patterns"
+  ],
+
+  "tags": ["zoning", "housing", "affordability", "segregation", "urban-planning", "regulation"],
+  "crossReferences": ["P012", "S006", "S012"],
+
+  "seo": {
+    "description": "Restrictive zoning inflates housing costs 300% above 1970s ratios while only 30-50% of needed units get built. Zoning is the most effective economic segregation tool in America.",
+    "keywords": ["zoning affordability paradox", "zoning hidden costs", "restrictive zoning second order effects"]
+  }
+}

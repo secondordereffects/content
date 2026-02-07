@@ -1,0 +1,94 @@
+{
+  "id": "S012",
+  "title": "Digital Nomad Gentrification",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Remote work enabled a new class of digital nomads — workers earning developed-world salaries while living in developing-world locations. Bali, Lisbon, Mexico City, Medellín, and Chiang Mai became hotspots. The narrative is freedom and cultural exchange. The reality is economic displacement. Digital nomads earning $5,000-15,000/month move into neighborhoods where locals earn $500-1,500/month. Rents spike. Local businesses pivot to serve nomad tastes and budgets. Cafes that served $1 coffee now charge $5. Housing that was affordable to locals becomes Airbnb inventory. The gentrification pattern that took decades in Brooklyn happens in months in Canggu. Local communities bear the costs of infrastructure strain while nomads contribute minimally to local tax bases, often on tourist visas.",
+
+  "hypothesis": "Remote work enables location freedom and brings economic benefits to local communities.",
+
+  "chain": {
+    "root": "Digital nomads concentrate in developing-world cities",
+    "effects": [
+      {
+        "label": "Housing costs spike beyond local affordability",
+        "impact": "Rents increase 30-100% in nomad hotspots",
+        "direction": "negative",
+        "children": [
+          { "label": "Long-term rental housing converted to short-term Airbnb", "direction": "negative" },
+          { "label": "Local residents displaced from their neighborhoods", "direction": "negative" },
+          { "label": "Property speculation by foreign investors follows nomad demand", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Local economy restructures around nomad spending",
+        "impact": "Local businesses priced out by nomad-oriented ones",
+        "direction": "negative",
+        "children": [
+          { "label": "Traditional businesses replaced by coworking spaces and brunch cafes", "direction": "negative" },
+          { "label": "Dual-pricing economy emerges — tourist prices and local prices", "direction": "negative" },
+          { "label": "Cultural character of neighborhoods erodes", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Infrastructure strain without proportional tax contribution",
+        "impact": "Nomads use services but pay tourist-level taxes",
+        "direction": "negative",
+        "children": [
+          { "label": "Healthcare, transport, and utilities strained by population influx", "direction": "negative" },
+          { "label": "Tourist visas mean no income tax contribution to host country", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Rent in nomad hotspots", "before": "Local market rate", "after": "+30-100%", "delta": "+65%", "direction": "negative" },
+    { "metric": "Local resident displacement", "before": "Baseline", "after": "Significant in hotspot neighborhoods", "delta": "Measurable", "direction": "negative" },
+    { "metric": "Local business revenue", "before": "Local customer base", "after": "Nomad-dependent (volatile)", "delta": "Restructured", "direction": "neutral" },
+    { "metric": "Tax contribution by nomads", "before": "Expected proportional", "after": "Minimal (tourist visa)", "delta": "-80%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're living in a developing country on a tourist visa while earning a developed-world salary long-term",
+      "Your presence is displacing local residents from affordable housing"
+    ],
+    "ifYouMust": [
+      "Pay local taxes through digital nomad visa programs where available",
+      "Support local businesses rather than nomad-oriented chains",
+      "Rent long-term rather than using Airbnb to reduce housing pressure",
+      "Engage with local community beyond the nomad bubble"
+    ],
+    "alternatives": [
+      { "name": "Digital nomad visa programs", "note": "Legal frameworks that ensure tax contribution and regulated stay" },
+      { "name": "Distributed remote work", "note": "Work remotely from your own country/region rather than concentrating in hotspots" },
+      { "name": "Community-integrated stays", "note": "Longer stays with genuine local integration rather than tourist-mode living" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Bloomberg: Digital Nomads Are Pricing Out Locals", "note": "Investigation into housing displacement in Lisbon, Bali, and Mexico City from digital nomad influx" },
+    { "title": "The Guardian: Bali's Digital Nomad Problem", "note": "Reporting on how digital nomad concentration is transforming Balinese communities" },
+    { "title": "World Bank: Remote Work and Developing Economies", "note": "Analysis of economic impacts — both positive and negative — of digital nomad migration" },
+    { "title": "Lisbon City Council: Housing Crisis Data", "note": "Data showing rent increases of 50-80% in neighborhoods popular with digital nomads and short-term rentals" }
+  ],
+
+  "falsifiability": [
+    "Digital nomad presence in developing-world cities doesn't increase local housing costs",
+    "Local residents benefit economically from digital nomad influx more than they're displaced",
+    "Digital nomad visa programs successfully capture proportional tax revenue from remote workers"
+  ],
+
+  "tags": ["digital-nomad", "gentrification", "housing", "inequality", "remote-work", "displacement"],
+  "crossReferences": ["O001", "S006", "P012"],
+
+  "seo": {
+    "description": "Digital nomads earning $5K-15K/month spike rents 30-100% in developing-world hotspots while contributing minimal taxes. Location freedom for some means displacement for locals.",
+    "keywords": ["digital nomad gentrification", "digital nomad hidden costs", "remote work displacement second order effects"]
+  }
+}

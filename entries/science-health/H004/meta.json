@@ -1,0 +1,94 @@
+{
+  "id": "H004",
+  "title": "CRISPR Off-Target Cascade",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "CRISPR-Cas9 gene editing is hailed as a revolution — precise, programmable DNA scissors that can cure genetic diseases. The first CRISPR therapies are approved (Casgevy for sickle cell disease). The promise is extraordinary: fix the genetic root cause rather than treating symptoms. But CRISPR's precision is imperfect. Off-target edits — cuts at unintended locations in the genome — occur at rates of 0.1-10% depending on the guide RNA and target. These off-target effects may be silent, or they may disrupt tumor suppressor genes, activate oncogenes, or cause chromosomal rearrangements. The effects may not manifest for years or decades. We're editing the human genome with a tool that's precise enough to be useful but not precise enough to be fully safe, and the consequences of errors are irreversible and heritable in germline editing.",
+
+  "hypothesis": "Gene editing cures genetic diseases with precision and minimal side effects.",
+
+  "chain": {
+    "root": "Apply CRISPR gene editing therapeutically",
+    "effects": [
+      {
+        "label": "Off-target edits occur at measurable rates",
+        "impact": "0.1-10% off-target editing depending on target",
+        "direction": "negative",
+        "children": [
+          { "label": "Unintended cuts at similar DNA sequences elsewhere in genome", "direction": "negative" },
+          { "label": "Large deletions and chromosomal rearrangements detected", "direction": "negative" },
+          { "label": "Effects may not manifest for years or decades", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Long-term safety data doesn't exist",
+        "impact": "First patients treated in 2019 — only 5-6 years of follow-up",
+        "direction": "negative",
+        "children": [
+          { "label": "Cancer risk from off-target edits may take 10-20 years to appear", "direction": "negative" },
+          { "label": "Immune responses to Cas9 protein not fully characterized", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Germline editing creates heritable changes",
+        "impact": "Edits passed to all future generations",
+        "direction": "negative",
+        "children": [
+          { "label": "Off-target edits in germline are permanent and heritable", "direction": "negative" },
+          { "label": "Consent impossible for future generations affected by edits", "direction": "negative" },
+          { "label": "He Jiankui case demonstrated premature germline editing risks", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Genetic disease treatment efficacy", "before": "Symptom management", "after": "Potential cure at genetic level", "delta": "Revolutionary", "direction": "positive" },
+    { "metric": "Off-target editing rate", "before": "N/A", "after": "0.1-10% per treatment", "delta": "Measurable risk", "direction": "negative" },
+    { "metric": "Long-term safety data", "before": "Required for approval", "after": "5-6 years maximum follow-up", "delta": "Insufficient", "direction": "negative" },
+    { "metric": "Cost per treatment", "before": "Chronic management ($100K+/yr)", "after": "$1-2M one-time", "delta": "High upfront, potentially lower lifetime", "direction": "neutral" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The disease being treated has effective conventional therapies with known safety profiles",
+      "You're considering germline editing outside of severe, life-threatening genetic conditions"
+    ],
+    "ifYouMust": [
+      "Use the most specific guide RNAs with lowest off-target profiles",
+      "Implement comprehensive off-target screening before and after editing",
+      "Maintain long-term follow-up (20+ years) for all CRISPR-treated patients",
+      "Restrict germline editing to severe conditions with no alternative treatments"
+    ],
+    "alternatives": [
+      { "name": "Base editing", "note": "More precise than CRISPR — changes single bases without double-strand breaks" },
+      { "name": "Prime editing", "note": "Search-and-replace editing with lower off-target rates" },
+      { "name": "Gene therapy (viral vector)", "note": "Add functional gene copies without editing existing DNA" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Nature: CRISPR Off-Target Effects", "note": "Comprehensive review of off-target editing rates and detection methods" },
+    { "title": "FDA: Casgevy Approval and Safety Monitoring", "note": "First CRISPR therapy approval with required long-term safety monitoring" },
+    { "title": "He Jiankui Germline Editing Case", "note": "2018 case of premature human germline editing that resulted in criminal conviction" },
+    { "title": "Science: Large Deletions from CRISPR Editing", "note": "Research showing CRISPR can cause large, unintended deletions and chromosomal rearrangements" }
+  ],
+
+  "falsifiability": [
+    "CRISPR off-target editing rates are reduced to below 0.01% across all therapeutic applications",
+    "Long-term follow-up (20+ years) shows no increased cancer or adverse event rates in CRISPR-treated patients",
+    "Off-target detection methods achieve 100% sensitivity for clinically relevant unintended edits"
+  ],
+
+  "tags": ["crispr", "gene-editing", "off-target", "genetics", "medicine", "safety"],
+  "crossReferences": ["H015", "H014", "H007"],
+
+  "seo": {
+    "description": "CRISPR gene editing has off-target rates of 0.1-10% with only 5-6 years of safety data. We're editing human genomes with a tool that's precise enough to be useful but not fully safe.",
+    "keywords": ["crispr off-target cascade", "gene editing hidden costs", "crispr second order effects"]
+  }
+}

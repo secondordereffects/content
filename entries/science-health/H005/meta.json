@@ -1,0 +1,94 @@
+{
+  "id": "H005",
+  "title": "Mental Health App Dependency",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Mental health apps — Calm, Headspace, BetterHelp, Woebot — promise accessible, affordable mental health support. The market exploded to $6B+ as therapy waitlists grew and stigma decreased. For mild anxiety and stress, these tools can help. But mental health apps create a dependency pattern that mirrors the conditions they treat. Users develop a reliance on the app for emotional regulation rather than building internal coping skills. Meditation apps that track streaks create anxiety about maintaining streaks. Therapy apps with subscription models have financial incentives to maintain engagement rather than resolve issues. The data privacy implications are severe — mental health data is among the most sensitive, yet many apps share data with advertisers. The app that was supposed to be a bridge to better mental health becomes a crutch that prevents the development of genuine resilience.",
+
+  "hypothesis": "Mental health apps improve wellbeing and make therapy accessible.",
+
+  "chain": {
+    "root": "Adopt mental health apps as primary support tool",
+    "effects": [
+      {
+        "label": "App dependency replaces internal coping skill development",
+        "impact": "Users can't self-regulate without the app",
+        "direction": "negative",
+        "children": [
+          { "label": "Meditation becomes app-dependent rather than self-directed", "direction": "negative" },
+          { "label": "Emotional regulation outsourced to technology", "direction": "negative" },
+          { "label": "Subscription cancellation triggers anxiety", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Business model misaligned with recovery",
+        "impact": "Subscription revenue requires ongoing engagement, not resolution",
+        "direction": "negative",
+        "children": [
+          { "label": "Apps incentivized to maintain users, not graduate them", "direction": "negative" },
+          { "label": "Gamification mechanics (streaks, badges) create compulsive use", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Sensitive mental health data inadequately protected",
+        "impact": "Mental health data shared with advertisers and data brokers",
+        "direction": "negative",
+        "children": [
+          { "label": "BetterHelp FTC settlement for sharing therapy data with Facebook", "direction": "negative" },
+          { "label": "Mental health status inferred and sold for ad targeting", "direction": "negative" },
+          { "label": "Data breaches expose most sensitive personal information", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Mental health service access", "before": "Limited by cost and availability", "after": "Available to anyone with a smartphone", "delta": "Dramatically improved", "direction": "positive" },
+    { "metric": "Internal coping skill development", "before": "Developed through therapy/practice", "after": "Outsourced to app", "delta": "-30%", "direction": "negative" },
+    { "metric": "Data privacy risk", "before": "Therapist confidentiality", "after": "Data shared with third parties", "delta": "Severe", "direction": "negative" },
+    { "metric": "Clinical efficacy for serious conditions", "before": "Professional therapy baseline", "after": "Limited evidence for apps", "delta": "Insufficient", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're using a mental health app as a substitute for professional help for serious conditions",
+      "The app shares your mental health data with advertisers or data brokers"
+    ],
+    "ifYouMust": [
+      "Use apps as a supplement to professional therapy, not a replacement",
+      "Choose apps with evidence-based approaches (CBT, DBT) and published clinical trials",
+      "Read privacy policies — avoid apps that share data with third parties",
+      "Set a goal to develop independent coping skills, not permanent app dependency"
+    ],
+    "alternatives": [
+      { "name": "Professional teletherapy", "note": "Licensed therapists via video — real therapy, not app-mediated" },
+      { "name": "Self-directed CBT workbooks", "note": "Evidence-based tools that build skills without app dependency" },
+      { "name": "Community support groups", "note": "Peer support that builds human connection rather than app dependency" }
+    ]
+  },
+
+  "sources": [
+    { "title": "FTC: BetterHelp Data Sharing Settlement", "note": "BetterHelp paid $7.8M for sharing mental health data with Facebook and Snapchat for advertising" },
+    { "title": "JAMA: Efficacy of Mental Health Apps", "note": "Systematic review showing limited evidence for most mental health apps beyond mild anxiety" },
+    { "title": "Mozilla: Privacy Not Included — Mental Health Apps", "note": "Investigation showing majority of mental health apps fail basic privacy standards" },
+    { "title": "American Psychological Association: Digital Mental Health Guidelines", "note": "Professional guidelines on appropriate use of mental health technology" }
+  ],
+
+  "falsifiability": [
+    "Mental health app users develop equivalent internal coping skills to those receiving traditional therapy",
+    "Mental health apps demonstrate clinical efficacy comparable to professional therapy for moderate-severe conditions",
+    "Mental health app business models don't create incentives to maintain user dependency"
+  ],
+
+  "tags": ["mental-health", "apps", "dependency", "privacy", "therapy", "wellness"],
+  "crossReferences": ["S013", "S008", "H009"],
+
+  "seo": {
+    "description": "Mental health apps create dependency rather than building coping skills. BetterHelp shared therapy data with Facebook while subscription models incentivize engagement over recovery.",
+    "keywords": ["mental health app dependency", "therapy app hidden costs", "mental health app second order effects"]
+  }
+}

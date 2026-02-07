@@ -1,0 +1,95 @@
+{
+  "id": "S008",
+  "title": "Gamification Motivation Crowding",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Gamification — adding points, badges, streaks, and leaderboards to non-game activities — is everywhere. Duolingo streaks, Fitbit step challenges, LinkedIn profile completion bars, Starbucks reward stars. The premise is that extrinsic rewards increase engagement. And they do, initially. But research on motivation crowding shows that extrinsic rewards can destroy intrinsic motivation. People who exercised for health start exercising for streaks — and when the streak breaks, they stop entirely. Students who read for curiosity start reading for points — and read only what earns points. The gamification creates a dependency on external validation that replaces the internal drive it was supposed to enhance. When the game mechanics are removed or the novelty fades, engagement drops below pre-gamification levels.",
+
+  "hypothesis": "Gamification increases engagement and motivates positive behavior.",
+
+  "chain": {
+    "root": "Add gamification mechanics to activity",
+    "effects": [
+      {
+        "label": "Extrinsic rewards replace intrinsic motivation",
+        "impact": "Intrinsic motivation decreases 20-40%",
+        "direction": "negative",
+        "children": [
+          { "label": "Activity becomes about points, not purpose", "direction": "negative" },
+          { "label": "Users optimize for rewards, not outcomes", "direction": "negative" },
+          { "label": "Removing gamification drops engagement below baseline", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Streak anxiety and guilt emerge",
+        "impact": "Healthy activity becomes source of stress",
+        "direction": "negative",
+        "children": [
+          { "label": "Users feel guilty breaking streaks even when rest is needed", "direction": "negative" },
+          { "label": "Streak maintenance becomes compulsive behavior", "direction": "negative" },
+          { "label": "Broken streaks cause complete abandonment", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Behavior optimization for metrics, not goals",
+        "impact": "Users game the system rather than improve",
+        "direction": "negative",
+        "children": [
+          { "label": "Duolingo users do easy lessons to maintain streaks", "direction": "negative" },
+          { "label": "Fitbit users shake their wrist to hit step goals", "direction": "negative" },
+          { "label": "Quality of engagement decreases while quantity increases", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Initial engagement", "before": "Baseline", "after": "+30-50%", "delta": "+40%", "direction": "positive" },
+    { "metric": "Intrinsic motivation (long-term)", "before": "Baseline", "after": "-20-40%", "delta": "-30%", "direction": "negative" },
+    { "metric": "Post-gamification engagement", "before": "Baseline", "after": "Below pre-gamification levels", "delta": "-15%", "direction": "negative" },
+    { "metric": "Anxiety related to streaks/goals", "before": "None", "after": "Reported by 40% of users", "delta": "+40%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The activity already has strong intrinsic motivation that gamification might crowd out",
+      "Your gamification rewards quantity over quality of engagement"
+    ],
+    "ifYouMust": [
+      "Use gamification for onboarding and habit formation, then fade it out",
+      "Design rewards that reinforce intrinsic motivation rather than replacing it",
+      "Allow streak breaks without penalty to prevent anxiety",
+      "Measure quality of engagement, not just quantity"
+    ],
+    "alternatives": [
+      { "name": "Progress visualization", "note": "Show progress without competitive mechanics — inform, don't gamify" },
+      { "name": "Mastery-based feedback", "note": "Focus on skill development rather than points and streaks" },
+      { "name": "Social accountability", "note": "Community and peer support rather than competitive leaderboards" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Deci & Ryan: Self-Determination Theory", "note": "Foundational research showing extrinsic rewards can undermine intrinsic motivation" },
+    { "title": "Journal of Behavioral Addictions: Gamification and Compulsive Use", "note": "Research on how streak mechanics create anxiety and compulsive behavior patterns" },
+    { "title": "Duolingo: Streak Anxiety Reports", "note": "User research showing streak mechanics create stress that contradicts learning goals" },
+    { "title": "Harvard Business Review: The Dark Side of Gamification", "note": "Analysis of how gamification backfires when it replaces rather than enhances intrinsic motivation" }
+  ],
+
+  "falsifiability": [
+    "Gamification maintains engagement above baseline levels after game mechanics are removed",
+    "Extrinsic rewards from gamification increase rather than decrease intrinsic motivation long-term",
+    "Users of gamified systems report lower anxiety than users of non-gamified equivalents"
+  ],
+
+  "tags": ["gamification", "motivation", "streaks", "behavioral-design", "engagement", "psychology"],
+  "crossReferences": ["S022", "S013", "S021"],
+
+  "seo": {
+    "description": "Gamification boosts initial engagement 40% but destroys intrinsic motivation 30% long-term. When streaks break, 40% of users report anxiety and many abandon entirely.",
+    "keywords": ["gamification motivation crowding", "gamification hidden costs", "gamification second order effects"]
+  }
+}

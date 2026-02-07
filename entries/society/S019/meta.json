@@ -1,0 +1,93 @@
+{
+  "id": "S019",
+  "title": "Virtue Signaling Substitution Effect",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Awareness campaigns, social media activism, and corporate social responsibility statements promise to drive change by raising visibility. Change your profile picture, share a hashtag, sign a petition, buy the product with the cause-marketing label. These actions feel meaningful — they signal values and create social pressure. But research on moral licensing shows that symbolic actions substitute for substantive ones. People who signal virtue feel they've 'done their part' and reduce actual charitable giving, volunteering, and behavioral change. Companies that issue diversity statements reduce actual diversity spending. The awareness campaign that was supposed to be the first step becomes the only step. The signal replaces the substance.",
+
+  "hypothesis": "Awareness campaigns and public statements drive meaningful social change.",
+
+  "chain": {
+    "root": "Launch awareness campaign or public values statement",
+    "effects": [
+      {
+        "label": "Moral licensing reduces substantive action",
+        "impact": "Symbolic action substitutes for real action",
+        "direction": "negative",
+        "children": [
+          { "label": "People who share hashtags donate less than those who don't", "direction": "negative" },
+          { "label": "Companies that issue statements reduce actual program spending", "direction": "negative" },
+          { "label": "Petition signers feel they've contributed and disengage", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Performative activism crowds out effective activism",
+        "impact": "Attention and resources flow to visible, not effective, actions",
+        "direction": "negative",
+        "children": [
+          { "label": "Viral campaigns get funding while effective programs don't", "direction": "negative" },
+          { "label": "Activists optimize for social media engagement, not impact", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Cynicism increases as gap between signals and actions widens",
+        "impact": "Public trust in cause-marketing declines",
+        "direction": "negative",
+        "children": [
+          { "label": "Greenwashing and cause-washing erode trust in all corporate claims", "direction": "negative" },
+          { "label": "Genuine efforts dismissed as performative", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Charitable giving after awareness campaign", "before": "Expected increase", "after": "Often decreases (moral licensing)", "delta": "-10-15%", "direction": "negative" },
+    { "metric": "Corporate diversity spending after statement", "before": "Expected increase", "after": "Often flat or decreased", "delta": "No improvement", "direction": "negative" },
+    { "metric": "Public awareness of issue", "before": "Low", "after": "High", "delta": "Improved", "direction": "positive" },
+    { "metric": "Trust in corporate social responsibility", "before": "Moderate", "after": "Declining (greenwashing fatigue)", "delta": "-30%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your awareness campaign has no concrete action steps beyond sharing",
+      "Your corporate statement isn't backed by measurable commitments and accountability"
+    ],
+    "ifYouMust": [
+      "Pair every awareness action with a concrete behavioral ask",
+      "Measure outcomes (donations, policy changes, behavior change), not just awareness",
+      "Publish accountability reports on commitments made in public statements",
+      "Design campaigns that make substantive action easier, not just symbolic action"
+    ],
+    "alternatives": [
+      { "name": "Direct action campaigns", "note": "Skip awareness, go straight to specific behavioral change asks" },
+      { "name": "Accountability-first commitments", "note": "Public commitments with measurable targets and third-party auditing" },
+      { "name": "Structural change advocacy", "note": "Focus on policy and systemic change rather than individual awareness" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Journal of Consumer Research: Moral Licensing Effect", "note": "Research showing symbolic pro-social actions reduce subsequent substantive actions" },
+    { "title": "Stanford Social Innovation Review: The Problem with Awareness Campaigns", "note": "Analysis of how awareness campaigns can substitute for rather than drive action" },
+    { "title": "Harvard Business Review: Corporate Social Responsibility Paradox", "note": "Data showing companies with prominent CSR statements don't outperform on actual social metrics" },
+    { "title": "ALS Ice Bucket Challenge Analysis", "note": "Rare successful awareness campaign that actually drove donations — the exception that proves the rule" }
+  ],
+
+  "falsifiability": [
+    "Awareness campaigns consistently increase substantive action (donations, volunteering, behavior change) beyond the campaign period",
+    "Corporate social responsibility statements correlate with measurable improvements in the stated cause",
+    "Moral licensing effects are negligible — symbolic actions don't reduce subsequent substantive actions"
+  ],
+
+  "tags": ["virtue-signaling", "moral-licensing", "activism", "awareness", "corporate-responsibility"],
+  "crossReferences": ["S005", "S020", "M013"],
+
+  "seo": {
+    "description": "Awareness campaigns trigger moral licensing — people who signal virtue donate 10-15% less. Corporate statements substitute for action while greenwashing erodes trust 30%.",
+    "keywords": ["virtue signaling substitution effect", "awareness campaign hidden costs", "moral licensing second order effects"]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "id": "I002",
+  "title": "Fiber Optic Digital Divide",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Governments invest billions in broadband infrastructure to connect everyone — the US Broadband Equity, Access, and Deployment (BEAD) program alone allocated $42.5B. The promise is universal connectivity. But fiber deployment follows economic logic: dense urban areas get fiber first because the cost per connection is lowest. Rural areas, where the need is greatest, get served last or not at all. The economics are brutal — running fiber to a rural home can cost $10,000-50,000 per connection vs $500-2,000 in urban areas. Subsidies help but don't close the gap. The result is a digital divide that mirrors and amplifies existing economic divides. Urban areas get gigabit fiber while rural areas rely on satellite or fixed wireless with higher latency and lower reliability. The infrastructure investment meant to connect everyone ends up connecting the already-connected first.",
+
+  "hypothesis": "Broadband investment connects everyone and closes the digital divide.",
+
+  "chain": {
+    "root": "Invest in broadband infrastructure deployment",
+    "effects": [
+      {
+        "label": "Deployment follows economic density, not need",
+        "impact": "Urban areas served first, rural last",
+        "direction": "negative",
+        "children": [
+          { "label": "Cost per rural connection 10-25x urban connection", "direction": "negative" },
+          { "label": "ISPs cherry-pick profitable areas even with subsidies", "direction": "negative" },
+          { "label": "Last-mile problem persists for most remote communities", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Two-tier internet emerges",
+        "impact": "Gigabit urban vs 25Mbps rural",
+        "direction": "negative",
+        "children": [
+          { "label": "Remote work and education require speeds rural areas can't provide", "direction": "negative" },
+          { "label": "Telemedicine limited by rural bandwidth constraints", "direction": "negative" },
+          { "label": "Economic opportunity concentrates where connectivity is best", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Subsidy programs face cost overruns and delays",
+        "impact": "5-10 year deployment timelines for rural areas",
+        "direction": "negative",
+        "children": [
+          { "label": "Permitting and right-of-way issues delay rural deployment", "direction": "negative" },
+          { "label": "Labor shortages in fiber installation", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Urban broadband access", "before": "Moderate", "after": "95%+ with gigabit options", "delta": "Near universal", "direction": "positive" },
+    { "metric": "Rural broadband access", "before": "Limited", "after": "Still 20-30% unserved or underserved", "delta": "Improved but gap persists", "direction": "neutral" },
+    { "metric": "Cost per rural connection", "before": "N/A", "after": "$10,000-50,000", "delta": "10-25x urban cost", "direction": "negative" },
+    { "metric": "Digital divide", "before": "Existing", "after": "Narrowing slowly, quality gap widening", "delta": "Persistent", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your broadband program measures success by total connections rather than underserved connections",
+      "Subsidies allow ISPs to deploy in areas they would have served commercially anyway"
+    ],
+    "ifYouMust": [
+      "Target subsidies exclusively to unserved and underserved areas",
+      "Require ISPs to serve entire regions, not just profitable pockets",
+      "Set minimum speed standards that reflect actual modern needs (100Mbps+)",
+      "Include affordability requirements alongside availability"
+    ],
+    "alternatives": [
+      { "name": "Fixed wireless + fiber hybrid", "note": "Fiber to towers, fixed wireless for last mile in rural areas" },
+      { "name": "Municipal broadband", "note": "Community-owned networks that serve all residents regardless of profitability" },
+      { "name": "LEO satellite (Starlink)", "note": "Satellite internet for truly remote areas where terrestrial deployment is uneconomic" }
+    ]
+  },
+
+  "sources": [
+    { "title": "FCC Broadband Deployment Report", "note": "Federal data showing persistent rural-urban broadband gap despite billions in investment" },
+    { "title": "NTIA BEAD Program Guidelines", "note": "$42.5B federal broadband program with deployment requirements and challenges" },
+    { "title": "Pew Research: Internet/Broadband Fact Sheet", "url": "https://www.pewresearch.org/internet/fact-sheet/internet-broadband/", "note": "Data on broadband adoption gaps by geography, income, and demographics" },
+    { "title": "USDA: Rural Broadband Economics", "note": "Analysis of per-connection costs showing 10-25x premium for rural fiber deployment" }
+  ],
+
+  "falsifiability": [
+    "Broadband investment programs close the rural-urban connectivity gap within 5 years of deployment",
+    "Rural fiber deployment costs decrease to within 3x of urban costs through technology improvements",
+    "Universal broadband access eliminates the economic opportunity gap between connected and unconnected areas"
+  ],
+
+  "tags": ["broadband", "digital-divide", "rural", "infrastructure", "fiber", "connectivity"],
+  "crossReferences": ["I015", "S007", "I005"],
+
+  "seo": {
+    "description": "Broadband investment follows economic density — rural connections cost 10-25x urban ones. The infrastructure meant to close the digital divide serves the already-connected first.",
+    "keywords": ["fiber optic digital divide", "broadband investment hidden costs", "digital divide second order effects"]
+  }
+}

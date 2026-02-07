@@ -1,0 +1,94 @@
+{
+  "id": "S013",
+  "title": "Quantified Self Anxiety Loop",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Wearables and health apps promise empowerment through data — track your steps, sleep, heart rate, calories, and you'll make better health decisions. The quantified self movement turned personal metrics into a lifestyle. But constant measurement creates constant evaluation. Users check their sleep score and feel anxious about not sleeping well enough — which makes sleep worse. They obsess over step counts instead of enjoying walks. They panic over heart rate variability readings they don't understand. The data that was supposed to reduce health anxiety amplifies it. Orthosomnia — anxiety about sleep data — is now a recognized clinical phenomenon. The quantified self creates a feedback loop where measurement produces anxiety, anxiety worsens the metric, and the worsened metric produces more anxiety.",
+
+  "hypothesis": "Tracking health metrics improves health outcomes and empowers better decisions.",
+
+  "chain": {
+    "root": "Track health metrics continuously via wearables",
+    "effects": [
+      {
+        "label": "Constant measurement creates constant evaluation anxiety",
+        "impact": "30-40% of users report increased health anxiety",
+        "direction": "negative",
+        "children": [
+          { "label": "Sleep tracking causes orthosomnia — anxiety about sleep data", "direction": "negative" },
+          { "label": "Heart rate monitoring triggers panic in healthy individuals", "direction": "negative" },
+          { "label": "Calorie tracking triggers disordered eating patterns", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Metric optimization replaces actual health improvement",
+        "impact": "Users optimize numbers, not wellbeing",
+        "direction": "negative",
+        "children": [
+          { "label": "Exercise becomes about closing rings, not feeling good", "direction": "negative" },
+          { "label": "Users ignore body signals that contradict device data", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "False alarms overwhelm real signals",
+        "impact": "Unnecessary doctor visits from benign readings",
+        "direction": "negative",
+        "children": [
+          { "label": "Apple Watch AFib alerts send healthy people to ER", "direction": "negative" },
+          { "label": "Healthcare system burdened by worried-well patients", "direction": "negative" },
+          { "label": "Real health signals lost in noise of constant monitoring", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Health anxiety among wearable users", "before": "Baseline", "after": "+30-40%", "delta": "+35%", "direction": "negative" },
+    { "metric": "Orthosomnia prevalence", "before": "Not recognized", "after": "Clinically documented phenomenon", "delta": "New condition", "direction": "negative" },
+    { "metric": "Unnecessary ER visits from wearable alerts", "before": "Baseline", "after": "+15-20%", "delta": "+18%", "direction": "negative" },
+    { "metric": "Health awareness", "before": "Low", "after": "High (but anxious)", "delta": "Improved with side effects", "direction": "neutral" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You have a history of health anxiety or obsessive tendencies",
+      "You're checking health metrics more than twice daily without medical reason"
+    ],
+    "ifYouMust": [
+      "Check health data weekly, not hourly — trends matter more than snapshots",
+      "Disable real-time notifications for non-critical metrics",
+      "Discuss wearable data with a doctor rather than self-diagnosing",
+      "Take regular breaks from tracking to maintain body awareness"
+    ],
+    "alternatives": [
+      { "name": "Periodic health checkups", "note": "Annual professional assessment rather than continuous self-monitoring" },
+      { "name": "Subjective wellbeing tracking", "note": "Track how you feel, not just what the device says" },
+      { "name": "Goal-based tracking", "note": "Track specific goals for limited periods rather than everything forever" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Journal of Clinical Sleep Medicine: Orthosomnia", "note": "Clinical documentation of sleep anxiety caused by sleep tracking devices" },
+    { "title": "BMJ: Overdiagnosis from Consumer Wearables", "note": "Analysis of unnecessary medical visits triggered by wearable health alerts" },
+    { "title": "American Psychological Association: Health Tracking and Anxiety", "note": "Research on how continuous health monitoring increases rather than decreases health anxiety" },
+    { "title": "Apple Watch Heart Study", "note": "Large-scale study showing low positive predictive value for AFib detection in young, healthy populations" }
+  ],
+
+  "falsifiability": [
+    "Continuous health tracking reduces health anxiety compared to non-tracking populations",
+    "Wearable health alerts have positive predictive values above 50% in general populations",
+    "Quantified self practices improve health outcomes more than periodic professional checkups"
+  ],
+
+  "tags": ["quantified-self", "health-anxiety", "wearables", "orthosomnia", "self-tracking", "wellness"],
+  "crossReferences": ["H009", "S009", "S008"],
+
+  "seo": {
+    "description": "Health tracking creates anxiety loops — 35% of wearable users report increased health anxiety. Orthosomnia, where sleep tracking worsens sleep, is now a clinical diagnosis.",
+    "keywords": ["quantified self anxiety loop", "health tracking hidden costs", "wearable anxiety second order effects"]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "id": "I006",
+  "title": "Chip Shortage Reshoring Paradox",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "The 2020-2023 chip shortage exposed dangerous concentration — TSMC in Taiwan produces 90% of advanced semiconductors. Governments responded with reshoring initiatives: the US CHIPS Act ($52B), EU Chips Act (€43B), Japan and South Korea with similar programs. The goal is supply chain security through domestic manufacturing. But semiconductor fabs take 3-5 years to build and cost $10-20B each. The talent pool for advanced chip manufacturing is concentrated in East Asia. Reshored fabs produce chips at 30-50% higher cost than Asian equivalents. And by the time new fabs come online, the shortage that motivated them has passed and the technology node has advanced. The reshoring investment addresses yesterday's crisis at tomorrow's prices, while the fundamental concentration in TSMC's most advanced nodes remains unchanged.",
+
+  "hypothesis": "Domestic chip manufacturing ensures supply chain security.",
+
+  "chain": {
+    "root": "Invest in domestic semiconductor manufacturing",
+    "effects": [
+      {
+        "label": "Fabs take 3-5 years to build, missing the crisis",
+        "impact": "Shortage resolved before new capacity online",
+        "direction": "negative",
+        "children": [
+          { "label": "Technology node advances during construction — fabs outdated at opening", "direction": "negative" },
+          { "label": "Market conditions change — potential overcapacity", "direction": "negative" },
+          { "label": "Political urgency fades, funding commitments waver", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Domestic production costs 30-50% more",
+        "impact": "Higher labor, energy, and regulatory costs",
+        "direction": "negative",
+        "children": [
+          { "label": "Chips produced domestically not cost-competitive without ongoing subsidies", "direction": "negative" },
+          { "label": "Permanent subsidy dependency for domestic fabs", "direction": "negative" },
+          { "label": "Consumer electronics prices increase if domestic chips mandated", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Talent shortage limits domestic manufacturing",
+        "impact": "Advanced chip manufacturing expertise concentrated in Asia",
+        "direction": "negative",
+        "children": [
+          { "label": "TSMC Arizona fab delayed by lack of qualified workers", "direction": "negative" },
+          { "label": "Importing talent creates immigration policy tensions", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Domestic chip production capacity", "before": "12% of global (US)", "after": "Target 20% by 2030", "delta": "+8%", "direction": "positive" },
+    { "metric": "Cost per chip (domestic vs Asia)", "before": "Asian baseline", "after": "+30-50% domestic premium", "delta": "+40%", "direction": "negative" },
+    { "metric": "Time to new fab capacity", "before": "N/A", "after": "3-5 years per fab", "delta": "Slow", "direction": "negative" },
+    { "metric": "TSMC advanced node concentration", "before": "90%", "after": "Still 80%+ even with reshoring", "delta": "Minimal change", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your reshoring plan assumes domestic fabs will be cost-competitive without permanent subsidies",
+      "You're building trailing-edge fabs when the supply chain risk is in leading-edge nodes"
+    ],
+    "ifYouMust": [
+      "Focus reshoring on leading-edge nodes where concentration risk is highest",
+      "Invest in workforce development alongside fab construction",
+      "Plan for ongoing subsidies — domestic fabs won't be cost-competitive for decades",
+      "Diversify across allies (US, Japan, EU) rather than full self-sufficiency"
+    ],
+    "alternatives": [
+      { "name": "Allied-shoring", "note": "Diversify across trusted allies rather than full domestic production" },
+      { "name": "Strategic reserves", "note": "Stockpile critical chips rather than building domestic fabs" },
+      { "name": "Design diversification", "note": "Design chips that can be manufactured at multiple foundries" }
+    ]
+  },
+
+  "sources": [
+    { "title": "US CHIPS and Science Act", "note": "$52B federal investment in domestic semiconductor manufacturing and research" },
+    { "title": "TSMC Arizona Fab Delays", "note": "TSMC's US fab delayed multiple times due to workforce and construction challenges" },
+    { "title": "Boston Consulting Group: Semiconductor Supply Chain Analysis", "note": "Analysis showing domestic production costs 30-50% higher than Asian equivalents" },
+    { "title": "Semiconductor Industry Association: State of the Industry", "note": "Data on global semiconductor manufacturing concentration and reshoring progress" }
+  ],
+
+  "falsifiability": [
+    "Reshored semiconductor fabs achieve cost parity with Asian fabs within 10 years without ongoing subsidies",
+    "Domestic chip manufacturing capacity comes online fast enough to address the next supply chain disruption",
+    "Reshoring reduces TSMC's share of advanced node production below 50%"
+  ],
+
+  "tags": ["semiconductors", "reshoring", "supply-chain", "chips-act", "manufacturing", "geopolitics"],
+  "crossReferences": ["I001", "I005", "M025"],
+
+  "seo": {
+    "description": "Chip reshoring costs 30-50% more than Asian production, takes 3-5 years per fab, and faces critical talent shortages. TSMC's advanced node dominance remains largely unchanged.",
+    "keywords": ["chip shortage reshoring paradox", "chips act hidden costs", "semiconductor reshoring second order effects"]
+  }
+}

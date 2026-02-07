@@ -1,0 +1,94 @@
+{
+  "id": "S011",
+  "title": "Influencer Economy Trust Erosion",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Influencer marketing grew from a niche tactic to a $21B industry by promising authentic recommendations from trusted voices. The premise: people trust people more than brands. And initially, it worked. But as the money flowed in, authenticity eroded. Influencers promote products they don't use, disclose sponsorships in tiny text, and manufacture fake enthusiasm for anything that pays. Audiences have become cynical — 67% of consumers say they trust influencer recommendations less than they did 3 years ago. The FTC requires disclosure, but enforcement is minimal. The result is a trust deficit that extends beyond influencers to all online recommendations. When every review might be paid, every recommendation might be sponsored, and every 'honest opinion' might be an ad, consumers trust nothing — including genuinely helpful recommendations.",
+
+  "hypothesis": "Influencers provide authentic recommendations that consumers trust.",
+
+  "chain": {
+    "root": "Scale influencer marketing as primary recommendation channel",
+    "effects": [
+      {
+        "label": "Financial incentives corrupt authenticity",
+        "impact": "Influencers promote products they don't use",
+        "direction": "negative",
+        "children": [
+          { "label": "Sponsorship disclosure buried or omitted", "direction": "negative" },
+          { "label": "Fake enthusiasm indistinguishable from genuine", "direction": "negative" },
+          { "label": "Audience can't tell paid from organic content", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Consumer trust in all recommendations erodes",
+        "impact": "67% trust influencers less than 3 years ago",
+        "direction": "negative",
+        "children": [
+          { "label": "Genuine recommendations dismissed as sponsored", "direction": "negative" },
+          { "label": "Review skepticism extends to all online content", "direction": "negative" },
+          { "label": "Decision fatigue increases as trust signals disappear", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Race to the bottom in content quality",
+        "impact": "Engagement bait replaces genuine expertise",
+        "direction": "negative",
+        "children": [
+          { "label": "Clickbait and controversy outperform honest reviews", "direction": "negative" },
+          { "label": "Expert voices drowned out by louder, less credible ones", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Influencer marketing spend", "before": "$1.7B (2016)", "after": "$21B (2024)", "delta": "+1100%", "direction": "neutral" },
+    { "metric": "Consumer trust in influencers", "before": "High (novel)", "after": "-67% decline", "delta": "-67%", "direction": "negative" },
+    { "metric": "Undisclosed sponsorship rate", "before": "Unknown", "after": "Estimated 25-40% of sponsored content", "delta": "Widespread", "direction": "negative" },
+    { "metric": "Purchase regret from influencer recommendations", "before": "Baseline", "after": "45% report regret", "delta": "+45%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your influencer partners promote competing products in the same category",
+      "You're asking influencers to hide or minimize sponsorship disclosure"
+    ],
+    "ifYouMust": [
+      "Require clear, prominent sponsorship disclosure in all content",
+      "Partner with influencers who genuinely use and believe in your product",
+      "Measure trust metrics alongside engagement metrics",
+      "Prioritize long-term partnerships over one-off sponsored posts"
+    ],
+    "alternatives": [
+      { "name": "User-generated content", "note": "Real customer reviews and testimonials — harder to fake at scale" },
+      { "name": "Expert partnerships", "note": "Partner with credentialed experts rather than popularity-based influencers" },
+      { "name": "Community-driven recommendations", "note": "Build communities where authentic peer recommendations emerge organically" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Influencer Marketing Hub: Industry Report 2024", "note": "Market size data showing $21B industry with declining trust metrics" },
+    { "title": "Edelman Trust Barometer: Influencer Trust", "note": "67% of consumers report declining trust in influencer recommendations" },
+    { "title": "FTC: Endorsement Guides", "note": "Federal guidelines requiring clear disclosure of material connections, with limited enforcement" },
+    { "title": "Morning Consult: Influencer Trust Survey", "note": "45% of consumers report purchase regret from influencer-recommended products" }
+  ],
+
+  "falsifiability": [
+    "Consumer trust in influencer recommendations increases as the industry matures",
+    "Sponsorship disclosure requirements restore consumer trust to pre-commercialization levels",
+    "Influencer-recommended products have equal or lower return rates than non-influenced purchases"
+  ],
+
+  "tags": ["influencer", "trust", "marketing", "authenticity", "social-media", "consumer-behavior"],
+  "crossReferences": ["S002", "S014", "M019"],
+
+  "seo": {
+    "description": "Influencer marketing grew to $21B but consumer trust dropped 67%. When every recommendation might be paid, consumers trust nothing — including genuinely helpful advice.",
+    "keywords": ["influencer economy trust erosion", "influencer marketing hidden costs", "influencer second order effects"]
+  }
+}
