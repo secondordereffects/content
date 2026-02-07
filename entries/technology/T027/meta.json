@@ -1,0 +1,103 @@
+{
+  "id": "T027",
+  "title": "Data Lake Swamp",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "The data lake pitch is irresistible: dump all your data into one place, worry about structure later, and unlock analytics insights across the entire organization. S3 is cheap. Spark can process anything. Schema-on-read means no upfront data modeling. Companies invest millions in data lake infrastructure expecting a single source of truth. What they get is a data swamp — a graveyard of undocumented, poorly formatted, duplicate, and stale data that nobody trusts and nobody can find anything in. Without governance, cataloging, and quality enforcement from day one, data lakes become write-only storage where data goes in but insights never come out. The data team spends 80% of their time cleaning and finding data, not analyzing it.",
+
+  "hypothesis": "Centralizing all data in a data lake enables organization-wide analytics and insights.",
+
+  "chain": {
+    "root": "Build a data lake to centralize all organizational data",
+    "effects": [
+      {
+        "label": "Data quality degrades without schema enforcement",
+        "impact": "60-70% of data lake data is never used",
+        "direction": "negative",
+        "children": [
+          { "label": "Schema-on-read means nobody validates data on write — garbage accumulates", "direction": "negative" },
+          { "label": "Duplicate data from multiple sources with no deduplication strategy", "direction": "negative" },
+          { "label": "Stale data sits alongside current data with no freshness indicators", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Data discovery becomes impossible at scale",
+        "impact": "Data scientists spend 80% of time finding and cleaning data",
+        "direction": "negative",
+        "children": [
+          { "label": "No catalog, no documentation, no lineage — 'who put this here and what does it mean?'", "direction": "negative" },
+          { "label": "Tribal knowledge required to use the lake — new hires are lost for months", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Storage costs grow unbounded",
+        "impact": "Data lake storage grows 30-50% annually with no pruning",
+        "direction": "negative",
+        "children": [
+          { "label": "Nobody deletes data because nobody knows if it's still needed", "direction": "negative" },
+          { "label": "Compute costs spike as queries scan ever-larger datasets", "direction": "negative" },
+          { "label": "Cost optimization requires understanding data that nobody documented", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Trust in data collapses — teams build shadow data stores",
+        "impact": "Each team maintains their own 'reliable' data copy",
+        "direction": "negative",
+        "children": [
+          { "label": "Multiple conflicting versions of truth across the organization", "direction": "negative" },
+          { "label": "The single source of truth becomes a source nobody trusts", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Data lake data actually used for analytics", "before": "100% (target)", "after": "30-40%", "delta": "60-70% unused", "direction": "negative" },
+    { "metric": "Data scientist time on data prep vs. analysis", "before": "20/80 (target)", "after": "80/20 (actual)", "delta": "Inverted", "direction": "negative" },
+    { "metric": "Storage cost growth (annual)", "before": "Planned", "after": "+30-50% YoY uncontrolled", "delta": "Unbounded", "direction": "negative" },
+    { "metric": "Time to answer a new business question", "before": "Days (target)", "after": "Weeks-months (actual)", "delta": "+300-500%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You don't have a data governance team or plan to hire one before building the lake",
+      "Your strategy is 'dump everything in and figure it out later'"
+    ],
+    "ifYouMust": [
+      "Implement a data catalog (DataHub, Amundsen, or similar) from day one — not after the swamp forms",
+      "Enforce schema validation on write, not just read — reject malformed data at ingestion",
+      "Assign data owners for every dataset with documented freshness SLAs and quality metrics",
+      "Set retention policies and enforce them — data without an owner gets deleted after 90 days"
+    ],
+    "alternatives": [
+      { "name": "Data lakehouse (Delta Lake, Iceberg)", "note": "Combines lake flexibility with warehouse governance — schema enforcement with schema evolution" },
+      { "name": "Domain-oriented data mesh", "note": "Each domain team owns and publishes their data as a product with quality guarantees" },
+      { "name": "Purpose-built data warehouses", "note": "Snowflake, BigQuery, or Redshift with enforced schemas — less flexible but actually usable" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Gartner: Data Lake Failures", "url": "https://www.gartner.com/smarterwithgartner/data-lake-best-practices", "note": "60% of data lake projects fail to deliver expected business value" },
+    { "title": "Harvard Business Review: Data Lakes Are Not the Answer", "url": "https://hbr.org/2022/02/why-your-data-lake-is-not-delivering-value", "note": "Analysis of why data lakes become data swamps without governance" },
+    { "title": "Databricks: The Lakehouse Architecture", "url": "https://www.databricks.com/glossary/data-lakehouse", "note": "Lakehouse pattern as response to data lake governance failures" },
+    { "title": "Monte Carlo: State of Data Quality 2024", "url": "https://www.montecarlodata.com/state-of-data-quality/", "note": "Data teams spend 40% of time on data quality issues, primarily in lake environments" }
+  ],
+
+  "falsifiability": [
+    "Data lakes with schema-on-read consistently deliver faster time-to-insight than schema-enforced warehouses",
+    "Organizations using data lakes report >80% data utilization rates across stored datasets",
+    "Data scientists in lake environments spend <30% of time on data preparation and discovery"
+  ],
+
+  "tags": ["data-lake", "data-governance", "data-quality", "analytics", "data-swamp", "storage"],
+  "crossReferences": ["T020", "T009", "T005"],
+
+  "seo": {
+    "description": "60-70% of data lake data is never used. Data scientists spend 80% of time finding and cleaning data. Without governance from day one, data lakes become data swamps.",
+    "keywords": ["data lake swamp", "data lake second order effects", "data lake governance hidden costs"]
+  }
+}

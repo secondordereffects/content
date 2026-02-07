@@ -1,0 +1,103 @@
+{
+  "id": "A033",
+  "title": "LLM Benchmark Gaming",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "AI labs compete fiercely on benchmark leaderboards. MMLU, HumanEval, GSM8K, HellaSwag — these scores drive funding, media coverage, and customer adoption. The incentive to score well is enormous. But Goodhart's Law applies with full force: when a measure becomes a target, it ceases to be a good measure. Labs optimize specifically for benchmark performance through training data contamination (benchmarks leak into training sets), prompt engineering tuned to benchmark formats, and architectural choices that trade real-world capability for benchmark scores. Models that top leaderboards frequently underperform in production on tasks that don't match benchmark formats. The benchmarks that were supposed to measure AI progress now measure how well labs game benchmarks.",
+
+  "hypothesis": "Benchmark scores reliably indicate which AI model is best for real-world tasks.",
+
+  "chain": {
+    "root": "Use benchmark leaderboards to evaluate and compare AI models",
+    "effects": [
+      {
+        "label": "Training data contamination inflates scores",
+        "impact": "Benchmark questions found in training data of top models",
+        "direction": "negative",
+        "children": [
+          { "label": "Models memorize benchmark answers rather than learning general capability", "direction": "negative" },
+          { "label": "Scores improve without corresponding improvement in real-world performance", "direction": "negative" },
+          { "label": "New benchmarks get contaminated within months of release", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Optimization targets benchmark format over general capability",
+        "impact": "Models excel at multiple-choice but struggle with open-ended tasks",
+        "direction": "negative",
+        "children": [
+          { "label": "Architectural choices that boost benchmarks hurt production performance", "direction": "negative" },
+          { "label": "Prompt formatting matters more than actual reasoning ability", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Customers choose models based on misleading scores",
+        "impact": "Benchmark-to-production performance gap: 20-40%",
+        "direction": "negative",
+        "children": [
+          { "label": "Enterprise deployments underperform expectations set by benchmark marketing", "direction": "negative" },
+          { "label": "Smaller, better-suited models overlooked because they score lower on irrelevant benchmarks", "direction": "negative" },
+          { "label": "Evaluation budget wasted re-testing models that don't match benchmark promises", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Benchmark arms race diverts resources from safety and reliability",
+        "impact": "Labs prioritize leaderboard position over robustness",
+        "direction": "negative",
+        "children": [
+          { "label": "Safety research deprioritized when it doesn't improve benchmark scores", "direction": "negative" },
+          { "label": "Reliability and consistency sacrificed for peak performance on test sets", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Benchmark-to-production performance gap", "before": "Small (early benchmarks)", "after": "20-40% (current)", "delta": "Growing", "direction": "negative" },
+    { "metric": "Time before new benchmark is contaminated", "before": "Years", "after": "Months", "delta": "Accelerating", "direction": "negative" },
+    { "metric": "Customer satisfaction vs. benchmark expectations", "before": "Aligned", "after": "Misaligned", "delta": "Significant gap", "direction": "negative" },
+    { "metric": "Resources allocated to benchmark optimization vs. safety", "before": "Balanced", "after": "Benchmark-heavy", "delta": "Skewed", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're choosing an AI model for production based solely on leaderboard rankings",
+      "Your evaluation consists of running the same benchmarks the labs already optimized for"
+    ],
+    "ifYouMust": [
+      "Build custom evaluations that match your actual production use cases, not generic benchmarks",
+      "Test on held-out data that has never been published or used in any benchmark",
+      "Evaluate on robustness and consistency, not just peak accuracy",
+      "Compare models on your specific task distribution, not aggregate scores"
+    ],
+    "alternatives": [
+      { "name": "Task-specific evaluation suites", "note": "Build evaluations from your actual production queries and expected outputs" },
+      { "name": "Human preference evaluation", "note": "Blind A/B testing with real users on real tasks — the only evaluation that matters" },
+      { "name": "Adversarial evaluation", "note": "Test edge cases, ambiguous inputs, and failure modes — not just happy-path benchmarks" }
+    ]
+  },
+
+  "sources": [
+    { "title": "arXiv: Contamination in LLM Benchmarks", "url": "https://arxiv.org/abs/2311.01964", "note": "Evidence of benchmark contamination in training data of major LLMs" },
+    { "title": "Stanford HELM Benchmark", "url": "https://crfm.stanford.edu/helm/", "note": "Holistic evaluation framework attempting to address benchmark gaming" },
+    { "title": "Chatbot Arena (LMSYS)", "url": "https://chat.lmsys.org/", "note": "Human preference-based evaluation that correlates poorly with traditional benchmarks" },
+    { "title": "Goodhart's Law and AI Evaluation", "url": "https://arxiv.org/abs/2206.09832", "note": "Theoretical framework for why benchmark optimization diverges from real capability" }
+  ],
+
+  "falsifiability": [
+    "Benchmark scores correlate >0.9 with real-world task performance across diverse production deployments",
+    "Training data contamination is detected and corrected before it affects published benchmark results",
+    "Models ranked highest on benchmarks consistently outperform lower-ranked models in blind production evaluations"
+  ],
+
+  "tags": ["llm-benchmarks", "goodharts-law", "ai-evaluation", "benchmark-gaming", "model-selection", "leaderboards"],
+  "crossReferences": ["A002", "A004", "A024"],
+
+  "seo": {
+    "description": "LLM benchmark scores diverge 20-40% from production performance. Training data contamination, format optimization, and Goodhart's Law make leaderboards unreliable.",
+    "keywords": ["llm benchmark gaming", "ai benchmark second order effects", "model evaluation hidden costs"]
+  }
+}

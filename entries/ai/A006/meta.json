@@ -1,0 +1,103 @@
+{
+  "id": "A006",
+  "title": "AI Safety Regulation Paradox",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.70,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Governments worldwide are racing to regulate AI. The EU AI Act, US executive orders, and China's generative AI rules all aim to prevent harm from artificial intelligence. The logic is intuitive: powerful technology needs guardrails. But AI regulation faces a structural paradox. The compliance burden falls disproportionately on smaller companies and open-source projects that lack legal teams and regulatory infrastructure. Meanwhile, the largest AI labs — the ones with the most dangerous capabilities — can absorb compliance costs as a competitive moat. Regulation designed to make AI safer may instead concentrate AI power among a handful of well-resourced incumbents while pushing innovation underground or offshore to jurisdictions with no oversight at all.",
+
+  "hypothesis": "AI regulation prevents harm and ensures safe development of artificial intelligence.",
+
+  "chain": {
+    "root": "Implement comprehensive AI safety regulation",
+    "effects": [
+      {
+        "label": "Compliance costs create barriers to entry",
+        "impact": "Estimated $1-5M compliance cost for EU AI Act high-risk classification",
+        "direction": "negative",
+        "children": [
+          { "label": "Startups can't afford compliance — pivot away from regulated use cases", "direction": "negative" },
+          { "label": "Open-source AI projects face existential legal uncertainty", "direction": "negative" },
+          { "label": "Incumbents absorb costs and gain regulatory moat", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Innovation migrates to unregulated jurisdictions",
+        "impact": "AI talent and companies relocate to regulatory arbitrage zones",
+        "direction": "negative",
+        "children": [
+          { "label": "Regulated regions lose AI talent and investment", "direction": "negative" },
+          { "label": "Most dangerous AI development happens where there's no oversight", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Regulation lags technology by 3-5 years",
+        "impact": "EU AI Act drafted 2021, enforced 2026 — technology unrecognizable",
+        "direction": "negative",
+        "children": [
+          { "label": "Rules written for today's AI don't apply to tomorrow's capabilities", "direction": "negative" },
+          { "label": "Regulatory capture — incumbents shape rules to protect their position", "direction": "negative" },
+          { "label": "Compliance theater replaces genuine safety work", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Safety research gets classified as competitive intelligence",
+        "impact": "Labs reduce transparency to avoid regulatory exposure",
+        "direction": "negative",
+        "children": [
+          { "label": "Less safety research published openly", "direction": "negative" },
+          { "label": "Collaboration between labs decreases on safety-critical problems", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "EU AI Act compliance cost (high-risk)", "before": "N/A", "after": "$1-5M per product", "delta": "Barrier to entry", "direction": "negative" },
+    { "metric": "AI startups in regulated categories (EU)", "before": "Growing", "after": "Declining or relocating", "delta": "-30% projected", "direction": "negative" },
+    { "metric": "Open-source AI model releases", "before": "Increasing", "after": "Slowing (legal uncertainty)", "delta": "Chilling effect", "direction": "negative" },
+    { "metric": "AI safety research publications", "before": "Open", "after": "Increasingly proprietary", "delta": "Less transparent", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The regulation doesn't include exemptions for research, open-source, and small companies",
+      "Enforcement relies on self-certification without independent auditing"
+    ],
+    "ifYouMust": [
+      "Include tiered compliance based on company size and risk level — don't apply the same rules to a startup and Google",
+      "Fund regulatory sandboxes where companies can test AI applications under supervision before full compliance",
+      "Build sunset clauses into every AI regulation — mandatory review and update every 2 years",
+      "Require international coordination to prevent regulatory arbitrage"
+    ],
+    "alternatives": [
+      { "name": "Industry safety standards (voluntary with teeth)", "note": "Self-regulation with mandatory incident reporting and third-party audits" },
+      { "name": "Liability-based approach", "note": "Hold deployers liable for harm rather than regulating development — incentivizes safety without prescribing methods" },
+      { "name": "Capability-based thresholds", "note": "Regulate based on demonstrated capability levels, not broad categories" }
+    ]
+  },
+
+  "sources": [
+    { "title": "EU AI Act Full Text", "url": "https://artificialintelligenceact.eu/", "note": "Comprehensive regulation with risk-based classification system" },
+    { "title": "Stanford HAI: AI Regulation Tracker", "url": "https://aiindex.stanford.edu/report/", "note": "Global tracking of AI regulation efforts and their projected impacts" },
+    { "title": "Brookings: The EU AI Act and Innovation", "url": "https://www.brookings.edu/articles/the-eu-ai-act-and-the-future-of-ai-innovation/", "note": "Analysis of how EU AI Act may impact innovation and competition" },
+    { "title": "MIT Technology Review: AI Regulation Challenges", "url": "https://www.technologyreview.com/topic/ai-regulation/", "note": "Ongoing coverage of the gap between AI capabilities and regulatory frameworks" }
+  ],
+
+  "falsifiability": [
+    "AI regulation leads to measurable increase in AI startup formation in regulated jurisdictions",
+    "Open-source AI development accelerates after regulation is implemented",
+    "Regulated AI systems show measurably fewer safety incidents than unregulated systems within 3 years"
+  ],
+
+  "tags": ["ai-regulation", "eu-ai-act", "regulatory-capture", "innovation", "compliance", "open-source"],
+  "crossReferences": ["A018", "A024", "P001"],
+
+  "seo": {
+    "description": "AI regulation costs $1-5M per product for compliance, pushing startups out and innovation offshore. The companies with the most dangerous AI can afford it. Everyone else can't.",
+    "keywords": ["ai regulation paradox", "eu ai act second order effects", "ai safety regulation hidden costs"]
+  }
+}

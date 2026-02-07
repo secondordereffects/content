@@ -1,0 +1,103 @@
+{
+  "id": "O014",
+  "title": "Consensus Decision Paralysis",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Consensus-driven decision-making is the default in many organizations, especially in tech. The logic is appealing: get everyone's input, ensure buy-in, make better decisions through diverse perspectives. In practice, consensus requirements create decision paralysis. Every stakeholder has veto power. Meetings multiply as groups try to align. Decisions get watered down to the lowest common denominator that nobody objects to but nobody is excited about. The most important decisions — the ones that require bold tradeoffs — are exactly the ones consensus can't produce, because bold tradeoffs create losers, and consensus requires that nobody loses. Organizations that optimize for consensus optimize for mediocrity and speed-to-nothing.",
+
+  "hypothesis": "Consensus-based decisions ensure buy-in and produce better outcomes.",
+
+  "chain": {
+    "root": "Require consensus for organizational decisions",
+    "effects": [
+      {
+        "label": "Decision speed collapses",
+        "impact": "Consensus decisions take 3-5x longer than single-owner decisions",
+        "direction": "negative",
+        "children": [
+          { "label": "Every stakeholder must be consulted, scheduled, and aligned", "direction": "negative" },
+          { "label": "One dissenter can block or delay indefinitely", "direction": "negative" },
+          { "label": "Decisions that should take days take weeks or months", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Decisions converge to lowest common denominator",
+        "impact": "Bold options eliminated because someone objects",
+        "direction": "negative",
+        "children": [
+          { "label": "Compromise produces mediocre outcomes that satisfy nobody fully", "direction": "negative" },
+          { "label": "Strategic differentiation impossible — consensus favors safe, incremental choices", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Accountability diffuses — nobody owns the outcome",
+        "impact": "'We all decided' means nobody is responsible when it fails",
+        "direction": "negative",
+        "children": [
+          { "label": "Post-mortems can't identify decision owner because there isn't one", "direction": "negative" },
+          { "label": "Course correction delayed because changing a consensus decision requires new consensus", "direction": "negative" },
+          { "label": "Learned helplessness — individuals stop proposing bold ideas because consensus will kill them", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Meeting culture metastasizes to support consensus process",
+        "impact": "30-50% of work time spent in alignment meetings",
+        "direction": "negative",
+        "children": [
+          { "label": "Pre-meetings to align before the meeting, post-meetings to confirm alignment", "direction": "negative" },
+          { "label": "Decision fatigue from constant consensus-seeking reduces quality of all decisions", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Decision cycle time", "before": "Days (single owner)", "after": "Weeks-months (consensus)", "delta": "3-5x slower", "direction": "negative" },
+    { "metric": "Decision quality (bold vs. incremental)", "before": "Mix of bold and safe", "after": "Almost exclusively incremental", "delta": "Risk-averse", "direction": "negative" },
+    { "metric": "Time in alignment meetings", "before": "15-20%", "after": "30-50%", "delta": "+100-150%", "direction": "negative" },
+    { "metric": "Employee satisfaction with decision process", "before": "High (feels inclusive)", "after": "Low (feels slow and frustrating)", "delta": "Declines over time", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The decision is time-sensitive and delay costs more than imperfect alignment",
+      "You're using consensus as a way to avoid accountability for difficult choices"
+    ],
+    "ifYouMust": [
+      "Set explicit time limits on consensus-seeking — if no consensus in 48 hours, designated owner decides",
+      "Distinguish between 'input' and 'approval' — gather input from many, but limit approval to 2-3 people",
+      "Use disagree-and-commit — once decided, everyone executes regardless of initial position",
+      "Reserve consensus for truly irreversible decisions — use single-owner for everything else"
+    ],
+    "alternatives": [
+      { "name": "RACI framework", "note": "One person Responsible, one Accountable, others Consulted or Informed — clear ownership" },
+      { "name": "Advice process", "note": "Decision owner must seek advice from affected parties but makes the final call alone" },
+      { "name": "Disagree and commit", "note": "Amazon's model — debate vigorously, then commit fully to the decision regardless of initial position" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Harvard Business Review: The Consensus Trap", "url": "https://hbr.org/2015/01/the-right-way-to-make-big-decisions", "note": "Analysis of how consensus requirements slow decisions and produce mediocre outcomes" },
+    { "title": "Amazon Leadership Principles: Disagree and Commit", "url": "https://www.amazon.jobs/content/en/our-workplace/leadership-principles", "note": "Amazon's alternative to consensus — debate then commit" },
+    { "title": "McKinsey: Decision Making in Organizations", "url": "https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/decision-making-in-the-age-of-urgency", "note": "Organizations that decide faster outperform — consensus is the primary speed bottleneck" },
+    { "title": "Bain: RAPID Decision Framework", "url": "https://www.bain.com/insights/rapid-tool-to-clarify-decision-accountability/", "note": "Framework for clarifying decision roles to avoid consensus paralysis" }
+  ],
+
+  "falsifiability": [
+    "Consensus-driven organizations consistently make faster decisions than single-owner organizations",
+    "Consensus decisions produce measurably better outcomes than decisions made by empowered individuals with input",
+    "Employee satisfaction with decision-making increases as consensus requirements expand"
+  ],
+
+  "tags": ["consensus", "decision-making", "organizational-design", "meetings", "accountability", "leadership"],
+  "crossReferences": ["O008", "O005", "O010"],
+
+  "seo": {
+    "description": "Consensus decisions take 3-5x longer and converge to the lowest common denominator. Nobody objects, nobody is excited, and nobody is accountable when it fails.",
+    "keywords": ["consensus decision paralysis", "consensus second order effects", "organizational decision-making hidden costs"]
+  }
+}

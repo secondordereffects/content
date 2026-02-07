@@ -1,0 +1,103 @@
+{
+  "id": "S014",
+  "title": "News Cycle Amnesia",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "The 24/7 news cycle was supposed to keep people better informed. Instead, it created a collective attention deficit where every crisis is urgent for 48-72 hours and then forgotten entirely. The news media's business model depends on novelty — yesterday's disaster doesn't generate clicks. So the cycle moves on, and with it, public attention, political pressure, and accountability. The Maui wildfires, the East Palestine train derailment, the Flint water crisis — each dominated headlines for days, then vanished from public consciousness while the affected communities continued to suffer for years. The news cycle doesn't just fail to sustain attention; it actively trains the public to treat every crisis as temporary and every outrage as disposable.",
+
+  "hypothesis": "24/7 news coverage keeps the public informed and drives accountability for important issues.",
+
+  "chain": {
+    "root": "24/7 news cycle optimizes for novelty and engagement",
+    "effects": [
+      {
+        "label": "Public attention span for any issue collapses to 48-72 hours",
+        "impact": "Average news story lifespan: 2-3 days before displacement",
+        "direction": "negative",
+        "children": [
+          { "label": "Complex issues that require sustained attention get abandoned mid-crisis", "direction": "negative" },
+          { "label": "Follow-up reporting generates fewer clicks — media moves on", "direction": "negative" },
+          { "label": "Affected communities lose public support before recovery begins", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Accountability evaporates with attention",
+        "impact": "Politicians wait out the news cycle instead of acting",
+        "direction": "negative",
+        "children": [
+          { "label": "Scandal survival strategy: deny, delay, wait for next news cycle", "direction": "negative" },
+          { "label": "Promised reforms never materialize because nobody checks back", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Outrage fatigue normalizes crises",
+        "impact": "Each successive crisis generates less public response",
+        "direction": "negative",
+        "children": [
+          { "label": "Mass shootings that once dominated weeks now get 1-2 days", "direction": "negative" },
+          { "label": "Climate disasters become background noise — 'another one'", "direction": "negative" },
+          { "label": "Public develops learned helplessness — 'nothing changes anyway'", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Historical context disappears from coverage",
+        "impact": "Every event treated as unprecedented because past coverage is forgotten",
+        "direction": "negative",
+        "children": [
+          { "label": "Same mistakes repeated because lessons from previous crises aren't referenced", "direction": "negative" },
+          { "label": "Pattern recognition impossible when each event is covered in isolation", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Average news story lifespan", "before": "Weeks (pre-internet)", "after": "2-3 days", "delta": "-80%", "direction": "negative" },
+    { "metric": "Follow-up reporting on major events", "before": "Sustained", "after": "Minimal after 1 week", "delta": "Near zero", "direction": "negative" },
+    { "metric": "Public recall of major events (6 months later)", "before": "High", "after": "Low — most can't name details", "delta": "Significant decline", "direction": "negative" },
+    { "metric": "Policy changes following major crises", "before": "Common", "after": "Rare — attention dissipates before action", "delta": "Declining", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're consuming news primarily through social media feeds optimized for novelty",
+      "You find yourself outraged about a new topic every day but can't recall last week's crisis"
+    ],
+    "ifYouMust": [
+      "Subscribe to long-form journalism that does follow-up reporting (ProPublica, The Marshall Project)",
+      "Set calendar reminders to check back on major stories 30, 90, and 180 days later",
+      "Limit breaking news consumption — most 'breaking' stories are incomplete and will be revised",
+      "Support local journalism that covers ongoing community issues, not just national spectacles"
+    ],
+    "alternatives": [
+      { "name": "Slow news consumption", "note": "Read weekly summaries instead of daily feeds — better context, less noise" },
+      { "name": "Issue-based following", "note": "Follow specific issues (housing, climate, education) rather than the general news cycle" },
+      { "name": "Solutions journalism", "note": "Seek out reporting that covers what's working, not just what's broken" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Pew Research: News Consumption Trends", "url": "https://www.pewresearch.org/journalism/fact-sheet/news-platform-fact-sheet/", "note": "Shift to social media news consumption correlates with shorter attention to individual stories" },
+    { "title": "Columbia Journalism Review: The Attention Deficit", "url": "https://www.cjr.org/", "note": "Analysis of how news cycle speed undermines accountability journalism" },
+    { "title": "Reuters Institute: Digital News Report", "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024", "note": "News avoidance increasing — 36% of people actively avoid news due to fatigue" },
+    { "title": "Nieman Lab: Follow-Up Reporting Crisis", "url": "https://www.niemanlab.org/", "note": "Economic pressures on newsrooms reduce follow-up reporting on major stories" }
+  ],
+
+  "falsifiability": [
+    "Public attention to major crises sustains for 30+ days in the 24/7 news environment",
+    "Policy responses to crises are faster and more comprehensive with 24/7 news coverage than without",
+    "News consumers can accurately recall details of major events from 6 months ago at rates comparable to pre-internet era"
+  ],
+
+  "tags": ["news-cycle", "attention-span", "accountability", "media", "outrage-fatigue", "journalism"],
+  "crossReferences": ["S003", "S021", "S001"],
+
+  "seo": {
+    "description": "The average news story lives 2-3 days before displacement. Politicians wait out the cycle. Affected communities lose support before recovery begins. Outrage fatigue normalizes crises.",
+    "keywords": ["news cycle amnesia", "24/7 news second order effects", "news cycle accountability hidden costs"]
+  }
+}

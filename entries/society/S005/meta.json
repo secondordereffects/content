@@ -1,0 +1,103 @@
+{
+  "id": "S005",
+  "title": "Cancel Culture Chilling Effect",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Public accountability through social media — often called 'cancel culture' — emerged as a mechanism for holding powerful people accountable when institutions failed to do so. The #MeToo movement demonstrated its power: serial abusers who had been protected by institutional structures were finally held accountable through public pressure. But the mechanism doesn't have a proportionality dial. The same dynamics that topple genuine abusers also destroy careers over decade-old tweets, ambiguous jokes, and good-faith disagreements. The chilling effect is the second-order consequence: when the cost of saying the wrong thing is career destruction, people stop saying anything that might be misinterpreted. Self-censorship becomes the rational strategy. Public discourse narrows. Intellectual risk-taking declines. The people most affected are not the powerful — they have PR teams — but ordinary people who can't afford the reputational risk.",
+
+  "hypothesis": "Public accountability through social media improves behavior and holds the powerful accountable.",
+
+  "chain": {
+    "root": "Social media enables rapid public accountability campaigns",
+    "effects": [
+      {
+        "label": "Self-censorship becomes the rational default",
+        "impact": "62% of Americans say they have opinions they're afraid to share",
+        "direction": "negative",
+        "children": [
+          { "label": "Academics avoid controversial research topics that might attract backlash", "direction": "negative" },
+          { "label": "Employees stay silent in meetings rather than risk saying something wrong", "direction": "negative" },
+          { "label": "Public discourse narrows to 'safe' opinions that won't trigger pile-ons", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Punishment is disproportionate and permanent",
+        "impact": "Internet archives make every statement permanent and decontextualized",
+        "direction": "negative",
+        "children": [
+          { "label": "Minor offenses receive the same treatment as major ones — no proportionality", "direction": "negative" },
+          { "label": "No path to redemption — the internet doesn't forget or forgive", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Accountability mechanism gets weaponized",
+        "impact": "Bad-faith actors use cancellation as a competitive or personal weapon",
+        "direction": "negative",
+        "children": [
+          { "label": "Business competitors weaponize outrage to damage rivals", "direction": "negative" },
+          { "label": "Personal grudges disguised as moral accountability", "direction": "negative" },
+          { "label": "Context collapse — statements taken out of context to maximize outrage", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Genuine accountability gets diluted",
+        "impact": "Outrage fatigue reduces impact of legitimate accountability",
+        "direction": "negative",
+        "children": [
+          { "label": "Constant cancellation attempts make the public numb to real abuses", "direction": "negative" },
+          { "label": "Powerful people learn to weather the storm — 2-week news cycle, then forgotten", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Americans afraid to share opinions", "before": "~40% (2017)", "after": "62% (2024)", "delta": "+22pp", "direction": "negative" },
+    { "metric": "Academic self-censorship (controversial topics)", "before": "Low", "after": "High — 70% of academics report self-censoring", "delta": "Significant", "direction": "negative" },
+    { "metric": "Effectiveness against powerful targets", "before": "High (early #MeToo)", "after": "Declining (outrage fatigue)", "delta": "Diminishing returns", "direction": "negative" },
+    { "metric": "Collateral damage to ordinary people", "before": "Low", "after": "High", "delta": "Increasing", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The offense is a good-faith disagreement or an ambiguous statement taken out of context",
+      "The target is an ordinary person with no institutional power"
+    ],
+    "ifYouMust": [
+      "Apply proportionality — distinguish between genuine abuse of power and social media missteps",
+      "Seek context before amplifying — was the statement taken out of context? How old is it?",
+      "Allow for redemption — people who acknowledge mistakes and change should have a path back",
+      "Focus accountability on institutions and systems, not just individuals"
+    ],
+    "alternatives": [
+      { "name": "Institutional accountability mechanisms", "note": "Strengthen HR, legal, and regulatory systems rather than relying on mob justice" },
+      { "name": "Restorative justice approaches", "note": "Focus on repair and behavior change rather than punishment and exile" },
+      { "name": "Private accountability first", "note": "Address issues directly with the person before escalating to public campaigns" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Cato Institute: Self-Censorship Survey", "url": "https://www.cato.org/survey-reports/poll-62-americans-say-they-have-political-views-theyre-afraid-share", "note": "62% of Americans report having political views they're afraid to share publicly" },
+    { "title": "FIRE: Academic Freedom Survey", "url": "https://www.thefire.org/research-learn/2024-college-free-speech-rankings", "note": "70% of academics report self-censoring on controversial topics" },
+    { "title": "Pew Research: Americans and Cancel Culture", "url": "https://www.pewresearch.org/internet/2021/05/19/americans-and-cancel-culture-where-some-see-calls-for-accountability-others-see-censorship/", "note": "Divided public opinion on whether cancel culture is accountability or censorship" },
+    { "title": "The Atlantic: The New Puritans", "url": "https://www.theatlantic.com/magazine/archive/2021/10/new-puritans-mob-justice-canceled/619818/", "note": "Analysis of how social media accountability mechanisms lack proportionality and due process" }
+  ],
+
+  "falsifiability": [
+    "Self-censorship rates decrease as public accountability mechanisms become more established",
+    "Cancel culture campaigns consistently distinguish between serious offenses and minor missteps with proportional responses",
+    "Public discourse becomes more open and diverse as accountability norms strengthen"
+  ],
+
+  "tags": ["cancel-culture", "self-censorship", "accountability", "free-speech", "social-media", "chilling-effect"],
+  "crossReferences": ["S002", "S001", "S016"],
+
+  "seo": {
+    "description": "62% of Americans are afraid to share their opinions. 70% of academics self-censor. Cancel culture's chilling effect narrows public discourse while outrage fatigue dilutes real accountability.",
+    "keywords": ["cancel culture chilling effect", "cancel culture second order effects", "public accountability hidden costs"]
+  }
+}

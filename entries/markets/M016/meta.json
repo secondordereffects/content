@@ -1,0 +1,103 @@
+{
+  "id": "M016",
+  "title": "Gig Economy Race to Bottom",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Gig economy platforms — Uber, DoorDash, Fiverr, Upwork, TaskRabbit — promise flexibility and freedom. Be your own boss. Work when you want. Set your own rates. The reality for most gig workers is a race to the bottom driven by platform dynamics. Platforms profit from oversupply: more workers means lower prices, faster fulfillment, and better customer experience. So they continuously recruit new workers, driving down per-gig earnings. Workers compete on price because the platform controls discovery and ranking. The 'flexibility' of gig work means no benefits, no job security, no career progression, and earnings that often fall below minimum wage after accounting for expenses. The platforms externalize the costs of employment (healthcare, retirement, equipment, insurance) onto workers while capturing the value of their labor through take rates of 20-40%.",
+
+  "hypothesis": "Gig platforms create flexible work opportunities that benefit workers and consumers.",
+
+  "chain": {
+    "root": "Platform recruits maximum number of gig workers to ensure supply",
+    "effects": [
+      {
+        "label": "Oversupply drives per-gig earnings below sustainable levels",
+        "impact": "Median Uber driver earns $10-13/hr after expenses",
+        "direction": "negative",
+        "children": [
+          { "label": "Workers compete on price — platform algorithm favors cheapest/fastest", "direction": "negative" },
+          { "label": "New worker recruitment never stops because churn is 50%+ annually", "direction": "negative" },
+          { "label": "Experienced workers can't differentiate — platform commoditizes their labor", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Employment costs externalized onto workers",
+        "impact": "No benefits, no insurance, no retirement, no equipment reimbursement",
+        "direction": "negative",
+        "children": [
+          { "label": "Healthcare costs borne entirely by worker — $400-800/month for individual coverage", "direction": "negative" },
+          { "label": "Vehicle depreciation, gas, and maintenance not reflected in advertised earnings", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Algorithmic management removes worker autonomy",
+        "impact": "Platform controls pricing, matching, and visibility",
+        "direction": "negative",
+        "children": [
+          { "label": "Workers can't set their own prices — platform determines rates", "direction": "negative" },
+          { "label": "Acceptance rate requirements punish workers who decline low-paying gigs", "direction": "negative" },
+          { "label": "Deactivation (firing) happens algorithmically with no appeal", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Traditional employment in affected sectors degrades",
+        "impact": "Gig competition drives down wages in adjacent industries",
+        "direction": "negative",
+        "children": [
+          { "label": "Restaurants cut delivery staff because DoorDash is cheaper (for the restaurant)", "direction": "negative" },
+          { "label": "Taxi industry collapses — regulated jobs replaced by unregulated gig work", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Median gig worker hourly earnings (after expenses)", "before": "N/A", "after": "$10-13/hr", "delta": "Below minimum wage in many states", "direction": "negative" },
+    { "metric": "Gig worker annual churn rate", "before": "N/A", "after": "50%+", "delta": "Unsustainable", "direction": "negative" },
+    { "metric": "Platform take rate", "before": "N/A", "after": "20-40%", "delta": "Significant extraction", "direction": "negative" },
+    { "metric": "Gig workers with employer-provided benefits", "before": "N/A", "after": "0%", "delta": "No safety net", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Gig work is your sole income source and you don't have 6 months of savings",
+      "You haven't calculated your true hourly rate after all expenses including vehicle depreciation"
+    ],
+    "ifYouMust": [
+      "Track all expenses meticulously — vehicle costs, insurance, self-employment tax — to know your real hourly rate",
+      "Diversify across multiple platforms to reduce dependency on any single algorithm",
+      "Set a minimum hourly rate and decline gigs below it regardless of acceptance rate pressure",
+      "Budget for self-employment tax (15.3%), health insurance, and retirement savings from gross earnings"
+    ],
+    "alternatives": [
+      { "name": "Direct client relationships", "note": "Build your own client base outside platforms — keep 100% of earnings" },
+      { "name": "Worker cooperatives", "note": "Platform cooperatives owned by workers — same technology, worker-aligned incentives" },
+      { "name": "Part-time employment with benefits", "note": "Many employers offer benefits at 20-30 hours/week — more stable than gig work" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Economic Policy Institute: Uber Driver Earnings", "url": "https://www.epi.org/publication/uber-and-the-labor-market-uber-drivers-compensation-wages-and-the-scale-of-uber-and-the-gig-economy/", "note": "Median Uber driver earns $10-13/hour after expenses, below minimum wage in many jurisdictions" },
+    { "title": "MIT CSAIL: Ride-Hailing Driver Earnings", "url": "https://news.mit.edu/2018/study-finds-ride-hailing-drivers-earn-about-8-55-hour-0302", "note": "Initial study found $8.55/hr after expenses (later revised upward but still below minimum wage)" },
+    { "title": "ILO: World Employment and Social Outlook — Platform Labour", "url": "https://www.ilo.org/global/research/global-reports/weso/2021/lang--en/index.htm", "note": "Global analysis of platform work conditions and worker outcomes" },
+    { "title": "Prop 22 Analysis: California Gig Worker Classification", "url": "https://laborcenter.berkeley.edu/the-effects-of-proposition-22-on-driver-earnings-and-benefits/", "note": "Analysis of gig worker classification and its impact on earnings and benefits" }
+  ],
+
+  "falsifiability": [
+    "Median gig worker earnings after all expenses consistently exceed local minimum wage",
+    "Gig worker churn rates fall below 20% annually, indicating sustainable working conditions",
+    "Platform take rates decrease over time as competition among platforms benefits workers"
+  ],
+
+  "tags": ["gig-economy", "platform-economics", "labor", "race-to-bottom", "worker-classification", "algorithmic-management"],
+  "crossReferences": ["M019", "M009", "P010"],
+
+  "seo": {
+    "description": "Median gig workers earn $10-13/hr after expenses with no benefits. Platforms take 20-40% while externalizing all employment costs onto workers. Annual churn exceeds 50%.",
+    "keywords": ["gig economy race to bottom", "gig work second order effects", "uber driver earnings hidden costs"]
+  }
+}

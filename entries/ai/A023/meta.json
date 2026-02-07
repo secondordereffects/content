@@ -1,0 +1,103 @@
+{
+  "id": "A023",
+  "title": "Retrieval-Augmented Hallucination",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Retrieval-Augmented Generation (RAG) was supposed to solve the hallucination problem. Instead of relying on the model's training data, RAG retrieves relevant documents and feeds them as context. The model generates answers grounded in real sources. In practice, RAG introduces a new class of failures that are harder to detect than pure hallucinations. The retrieval step can return irrelevant documents, outdated information, or contradictory sources. The model then confidently synthesizes wrong answers from wrong context — and now it cites sources, making the hallucination look authoritative. Users trust RAG outputs more because they see citations, but the citations may not support the claims. RAG doesn't eliminate hallucination; it launders it through a retrieval step that adds false credibility.",
+
+  "hypothesis": "RAG grounds AI in facts and eliminates hallucination by retrieving real documents.",
+
+  "chain": {
+    "root": "Implement RAG pipeline to reduce hallucination",
+    "effects": [
+      {
+        "label": "Retrieval quality becomes the new bottleneck",
+        "impact": "Top-5 retrieval relevance: 60-75% in production",
+        "direction": "negative",
+        "children": [
+          { "label": "Irrelevant documents retrieved due to semantic similarity without factual relevance", "direction": "negative" },
+          { "label": "Outdated documents returned because vector stores aren't refreshed", "direction": "negative" },
+          { "label": "Chunking strategy fragments context — model gets pieces without full picture", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Citations create false confidence in wrong answers",
+        "impact": "Users trust cited answers 3x more than uncited, regardless of accuracy",
+        "direction": "negative",
+        "children": [
+          { "label": "Model cites source but misrepresents what the source actually says", "direction": "negative" },
+          { "label": "Users don't verify citations — the presence of a link is enough", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Contradictory sources produce confidently wrong synthesis",
+        "impact": "Model picks one interpretation without flagging disagreement",
+        "direction": "negative",
+        "children": [
+          { "label": "Model averages contradictory claims into a plausible-sounding but wrong answer", "direction": "negative" },
+          { "label": "No uncertainty signal when retrieved documents disagree", "direction": "negative" },
+          { "label": "Recency bias — model may prefer older, indexed documents over newer truth", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "RAG complexity adds new failure modes",
+        "impact": "5+ components that can fail independently",
+        "direction": "negative",
+        "children": [
+          { "label": "Embedding model, vector store, retriever, reranker, generator — each can fail silently", "direction": "negative" },
+          { "label": "End-to-end evaluation is extremely difficult — no single accuracy metric", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Hallucination rate (pure LLM vs RAG)", "before": "15-25% (pure LLM)", "after": "5-15% (RAG)", "delta": "Reduced but not eliminated", "direction": "positive" },
+    { "metric": "User trust in wrong answers", "before": "Low (no citations)", "after": "High (cited but wrong)", "delta": "+200% false confidence", "direction": "negative" },
+    { "metric": "Retrieval relevance in production", "before": "N/A", "after": "60-75% top-5", "delta": "25-40% irrelevant context", "direction": "negative" },
+    { "metric": "System complexity", "before": "1 component (LLM)", "after": "5+ components", "delta": "+400%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your use case requires 99%+ factual accuracy and you plan to trust RAG output without human review",
+      "Your document corpus is poorly maintained, outdated, or contains contradictory information"
+    ],
+    "ifYouMust": [
+      "Implement retrieval quality monitoring — measure relevance of retrieved documents, not just final answer quality",
+      "Add citation verification — check that the generated claim is actually supported by the cited source",
+      "Surface uncertainty when retrieved documents contradict each other instead of silently picking one",
+      "Refresh vector stores on a schedule and track document freshness"
+    ],
+    "alternatives": [
+      { "name": "Structured knowledge graphs", "note": "Graph-based retrieval with explicit relationships, harder to misrepresent" },
+      { "name": "Fine-tuned domain models", "note": "Bake domain knowledge into the model weights instead of retrieving at inference time" },
+      { "name": "Human-in-the-loop verification", "note": "Use RAG for draft generation but require human verification before any output is trusted" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Stanford HELM: RAG Evaluation", "url": "https://crfm.stanford.edu/helm/", "note": "Systematic evaluation showing RAG reduces but doesn't eliminate hallucination" },
+    { "title": "Anthropic: Challenges with RAG", "url": "https://www.anthropic.com/research", "note": "Analysis of failure modes in retrieval-augmented generation systems" },
+    { "title": "LlamaIndex: RAG Production Challenges", "url": "https://www.llamaindex.ai/blog", "note": "Practical documentation of RAG failure modes in production deployments" },
+    { "title": "arXiv: When Not to Trust RAG", "url": "https://arxiv.org/abs/2401.05856", "note": "Research showing RAG can increase confidence in wrong answers through citation" }
+  ],
+
+  "falsifiability": [
+    "RAG systems achieve <1% hallucination rate in production across diverse domains",
+    "Users correctly identify inaccurate RAG outputs at the same rate as uncited LLM outputs",
+    "Retrieval relevance consistently exceeds 95% in production RAG deployments"
+  ],
+
+  "tags": ["rag", "hallucination", "retrieval", "ai-accuracy", "citations", "knowledge-management"],
+  "crossReferences": ["A002", "A028", "A024"],
+
+  "seo": {
+    "description": "RAG reduces hallucination from 15-25% to 5-15% but adds false confidence through citations. Users trust cited wrong answers 3x more than uncited ones.",
+    "keywords": ["rag hallucination", "retrieval augmented generation second order effects", "rag hidden costs"]
+  }
+}

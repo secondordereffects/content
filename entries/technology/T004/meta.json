@@ -1,0 +1,103 @@
+{
+  "id": "T004",
+  "title": "Dependency Tree Decay",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Modern software is built on towers of dependencies. A typical Node.js project has 500-1,500 transitive dependencies. A Python project has 50-200. Each dependency is maintained by someone else — often a single unpaid volunteer. The left-pad incident (2016), the log4j vulnerability (2021), and the xz backdoor (2024) all demonstrated the same structural fragility: critical infrastructure depends on code maintained by strangers with no obligation to keep it working or secure. Dependencies decay silently. Maintainers burn out, abandon projects, or introduce vulnerabilities. By the time you notice, the rot has spread through your entire dependency tree. The convenience of 'just npm install it' creates a supply chain that nobody owns and everybody depends on.",
+
+  "hypothesis": "Using libraries saves time and is more reliable than building from scratch.",
+
+  "chain": {
+    "root": "Build software on extensive third-party dependency trees",
+    "effects": [
+      {
+        "label": "Transitive dependencies create invisible attack surface",
+        "impact": "Average project: 500-1500 transitive deps in Node.js",
+        "direction": "negative",
+        "children": [
+          { "label": "Developers don't know what 95% of their dependencies do", "direction": "negative" },
+          { "label": "Each dependency is a potential supply chain attack vector", "direction": "negative" },
+          { "label": "Vulnerability scanners generate alert fatigue from deep dependency issues", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Maintainer burnout creates abandoned critical packages",
+        "impact": "30% of npm packages have no commits in 2+ years",
+        "direction": "negative",
+        "children": [
+          { "label": "Single maintainer projects are single points of failure for thousands of apps", "direction": "negative" },
+          { "label": "Abandoned packages don't get security patches", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Supply chain attacks target the weakest link",
+        "impact": "Software supply chain attacks up 742% since 2019",
+        "direction": "negative",
+        "children": [
+          { "label": "Attackers compromise maintainer accounts to inject malicious code", "direction": "negative" },
+          { "label": "Typosquatting packages trick developers into installing malware", "direction": "negative" },
+          { "label": "Backdoors can hide in dependency updates for months before detection", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Version conflicts and breaking changes cascade",
+        "impact": "Average 2-3 breaking dependency updates per month",
+        "direction": "negative",
+        "children": [
+          { "label": "Diamond dependency problem — two deps require incompatible versions of a third", "direction": "negative" },
+          { "label": "Lockfile drift between environments causes 'works on my machine' failures", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Software supply chain attacks (annual)", "before": "~200 (2019)", "after": "~1,700 (2024)", "delta": "+742%", "direction": "negative" },
+    { "metric": "Transitive dependencies (avg Node.js project)", "before": "~100 (2015)", "after": "500-1500 (2025)", "delta": "+500-1400%", "direction": "negative" },
+    { "metric": "Time spent on dependency maintenance", "before": "5% of dev time", "after": "15-20% of dev time", "delta": "+200-300%", "direction": "negative" },
+    { "metric": "Critical vulnerabilities from dependencies (annual)", "before": "Rare", "after": "2-5 per project", "delta": "Routine", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're adding a dependency for functionality you could write in 50 lines of code",
+      "The package has a single maintainer, no recent commits, and your project is security-sensitive"
+    ],
+    "ifYouMust": [
+      "Audit direct dependencies for maintainer health, commit frequency, and security track record",
+      "Pin exact versions and review every dependency update before merging",
+      "Use lockfiles religiously and run npm audit / pip audit in CI",
+      "Maintain a dependency budget — set a maximum count and justify every addition"
+    ],
+    "alternatives": [
+      { "name": "Vendor critical dependencies", "note": "Copy the source code into your repo for critical, small packages — you own the maintenance" },
+      { "name": "Standard library first", "note": "Use language standard libraries before reaching for third-party packages" },
+      { "name": "Minimal dependency policy", "note": "Require justification for every new dependency — is the time saved worth the supply chain risk?" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Sonatype: State of the Software Supply Chain 2024", "url": "https://www.sonatype.com/state-of-the-software-supply-chain/introduction", "note": "742% increase in software supply chain attacks since 2019" },
+    { "title": "xz Utils Backdoor (CVE-2024-3094)", "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-3094", "note": "Sophisticated backdoor inserted by a trusted maintainer over 2 years" },
+    { "title": "Log4Shell (CVE-2021-44228)", "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44228", "note": "Critical vulnerability in ubiquitous logging library affected millions of applications" },
+    { "title": "OpenSSF: Securing the Open Source Supply Chain", "url": "https://openssf.org/", "note": "Industry initiative to address open source dependency security" }
+  ],
+
+  "falsifiability": [
+    "Software supply chain attacks decrease despite increasing dependency counts",
+    "Automated dependency management tools eliminate >95% of vulnerability exposure without developer intervention",
+    "Projects with 1000+ dependencies show equal or fewer security incidents than projects with minimal dependencies"
+  ],
+
+  "tags": ["dependencies", "supply-chain", "security", "npm", "open-source", "maintainer-burnout"],
+  "crossReferences": ["T005", "T013", "A024"],
+
+  "seo": {
+    "description": "Software supply chain attacks up 742% since 2019. The average Node.js project has 500-1500 transitive dependencies maintained by strangers. Left-pad, log4j, xz — the pattern repeats.",
+    "keywords": ["dependency tree decay", "software supply chain second order effects", "npm dependency hidden costs"]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "id": "T016",
+  "title": "Blockchain Solution Searching",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Blockchain technology solves a specific, narrow problem: trustless consensus among parties who don't trust each other and can't rely on a central authority. That's it. But the hype cycle turned blockchain into a hammer looking for nails. Supply chain tracking, voting systems, medical records, real estate, identity management — all proposed as blockchain use cases despite having trusted intermediaries that work fine. The result is billions of dollars invested in blockchain solutions that are slower, more expensive, and harder to maintain than the centralized databases they replaced. Most enterprise blockchain projects quietly shut down within 2-3 years when the team realizes that a PostgreSQL database with access controls solves the same problem at 1/100th the cost and complexity.",
+
+  "hypothesis": "Blockchain provides trustless, tamper-proof transactions for any industry.",
+
+  "chain": {
+    "root": "Adopt blockchain for a use case that has trusted intermediaries",
+    "effects": [
+      {
+        "label": "Solution is 100-1000x slower than a centralized database",
+        "impact": "7-30 TPS (blockchain) vs. 50,000+ TPS (PostgreSQL)",
+        "direction": "negative",
+        "children": [
+          { "label": "Consensus mechanisms add latency that centralized systems don't have", "direction": "negative" },
+          { "label": "Write operations require network-wide validation", "direction": "negative" },
+          { "label": "Scaling requires layer-2 solutions that reintroduce centralization", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Immutability becomes a liability, not a feature",
+        "impact": "GDPR right-to-deletion is incompatible with immutable ledgers",
+        "direction": "negative",
+        "children": [
+          { "label": "Bugs in smart contracts can't be patched — funds are permanently locked", "direction": "negative" },
+          { "label": "Incorrect data on-chain requires governance workarounds that defeat the purpose", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Operational complexity dwarfs centralized alternatives",
+        "impact": "10-50x more infrastructure than equivalent database solution",
+        "direction": "negative",
+        "children": [
+          { "label": "Node management, consensus monitoring, key management, smart contract auditing", "direction": "negative" },
+          { "label": "Specialized blockchain developers cost 2-3x more than database engineers", "direction": "negative" },
+          { "label": "Debugging distributed ledger issues requires specialized tooling", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Enterprise blockchain projects quietly fail",
+        "impact": "80%+ of enterprise blockchain pilots don't reach production",
+        "direction": "negative",
+        "children": [
+          { "label": "Pilot succeeds on demo data, fails on production requirements", "direction": "negative" },
+          { "label": "Partners drop out when they realize they must run nodes", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Transaction throughput", "before": "50,000+ TPS (database)", "after": "7-30 TPS (blockchain)", "delta": "-99.9%", "direction": "negative" },
+    { "metric": "Enterprise blockchain pilots reaching production", "before": "100% (target)", "after": "<20%", "delta": "80%+ failure rate", "direction": "negative" },
+    { "metric": "Infrastructure cost vs. centralized equivalent", "before": "$1K/mo (database)", "after": "$10-50K/mo (blockchain)", "delta": "+900-4900%", "direction": "negative" },
+    { "metric": "Developer cost premium", "before": "Baseline (backend dev)", "after": "+100-200%", "delta": "2-3x", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "All participants in the system trust a single entity to maintain the database",
+      "Your use case requires GDPR compliance with right-to-deletion"
+    ],
+    "ifYouMust": [
+      "Prove that no trusted intermediary can serve the same function before choosing blockchain",
+      "Start with a centralized prototype to validate the business logic before adding blockchain complexity",
+      "Budget 3-5x the cost and timeline of an equivalent centralized solution",
+      "Plan for the 80% probability that you'll migrate back to a database within 3 years"
+    ],
+    "alternatives": [
+      { "name": "Centralized database with audit logging", "note": "PostgreSQL with append-only audit tables provides tamper-evidence at 1/100th the cost" },
+      { "name": "Merkle tree verification", "note": "Cryptographic verification of data integrity without full blockchain consensus overhead" },
+      { "name": "Multi-party computation", "note": "Privacy-preserving computation across parties without shared ledger" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Gartner: Blockchain Hype Cycle", "url": "https://www.gartner.com/en/articles/what-s-new-in-the-gartner-hype-cycle-for-blockchain-and-web3", "note": "Most enterprise blockchain use cases in the 'trough of disillusionment'" },
+    { "title": "McKinsey: Blockchain Beyond the Hype", "url": "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/blockchain-beyond-the-hype-what-is-the-strategic-business-value", "note": "Analysis showing most blockchain value comes from narrow use cases, not broad enterprise adoption" },
+    { "title": "IEEE: Do You Need a Blockchain?", "url": "https://ieeexplore.ieee.org/document/8525392", "note": "Decision framework showing most proposed blockchain use cases don't need blockchain" },
+    { "title": "Wired: Enterprise Blockchain Is Dead", "url": "https://www.wired.com/story/enterprise-blockchain-is-dead/", "note": "Post-mortem on the enterprise blockchain wave" }
+  ],
+
+  "falsifiability": [
+    "Enterprise blockchain deployments consistently outperform centralized database alternatives on cost and performance",
+    "More than 50% of enterprise blockchain pilots reach production and remain operational for 3+ years",
+    "Blockchain solutions achieve transaction throughput within 10x of centralized database equivalents"
+  ],
+
+  "tags": ["blockchain", "enterprise", "database", "decentralization", "smart-contracts", "hype-cycle"],
+  "crossReferences": ["T005", "T009", "T016"],
+
+  "seo": {
+    "description": "80%+ of enterprise blockchain pilots fail to reach production. Blockchain is 100-1000x slower than databases and costs 10-50x more. Most use cases don't need trustless consensus.",
+    "keywords": ["blockchain enterprise failure", "blockchain second order effects", "blockchain vs database hidden costs"]
+  }
+}

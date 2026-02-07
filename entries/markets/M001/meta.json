@@ -1,0 +1,103 @@
+{
+  "id": "M001",
+  "title": "Index Fund Reflexivity",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Index funds are the greatest financial innovation of the past 50 years. Jack Bogle's insight was simple: most active managers underperform the index after fees, so just buy the index. The data is overwhelming — over 20-year periods, 90%+ of active funds underperform their benchmark. Trillions of dollars have flowed from active to passive management. But index funds work because active managers do the work of price discovery. When passive ownership crosses a threshold — currently estimated at 40-50% of total market cap — the mechanism that makes index investing rational begins to break down. Stocks get bought and sold based on index membership, not fundamentals. Capital allocation becomes mechanical. Price signals that guide the economy become distorted. The strategy that works because others do the hard work of analysis stops working when nobody does the analysis anymore.",
+
+  "hypothesis": "Passive index investing beats active management and is the optimal strategy for most investors.",
+
+  "chain": {
+    "root": "Massive shift from active to passive index investing",
+    "effects": [
+      {
+        "label": "Price discovery degrades as passive ownership increases",
+        "impact": "Passive funds own 40%+ of US equity market",
+        "direction": "negative",
+        "children": [
+          { "label": "Stocks are bought/sold based on index membership, not fundamentals", "direction": "negative" },
+          { "label": "Inclusion in S&P 500 causes automatic price increase regardless of quality", "direction": "negative" },
+          { "label": "Mispriced stocks stay mispriced longer because fewer active managers correct them", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Index concentration amplifies market-cap-weighted distortions",
+        "impact": "Top 10 stocks = 35%+ of S&P 500",
+        "direction": "negative",
+        "children": [
+          { "label": "Every dollar into S&P 500 index fund buys more of already-largest stocks", "direction": "negative" },
+          { "label": "Mega-cap stocks get more expensive because they're big, not because they're better", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Correlated trading creates systemic fragility",
+        "impact": "Index rebalancing moves billions on the same day",
+        "direction": "negative",
+        "children": [
+          { "label": "All passive investors buy and sell the same stocks at the same time", "direction": "negative" },
+          { "label": "Market crashes amplified — passive selling is mechanical, not rational", "direction": "negative" },
+          { "label": "Liquidity disappears during stress because passive funds don't provide it", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Corporate governance weakens",
+        "impact": "Big 3 index funds (BlackRock, Vanguard, State Street) vote 25%+ of S&P 500 shares",
+        "direction": "negative",
+        "children": [
+          { "label": "Index funds have no incentive to monitor individual companies — they own everything", "direction": "negative" },
+          { "label": "Proxy voting becomes rubber-stamping at scale", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Passive share of US equity market", "before": "5% (2000)", "after": "40%+ (2025)", "delta": "+35pp", "direction": "negative" },
+    { "metric": "S&P 500 concentration (top 10 stocks)", "before": "20% (2015)", "after": "35%+ (2025)", "delta": "+15pp", "direction": "negative" },
+    { "metric": "Active manager count", "before": "Growing", "after": "Declining 5% annually", "delta": "Shrinking", "direction": "negative" },
+    { "metric": "Index inclusion price premium", "before": "Small", "after": "5-10% on announcement", "delta": "Significant", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You believe passive investing has no systemic risks because it's worked for the past 30 years",
+      "Your entire portfolio is in a single market-cap-weighted index fund with no diversification"
+    ],
+    "ifYouMust": [
+      "Diversify across index methodologies — equal-weight, factor-based, not just market-cap-weighted",
+      "Maintain some allocation to active managers who provide price discovery",
+      "Understand that index investing is a free-rider strategy that depends on others doing fundamental analysis",
+      "Rebalance on your own schedule, not on index rebalancing dates when everyone else is trading"
+    ],
+    "alternatives": [
+      { "name": "Equal-weight index funds", "note": "Avoid market-cap concentration by weighting all stocks equally" },
+      { "name": "Factor-based investing", "note": "Target value, quality, or momentum factors rather than pure market cap" },
+      { "name": "Direct indexing", "note": "Own individual stocks in index proportions — enables tax-loss harvesting and customization" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Michael Burry: Index Fund Bubble Warning", "url": "https://www.bloomberg.com/news/articles/2019-09-04/michael-burry-sees-a-bubble-in-passive-investing", "note": "Early warning about passive investing distorting price discovery" },
+    { "title": "NBER: The Shift from Active to Passive Investing", "url": "https://www.nber.org/papers/w31318", "note": "Academic analysis of how passive investing affects market efficiency" },
+    { "title": "S&P SPIVA Scorecard", "url": "https://www.spglobal.com/spdji/en/research-insights/spiva/", "note": "90%+ of active funds underperform over 20 years — the data driving passive adoption" },
+    { "title": "Harvard Law: The Specter of the Giant Three", "url": "https://corpgov.law.harvard.edu/2019/11/14/the-specter-of-the-giant-three/", "note": "BlackRock, Vanguard, State Street collectively vote 25%+ of S&P 500 shares" }
+  ],
+
+  "falsifiability": [
+    "Passive ownership exceeds 60% of market cap with no measurable degradation in price discovery or market efficiency",
+    "Market-cap-weighted index funds continue to outperform equal-weight and factor-based alternatives over 20-year periods",
+    "Index rebalancing events show no measurable price impact or liquidity disruption"
+  ],
+
+  "tags": ["index-funds", "passive-investing", "price-discovery", "market-structure", "concentration", "reflexivity"],
+  "crossReferences": ["M024", "M010", "M005"],
+
+  "seo": {
+    "description": "Passive funds own 40%+ of US equities. Top 10 stocks are 35%+ of the S&P 500. Index investing works because active managers do price discovery — but active management is dying.",
+    "keywords": ["index fund reflexivity", "passive investing second order effects", "index fund bubble hidden costs"]
+  }
+}

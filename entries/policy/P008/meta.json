@@ -1,0 +1,103 @@
+{
+  "id": "P008",
+  "title": "Carbon Tax Border Adjustment",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Carbon taxes are the economist's preferred tool for reducing emissions. Put a price on carbon, and the market will find the cheapest way to reduce it. The theory is elegant. The second-order effects are not. When one country implements a carbon tax and its trading partners don't, carbon-intensive production doesn't disappear — it relocates to countries without carbon pricing. This is carbon leakage: emissions move, they don't shrink. The EU's Carbon Border Adjustment Mechanism (CBAM) attempts to fix this by taxing imports based on their carbon content. But CBAM creates its own cascade: trade disputes, compliance complexity for developing nations, potential WTO violations, and a new form of protectionism disguised as climate policy. The carbon tax that was supposed to be simple becomes a geopolitical weapon.",
+
+  "hypothesis": "Carbon taxes reduce emissions by making pollution expensive.",
+
+  "chain": {
+    "root": "Implement carbon tax without global coordination",
+    "effects": [
+      {
+        "label": "Carbon leakage — production moves to unpriced jurisdictions",
+        "impact": "8-25% of emission reductions offset by leakage",
+        "direction": "negative",
+        "children": [
+          { "label": "Energy-intensive industries relocate to countries without carbon pricing", "direction": "negative" },
+          { "label": "Global emissions unchanged — just reshuffled geographically", "direction": "negative" },
+          { "label": "Domestic jobs lost without corresponding environmental benefit", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Border adjustment mechanisms create trade conflicts",
+        "impact": "EU CBAM affects $3.4B in imports initially, expanding to $50B+",
+        "direction": "negative",
+        "children": [
+          { "label": "Developing nations see CBAM as protectionism, not climate policy", "direction": "negative" },
+          { "label": "WTO compatibility challenged — potential trade war trigger", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Compliance burden falls disproportionately on developing economies",
+        "impact": "Small exporters can't afford carbon accounting infrastructure",
+        "direction": "negative",
+        "children": [
+          { "label": "Developing nations must build carbon measurement systems to access EU market", "direction": "negative" },
+          { "label": "Trade diverts to non-CBAM markets rather than reducing emissions", "direction": "negative" },
+          { "label": "Climate policy becomes a barrier to economic development", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Regressive impact on consumers",
+        "impact": "Carbon costs passed through to consumer prices",
+        "direction": "negative",
+        "children": [
+          { "label": "Energy and food prices increase — hitting low-income households hardest", "direction": "negative" },
+          { "label": "Political backlash threatens carbon pricing sustainability (see: France yellow vests)", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Carbon leakage rate", "before": "N/A", "after": "8-25% of reductions offset", "delta": "Significant", "direction": "negative" },
+    { "metric": "EU CBAM scope (imports affected)", "before": "$0", "after": "$3.4B initially, $50B+ by 2030", "delta": "Expanding", "direction": "neutral" },
+    { "metric": "Consumer energy cost increase", "before": "Baseline", "after": "+10-25% in carbon-taxed jurisdictions", "delta": "Regressive", "direction": "negative" },
+    { "metric": "Domestic emission reduction (net of leakage)", "before": "Target: 100%", "after": "Actual: 75-92%", "delta": "Below target", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're implementing a carbon tax without addressing carbon leakage through border adjustments or international coordination",
+      "The carbon tax revenue isn't being returned to low-income households to offset regressive impacts"
+    ],
+    "ifYouMust": [
+      "Pair carbon taxes with border adjustments to prevent leakage — but expect trade disputes",
+      "Return carbon tax revenue to citizens as dividends to offset regressive price impacts",
+      "Phase in gradually with clear long-term price signals so industry can plan transitions",
+      "Coordinate with major trading partners to minimize leakage and trade friction"
+    ],
+    "alternatives": [
+      { "name": "Cap-and-trade with border adjustments", "note": "Quantity-based approach with tradeable permits — price discovery through markets" },
+      { "name": "Sectoral agreements", "note": "Industry-specific global agreements (steel, cement, aviation) rather than economy-wide carbon pricing" },
+      { "name": "Technology mandates with subsidies", "note": "Require clean technology adoption while subsidizing the transition — avoids price signal complexity" }
+    ]
+  },
+
+  "sources": [
+    { "title": "EU CBAM Regulation", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en", "note": "Official EU Carbon Border Adjustment Mechanism documentation and implementation timeline" },
+    { "title": "IMF: Carbon Pricing and Border Adjustments", "url": "https://www.imf.org/en/Topics/climate-change/carbon-pricing", "note": "Analysis of carbon leakage rates and border adjustment effectiveness" },
+    { "title": "World Bank: State and Trends of Carbon Pricing", "url": "https://openknowledge.worldbank.org/handle/10986/39796", "note": "Global overview of carbon pricing mechanisms and their outcomes" },
+    { "title": "Nature Climate Change: Carbon Leakage Evidence", "url": "https://www.nature.com/nclimate/", "note": "Empirical evidence on carbon leakage rates from existing carbon pricing schemes" }
+  ],
+
+  "falsifiability": [
+    "Carbon taxes with border adjustments achieve >95% of targeted emission reductions with <5% leakage",
+    "CBAM implementation causes no measurable trade disputes or WTO challenges",
+    "Carbon tax revenue recycling fully offsets regressive impacts on low-income households"
+  ],
+
+  "tags": ["carbon-tax", "climate-policy", "carbon-leakage", "border-adjustment", "trade", "cbam"],
+  "crossReferences": ["M025", "P001", "P010"],
+
+  "seo": {
+    "description": "Carbon taxes lose 8-25% of emission reductions to carbon leakage. Border adjustments trigger trade disputes. Consumer costs hit low-income households hardest.",
+    "keywords": ["carbon tax border adjustment", "carbon tax second order effects", "cbam hidden costs"]
+  }
+}

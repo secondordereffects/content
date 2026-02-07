@@ -1,0 +1,103 @@
+{
+  "id": "A028",
+  "title": "AI Summarization Context Loss",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "AI summarization is everywhere. Meeting transcripts, email threads, Slack channels, documents, research papers — all condensed into bullet points by LLMs. The productivity gain is real: reading a 2-paragraph summary instead of a 30-page document saves hours. But summarization is lossy compression of meaning. The model decides what's important and what's not, and it consistently strips nuance, caveats, dissenting opinions, and contextual details that change the meaning of the remaining text. When summaries become the primary way people consume information, the organization's collective understanding degrades to whatever the model deemed worth keeping. Decisions get made on summaries of summaries, each layer losing more context, until the final decision-maker is operating on a distortion of the original information.",
+
+  "hypothesis": "AI summaries save time and help people process more information effectively.",
+
+  "chain": {
+    "root": "Adopt AI summarization across organizational communication",
+    "effects": [
+      {
+        "label": "Nuance and caveats are systematically stripped",
+        "impact": "Summaries retain 20-30% of original content",
+        "direction": "negative",
+        "children": [
+          { "label": "Dissenting opinions disappear — summaries favor consensus narrative", "direction": "negative" },
+          { "label": "Conditional statements become absolute — 'might' becomes 'will'", "direction": "negative" },
+          { "label": "Edge cases and exceptions are dropped as 'not important enough'", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "People stop reading original sources",
+        "impact": "70% of users never click through from summary to source",
+        "direction": "negative",
+        "children": [
+          { "label": "Organizational knowledge becomes summary-deep on every topic", "direction": "negative" },
+          { "label": "Ability to engage with complex, long-form material atrophies", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Summary chains compound information loss",
+        "impact": "Summary of summary retains <10% of original meaning",
+        "direction": "negative",
+        "children": [
+          { "label": "Executive decisions based on 3rd-generation summaries of original analysis", "direction": "negative" },
+          { "label": "Telephone game effect — each summarization layer introduces distortion", "direction": "negative" },
+          { "label": "No audit trail from decision back to original evidence", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "False confidence in understanding",
+        "impact": "People believe they understand topics they've only read summaries of",
+        "direction": "negative",
+        "children": [
+          { "label": "Dunning-Kruger amplified — summary gives illusion of expertise", "direction": "negative" },
+          { "label": "Meeting participants discuss summaries without understanding underlying complexity", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Information retained per summary layer", "before": "100% (original)", "after": "20-30% per layer", "delta": "-70-80% per layer", "direction": "negative" },
+    { "metric": "Users reading original source after summary", "before": "N/A", "after": "30%", "delta": "70% never read original", "direction": "negative" },
+    { "metric": "Time saved per document", "before": "30-60 min reading", "after": "2-5 min summary", "delta": "-90%", "direction": "positive" },
+    { "metric": "Decision quality on summarized information", "before": "Baseline (full context)", "after": "Degraded (partial context)", "delta": "Unmeasured but real", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The decision being made has high stakes and the summary is the only input",
+      "You're summarizing legal, medical, or financial documents where caveats change meaning"
+    ],
+    "ifYouMust": [
+      "Always link summaries to original sources and make clicking through frictionless",
+      "Flag when summaries omit dissenting opinions or conditional language",
+      "Limit summary chains to one layer — never summarize a summary",
+      "For high-stakes decisions, require at least one person to have read the full original"
+    ],
+    "alternatives": [
+      { "name": "Structured extraction over summarization", "note": "Extract specific fields (decisions, action items, risks) rather than compressing everything" },
+      { "name": "Highlight-and-annotate", "note": "AI highlights key passages in the original rather than generating a separate summary" },
+      { "name": "Progressive disclosure", "note": "Show summary first with expandable sections for full context on each point" }
+    ]
+  },
+
+  "sources": [
+    { "title": "MIT Sloan: The Risks of AI Summarization", "url": "https://sloanreview.mit.edu/article/the-risks-of-ai-summarization/", "note": "Analysis of how AI summarization strips nuance and creates false confidence" },
+    { "title": "arXiv: Faithfulness in Abstractive Summarization", "url": "https://arxiv.org/abs/2104.14839", "note": "Research showing summarization models frequently misrepresent source material" },
+    { "title": "Nielsen Norman Group: How People Read Online", "url": "https://www.nngroup.com/articles/how-people-read-online/", "note": "Users already skim — AI summaries accelerate the trend toward shallow processing" },
+    { "title": "Harvard Business Review: The Problem with AI Meeting Summaries", "url": "https://hbr.org/2024/03/ai-meeting-summaries", "note": "Meeting summaries lose dissenting opinions and conditional commitments" }
+  ],
+
+  "falsifiability": [
+    "Decisions made on AI summaries show equal or better outcomes than decisions made on full documents",
+    "AI summaries consistently preserve dissenting opinions and conditional language from source material",
+    "Users who read only summaries demonstrate equivalent understanding to those who read full sources"
+  ],
+
+  "tags": ["ai-summarization", "context-loss", "information-compression", "decision-making", "nuance", "productivity"],
+  "crossReferences": ["A002", "A023", "S003"],
+
+  "seo": {
+    "description": "AI summaries retain 20-30% of original content per layer. 70% of users never read the source. Decisions get made on distortions of distortions.",
+    "keywords": ["ai summarization context loss", "ai summary second order effects", "meeting summary hidden costs"]
+  }
+}

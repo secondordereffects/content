@@ -1,0 +1,103 @@
+{
+  "id": "H006",
+  "title": "Pandemic Preparedness Fatigue",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "After COVID-19 killed millions and cost the global economy trillions, the world vowed 'never again.' Governments created pandemic preparedness offices, funded surveillance systems, and stockpiled supplies. But institutional memory is short and budgets are competitive. Within 3 years of the pandemic's acute phase, preparedness funding was being cut, surveillance systems defunded, and stockpiles allowed to expire. The pattern is well-documented: after every major pandemic (1918 flu, 2003 SARS, 2009 H1N1, 2014 Ebola), the world invests in preparedness, then defunds it when the threat feels distant. COVID-19 was supposed to be different because of its unprecedented scale. It wasn't. The preparedness infrastructure built in 2020-2022 is already eroding, and the next pandemic — which epidemiologists consider a certainty — will find us less prepared than we were in 2019.",
+
+  "hypothesis": "COVID-19 permanently improved global pandemic preparedness and response capabilities.",
+
+  "chain": {
+    "root": "Invest heavily in pandemic preparedness after COVID-19",
+    "effects": [
+      {
+        "label": "Preparedness funding gets cut as pandemic memory fades",
+        "impact": "US pandemic preparedness office budget cut 30% by 2025",
+        "direction": "negative",
+        "children": [
+          { "label": "Competing budget priorities (defense, infrastructure) crowd out preparedness", "direction": "negative" },
+          { "label": "Politicians can't justify spending on threats that aren't visible", "direction": "negative" },
+          { "label": "Preparedness is prevention — and prevention never gets credit because nothing happens", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Surveillance systems degrade without sustained investment",
+        "impact": "Wastewater surveillance programs defunded in multiple states",
+        "direction": "negative",
+        "children": [
+          { "label": "Early warning systems require continuous operation, not just crisis activation", "direction": "negative" },
+          { "label": "Trained personnel leave for stable jobs when funding becomes uncertain", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Public trust in health institutions eroded by pandemic response",
+        "impact": "Trust in CDC dropped from 69% to 44% (2020-2024)",
+        "direction": "negative",
+        "children": [
+          { "label": "Politicization of public health measures reduces compliance in future pandemics", "direction": "negative" },
+          { "label": "Vaccine hesitancy increased — not just for COVID but for all vaccines", "direction": "negative" },
+          { "label": "Misinformation infrastructure built during COVID persists and grows", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Stockpiles expire and aren't replenished",
+        "impact": "Strategic National Stockpile PPE expiring without replacement",
+        "direction": "negative",
+        "children": [
+          { "label": "Ventilators, PPE, and antivirals have shelf lives — stockpiling is ongoing, not one-time", "direction": "negative" },
+          { "label": "Domestic manufacturing capacity built during COVID shutting down as demand drops", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "US pandemic preparedness funding (vs. 2021 peak)", "before": "Peak (2021)", "after": "-30% (2025)", "delta": "Declining", "direction": "negative" },
+    { "metric": "Trust in CDC", "before": "69% (2020)", "after": "44% (2024)", "delta": "-25pp", "direction": "negative" },
+    { "metric": "Wastewater surveillance programs active", "before": "Peak coverage (2022)", "after": "Declining — multiple states defunded", "delta": "Shrinking", "direction": "negative" },
+    { "metric": "Childhood vaccination rates (non-COVID)", "before": "94% (2019)", "after": "90% (2024)", "delta": "-4pp", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're cutting pandemic preparedness funding because 'COVID is over'",
+      "Your preparedness plan assumes the next pandemic will look like the last one"
+    ],
+    "ifYouMust": [
+      "Fund preparedness as permanent infrastructure, not crisis response — like fire departments, not fire sales",
+      "Automate stockpile rotation so supplies are used before expiration and continuously replenished",
+      "Maintain surveillance systems during inter-pandemic periods — they're useless if activated only during crises",
+      "Rebuild public trust through transparency and depoliticization of public health guidance"
+    ],
+    "alternatives": [
+      { "name": "Dual-use health infrastructure", "note": "Build systems that provide value during non-pandemic times (general disease surveillance, hospital capacity)" },
+      { "name": "International pandemic treaty", "note": "Binding international commitments to maintain preparedness regardless of domestic political cycles" },
+      { "name": "Private sector preparedness requirements", "note": "Require large employers to maintain pandemic response plans and supplies as a condition of operation" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Johns Hopkins: Global Health Security Index", "url": "https://www.ghsindex.org/", "note": "Global preparedness scores declining despite COVID-19 experience" },
+    { "title": "KFF: Public Trust in CDC", "url": "https://www.kff.org/coronavirus-covid-19/poll-finding/", "note": "Trust in CDC dropped from 69% to 44% between 2020 and 2024" },
+    { "title": "Nature: Pandemic Preparedness After COVID", "url": "https://www.nature.com/articles/d41586-023-03602-7", "note": "Analysis of how pandemic preparedness investments are already eroding" },
+    { "title": "WHO: Pandemic Prevention, Preparedness and Response", "url": "https://www.who.int/news-room/questions-and-answers/item/pandemic-prevention-preparedness-and-response-accord", "note": "International efforts to maintain preparedness through binding agreements" }
+  ],
+
+  "falsifiability": [
+    "Pandemic preparedness funding remains at or above 2021 levels through 2030",
+    "Public trust in health institutions recovers to pre-pandemic levels within 5 years",
+    "Surveillance systems and stockpiles are maintained at full operational capacity during inter-pandemic periods"
+  ],
+
+  "tags": ["pandemic-preparedness", "public-health", "institutional-memory", "trust", "surveillance", "stockpiles"],
+  "crossReferences": ["H001", "H010", "S016"],
+
+  "seo": {
+    "description": "Pandemic preparedness funding already cut 30% from 2021 peak. Trust in CDC dropped from 69% to 44%. Stockpiles expiring. The next pandemic will find us less prepared than 2019.",
+    "keywords": ["pandemic preparedness fatigue", "pandemic preparedness second order effects", "covid preparedness hidden costs"]
+  }
+}

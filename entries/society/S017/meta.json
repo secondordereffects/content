@@ -1,0 +1,104 @@
+{
+  "id": "S017",
+  "title": "Hustle Culture Burnout Epidemic",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Hustle culture glorifies overwork as a virtue. 'Rise and grind.' 'Sleep when you're dead.' 'If you're not working on your side project at midnight, you don't want it badly enough.' Social media amplifies the message through entrepreneur influencers who perform productivity as content. The narrative is seductive: success is a direct function of hours worked, and anyone who isn't succeeding simply isn't working hard enough. But the data tells a different story. Productivity peaks at 50 hours per week and declines sharply after 55. Chronic overwork increases cardiovascular disease risk by 35%, depression by 40%, and all-cause mortality by 20%. The WHO classified burnout as an occupational phenomenon in 2019. Hustle culture doesn't produce more output — it produces more hours of declining-quality work from increasingly unhealthy people who blame themselves for the inevitable burnout.",
+
+  "hypothesis": "Working harder and longer leads to greater success and achievement.",
+
+  "chain": {
+    "root": "Adopt hustle culture as personal and organizational ethos",
+    "effects": [
+      {
+        "label": "Productivity declines after 50 hours/week",
+        "impact": "Output at 70 hrs/week ≈ output at 55 hrs/week",
+        "direction": "negative",
+        "children": [
+          { "label": "Extra hours produce negative marginal returns — more bugs, worse decisions", "direction": "negative" },
+          { "label": "Cognitive function degrades — equivalent to being legally drunk after extended sleep deprivation", "direction": "negative" },
+          { "label": "Creative problem-solving requires rest — hustle culture eliminates recovery time", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Physical and mental health deteriorates",
+        "impact": "Burnout affects 77% of workers at some point",
+        "direction": "negative",
+        "children": [
+          { "label": "Cardiovascular disease risk +35% with chronic overwork", "direction": "negative" },
+          { "label": "Depression and anxiety rates significantly elevated", "direction": "negative" },
+          { "label": "Sleep deprivation compounds all health effects", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Survivorship bias hides the casualties",
+        "impact": "For every visible hustle success story, thousands burned out invisibly",
+        "direction": "negative",
+        "children": [
+          { "label": "Social media shows winners, not the 99% who hustled and failed", "direction": "negative" },
+          { "label": "Successful people attribute success to hustle, not luck, privilege, or timing", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Relationships and identity erode",
+        "impact": "Work becomes sole identity — loss of job triggers existential crisis",
+        "direction": "negative",
+        "children": [
+          { "label": "Friendships atrophy from neglect — no time for non-work relationships", "direction": "negative" },
+          { "label": "Family relationships strained — present physically, absent mentally", "direction": "negative" },
+          { "label": "Hobbies and interests abandoned — everything must be 'productive'", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Productivity per hour (beyond 50 hrs/week)", "before": "Baseline", "after": "Declining — negative returns after 55 hrs", "delta": "Negative marginal returns", "direction": "negative" },
+    { "metric": "Workers experiencing burnout", "before": "~40% (2015)", "after": "77% (2024)", "delta": "+37pp", "direction": "negative" },
+    { "metric": "Cardiovascular disease risk (chronic overwork)", "before": "Baseline", "after": "+35%", "delta": "+35%", "direction": "negative" },
+    { "metric": "Work-life satisfaction", "before": "Moderate", "after": "Low — declining across demographics", "delta": "Significant decline", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're already showing signs of burnout — exhaustion, cynicism, reduced effectiveness",
+      "You're glorifying overwork to your team or reports, normalizing unsustainable hours"
+    ],
+    "ifYouMust": [
+      "Track output per hour, not total hours — optimize for efficiency, not endurance",
+      "Set hard boundaries on work hours and protect recovery time as non-negotiable",
+      "Recognize that rest is productive — sleep, exercise, and downtime improve cognitive performance",
+      "Audit your social media for hustle culture influencers and unfollow them"
+    ],
+    "alternatives": [
+      { "name": "Deep work blocks", "note": "4-5 hours of focused, uninterrupted work produces more than 12 hours of fragmented hustle" },
+      { "name": "Sustainable pace", "note": "40-45 hours/week with full recovery — marathon, not sprint" },
+      { "name": "Results-only work environment", "note": "Measure output, not hours — work when and where you're most effective" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Stanford: Productivity and Working Hours", "url": "https://docs.iza.org/dp8129.pdf", "note": "Productivity per hour declines sharply after 50 hours/week, with output at 70 hours ≈ output at 55" },
+    { "title": "WHO/ILO: Long Working Hours and Health", "url": "https://www.who.int/news/item/17-05-2021-long-working-hours-increasing-deaths-from-heart-disease-and-stroke-who-ilo", "note": "Working 55+ hours/week increases stroke risk 35% and heart disease risk 17%" },
+    { "title": "Gallup: Employee Burnout Report", "url": "https://www.gallup.com/workplace/282659/employee-burnout-perspective-paper.aspx", "note": "77% of workers have experienced burnout, with overwork as primary driver" },
+    { "title": "Deloitte: Workplace Burnout Survey", "url": "https://www2.deloitte.com/us/en/pages/about-deloitte/articles/burnout-survey.html", "note": "91% of respondents say unmanageable stress negatively impacts work quality" }
+  ],
+
+  "falsifiability": [
+    "Workers who consistently work 60+ hours/week show higher lifetime earnings and career achievement than those working 40-45 hours",
+    "Burnout rates decrease as average working hours increase across a population",
+    "Productivity per hour remains constant or increases beyond 55 hours/week"
+  ],
+
+  "tags": ["hustle-culture", "burnout", "productivity", "overwork", "mental-health", "work-life-balance"],
+  "crossReferences": ["S022", "O012", "O022"],
+
+  "seo": {
+    "description": "Productivity declines after 50 hrs/week. 77% of workers experience burnout. Chronic overwork increases cardiovascular risk 35%. Hustle culture produces more hours, not more output.",
+    "keywords": ["hustle culture burnout", "overwork second order effects", "hustle culture hidden costs"]
+  }
+}

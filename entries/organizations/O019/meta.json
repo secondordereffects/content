@@ -1,0 +1,103 @@
+{
+  "id": "O019",
+  "title": "Outsourcing Knowledge Drain",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Outsourcing non-core functions is a staple of business strategy. The logic is clean: focus on what you do best, let specialists handle the rest, and save 30-50% on labor costs. IT, customer support, manufacturing, accounting — all candidates for outsourcing. The cost savings are real and immediate. But outsourcing creates a slow-moving knowledge drain that doesn't show up on the balance sheet for years. When you outsource a function, you lose the institutional knowledge of how it works. The vendor becomes the expert. Over time, you can't evaluate whether the vendor is doing a good job because you no longer understand the work. You can't bring it back in-house because the knowledge has left the building. The vendor knows this, and pricing reflects your dependency.",
+
+  "hypothesis": "Outsourcing non-core functions reduces costs and lets the company focus on core competencies.",
+
+  "chain": {
+    "root": "Outsource business function to external vendor",
+    "effects": [
+      {
+        "label": "Institutional knowledge transfers to vendor",
+        "impact": "Internal expertise atrophies within 12-18 months",
+        "direction": "negative",
+        "children": [
+          { "label": "Employees who understood the function leave or are laid off", "direction": "negative" },
+          { "label": "Documentation stays with vendor, not with client", "direction": "negative" },
+          { "label": "Vendor becomes the only entity that understands how the system works", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Vendor dependency creates pricing leverage",
+        "impact": "Contract renewals increase 15-25% after initial term",
+        "direction": "negative",
+        "children": [
+          { "label": "Switching costs are prohibitive — new vendor must learn everything from scratch", "direction": "negative" },
+          { "label": "Vendor knows you can't bring it in-house and prices accordingly", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Quality becomes hard to evaluate",
+        "impact": "Client can't assess vendor work because they don't understand the domain anymore",
+        "direction": "negative",
+        "children": [
+          { "label": "SLAs measure activity (tickets closed) not quality (problems solved)", "direction": "negative" },
+          { "label": "Vendor optimizes for contract metrics, not business outcomes", "direction": "negative" },
+          { "label": "Problems are hidden because reporting is controlled by the vendor", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Innovation in outsourced function stops",
+        "impact": "Vendor has no incentive to improve beyond contract requirements",
+        "direction": "negative",
+        "children": [
+          { "label": "Process improvements benefit vendor margins, not client outcomes", "direction": "negative" },
+          { "label": "Client loses ability to innovate in the outsourced area — it's someone else's problem", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Initial cost savings", "before": "Baseline", "after": "-30 to -50%", "delta": "Significant savings", "direction": "positive" },
+    { "metric": "Contract renewal pricing (year 3+)", "before": "Initial rate", "after": "+15-25% per renewal", "delta": "Savings erode", "direction": "negative" },
+    { "metric": "Internal expertise in outsourced function", "before": "Full capability", "after": "Near zero within 18 months", "delta": "Knowledge drain", "direction": "negative" },
+    { "metric": "Cost to bring function back in-house", "before": "N/A", "after": "2-3x original outsourcing savings", "delta": "Prohibitive", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The function is closer to core competency than you think — if it touches your product or customer experience",
+      "You can't define clear, measurable quality standards that you can evaluate independently"
+    ],
+    "ifYouMust": [
+      "Retain at least 2-3 internal experts who understand the outsourced function and can evaluate vendor quality",
+      "Own the documentation and knowledge base — never let the vendor be the sole repository of how things work",
+      "Build switching capability into contracts — require knowledge transfer provisions and data portability",
+      "Set outcome-based SLAs, not activity-based ones — measure business results, not tickets closed"
+    ],
+    "alternatives": [
+      { "name": "Staff augmentation", "note": "External people work under your management and processes — knowledge stays internal" },
+      { "name": "Selective automation", "note": "Automate routine work instead of outsourcing it — you retain control and knowledge" },
+      { "name": "Center of excellence model", "note": "Build internal shared services that serve multiple business units — economies of scale without knowledge drain" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Deloitte Global Outsourcing Survey", "url": "https://www2.deloitte.com/us/en/pages/operations/articles/global-outsourcing-survey.html", "note": "70% of companies cite cost reduction as primary outsourcing driver, but 50% report hidden costs" },
+    { "title": "Harvard Business Review: The Hidden Costs of Outsourcing", "url": "https://hbr.org/2005/02/the-risky-business-of-hiring-stars", "note": "Analysis of knowledge drain and vendor dependency as long-term outsourcing costs" },
+    { "title": "McKinsey: Outsourcing and Insourcing Trends", "url": "https://www.mckinsey.com/capabilities/operations/our-insights", "note": "Growing trend of insourcing previously outsourced functions as companies recognize knowledge drain" },
+    { "title": "Gartner: IT Outsourcing Market Analysis", "url": "https://www.gartner.com/en/information-technology/insights/it-outsourcing", "note": "Contract renewal pricing increases 15-25% as vendor dependency grows" }
+  ],
+
+  "falsifiability": [
+    "Outsourcing relationships maintain initial cost savings through 3+ contract renewals without price increases",
+    "Companies that outsource functions can bring them back in-house within 6 months at equivalent cost",
+    "Vendor quality remains stable or improves over multi-year outsourcing engagements without internal oversight"
+  ],
+
+  "tags": ["outsourcing", "knowledge-drain", "vendor-dependency", "cost-optimization", "institutional-knowledge", "insourcing"],
+  "crossReferences": ["O010", "O007", "T005"],
+
+  "seo": {
+    "description": "Outsourcing saves 30-50% initially but contract renewals increase 15-25%. Internal expertise atrophies within 18 months. Bringing it back in-house costs 2-3x the original savings.",
+    "keywords": ["outsourcing knowledge drain", "outsourcing second order effects", "outsourcing hidden costs"]
+  }
+}

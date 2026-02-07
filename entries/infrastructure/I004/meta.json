@@ -1,0 +1,103 @@
+{
+  "id": "I004",
+  "title": "Smart City Surveillance Creep",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Smart city initiatives promise urban efficiency through data. Sensors monitor traffic flow, air quality, energy usage, and pedestrian patterns. The data optimizes traffic lights, reduces energy waste, and improves emergency response. The pitch to city councils is compelling: save money, reduce emissions, improve services. But smart city infrastructure is surveillance infrastructure with a different label. The same sensors that optimize traffic also track individual vehicles. The same cameras that monitor air quality can run facial recognition. The same WiFi access points that provide free internet track device locations. Once the infrastructure is deployed for efficiency, repurposing it for surveillance requires only a software update, not new hardware. And the vendors who sell smart city platforms also sell surveillance tools to law enforcement — often through the same contract.",
+
+  "hypothesis": "Smart city technology improves urban efficiency and quality of life for residents.",
+
+  "chain": {
+    "root": "Deploy smart city sensor and camera infrastructure",
+    "effects": [
+      {
+        "label": "Efficiency infrastructure doubles as surveillance infrastructure",
+        "impact": "Same hardware serves both purposes — only software differs",
+        "direction": "negative",
+        "children": [
+          { "label": "Traffic cameras upgraded to license plate readers with a firmware update", "direction": "negative" },
+          { "label": "WiFi access points track device MAC addresses and movement patterns", "direction": "negative" },
+          { "label": "Environmental sensors with microphones can be repurposed for audio surveillance", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Vendor contracts bundle efficiency and surveillance tools",
+        "impact": "Same vendors sell to city services and law enforcement",
+        "direction": "negative",
+        "children": [
+          { "label": "Procurement decisions made by city IT, not privacy advocates", "direction": "negative" },
+          { "label": "Surveillance capabilities included as 'free' add-ons to efficiency contracts", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Data collection scope expands without public debate",
+        "impact": "Residents unaware of what data is collected and how it's used",
+        "direction": "negative",
+        "children": [
+          { "label": "No opt-out mechanism — sensors cover public spaces", "direction": "negative" },
+          { "label": "Data sharing agreements with federal agencies happen behind closed doors", "direction": "negative" },
+          { "label": "Privacy impact assessments are optional or rubber-stamped", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Disproportionate deployment in marginalized communities",
+        "impact": "Low-income and minority neighborhoods get more sensors per capita",
+        "direction": "negative",
+        "children": [
+          { "label": "Surveillance density correlates with policing intensity, not service needs", "direction": "negative" },
+          { "label": "Smart city benefits (efficiency) accrue to wealthy areas; surveillance costs fall on poor areas", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Smart city sensor deployments globally", "before": "~100 cities (2015)", "after": "1,000+ cities (2025)", "delta": "+900%", "direction": "negative" },
+    { "metric": "Data points collected per resident per day", "before": "Minimal", "after": "Hundreds (location, movement, behavior)", "delta": "Massive increase", "direction": "negative" },
+    { "metric": "Resident awareness of data collection", "before": "N/A", "after": "<20% aware of full scope", "delta": "Low awareness", "direction": "negative" },
+    { "metric": "Privacy impact assessments conducted", "before": "Required (ideal)", "after": "Optional or absent in most deployments", "delta": "Governance gap", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The smart city vendor also sells surveillance tools and the contract doesn't explicitly prohibit dual use",
+      "There's no public transparency about what data is collected, stored, and shared"
+    ],
+    "ifYouMust": [
+      "Mandate privacy impact assessments before any sensor deployment with public comment periods",
+      "Separate efficiency data from identifiable data architecturally — aggregate before storing",
+      "Prohibit facial recognition and individual tracking in smart city contracts explicitly",
+      "Require data retention limits and automatic deletion — no indefinite storage of movement data"
+    ],
+    "alternatives": [
+      { "name": "Privacy-by-design smart infrastructure", "note": "Sensors that process data locally and only transmit aggregated, anonymized statistics" },
+      { "name": "Community-controlled data trusts", "note": "Residents collectively govern how their city's data is collected and used" },
+      { "name": "Open-source smart city platforms", "note": "Transparent, auditable software that communities can inspect and modify" }
+    ]
+  },
+
+  "sources": [
+    { "title": "EFF: Street-Level Surveillance", "url": "https://www.eff.org/pages/surveillance-technologies", "note": "Comprehensive database of surveillance technologies deployed in smart city contexts" },
+    { "title": "AI Now Institute: Smart City Surveillance", "url": "https://ainowinstitute.org/", "note": "Research on how smart city infrastructure enables surveillance without public consent" },
+    { "title": "Sidewalk Labs Toronto: Lessons Learned", "url": "https://www.bbc.com/news/technology-57045291", "note": "Google's Sidewalk Labs smart city project cancelled over privacy concerns" },
+    { "title": "Brookings: Smart Cities and Privacy", "url": "https://www.brookings.edu/articles/how-smart-city-technology-can-be-used-for-good-or-for-surveillance/", "note": "Analysis of the dual-use nature of smart city infrastructure" }
+  ],
+
+  "falsifiability": [
+    "Smart city deployments consistently maintain strict separation between efficiency and surveillance functions for 5+ years",
+    "Residents in smart cities report higher trust in local government and no privacy concerns from sensor deployments",
+    "Smart city data is never accessed by law enforcement or used for purposes beyond its original efficiency mandate"
+  ],
+
+  "tags": ["smart-city", "surveillance", "privacy", "urban-technology", "sensors", "dual-use"],
+  "crossReferences": ["P017", "S016", "I005"],
+
+  "seo": {
+    "description": "Smart city sensors that optimize traffic also track vehicles. Cameras that monitor air quality run facial recognition. Efficiency infrastructure is surveillance infrastructure with a different label.",
+    "keywords": ["smart city surveillance creep", "smart city second order effects", "urban surveillance hidden costs"]
+  }
+}

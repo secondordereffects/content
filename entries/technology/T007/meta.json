@@ -1,0 +1,103 @@
+{
+  "id": "T007",
+  "title": "GraphQL Complexity Cliff",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "GraphQL promises to solve the over-fetching and under-fetching problems of REST APIs. Clients request exactly the data they need in a single query. No more chaining REST calls or receiving bloated payloads. For simple use cases, it delivers. But as schemas grow and clients get creative, GraphQL introduces a complexity cliff that REST never had. Deeply nested queries can trigger exponential database joins. N+1 query problems hide behind elegant-looking GraphQL resolvers. A single client query can bring down your database because there's no natural boundary on query depth or breadth. The flexibility that makes GraphQL powerful for clients makes it dangerous for servers — and the server team discovers this in production, not in development.",
+
+  "hypothesis": "GraphQL gives clients exactly what they need and eliminates API versioning problems.",
+
+  "chain": {
+    "root": "Adopt GraphQL as primary API layer",
+    "effects": [
+      {
+        "label": "Clients can construct arbitrarily expensive queries",
+        "impact": "Single query can trigger 1000+ database operations",
+        "direction": "negative",
+        "children": [
+          { "label": "Deeply nested queries cause exponential resolver execution", "direction": "negative" },
+          { "label": "No natural query cost boundary — unlike REST endpoints with fixed responses", "direction": "negative" },
+          { "label": "Query complexity analysis must be built and maintained separately", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "N+1 query problems hide behind resolver abstraction",
+        "impact": "DataLoader pattern required but not enforced",
+        "direction": "negative",
+        "children": [
+          { "label": "Each resolver looks correct in isolation but generates N+1 queries in composition", "direction": "negative" },
+          { "label": "Performance problems only appear with real data volumes, not in development", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Schema becomes the new coordination bottleneck",
+        "impact": "Schema changes require cross-team negotiation",
+        "direction": "negative",
+        "children": [
+          { "label": "Schema design is harder than REST endpoint design — requires upfront data modeling", "direction": "negative" },
+          { "label": "Breaking schema changes affect all clients simultaneously", "direction": "negative" },
+          { "label": "Schema stitching and federation add distributed systems complexity", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Caching becomes significantly harder",
+        "impact": "HTTP caching doesn't work — all queries are POST to same endpoint",
+        "direction": "negative",
+        "children": [
+          { "label": "CDN caching ineffective for dynamic GraphQL queries", "direction": "negative" },
+          { "label": "Custom caching layer required (Apollo Cache, persisted queries)", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Query performance predictability", "before": "High (REST: fixed endpoints)", "after": "Low (GraphQL: arbitrary queries)", "delta": "Unpredictable", "direction": "negative" },
+    { "metric": "Server-side complexity", "before": "Route handlers", "after": "Resolvers + DataLoaders + query analysis + caching", "delta": "+200-300%", "direction": "negative" },
+    { "metric": "Caching effectiveness", "before": "HTTP caching works", "after": "Custom caching required", "delta": "Significantly harder", "direction": "negative" },
+    { "metric": "Client developer experience", "before": "Multiple REST calls", "after": "Single flexible query", "delta": "Improved", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your API serves a small number of known clients with predictable data needs",
+      "Your team doesn't have experience with query complexity analysis and DataLoader patterns"
+    ],
+    "ifYouMust": [
+      "Implement query depth limiting and complexity scoring from day one — not after the first outage",
+      "Use DataLoader for every resolver that touches a database — make it a hard rule",
+      "Use persisted queries in production to prevent arbitrary client queries",
+      "Monitor resolver execution time and database query count per GraphQL operation"
+    ],
+    "alternatives": [
+      { "name": "REST with sparse fieldsets", "note": "JSON:API sparse fieldsets solve over-fetching without GraphQL complexity" },
+      { "name": "tRPC", "note": "Type-safe API layer without the schema overhead — ideal for TypeScript full-stack" },
+      { "name": "BFF (Backend for Frontend)", "note": "Dedicated API per client type — each returns exactly what that client needs" }
+    ]
+  },
+
+  "sources": [
+    { "title": "GitHub Engineering: GraphQL at Scale", "url": "https://github.blog/2016-09-14-the-github-graphql-api/", "note": "GitHub's experience with GraphQL complexity at scale" },
+    { "title": "Shopify: GraphQL Performance Lessons", "url": "https://shopify.engineering/solving-the-n-1-problem-for-graphql-through-batching", "note": "N+1 problem solutions and performance challenges at scale" },
+    { "title": "Apollo GraphQL: Query Complexity", "url": "https://www.apollographql.com/blog/graphql/security/securing-your-graphql-api-from-malicious-queries/", "note": "Security and performance implications of unrestricted GraphQL queries" },
+    { "title": "Netflix: Beyond REST — GraphQL Challenges", "url": "https://netflixtechblog.com/", "note": "Netflix's evaluation of GraphQL tradeoffs for their API layer" }
+  ],
+
+  "falsifiability": [
+    "GraphQL APIs at scale show equal or better P99 latency compared to equivalent REST APIs",
+    "N+1 query problems are automatically prevented by GraphQL tooling without developer intervention",
+    "GraphQL caching achieves equivalent hit rates to HTTP caching on REST endpoints"
+  ],
+
+  "tags": ["graphql", "api-design", "performance", "n-plus-one", "caching", "complexity"],
+  "crossReferences": ["T002", "T024", "T023"],
+
+  "seo": {
+    "description": "GraphQL gives clients flexibility but lets a single query trigger 1000+ database operations. N+1 problems hide behind resolvers. Caching breaks. The server pays the price.",
+    "keywords": ["graphql complexity cliff", "graphql second order effects", "graphql hidden costs"]
+  }
+}
