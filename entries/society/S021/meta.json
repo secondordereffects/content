@@ -1,0 +1,104 @@
+{
+  "id": "S021",
+  "title": "Doomscrolling Learned Helplessness",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.78,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "People compulsively consume negative news on their phones — doomscrolling. The behavior feels like staying informed. In reality, it's a stress response that creates learned helplessness. Constant exposure to problems you can't solve — climate change, political dysfunction, global conflict — trains the brain that action is futile. The most informed people become the most paralyzed. They know everything that's wrong and feel powerless to change any of it.",
+
+  "hypothesis": "Staying informed about world events helps people make better decisions and take meaningful action.",
+
+  "chain": {
+    "root": "Consume negative news continuously via social media and news apps",
+    "effects": [
+      {
+        "label": "Negativity bias in news creates distorted worldview",
+        "impact": "News is 90% negative despite most trends improving",
+        "direction": "negative",
+        "children": [
+          { "label": "People believe the world is getting worse when most metrics are improving", "direction": "negative" },
+          { "label": "Catastrophizing becomes the default mental model", "direction": "negative" },
+          { "label": "Good news doesn't generate clicks — negative selection bias in media", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Learned helplessness develops from exposure to unsolvable problems",
+        "impact": "Civic engagement and volunteering decline among heavy news consumers",
+        "direction": "negative",
+        "children": [
+          { "label": "Knowing about every global crisis creates paralysis, not action", "direction": "negative" },
+          { "label": "Local problems (solvable) get less attention than global problems (unsolvable)", "direction": "negative" },
+          { "label": "People substitute awareness for action — sharing an article feels like doing something", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Mental health deteriorates with consumption volume",
+        "impact": "Anxiety and depression correlate with news consumption hours",
+        "direction": "negative",
+        "children": [
+          { "label": "Cortisol levels elevated during and after doomscrolling sessions", "direction": "negative" },
+          { "label": "Sleep disrupted by evening news consumption", "direction": "negative" },
+          { "label": "Compulsive checking behavior mirrors addiction patterns", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Paradoxically, heavy consumers are less likely to act",
+        "impact": "Inverse correlation between news consumption and civic action",
+        "direction": "negative",
+        "children": [
+          { "label": "Emotional exhaustion from consuming leaves no energy for doing", "direction": "negative" },
+          { "label": "Cynicism replaces optimism — 'nothing I do matters'", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Perceived state of the world", "before": "Roughly accurate", "after": "Dramatically more negative than reality", "delta": "Distorted", "direction": "negative" },
+    { "metric": "Anxiety levels (heavy news consumers)", "before": "Baseline", "after": "+30-50%", "delta": "+40%", "direction": "negative" },
+    { "metric": "Civic engagement (heavy vs light consumers)", "before": "Expected higher", "after": "Actually lower", "delta": "Inverted", "direction": "negative" },
+    { "metric": "Daily news consumption time", "before": "30 min (2010)", "after": "2-4 hours (2024)", "delta": "+400%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're already experiencing anxiety or depression symptoms",
+      "Your news consumption exceeds 1 hour per day without corresponding action"
+    ],
+    "ifYouMust": [
+      "Set a hard daily limit on news consumption — 30 minutes is enough to stay informed",
+      "Consume news at scheduled times, not on-demand — avoid the scroll",
+      "For every problem you read about, identify one local action you can take",
+      "Balance negative news with solutions journalism and progress reporting"
+    ],
+    "alternatives": [
+      { "name": "Weekly news digests", "note": "Read a weekly summary instead of daily feeds — same information, 90% less anxiety" },
+      { "name": "Solutions journalism", "note": "Follow outlets that cover what's working, not just what's broken" },
+      { "name": "Local focus", "note": "Engage with local news and local action — where your effort actually makes a difference" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Health Communication: Doomscrolling and Mental Health", "url": "https://www.tandfonline.com/doi/full/10.1080/10410236.2021.1993650", "note": "Research linking doomscrolling to increased anxiety, depression, and feelings of helplessness" },
+    { "title": "Hans Rosling: Factfulness", "url": "https://www.gapminder.org/factfulness/", "note": "Data showing most global trends are improving while public perception is dramatically more negative" },
+    { "title": "American Psychological Association: Stress in America — News Consumption", "url": "https://www.apa.org/news/press/releases/stress/", "note": "56% of Americans say following the news causes them stress, yet they can't stop" },
+    { "title": "Journal of Health Psychology: News Exposure and Wellbeing", "url": "https://journals.sagepub.com/doi/10.1177/13591053211015960", "note": "Study showing negative news consumption correlates with decreased wellbeing and increased helplessness" }
+  ],
+
+  "falsifiability": [
+    "Heavy news consumers show higher rates of civic engagement and volunteering than light consumers",
+    "Increased news consumption correlates with more accurate (not more negative) worldviews",
+    "Doomscrolling does not correlate with increased anxiety or depression in longitudinal studies"
+  ],
+
+  "tags": ["doomscrolling", "news-consumption", "learned-helplessness", "mental-health", "anxiety", "civic-engagement"],
+  "crossReferences": ["S001", "S003", "S022"],
+
+  "seo": {
+    "description": "Doomscrolling creates learned helplessness — heavy news consumers are 40% more anxious and paradoxically less likely to take civic action. Awareness substitutes for agency.",
+    "keywords": ["doomscrolling learned helplessness second order effects", "news consumption mental health", "doomscrolling hidden consequences"]
+  }
+}

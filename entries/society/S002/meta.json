@@ -1,0 +1,104 @@
+{
+  "id": "S002",
+  "title": "Algorithmic Radicalization Pipeline",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.82,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Recommendation algorithms on YouTube, TikTok, Twitter, and Facebook optimize for engagement — time spent, clicks, shares. Outrage, fear, and extreme content generate more engagement than moderate content. The algorithm doesn't have an ideology; it has a metric. And that metric systematically pushes users toward increasingly extreme content because extreme content keeps them watching. A person who watches a fitness video gets recommended diet content, then body image content, then eating disorder content. A person interested in politics gets pushed toward conspiracy theories. The pipeline is the product.",
+
+  "hypothesis": "Recommendation algorithms serve users' interests by showing them content they want to see.",
+
+  "chain": {
+    "root": "Deploy engagement-optimized recommendation algorithms at scale",
+    "effects": [
+      {
+        "label": "Algorithm learns that extreme content maximizes engagement",
+        "impact": "Extreme content gets 6x more engagement than moderate content",
+        "direction": "negative",
+        "children": [
+          { "label": "Outrage triggers stronger emotional response — more clicks, more shares", "direction": "negative" },
+          { "label": "Moderate voices get less distribution — they're less engaging", "direction": "negative" },
+          { "label": "Content creators learn to be more extreme to get algorithmic distribution", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Users are gradually pushed toward more extreme content",
+        "impact": "Radicalization pipeline documented across multiple platforms",
+        "direction": "negative",
+        "children": [
+          { "label": "Each recommendation is slightly more extreme than the last — boiling frog effect", "direction": "negative" },
+          { "label": "Users don't notice the drift — each step feels like a natural interest", "direction": "negative" },
+          { "label": "Rabbit holes form in hours, not months", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Political polarization accelerates",
+        "impact": "Political polarization at highest measured levels",
+        "direction": "negative",
+        "children": [
+          { "label": "People on different sides of issues see completely different realities", "direction": "negative" },
+          { "label": "Compromise becomes impossible when each side views the other as existential threat", "direction": "negative" },
+          { "label": "Moderate politicians lose to extremists who generate more engagement", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Real-world violence linked to algorithmic radicalization",
+        "impact": "Multiple mass violence events traced to online radicalization",
+        "direction": "negative",
+        "children": [
+          { "label": "Christchurch, El Paso, Buffalo shooters all had algorithmic radicalization histories", "direction": "negative" },
+          { "label": "Platforms aware of the pipeline but engagement metrics prevent meaningful change", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Engagement on extreme vs moderate content", "before": "Similar", "after": "Extreme gets 6x more", "delta": "+500%", "direction": "negative" },
+    { "metric": "Political polarization (US)", "before": "Moderate (1990s)", "after": "Highest measured", "delta": "+300%", "direction": "negative" },
+    { "metric": "Time to radicalization pipeline", "before": "Months/years (offline)", "after": "Hours/days (algorithmic)", "delta": "-95%", "direction": "negative" },
+    { "metric": "Trust in opposing political views", "before": "Disagreement", "after": "Existential threat perception", "delta": "Qualitative shift", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're optimizing purely for engagement without considering content quality",
+      "Your recommendation system has no guardrails against progressive extremity"
+    ],
+    "ifYouMust": [
+      "Add diversity metrics to recommendation objectives — not just engagement",
+      "Implement 'rabbit hole' detection that breaks recommendation chains toward extremity",
+      "Audit recommendation paths regularly for radicalization patterns",
+      "Give users transparent controls over their recommendation algorithms"
+    ],
+    "alternatives": [
+      { "name": "Bridging algorithms", "note": "Recommend content that bridges divides rather than deepening them — optimize for understanding, not engagement" },
+      { "name": "Chronological feeds", "note": "Let users see content in time order — removes algorithmic amplification of extreme content" },
+      { "name": "Human-curated recommendations", "note": "Editorial curation for discovery, algorithms for personalization within curated bounds" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Wall Street Journal: The Facebook Files", "url": "https://www.wsj.com/articles/the-facebook-files-11631713039", "note": "Internal Facebook research showing the algorithm amplifies divisive content because it generates more engagement" },
+    { "title": "Mozilla Foundation: YouTube Regrets Report", "url": "https://foundation.mozilla.org/en/youtube/findings/", "note": "Research documenting how YouTube's recommendation algorithm leads users to increasingly extreme content" },
+    { "title": "Nature: Exposure to Opposing Views on Social Media", "url": "https://www.nature.com/articles/s41586-023-06297-w", "note": "Study showing algorithmic exposure to opposing views can increase polarization rather than reduce it" },
+    { "title": "NYU Stern: Algorithmic Amplification of Politics on Twitter", "url": "https://www.pnas.org/doi/10.1073/pnas.2025334119", "note": "Research showing Twitter's algorithm amplifies politically right-leaning content more than left-leaning content" }
+  ],
+
+  "falsifiability": [
+    "Engagement-optimized algorithms do not systematically amplify extreme content over moderate content",
+    "Users exposed to algorithmic recommendations show no increase in political polarization over 2 years",
+    "No documented cases of real-world violence are linked to algorithmic radicalization pathways"
+  ],
+
+  "tags": ["algorithms", "radicalization", "polarization", "social-media", "engagement", "recommendation-systems"],
+  "crossReferences": ["S001", "S022", "A004"],
+
+  "seo": {
+    "description": "Recommendation algorithms amplify extreme content 6x over moderate content. Radicalization that took months offline now takes hours. The pipeline is the product.",
+    "keywords": ["algorithmic radicalization pipeline second order effects", "recommendation algorithm polarization", "engagement optimization hidden consequences"]
+  }
+}

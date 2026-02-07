@@ -1,0 +1,104 @@
+{
+  "id": "S025",
+  "title": "Tipping Culture Inflation Spiral",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.79,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Tipping in the US has expanded from sit-down restaurants to coffee shops, takeout counters, food trucks, self-checkout kiosks, and even retail stores. Digital payment systems present tip prompts starting at 18-25% for interactions that never previously involved tipping. The social pressure of a screen turned toward you while the worker watches creates compliance. Tips that were once rewards for exceptional service have become subsidies for wages that employers should be paying. The system transfers labor costs from businesses to customers through guilt.",
+
+  "hypothesis": "Tipping supports workers and rewards good service.",
+
+  "chain": {
+    "root": "Expand tipping culture via digital payment prompts",
+    "effects": [
+      {
+        "label": "Tip expectations inflate beyond traditional service contexts",
+        "impact": "Tipping prompts now appear in 60%+ of retail transactions",
+        "direction": "negative",
+        "children": [
+          { "label": "Counter service, takeout, and self-service now expect 18-25% tips", "direction": "negative" },
+          { "label": "Suggested tip percentages creep upward — 20% is now the 'low' option", "direction": "negative" },
+          { "label": "Customers feel guilted into tipping for minimal or no service", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Employers use tips to subsidize wages they should be paying",
+        "impact": "Tipped minimum wage: $2.13/hour in many US states",
+        "direction": "negative",
+        "children": [
+          { "label": "Workers depend on customer generosity for basic income", "direction": "negative" },
+          { "label": "Income becomes unpredictable — good days and bad days", "direction": "negative" },
+          { "label": "Businesses externalize labor costs to customers", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Tip fatigue leads to resentment and reduced tipping overall",
+        "impact": "Tip frequency declining even as prompts increase",
+        "direction": "negative",
+        "children": [
+          { "label": "Customers who once tipped generously now tip less due to fatigue", "direction": "negative" },
+          { "label": "Workers in traditionally tipped roles (servers) see declining tips", "direction": "negative" },
+          { "label": "Social tension at point of sale — awkward for both parties", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Tipping perpetuates inequality and discrimination",
+        "impact": "Tipped income varies by race, gender, and attractiveness",
+        "direction": "negative",
+        "children": [
+          { "label": "Studies show Black servers receive 15-25% less in tips than white servers", "direction": "negative" },
+          { "label": "Women receive more tips but face more harassment", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Transactions with tip prompts", "before": "Sit-down restaurants only", "after": "60%+ of retail transactions", "delta": "+500%", "direction": "negative" },
+    { "metric": "Expected tip percentage", "before": "15% (exceptional service)", "after": "20-25% (default minimum)", "delta": "+50%", "direction": "negative" },
+    { "metric": "Consumer tip fatigue", "before": "Low", "after": "66% report 'tipflation' frustration", "delta": "High", "direction": "negative" },
+    { "metric": "Tip income inequality (by race)", "before": "Assumed equal", "after": "15-25% gap", "delta": "Discriminatory", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're a business using tips to avoid paying fair wages",
+      "You're implementing tip prompts for transactions with no personal service"
+    ],
+    "ifYouMust": [
+      "Pay workers a living wage and make tips genuinely optional",
+      "Include a clear 'no tip' option without social pressure",
+      "Reserve tip prompts for genuine service interactions, not self-service",
+      "Be transparent about where tips go — workers or the business"
+    ],
+    "alternatives": [
+      { "name": "Service-included pricing", "note": "Build labor costs into prices — transparent, equitable, no guilt" },
+      { "name": "Living wage model", "note": "Pay workers fairly and eliminate tipping — multiple restaurants have done this successfully" },
+      { "name": "Tip pooling with fair wages", "note": "Base wage covers living costs, pooled tips are a genuine bonus shared equitably" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Pew Research: Tipping Culture in America", "url": "https://www.pewresearch.org/short-reads/2023/11/09/tipping-culture-in-america/", "note": "72% of Americans say tipping is expected in more places than 5 years ago, 40% say it's confusing" },
+    { "title": "Cornell: The Social Psychology of Tipping", "url": "https://scholarship.sha.cornell.edu/articles/155/", "note": "Decades of research showing tips correlate more with customer demographics than service quality" },
+    { "title": "One Fair Wage: Tipped Worker Research", "url": "https://onefairwage.site/", "note": "Research on how the tipped minimum wage perpetuates poverty and discrimination" },
+    { "title": "Bankrate: Tipping Fatigue Survey 2024", "url": "https://www.bankrate.com/personal-finance/tipping-survey/", "note": "66% of Americans have a negative view of tipping, with 'tipflation' cited as top concern" }
+  ],
+
+  "falsifiability": [
+    "Expanding tip prompts to more transaction types increases total worker compensation without reducing tip rates in traditional contexts",
+    "Tipped workers earn more and have more stable income than equivalent workers paid flat wages",
+    "Tip amounts do not vary by customer or server race, gender, or appearance"
+  ],
+
+  "tags": ["tipping", "labor", "inequality", "consumer-behavior", "wages", "service-industry"],
+  "crossReferences": ["S001", "M009", "P012"],
+
+  "seo": {
+    "description": "Tipping expanded from restaurants to 60%+ of transactions. Expected tips rose from 15% to 20-25%. 66% of Americans report tip fatigue. The system subsidizes wages through customer guilt.",
+    "keywords": ["tipping culture inflation spiral second order effects", "tipflation hidden consequences", "tipping culture expansion costs"]
+  }
+}

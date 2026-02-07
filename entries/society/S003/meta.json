@@ -1,0 +1,104 @@
+{
+  "id": "S003",
+  "title": "Attention Economy Cognitive Decline",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "The attention economy treats human attention as a resource to be extracted. Every app, platform, and notification competes for a finite cognitive budget. The average person now encounters 6,000-10,000 ads per day, checks their phone 96 times, and context-switches between tasks every 3 minutes. The cumulative effect is a population-level decline in sustained attention, deep reading ability, and complex reasoning. We're not getting dumber — we're getting more distracted, which produces the same outcome.",
+
+  "hypothesis": "More information and more connected devices make people better informed and more productive.",
+
+  "chain": {
+    "root": "Optimize digital products for maximum attention capture",
+    "effects": [
+      {
+        "label": "Sustained attention capacity declines at population level",
+        "impact": "Average attention span on a task: 65 seconds (down from 2.5 minutes in 2004)",
+        "direction": "negative",
+        "children": [
+          { "label": "Deep reading ability declining — people skim instead of comprehend", "direction": "negative" },
+          { "label": "Complex reasoning requires sustained focus that fewer people can maintain", "direction": "negative" },
+          { "label": "Students can't focus through a lecture, workers can't focus through a document", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Information overload creates decision paralysis",
+        "impact": "More information leads to worse decisions, not better",
+        "direction": "negative",
+        "children": [
+          { "label": "Paradox of choice — too many options leads to no decision or poor decisions", "direction": "negative" },
+          { "label": "People default to heuristics and biases when overwhelmed", "direction": "negative" },
+          { "label": "Misinformation thrives because nobody has time to verify", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Creativity and insight require boredom — which no longer exists",
+        "impact": "Default mode network activation declining",
+        "direction": "negative",
+        "children": [
+          { "label": "Every idle moment filled with phone checking — no mind-wandering time", "direction": "negative" },
+          { "label": "Shower thoughts, walking insights, and creative breakthroughs require unfocused time", "direction": "negative" },
+          { "label": "Innovation may be declining at a societal level despite more tools", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Mental health consequences compound",
+        "impact": "Anxiety and depression correlate with information overload",
+        "direction": "negative",
+        "children": [
+          { "label": "Constant stimulation creates withdrawal-like symptoms when disconnected", "direction": "negative" },
+          { "label": "Sleep quality degrades from evening screen use and notification anxiety", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Average sustained attention on task", "before": "2.5 minutes (2004)", "after": "65 seconds (2023)", "delta": "-57%", "direction": "negative" },
+    { "metric": "Phone checks per day", "before": "~18 (2008)", "after": "96 (2023)", "delta": "+433%", "direction": "negative" },
+    { "metric": "Deep reading ability (comprehension tests)", "before": "Baseline", "after": "-20-30%", "delta": "-25%", "direction": "negative" },
+    { "metric": "Daily information exposure", "before": "~40 newspapers worth (1986)", "after": "~174 newspapers worth (2023)", "delta": "+335%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're designing products that maximize time-on-app without considering user wellbeing",
+      "Your business model depends on capturing and holding attention at any cost"
+    ],
+    "ifYouMust": [
+      "Design for time well spent, not time spent — measure user satisfaction, not session length",
+      "Implement usage reminders and natural stopping points in your product",
+      "Reduce notification frequency — batch non-urgent notifications",
+      "Give users meaningful controls over their attention environment"
+    ],
+    "alternatives": [
+      { "name": "Calm technology", "note": "Design products that inform without demanding attention — ambient awareness over active engagement" },
+      { "name": "Intentional consumption", "note": "RSS feeds, newsletters, and curated sources replace algorithmic feeds — user controls the flow" },
+      { "name": "Digital minimalism", "note": "Deliberately reduce digital tools to those that provide clear value — quality over quantity" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Gloria Mark: Attention Span Research", "url": "https://www.gloriamark.com/", "note": "UC Irvine research showing average attention on a screen dropped from 2.5 minutes (2004) to 47 seconds (2023)" },
+    { "title": "Maryanne Wolf: Reader, Come Home", "url": "https://www.maryannewolf.com/reader-come-home-1", "note": "Research on how digital reading is rewiring the brain away from deep reading and complex comprehension" },
+    { "title": "Asurion: Phone Usage Study", "url": "https://www.asurion.com/connect/tech-tips/how-often-do-people-check-their-phones/", "note": "Americans check their phones 96 times per day on average, once every 10 minutes" },
+    { "title": "American Psychological Association: Multitasking and Cognitive Decline", "url": "https://www.apa.org/topics/research/multitasking", "note": "Research showing chronic multitasking reduces cognitive performance even when not multitasking" }
+  ],
+
+  "falsifiability": [
+    "Average sustained attention on tasks increases or remains stable despite increasing digital stimulation",
+    "Deep reading comprehension scores improve as information access increases",
+    "Populations with highest smartphone usage show equal or better cognitive performance than low-usage populations"
+  ],
+
+  "tags": ["attention-economy", "cognitive-decline", "deep-reading", "information-overload", "mental-health", "digital-wellness"],
+  "crossReferences": ["S001", "S022", "S002"],
+
+  "seo": {
+    "description": "Sustained attention dropped from 2.5 minutes to 65 seconds since 2004. We check phones 96 times daily. Deep reading ability is declining 20-30%. The attention economy is a cognitive tax on civilization.",
+    "keywords": ["attention economy cognitive decline second order effects", "information overload hidden costs", "attention span decline consequences"]
+  }
+}
