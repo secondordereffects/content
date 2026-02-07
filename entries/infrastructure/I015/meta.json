@@ -1,0 +1,81 @@
+{
+  "id": "I015",
+  "title": "Satellite Internet Latency Reality",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Satellite internet constellations (Starlink, OneWeb, Kuiper) promise to solve rural connectivity by beaming broadband from low Earth orbit. For underserved areas with no fiber or cable options, satellite internet is transformative. But marketing promises of broadband-equivalent service obscure fundamental physics constraints. LEO satellites at 550 km altitude add 20-40ms latency minimum, with real-world performance of 40-80ms. During peak hours, shared bandwidth degrades speeds significantly. Weather affects signal quality. And the economics require massive subscriber density to justify constellation maintenance costs, meaning rural areas — the primary use case — may see service degradation as urban subscribers are prioritized.",
+  "hypothesis": "Satellite internet solves rural connectivity and provides broadband-equivalent service.",
+  "chain": {
+    "root": "Rural areas adopt satellite internet as primary broadband",
+    "effects": [
+      {
+        "label": "Latency floor limits real-time applications",
+        "impact": "40-80ms real-world, 20-40ms theoretical minimum",
+        "direction": "negative",
+        "children": [
+          { "label": "Video conferencing quality inconsistent", "direction": "negative" },
+          { "label": "Online gaming and real-time collaboration impaired", "direction": "negative" },
+          { "label": "Telemedicine applications limited by latency", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Shared bandwidth degrades during peak hours",
+        "impact": "Speeds drop 40-60% at peak times",
+        "direction": "negative",
+        "children": [
+          { "label": "Advertised speeds rarely achieved in practice", "direction": "negative" },
+          { "label": "As subscriber count grows, per-user bandwidth shrinks", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Satellite internet reduces pressure for fiber investment",
+        "impact": "Good enough becomes the enemy of good",
+        "direction": "negative",
+        "children": [
+          { "label": "Government broadband subsidies redirected from fiber to satellite", "direction": "negative" },
+          { "label": "Rural areas locked into inferior technology for decades", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Real-world latency", "before": "Fiber: 5-15ms", "after": "Satellite: 40-80ms", "delta": "+300-500%", "direction": "negative" },
+    { "metric": "Peak hour speed degradation", "before": "Fiber: minimal", "after": "Satellite: -40-60%", "delta": "Significant", "direction": "negative" },
+    { "metric": "Fiber investment in satellite-served areas", "before": "Planned", "after": "Deprioritized", "delta": "Delayed by years", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You're treating satellite internet as equivalent to fiber for policy planning purposes",
+      "You're redirecting fiber subsidies to satellite on the assumption it's good enough"
+    ],
+    "ifYouMust": [
+      "Position satellite as a bridge technology, not a permanent solution",
+      "Continue fiber investment in parallel for areas where it's economically feasible",
+      "Set realistic performance expectations — satellite is not fiber-equivalent"
+    ],
+    "alternatives": [
+      { "name": "Fixed wireless (5G/CBRS)", "note": "Lower latency than satellite, works in semi-rural areas" },
+      { "name": "Fiber-to-the-home", "note": "Higher upfront cost but superior long-term performance" },
+      { "name": "Hybrid approaches", "note": "Satellite for remote, fiber for towns, fixed wireless for suburbs" }
+    ]
+  },
+  "sources": [
+    { "title": "Ookla Speedtest: Starlink Performance Data", "url": "https://www.speedtest.net/insights/blog/starlink-hughesnet-viasat-performance-q4-2023/", "note": "Real-world satellite internet speed and latency measurements" },
+    { "title": "FCC Broadband Data Collection", "url": "https://broadbandmap.fcc.gov/", "note": "Coverage and performance data for satellite vs terrestrial broadband" },
+    { "title": "ITIF: Satellite Broadband Analysis", "url": "https://itif.org/", "note": "Policy analysis of satellite internet role in broadband strategy" }
+  ],
+  "falsifiability": [
+    "Satellite internet achieves consistent sub-30ms latency in real-world conditions",
+    "Peak hour speeds remain within 20% of advertised speeds as subscriber density grows",
+    "Satellite availability does not reduce government investment in fiber infrastructure"
+  ],
+  "tags": ["satellite-internet", "starlink", "rural-broadband", "latency", "digital-divide"],
+  "crossReferences": ["I002", "I010"],
+  "seo": {
+    "description": "Satellite internet adds 40-80ms latency with 40-60% peak hour speed drops. Its availability reduces pressure for fiber investment, locking rural areas into inferior connectivity.",
+    "keywords": ["satellite internet latency", "starlink hidden costs", "satellite broadband second order effects"]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": "H013",
+  "title": "Pharmaceutical Patent Cliff",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "The patent system grants pharmaceutical companies 20-year monopolies to incentivize drug innovation. The logic is sound: without patent protection, no company would invest $2-3B to develop a drug that competitors could immediately copy. But the patent system creates perverse incentives as expiration approaches. Companies spend more on extending patents (evergreening) than on genuine innovation. They file hundreds of secondary patents on formulations, delivery methods, and combinations to delay generic entry. R&D shifts from breakthrough drugs to incremental modifications of existing ones. The system designed to incentivize innovation increasingly incentivizes patent gaming, while truly novel drug development declines.",
+  "hypothesis": "Patents incentivize pharmaceutical innovation by protecting R&D investment.",
+  "chain": {
+    "root": "Pharmaceutical patent system incentivizes drug development",
+    "effects": [
+      {
+        "label": "Evergreening extends monopolies beyond original patent",
+        "impact": "Average effective patent life: 25-30 years",
+        "direction": "negative",
+        "children": [
+          { "label": "Generic entry delayed by 5-10 years through secondary patents", "direction": "negative" },
+          { "label": "Pay-for-delay agreements with generic manufacturers", "direction": "negative" },
+          { "label": "Patients pay monopoly prices longer than intended", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "R&D shifts from novel to incremental",
+        "impact": "70%+ of new approvals are modifications",
+        "direction": "negative",
+        "children": [
+          { "label": "Me-too drugs crowd out breakthrough research", "direction": "negative" },
+          { "label": "Rare disease and antibiotic research underfunded", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Patent cliff creates boom-bust revenue cycles",
+        "impact": "$200B+ in patent expirations 2025-2030",
+        "direction": "negative",
+        "children": [
+          { "label": "Companies acquire rather than innovate to fill revenue gaps", "direction": "negative" },
+          { "label": "Layoffs and R&D cuts during patent cliff periods", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Novel drug approvals (NMEs)", "before": "30-40/year (2000s)", "after": "Flat despite 3x R&D spending", "delta": "Declining productivity", "direction": "negative" },
+    { "metric": "Evergreening patent filings", "before": "Minimal", "after": "100+ secondary patents per blockbuster", "delta": "Massive increase", "direction": "negative" },
+    { "metric": "Generic entry delay", "before": "Patent expiry", "after": "+5-10 years via evergreening", "delta": "+5-10 years", "direction": "negative" },
+    { "metric": "R&D spend on incremental vs novel", "before": "50/50", "after": "70%+ incremental", "delta": "+20pp shift", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You assume patent protection automatically translates to innovation incentives",
+      "You're evaluating pharma R&D productivity by number of approvals without distinguishing novel from incremental"
+    ],
+    "ifYouMust": [
+      "Limit secondary patent filings to genuinely novel improvements",
+      "Create stronger incentives for breakthrough drugs (priority review vouchers, extended exclusivity for novel mechanisms)",
+      "Ban pay-for-delay agreements between brand and generic manufacturers"
+    ],
+    "alternatives": [
+      { "name": "Prize-based incentives", "note": "Government prizes for solving specific health challenges, drugs go generic immediately" },
+      { "name": "Open-source drug development", "note": "Collaborative research with public funding, no patent monopoly" },
+      { "name": "Subscription models", "note": "Government pays fixed fee for unlimited access, removing per-unit pricing" }
+    ]
+  },
+  "sources": [
+    { "title": "I-MAK: Overpatented, Overpriced Report", "url": "https://www.i-mak.org/overpatented-overpriced/", "note": "Documents evergreening strategies and secondary patent proliferation" },
+    { "title": "FDA: Novel Drug Approvals Data", "url": "https://www.fda.gov/drugs/new-drugs-fda-cders-new-molecular-entities-and-new-therapeutic-biological-products/novel-drug-approvals-fda", "note": "Annual novel drug approval statistics" },
+    { "title": "Nature Reviews Drug Discovery: R&D Productivity", "url": "https://www.nature.com/nrd/", "note": "Analysis of declining pharmaceutical R&D productivity despite increased spending" }
+  ],
+  "falsifiability": [
+    "Pharmaceutical R&D productivity (novel drugs per dollar spent) increases over time",
+    "Evergreening strategies do not delay generic entry beyond original patent expiration",
+    "Patent protection correlates with increased investment in breakthrough rather than incremental drugs"
+  ],
+  "tags": ["pharmaceuticals", "patents", "evergreening", "drug-pricing", "innovation"],
+  "crossReferences": ["H016", "H014"],
+  "seo": {
+    "description": "Pharma companies file 100+ secondary patents per blockbuster drug, delaying generics 5-10 years. 70%+ of new approvals are incremental modifications, not breakthroughs.",
+    "keywords": ["pharmaceutical patent cliff", "drug patent hidden costs", "pharma patent second order effects"]
+  }
+}

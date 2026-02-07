@@ -1,0 +1,82 @@
+{
+  "id": "H014",
+  "title": "AI Diagnosis Liability Gap",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "AI diagnostic tools achieve impressive accuracy in controlled studies — matching or exceeding radiologists in detecting certain cancers, identifying skin conditions from photos, and predicting cardiac events. Hospitals adopt these tools to improve care and reduce costs. But AI diagnosis creates an unprecedented liability gap. When an AI system misses a cancer or makes a wrong recommendation, who is liable? The hospital that deployed it? The vendor that built it? The doctor who relied on it? The regulatory framework for medical liability was built for human decision-making. AI diagnosis falls into a gap where no party accepts full responsibility, and patients harmed by AI errors face a legal maze with no clear path to accountability.",
+  "hypothesis": "AI improves diagnostic accuracy and reduces medical errors.",
+  "chain": {
+    "root": "Hospital deploys AI diagnostic tools",
+    "effects": [
+      {
+        "label": "Liability becomes diffuse and unclear",
+        "impact": "No established legal framework for AI medical errors",
+        "direction": "negative",
+        "children": [
+          { "label": "Vendors disclaim liability in terms of service", "direction": "negative" },
+          { "label": "Doctors unsure if they're liable for following or ignoring AI", "direction": "negative" },
+          { "label": "Hospitals caught between vendor disclaimers and patient expectations", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Automation bias in clinical decision-making",
+        "impact": "Doctors defer to AI even when wrong",
+        "direction": "negative",
+        "children": [
+          { "label": "Clinical judgment atrophies as AI reliance grows", "direction": "negative" },
+          { "label": "Overriding AI recommendation requires documentation burden", "direction": "negative" },
+          { "label": "AI confidence scores treated as certainty", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Algorithmic bias in training data",
+        "impact": "Performance varies by demographics",
+        "direction": "negative",
+        "children": [
+          { "label": "Diagnostic accuracy lower for underrepresented populations", "direction": "negative" },
+          { "label": "Health disparities amplified by biased training data", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Medical liability clarity", "before": "Clear (doctor responsible)", "after": "Ambiguous (AI/vendor/doctor)", "delta": "Liability vacuum", "direction": "negative" },
+    { "metric": "Automation bias rate", "before": "0% (no AI)", "after": "30-50% of doctors defer to AI", "delta": "+30-50%", "direction": "negative" },
+    { "metric": "Diagnostic accuracy by demographics", "before": "Varies by doctor", "after": "Systematically biased by training data", "delta": "Structural disparity", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "Your AI diagnostic tool has no clear liability framework for errors",
+      "You're deploying AI trained primarily on one demographic to serve diverse populations"
+    ],
+    "ifYouMust": [
+      "Establish clear liability allocation before deployment — in writing",
+      "Require doctors to document independent assessment alongside AI recommendation",
+      "Audit AI performance across demographic groups and publish results"
+    ],
+    "alternatives": [
+      { "name": "AI as second opinion", "note": "Doctor diagnoses first, AI provides independent check — preserves clinical judgment" },
+      { "name": "AI triage, not diagnosis", "note": "AI prioritizes cases for human review rather than making diagnostic decisions" },
+      { "name": "Ensemble approaches", "note": "Multiple AI systems plus human review — reduces single-point-of-failure risk" }
+    ]
+  },
+  "sources": [
+    { "title": "Nature Medicine: AI in Clinical Practice", "url": "https://www.nature.com/nm/", "note": "Review of AI diagnostic accuracy and deployment challenges" },
+    { "title": "JAMA: Liability for AI in Medicine", "url": "https://jamanetwork.com/", "note": "Legal analysis of medical AI liability frameworks" },
+    { "title": "FDA: AI/ML-Based Software as Medical Device", "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices", "note": "Regulatory framework for AI medical devices" }
+  ],
+  "falsifiability": [
+    "Clear legal frameworks for AI medical liability are established within 5 years of widespread deployment",
+    "Doctors maintain independent clinical judgment quality despite AI availability",
+    "AI diagnostic tools perform equally well across all demographic groups"
+  ],
+  "tags": ["ai-diagnosis", "medical-liability", "automation-bias", "healthcare-ai", "algorithmic-bias"],
+  "crossReferences": ["A018", "H002"],
+  "seo": {
+    "description": "AI diagnosis creates a liability vacuum where no party accepts responsibility for errors. 30-50% of doctors defer to AI recommendations, and accuracy varies by demographics.",
+    "keywords": ["ai diagnosis liability gap", "medical ai hidden costs", "ai diagnosis second order effects"]
+  }
+}

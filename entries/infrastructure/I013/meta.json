@@ -1,0 +1,91 @@
+{
+  "id": "I013",
+  "title": "Renewable Energy Intermittency Storage Gap",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Countries invest heavily in solar and wind to replace fossil fuels, driven by falling costs and climate targets. Renewable capacity additions break records annually. But generation capacity is not the bottleneck — storage is. Solar produces peak power at midday when demand is moderate, and nothing at night when demand peaks. Wind is unpredictable. Without grid-scale storage, renewables require fossil fuel backup for reliability, creating a system that pays for two generation fleets while using each one part-time. The storage gap means every gigawatt of renewable capacity added without matching storage increases grid complexity and cost without proportionally reducing emissions.",
+  "hypothesis": "Renewables can replace fossil fuels as they become cheaper than coal and gas.",
+  "chain": {
+    "root": "Country rapidly scales renewable energy capacity",
+    "effects": [
+      {
+        "label": "Generation exceeds demand during peak production",
+        "impact": "Curtailment wastes 5-15% of renewable output",
+        "direction": "negative",
+        "children": [
+          { "label": "Negative electricity prices during sunny/windy periods", "direction": "negative" },
+          { "label": "Investment returns decline as curtailment increases", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Fossil backup required for reliability",
+        "impact": "Gas plants run at low utilization",
+        "direction": "negative",
+        "children": [
+          { "label": "System pays for two generation fleets", "direction": "negative" },
+          { "label": "Gas plants become uneconomic but essential", "direction": "negative" },
+          { "label": "Emissions reduction plateaus without storage", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Grid stability challenges multiply",
+        "impact": "Frequency regulation becomes harder",
+        "direction": "negative",
+        "children": [
+          { "label": "Blackout risk increases during rapid weather changes", "direction": "negative" },
+          { "label": "Grid operators resist further renewable additions", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Storage technology lags behind generation",
+        "impact": "Battery costs falling but not fast enough",
+        "direction": "negative",
+        "children": [
+          { "label": "4-hour batteries insufficient for overnight or multi-day gaps", "direction": "negative" },
+          { "label": "Long-duration storage (100+ hours) still uneconomic", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Renewable curtailment", "before": "<1%", "after": "5-15% in high-penetration grids", "delta": "+5-15pp", "direction": "negative" },
+    { "metric": "System cost per MWh", "before": "Falling with renewables", "after": "Rising with integration costs", "delta": "+20-40%", "direction": "negative" },
+    { "metric": "Emissions reduction per added GW", "before": "Linear", "after": "Diminishing returns without storage", "delta": "Plateauing", "direction": "negative" },
+    { "metric": "Grid storage vs generation ratio", "before": "Needed: 1:4", "after": "Actual: 1:20+", "delta": "5x+ gap", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You're planning renewable capacity without matching storage investment",
+      "You assume generation cost equals system cost for intermittent sources"
+    ],
+    "ifYouMust": [
+      "Pair every GW of renewable capacity with proportional storage investment",
+      "Invest in long-duration storage R&D, not just 4-hour lithium batteries",
+      "Maintain dispatchable generation until storage reaches adequate scale"
+    ],
+    "alternatives": [
+      { "name": "Nuclear baseload", "note": "24/7 carbon-free generation without intermittency" },
+      { "name": "Demand response", "note": "Shift consumption to match generation rather than storing excess" },
+      { "name": "Overbuilding with curtailment", "note": "Build 3-4x capacity and accept waste as cheaper than storage" }
+    ]
+  },
+  "sources": [
+    { "title": "IEA: World Energy Outlook 2024", "url": "https://www.iea.org/reports/world-energy-outlook-2024", "note": "Comprehensive analysis of renewable integration challenges" },
+    { "title": "MIT Energy Initiative: Future of Energy Storage", "url": "https://energy.mit.edu/research/future-of-energy-storage/", "note": "Technical analysis of storage requirements for high-renewable grids" },
+    { "title": "BloombergNEF: Energy Storage Outlook", "url": "https://about.bnef.com/energy-storage/", "note": "Battery cost trajectories and deployment data" }
+  ],
+  "falsifiability": [
+    "Grid-scale storage costs fall fast enough to match renewable deployment rates",
+    "High-renewable grids maintain reliability without fossil fuel backup",
+    "Curtailment rates remain below 5% even at 80%+ renewable penetration"
+  ],
+  "tags": ["renewable-energy", "energy-storage", "grid-stability", "intermittency", "batteries"],
+  "crossReferences": ["I008", "I016"],
+  "seo": {
+    "description": "Renewable curtailment reaches 5-15% in high-penetration grids while storage lags 5x behind need. Systems pay for two generation fleets as emissions reduction plateaus.",
+    "keywords": ["renewable energy intermittency", "energy storage gap", "renewable energy second order effects"]
+  }
+}

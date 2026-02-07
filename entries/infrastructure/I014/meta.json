@@ -1,0 +1,81 @@
+{
+  "id": "I014",
+  "title": "Undersea Mining Environmental Cascade",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Deep-sea mining targets polymetallic nodules on the ocean floor containing cobalt, nickel, manganese, and rare earths critical for batteries and electronics. Proponents argue it's less destructive than terrestrial mining and necessary for the energy transition. But the deep ocean floor is one of Earth's least understood ecosystems. Nodules that took millions of years to form support unique organisms. Sediment plumes from mining spread hundreds of kilometers, smothering filter feeders and disrupting food chains. The environmental impact assessment frameworks developed for land don't apply to an ecosystem we've barely mapped, and the damage may be irreversible on human timescales.",
+  "hypothesis": "Deep-sea mining provides critical minerals with less environmental impact than land mining.",
+  "chain": {
+    "root": "Commercial deep-sea mining operations begin",
+    "effects": [
+      {
+        "label": "Nodule removal destroys million-year-old habitat",
+        "impact": "Recovery time: thousands to millions of years",
+        "direction": "negative",
+        "children": [
+          { "label": "Endemic species with no other habitat face extinction", "direction": "negative" },
+          { "label": "Biodiversity loss in ecosystems we haven't yet cataloged", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Sediment plumes spread hundreds of kilometers",
+        "impact": "Smothers organisms far from mining site",
+        "direction": "negative",
+        "children": [
+          { "label": "Filter-feeding organisms die from sediment clogging", "direction": "negative" },
+          { "label": "Midwater ecosystems disrupted by particle clouds", "direction": "negative" },
+          { "label": "Carbon sequestration in deep ocean potentially disrupted", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Noise and light pollution in perpetual darkness",
+        "impact": "Disrupts deep-sea species adapted to silence and dark",
+        "direction": "negative",
+        "children": [
+          { "label": "Migration and feeding patterns of deep-sea species altered", "direction": "negative" },
+          { "label": "Cascading effects through deep-ocean food web", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Habitat recovery time", "before": "N/A (undisturbed)", "after": "Thousands to millions of years", "delta": "Effectively irreversible", "direction": "negative" },
+    { "metric": "Sediment plume spread", "before": "0 km", "after": "100-500 km from site", "delta": "Massive area affected", "direction": "negative" },
+    { "metric": "Species at risk", "before": "Unknown (unmapped)", "after": "Potentially thousands of endemic species", "delta": "Unquantifiable loss", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "Environmental impact assessments are based on terrestrial mining frameworks",
+      "You haven't mapped the baseline ecosystem before extraction begins"
+    ],
+    "ifYouMust": [
+      "Conduct multi-year baseline studies before any extraction",
+      "Implement real-time sediment plume monitoring with automatic shutoffs",
+      "Set aside large no-mining reference zones for scientific comparison"
+    ],
+    "alternatives": [
+      { "name": "Urban mining (recycling)", "note": "Recover critical minerals from e-waste — less destructive, growing supply" },
+      { "name": "Material substitution", "note": "Develop battery chemistries that don't require deep-sea minerals" },
+      { "name": "Improved terrestrial mining", "note": "Better practices at known sites rather than opening unknown frontiers" }
+    ]
+  },
+  "sources": [
+    { "title": "Nature: Deep-Sea Mining Environmental Impact", "url": "https://www.nature.com/articles/s41586-023-06000-1", "note": "Comprehensive review of deep-sea mining ecological risks" },
+    { "title": "ISA: Deep-Sea Mining Regulatory Framework", "url": "https://www.isa.org.jm/", "note": "International Seabed Authority regulatory status and debates" },
+    { "title": "IUCN: Deep-Sea Mining Position Paper", "url": "https://www.iucn.org/resources/issues-brief/deep-sea-mining", "note": "Conservation perspective on mining moratorium arguments" }
+  ],
+  "falsifiability": [
+    "Deep-sea ecosystems recover from mining disturbance within decades, not millennia",
+    "Sediment plumes remain contained within 10 km of mining operations",
+    "Deep-sea mining proves less environmentally destructive than equivalent terrestrial mining per ton of mineral extracted"
+  ],
+  "tags": ["deep-sea-mining", "ocean-environment", "critical-minerals", "biodiversity", "sustainability"],
+  "crossReferences": ["I018", "I013"],
+  "seo": {
+    "description": "Deep-sea mining destroys habitats that took millions of years to form. Sediment plumes spread 100-500 km while we've barely mapped the ecosystems being destroyed.",
+    "keywords": ["deep sea mining environmental impact", "undersea mining hidden costs", "deep sea mining second order effects"]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "H015",
+  "title": "Precision Medicine Data Privacy",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Precision medicine promises treatments tailored to individual genetic profiles, lifestyle data, and biomarkers. The potential is transformative: drugs matched to your genome, cancer treatments targeting your specific mutations, preventive interventions based on your risk profile. But precision medicine requires the most intimate data possible — your complete genome, medical history, lifestyle patterns, and family health data. This data, once collected, becomes a permanent privacy liability. Genetic data cannot be changed like a password. It reveals information about relatives who never consented. And the databases required for precision medicine are irresistible targets for insurers, employers, and hackers seeking the most personal information imaginable.",
+  "hypothesis": "Personalized medicine improves outcomes by tailoring treatment to individual biology.",
+  "chain": {
+    "root": "Healthcare system adopts precision medicine requiring genetic and lifestyle data",
+    "effects": [
+      {
+        "label": "Genetic data collected at unprecedented scale",
+        "impact": "Millions of complete genomes in databases",
+        "direction": "negative",
+        "children": [
+          { "label": "Data cannot be anonymized — genome is a unique identifier", "direction": "negative" },
+          { "label": "Genetic data reveals information about non-consenting relatives", "direction": "negative" },
+          { "label": "Data breaches expose permanent, unchangeable personal information", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Secondary use of health data expands",
+        "impact": "Research, insurance, employment",
+        "direction": "negative",
+        "children": [
+          { "label": "Insurers seek genetic risk data for pricing despite GINA protections", "direction": "negative" },
+          { "label": "Employers access health predictions through wellness programs", "direction": "negative" },
+          { "label": "Law enforcement uses genetic databases for identification", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Genetic discrimination becomes possible",
+        "impact": "Pre-existing conditions redefined by genome",
+        "direction": "negative",
+        "children": [
+          { "label": "People avoid genetic testing to prevent data creation", "direction": "negative" },
+          { "label": "Precision medicine adoption slowed by privacy fears", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Genetic data breach exposure", "before": "0 (no data)", "after": "Permanent, unchangeable exposure", "delta": "Irreversible risk", "direction": "negative" },
+    { "metric": "Relative privacy impact", "before": "Individual consent", "after": "Family data exposed without consent", "delta": "Non-consenting parties affected", "direction": "negative" },
+    { "metric": "Genetic testing avoidance", "before": "Low", "after": "30-40% cite privacy concerns", "delta": "+30-40%", "direction": "negative" },
+    { "metric": "Secondary data use incidents", "before": "Rare", "after": "Growing (law enforcement, insurance)", "delta": "Increasing", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "Your precision medicine platform lacks robust data governance and breach response plans",
+      "You're collecting genetic data without clear limits on secondary use"
+    ],
+    "ifYouMust": [
+      "Implement federated learning — analyze data without centralizing it",
+      "Establish genetic data-specific consent frameworks that cover relatives",
+      "Create legal firewalls preventing genetic data use by insurers and employers"
+    ],
+    "alternatives": [
+      { "name": "Federated analysis", "note": "Algorithms travel to data, not data to algorithms — reduces breach risk" },
+      { "name": "Differential privacy", "note": "Add mathematical noise to protect individuals while enabling research" },
+      { "name": "Biobank governance models", "note": "Community-controlled data trusts with participant oversight" }
+    ]
+  },
+  "sources": [
+    { "title": "Nature Genetics: Privacy in Genomic Research", "url": "https://www.nature.com/ng/", "note": "Analysis of re-identification risks in genomic databases" },
+    { "title": "NIH: All of Us Research Program Privacy Framework", "url": "https://allofus.nih.gov/", "note": "Largest precision medicine initiative and its privacy approach" },
+    { "title": "GINA: Genetic Information Nondiscrimination Act", "url": "https://www.genome.gov/about-genomics/policy-issues/Genetic-Discrimination", "note": "Current legal protections and their limitations" }
+  ],
+  "falsifiability": [
+    "Genetic data can be effectively anonymized to prevent re-identification",
+    "GINA and similar laws fully prevent genetic discrimination in insurance and employment",
+    "Privacy concerns do not reduce participation in precision medicine programs"
+  ],
+  "tags": ["precision-medicine", "genetic-privacy", "genomics", "data-privacy", "health-data"],
+  "crossReferences": ["H002", "P001"],
+  "seo": {
+    "description": "Precision medicine requires your complete genome — data that can never be changed and reveals information about relatives who never consented. 30-40% avoid testing over privacy fears.",
+    "keywords": ["precision medicine data privacy", "genetic data hidden costs", "precision medicine second order effects"]
+  }
+}

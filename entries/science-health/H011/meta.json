@@ -1,0 +1,81 @@
+{
+  "id": "H011",
+  "title": "Vaccine Hesitancy Information Paradox",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Public health agencies respond to vaccine hesitancy by providing more information — fact sheets, debunking campaigns, social media counter-messaging. The assumption is that hesitancy stems from ignorance, and information corrects ignorance. But research consistently shows that more information often increases hesitancy rather than reducing it. Debunking myths reinforces them through the familiarity backfire effect. Detailed risk disclosures — required by law — give hesitant individuals specific fears to anchor on. And the information environment itself has changed: every fact sheet competes with thousands of emotionally compelling anti-vaccine narratives optimized for engagement. The information approach fails because hesitancy is primarily emotional and social, not informational.",
+  "hypothesis": "More information about vaccine safety and efficacy increases vaccine uptake.",
+  "chain": {
+    "root": "Public health agencies increase vaccine information campaigns",
+    "effects": [
+      {
+        "label": "Myth debunking reinforces myths",
+        "impact": "Familiarity backfire effect",
+        "direction": "negative",
+        "children": [
+          { "label": "People remember the myth more than the correction", "direction": "negative" },
+          { "label": "Repeated exposure to myth framing increases perceived prevalence", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Risk disclosures provide anchoring points for fear",
+        "impact": "Rare side effects become salient",
+        "direction": "negative",
+        "children": [
+          { "label": "1-in-a-million risks feel personal and immediate", "direction": "negative" },
+          { "label": "Risk-benefit calculation skewed by availability bias", "direction": "negative" },
+          { "label": "Informed consent process inadvertently increases refusal", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Information campaigns compete with emotional narratives",
+        "impact": "Facts vs stories — stories win",
+        "direction": "negative",
+        "children": [
+          { "label": "One emotional anecdote outweighs statistical evidence", "direction": "negative" },
+          { "label": "Anti-vaccine content optimized for engagement, health content is not", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Hesitancy after debunking campaigns", "before": "Baseline hesitancy", "after": "Unchanged or increased", "delta": "0 to +10%", "direction": "negative" },
+    { "metric": "Myth recall after correction", "before": "Expected: myth forgotten", "after": "Myth remembered, correction forgotten", "delta": "Backfire effect", "direction": "negative" },
+    { "metric": "Vaccine confidence in high-information groups", "before": "Expected: highest", "after": "Often lower than moderate-information groups", "delta": "Paradoxical", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "Your primary strategy is fact-based debunking of vaccine myths",
+      "You assume hesitancy is primarily an information deficit problem"
+    ],
+    "ifYouMust": [
+      "Lead with the correct information, not the myth being debunked",
+      "Use trusted community messengers rather than institutional campaigns",
+      "Focus on social norms (most people vaccinate) rather than risk statistics"
+    ],
+    "alternatives": [
+      { "name": "Trusted messenger programs", "note": "Community leaders and personal doctors are more persuasive than campaigns" },
+      { "name": "Default and nudge approaches", "note": "Make vaccination the easy default rather than requiring active choice" },
+      { "name": "Motivational interviewing", "note": "Address emotional concerns through conversation, not information delivery" }
+    ]
+  },
+  "sources": [
+    { "title": "Nyhan & Reifler: Backfire Effects in Vaccine Communication", "url": "https://pubmed.ncbi.nlm.nih.gov/24590751/", "note": "Landmark study showing myth correction can increase misperceptions" },
+    { "title": "WHO: Vaccine Hesitancy Determinants", "url": "https://www.who.int/news-room/questions-and-answers/item/vaccines-and-immunization-what-is-vaccination", "note": "Framework identifying hesitancy as confidence, complacency, and convenience" },
+    { "title": "Lancet: Vaccine Confidence and Communication", "url": "https://www.thelancet.com/", "note": "Meta-analysis of information campaign effectiveness on vaccine uptake" }
+  ],
+  "falsifiability": [
+    "Information campaigns consistently increase vaccine uptake in hesitant populations",
+    "Myth debunking reduces belief in the debunked myth rather than reinforcing it",
+    "Detailed risk disclosure does not increase vaccine refusal rates"
+  ],
+  "tags": ["vaccines", "hesitancy", "public-health", "misinformation", "backfire-effect"],
+  "crossReferences": ["H006", "S002"],
+  "seo": {
+    "description": "Vaccine myth debunking often reinforces the myths through familiarity backfire. Detailed risk disclosures give hesitant individuals specific fears to anchor on.",
+    "keywords": ["vaccine hesitancy information paradox", "vaccine communication hidden costs", "vaccine hesitancy second order effects"]
+  }
+}

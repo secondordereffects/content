@@ -1,0 +1,82 @@
+{
+  "id": "I017",
+  "title": "Smart Home Lock-in Ecosystem",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Consumers adopt smart home devices for convenience — voice-controlled lights, automated thermostats, smart locks, connected cameras. Each device works well individually. But smart home ecosystems are designed around platform lock-in. Alexa devices work best with Amazon services, Google Home with Google, HomeKit with Apple. As consumers accumulate devices within one ecosystem, switching costs compound. When the platform vendor changes pricing, discontinues products, or suffers outages, the entire home is affected. The convenience that drew people in becomes a dependency they cannot easily escape, and the smart home becomes a subscription to a platform rather than ownership of infrastructure.",
+  "hypothesis": "Smart home devices improve convenience and give homeowners more control.",
+  "chain": {
+    "root": "Consumer builds smart home within single ecosystem",
+    "effects": [
+      {
+        "label": "Device accumulation creates switching costs",
+        "impact": "Average smart home: 15-25 connected devices",
+        "direction": "negative",
+        "children": [
+          { "label": "Replacing ecosystem means replacing all devices", "direction": "negative" },
+          { "label": "Cross-platform devices work poorly compared to native", "direction": "negative" },
+          { "label": "Matter/Thread standards adoption slower than promised", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Platform vendor controls home functionality",
+        "impact": "Cloud dependency for basic operations",
+        "direction": "negative",
+        "children": [
+          { "label": "Internet outage disables light switches and door locks", "direction": "negative" },
+          { "label": "Vendor can change features, pricing, or discontinue products", "direction": "negative" },
+          { "label": "Privacy: all home activity data flows to platform vendor", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Subscription creep monetizes the home",
+        "impact": "Features move behind paywalls",
+        "direction": "negative",
+        "children": [
+          { "label": "Camera storage, advanced automations require monthly fees", "direction": "negative" },
+          { "label": "Total cost of ownership far exceeds initial device cost", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Average smart home devices", "before": "0", "after": "15-25 per household", "delta": "Deep ecosystem dependency", "direction": "negative" },
+    { "metric": "Monthly subscription costs", "before": "$0 (dumb devices)", "after": "$30-80/month for full functionality", "delta": "+$360-960/year", "direction": "negative" },
+    { "metric": "Functionality during outage", "before": "100% (manual)", "after": "Degraded or non-functional", "delta": "Critical dependency", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You're replacing reliable manual controls with cloud-dependent smart devices",
+      "You're building your entire home around a single vendor ecosystem"
+    ],
+    "ifYouMust": [
+      "Prioritize devices with local control fallback (no cloud required for basic function)",
+      "Choose Matter/Thread compatible devices for future interoperability",
+      "Calculate total cost of ownership including subscriptions before buying"
+    ],
+    "alternatives": [
+      { "name": "Home Assistant (local)", "note": "Open-source, local-first smart home platform — no cloud dependency" },
+      { "name": "Dumb devices with smart switches", "note": "Smart switches control dumb devices — works without internet" },
+      { "name": "Selective automation", "note": "Automate only high-value use cases, keep manual controls for everything else" }
+    ]
+  },
+  "sources": [
+    { "title": "Consumer Reports: Smart Home Privacy and Security", "url": "https://www.consumerreports.org/smart-home/", "note": "Analysis of smart home data collection and vendor dependency" },
+    { "title": "Parks Associates: Smart Home Market Data", "url": "https://www.parksassociates.com/", "note": "Device adoption rates and subscription revenue trends" },
+    { "title": "Matter Standard: CSA", "url": "https://csa-iot.org/all-solutions/matter/", "note": "Interoperability standard progress and adoption challenges" }
+  ],
+  "falsifiability": [
+    "Smart home ecosystems achieve true interoperability through Matter/Thread within 3 years",
+    "Vendors do not increase subscription requirements for existing device functionality",
+    "Smart home devices maintain full functionality during internet outages"
+  ],
+  "tags": ["smart-home", "lock-in", "iot", "platform-dependency", "subscriptions"],
+  "crossReferences": ["I001", "T005"],
+  "seo": {
+    "description": "Smart homes average 15-25 devices locked into one ecosystem. Subscription creep adds $30-80/month while internet outages disable basic home functions.",
+    "keywords": ["smart home lock-in", "smart home hidden costs", "smart home second order effects"]
+  }
+}

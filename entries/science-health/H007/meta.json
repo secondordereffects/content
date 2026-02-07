@@ -1,0 +1,82 @@
+{
+  "id": "H007",
+  "title": "Longevity Research Inequality",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Longevity research attracts billions in funding from tech billionaires and biotech investors pursuing radical life extension. The science is advancing — senolytics, epigenetic reprogramming, and caloric restriction mimetics show promise. But life extension technologies will initially be expensive and available only to the wealthy. If the rich live to 120-150 while average lifespan remains 75-80, the implications cascade through every social system: retirement ages, inheritance patterns, political power concentration, and intergenerational wealth gaps. A 50-year gap in lifespan between rich and poor would create a biological class system unprecedented in human history.",
+  "hypothesis": "Life extension research benefits humanity by conquering aging and disease.",
+  "chain": {
+    "root": "Longevity treatments become available but expensive",
+    "effects": [
+      {
+        "label": "Wealthy access treatments first",
+        "impact": "10-30 year lifespan gap by income",
+        "direction": "negative",
+        "children": [
+          { "label": "Biological class system emerges", "direction": "negative" },
+          { "label": "Wealthy compound advantages over longer lifetimes", "direction": "negative" },
+          { "label": "Political power concentrates in long-lived elite", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Social systems designed for 75-year lifespans break",
+        "impact": "Pensions, inheritance, career structures",
+        "direction": "negative",
+        "children": [
+          { "label": "Retirement systems become insolvent", "direction": "negative" },
+          { "label": "Intergenerational wealth transfer delayed by decades", "direction": "negative" },
+          { "label": "Career advancement blocked by people who never retire", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Population and resource implications",
+        "impact": "More people alive simultaneously",
+        "direction": "negative",
+        "children": [
+          { "label": "Resource consumption increases without population decline", "direction": "negative" },
+          { "label": "Housing and land scarcity intensifies", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Lifespan gap by income", "before": "5-10 years", "after": "20-50 years with treatments", "delta": "+200-400%", "direction": "negative" },
+    { "metric": "Pension system solvency", "before": "Designed for 75-year lifespan", "after": "Insolvent with 120+ year lifespans", "delta": "Structural collapse", "direction": "negative" },
+    { "metric": "Wealth concentration", "before": "Current inequality", "after": "Compounded over extra decades", "delta": "Exponential increase", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You assume longevity treatments will be universally affordable within a generation",
+      "You're funding longevity research without considering distributional consequences"
+    ],
+    "ifYouMust": [
+      "Build equitable access frameworks before treatments reach market",
+      "Redesign social systems (pensions, inheritance, career structures) for variable lifespans",
+      "Fund longevity research alongside healthspan research for the general population"
+    ],
+    "alternatives": [
+      { "name": "Healthspan focus", "note": "Extend healthy years within normal lifespan — benefits everyone equally" },
+      { "name": "Public health investment", "note": "Close existing lifespan gaps before extending maximum lifespan" },
+      { "name": "Open-source longevity research", "note": "Prevent proprietary lock-in on life extension treatments" }
+    ]
+  },
+  "sources": [
+    { "title": "Nature Aging: Longevity Research Review", "url": "https://www.nature.com/nataging/", "note": "State of longevity science and treatment pipeline" },
+    { "title": "Lancet: Health Inequality and Life Expectancy", "url": "https://www.thelancet.com/", "note": "Existing lifespan gaps by income and their social consequences" },
+    { "title": "National Academy of Sciences: Aging Research Priorities", "url": "https://www.nationalacademies.org/", "note": "Policy framework for equitable aging research" }
+  ],
+  "falsifiability": [
+    "Longevity treatments become affordable to median-income populations within 10 years of availability",
+    "Life extension does not increase wealth inequality or political power concentration",
+    "Social systems adapt smoothly to variable lifespans without structural reform"
+  ],
+  "tags": ["longevity", "life-extension", "inequality", "aging", "healthspan", "biotech"],
+  "crossReferences": ["H016", "H015"],
+  "seo": {
+    "description": "Longevity treatments could create a 20-50 year lifespan gap by income. Social systems designed for 75-year lives collapse when the wealthy live to 120-150.",
+    "keywords": ["longevity research inequality", "life extension hidden costs", "longevity second order effects"]
+  }
+}

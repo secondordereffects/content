@@ -1,0 +1,83 @@
+{
+  "id": "H012",
+  "title": "Screen Time Developmental Effects",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Parents give children tablets and smartphones loaded with educational apps, believing screen time can be beneficial if the content is educational. Pediatric guidelines recommend limits, but enforcement is difficult when screens are the most effective pacifier available. Research increasingly shows that the medium matters as much as the content. Even educational screen time displaces activities critical for development: unstructured play, face-to-face interaction, physical exploration, and boredom-driven creativity. The displacement effect means that what children aren't doing while on screens may matter more than what they are doing on them.",
+  "hypothesis": "Educational screen time benefits children's learning and development.",
+  "chain": {
+    "root": "Children spend 4-7 hours daily on screens",
+    "effects": [
+      {
+        "label": "Displacement of developmental activities",
+        "impact": "Unstructured play down 50% since 2000",
+        "direction": "negative",
+        "children": [
+          { "label": "Fine motor skill development delayed", "direction": "negative" },
+          { "label": "Imaginative play and creativity reduced", "direction": "negative" },
+          { "label": "Physical activity and outdoor time displaced", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Face-to-face interaction reduced",
+        "impact": "Social skill development impaired",
+        "direction": "negative",
+        "children": [
+          { "label": "Emotional recognition and empathy development delayed", "direction": "negative" },
+          { "label": "Conversational turn-taking skills underdeveloped", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Attention patterns shaped by rapid stimulation",
+        "impact": "Sustained attention capacity declining",
+        "direction": "negative",
+        "children": [
+          { "label": "Difficulty with slow-paced activities (reading, classroom learning)", "direction": "negative" },
+          { "label": "Boredom tolerance decreases — constant stimulation expected", "direction": "negative" },
+          { "label": "ADHD-like symptoms increase in heavy screen users", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Unstructured play time", "before": "4-5 hrs/day (1980s)", "after": "1-2 hrs/day (2024)", "delta": "-60%", "direction": "negative" },
+    { "metric": "Average child screen time", "before": "1-2 hrs/day (2005)", "after": "4-7 hrs/day (2024)", "delta": "+200-350%", "direction": "negative" },
+    { "metric": "Sustained attention benchmarks", "before": "Age-appropriate", "after": "Declining across cohorts", "delta": "Measurable decline", "direction": "negative" },
+    { "metric": "Fine motor skill readiness (school entry)", "before": "85%+ meeting benchmarks", "after": "60-70% meeting benchmarks", "delta": "-15-25pp", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "Your child is under 2 years old (AAP recommends no screen time except video calls)",
+      "Screen time is replacing outdoor play, reading, or face-to-face interaction"
+    ],
+    "ifYouMust": [
+      "Co-view and discuss content — passive consumption is the worst mode",
+      "Enforce time limits and prioritize displacement activities first",
+      "Choose interactive educational content over passive video consumption"
+    ],
+    "alternatives": [
+      { "name": "Unstructured outdoor play", "note": "Develops motor skills, creativity, and risk assessment simultaneously" },
+      { "name": "Reading together", "note": "Builds language, attention, and bonding without screen displacement" },
+      { "name": "Hands-on learning", "note": "Building, drawing, cooking — tactile learning screens cannot replicate" }
+    ]
+  },
+  "sources": [
+    { "title": "AAP: Media and Children Policy Statement", "url": "https://publications.aap.org/pediatrics/article/138/5/e20162591/60503/Media-and-Young-Minds", "note": "American Academy of Pediatrics screen time guidelines and evidence" },
+    { "title": "JAMA Pediatrics: Screen Time and Development", "url": "https://jamanetwork.com/journals/jamapediatrics", "note": "Longitudinal studies on screen time and developmental outcomes" },
+    { "title": "Common Sense Media: Media Use Census", "url": "https://www.commonsensemedia.org/research/the-common-sense-census-media-use-by-tweens-and-teens-2021", "note": "Comprehensive data on children's screen time trends" }
+  ],
+  "falsifiability": [
+    "Educational screen time produces equivalent developmental outcomes to hands-on learning activities",
+    "Children with high screen time show no deficits in sustained attention or social skills",
+    "Screen time does not displace physical play or face-to-face interaction in practice"
+  ],
+  "tags": ["screen-time", "child-development", "education", "attention", "displacement-effect"],
+  "crossReferences": ["S004", "H005"],
+  "seo": {
+    "description": "Children's unstructured play dropped 60% as screen time tripled. Even educational content displaces activities critical for motor skills, attention, and social development.",
+    "keywords": ["screen time developmental effects", "children screen time hidden costs", "screen time second order effects"]
+  }
+}

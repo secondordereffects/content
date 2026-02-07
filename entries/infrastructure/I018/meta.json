@@ -1,0 +1,81 @@
+{
+  "id": "I018",
+  "title": "Lithium Mining Environmental Paradox",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "The electric vehicle revolution requires massive lithium production for batteries. Global lithium demand is projected to increase 5-7x by 2030. Lithium is marketed as enabling the green transition, but extraction carries significant environmental costs. Brine extraction in South America's lithium triangle consumes 500,000 gallons of water per ton of lithium in some of Earth's driest regions. Hard rock mining in Australia generates toxic waste. The environmental cost of extracting the mineral that powers green technology creates a paradox: solving climate change at the macro level while creating water crises and ecosystem destruction at the local level.",
+  "hypothesis": "Electric vehicles are green because they eliminate tailpipe emissions.",
+  "chain": {
+    "root": "Lithium demand surges for EV battery production",
+    "effects": [
+      {
+        "label": "Brine extraction depletes water in arid regions",
+        "impact": "500K gallons per ton in lithium triangle",
+        "direction": "negative",
+        "children": [
+          { "label": "Indigenous communities lose water access", "direction": "negative" },
+          { "label": "Local agriculture collapses from water table depletion", "direction": "negative" },
+          { "label": "Ecosystem destruction in fragile desert environments", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Hard rock mining generates toxic waste",
+        "impact": "Acid mine drainage, heavy metals",
+        "direction": "negative",
+        "children": [
+          { "label": "Groundwater contamination near mining sites", "direction": "negative" },
+          { "label": "Tailings dam failures risk catastrophic spills", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Supply concentration creates geopolitical risk",
+        "impact": "Australia, Chile, China control 90%+",
+        "direction": "negative",
+        "children": [
+          { "label": "Resource nationalism threatens supply chains", "direction": "negative" },
+          { "label": "Price volatility from concentrated supply", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Water consumption per ton of lithium", "before": "N/A", "after": "500,000 gallons (brine)", "delta": "Massive in arid regions", "direction": "negative" },
+    { "metric": "Lithium demand growth", "before": "Baseline (2023)", "after": "5-7x by 2030", "delta": "+400-600%", "direction": "negative" },
+    { "metric": "Supply concentration", "before": "Diversified", "after": "3 countries control 90%+", "delta": "Critical dependency", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You're marketing EVs as zero-environmental-impact without accounting for supply chain",
+      "You're expanding brine extraction without water impact assessments in arid regions"
+    ],
+    "ifYouMust": [
+      "Invest in direct lithium extraction (DLE) technology to reduce water consumption",
+      "Mandate supply chain environmental audits for battery manufacturers",
+      "Develop lithium recycling infrastructure to reduce virgin extraction needs"
+    ],
+    "alternatives": [
+      { "name": "Sodium-ion batteries", "note": "Abundant sodium eliminates lithium dependency entirely" },
+      { "name": "Battery recycling", "note": "Recover lithium from end-of-life batteries — growing supply source" },
+      { "name": "LFP chemistry", "note": "Lithium iron phosphate uses less lithium per kWh than NMC" }
+    ]
+  },
+  "sources": [
+    { "title": "Nature Reviews: Environmental Impacts of Lithium Extraction", "url": "https://www.nature.com/articles/s41578-023-00527-x", "note": "Comprehensive review of lithium mining environmental costs" },
+    { "title": "IEA: Critical Minerals Market Review", "url": "https://www.iea.org/reports/critical-minerals-market-review-2023", "note": "Supply concentration and demand projections" },
+    { "title": "USGS: Lithium Statistics and Information", "url": "https://www.usgs.gov/centers/national-minerals-information-center/lithium-statistics-and-information", "note": "Production data and reserve estimates" }
+  ],
+  "falsifiability": [
+    "Lithium extraction methods achieve water-neutral operation in arid regions",
+    "Battery recycling scales fast enough to meet 50%+ of lithium demand by 2035",
+    "Alternative battery chemistries eliminate lithium dependency for mainstream EVs"
+  ],
+  "tags": ["lithium", "mining", "ev-batteries", "water-consumption", "environmental-paradox"],
+  "crossReferences": ["I003", "I014"],
+  "seo": {
+    "description": "Lithium extraction consumes 500,000 gallons of water per ton in Earth's driest regions. Demand grows 5-7x by 2030 while 3 countries control 90%+ of supply.",
+    "keywords": ["lithium mining environmental paradox", "ev battery hidden costs", "lithium mining second order effects"]
+  }
+}

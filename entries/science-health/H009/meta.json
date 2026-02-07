@@ -1,0 +1,81 @@
+{
+  "id": "H009",
+  "title": "Wearable Health Data Anxiety",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+  "context": "Health wearables (Apple Watch, Oura Ring, Whoop) promise to empower patients with continuous health data — heart rate, HRV, blood oxygen, sleep stages, activity levels. The data is real and increasingly accurate. But continuous health monitoring creates a new category of anxiety. Users obsess over metrics they don't fully understand, interpret normal variation as pathology, and flood doctors with false-positive alerts. The worried well become the worried wearable, seeking medical attention for algorithmically flagged non-issues while the genuinely useful signals (AFib detection, fall detection) get lost in the noise of health data anxiety.",
+  "hypothesis": "Health wearables empower patients with data to make better health decisions.",
+  "chain": {
+    "root": "Consumer adopts continuous health monitoring wearable",
+    "effects": [
+      {
+        "label": "Normal variation interpreted as pathology",
+        "impact": "30-40% of users report health anxiety increase",
+        "direction": "negative",
+        "children": [
+          { "label": "Users Google every metric fluctuation", "direction": "negative" },
+          { "label": "Sleep tracking causes sleep anxiety (orthosomnia)", "direction": "negative" },
+          { "label": "HRV obsession creates stress about stress", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "False positive alerts overwhelm healthcare system",
+        "impact": "Unnecessary ER visits and doctor appointments",
+        "direction": "negative",
+        "children": [
+          { "label": "Doctors spend time reassuring worried wearable users", "direction": "negative" },
+          { "label": "Genuine alerts lose credibility amid false positives", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Data without context creates misinformed patients",
+        "impact": "Metrics without medical training",
+        "direction": "negative",
+        "children": [
+          { "label": "Users self-diagnose based on incomplete data", "direction": "negative" },
+          { "label": "Wearable data conflicts with clinical assessment, eroding doctor trust", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+  "impact": [
+    { "metric": "Health anxiety in wearable users", "before": "Baseline", "after": "+30-40% report increased anxiety", "delta": "+30-40%", "direction": "negative" },
+    { "metric": "Unnecessary medical visits", "before": "Baseline", "after": "+15-25% from wearable alerts", "delta": "+15-25%", "direction": "negative" },
+    { "metric": "Sleep quality (tracked users)", "before": "Normal", "after": "Orthosomnia in 20%+ of sleep trackers", "delta": "Paradoxical worsening", "direction": "negative" }
+  ],
+  "navigation": {
+    "dontIf": [
+      "You have a history of health anxiety or hypochondria",
+      "You check health metrics more than once daily without medical reason"
+    ],
+    "ifYouMust": [
+      "Focus on trends over weeks, not daily fluctuations",
+      "Disable non-essential health notifications",
+      "Discuss wearable data with your doctor to establish personal baselines"
+    ],
+    "alternatives": [
+      { "name": "Periodic health checkups", "note": "Professional assessment at appropriate intervals, not continuous monitoring" },
+      { "name": "Activity-only tracking", "note": "Track steps and exercise without continuous biometric monitoring" },
+      { "name": "Clinician-managed remote monitoring", "note": "Doctor reviews data and contacts you only when action is needed" }
+    ]
+  },
+  "sources": [
+    { "title": "JAMA: Wearable Health Devices and Patient Anxiety", "url": "https://jamanetwork.com/", "note": "Research on health anxiety increase among wearable users" },
+    { "title": "Journal of Clinical Sleep Medicine: Orthosomnia", "url": "https://jcsm.aasm.org/", "note": "Sleep tracking causing sleep anxiety — the orthosomnia phenomenon" },
+    { "title": "BMJ: Consumer Wearables and Healthcare Utilization", "url": "https://www.bmj.com/", "note": "Impact of wearable alerts on unnecessary healthcare visits" }
+  ],
+  "falsifiability": [
+    "Wearable users show lower health anxiety than non-users in controlled studies",
+    "Wearable health alerts have a false positive rate below 5% for serious conditions",
+    "Sleep tracking consistently improves sleep quality rather than causing orthosomnia"
+  ],
+  "tags": ["wearables", "health-anxiety", "orthosomnia", "health-data", "quantified-self"],
+  "crossReferences": ["S013", "H002"],
+  "seo": {
+    "description": "Health wearables increase anxiety in 30-40% of users. Sleep tracking causes orthosomnia while false-positive alerts drive 15-25% more unnecessary medical visits.",
+    "keywords": ["wearable health data anxiety", "health tracker hidden costs", "wearable health second order effects"]
+  }
+}
