@@ -1,0 +1,94 @@
+{
+  "id": "A034",
+  "title": "AI Watermarking Arms Race",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "As AI-generated content floods the internet, watermarking is proposed as the solution — embed invisible signals in AI outputs so they can be detected later. Google's SynthID, OpenAI's text watermarking, and C2PA metadata standards all aim to make AI content identifiable. The logic seems sound: if we can detect AI content, we can maintain trust. But watermarking creates an arms race. Every watermarking technique can be defeated — paraphrasing removes text watermarks, image editing strips visual watermarks, and metadata can be stripped or forged. Worse, watermarking only works if all AI providers implement it, and open-source models have no obligation to do so. The arms race consumes engineering resources on both sides while providing a false sense of security that AI content is being tracked.",
+
+  "hypothesis": "Watermarks reliably detect AI-generated content and maintain trust.",
+
+  "chain": {
+    "root": "Implement AI content watermarking",
+    "effects": [
+      {
+        "label": "Watermark removal techniques emerge immediately",
+        "impact": "Each watermark defeated within weeks of deployment",
+        "direction": "negative",
+        "children": [
+          { "label": "Paraphrasing tools strip text watermarks", "direction": "negative" },
+          { "label": "Image editing removes visual watermarks", "direction": "negative" },
+          { "label": "Open-source models bypass watermarking entirely", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "False sense of security develops",
+        "impact": "Institutions trust watermark absence as proof of human origin",
+        "direction": "negative",
+        "children": [
+          { "label": "Unwatermarked AI content assumed to be human-created", "direction": "negative" },
+          { "label": "Human content falsely flagged as AI-generated", "direction": "negative" },
+          { "label": "Academic integrity systems produce false positives and negatives", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Engineering resources consumed by arms race",
+        "impact": "Billions invested in detection and evasion",
+        "direction": "negative",
+        "children": [
+          { "label": "Detection accuracy degrades as evasion improves", "direction": "negative" },
+          { "label": "Resources diverted from actual AI safety work", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Watermark detection accuracy", "before": "95%+ (lab conditions)", "after": "60-70% (adversarial conditions)", "delta": "-30%", "direction": "negative" },
+    { "metric": "False positive rate", "before": "Target <1%", "after": "5-15% in practice", "delta": "+10x", "direction": "negative" },
+    { "metric": "Open-source model compliance", "before": "Expected universal", "after": "<10% implement watermarking", "delta": "-90%", "direction": "negative" },
+    { "metric": "Time to defeat new watermark", "before": "N/A", "after": "Days to weeks", "delta": "Rapid", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're relying on watermarking as the sole mechanism for AI content detection",
+      "Your watermarking system hasn't been tested against adversarial removal techniques"
+    ],
+    "ifYouMust": [
+      "Layer watermarking with other provenance signals (C2PA, blockchain attestation)",
+      "Design watermarks that degrade gracefully rather than failing completely",
+      "Never treat watermark absence as proof of human origin",
+      "Invest in detection methods that don't rely on cooperative watermarking"
+    ],
+    "alternatives": [
+      { "name": "Content provenance chains (C2PA)", "note": "Cryptographic chain of custody from creation to publication" },
+      { "name": "Statistical detection methods", "note": "Detect AI patterns without relying on embedded watermarks" },
+      { "name": "Human attestation systems", "note": "Verified human identity attached to content creation" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Google DeepMind: SynthID Technical Report", "note": "Google's watermarking approach for AI-generated images and text, with acknowledged limitations" },
+    { "title": "University of Maryland: Watermark Removal Attacks", "note": "Research demonstrating multiple techniques for removing AI watermarks with minimal quality loss" },
+    { "title": "C2PA: Content Authenticity Initiative", "url": "https://c2pa.org/", "note": "Industry standard for content provenance that doesn't rely on watermarking alone" },
+    { "title": "OpenAI: Text Watermarking Challenges", "note": "OpenAI's own acknowledgment that text watermarking is easily defeated by paraphrasing" }
+  ],
+
+  "falsifiability": [
+    "AI watermarking achieves 95%+ detection accuracy under adversarial conditions for 2+ years",
+    "Open-source AI models voluntarily adopt watermarking at rates above 50%",
+    "Watermark removal techniques fail to defeat new watermarking methods within 6 months of deployment"
+  ],
+
+  "tags": ["ai", "watermarking", "content-authenticity", "arms-race", "detection", "provenance"],
+  "crossReferences": ["A004", "A011", "A031"],
+
+  "seo": {
+    "description": "AI watermarking creates an arms race — each technique defeated within weeks. Detection drops from 95% to 60-70% under adversarial conditions while open-source models bypass it entirely.",
+    "keywords": ["ai watermarking arms race", "ai content detection hidden costs", "ai watermarking second order effects"]
+  }
+}

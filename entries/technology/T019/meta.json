@@ -1,0 +1,94 @@
+{
+  "id": "T019",
+  "title": "Zero Trust Implementation Tax",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Zero trust security — 'never trust, always verify' — replaces the traditional perimeter model where everything inside the network is trusted. The concept is sound: assume breach, verify every request, enforce least privilege. But implementing zero trust in an existing organization is a multi-year, multi-million dollar undertaking. Every service needs identity-aware access. Every network flow needs policy enforcement. Every legacy application needs retrofitting. Developer productivity drops as authentication and authorization checks multiply. The security team becomes a bottleneck as every new service requires policy configuration. Organizations often implement zero trust partially — adding friction without completing the security model — creating the worst of both worlds: slower development with incomplete protection.",
+
+  "hypothesis": "Zero trust improves security posture and prevents breaches.",
+
+  "chain": {
+    "root": "Implement zero trust security architecture",
+    "effects": [
+      {
+        "label": "Developer productivity decreases during transition",
+        "impact": "-20-30% velocity during implementation",
+        "direction": "negative",
+        "children": [
+          { "label": "Every service interaction requires authentication configuration", "direction": "negative" },
+          { "label": "Local development environments break without proper identity setup", "direction": "negative" },
+          { "label": "Debugging network issues becomes harder with encrypted service mesh", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Partial implementation creates false security",
+        "impact": "70% of orgs stall at partial zero trust",
+        "direction": "negative",
+        "children": [
+          { "label": "Legacy systems exempted from zero trust create backdoors", "direction": "negative" },
+          { "label": "Friction added without completing the security model", "direction": "negative" },
+          { "label": "Security team declares victory prematurely", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Vendor lock-in through security infrastructure",
+        "impact": "Zero trust platforms deeply embedded in all services",
+        "direction": "negative",
+        "children": [
+          { "label": "Switching identity providers requires touching every service", "direction": "negative" },
+          { "label": "Annual licensing costs compound as coverage expands", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Developer velocity during transition", "before": "Baseline", "after": "-20-30%", "delta": "-25%", "direction": "negative" },
+    { "metric": "Security posture (complete implementation)", "before": "Perimeter-based", "after": "Significantly improved", "delta": "+60%", "direction": "positive" },
+    { "metric": "Implementation timeline", "before": "Estimated 6-12 months", "after": "Actual 2-5 years", "delta": "+300%", "direction": "negative" },
+    { "metric": "Annual security tooling cost", "before": "Perimeter tools", "after": "+200-400% for zero trust stack", "delta": "+300%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're planning to implement zero trust in under a year for a large organization",
+      "You have significant legacy systems that can't be retrofitted"
+    ],
+    "ifYouMust": [
+      "Start with identity and access management before network segmentation",
+      "Implement incrementally — new services first, legacy last",
+      "Maintain developer experience tooling that abstracts zero trust complexity",
+      "Set realistic timelines — 2-5 years for full implementation"
+    ],
+    "alternatives": [
+      { "name": "Enhanced perimeter + microsegmentation", "note": "Strengthen existing model with internal segmentation" },
+      { "name": "Zero trust for new services only", "note": "Apply zero trust to greenfield, leave legacy on enhanced perimeter" },
+      { "name": "BeyondCorp-lite", "note": "Identity-aware proxy for web apps without full zero trust infrastructure" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Google BeyondCorp Papers", "url": "https://cloud.google.com/beyondcorp", "note": "Google's zero trust implementation took 6+ years and required custom infrastructure" },
+    { "title": "Forrester: Zero Trust Implementation Survey", "note": "Survey showing 70% of organizations stall at partial zero trust implementation" },
+    { "title": "NIST SP 800-207: Zero Trust Architecture", "note": "Federal standard defining zero trust principles and implementation guidance" },
+    { "title": "Gartner: Zero Trust Market Guide", "note": "Analysis of zero trust vendor landscape and implementation costs" }
+  ],
+
+  "falsifiability": [
+    "Organizations implement full zero trust in under 12 months without productivity loss",
+    "Partial zero trust implementations provide security benefits proportional to their coverage",
+    "Zero trust implementation costs are offset by reduced breach costs within 2 years"
+  ],
+
+  "tags": ["zero-trust", "security", "implementation", "developer-experience", "infrastructure"],
+  "crossReferences": ["T030", "T005", "T018"],
+
+  "seo": {
+    "description": "Zero trust implementation takes 2-5 years vs the 6-12 months estimated. Developer velocity drops 25% while 70% of organizations stall at partial implementation.",
+    "keywords": ["zero trust implementation tax", "zero trust hidden costs", "zero trust second order effects"]
+  }
+}

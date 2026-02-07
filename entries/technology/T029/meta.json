@@ -1,0 +1,94 @@
+{
+  "id": "T029",
+  "title": "Migration Halfway House",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Teams plan incremental migrations — move from monolith to microservices, from REST to GraphQL, from one database to another — one piece at a time. The plan sounds responsible: reduce risk by migrating gradually. But incremental migrations create a prolonged state where both old and new systems coexist. This halfway house is the worst of both worlds. Engineers must understand and maintain two systems. Data flows through compatibility layers that add latency and bugs. New features must work in both paradigms. The migration stalls at 60-70% completion because the remaining 30% is the hardest, least-rewarding work. The organization lives in the halfway house for years, paying the tax of dual systems while getting the benefits of neither.",
+
+  "hypothesis": "Incremental migration reduces risk compared to big-bang migration.",
+
+  "chain": {
+    "root": "Begin incremental system migration",
+    "effects": [
+      {
+        "label": "Dual-system maintenance for extended period",
+        "impact": "Both old and new systems must be maintained simultaneously",
+        "direction": "negative",
+        "children": [
+          { "label": "Engineers must understand both systems", "direction": "negative" },
+          { "label": "Compatibility layers add latency and bugs", "direction": "negative" },
+          { "label": "Operational complexity doubles during migration", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Migration stalls at 60-70% completion",
+        "impact": "Remaining 30% is hardest and least rewarding",
+        "direction": "negative",
+        "children": [
+          { "label": "Easy migrations done first, hard ones deferred", "direction": "negative" },
+          { "label": "Business pressure redirects engineers to features", "direction": "negative" },
+          { "label": "Migration champion leaves, momentum dies", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "New features must work in both paradigms",
+        "impact": "Feature development 40-60% slower during migration",
+        "direction": "negative",
+        "children": [
+          { "label": "Every feature requires dual implementation or compatibility", "direction": "negative" },
+          { "label": "Testing matrix doubles across old and new systems", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Migration completion rate", "before": "100% planned", "after": "60-70% actual", "delta": "-35%", "direction": "negative" },
+    { "metric": "Migration timeline", "before": "6-12 months estimated", "after": "2-4 years actual", "delta": "+300%", "direction": "negative" },
+    { "metric": "Feature velocity during migration", "before": "Baseline", "after": "-40-60%", "delta": "-50%", "direction": "negative" },
+    { "metric": "Operational complexity", "before": "One system", "after": "Two systems + compatibility layer", "delta": "+150%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You don't have a hard deadline and dedicated team for completing the migration",
+      "The migration doesn't have executive sponsorship that survives priority changes"
+    ],
+    "ifYouMust": [
+      "Set a hard completion deadline and cut scope rather than extending timeline",
+      "Dedicate a team to migration — don't split engineers between migration and features",
+      "Migrate the hardest components first, not last",
+      "Define 'done' clearly — what gets turned off and when"
+    ],
+    "alternatives": [
+      { "name": "Strangler fig pattern", "note": "Route new traffic to new system, let old system die naturally" },
+      { "name": "Big-bang with rollback", "note": "Migrate everything at once with a tested rollback plan" },
+      { "name": "Don't migrate", "note": "Sometimes the cost of migration exceeds the benefit — invest in the existing system" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Martin Fowler: Strangler Fig Application", "url": "https://martinfowler.com/bliki/StranglerFigApplication.html", "note": "Pattern for incremental migration that avoids the halfway house problem" },
+    { "title": "Charity Majors: The Migration Tax", "note": "Analysis of how migrations consume engineering capacity for years beyond estimates" },
+    { "title": "Shopify: Modular Monolith Migration", "note": "Shopify's experience with a multi-year migration that required dedicated teams" },
+    { "title": "Uber Engineering: Microservice Migration Lessons", "note": "Uber's documentation of the prolonged dual-system state during their migration" }
+  ],
+
+  "falsifiability": [
+    "Incremental migrations consistently complete within 150% of their estimated timeline",
+    "Dual-system operation during migration doesn't measurably reduce feature velocity",
+    "Migration completion rates exceed 90% without dedicated migration teams"
+  ],
+
+  "tags": ["migration", "technical-debt", "dual-systems", "architecture", "incremental", "risk"],
+  "crossReferences": ["T010", "T002", "T003"],
+
+  "seo": {
+    "description": "Incremental migrations stall at 60-70% completion, creating a halfway house where both systems must be maintained. Feature velocity drops 50% for 2-4 years instead of the planned 6-12 months.",
+    "keywords": ["migration halfway house", "incremental migration hidden costs", "system migration second order effects"]
+  }
+}

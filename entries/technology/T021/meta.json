@@ -1,0 +1,94 @@
+{
+  "id": "T021",
+  "title": "API Versioning Graveyard",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Teams version their APIs to maintain backward compatibility — v1, v2, v3. Each version promises to keep existing integrations working while new features ship on the latest version. The intent is good: don't break your consumers. But API versions rarely get deprecated. Consumers don't migrate because migration has cost and no user-facing benefit. The API team now maintains 3-5 versions simultaneously. Bug fixes must be backported. Security patches must be applied to all versions. New features must work across version boundaries. The engineering cost of maintaining the graveyard of old API versions grows linearly while the team size stays flat. Eventually, the oldest versions become unmaintainable — the engineers who built them have left, the code is undocumented, and the consumers who depend on them are the ones least likely to migrate.",
+
+  "hypothesis": "API versioning maintains backward compatibility and keeps consumers happy.",
+
+  "chain": {
+    "root": "Implement API versioning for backward compatibility",
+    "effects": [
+      {
+        "label": "Old versions never get deprecated",
+        "impact": "3-5 versions maintained simultaneously",
+        "direction": "negative",
+        "children": [
+          { "label": "Consumers have no incentive to migrate", "direction": "negative" },
+          { "label": "Deprecation announcements ignored for years", "direction": "negative" },
+          { "label": "Largest consumers are on oldest versions and hardest to move", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Maintenance cost grows linearly with versions",
+        "impact": "Each version requires bug fixes, security patches, monitoring",
+        "direction": "negative",
+        "children": [
+          { "label": "Bug fixes backported across all active versions", "direction": "negative" },
+          { "label": "Security patches must cover all versions", "direction": "negative" },
+          { "label": "Testing matrix multiplies with each version", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Innovation velocity decreases",
+        "impact": "New features constrained by old version compatibility",
+        "direction": "negative",
+        "children": [
+          { "label": "Data model changes blocked by v1 assumptions", "direction": "negative" },
+          { "label": "Engineering time spent on compatibility, not features", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "API versions maintained", "before": "1", "after": "3-5 simultaneously", "delta": "+400%", "direction": "negative" },
+    { "metric": "Engineering time on version maintenance", "before": "0%", "after": "20-30% of API team", "delta": "+25%", "direction": "negative" },
+    { "metric": "Consumer migration rate", "before": "Expected 80%/yr", "after": "Actual 10-20%/yr", "delta": "-75%", "direction": "negative" },
+    { "metric": "Feature velocity", "before": "Baseline", "after": "-30% due to version constraints", "delta": "-30%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're creating a new API version for every breaking change instead of batching them",
+      "You have no deprecation timeline or enforcement mechanism"
+    ],
+    "ifYouMust": [
+      "Set hard deprecation dates with contractual enforcement",
+      "Provide automated migration tools for consumers",
+      "Use additive-only changes to avoid versioning when possible",
+      "Charge premium support rates for deprecated API versions"
+    ],
+    "alternatives": [
+      { "name": "Additive API evolution", "note": "Add new fields/endpoints without breaking existing ones — no versions needed" },
+      { "name": "GraphQL", "note": "Clients request exactly what they need — schema evolution without versioning" },
+      { "name": "Consumer-driven contracts", "note": "Test against actual consumer usage, not assumed compatibility" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Stripe API Versioning Strategy", "url": "https://stripe.com/blog/api-versioning", "note": "Stripe maintains 100+ API versions through automated compatibility layers" },
+    { "title": "Google API Design Guide: Versioning", "note": "Google's approach to API versioning and the challenges of deprecation at scale" },
+    { "title": "Thoughtworks: API Versioning Anti-Patterns", "note": "Common mistakes in API versioning that lead to maintenance burden" },
+    { "title": "Postman State of APIs Report", "note": "Survey data showing API version deprecation timelines are rarely met" }
+  ],
+
+  "falsifiability": [
+    "API consumers consistently migrate to new versions within the announced deprecation timeline",
+    "Maintaining multiple API versions costs less than 10% of API team engineering time",
+    "API versioning doesn't constrain feature development velocity compared to unversioned APIs"
+  ],
+
+  "tags": ["api", "versioning", "backward-compatibility", "maintenance", "technical-debt"],
+  "crossReferences": ["T002", "T007", "T013"],
+
+  "seo": {
+    "description": "API versions accumulate but never die. Teams maintain 3-5 versions simultaneously, spending 20-30% of engineering time on compatibility while consumers refuse to migrate.",
+    "keywords": ["api versioning graveyard", "api versioning hidden costs", "api backward compatibility second order effects"]
+  }
+}

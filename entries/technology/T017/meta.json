@@ -1,0 +1,94 @@
+{
+  "id": "T017",
+  "title": "Real-Time Everything Syndrome",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Product teams demand real-time updates for everything — live dashboards, instant notifications, real-time collaboration, streaming analytics. The assumption is that users expect real-time and anything less feels broken. So engineering teams build WebSocket connections, event streaming pipelines, and push notification systems for features where polling every 30 seconds would be indistinguishable to users. The infrastructure cost of real-time is 5-10x higher than batch or polling. Connection management at scale is a distributed systems problem. Every real-time feature adds persistent connections that consume server resources even when idle. The result: massive infrastructure spend for features where users wouldn't notice a 30-second delay, and engineering complexity that slows down every subsequent feature.",
+
+  "hypothesis": "Users expect real-time updates and anything less feels broken.",
+
+  "chain": {
+    "root": "Build real-time infrastructure for all features",
+    "effects": [
+      {
+        "label": "Infrastructure costs 5-10x higher than polling",
+        "impact": "Persistent connections consume resources when idle",
+        "direction": "negative",
+        "children": [
+          { "label": "WebSocket connection management at scale is complex", "direction": "negative" },
+          { "label": "Server resources consumed by idle connections", "direction": "negative" },
+          { "label": "Scaling WebSockets requires specialized infrastructure", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Engineering complexity compounds",
+        "impact": "Every feature must handle real-time state sync",
+        "direction": "negative",
+        "children": [
+          { "label": "Conflict resolution for concurrent edits", "direction": "negative" },
+          { "label": "Offline/reconnection handling adds edge cases", "direction": "negative" },
+          { "label": "Testing real-time features is significantly harder", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "User experience often not improved",
+        "impact": "Most features don't benefit from sub-second updates",
+        "direction": "neutral",
+        "children": [
+          { "label": "Dashboard data that updates every 30s vs instantly — users can't tell", "direction": "neutral" },
+          { "label": "Notification fatigue from too-frequent updates", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Infrastructure cost", "before": "Polling baseline", "after": "5-10x for real-time", "delta": "+700%", "direction": "negative" },
+    { "metric": "Feature development time", "before": "Baseline", "after": "+40-60% for real-time features", "delta": "+50%", "direction": "negative" },
+    { "metric": "User-perceived improvement", "before": "30s polling", "after": "Instant updates", "delta": "Minimal for most features", "direction": "neutral" },
+    { "metric": "System complexity", "before": "Request-response", "after": "Bidirectional streaming", "delta": "+300%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your users wouldn't notice a 30-second delay in the data you're making real-time",
+      "You don't have the engineering capacity to maintain real-time infrastructure"
+    ],
+    "ifYouMust": [
+      "Measure whether users actually benefit from real-time before building it",
+      "Use Server-Sent Events instead of WebSockets for one-directional updates",
+      "Implement graceful degradation to polling when real-time connections fail",
+      "Set connection idle timeouts to reclaim server resources"
+    ],
+    "alternatives": [
+      { "name": "Smart polling", "note": "Poll at intervals appropriate to the data freshness requirement" },
+      { "name": "Optimistic UI", "note": "Show instant local updates while syncing in background" },
+      { "name": "Selective real-time", "note": "Real-time only for features where latency matters (chat, collaboration)" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Slack Engineering: Scaling WebSockets", "note": "Slack's challenges maintaining millions of persistent WebSocket connections" },
+    { "title": "Discord Engineering: Real-Time at Scale", "note": "Infrastructure costs and complexity of maintaining real-time for millions of concurrent users" },
+    { "title": "Nielsen Norman Group: Response Time Limits", "url": "https://www.nngroup.com/articles/response-times-3-important-limits/", "note": "Research showing users perceive delays under 1 second as instantaneous" },
+    { "title": "Figma Engineering: Multiplayer Infrastructure", "note": "The significant engineering investment required for real-time collaboration" }
+  ],
+
+  "falsifiability": [
+    "Users consistently prefer and engage more with real-time features compared to 30-second polling equivalents",
+    "Real-time infrastructure costs scale linearly with users rather than superlinearly",
+    "Engineering teams maintain real-time features with the same velocity as polling-based features"
+  ],
+
+  "tags": ["real-time", "websockets", "infrastructure", "over-engineering", "performance", "cost"],
+  "crossReferences": ["T008", "T002", "T014"],
+
+  "seo": {
+    "description": "Real-time infrastructure costs 5-10x more than polling for features where users can't tell the difference. Engineering complexity compounds while user experience barely improves.",
+    "keywords": ["real-time everything syndrome", "websocket hidden costs", "real-time infrastructure second order effects"]
+  }
+}

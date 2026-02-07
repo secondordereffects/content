@@ -1,0 +1,94 @@
+{
+  "id": "O002",
+  "title": "OKR Goodhart Spiral",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "OKRs (Objectives and Key Results) promise alignment — everyone knows what matters and how to measure progress. Google popularized them, so they must work. But OKRs are subject to Goodhart's Law: when a measure becomes a target, it ceases to be a good measure. Teams optimize for the key result metric rather than the objective it was supposed to represent. 'Increase user engagement' becomes 'increase time on site' which becomes dark patterns that trap users. 'Improve code quality' becomes 'increase test coverage' which becomes meaningless tests that cover lines without testing behavior. The quarterly OKR cycle creates a planning tax — weeks spent negotiating targets, mid-quarter check-ins, end-of-quarter reviews — that consumes 10-15% of productive time. And because OKRs are public, teams sandbag targets to ensure they hit 70%, the magic number that signals 'ambitious but achievable.'",
+
+  "hypothesis": "OKRs create alignment and drive measurable progress toward goals.",
+
+  "chain": {
+    "root": "Implement OKR framework across organization",
+    "effects": [
+      {
+        "label": "Goodhart's Law corrupts key results",
+        "impact": "Teams optimize metrics, not outcomes",
+        "direction": "negative",
+        "children": [
+          { "label": "Engagement metrics gamed through dark patterns", "direction": "negative" },
+          { "label": "Quality metrics gamed through meaningless tests", "direction": "negative" },
+          { "label": "Revenue metrics gamed through unsustainable discounting", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Quarterly planning tax consumes productive time",
+        "impact": "10-15% of time on OKR process",
+        "direction": "negative",
+        "children": [
+          { "label": "Weeks spent negotiating targets each quarter", "direction": "negative" },
+          { "label": "Mid-quarter reviews and end-of-quarter retrospectives", "direction": "negative" },
+          { "label": "Cross-team OKR alignment meetings multiply", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Sandbagging becomes rational behavior",
+        "impact": "Teams set achievable targets, not ambitious ones",
+        "direction": "negative",
+        "children": [
+          { "label": "70% achievement target incentivizes conservative goals", "direction": "negative" },
+          { "label": "Truly ambitious objectives avoided because failure is visible", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Time spent on OKR process", "before": "0%", "after": "10-15% of productive time", "delta": "+12%", "direction": "negative" },
+    { "metric": "Metric gaming incidents", "before": "Baseline", "after": "Increases with OKR maturity", "delta": "+40%", "direction": "negative" },
+    { "metric": "Goal ambition level", "before": "Varies", "after": "Converges to 'safely achievable'", "delta": "-30%", "direction": "negative" },
+    { "metric": "Cross-team alignment", "before": "Low", "after": "Improved (when OKRs are honest)", "delta": "+20%", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your key results can be gamed without achieving the actual objective",
+      "Your OKR process takes more than 5% of team time per quarter"
+    ],
+    "ifYouMust": [
+      "Pair quantitative key results with qualitative health metrics",
+      "Rotate metrics quarterly to prevent gaming",
+      "Separate OKRs from performance reviews to reduce sandbagging",
+      "Keep the process lightweight — if OKR planning takes weeks, you're doing it wrong"
+    ],
+    "alternatives": [
+      { "name": "North Star Metric + bets", "note": "One metric that matters, with explicit bets on how to move it" },
+      { "name": "Outcome-based roadmaps", "note": "Define desired outcomes, let teams choose how to achieve them" },
+      { "name": "Continuous prioritization", "note": "Weekly priority reviews instead of quarterly OKR cycles" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Charles Goodhart: Goodhart's Law", "note": "Original formulation: 'When a measure becomes a target, it ceases to be a good measure'" },
+    { "title": "Christina Wodtke: Radical Focus", "note": "OKR practitioner documenting common failure modes and gaming patterns" },
+    { "title": "Marty Cagan: Empowered", "note": "Critique of how OKRs are misused as feature delivery tracking rather than outcome measurement" },
+    { "title": "Harvard Business Review: The Dark Side of OKRs", "note": "Research on how OKR systems create perverse incentives and gaming behavior" }
+  ],
+
+  "falsifiability": [
+    "Organizations using OKRs show measurably better outcomes than those using alternative goal-setting frameworks",
+    "Key result metrics remain valid measures of progress even after becoming targets",
+    "OKR planning processes consistently take less than 5% of team time per quarter"
+  ],
+
+  "tags": ["okrs", "goal-setting", "goodharts-law", "metrics", "organizational-design", "planning"],
+  "crossReferences": ["O005", "O008", "T011"],
+
+  "seo": {
+    "description": "OKRs consume 10-15% of productive time while Goodhart's Law corrupts key results. Teams optimize metrics through gaming rather than achieving actual objectives.",
+    "keywords": ["okr goodhart spiral", "okr hidden costs", "okr second order effects"]
+  }
+}

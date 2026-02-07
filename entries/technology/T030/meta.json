@@ -1,0 +1,95 @@
+{
+  "id": "T030",
+  "title": "Security Compliance Theater",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Companies pursue SOC 2, ISO 27001, and other security certifications to win enterprise deals and demonstrate security maturity. The compliance process requires documenting policies, implementing controls, and passing audits. But compliance and security are different things. SOC 2 audits check that you have policies and follow them — not that your policies are good. Companies pass audits with checkbox controls that don't meaningfully improve security. Password rotation policies that lead to weaker passwords. Access reviews that rubber-stamp existing permissions. Vulnerability scans that produce reports nobody reads. The compliance process consumes 3-6 months of engineering time annually while creating a false sense of security. The badge on the website says 'SOC 2 Type II' but the actual security posture may be unchanged.",
+
+  "hypothesis": "SOC 2 certification means the company is secure.",
+
+  "chain": {
+    "root": "Pursue security compliance certification",
+    "effects": [
+      {
+        "label": "Checkbox controls replace meaningful security",
+        "impact": "Policies exist but don't improve actual security",
+        "direction": "negative",
+        "children": [
+          { "label": "Password rotation creates weaker passwords", "direction": "negative" },
+          { "label": "Access reviews rubber-stamp existing permissions", "direction": "negative" },
+          { "label": "Vulnerability reports generated but not acted on", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Engineering time consumed by compliance process",
+        "impact": "3-6 months of engineering time annually",
+        "direction": "negative",
+        "children": [
+          { "label": "Evidence collection for auditors is manual and tedious", "direction": "negative" },
+          { "label": "Policy documentation maintained for auditors, not for security", "direction": "negative" },
+          { "label": "Compliance tools add cost without security value", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "False sense of security develops",
+        "impact": "Compliance badge treated as proof of security",
+        "direction": "negative",
+        "children": [
+          { "label": "Leadership deprioritizes security investment after certification", "direction": "negative" },
+          { "label": "Customers assume compliance means security", "direction": "negative" },
+          { "label": "Actual security gaps persist behind compliance facade", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Annual compliance cost", "before": "Zero", "after": "$50K-500K (audit + tooling + time)", "delta": "New cost", "direction": "negative" },
+    { "metric": "Engineering time on compliance", "before": "0%", "after": "10-15% annually", "delta": "+12%", "direction": "negative" },
+    { "metric": "Actual security posture improvement", "before": "Baseline", "after": "Minimal beyond what was already planned", "delta": "+5-10%", "direction": "neutral" },
+    { "metric": "Enterprise deal closure rate", "before": "Blocked by compliance requirement", "after": "Unblocked", "delta": "Significant", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're pursuing compliance as a substitute for actual security investment",
+      "Your compliance controls are designed to pass audits rather than prevent breaches"
+    ],
+    "ifYouMust": [
+      "Use compliance as a floor, not a ceiling — build real security on top",
+      "Automate evidence collection to reduce the annual compliance tax",
+      "Align compliance controls with actual threat model, not just audit requirements",
+      "Invest in security testing (pentests, red teams) alongside compliance"
+    ],
+    "alternatives": [
+      { "name": "Threat-model-driven security", "note": "Invest in security based on actual threats, not compliance checklists" },
+      { "name": "Continuous security validation", "note": "Automated security testing that runs continuously, not annually" },
+      { "name": "Bug bounty programs", "note": "Real-world security testing by motivated researchers" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Verizon Data Breach Investigations Report", "note": "Majority of breached companies were compliant with relevant security standards at time of breach" },
+    { "title": "AICPA: SOC 2 Framework Limitations", "note": "The standard body's own acknowledgment that SOC 2 tests controls, not security outcomes" },
+    { "title": "Bruce Schneier: Compliance vs Security", "note": "Security expert's analysis of how compliance creates false confidence" },
+    { "title": "Drata/Vanta Market Analysis", "note": "Compliance automation market growing to $10B+, indicating the scale of the compliance tax" }
+  ],
+
+  "falsifiability": [
+    "SOC 2 certified companies experience fewer breaches than non-certified companies of similar size",
+    "Compliance controls consistently prevent the types of breaches that actually occur",
+    "Companies report that compliance processes improve their actual security posture rather than just documentation"
+  ],
+
+  "tags": ["security", "compliance", "soc2", "theater", "audit", "enterprise"],
+  "crossReferences": ["T019", "T011", "P022"],
+
+  "seo": {
+    "description": "SOC 2 costs $50K-500K annually and consumes 10-15% of engineering time. Most breached companies were compliant — compliance tests controls, not actual security.",
+    "keywords": ["security compliance theater", "soc 2 hidden costs", "security compliance second order effects"]
+  }
+}

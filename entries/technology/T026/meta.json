@@ -1,0 +1,94 @@
+{
+  "id": "T026",
+  "title": "Platform Engineering Overhead",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Organizations create platform engineering teams to build internal developer platforms — golden paths for deployment, standardized tooling, self-service infrastructure. The goal is to accelerate product teams by abstracting away infrastructure complexity. But platform teams face a fundamental tension: they're building a product for internal customers who can't leave. Without market pressure, platform teams build what they think developers need rather than what developers actually need. The platform becomes opinionated in ways that don't match real workflows. Product teams work around the platform rather than through it. The platform team grows to 10-15% of engineering headcount, consuming resources that could ship customer-facing features. The abstraction that was supposed to simplify becomes another layer of complexity that developers must learn and navigate.",
+
+  "hypothesis": "Platform teams accelerate developers by providing standardized tooling.",
+
+  "chain": {
+    "root": "Create internal platform engineering team",
+    "effects": [
+      {
+        "label": "Platform doesn't match actual developer workflows",
+        "impact": "30-40% of product teams work around the platform",
+        "direction": "negative",
+        "children": [
+          { "label": "Platform team builds for ideal workflow, not real workflow", "direction": "negative" },
+          { "label": "No market pressure forces platform to improve", "direction": "negative" },
+          { "label": "Product teams maintain shadow infrastructure", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Platform team consumes significant engineering headcount",
+        "impact": "10-15% of engineering on internal tooling",
+        "direction": "negative",
+        "children": [
+          { "label": "Resources diverted from customer-facing features", "direction": "negative" },
+          { "label": "Platform team grows to justify its existence", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "New abstraction layer adds learning curve",
+        "impact": "Developers must learn platform on top of underlying tools",
+        "direction": "negative",
+        "children": [
+          { "label": "Platform abstractions leak, requiring knowledge of both layers", "direction": "negative" },
+          { "label": "Debugging through platform abstraction is harder than direct tool use", "direction": "negative" },
+          { "label": "New hires must learn proprietary platform before being productive", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Engineering headcount on platform", "before": "0%", "after": "10-15%", "delta": "+12%", "direction": "negative" },
+    { "metric": "Platform adoption rate", "before": "Expected 90%+", "after": "60-70% actual", "delta": "-25%", "direction": "negative" },
+    { "metric": "Developer onboarding time", "before": "Learn standard tools", "after": "Learn standard tools + proprietary platform", "delta": "+40%", "direction": "negative" },
+    { "metric": "Deployment speed (adopters)", "before": "Manual process", "after": "Self-service", "delta": "+60%", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your engineering org is under 50 people — the overhead isn't justified",
+      "You're building a platform without continuous feedback from product teams"
+    ],
+    "ifYouMust": [
+      "Treat the platform as a product with internal customers who can provide feedback",
+      "Start with the highest-friction developer pain points, not a grand vision",
+      "Measure platform adoption and satisfaction quarterly — low adoption is a signal",
+      "Keep the platform team small and focused — 5% of engineering, not 15%"
+    ],
+    "alternatives": [
+      { "name": "Curated tool recommendations", "note": "Recommend and support standard tools rather than building abstractions" },
+      { "name": "Embedded SRE model", "note": "Infrastructure expertise embedded in product teams rather than centralized" },
+      { "name": "Documentation-first platform", "note": "Golden path as documentation and templates, not custom tooling" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Thoughtworks Technology Radar: Platform Engineering", "note": "Analysis of platform engineering adoption patterns and common failure modes" },
+    { "title": "Gartner: Platform Engineering Hype Cycle", "note": "Prediction that 80% of platform engineering teams will fail to meet adoption targets" },
+    { "title": "Spotify: Backstage and Platform Lessons", "note": "Spotify's experience building and open-sourcing their internal developer platform" },
+    { "title": "Team Topologies: Platform Teams", "note": "Framework for when platform teams add value vs when they add overhead" }
+  ],
+
+  "falsifiability": [
+    "Internal platform teams achieve 90%+ adoption among product teams within 12 months",
+    "Platform engineering reduces total engineering headcount needed for equivalent output",
+    "Developers prefer proprietary internal platforms over direct use of standard tools"
+  ],
+
+  "tags": ["platform-engineering", "developer-experience", "internal-tools", "overhead", "abstraction"],
+  "crossReferences": ["T002", "O015", "T012"],
+
+  "seo": {
+    "description": "Platform engineering teams consume 10-15% of engineering headcount while 30-40% of product teams work around the platform. The abstraction adds complexity rather than removing it.",
+    "keywords": ["platform engineering overhead", "internal platform hidden costs", "platform engineering second order effects"]
+  }
+}

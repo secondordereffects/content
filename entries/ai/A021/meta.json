@@ -1,0 +1,94 @@
+{
+  "id": "A021",
+  "title": "Voice AI Uncanny Valley",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.70,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Voice AI systems — from customer service bots to AI companions — are approaching human-like fluency. They handle tone, pacing, and even emotional inflection. Companies deploy them to reduce call center costs by 60-80%. But as voice AI gets closer to human without being human, it enters the uncanny valley. Users feel uneasy when they can't tell if they're talking to a person or a machine. Trust erodes when the deception is revealed. Elderly and vulnerable populations are particularly susceptible to manipulation by convincing voice AI. The technology also enables voice cloning for fraud — a 3-second audio sample is enough to clone a voice convincingly. The same capability that makes customer service cheaper makes social engineering attacks dramatically more effective.",
+
+  "hypothesis": "Voice AI provides natural, efficient interaction that users prefer.",
+
+  "chain": {
+    "root": "Deploy human-like voice AI at scale",
+    "effects": [
+      {
+        "label": "Users can't distinguish AI from human",
+        "impact": "Trust erodes when deception revealed",
+        "direction": "negative",
+        "children": [
+          { "label": "Users feel manipulated when they discover they spoke to AI", "direction": "negative" },
+          { "label": "Disclosure requirements create awkward interaction starts", "direction": "negative" },
+          { "label": "Elderly populations particularly vulnerable to voice AI manipulation", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Voice cloning enables new fraud vectors",
+        "impact": "3-second sample enough to clone a voice",
+        "direction": "negative",
+        "children": [
+          { "label": "Family emergency scams using cloned voices of relatives", "direction": "negative" },
+          { "label": "CEO fraud calls become indistinguishable from real", "direction": "negative" },
+          { "label": "Voice authentication systems compromised", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Human call center jobs eliminated",
+        "impact": "-60-80% call center workforce",
+        "direction": "negative",
+        "children": [
+          { "label": "Millions of jobs in developing economies at risk", "direction": "negative" },
+          { "label": "Complex emotional support interactions degraded", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Call center cost", "before": "$6-12 per call", "after": "$0.50-1.00 per call", "delta": "-90%", "direction": "positive" },
+    { "metric": "Voice fraud incidents", "before": "Baseline", "after": "+300% since voice cloning availability", "delta": "+300%", "direction": "negative" },
+    { "metric": "Customer trust (post-disclosure)", "before": "High (human agent)", "after": "-40% when AI revealed", "delta": "-40%", "direction": "negative" },
+    { "metric": "Call center employment", "before": "17M globally", "after": "Projected -60%", "delta": "-10M jobs", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your voice AI is designed to deceive users into thinking they're speaking with a human",
+      "You're deploying voice AI for sensitive conversations without human escalation paths"
+    ],
+    "ifYouMust": [
+      "Disclose AI identity at the start of every interaction",
+      "Provide instant human escalation for complex or emotional situations",
+      "Implement voice authentication that can detect cloned voices",
+      "Design distinct AI voice characteristics that are pleasant but clearly non-human"
+    ],
+    "alternatives": [
+      { "name": "AI-assisted human agents", "note": "AI handles research and suggestions while humans maintain the conversation" },
+      { "name": "Transparent AI voice design", "note": "Deliberately non-human voice that's helpful without being deceptive" },
+      { "name": "Text-based AI with voice option", "note": "Default to chat, offer voice only with clear AI disclosure" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Google Duplex Controversy and Ethics Debate", "note": "Public backlash when Google demonstrated AI making phone calls without disclosing its nature" },
+    { "title": "FTC: AI Voice Cloning and Fraud", "note": "Federal Trade Commission warnings about voice cloning enabling new categories of fraud" },
+    { "title": "McAfee: The Artificial Imposter Report", "note": "Research showing 77% of voice cloning scam targets lost money, with 3-second clone capability" },
+    { "title": "Gartner: Conversational AI Market Forecast", "note": "Projections for voice AI replacing 60-80% of routine call center interactions by 2027" }
+  ],
+
+  "falsifiability": [
+    "Users consistently prefer voice AI interactions over human agents even after knowing they're speaking to AI",
+    "Voice cloning fraud rates remain stable despite increasing availability of cloning technology",
+    "Voice AI achieves equivalent customer satisfaction scores to human agents for complex emotional interactions"
+  ],
+
+  "tags": ["voice-ai", "uncanny-valley", "fraud", "voice-cloning", "customer-service", "trust"],
+  "crossReferences": ["A013", "A011", "A009"],
+
+  "seo": {
+    "description": "Voice AI cuts call center costs 90% but enables voice cloning fraud up 300%. Customer trust drops 40% when AI identity is revealed after human-like interaction.",
+    "keywords": ["voice ai uncanny valley", "voice ai hidden costs", "voice cloning second order effects"]
+  }
+}

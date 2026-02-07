@@ -1,0 +1,94 @@
+{
+  "id": "T025",
+  "title": "Open Source Maintenance Burden",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Companies open-source their internal tools to build community, attract talent, and establish technical credibility. The launch gets stars, blog posts, and conference talks. But open-source maintenance is a permanent commitment that most organizations underestimate. Issues pile up. PRs from external contributors need review. Security vulnerabilities need patching. Documentation needs updating. The maintainers — usually the original authors — burn out within 1-2 years. The project enters a zombie state: too popular to abandon, too costly to maintain. Meanwhile, the company's internal fork diverges from the open-source version, creating two codebases to maintain. The community that was supposed to contribute becomes a support burden, filing issues faster than the team can triage them.",
+
+  "hypothesis": "Open sourcing builds community and reduces maintenance through contributions.",
+
+  "chain": {
+    "root": "Open-source internal tool or library",
+    "effects": [
+      {
+        "label": "Maintenance burden exceeds contribution value",
+        "impact": "90% of PRs need significant rework or rejection",
+        "direction": "negative",
+        "children": [
+          { "label": "External PRs require extensive review and context-sharing", "direction": "negative" },
+          { "label": "Issue triage becomes full-time job", "direction": "negative" },
+          { "label": "Feature requests diverge from internal needs", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Maintainer burnout within 1-2 years",
+        "impact": "Original authors leave or disengage",
+        "direction": "negative",
+        "children": [
+          { "label": "Emotional toll of community management underestimated", "direction": "negative" },
+          { "label": "Entitled users demand free support", "direction": "negative" },
+          { "label": "Maintainer guilt prevents clean abandonment", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Internal and open-source versions diverge",
+        "impact": "Two codebases to maintain",
+        "direction": "negative",
+        "children": [
+          { "label": "Internal features can't be open-sourced (proprietary dependencies)", "direction": "negative" },
+          { "label": "Community features don't meet internal quality bar", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Maintainer time on open-source", "before": "10% (estimated)", "after": "30-50% (actual)", "delta": "+300%", "direction": "negative" },
+    { "metric": "External contribution quality", "before": "Expected high", "after": "90% need rework", "delta": "-80%", "direction": "negative" },
+    { "metric": "Maintainer burnout rate", "before": "Normal", "after": "50%+ within 2 years", "delta": "+200%", "direction": "negative" },
+    { "metric": "Recruiting benefit", "before": "Significant", "after": "Moderate (diminishes over time)", "delta": "Front-loaded", "direction": "neutral" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You don't have dedicated maintainer time budgeted beyond the initial launch",
+      "Your internal version will diverge significantly from what you open-source"
+    ],
+    "ifYouMust": [
+      "Budget 30-50% of a full-time engineer for maintenance before launching",
+      "Set clear contribution guidelines and scope boundaries from day one",
+      "Plan for maintainer rotation to prevent burnout",
+      "Define an explicit end-of-life policy for when the project is no longer maintained"
+    ],
+    "alternatives": [
+      { "name": "Source-available (not open-source)", "note": "Publish code for transparency without accepting community maintenance burden" },
+      { "name": "Blog posts and talks", "note": "Share knowledge without maintaining a project" },
+      { "name": "Sponsored open-source", "note": "Fund existing projects rather than creating new ones" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Nadia Eghbal: Working in Public", "note": "Definitive analysis of open-source maintenance economics and maintainer burnout" },
+    { "title": "GitHub Octoverse: Open Source Maintainer Survey", "note": "Data showing 60% of maintainers have considered quitting due to burnout" },
+    { "title": "Roads and Bridges: The Unseen Labor Behind Our Digital Infrastructure", "url": "https://www.fordfoundation.org/work/learning/research-reports/roads-and-bridges-the-unseen-labor-behind-our-digital-infrastructure/", "note": "Ford Foundation report on the sustainability crisis in open-source maintenance" },
+    { "title": "Log4Shell Incident Analysis", "note": "Critical vulnerability in widely-used open-source library maintained by 2 volunteers" }
+  ],
+
+  "falsifiability": [
+    "Open-source projects consistently receive high-quality contributions that reduce net maintainer workload",
+    "Maintainer burnout rates for open-source projects are comparable to closed-source projects",
+    "Companies that open-source tools report net positive ROI including maintenance costs within 3 years"
+  ],
+
+  "tags": ["open-source", "maintenance", "burnout", "community", "sustainability", "developer-experience"],
+  "crossReferences": ["T004", "T013", "O021"],
+
+  "seo": {
+    "description": "Open-source maintenance consumes 30-50% of engineer time vs the 10% estimated. 90% of external PRs need rework and 50%+ of maintainers burn out within 2 years.",
+    "keywords": ["open source maintenance burden", "open source hidden costs", "open source second order effects"]
+  }
+}

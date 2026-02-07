@@ -1,0 +1,103 @@
+{
+  "id": "T012",
+  "title": "CI/CD Pipeline Sprawl",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Teams automate everything in the CI/CD pipeline — linting, testing, security scanning, dependency checks, container builds, deployments, notifications. Each addition seems reasonable. But pipelines accumulate steps over years without pruning. A pipeline that took 5 minutes in year one takes 45 minutes in year three. Flaky tests that fail 2% of the time become blockers when you have 500 tests. Security scanners produce hundreds of findings that nobody triages. The pipeline becomes the bottleneck it was designed to eliminate. Developers start working around it — pushing directly to main, skipping checks, batching changes to avoid waiting. The automation that was supposed to increase confidence becomes a tax on velocity that teams actively circumvent.",
+
+  "hypothesis": "Automating everything in the pipeline improves quality and speed.",
+
+  "chain": {
+    "root": "Add comprehensive automation to CI/CD pipeline",
+    "effects": [
+      {
+        "label": "Pipeline execution time grows unbounded",
+        "impact": "5 min → 45 min over 3 years",
+        "direction": "negative",
+        "children": [
+          { "label": "Developers context-switch while waiting for pipeline", "direction": "negative" },
+          { "label": "Batch changes to reduce pipeline runs", "direction": "negative" },
+          { "label": "Feedback loop from commit to result too slow", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Flaky tests become systemic blockers",
+        "impact": "2% flake rate × 500 tests = frequent false failures",
+        "direction": "negative",
+        "children": [
+          { "label": "Developers retry pipelines 2-3 times per PR", "direction": "negative" },
+          { "label": "Real failures hidden among flaky noise", "direction": "negative" },
+          { "label": "Trust in test suite erodes", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Security scanner alert fatigue",
+        "impact": "Hundreds of findings, most low-priority",
+        "direction": "negative",
+        "children": [
+          { "label": "Critical findings buried in noise", "direction": "negative" },
+          { "label": "Teams suppress or ignore scanner output", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Pipeline itself becomes unmaintainable",
+        "impact": "YAML/config files grow to thousands of lines",
+        "direction": "negative",
+        "children": [
+          { "label": "Nobody understands the full pipeline", "direction": "negative" },
+          { "label": "Pipeline changes are high-risk and rarely attempted", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Pipeline execution time", "before": "5 min", "after": "45 min", "delta": "+800%", "direction": "negative" },
+    { "metric": "Developer wait time per day", "before": "10 min", "after": "90 min", "delta": "+800%", "direction": "negative" },
+    { "metric": "Pipeline bypass rate", "before": "0%", "after": "15-25% of changes", "delta": "+20%", "direction": "negative" },
+    { "metric": "Bugs caught by pipeline", "before": "Increasing", "after": "Plateaus as trust erodes", "delta": "Diminishing returns", "direction": "neutral" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your pipeline takes more than 15 minutes for the common case",
+      "Your team regularly retries pipelines due to flaky tests"
+    ],
+    "ifYouMust": [
+      "Set a hard time budget for pipeline execution and enforce it",
+      "Quarantine flaky tests immediately — fix or delete within a week",
+      "Run expensive checks (security scans, E2E tests) on merge, not on every commit",
+      "Review and prune pipeline steps quarterly"
+    ],
+    "alternatives": [
+      { "name": "Tiered pipeline", "note": "Fast checks on commit, thorough checks on merge to main" },
+      { "name": "Affected-only testing", "note": "Run only tests affected by changed files" },
+      { "name": "Local pre-commit hooks", "note": "Catch common issues before they hit CI" }
+    ]
+  },
+
+  "sources": [
+    { "title": "CircleCI State of Software Delivery Report", "note": "Data showing average CI pipeline times increased 3x over 3 years across their platform" },
+    { "title": "Google Engineering: Flaky Tests at Scale", "note": "Google's internal data on flaky test impact — 16% of their tests exhibit flakiness" },
+    { "title": "Thoughtworks Technology Radar: Pipeline as Code", "note": "Recommendations for managing pipeline complexity as automation grows" },
+    { "title": "DORA State of DevOps Report", "note": "Research showing pipeline speed directly correlates with deployment frequency and team performance" }
+  ],
+
+  "falsifiability": [
+    "Teams with comprehensive CI/CD pipelines maintain execution times under 15 minutes over 3+ years",
+    "Adding more pipeline steps consistently improves bug detection rates without diminishing returns",
+    "Developers never bypass CI/CD pipelines regardless of execution time"
+  ],
+
+  "tags": ["ci-cd", "automation", "developer-experience", "pipeline", "flaky-tests", "devops"],
+  "crossReferences": ["T011", "T006", "T020"],
+
+  "seo": {
+    "description": "CI/CD pipelines grow from 5 to 45 minutes over 3 years. Flaky tests, scanner fatigue, and unmaintainable configs turn automation into the bottleneck it was meant to eliminate.",
+    "keywords": ["ci cd pipeline sprawl", "ci cd hidden costs", "pipeline automation second order effects"]
+  }
+}

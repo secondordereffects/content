@@ -1,0 +1,94 @@
+{
+  "id": "A030",
+  "title": "AI Customer Profiling Discrimination",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Companies use AI to profile customers for personalized pricing, credit decisions, insurance rates, and service tiers. The pitch is efficiency — serve each customer optimally based on their data. But AI profiling systematically discriminates through proxy variables. Zip code correlates with race. Browser type correlates with income. Purchase history correlates with health status. The AI doesn't need protected characteristics to discriminate — it finds proxies that achieve the same result while maintaining plausible deniability. Dynamic pricing charges higher prices to customers identified as less price-sensitive (often wealthier, often whiter neighborhoods). Credit algorithms deny loans to qualified borrowers in historically redlined areas. Insurance models charge more to people with certain shopping patterns. The discrimination is invisible because it's statistical, individualized, and hidden behind proprietary algorithms.",
+
+  "hypothesis": "AI improves customer targeting and delivers personalized experiences.",
+
+  "chain": {
+    "root": "Deploy AI customer profiling for pricing and service decisions",
+    "effects": [
+      {
+        "label": "Proxy discrimination replaces explicit discrimination",
+        "impact": "Protected characteristics inferred from behavioral data",
+        "direction": "negative",
+        "children": [
+          { "label": "Zip code proxies for race in credit and insurance decisions", "direction": "negative" },
+          { "label": "Device and browser data proxies for income level", "direction": "negative" },
+          { "label": "Discrimination becomes invisible and harder to prove legally", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Dynamic pricing exploits information asymmetry",
+        "impact": "Same product, different prices based on profile",
+        "direction": "negative",
+        "children": [
+          { "label": "Price-insensitive customers charged 10-30% more", "direction": "negative" },
+          { "label": "Vulnerable populations pay more for essential services", "direction": "negative" },
+          { "label": "Consumer trust erodes when differential pricing discovered", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Feedback loops amplify existing inequality",
+        "impact": "Denied services → worse data → more denials",
+        "direction": "negative",
+        "children": [
+          { "label": "Credit denials reduce credit history, leading to more denials", "direction": "negative" },
+          { "label": "Higher insurance prices in poor areas reduce coverage, increasing risk", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Price variation for identical products", "before": "Minimal", "after": "10-30% based on profile", "delta": "+20%", "direction": "negative" },
+    { "metric": "Credit approval disparity by zip code", "before": "Regulated (explicit)", "after": "Unregulated (proxy-based)", "delta": "Shifted not reduced", "direction": "negative" },
+    { "metric": "Targeting efficiency", "before": "Demographic segments", "after": "Individual-level profiling", "delta": "+500%", "direction": "positive" },
+    { "metric": "Discrimination detectability", "before": "Auditable (explicit criteria)", "after": "Opaque (algorithmic)", "delta": "-80%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your AI profiling model uses variables that correlate strongly with protected characteristics",
+      "You can't explain why different customers receive different prices or service levels"
+    ],
+    "ifYouMust": [
+      "Audit AI models for disparate impact across protected groups regularly",
+      "Remove proxy variables that correlate with race, gender, or other protected characteristics",
+      "Provide transparency into how pricing and service decisions are made",
+      "Implement fairness constraints in model training"
+    ],
+    "alternatives": [
+      { "name": "Transparent tiered pricing", "note": "Published price tiers based on objective, non-discriminatory criteria" },
+      { "name": "Fairness-constrained AI", "note": "Models trained with explicit fairness constraints that limit disparate impact" },
+      { "name": "Opt-in personalization", "note": "Let customers choose whether to share data for personalized pricing" }
+    ]
+  },
+
+  "sources": [
+    { "title": "ProPublica: Machine Bias", "url": "https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing", "note": "Landmark investigation showing AI systems discriminate through proxy variables" },
+    { "title": "White House OSTP: Blueprint for an AI Bill of Rights", "note": "Federal framework addressing algorithmic discrimination in automated decision systems" },
+    { "title": "Cathy O'Neil: Weapons of Math Destruction", "note": "Comprehensive analysis of how AI profiling amplifies inequality through feedback loops" },
+    { "title": "Federal Reserve: Fair Lending and AI", "note": "Regulatory guidance on proxy discrimination in AI-based credit decisions" }
+  ],
+
+  "falsifiability": [
+    "AI customer profiling produces equitable outcomes across demographic groups without fairness constraints",
+    "Dynamic pricing based on AI profiling benefits consumers overall compared to uniform pricing",
+    "Proxy discrimination in AI models is detectable and correctable through standard auditing practices"
+  ],
+
+  "tags": ["ai", "discrimination", "profiling", "dynamic-pricing", "fairness", "proxy-variables"],
+  "crossReferences": ["A012", "A014", "A018"],
+
+  "seo": {
+    "description": "AI customer profiling enables invisible discrimination through proxy variables. Same products priced 10-30% differently while discrimination becomes 80% harder to detect.",
+    "keywords": ["ai customer profiling discrimination", "algorithmic discrimination hidden costs", "ai profiling second order effects"]
+  }
+}

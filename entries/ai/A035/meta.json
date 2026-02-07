@@ -1,0 +1,94 @@
+{
+  "id": "A035",
+  "title": "Agentic AI Liability Void",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "AI agents that can browse the web, execute code, make purchases, and interact with APIs are moving from demos to production. Companies deploy agents to handle customer service, manage infrastructure, execute trades, and coordinate workflows. The capability is real. But the liability framework is nonexistent. When an AI agent makes a purchase the user didn't intend, who pays? When an agent deletes production data following ambiguous instructions, who's liable? When an agent negotiates a contract, is it legally binding? Current legal frameworks assume human actors making decisions. Agentic AI creates a liability void — the user didn't make the decision, the AI company didn't make the decision, and the agent isn't a legal entity. This void will be filled by lawsuits, not legislation, creating years of uncertainty.",
+
+  "hypothesis": "AI agents can act autonomously and handle complex workflows reliably.",
+
+  "chain": {
+    "root": "Deploy autonomous AI agents for real-world tasks",
+    "effects": [
+      {
+        "label": "Liability void between user, AI provider, and agent",
+        "impact": "No legal framework for agent-caused harm",
+        "direction": "negative",
+        "children": [
+          { "label": "User claims they didn't authorize the action", "direction": "negative" },
+          { "label": "AI provider claims agent followed user instructions", "direction": "negative" },
+          { "label": "Courts must create precedent case-by-case", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Agents take irreversible actions from ambiguous instructions",
+        "impact": "Misinterpretation rate 5-15% for complex tasks",
+        "direction": "negative",
+        "children": [
+          { "label": "Financial transactions executed incorrectly", "direction": "negative" },
+          { "label": "Data deleted or modified without proper confirmation", "direction": "negative" },
+          { "label": "Cascading errors as agents chain actions together", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Insurance and contract frameworks break down",
+        "impact": "Existing policies don't cover agent actions",
+        "direction": "negative",
+        "children": [
+          { "label": "Professional liability insurance excludes AI agent actions", "direction": "negative" },
+          { "label": "Contracts signed by agents face enforceability challenges", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Legal framework coverage", "before": "Human actor assumed", "after": "No framework for agent actions", "delta": "Void", "direction": "negative" },
+    { "metric": "Agent task misinterpretation rate", "before": "N/A", "after": "5-15% for complex tasks", "delta": "New risk", "direction": "negative" },
+    { "metric": "Automation capability", "before": "Tool-assisted human", "after": "Autonomous agent", "delta": "+500%", "direction": "positive" },
+    { "metric": "Insurance coverage for agent actions", "before": "Covered (human actor)", "after": "Excluded or undefined", "delta": "-100%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your AI agent can take irreversible actions without human confirmation",
+      "You haven't defined liability boundaries between your company, the AI provider, and the user"
+    ],
+    "ifYouMust": [
+      "Implement human-in-the-loop confirmation for all irreversible actions",
+      "Define clear liability terms in user agreements for agent actions",
+      "Log all agent decisions and reasoning for audit trails",
+      "Set spending limits and action boundaries that agents cannot exceed"
+    ],
+    "alternatives": [
+      { "name": "Copilot pattern", "note": "AI suggests actions, human approves — clear liability chain" },
+      { "name": "Sandboxed agents", "note": "Agents operate in reversible environments with human review before commit" },
+      { "name": "Tiered autonomy", "note": "Low-risk actions autonomous, high-risk actions require human approval" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Harvard Law Review: Legal Personhood for AI Agents", "note": "Analysis of whether AI agents need legal personhood to resolve liability questions" },
+    { "title": "Stanford HAI: Agentic AI and the Law", "note": "Comprehensive review of legal gaps created by autonomous AI agents" },
+    { "title": "Anthropic: Responsible Scaling for AI Agents", "note": "Framework for managing risks as AI agents gain more autonomous capabilities" },
+    { "title": "Insurance Journal: AI Agent Liability Coverage Gaps", "note": "Analysis showing existing insurance policies exclude or don't address AI agent actions" }
+  ],
+
+  "falsifiability": [
+    "Clear legal frameworks for AI agent liability are established within 3 years of widespread agent deployment",
+    "AI agents achieve misinterpretation rates below 1% for complex real-world tasks",
+    "Insurance products covering AI agent actions become widely available and affordable"
+  ],
+
+  "tags": ["ai-agents", "liability", "legal", "autonomy", "risk", "governance"],
+  "crossReferences": ["A018", "A009", "A024"],
+
+  "seo": {
+    "description": "AI agents create a liability void — no legal framework covers autonomous agent actions. Misinterpretation rates of 5-15% on complex tasks with no clear accountability.",
+    "keywords": ["agentic ai liability void", "ai agent legal risks", "agentic ai second order effects"]
+  }
+}
