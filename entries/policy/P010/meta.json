@@ -1,0 +1,103 @@
+{
+  "id": "P010",
+  "title": "Minimum Wage Automation Trigger",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Minimum wage increases are designed to lift low-income workers out of poverty. The first-order logic is straightforward: higher wages mean more money for workers. But labor economics reveals a threshold effect. When minimum wage crosses the break-even point where automation becomes cheaper than human labor for a given task, businesses don't just absorb the cost — they eliminate the position entirely. Self-checkout kiosks, automated order systems, robotic food preparation, and AI customer service didn't replace workers gradually. They were deployed in waves that correlate with minimum wage increases crossing specific thresholds. The workers most affected are the ones the policy was designed to help: low-skill, entry-level employees who lose not just income but the on-ramp to workforce participation.",
+
+  "hypothesis": "Higher minimum wage helps low-income workers by increasing their earnings.",
+
+  "chain": {
+    "root": "Raise minimum wage above automation break-even threshold",
+    "effects": [
+      {
+        "label": "Businesses accelerate automation investment",
+        "impact": "Self-checkout adoption +35% in high-minimum-wage states",
+        "direction": "negative",
+        "children": [
+          { "label": "Entry-level positions eliminated permanently, not temporarily", "direction": "negative" },
+          { "label": "Remaining workers handle more tasks at higher intensity", "direction": "negative" },
+          { "label": "Capital expenditure shifts from wages to technology", "direction": "neutral" }
+        ]
+      },
+      {
+        "label": "Hours reduction substitutes for layoffs",
+        "impact": "Average hours cut 15-20% to offset wage increase",
+        "direction": "negative",
+        "children": [
+          { "label": "Workers earn higher hourly rate but lower total income", "direction": "negative" },
+          { "label": "Benefits eligibility lost when hours drop below full-time threshold", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Small businesses face disproportionate burden",
+        "impact": "Labor costs are 30-50% of revenue for small businesses vs. 15-25% for large",
+        "direction": "negative",
+        "children": [
+          { "label": "Local businesses close, replaced by automated chain operations", "direction": "negative" },
+          { "label": "Market concentration increases as only large firms can absorb costs", "direction": "negative" },
+          { "label": "Informal economy grows as businesses move workers off-books", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Entry-level workforce on-ramp disappears",
+        "impact": "Youth unemployment rises 2-4pp in affected areas",
+        "direction": "negative",
+        "children": [
+          { "label": "First-job experience gap widens for low-skill workers", "direction": "negative" },
+          { "label": "Credential inflation accelerates — employers demand degrees for basic roles", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Self-checkout adoption (high-MW states)", "before": "30%", "after": "65%", "delta": "+35pp", "direction": "negative" },
+    { "metric": "Entry-level positions per location", "before": "8-12", "after": "4-6", "delta": "-50%", "direction": "negative" },
+    { "metric": "Youth unemployment (16-24) in affected areas", "before": "10%", "after": "13%", "delta": "+3pp", "direction": "negative" },
+    { "metric": "Average weekly earnings (after hours cuts)", "before": "$400", "after": "$385", "delta": "-$15", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The increase crosses known automation break-even thresholds for major employers in the region",
+      "No transition support or retraining programs accompany the wage increase"
+    ],
+    "ifYouMust": [
+      "Phase increases gradually to give businesses time to adjust without shock automation",
+      "Pair wage increases with small business tax credits to prevent disproportionate closures",
+      "Fund workforce retraining programs for displaced entry-level workers",
+      "Index increases to regional cost of living rather than applying flat national rates"
+    ],
+    "alternatives": [
+      { "name": "Earned Income Tax Credit expansion", "note": "Supplements low wages without increasing employer labor costs" },
+      { "name": "Sectoral bargaining", "note": "Industry-wide wage standards prevent race-to-bottom without triggering automation at individual firm level" },
+      { "name": "Portable benefits system", "note": "Decouple health insurance and benefits from employment hours to reduce hours-cutting incentive" }
+    ]
+  },
+
+  "sources": [
+    { "title": "NBER: Minimum Wages and Employment", "url": "https://www.nber.org/papers/w28388", "note": "Meta-analysis showing employment effects concentrated among low-skill workers" },
+    { "title": "Congressional Budget Office: Minimum Wage Effects", "url": "https://www.cbo.gov/publication/55681", "note": "$15 minimum wage would raise pay for 17M workers but eliminate 1.3M jobs" },
+    { "title": "Harvard Business School: Survival of Restaurants After Minimum Wage Increases", "url": "https://www.hbs.edu/ris/Publication%20Files/MW_Exit_7d4e1e0e-d40f-4a3e-a3e3-e4a3b8f0e57a.pdf", "note": "Each $1 increase in minimum wage leads to 4-10% increase in restaurant closures for median-rated establishments" },
+    { "title": "McKinsey: Automation and the Future of Work", "url": "https://www.mckinsey.com/featured-insights/future-of-work/jobs-lost-jobs-gained-what-the-future-of-work-will-mean-for-jobs-skills-and-wages", "note": "Automation adoption accelerates when labor costs cross technology break-even points" }
+  ],
+
+  "falsifiability": [
+    "Minimum wage increases above $15/hour show no measurable increase in automation adoption rates",
+    "Entry-level employment remains stable or grows in regions with the highest minimum wages",
+    "Small business closure rates are unaffected by minimum wage increases above the automation threshold"
+  ],
+
+  "tags": ["minimum-wage", "automation", "labor-economics", "employment", "small-business", "inequality"],
+  "crossReferences": ["P012", "A019", "M009"],
+
+  "seo": {
+    "description": "Minimum wage increases above automation break-even thresholds trigger permanent job elimination, not temporary adjustment. Entry-level positions disappear fastest.",
+    "keywords": ["minimum wage automation", "minimum wage second order effects", "wage increase hidden costs"]
+  }
+}

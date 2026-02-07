@@ -1,0 +1,104 @@
+{
+  "id": "P016",
+  "title": "Section 230 Repeal Collateral Damage",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Section 230 of the Communications Decency Act shields platforms from liability for user-generated content. Critics from both political sides want it repealed or reformed — the left says it enables hate speech and misinformation, the right says it enables censorship. But Section 230 doesn't just protect Big Tech. It protects every website with a comment section, every forum, every review site, every small social platform. Repealing it wouldn't hurt Facebook — they can afford lawyers. It would kill the open internet.",
+
+  "hypothesis": "Repealing Section 230 will hold platforms accountable for harmful content and improve the internet.",
+
+  "chain": {
+    "root": "Repeal or significantly weaken Section 230 protections",
+    "effects": [
+      {
+        "label": "Small platforms and websites can't afford liability risk",
+        "impact": "Comment sections, forums, and review sites shut down",
+        "direction": "negative",
+        "children": [
+          { "label": "Any website hosting user content becomes a lawsuit target", "direction": "negative" },
+          { "label": "Small businesses remove review sections, forums close, blogs disable comments", "direction": "negative" },
+          { "label": "Only companies with large legal teams can afford to host user content", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Big Tech consolidates — they can afford compliance",
+        "impact": "Market concentration increases",
+        "direction": "negative",
+        "children": [
+          { "label": "Facebook, Google, and Amazon have legal departments larger than most companies", "direction": "negative" },
+          { "label": "New social platforms become impossible to launch — liability too high", "direction": "negative" },
+          { "label": "The regulation meant to constrain Big Tech becomes their moat", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Platforms over-moderate to avoid liability",
+        "impact": "Anything potentially controversial gets removed preemptively",
+        "direction": "negative",
+        "children": [
+          { "label": "Political speech, satire, and criticism suppressed as liability risk", "direction": "negative" },
+          { "label": "Whistleblower content removed — platforms can't risk hosting it", "direction": "negative" },
+          { "label": "The internet becomes a sanitized corporate space", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Paradoxically, moderation incentives reverse",
+        "impact": "Platforms may moderate LESS to claim they're not publishers",
+        "direction": "negative",
+        "children": [
+          { "label": "If moderating makes you liable, the rational choice is to not moderate at all", "direction": "negative" },
+          { "label": "Platforms argue they're neutral conduits — any curation creates liability", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Websites hosting user content", "before": "Millions", "after": "Thousands (only those who can afford legal risk)", "delta": "-99%", "direction": "negative" },
+    { "metric": "New social platform launches", "before": "Hundreds/year", "after": "Near zero", "delta": "-95%", "direction": "negative" },
+    { "metric": "Big Tech market share", "before": "High", "after": "Higher — competitors eliminated", "delta": "+10-20%", "direction": "negative" },
+    { "metric": "Legitimate speech removed preemptively", "before": "Some", "after": "Massive increase", "delta": "+500%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You believe repealing 230 will primarily affect Big Tech — it won't",
+      "You haven't modeled the impact on small websites, forums, and review platforms"
+    ],
+    "ifYouMust": [
+      "Reform narrowly — target specific harms (CSAM, terrorism) rather than broad repeal",
+      "Include safe harbors for good-faith moderation efforts",
+      "Exempt small platforms below a user threshold from new liability",
+      "Require transparency reports rather than imposing content liability"
+    ],
+    "alternatives": [
+      { "name": "Transparency requirements", "note": "Require platforms to disclose moderation policies and enforcement data — accountability without liability" },
+      { "name": "Duty of care framework", "note": "Require reasonable efforts to address known harms without making platforms liable for all user content" },
+      { "name": "Algorithmic accountability", "note": "Hold platforms responsible for what they amplify, not what users post" }
+    ]
+  },
+
+  "sources": [
+    { "title": "EFF: Section 230 of the CDA", "url": "https://www.eff.org/issues/cda230", "note": "Comprehensive analysis of how Section 230 enables the open internet beyond just Big Tech" },
+    { "title": "Techdirt: Section 230 Case Studies", "url": "https://www.techdirt.com/2020/06/23/hello-you-ve-been-referred-here-because-you-re-wrong-about-section-230-communications-decency-act/", "note": "Detailed analysis of how 230 protects small websites, not just large platforms" },
+    { "title": "Brookings: Section 230 Reform Proposals", "url": "https://www.brookings.edu/articles/section-230-reform-what-could-it-do-and-what-are-the-risks/", "note": "Analysis of various reform proposals and their likely second-order effects" },
+    { "title": "Stanford CIS: Internet Intermediary Liability", "url": "https://cyberlaw.stanford.edu/focus-areas/intermediary-liability", "note": "Research on how intermediary liability regimes affect innovation and speech across jurisdictions" }
+  ],
+
+  "falsifiability": [
+    "Repealing Section 230 reduces harmful content online without reducing legitimate speech or small platform viability",
+    "Small websites and forums can afford the legal costs of content liability without Section 230 protection",
+    "Big Tech market share decreases after Section 230 repeal as new competitors emerge"
+  ],
+
+  "tags": ["section-230", "internet-regulation", "free-speech", "platform-liability", "big-tech", "open-internet"],
+  "crossReferences": ["P005", "P001", "A004"],
+
+  "seo": {
+    "description": "Section 230 repeal wouldn't hurt Big Tech — they can afford lawyers. It would kill forums, review sites, and small platforms. The open internet depends on intermediary liability protection.",
+    "keywords": ["section 230 repeal second order effects", "internet liability hidden consequences", "section 230 reform collateral damage"]
+  }
+}

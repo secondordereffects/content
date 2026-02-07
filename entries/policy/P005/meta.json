@@ -1,0 +1,104 @@
+{
+  "id": "P005",
+  "title": "Content Moderation Whack-a-Mole",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Platforms deploy content moderation to reduce harmful content — hate speech, misinformation, harassment, CSAM. The intent is clear. The execution creates a cascade of second-order effects. Moderation at scale requires AI systems that make millions of decisions per day with imperfect accuracy. False positives silence legitimate speech. False negatives let harmful content through. Bad actors adapt faster than moderation systems can evolve. And the humans reviewing the worst content develop PTSD at alarming rates.",
+
+  "hypothesis": "Platform content moderation effectively reduces harmful content while preserving free expression.",
+
+  "chain": {
+    "root": "Deploy content moderation at platform scale",
+    "effects": [
+      {
+        "label": "AI moderation creates systematic false positives",
+        "impact": "5-15% of legitimate content incorrectly removed",
+        "direction": "negative",
+        "children": [
+          { "label": "Marginalized communities disproportionately flagged — AAVE, Arabic, activism", "direction": "negative" },
+          { "label": "Satire, journalism, and educational content about harmful topics removed", "direction": "negative" },
+          { "label": "Appeals processes are slow and opaque — content stays down for days", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Bad actors adapt faster than moderation evolves",
+        "impact": "New evasion techniques emerge within hours of policy changes",
+        "direction": "negative",
+        "children": [
+          { "label": "Coded language, misspellings, and visual tricks bypass text filters", "direction": "negative" },
+          { "label": "Content moves to encrypted channels and smaller platforms", "direction": "negative" },
+          { "label": "Whack-a-mole dynamic — each enforcement action spawns new evasion", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Human moderators suffer severe psychological harm",
+        "impact": "PTSD rates of 20-50% among content moderators",
+        "direction": "negative",
+        "children": [
+          { "label": "Moderators review thousands of violent, sexual, and disturbing images daily", "direction": "negative" },
+          { "label": "Outsourced to low-wage workers in developing countries — $1-3/hour", "direction": "negative" },
+          { "label": "High turnover creates constant training costs and quality inconsistency", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Moderation becomes a political battleground",
+        "impact": "Every moderation decision is contested by some constituency",
+        "direction": "negative",
+        "children": [
+          { "label": "Left claims under-moderation, right claims censorship — both simultaneously", "direction": "negative" },
+          { "label": "Platforms become de facto speech regulators without democratic legitimacy", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "False positive rate (legitimate content removed)", "before": "N/A", "after": "5-15%", "delta": "Significant collateral damage", "direction": "negative" },
+    { "metric": "Moderator PTSD rate", "before": "N/A", "after": "20-50%", "delta": "Severe", "direction": "negative" },
+    { "metric": "Harmful content reduction", "before": "Baseline", "after": "-50-70% visible", "delta": "Partial success", "direction": "positive" },
+    { "metric": "Content migration to unmoderated platforms", "before": "Minimal", "after": "Significant", "delta": "Displacement, not elimination", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're expecting moderation to eliminate harmful content entirely",
+      "You're outsourcing moderation to the lowest bidder without mental health support"
+    ],
+    "ifYouMust": [
+      "Invest in moderator mental health — therapy, rotation, exposure limits, fair wages",
+      "Build transparent appeals processes with human review and clear timelines",
+      "Audit moderation systems for demographic bias regularly",
+      "Accept that moderation reduces harm but cannot eliminate it — set realistic expectations"
+    ],
+    "alternatives": [
+      { "name": "User-controlled filtering", "note": "Let users set their own content thresholds rather than platform-wide rules" },
+      { "name": "Community moderation", "note": "Empower community moderators with tools — Wikipedia model scales better than centralized review" },
+      { "name": "Friction-based design", "note": "Add friction to sharing (confirmation prompts, delays) rather than removing content after the fact" }
+    ]
+  },
+
+  "sources": [
+    { "title": "The Verge: The Trauma Floor — Secret Lives of Facebook Moderators", "url": "https://www.theverge.com/2019/2/25/18229714/cognizant-facebook-content-moderator-interviews-trauma", "note": "Investigation revealing PTSD, substance abuse, and psychological damage among content moderators" },
+    { "title": "NYU Stern: Platform Content Moderation Report", "url": "https://www.stern.nyu.edu/experience-stern/faculty-research/platform-content-moderation", "note": "Academic analysis of moderation effectiveness, false positive rates, and demographic bias" },
+    { "title": "Stanford Internet Observatory: Content Moderation Research", "url": "https://cyber.fsi.stanford.edu/io", "note": "Research on how bad actors adapt to moderation systems and the whack-a-mole dynamic" },
+    { "title": "Time: Inside Facebook's African Sweatshop", "url": "https://time.com/6147458/facebook-africa-content-moderation-employee-treatment/", "note": "Investigation into outsourced moderation workers paid $1.50/hour to review traumatic content" }
+  ],
+
+  "falsifiability": [
+    "AI content moderation achieves false positive rates below 1% while maintaining harmful content removal above 90%",
+    "Content moderation eliminates harmful content rather than displacing it to other platforms",
+    "Content moderator PTSD rates are comparable to general population rates with adequate support"
+  ],
+
+  "tags": ["content-moderation", "platform-governance", "free-speech", "ai-moderation", "mental-health", "policy"],
+  "crossReferences": ["A004", "A011", "S001"],
+
+  "seo": {
+    "description": "Content moderation removes 5-15% of legitimate content as false positives, gives moderators PTSD at 20-50% rates, and displaces harmful content rather than eliminating it.",
+    "keywords": ["content moderation whack-a-mole second order effects", "platform moderation hidden costs", "content moderation consequences"]
+  }
+}

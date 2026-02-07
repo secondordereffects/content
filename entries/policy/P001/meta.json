@@ -1,0 +1,104 @@
+{
+  "id": "P001",
+  "title": "GDPR Compliance Moat",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "The EU's General Data Protection Regulation (GDPR) was designed to protect individual privacy and give users control over their data. It succeeded at that. But it also created a massive compliance burden that large companies can absorb and small companies cannot. The regulation intended to constrain Big Tech inadvertently strengthened their position by raising the cost of competing with them. Google and Meta have armies of lawyers and compliance teams. A startup has a founder reading legal blogs at midnight.",
+
+  "hypothesis": "GDPR protects user privacy and levels the playing field between big tech and smaller competitors.",
+
+  "chain": {
+    "root": "Implement comprehensive data protection regulation (GDPR)",
+    "effects": [
+      {
+        "label": "Compliance costs create barrier to entry",
+        "impact": "$1-5M for large companies, existential for startups",
+        "direction": "negative",
+        "children": [
+          { "label": "Legal review, DPO hiring, consent management, data mapping — fixed costs regardless of size", "direction": "negative" },
+          { "label": "Startups spend 5-10% of budget on compliance vs 0.1% for Big Tech", "direction": "negative" },
+          { "label": "Small ad-tech and analytics companies can't afford compliance — exit the market", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Big Tech consolidates data advantage",
+        "impact": "First-party data becomes more valuable as third-party data restricted",
+        "direction": "negative",
+        "children": [
+          { "label": "Google and Meta have first-party consent from billions of users", "direction": "negative" },
+          { "label": "Smaller competitors relied on third-party data that GDPR restricts", "direction": "negative" },
+          { "label": "Walled gardens strengthen — data stays inside the big platforms", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Cookie consent fatigue undermines the privacy goal",
+        "impact": "95% of users click 'Accept All' without reading",
+        "direction": "negative",
+        "children": [
+          { "label": "Consent banners become annoying UX friction, not informed choice", "direction": "negative" },
+          { "label": "Dark patterns in consent flows manipulate users into accepting", "direction": "negative" },
+          { "label": "Users who care about privacy are exhausted by constant consent requests", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Innovation in privacy-respecting technology slows",
+        "impact": "Startups avoid EU market or delay EU launch",
+        "direction": "negative",
+        "children": [
+          { "label": "US startups launch EU-last due to compliance overhead", "direction": "negative" },
+          { "label": "EU tech ecosystem grows slower than US counterpart", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Compliance cost (% of revenue)", "before": "N/A", "after": "5-10% for startups, 0.1% for Big Tech", "delta": "50-100x disparity", "direction": "negative" },
+    { "metric": "EU tech startup formation", "before": "Baseline", "after": "-15-20% in data-intensive sectors", "delta": "-18%", "direction": "negative" },
+    { "metric": "Google/Meta ad market share (EU)", "before": "High", "after": "Higher — competitors exited", "delta": "+5-10%", "direction": "negative" },
+    { "metric": "Cookie consent engagement", "before": "Intended: informed choice", "after": "95% click Accept All", "delta": "Ineffective", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're designing regulation that imposes fixed costs regardless of company size",
+      "Your compliance framework doesn't account for the asymmetric burden on small companies"
+    ],
+    "ifYouMust": [
+      "Include small business exemptions or graduated compliance requirements",
+      "Fund open-source compliance tooling that reduces the cost for startups",
+      "Enforce against large companies first — they have the resources and the most data",
+      "Simplify consent mechanisms — the current cookie banner approach has failed"
+    ],
+    "alternatives": [
+      { "name": "Tiered regulation by data volume", "note": "Heavier requirements for companies processing data at scale, lighter for small businesses" },
+      { "name": "Browser-level privacy controls", "note": "Let browsers manage privacy preferences once, not per-site — eliminates consent fatigue" },
+      { "name": "Data dividend model", "note": "Require companies to pay users for data use rather than just asking consent" }
+    ]
+  },
+
+  "sources": [
+    { "title": "NBER: GDPR and the Lost Generation of Innovative Apps", "url": "https://www.nber.org/papers/w30028", "note": "GDPR reduced new app entries by 33% in the EU, with disproportionate impact on small developers" },
+    { "title": "Oxford: The Impact of GDPR on Competition", "url": "https://academic.oup.com/jcle/article/17/3/517/6272508", "note": "Analysis showing GDPR increased market concentration in digital advertising" },
+    { "title": "European Commission: GDPR Evaluation Report", "url": "https://commission.europa.eu/law/law-topic/data-protection/data-protection-eu_en", "note": "Official evaluation acknowledging compliance burden on SMEs while defending privacy outcomes" },
+    { "title": "Reuters: Cookie Consent Fatigue Study", "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024", "note": "Research showing the vast majority of users accept all cookies without reading consent notices" }
+  ],
+
+  "falsifiability": [
+    "GDPR compliance costs are proportionally equal for large and small companies as a percentage of revenue",
+    "EU tech startup formation rates in data-intensive sectors match or exceed pre-GDPR levels",
+    "Big Tech's market share in EU digital advertising decreases after GDPR implementation"
+  ],
+
+  "tags": ["gdpr", "privacy", "regulation", "compliance", "big-tech", "startups", "competition"],
+  "crossReferences": ["P012", "M009", "A012"],
+
+  "seo": {
+    "description": "GDPR costs startups 5-10% of revenue vs 0.1% for Big Tech. EU app creation dropped 33%. The regulation meant to constrain Big Tech became their competitive moat.",
+    "keywords": ["gdpr compliance moat second order effects", "gdpr hidden costs startups", "data protection regulation consequences"]
+  }
+}
