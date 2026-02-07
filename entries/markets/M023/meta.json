@@ -1,0 +1,104 @@
+{
+  "id": "M023",
+  "title": "Buy Now Pay Later Debt Normalization",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Buy Now Pay Later (BNPL) services (Klarna, Afterpay, Affirm) reframe debt as a payment method. Split any purchase into 4 interest-free installments. The friction of borrowing disappears — no credit check, no interest (initially), integrated at checkout. Consumers spend more per transaction, merchants see higher conversion rates, and BNPL companies grow explosively. But underneath the frictionless UX, consumers are accumulating fragmented debt across multiple providers, invisible to traditional credit reporting, and increasingly unable to track their total obligations.",
+
+  "hypothesis": "BNPL makes purchases more affordable and helps consumers manage their budgets.",
+
+  "chain": {
+    "root": "Adopt BNPL as standard payment option",
+    "effects": [
+      {
+        "label": "Spending increases because debt doesn't feel like debt",
+        "impact": "Average order value +30-50% with BNPL",
+        "direction": "negative",
+        "children": [
+          { "label": "Pain of paying is eliminated — no immediate financial consequence felt", "direction": "negative" },
+          { "label": "Consumers buy things they wouldn't have purchased at full price", "direction": "negative" },
+          { "label": "Multiple BNPL plans stack up across different merchants", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Debt becomes invisible and fragmented",
+        "impact": "Average BNPL user has 3-5 active plans simultaneously",
+        "direction": "negative",
+        "children": [
+          { "label": "No single dashboard shows total BNPL obligations", "direction": "negative" },
+          { "label": "Traditional credit reports don't capture BNPL debt", "direction": "negative" },
+          { "label": "Users lose track of payment dates across multiple providers", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Late fees and penalties hit the most vulnerable users",
+        "impact": "10-15% of BNPL users miss payments",
+        "direction": "negative",
+        "children": [
+          { "label": "Late fees can exceed the original purchase price for small items", "direction": "negative" },
+          { "label": "Deferred interest plans charge retroactive interest on the full amount", "direction": "negative" },
+          { "label": "Gen Z and low-income users disproportionately affected", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Debt normalization shifts cultural attitudes toward borrowing",
+        "impact": "Borrowing for discretionary purchases becomes default behavior",
+        "direction": "negative",
+        "children": [
+          { "label": "Young consumers develop debt habits before understanding compound interest", "direction": "negative" },
+          { "label": "Savings rates decline as BNPL enables spending beyond means", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Average order value with BNPL", "before": "Baseline", "after": "+30-50%", "delta": "+40%", "direction": "negative" },
+    { "metric": "BNPL users missing payments", "before": "N/A", "after": "10-15%", "delta": "Significant", "direction": "negative" },
+    { "metric": "Consumer awareness of total BNPL debt", "before": "N/A", "after": "43% underestimate their balance", "delta": "Low awareness", "direction": "negative" },
+    { "metric": "Gen Z using BNPL for essentials", "before": "Rare", "after": "30%+ use for groceries/bills", "delta": "Structural shift", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're already carrying credit card debt or struggling with monthly payments",
+      "You wouldn't buy the item if you had to pay full price today"
+    ],
+    "ifYouMust": [
+      "Use only one BNPL provider to maintain visibility into total obligations",
+      "Never use BNPL for essentials — if you need BNPL for groceries, you have a budget problem",
+      "Set calendar reminders for every payment date — late fees are the real business model",
+      "Track total BNPL obligations alongside other debt in a single budget view"
+    ],
+    "alternatives": [
+      { "name": "Savings-first purchasing", "note": "Save for purchases in advance — the original 'buy now pay later' without the debt" },
+      { "name": "Credit card with autopay", "note": "At least credit cards are tracked, reported, and have consumer protections" },
+      { "name": "30-day purchase rule", "note": "Wait 30 days before any non-essential purchase — most impulse buys won't survive the wait" }
+    ]
+  },
+
+  "sources": [
+    { "title": "CFPB: Buy Now, Pay Later Market Report", "url": "https://www.consumerfinance.gov/data-research/research-reports/buy-now-pay-later-market-trends-and-consumer-impacts/", "note": "Federal report showing BNPL loan originations grew 970% from 2019-2021, with rising delinquency rates" },
+    { "title": "Federal Reserve Bank: BNPL and Consumer Financial Health", "url": "https://www.federalreserve.gov/econres/notes/feds-notes/buy-now-pay-later-20221222.html", "note": "Analysis showing BNPL users are more likely to be financially fragile and carry other forms of debt" },
+    { "title": "Credit Karma: BNPL Usage Survey", "url": "https://www.creditkarma.com/about/commentary/buy-now-pay-later-survey", "note": "34% of BNPL users have fallen behind on payments, 72% believe it has negatively impacted their credit" },
+    { "title": "Bloomberg: The Hidden Risks of Buy Now Pay Later", "url": "https://www.bloomberg.com/news/features/2023-10-12/buy-now-pay-later-risks", "note": "Investigation into how BNPL debt is invisible to traditional credit reporting and risk assessment" }
+  ],
+
+  "falsifiability": [
+    "BNPL users show equal or better financial health metrics than non-users over a 3-year period",
+    "BNPL payment delinquency rates remain below 5% as adoption scales to mainstream consumers",
+    "Consumers using BNPL maintain accurate awareness of their total debt obligations"
+  ],
+
+  "tags": ["bnpl", "consumer-debt", "fintech", "spending", "financial-health", "gen-z"],
+  "crossReferences": ["M009", "M005", "S001"],
+
+  "seo": {
+    "description": "BNPL increases spending 30-50% by making debt invisible. 10-15% of users miss payments, 43% underestimate their balance, and Gen Z is normalizing debt for everyday purchases.",
+    "keywords": ["buy now pay later debt normalization second order effects", "bnpl hidden costs consumers", "buy now pay later consequences"]
+  }
+}

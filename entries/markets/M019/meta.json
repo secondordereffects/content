@@ -1,0 +1,103 @@
+{
+  "id": "M019",
+  "title": "Creator Economy Power Law",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "The creator economy narrative is seductive: anyone can build an audience, monetize their passion, and escape the 9-to-5. Platforms like YouTube, TikTok, Substack, and Patreon have enabled over 200 million people globally to identify as content creators. But the economics follow a brutal power law distribution that mirrors — and in many cases exceeds — the inequality of traditional employment. The top 1% of creators capture over 90% of total revenue. The median creator earns less than $500/year. Most never earn enough to cover the tools and time they invest. The platforms benefit regardless: every creator, profitable or not, generates content that drives engagement and ad revenue. The creator economy didn't democratize wealth creation — it created a new class of unpaid content laborers who subsidize platform valuations with their free work.",
+
+  "hypothesis": "The creator economy democratizes income and lets everyone monetize their passion.",
+
+  "chain": {
+    "root": "Platforms enable anyone to become a content creator",
+    "effects": [
+      {
+        "label": "Power law distribution concentrates revenue at the top",
+        "impact": "Top 1% earn 90%+ of total creator revenue",
+        "direction": "negative",
+        "children": [
+          { "label": "Median creator earns <$500/year, below any meaningful income threshold", "direction": "negative" },
+          { "label": "Survivorship bias makes top creators visible, hiding the 99% who fail", "direction": "negative" },
+          { "label": "Platform showcases success stories to recruit more free content producers", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Algorithmic distribution creates winner-take-all dynamics",
+        "impact": "Recommendation algorithms amplify top 5% of content",
+        "direction": "negative",
+        "children": [
+          { "label": "New creators face near-zero discoverability without paid promotion", "direction": "negative" },
+          { "label": "Established creators must increase output frequency to maintain algorithmic favor", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Creator burnout becomes systemic",
+        "impact": "61% of full-time creators report burnout",
+        "direction": "negative",
+        "children": [
+          { "label": "Content treadmill: skip one week and algorithm punishes you for months", "direction": "negative" },
+          { "label": "Mental health deteriorates from public metrics and constant comparison", "direction": "negative" },
+          { "label": "No benefits, no stability, no safety net — gig economy with worse odds", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Platform dependency creates existential risk",
+        "impact": "Algorithm change can destroy income overnight",
+        "direction": "negative",
+        "children": [
+          { "label": "Creators don't own their audience — the platform does", "direction": "negative" },
+          { "label": "Monetization policy changes can demonetize entire content categories", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Revenue share captured by top 1%", "before": "N/A", "after": "90%+", "delta": "Extreme concentration", "direction": "negative" },
+    { "metric": "Median annual creator earnings", "before": "N/A", "after": "<$500", "delta": "Below subsistence", "direction": "negative" },
+    { "metric": "Creators reporting burnout", "before": "N/A", "after": "61%", "delta": "61%", "direction": "negative" },
+    { "metric": "Creators earning >$50K/year", "before": "N/A", "after": "4%", "delta": "96% below living wage", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're quitting stable employment to become a full-time creator without 12+ months of runway",
+      "Your monetization strategy depends entirely on a single platform's algorithm"
+    ],
+    "ifYouMust": [
+      "Treat content creation as a side project until revenue exceeds 50% of your living expenses for 6+ months",
+      "Build an email list or owned audience channel from day one — don't rely solely on platform distribution",
+      "Diversify revenue across multiple platforms and income types (ads, sponsorships, products, services)",
+      "Set a clear financial threshold and timeline — if not met, reassess without sunk cost fallacy"
+    ],
+    "alternatives": [
+      { "name": "Creator-as-marketing for a service business", "note": "Use content to drive leads for consulting, coaching, or freelancing — not as the product itself" },
+      { "name": "Community-first model", "note": "Build a paid community before scaling content — validates demand before investment" },
+      { "name": "Productized knowledge", "note": "Package expertise into courses or tools with one-time creation cost and recurring revenue" }
+    ]
+  },
+
+  "sources": [
+    { "title": "SignalFire: Creator Economy Market Map", "url": "https://signalfire.com/blog/creator-economy/", "note": "200M+ people identify as creators globally, but only 2M earn enough to consider it full-time" },
+    { "title": "Linktree Creator Report 2024", "url": "https://linktr.ee/creator-report/", "note": "Median creator earns less than $500/year; top 1% capture majority of revenue" },
+    { "title": "Harvard Business Review: The Creator Economy Needs a Middle Class", "url": "https://hbr.org/2020/12/the-creator-economy-needs-a-middle-class", "note": "Power law dynamics in creator economy mirror or exceed traditional income inequality" },
+    { "title": "Vibely: Creator Burnout Study", "url": "https://www.tubefilter.com/2022/06/15/creator-burnout-study-vibely/", "note": "61% of creators report burnout, 71% have considered quitting" }
+  ],
+
+  "falsifiability": [
+    "Creator income distribution follows a normal curve rather than a power law, with a viable middle class",
+    "Median creator earnings exceed $10,000/year across major platforms",
+    "Platform algorithm changes show no measurable impact on individual creator revenue"
+  ],
+
+  "tags": ["creator-economy", "power-law", "platform-economics", "burnout", "income-inequality", "gig-economy"],
+  "crossReferences": ["M009", "M008", "S001"],
+
+  "seo": {
+    "description": "The top 1% of creators capture 90%+ of revenue while the median creator earns under $500/year. The creator economy didn't democratize income — it created a new power law.",
+    "keywords": ["creator economy power law", "creator economy second order effects", "content creator hidden costs"]
+  }
+}

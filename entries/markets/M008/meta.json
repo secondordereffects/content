@@ -1,0 +1,104 @@
+{
+  "id": "M008",
+  "title": "Subscription Fatigue Ceiling",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Every product is becoming a subscription. Software, media, fitness, food, razors, cars — the subscription model promises predictable recurring revenue for businesses and convenience for consumers. But consumers have a finite budget and finite tolerance for recurring charges. The average American household now manages 12+ subscriptions totaling $200-300/month. Subscription fatigue is setting in. Churn rates are rising. And the 'predictable revenue' that investors love is becoming less predictable as consumers ruthlessly audit their monthly charges.",
+
+  "hypothesis": "Subscription models create predictable recurring revenue and better customer relationships.",
+
+  "chain": {
+    "root": "Convert product/service to subscription model",
+    "effects": [
+      {
+        "label": "Consumer subscription budget hits ceiling",
+        "impact": "Average household: 12+ subscriptions, $200-300/month",
+        "direction": "negative",
+        "children": [
+          { "label": "Every new subscription competes with existing ones for limited budget", "direction": "negative" },
+          { "label": "Consumers start auditing subscriptions quarterly — 'subscription purges'", "direction": "negative" },
+          { "label": "Free trials convert at declining rates as consumers become wary", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Churn rates increase as fatigue sets in",
+        "impact": "Average streaming churn: 5-7% monthly",
+        "direction": "negative",
+        "children": [
+          { "label": "Consumers rotate subscriptions — subscribe, binge, cancel, repeat", "direction": "negative" },
+          { "label": "Acquisition costs rise as the easy-to-convert market is saturated", "direction": "negative" },
+          { "label": "Lifetime value projections based on early adopters don't hold for later cohorts", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Products degraded to justify subscription model",
+        "impact": "Features removed from one-time purchases, locked behind subscriptions",
+        "direction": "negative",
+        "children": [
+          { "label": "Adobe, BMW, and others lock previously-included features behind subscriptions", "direction": "negative" },
+          { "label": "Consumer resentment builds — 'I used to own this, now I rent it'", "direction": "negative" },
+          { "label": "Right-to-repair and ownership movements gain momentum", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Market bifurcates into subscription-tolerant and subscription-resistant segments",
+        "impact": "Growing demand for one-time purchase alternatives",
+        "direction": "neutral",
+        "children": [
+          { "label": "Competitors offering lifetime licenses gain market share", "direction": "positive" },
+          { "label": "Open-source alternatives grow as subscription fatigue drives users away", "direction": "positive" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Average household subscriptions", "before": "2-3 (2015)", "after": "12+ (2024)", "delta": "+400%", "direction": "negative" },
+    { "metric": "Monthly subscription spend", "before": "$50-80", "after": "$200-300", "delta": "+300%", "direction": "negative" },
+    { "metric": "Streaming service churn (monthly)", "before": "2-3%", "after": "5-7%", "delta": "+100%", "direction": "negative" },
+    { "metric": "Consumer sentiment toward subscriptions", "before": "Positive (convenient)", "after": "Negative (fatigue)", "delta": "Inverted", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your product doesn't provide ongoing value that justifies recurring payment",
+      "Your market is already saturated with subscription competitors"
+    ],
+    "ifYouMust": [
+      "Ensure the subscription provides genuine ongoing value — not just access to what was previously owned",
+      "Offer annual plans with meaningful discounts to reduce churn",
+      "Make cancellation easy and transparent — dark patterns create resentment",
+      "Consider hybrid models — base product purchased, premium features subscribed"
+    ],
+    "alternatives": [
+      { "name": "One-time purchase with paid updates", "note": "Sell the product, charge for major version upgrades — ownership model with sustainable revenue" },
+      { "name": "Usage-based pricing", "note": "Pay for what you use — aligns cost with value, no subscription fatigue" },
+      { "name": "Freemium with lifetime upgrade", "note": "Free basic version, one-time payment for premium — no recurring charge anxiety" }
+    ]
+  },
+
+  "sources": [
+    { "title": "C+R Research: Subscription Economy Statistics", "url": "https://www.crresearch.com/blog/the-state-of-subscriptions-in-2024", "note": "Average American spends $273/month on subscriptions, often underestimating by 2-3x" },
+    { "title": "Antenna: Streaming Churn Data", "url": "https://www.antenna.live/", "note": "Streaming service churn rates averaging 5-7% monthly, with 'subscription rotation' becoming common" },
+    { "title": "Deloitte: Digital Media Trends Survey", "url": "https://www2.deloitte.com/us/en/insights/industry/technology/digital-media-trends-consumption-habits-survey.html", "note": "44% of consumers say they have too many subscriptions, subscription fatigue driving cancellations" },
+    { "title": "WSJ: The Subscription Economy Backlash", "url": "https://www.wsj.com/articles/subscription-fatigue-consumers-cancel-streaming-services", "note": "Investigation into growing consumer resistance to subscription-everything business models" }
+  ],
+
+  "falsifiability": [
+    "Average household subscription count and spend continue growing without ceiling through 2028",
+    "Subscription churn rates decrease as consumers become accustomed to the model",
+    "Consumer sentiment toward subscriptions remains positive as more products adopt the model"
+  ],
+
+  "tags": ["subscriptions", "recurring-revenue", "churn", "consumer-fatigue", "pricing", "business-model"],
+  "crossReferences": ["M009", "M010", "S001"],
+
+  "seo": {
+    "description": "Average household manages 12+ subscriptions at $200-300/month. Streaming churn hits 5-7% monthly. Consumers are rotating, purging, and resenting the subscription-everything economy.",
+    "keywords": ["subscription fatigue ceiling second order effects", "subscription model hidden costs", "recurring revenue churn consequences"]
+  }
+}

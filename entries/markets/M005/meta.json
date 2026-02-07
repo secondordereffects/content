@@ -1,0 +1,105 @@
+{
+  "id": "M005",
+  "title": "ZIRP Zombie Company Effect",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Central banks hold interest rates near zero (ZIRP) for over a decade to stimulate economic growth. Cheap capital floods the market. Companies that would have failed under normal conditions survive on cheap debt and venture funding. These 'zombie companies' — firms that can't cover interest payments from operating income — consume capital, talent, and market share without creating sustainable value. When rates rise, the zombies die all at once, creating cascading failures across the economy.",
+
+  "hypothesis": "Low interest rates stimulate economic growth and help businesses thrive.",
+
+  "chain": {
+    "root": "Maintain near-zero interest rates for extended period",
+    "effects": [
+      {
+        "label": "Unprofitable companies survive on cheap capital",
+        "impact": "Zombie company share rises from 6% to 15-20% of public firms",
+        "direction": "negative",
+        "children": [
+          { "label": "Companies optimize for growth metrics, not profitability", "direction": "negative" },
+          { "label": "Burn rates normalized — losing $100M/year becomes acceptable", "direction": "negative" },
+          { "label": "Unit economics ignored because capital is essentially free", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Talent and resources misallocated to unsustainable businesses",
+        "impact": "Millions of workers in companies with no path to profitability",
+        "direction": "negative",
+        "children": [
+          { "label": "Engineers building products that will never generate sustainable revenue", "direction": "negative" },
+          { "label": "Salary inflation driven by companies competing with free money", "direction": "negative" },
+          { "label": "Productive companies can't compete for talent against subsidized competitors", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Asset bubbles inflate across all categories",
+        "impact": "Real estate, equities, crypto, venture all inflate simultaneously",
+        "direction": "negative",
+        "children": [
+          { "label": "Housing becomes unaffordable for median-income workers", "direction": "negative" },
+          { "label": "Startup valuations detach from fundamentals", "direction": "negative" },
+          { "label": "Wealth inequality accelerates — asset owners benefit, workers don't", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Rate normalization triggers mass extinction event",
+        "impact": "2022-2024: mass layoffs, startup failures, bank collapses",
+        "direction": "negative",
+        "children": [
+          { "label": "SVB collapse — concentrated exposure to rate-sensitive assets", "direction": "negative" },
+          { "label": "Tech layoffs of 400K+ workers in 18 months", "direction": "negative" },
+          { "label": "Venture funding drops 50-70% — zombie companies can't raise", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Zombie company share (public firms)", "before": "6% (2000)", "after": "15-20% (2021)", "delta": "+200%", "direction": "negative" },
+    { "metric": "Venture funding (peak to trough)", "before": "$340B (2021)", "after": "$170B (2023)", "delta": "-50%", "direction": "negative" },
+    { "metric": "Tech layoffs (2022-2024)", "before": "Normal attrition", "after": "400K+ workers", "delta": "Mass event", "direction": "negative" },
+    { "metric": "Startup failure rate post-ZIRP", "before": "20% annual", "after": "35-40% annual", "delta": "+75%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're building a company that depends on perpetually cheap capital to survive",
+      "Your business model only works at zero interest rates"
+    ],
+    "ifYouMust": [
+      "Build for profitability from day one — don't assume cheap capital is permanent",
+      "Stress-test your business model at 5-7% interest rates",
+      "Maintain 18-24 months of runway regardless of fundraising climate",
+      "Focus on unit economics, not just growth metrics"
+    ],
+    "alternatives": [
+      { "name": "Bootstrapping", "note": "Build a profitable business without external capital — immune to rate cycles" },
+      { "name": "Revenue-based financing", "note": "Borrow against actual revenue, not projected growth — aligns incentives" },
+      { "name": "Capital-efficient growth", "note": "Grow at the rate your revenue supports — sustainable by definition" }
+    ]
+  },
+
+  "sources": [
+    { "title": "BIS: Rise of Zombie Firms", "url": "https://www.bis.org/publ/qtrpdf/r_qt1809g.htm", "note": "Bank for International Settlements research showing zombie firm share tripled during low-rate era" },
+    { "title": "Federal Reserve: Financial Stability Report", "url": "https://www.federalreserve.gov/publications/financial-stability-report.htm", "note": "Analysis of how low rates enabled excessive risk-taking and leverage across the financial system" },
+    { "title": "Crunchbase: Venture Funding Data", "url": "https://news.crunchbase.com/venture/global-funding-data-analysis-2023/", "note": "Venture funding dropped 50%+ from 2021 peak as rates normalized" },
+    { "title": "Layoffs.fyi: Tech Layoff Tracker", "url": "https://layoffs.fyi/", "note": "Comprehensive tracker showing 400K+ tech layoffs in 2022-2024, concentrated in ZIRP-era companies" }
+  ],
+
+  "falsifiability": [
+    "Zombie companies created during ZIRP become profitable and sustainable at normal interest rates within 3 years",
+    "Low interest rate periods do not correlate with increased zombie company formation across multiple economic cycles",
+    "Rate normalization does not trigger disproportionate failures among companies funded during low-rate periods"
+  ],
+
+  "tags": ["zirp", "zombie-companies", "interest-rates", "venture-capital", "economic-cycles", "misallocation"],
+  "crossReferences": ["M009", "M025", "O007"],
+
+  "seo": {
+    "description": "ZIRP tripled zombie company share to 15-20% of public firms. When rates normalized: 400K+ tech layoffs, 50% venture funding collapse, and SVB's failure. Cheap capital creates fragile economies.",
+    "keywords": ["zirp zombie company second order effects", "low interest rates hidden costs", "zero interest rate policy consequences"]
+  }
+}
