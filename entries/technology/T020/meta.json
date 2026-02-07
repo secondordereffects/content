@@ -1,0 +1,104 @@
+{
+  "id": "T020",
+  "title": "Observability Data Explosion",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.79,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Teams adopt observability platforms (Datadog, New Relic, Splunk) to understand their distributed systems. The pitch: instrument everything, collect all the data, and you'll be able to debug any issue. So they do. Every service emits metrics, traces, and logs. The data volume explodes. The observability bill becomes one of the largest line items in the infrastructure budget — sometimes exceeding the cost of the infrastructure being observed. And despite all this data, teams still can't find the needle in the haystack when production breaks.",
+
+  "hypothesis": "More observability data means better debugging and faster incident resolution.",
+
+  "chain": {
+    "root": "Instrument everything and collect all observability data",
+    "effects": [
+      {
+        "label": "Data volume and cost grow exponentially",
+        "impact": "Observability costs: $10-50K/month for mid-size companies",
+        "direction": "negative",
+        "children": [
+          { "label": "Every new service, endpoint, and metric adds to the bill", "direction": "negative" },
+          { "label": "Log volume grows 30-50% annually without intervention", "direction": "negative" },
+          { "label": "Observability vendor pricing designed to scale with data — not with value", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "More data doesn't mean better insights",
+        "impact": "Signal-to-noise ratio degrades with volume",
+        "direction": "negative",
+        "children": [
+          { "label": "Engineers spend more time querying dashboards than fixing issues", "direction": "negative" },
+          { "label": "Too many metrics — nobody knows which ones matter", "direction": "negative" },
+          { "label": "Dashboard sprawl: 50-200 dashboards, most never viewed", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Vendor lock-in through proprietary query languages and integrations",
+        "impact": "Migration cost: months of engineering time",
+        "direction": "negative",
+        "children": [
+          { "label": "Custom dashboards, alerts, and queries tied to vendor-specific syntax", "direction": "negative" },
+          { "label": "Switching vendors means rebuilding all observability from scratch", "direction": "negative" },
+          { "label": "Vendor raises prices knowing you can't easily leave", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Cardinality explosions create surprise bills",
+        "impact": "Single high-cardinality metric can cost $10K+/month",
+        "direction": "negative",
+        "children": [
+          { "label": "A developer adds a user_id tag to a metric — bill doubles overnight", "direction": "negative" },
+          { "label": "Cardinality limits force teams to drop useful dimensions", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Monthly observability cost", "before": "$1-5K", "after": "$10-50K+", "delta": "+500-1000%", "direction": "negative" },
+    { "metric": "Observability cost as % of infra spend", "before": "5-10%", "after": "20-40%", "delta": "+200%", "direction": "negative" },
+    { "metric": "Dashboards created vs actively used", "before": "Most used", "after": "80% never viewed", "delta": "80% waste", "direction": "negative" },
+    { "metric": "Mean time to resolve (MTTR)", "before": "Expected to decrease", "after": "Flat or marginal improvement", "delta": "Minimal", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your observability bill exceeds 20% of your infrastructure cost",
+      "Your team has more dashboards than they can review in a week"
+    ],
+    "ifYouMust": [
+      "Define SLOs first, then instrument only what's needed to measure them",
+      "Implement sampling for high-volume traces and logs — you don't need 100% of everything",
+      "Set cardinality budgets and enforce them in CI",
+      "Audit dashboards and alerts quarterly — delete what nobody uses"
+    ],
+    "alternatives": [
+      { "name": "OpenTelemetry + open-source backends", "note": "Vendor-neutral instrumentation with Grafana/Prometheus/Jaeger — control your data and costs" },
+      { "name": "SLO-driven observability", "note": "Instrument for SLO measurement, not for 'collect everything' — focused and cost-effective" },
+      { "name": "Adaptive sampling", "note": "Sample more during incidents, less during normal operation — right data at the right time" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Datadog S-1 Filing", "url": "https://www.sec.gov/Archives/edgar/data/1561550/000119312519227013/d665122ds1.htm", "note": "Datadog's revenue growth demonstrates how observability costs scale with customer infrastructure" },
+    { "title": "Chronosphere: Observability Cost Report", "url": "https://chronosphere.io/learn/the-rising-costs-of-observability/", "note": "Analysis showing observability costs growing 30-50% annually, often faster than infrastructure costs" },
+    { "title": "Honeycomb: Observability Engineering", "url": "https://www.honeycomb.io/observability-engineering", "note": "Framework for effective observability that avoids the 'collect everything' trap" },
+    { "title": "CNCF: OpenTelemetry Project", "url": "https://opentelemetry.io/", "note": "Vendor-neutral observability standard that reduces lock-in and enables cost control" }
+  ],
+
+  "falsifiability": [
+    "Collecting more observability data consistently reduces MTTR proportionally",
+    "Observability costs grow slower than infrastructure costs as systems scale",
+    "Teams with more dashboards and metrics resolve incidents faster than teams with fewer"
+  ],
+
+  "tags": ["observability", "monitoring", "cost-management", "datadog", "vendor-lock-in", "devops"],
+  "crossReferences": ["T005", "I001", "T001"],
+
+  "seo": {
+    "description": "Observability costs reach 20-40% of infrastructure spend. 80% of dashboards are never viewed. More data doesn't mean better debugging — it means bigger bills and more noise.",
+    "keywords": ["observability data explosion second order effects", "monitoring costs hidden consequences", "observability vendor lock-in"]
+  }
+}

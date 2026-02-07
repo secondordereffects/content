@@ -1,0 +1,104 @@
+{
+  "id": "A031",
+  "title": "Generative AI Copyright Vacuum",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.77,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Generative AI models are trained on billions of copyrighted works — books, articles, images, code, music — without permission or compensation. The outputs are 'new' works that are statistically derived from the training data. Legal systems worldwide are struggling to answer fundamental questions: Is training on copyrighted data fair use? Who owns AI-generated output? Can AI output infringe copyright if it's 'original'? While courts deliberate, the AI industry is building a multi-trillion dollar ecosystem on a legal foundation that may not hold.",
+
+  "hypothesis": "AI-generated content is original and doesn't raise meaningful copyright concerns.",
+
+  "chain": {
+    "root": "Train generative AI on copyrighted works and commercialize outputs",
+    "effects": [
+      {
+        "label": "Creative professionals lose income as AI replaces their work",
+        "impact": "Freelance creative work declining 20-40% in AI-affected categories",
+        "direction": "negative",
+        "children": [
+          { "label": "Stock photography, illustration, and copywriting markets collapsing", "direction": "negative" },
+          { "label": "AI trained on artists' work now competes with those same artists", "direction": "negative" },
+          { "label": "Compensation for training data: $0 to creators", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Legal uncertainty creates business risk for AI adopters",
+        "impact": "Pending lawsuits could invalidate AI-generated content retroactively",
+        "direction": "negative",
+        "children": [
+          { "label": "NYT v. OpenAI, Getty v. Stability AI — landmark cases pending", "direction": "negative" },
+          { "label": "Companies using AI content may face liability if courts rule against fair use", "direction": "negative" },
+          { "label": "Insurance for AI-generated content doesn't exist yet", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Ownership of AI output is legally ambiguous",
+        "impact": "US Copyright Office: AI-generated works are not copyrightable",
+        "direction": "negative",
+        "children": [
+          { "label": "Companies can't protect AI-generated content from copying", "direction": "negative" },
+          { "label": "Competitors can freely use your AI-generated marketing, code, and designs", "direction": "negative" },
+          { "label": "The more AI-generated content you produce, the less IP protection you have", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Creative ecosystem hollows out",
+        "impact": "Fewer humans creating original work = less training data for future AI",
+        "direction": "negative",
+        "children": [
+          { "label": "If creators can't earn a living, they stop creating", "direction": "negative" },
+          { "label": "AI models trained on AI output degrade (model collapse)", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Freelance creative income (AI-affected categories)", "before": "Baseline", "after": "-20-40%", "delta": "-30%", "direction": "negative" },
+    { "metric": "Pending AI copyright lawsuits", "before": "Zero (2021)", "after": "Dozens (2025)", "delta": "Rapidly growing", "direction": "negative" },
+    { "metric": "Copyright protection for AI output", "before": "Assumed protectable", "after": "Not copyrightable (US)", "delta": "No protection", "direction": "negative" },
+    { "metric": "Creator compensation for training data", "before": "N/A", "after": "$0", "delta": "Zero", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your business depends on IP protection for AI-generated content",
+      "You're training models on copyrighted data without licensing agreements"
+    ],
+    "ifYouMust": [
+      "License training data from creators — it's cheaper now than after courts rule",
+      "Maintain human creative direction and editing to strengthen copyright claims",
+      "Track provenance of AI-generated content for potential future liability",
+      "Don't assume AI output is protectable IP — plan accordingly"
+    ],
+    "alternatives": [
+      { "name": "Licensed training data", "note": "Train on properly licensed datasets — legal certainty is worth the cost" },
+      { "name": "Human-AI collaboration", "note": "Human creates the concept and direction, AI assists execution — stronger copyright position" },
+      { "name": "Creator compensation models", "note": "Revenue sharing with creators whose work trained the model — sustainable ecosystem" }
+    ]
+  },
+
+  "sources": [
+    { "title": "US Copyright Office: AI and Copyright", "url": "https://www.copyright.gov/ai/", "note": "Official guidance that purely AI-generated works are not copyrightable under current US law" },
+    { "title": "NYT v. OpenAI Complaint", "url": "https://nytco-assets.nytimes.com/2023/12/NYT_Complaint_Dec2023.pdf", "note": "Landmark lawsuit alleging OpenAI's training on NYT articles constitutes copyright infringement" },
+    { "title": "Harvard Law: Generative AI and Copyright", "url": "https://cyber.harvard.edu/story/2023-06/generative-ai-and-copyright", "note": "Legal analysis of the copyright implications of generative AI training and output" },
+    { "title": "Authors Guild: AI Impact on Writers", "url": "https://authorsguild.org/news/ag-and-authors-file-class-action-suit-against-openai/", "note": "Class action lawsuit and survey data showing AI's impact on professional writers' income" }
+  ],
+
+  "falsifiability": [
+    "Courts consistently rule that training AI on copyrighted works constitutes fair use across jurisdictions",
+    "AI-generated content receives full copyright protection equivalent to human-created works",
+    "Creative professionals' income remains stable or increases despite AI content generation"
+  ],
+
+  "tags": ["copyright", "generative-ai", "intellectual-property", "creative-economy", "fair-use", "legal"],
+  "crossReferences": ["A004", "A008", "A007"],
+
+  "seo": {
+    "description": "AI trained on copyrighted works without compensation. AI output isn't copyrightable. Freelance creative income down 20-40%. The legal foundation of the AI industry may not hold.",
+    "keywords": ["generative ai copyright vacuum second order effects", "ai copyright hidden costs", "ai training data legal consequences"]
+  }
+}

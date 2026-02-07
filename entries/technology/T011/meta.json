@@ -1,0 +1,104 @@
+{
+  "id": "T011",
+  "title": "Test Coverage Theater",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Engineering teams set test coverage targets — 80%, 90%, sometimes 100%. The metric becomes a goal. Developers write tests to hit the number, not to catch bugs. Tests that assert nothing meaningful. Tests that test implementation details instead of behavior. Tests that pass when the code is broken and break when the code is correct. The coverage number goes up. The confidence in the codebase doesn't.",
+
+  "hypothesis": "Higher test coverage means fewer bugs and more reliable software.",
+
+  "chain": {
+    "root": "Set test coverage percentage as a quality metric and gate",
+    "effects": [
+      {
+        "label": "Developers optimize for coverage number, not test quality",
+        "impact": "Tests written to satisfy metrics, not catch bugs",
+        "direction": "negative",
+        "children": [
+          { "label": "Tests that assert nothing — they execute code but don't verify behavior", "direction": "negative" },
+          { "label": "Tests that test implementation details — break on refactoring, pass on bugs", "direction": "negative" },
+          { "label": "Trivial code (getters, setters, constructors) tested to pad numbers", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "False confidence in test suite",
+        "impact": "High coverage creates illusion of safety",
+        "direction": "negative",
+        "children": [
+          { "label": "Teams deploy with confidence because 'tests pass' — but tests don't test the right things", "direction": "negative" },
+          { "label": "Integration and edge case testing neglected because unit coverage is 'high enough'", "direction": "negative" },
+          { "label": "Mutation testing reveals 30-50% of tests don't actually catch bugs", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Test maintenance becomes a significant cost",
+        "impact": "Test code grows to 2-3x production code volume",
+        "direction": "negative",
+        "children": [
+          { "label": "Brittle tests break on every refactoring — slowing development", "direction": "negative" },
+          { "label": "Developers spend more time fixing tests than fixing bugs", "direction": "negative" },
+          { "label": "Test suite run time grows — CI takes 30-60 minutes", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Real quality practices get crowded out",
+        "impact": "Coverage target consumes testing budget",
+        "direction": "negative",
+        "children": [
+          { "label": "Property-based testing, fuzzing, and integration testing underfunded", "direction": "negative" },
+          { "label": "Manual exploratory testing cut because 'we have 90% coverage'", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Test coverage percentage", "before": "Low", "after": "80-95%", "delta": "Looks great", "direction": "positive" },
+    { "metric": "Tests that actually catch bugs (mutation score)", "before": "Assumed high", "after": "50-70%", "delta": "30-50% are theater", "direction": "negative" },
+    { "metric": "Time spent maintaining tests", "before": "10-15% of dev time", "after": "25-40% of dev time", "delta": "+100%", "direction": "negative" },
+    { "metric": "Production bug rate", "before": "Expected to decrease", "after": "Flat or marginal improvement", "delta": "Minimal", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're using coverage as a gate without measuring test quality",
+      "Your team writes tests after the fact to hit a number rather than during development to verify behavior"
+    ],
+    "ifYouMust": [
+      "Measure mutation testing score alongside coverage — it reveals which tests actually catch bugs",
+      "Focus coverage on critical paths and business logic, not trivial code",
+      "Set a reasonable floor (70-80%) not a ceiling — diminishing returns above 80%",
+      "Review test quality in code reviews as rigorously as production code"
+    ],
+    "alternatives": [
+      { "name": "Mutation testing", "note": "Measures whether tests actually catch bugs by introducing mutations — the real quality metric" },
+      { "name": "Behavior-driven testing", "note": "Test behaviors and outcomes, not implementation details — tests survive refactoring" },
+      { "name": "Risk-based testing", "note": "Focus testing effort on highest-risk code paths — not all code needs the same coverage" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Martin Fowler: Test Coverage", "url": "https://martinfowler.com/bliki/TestCoverage.html", "note": "Coverage is a useful tool for finding untested code, but a terrible goal to optimize for" },
+    { "title": "Google Testing Blog: Code Coverage Best Practices", "url": "https://testing.googleblog.com/2020/08/code-coverage-best-practices.html", "note": "Google's internal research showing diminishing returns above 60-80% coverage" },
+    { "title": "Pitest: Mutation Testing Research", "url": "https://pitest.org/", "note": "Mutation testing framework revealing that 30-50% of tests in high-coverage suites don't catch real bugs" },
+    { "title": "IEEE: An Empirical Study of Test Coverage and Fault Detection", "url": "https://ieeexplore.ieee.org/document/7927978", "note": "Research showing weak correlation between coverage percentage and actual fault detection above 70%" }
+  ],
+
+  "falsifiability": [
+    "Test suites with 95%+ coverage consistently catch more production bugs than suites with 70% coverage",
+    "Mutation testing scores correlate strongly with coverage percentages (high coverage = high mutation score)",
+    "Teams that optimize for coverage percentage ship fewer bugs than teams that optimize for test quality"
+  ],
+
+  "tags": ["testing", "code-coverage", "software-quality", "metrics", "mutation-testing", "engineering-culture"],
+  "crossReferences": ["T010", "A015", "T002"],
+
+  "seo": {
+    "description": "90% test coverage sounds great until mutation testing reveals 30-50% of tests don't catch bugs. Coverage theater creates false confidence while real quality practices get crowded out.",
+    "keywords": ["test coverage theater second order effects", "code coverage hidden costs", "test quality vs coverage consequences"]
+  }
+}

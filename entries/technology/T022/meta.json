@@ -1,0 +1,104 @@
+{
+  "id": "T022",
+  "title": "Infrastructure as Code Drift",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.78,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Teams adopt Infrastructure as Code (Terraform, Pulumi, CloudFormation) to make infrastructure reproducible, version-controlled, and auditable. The initial setup is clean. Then someone makes a manual change in the console during an incident. Then another. Then a new service gets provisioned outside IaC because it was 'just a quick test.' Drift accumulates. The IaC state file says one thing, reality says another. The reproducible infrastructure is no longer reproducible, and nobody knows which version is correct.",
+
+  "hypothesis": "Infrastructure as Code ensures reproducible, auditable infrastructure that matches the declared state.",
+
+  "chain": {
+    "root": "Adopt Infrastructure as Code for all infrastructure management",
+    "effects": [
+      {
+        "label": "Manual changes during incidents create drift",
+        "impact": "60-70% of organizations report IaC drift",
+        "direction": "negative",
+        "children": [
+          { "label": "Incident response requires speed — IaC is too slow in emergencies", "direction": "negative" },
+          { "label": "Console changes made during incidents never get back-ported to IaC", "direction": "negative" },
+          { "label": "Each manual change makes the next one more likely — drift normalizes", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "State file becomes source of truth that isn't true",
+        "impact": "State file diverges from actual infrastructure",
+        "direction": "negative",
+        "children": [
+          { "label": "terraform plan shows changes that would break production if applied", "direction": "negative" },
+          { "label": "Teams afraid to run terraform apply because they don't trust the state", "direction": "negative" },
+          { "label": "State file corruption or loss can be catastrophic — no way to reconcile", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "IaC complexity grows faster than team expertise",
+        "impact": "Terraform codebases become as complex as application code",
+        "direction": "negative",
+        "children": [
+          { "label": "Modules, workspaces, providers, and state management require deep expertise", "direction": "negative" },
+          { "label": "Debugging IaC failures requires understanding both the tool and the cloud provider", "direction": "negative" },
+          { "label": "Blast radius of IaC mistakes can be enormous — one bad apply destroys production", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Reproducibility promise breaks down",
+        "impact": "Can't reliably recreate infrastructure from code alone",
+        "direction": "negative",
+        "children": [
+          { "label": "Disaster recovery plans that depend on IaC fail when drift exists", "direction": "negative" },
+          { "label": "New environments don't match production because of undocumented manual changes", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Organizations experiencing IaC drift", "before": "Expected 0%", "after": "60-70%", "delta": "Majority", "direction": "negative" },
+    { "metric": "Manual console changes per month", "before": "Expected 0", "after": "5-20 per team", "delta": "Regular occurrence", "direction": "negative" },
+    { "metric": "Confidence in terraform apply", "before": "High", "after": "Low (fear of breaking production)", "delta": "Inverted", "direction": "negative" },
+    { "metric": "Time to provision new environment", "before": "Minutes (IaC promise)", "after": "Days (drift + manual fixes)", "delta": "+1000%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your team doesn't have the discipline to back-port every manual change to IaC",
+      "You don't have automated drift detection running continuously"
+    ],
+    "ifYouMust": [
+      "Run automated drift detection daily — alert on any divergence immediately",
+      "Establish a 'no manual changes' policy with exceptions requiring documented back-port within 24 hours",
+      "Use policy-as-code (OPA, Sentinel) to prevent manual changes that bypass IaC",
+      "Keep state files in remote backends with locking and versioning"
+    ],
+    "alternatives": [
+      { "name": "GitOps with drift detection", "note": "Continuous reconciliation between declared state and actual state — auto-corrects drift" },
+      { "name": "Immutable infrastructure", "note": "Never modify — destroy and recreate. Eliminates drift by design." },
+      { "name": "Platform engineering abstraction", "note": "Internal platform handles IaC complexity — developers interact with simpler abstractions" }
+    ]
+  },
+
+  "sources": [
+    { "title": "HashiCorp State of Cloud Strategy Survey", "url": "https://www.hashicorp.com/state-of-the-cloud", "note": "Survey showing majority of organizations experience infrastructure drift despite IaC adoption" },
+    { "title": "Spacelift: State of Infrastructure as Code", "url": "https://spacelift.io/blog/state-of-infrastructure-as-code", "note": "Analysis of IaC challenges including drift, state management, and complexity growth" },
+    { "title": "Gruntwork: Terraform Best Practices", "url": "https://blog.gruntwork.io/a-comprehensive-guide-to-terraform-b3d32832baca", "note": "Practitioner guide addressing drift prevention and state management challenges" },
+    { "title": "CNCF: GitOps Principles", "url": "https://opengitops.dev/", "note": "GitOps framework that addresses drift through continuous reconciliation" }
+  ],
+
+  "falsifiability": [
+    "Organizations using IaC maintain zero drift between declared and actual infrastructure state over 12 months",
+    "Manual changes during incidents are consistently back-ported to IaC within 24 hours",
+    "IaC state files accurately represent production infrastructure at all times without drift detection tooling"
+  ],
+
+  "tags": ["infrastructure-as-code", "terraform", "drift", "devops", "cloud", "reproducibility"],
+  "crossReferences": ["T005", "T001", "I001"],
+
+  "seo": {
+    "description": "60-70% of organizations experience IaC drift. Manual incident changes never get back-ported. The reproducible infrastructure promise breaks down as state files diverge from reality.",
+    "keywords": ["infrastructure as code drift second order effects", "terraform drift hidden costs", "iac state management consequences"]
+  }
+}

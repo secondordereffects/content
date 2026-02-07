@@ -1,0 +1,104 @@
+{
+  "id": "A018",
+  "title": "AI Accountability Gap",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.81,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "AI systems make consequential decisions — who gets a loan, who gets hired, who gets parole, what medical treatment is recommended. When these decisions go wrong, a familiar pattern emerges: the company blames the algorithm, the algorithm can't be interrogated, and the affected person has no recourse. The AI accountability gap is the space between 'the AI decided' and 'someone is responsible.' It's growing wider as AI systems become more autonomous and more opaque.",
+
+  "hypothesis": "AI decision-making can be governed by existing accountability frameworks.",
+
+  "chain": {
+    "root": "Deploy AI for consequential decisions without clear accountability frameworks",
+    "effects": [
+      {
+        "label": "Responsibility diffuses across the AI supply chain",
+        "impact": "No single entity accepts accountability for AI-caused harm",
+        "direction": "negative",
+        "children": [
+          { "label": "Model provider says 'we provide tools, not decisions'", "direction": "negative" },
+          { "label": "Deploying company says 'the AI made the recommendation'", "direction": "negative" },
+          { "label": "Individual operator says 'I followed the system's guidance'", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Affected individuals have no meaningful recourse",
+        "impact": "Appeals processes are opaque or nonexistent",
+        "direction": "negative",
+        "children": [
+          { "label": "Denied a loan by AI? No explanation, no appeal, no human to talk to", "direction": "negative" },
+          { "label": "Algorithmic decisions are treated as objective even when they're biased", "direction": "negative" },
+          { "label": "Legal frameworks designed for human decision-makers don't map to AI systems", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Organizations use AI opacity as a liability shield",
+        "impact": "'The algorithm decided' becomes the new 'I was just following orders'",
+        "direction": "negative",
+        "children": [
+          { "label": "Companies deploy AI specifically because it obscures decision rationale", "direction": "negative" },
+          { "label": "Discriminatory outcomes hidden behind algorithmic complexity", "direction": "negative" },
+          { "label": "Auditing AI decisions requires expertise most regulators don't have", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Public trust in institutions erodes",
+        "impact": "Trust in AI-using institutions declining",
+        "direction": "negative",
+        "children": [
+          { "label": "People feel powerless against systems they can't understand or challenge", "direction": "negative" },
+          { "label": "Kafka-esque experiences with automated systems become normalized", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "AI decisions with clear accountability", "before": "Assumed 100%", "after": "<30%", "delta": "-70%", "direction": "negative" },
+    { "metric": "Successful appeals of AI decisions", "before": "N/A", "after": "<5% of affected individuals", "delta": "Near zero recourse", "direction": "negative" },
+    { "metric": "Organizations using AI to obscure decision rationale", "before": "Rare", "after": "Common practice", "delta": "Normalized", "direction": "negative" },
+    { "metric": "Regulatory capacity to audit AI systems", "before": "N/A", "after": "Severely lacking", "delta": "Gap widening", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your AI system makes decisions that significantly affect people's lives without human review",
+      "You cannot explain why your AI made a specific decision to the affected person"
+    ],
+    "ifYouMust": [
+      "Designate a human accountable for every AI-assisted decision category",
+      "Build explainability into the system — if you can't explain it, don't deploy it",
+      "Create meaningful appeals processes with human review for consequential decisions",
+      "Maintain audit logs that can reconstruct why any specific decision was made"
+    ],
+    "alternatives": [
+      { "name": "Human-in-the-loop for consequential decisions", "note": "AI recommends, human decides and is accountable — clear chain of responsibility" },
+      { "name": "Algorithmic impact assessments", "note": "Evaluate potential harms before deployment, not after — proactive accountability" },
+      { "name": "Third-party auditing", "note": "Independent auditors review AI systems for bias, accuracy, and accountability — like financial auditing" }
+    ]
+  },
+
+  "sources": [
+    { "title": "AI Now Institute: Algorithmic Accountability", "url": "https://ainowinstitute.org/", "note": "Research on the accountability gap in AI systems and proposals for governance frameworks" },
+    { "title": "ProPublica: Machine Bias", "url": "https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing", "note": "Investigation showing AI criminal risk scores are racially biased with no accountability mechanism" },
+    { "title": "EU AI Act", "url": "https://artificialintelligenceact.eu/", "note": "First comprehensive AI regulation attempting to establish accountability for high-risk AI systems" },
+    { "title": "ACM: Statement on Algorithmic Transparency and Accountability", "url": "https://www.acm.org/binaries/content/assets/public-policy/2017_usacm_statement_algorithms.pdf", "note": "Professional computing society's principles for algorithmic accountability" }
+  ],
+
+  "falsifiability": [
+    "Existing legal frameworks adequately address AI-caused harms without new legislation",
+    "Affected individuals can successfully appeal AI decisions at rates comparable to human decisions",
+    "Organizations voluntarily implement meaningful AI accountability without regulatory pressure"
+  ],
+
+  "tags": ["ai-accountability", "algorithmic-governance", "transparency", "liability", "regulation", "human-rights"],
+  "crossReferences": ["A012", "A010", "A009"],
+
+  "seo": {
+    "description": "When AI decisions go wrong, nobody is accountable. Model providers, deployers, and operators all point elsewhere. Less than 5% of affected individuals have meaningful recourse.",
+    "keywords": ["ai accountability gap second order effects", "algorithmic accountability hidden costs", "ai decision liability consequences"]
+  }
+}

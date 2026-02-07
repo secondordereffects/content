@@ -1,0 +1,103 @@
+{
+  "id": "T005",
+  "title": "Cloud Lock-in Gradient",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Engineering teams adopt managed cloud services to move faster. The first service is a pragmatic choice — why build a message queue when SQS exists? Then comes DynamoDB because it integrates neatly. Then Lambda because it's serverless. Then Step Functions for orchestration. Each decision is locally rational. But the cumulative effect is a system so deeply coupled to one provider that migration becomes a multi-year, multi-million dollar project. The lock-in doesn't happen in one decision — it's a gradient, each step making the next proprietary choice easier and the exit harder.",
+
+  "hypothesis": "Using managed cloud services saves engineering time without creating meaningful lock-in.",
+
+  "chain": {
+    "root": "Adopt managed cloud services incrementally",
+    "effects": [
+      {
+        "label": "Each proprietary service makes the next one easier to justify",
+        "impact": "70-80% proprietary service adoption within 3 years",
+        "direction": "negative",
+        "children": [
+          { "label": "IAM, networking, and monitoring deeply coupled to provider", "direction": "negative" },
+          { "label": "Engineers develop provider-specific skills, reducing portability", "direction": "negative" },
+          { "label": "Architecture decisions assume provider-specific capabilities", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Switching costs compound non-linearly",
+        "impact": "Migration cost doubles with each year of adoption",
+        "direction": "negative",
+        "children": [
+          { "label": "Data gravity — terabytes of data in proprietary formats", "direction": "negative" },
+          { "label": "Egress fees designed to make leaving expensive", "direction": "negative" },
+          { "label": "No portable equivalent for many managed services", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Provider gains pricing leverage",
+        "impact": "Annual price increases of 5-15% become non-negotiable",
+        "direction": "negative",
+        "children": [
+          { "label": "Contract negotiations become one-sided — you have no credible exit threat", "direction": "negative" },
+          { "label": "Reserved instance commitments lock in spend for 1-3 years", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Innovation constrained to provider's roadmap",
+        "impact": "Architecture limited by what provider offers",
+        "direction": "negative",
+        "children": [
+          { "label": "Can't adopt better tools if they don't exist in your provider's ecosystem", "direction": "negative" },
+          { "label": "Provider deprecations force unplanned migrations within their ecosystem", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Proprietary service adoption", "before": "1-2 services", "after": "15-30 services", "delta": "+1000%", "direction": "negative" },
+    { "metric": "Estimated migration cost", "before": "Weeks of work", "after": "$5-50M and 2-4 years", "delta": "Prohibitive", "direction": "negative" },
+    { "metric": "Annual cloud cost growth", "before": "Projected 10%", "after": "Actual 20-35%", "delta": "+100%", "direction": "negative" },
+    { "metric": "Negotiating leverage with provider", "before": "Competitive", "after": "Minimal", "delta": "Lost", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're building a product where provider independence is a competitive requirement",
+      "Your cloud spend already exceeds 15% of revenue and is growing faster"
+    ],
+    "ifYouMust": [
+      "Use portable abstractions (Kubernetes, Terraform, PostgreSQL) for core infrastructure",
+      "Limit proprietary services to non-critical, easily replaceable components",
+      "Maintain a cloud exit plan document — update it quarterly",
+      "Negotiate egress fee waivers and price caps in multi-year contracts"
+    ],
+    "alternatives": [
+      { "name": "Cloud-agnostic stack", "note": "Kubernetes + Terraform + open-source databases — portable by design" },
+      { "name": "Selective proprietary adoption", "note": "Use managed services only where the time savings clearly outweigh the lock-in cost" },
+      { "name": "Multi-cloud for critical services", "note": "Run core workloads on two providers — higher complexity but real negotiating leverage" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Andreessen Horowitz: The Cost of Cloud", "url": "https://a16z.com/the-cost-of-cloud-a-trillion-dollar-paradox/", "note": "Cloud costs consume 50%+ of revenue for many SaaS companies, repatriation could save 30-50%" },
+    { "title": "Flexera State of the Cloud Report 2024", "url": "https://www.flexera.com/blog/cloud/cloud-computing-trends/", "note": "Cloud waste estimated at 28% of total spend, vendor lock-in cited as top concern" },
+    { "title": "Gartner: Cloud Lock-in Risk Assessment", "url": "https://www.gartner.com/en/articles/is-the-cloud-secure", "note": "60% of enterprises identify single-cloud dependency as a top-5 technology risk" },
+    { "title": "37signals: Why We're Leaving the Cloud", "url": "https://world.hey.com/dhh/why-we-re-leaving-the-cloud-654b47e0", "note": "37signals saved $7M over 5 years by repatriating from AWS — only possible because they limited lock-in" }
+  ],
+
+  "falsifiability": [
+    "Organizations using 20+ proprietary cloud services can migrate to another provider in under 6 months",
+    "Cloud provider pricing remains stable or decreases for locked-in customers over 5-year periods",
+    "Managed service adoption does not correlate with reduced negotiating leverage in contract renewals"
+  ],
+
+  "tags": ["cloud", "vendor-lock-in", "managed-services", "migration", "infrastructure", "cost-management"],
+  "crossReferences": ["I001", "T001", "T002"],
+
+  "seo": {
+    "description": "Cloud lock-in is a gradient, not a cliff. Each managed service makes the next easier to adopt and exit harder. Migration costs double annually, reaching $5-50M within 3 years.",
+    "keywords": ["cloud lock-in gradient second order effects", "managed services vendor lock-in", "cloud migration hidden costs"]
+  }
+}

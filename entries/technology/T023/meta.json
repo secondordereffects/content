@@ -1,0 +1,106 @@
+{
+  "id": "T023",
+  "title": "SPA Performance Paradox",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Teams choose Single Page Applications (React, Angular, Vue) for 'better user experience.' The SPA loads a large JavaScript bundle upfront, then handles navigation client-side without full page reloads. The transitions feel smooth — after the initial load. But that initial load is the problem. Users on slow connections or older devices stare at a blank screen for 3-5 seconds while megabytes of JavaScript download, parse, and execute. The SPA optimized for the developer's MacBook Pro, not the user's $200 Android phone on 3G.",
+
+  "hypothesis": "Single Page Applications provide better user experience than server-rendered pages.",
+
+  "chain": {
+    "root": "Build application as a Single Page Application",
+    "effects": [
+      {
+        "label": "Initial load time increases dramatically",
+        "impact": "First Contentful Paint: 1-2s (SSR) vs 3-5s (SPA)",
+        "direction": "negative",
+        "children": [
+          { "label": "Large JS bundle must download, parse, and execute before anything renders", "direction": "negative" },
+          { "label": "Users on slow connections see blank screen or loading spinner for seconds", "direction": "negative" },
+          { "label": "Every 100ms of load time costs 1% of conversions", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "SEO suffers without server-side rendering",
+        "impact": "Client-rendered content invisible to many crawlers",
+        "direction": "negative",
+        "children": [
+          { "label": "Google can render JS but other search engines and social crawlers can't", "direction": "negative" },
+          { "label": "Teams add SSR/SSG to fix SEO — negating the SPA simplicity argument", "direction": "negative" },
+          { "label": "Hydration adds complexity and can cause layout shifts", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Accessibility and progressive enhancement break",
+        "impact": "No JS = no content",
+        "direction": "negative",
+        "children": [
+          { "label": "Screen readers struggle with client-side routing and dynamic content", "direction": "negative" },
+          { "label": "Browser back/forward behavior requires manual reimplementation", "direction": "negative" },
+          { "label": "Deep linking, bookmarking, and sharing require explicit handling", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Complexity shifts from server to client",
+        "impact": "State management, routing, caching all reimplemented in JS",
+        "direction": "negative",
+        "children": [
+          { "label": "Client-side state management (Redux, Zustand) adds significant complexity", "direction": "negative" },
+          { "label": "API layer required for every data interaction", "direction": "negative" },
+          { "label": "Bundle size grows with every feature — performance degrades over time", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "First Contentful Paint", "before": "0.5-1.5s (SSR)", "after": "2-5s (SPA)", "delta": "+200%", "direction": "negative" },
+    { "metric": "JavaScript bundle size", "before": "<50KB", "after": "200KB-2MB", "delta": "+500-4000%", "direction": "negative" },
+    { "metric": "Bounce rate (mobile, slow connection)", "before": "Baseline", "after": "+30-50%", "delta": "+40%", "direction": "negative" },
+    { "metric": "Development complexity", "before": "Server handles routing/state", "after": "Client reimplements everything", "delta": "+100%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your application is primarily content-focused (blog, docs, marketing, e-commerce)",
+      "Your users are on mobile devices with variable connection quality",
+      "SEO is important for your business"
+    ],
+    "ifYouMust": [
+      "Use SSR or SSG for initial page loads — hydrate to SPA after",
+      "Set strict bundle size budgets and enforce them in CI",
+      "Code-split aggressively — load only what's needed for the current route",
+      "Test on real devices with throttled connections, not just your dev machine"
+    ],
+    "alternatives": [
+      { "name": "Server-rendered with islands", "note": "Astro, Fresh — static HTML with interactive islands where needed. Best of both worlds." },
+      { "name": "Progressive enhancement", "note": "HTML-first, enhance with JS — works without JS, better with it" },
+      { "name": "HTMX / server-driven UI", "note": "Server renders HTML fragments, client swaps them in — SPA-like UX without the JS bundle" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Web Almanac: JavaScript Usage Report", "url": "https://almanac.httparchive.org/en/2024/javascript", "note": "Median page ships 500KB+ of JavaScript, with SPAs significantly above average" },
+    { "title": "Google: Web Vitals and Business Impact", "url": "https://web.dev/vitals-business-impact/", "note": "Every 100ms improvement in LCP increases conversion rate by up to 1%" },
+    { "title": "Alex Russell: The Market for Lemons", "url": "https://infrequently.org/2023/02/the-market-for-lemons/", "note": "Analysis of how SPA frameworks impose performance costs that disproportionately affect users on low-end devices" },
+    { "title": "Remix: The Web's Next Transition", "url": "https://remix.run/blog/the-webs-next-transition", "note": "Framework creators explaining why the SPA model is being replaced by server-first approaches" }
+  ],
+
+  "falsifiability": [
+    "SPAs consistently achieve faster First Contentful Paint than server-rendered alternatives on median devices",
+    "SPA bundle sizes remain stable or decrease as features are added over 18 months",
+    "Users on low-end devices and slow connections show equal or better engagement with SPAs vs server-rendered pages"
+  ],
+
+  "tags": ["spa", "performance", "javascript", "web-development", "ssr", "user-experience"],
+  "crossReferences": ["T010", "T002", "T005"],
+
+  "seo": {
+    "description": "SPAs ship 200KB-2MB of JavaScript, pushing First Contentful Paint to 2-5 seconds. Mobile bounce rates increase 30-50%. The 'better UX' optimizes for the developer's MacBook, not the user's phone.",
+    "keywords": ["spa performance paradox second order effects", "single page application hidden costs", "javascript bundle size consequences"]
+  }
+}

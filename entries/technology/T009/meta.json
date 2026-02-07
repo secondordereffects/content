@@ -1,0 +1,105 @@
+{
+  "id": "T009",
+  "title": "NoSQL Consistency Trap",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Teams choose NoSQL databases (MongoDB, DynamoDB, Cassandra) for horizontal scalability and schema flexibility. The early experience is great — fast writes, easy schema changes, no migrations. Then the application grows. Relationships between data emerge. Queries that were simple become multi-collection joins done in application code. Data inconsistencies appear because there are no foreign keys or transactions. The team spends more time working around the database's limitations than they saved by avoiding SQL.",
+
+  "hypothesis": "NoSQL databases scale better than relational databases and simplify development.",
+
+  "chain": {
+    "root": "Choose NoSQL as primary database",
+    "effects": [
+      {
+        "label": "Schema flexibility becomes schema chaos",
+        "impact": "Data quality issues emerge within 6-12 months",
+        "direction": "negative",
+        "children": [
+          { "label": "Different documents have different shapes — no enforcement", "direction": "negative" },
+          { "label": "Application code becomes the schema validator — bugs create corrupt data", "direction": "negative" },
+          { "label": "Schema migrations happen anyway, but without tooling support", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Relationships handled in application code",
+        "impact": "N+1 query patterns proliferate",
+        "direction": "negative",
+        "children": [
+          { "label": "Joins done in application code are slower and buggier than database joins", "direction": "negative" },
+          { "label": "Data denormalization leads to update anomalies", "direction": "negative" },
+          { "label": "Referential integrity enforced by hope, not constraints", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Eventual consistency creates subtle bugs",
+        "impact": "Data inconsistencies in 2-5% of operations under load",
+        "direction": "negative",
+        "children": [
+          { "label": "Read-after-write inconsistency confuses users", "direction": "negative" },
+          { "label": "Financial or inventory data requires strong consistency — NoSQL makes this hard", "direction": "negative" },
+          { "label": "Debugging consistency issues requires deep distributed systems knowledge", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Team eventually rebuilds relational features poorly",
+        "impact": "6-12 months of engineering time reinventing the wheel",
+        "direction": "negative",
+        "children": [
+          { "label": "Custom transaction logic, custom join logic, custom constraint validation", "direction": "negative" },
+          { "label": "Migration to PostgreSQL considered but data volume makes it painful", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Data quality incidents", "before": "Rare (SQL constraints)", "after": "Monthly (no constraints)", "delta": "+500%", "direction": "negative" },
+    { "metric": "Query complexity in application code", "before": "SQL handles joins", "after": "Application handles joins", "delta": "+200% code", "direction": "negative" },
+    { "metric": "Time to add new features involving relationships", "before": "Hours (SQL)", "after": "Days (NoSQL workarounds)", "delta": "+300%", "direction": "negative" },
+    { "metric": "Horizontal write scalability", "before": "Limited (SQL)", "after": "Near-linear", "delta": "Significant improvement", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your data has relationships — which is almost always",
+      "You need transactions for financial, inventory, or user account operations",
+      "Your team doesn't have deep distributed systems experience"
+    ],
+    "ifYouMust": [
+      "Use NoSQL only for genuinely document-shaped data with no cross-document relationships",
+      "Implement schema validation at the database level, not just application level",
+      "Plan for eventual consistency — design UIs that handle stale reads gracefully",
+      "Keep a relational database for transactional data alongside NoSQL for document data"
+    ],
+    "alternatives": [
+      { "name": "PostgreSQL with JSONB", "note": "Relational integrity plus document flexibility — best of both worlds for most use cases" },
+      { "name": "NewSQL (CockroachDB, TiDB)", "note": "Horizontal scaling with full SQL and ACID transactions" },
+      { "name": "Polyglot persistence", "note": "Use the right database for each data type — SQL for transactions, NoSQL for documents, Redis for cache" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Sarah Mei: Why You Should Never Use MongoDB", "url": "https://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/", "note": "Classic analysis of how MongoDB's document model fails for relational data" },
+    { "title": "Martin Kleppmann: Designing Data-Intensive Applications", "url": "https://dataintensive.net/", "note": "Comprehensive analysis of database tradeoffs including consistency models and their real-world implications" },
+    { "title": "Jepsen: Distributed Systems Safety Research", "url": "https://jepsen.io/", "note": "Independent testing revealing consistency violations in popular NoSQL databases under failure conditions" },
+    { "title": "Uber Engineering: Why Uber Moved from Postgres to MySQL", "url": "https://www.uber.com/blog/postgres-to-mysql-migration/", "note": "Even at Uber's scale, relational databases were preferred — the move was about replication, not NoSQL" }
+  ],
+
+  "falsifiability": [
+    "Teams using NoSQL for relational data report fewer data quality incidents than SQL teams over 2 years",
+    "Application-level joins in NoSQL are consistently faster than database-level joins in SQL for complex queries",
+    "NoSQL schema flexibility reduces total development time compared to SQL with migrations over 18 months"
+  ],
+
+  "tags": ["nosql", "database", "consistency", "schema", "postgresql", "data-modeling"],
+  "crossReferences": ["T002", "T005", "T010"],
+
+  "seo": {
+    "description": "NoSQL trades schema enforcement for schema chaos. Data quality incidents increase 500%, application-level joins add 200% more code, and teams end up rebuilding SQL features poorly.",
+    "keywords": ["nosql consistency trap second order effects", "mongodb hidden costs", "nosql vs sql consequences"]
+  }
+}

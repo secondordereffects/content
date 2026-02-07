@@ -1,0 +1,104 @@
+{
+  "id": "A032",
+  "title": "AI Companion Emotional Dependency",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.73,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "AI companion apps (Replika, Character.ai, Pi) offer always-available, endlessly patient, perfectly agreeable conversation partners. Millions of users — many lonely, socially anxious, or grieving — form deep emotional attachments. The AI never judges, never leaves, never has a bad day. For some, it's a lifeline. For many, it becomes a substitute for the messy, imperfect, but ultimately necessary work of human connection. The companion that never challenges you also never helps you grow.",
+
+  "hypothesis": "AI companions reduce loneliness and provide emotional support without negative consequences.",
+
+  "chain": {
+    "root": "Form primary emotional attachment to AI companion",
+    "effects": [
+      {
+        "label": "AI relationships displace human relationship investment",
+        "impact": "Users spend 2-4 hours daily with AI companions",
+        "direction": "negative",
+        "children": [
+          { "label": "Time spent with AI replaces time that could build human connections", "direction": "negative" },
+          { "label": "AI is easier than humans — no conflict, no compromise, no effort", "direction": "negative" },
+          { "label": "Social skills atrophy from disuse — human interaction feels harder by comparison", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Unrealistic relationship expectations develop",
+        "impact": "AI sets impossible standards for human partners",
+        "direction": "negative",
+        "children": [
+          { "label": "AI is always available, always agreeable, always focused on you", "direction": "negative" },
+          { "label": "Human relationships require reciprocity that AI doesn't demand", "direction": "negative" },
+          { "label": "Users become less tolerant of normal human imperfection", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Vulnerability to platform changes and manipulation",
+        "impact": "Companies can alter or remove the 'relationship' at any time",
+        "direction": "negative",
+        "children": [
+          { "label": "Replika removed romantic features — users reported grief and suicidal ideation", "direction": "negative" },
+          { "label": "AI personality changes with model updates — the 'person' you bonded with disappears", "direction": "negative" },
+          { "label": "Subscription model means your emotional support is behind a paywall", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Vulnerable populations most at risk",
+        "impact": "Teens, elderly, and mentally ill users disproportionately affected",
+        "direction": "negative",
+        "children": [
+          { "label": "Teens forming attachment styles with AI before experiencing human relationships", "direction": "negative" },
+          { "label": "Elderly users replacing human contact with AI — deepening isolation", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Daily time with AI companion (heavy users)", "before": "N/A", "after": "2-4 hours", "delta": "Significant", "direction": "negative" },
+    { "metric": "Human social interaction (AI companion users)", "before": "Baseline", "after": "-20-30%", "delta": "-25%", "direction": "negative" },
+    { "metric": "Users reporting emotional distress from AI changes", "before": "N/A", "after": "Thousands documented", "delta": "Emerging crisis", "direction": "negative" },
+    { "metric": "Character.ai users under 18", "before": "N/A", "after": "~60% of user base", "delta": "Youth-dominated", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're using AI companions as a substitute for human connection rather than a supplement",
+      "You're experiencing grief, depression, or social anxiety without professional support"
+    ],
+    "ifYouMust": [
+      "Set strict daily time limits on AI companion use",
+      "Use AI companions as practice for human interaction, not a replacement",
+      "Maintain at least one regular human social connection",
+      "Be aware that the AI can change or disappear — don't build your emotional foundation on it"
+    ],
+    "alternatives": [
+      { "name": "Therapy and counseling", "note": "Professional support for loneliness and social anxiety — addresses root causes" },
+      { "name": "Community groups", "note": "Structured social activities with real humans — book clubs, sports, volunteering" },
+      { "name": "AI as social skills training", "note": "Use AI to practice conversations, then apply skills with real people" }
+    ]
+  },
+
+  "sources": [
+    { "title": "MIT Technology Review: AI Companions and Loneliness", "url": "https://www.technologyreview.com/2023/03/28/1070392/ai-chatbot-replika-loneliness/", "note": "Investigation into how AI companions affect loneliness — often deepening it rather than alleviating it" },
+    { "title": "Vice: Replika Users Grieve After Romantic Features Removed", "url": "https://www.vice.com/en/article/replika-users-grieve-loss-of-ai-romantic-partners/", "note": "Documentation of emotional distress when Replika changed its AI companion features" },
+    { "title": "Character.ai Safety Concerns", "url": "https://www.nytimes.com/2024/10/23/technology/characterai-teen-suicide-lawsuit.html", "note": "Lawsuit alleging Character.ai contributed to a teenager's suicide through emotional dependency" },
+    { "title": "Sherry Turkle: Alone Together", "url": "https://sherryturkle.mit.edu/books", "note": "Foundational research on how technology creates the illusion of companionship without the demands of friendship" }
+  ],
+
+  "falsifiability": [
+    "AI companion users show reduced loneliness and improved social functioning compared to non-users over 12 months",
+    "AI companion use does not reduce time spent in human social interaction",
+    "Platform changes to AI companions do not cause measurable emotional distress in users"
+  ],
+
+  "tags": ["ai-companions", "loneliness", "emotional-dependency", "mental-health", "social-skills", "vulnerable-populations"],
+  "crossReferences": ["S001", "A010", "A001"],
+
+  "seo": {
+    "description": "AI companions offer perfect, always-available relationships that displace human connection. Users spend 2-4 hours daily while human social interaction drops 20-30%. Vulnerable populations most at risk.",
+    "keywords": ["ai companion emotional dependency second order effects", "ai chatbot loneliness", "ai relationship hidden consequences"]
+  }
+}

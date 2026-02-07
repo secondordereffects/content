@@ -1,0 +1,105 @@
+{
+  "id": "T008",
+  "title": "Serverless Cold Start Tax",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Teams adopt serverless functions (AWS Lambda, Azure Functions, Google Cloud Functions) to eliminate infrastructure management. No servers to patch, no capacity to plan, pay only for what you use. The pitch is compelling for event-driven workloads. But as serverless becomes the default architecture, teams discover cold starts, execution limits, vendor lock-in, and debugging nightmares that the marketing materials glossed over. The infrastructure didn't disappear — it became someone else's problem that you can't control.",
+
+  "hypothesis": "Serverless eliminates infrastructure management and reduces costs for all workload types.",
+
+  "chain": {
+    "root": "Adopt serverless as primary compute architecture",
+    "effects": [
+      {
+        "label": "Cold starts create unpredictable latency spikes",
+        "impact": "100ms-3s cold start penalty per invocation",
+        "direction": "negative",
+        "children": [
+          { "label": "User-facing APIs hit P99 latency spikes that break SLAs", "direction": "negative" },
+          { "label": "Teams implement provisioned concurrency — paying for idle capacity they were trying to avoid", "direction": "negative" },
+          { "label": "Language choice constrained — JVM and .NET cold starts are 3-10x worse than Node/Python", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Execution limits force architectural workarounds",
+        "impact": "15-minute max execution, limited memory, no persistent state",
+        "direction": "negative",
+        "children": [
+          { "label": "Long-running processes must be split into complex state machines", "direction": "negative" },
+          { "label": "Step Functions add cost and complexity for orchestration", "direction": "negative" },
+          { "label": "Connection pooling impossible — database connections exhausted at scale", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Debugging and observability become significantly harder",
+        "impact": "MTTR increases 2-4x compared to traditional deployments",
+        "direction": "negative",
+        "children": [
+          { "label": "No SSH, no local state, no persistent logs without extra tooling", "direction": "negative" },
+          { "label": "Distributed traces across dozens of functions are hard to follow", "direction": "negative" },
+          { "label": "Reproducing issues locally requires complex emulation setups", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Costs become unpredictable and can spike dramatically",
+        "impact": "Runaway invocations can generate $10K+ bills overnight",
+        "direction": "negative",
+        "children": [
+          { "label": "Pay-per-invocation means DDoS attacks directly hit your wallet", "direction": "negative" },
+          { "label": "Recursive function triggers can create infinite loops with real cost", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "P99 latency (cold start)", "before": "50-100ms", "after": "500ms-3s", "delta": "+500-3000%", "direction": "negative" },
+    { "metric": "Debugging time (MTTR)", "before": "1 hour", "after": "2-4 hours", "delta": "+200%", "direction": "negative" },
+    { "metric": "Cost predictability", "before": "Fixed monthly", "after": "Variable, spike-prone", "delta": "Unpredictable", "direction": "negative" },
+    { "metric": "Infrastructure management time", "before": "20 hrs/week", "after": "5 hrs/week", "delta": "-75%", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your workload requires consistent sub-100ms latency",
+      "Your application has long-running processes or persistent connections",
+      "Your team lacks experience with distributed systems debugging"
+    ],
+    "ifYouMust": [
+      "Use serverless for event-driven, bursty workloads — not as a general-purpose compute layer",
+      "Set up billing alerts and concurrency limits to prevent runaway costs",
+      "Invest in observability tooling before going to production",
+      "Keep critical user-facing paths on traditional compute with predictable latency"
+    ],
+    "alternatives": [
+      { "name": "Containers on managed platforms", "note": "ECS Fargate, Cloud Run — no server management but with persistent processes and predictable latency" },
+      { "name": "Edge functions", "note": "Cloudflare Workers, Deno Deploy — faster cold starts, global distribution" },
+      { "name": "Hybrid approach", "note": "Serverless for background jobs and events, containers for APIs and user-facing services" }
+    ]
+  },
+
+  "sources": [
+    { "title": "AWS Lambda Performance Benchmarks", "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html", "note": "Official documentation acknowledging cold start latency varies by runtime and memory configuration" },
+    { "title": "Datadog Serverless Report 2024", "url": "https://www.datadoghq.com/state-of-serverless/", "note": "Cold starts affect 30-40% of Lambda invocations in production, with median cold start of 300ms" },
+    { "title": "Jeremy Daly: Serverless Microservice Patterns", "url": "https://www.jeremydaly.com/serverless-microservice-patterns-for-aws/", "note": "Comprehensive analysis of serverless architectural patterns and their tradeoffs" },
+    { "title": "Yan Cui: The Burning Monk — Serverless in Production", "url": "https://theburningmonk.com/", "note": "Practitioner insights on real-world serverless challenges including cold starts and cost management" }
+  ],
+
+  "falsifiability": [
+    "Serverless cold starts are eliminated entirely across all runtimes within 2 years",
+    "Serverless costs are consistently lower than container-based alternatives for steady-state workloads",
+    "Debugging serverless applications takes equal or less time than debugging traditional deployments"
+  ],
+
+  "tags": ["serverless", "lambda", "cold-start", "cloud", "infrastructure", "latency"],
+  "crossReferences": ["T005", "I001", "T001"],
+
+  "seo": {
+    "description": "Serverless cold starts add 500ms-3s latency spikes, debugging takes 2-4x longer, and costs can spike unpredictably. The infrastructure didn't disappear — you just lost control of it.",
+    "keywords": ["serverless cold start tax second order effects", "aws lambda hidden costs", "serverless architecture consequences"]
+  }
+}

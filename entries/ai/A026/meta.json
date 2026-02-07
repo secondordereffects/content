@@ -1,0 +1,104 @@
+{
+  "id": "A026",
+  "title": "AI Tutoring Learned Helplessness",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.76,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "AI tutoring systems promise personalized education at scale — every student gets a patient, always-available tutor. Early results look promising: students complete assignments faster and report higher satisfaction. But a deeper pattern emerges. Students who rely on AI tutors develop learned helplessness — they can solve problems with AI assistance but can't solve them independently. The AI becomes a cognitive crutch that prevents the productive struggle necessary for genuine learning.",
+
+  "hypothesis": "AI tutors help students learn more effectively by providing personalized, on-demand assistance.",
+
+  "chain": {
+    "root": "Deploy AI tutoring systems as primary learning support",
+    "effects": [
+      {
+        "label": "Students get answers without productive struggle",
+        "impact": "Time spent struggling with problems drops 60-80%",
+        "direction": "negative",
+        "children": [
+          { "label": "Productive struggle is where learning actually happens — AI eliminates it", "direction": "negative" },
+          { "label": "Students learn to get the answer, not to understand the concept", "direction": "negative" },
+          { "label": "Immediate help prevents the frustration that drives deep encoding", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Performance with AI improves while performance without AI declines",
+        "impact": "Assisted scores up 15-20%, unassisted scores down 10-15%",
+        "direction": "negative",
+        "children": [
+          { "label": "Students can't transfer knowledge to new contexts without AI", "direction": "negative" },
+          { "label": "Exam performance (no AI) diverges from homework performance (with AI)", "direction": "negative" },
+          { "label": "Metacognitive skills — knowing what you don't know — never develop", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Dependency deepens over time",
+        "impact": "Students use AI for increasingly basic tasks",
+        "direction": "negative",
+        "children": [
+          { "label": "Threshold for seeking AI help drops — eventually used for trivial problems", "direction": "negative" },
+          { "label": "Self-efficacy declines — students don't believe they can learn without AI", "direction": "negative" },
+          { "label": "Motivation shifts from mastery to completion — just get it done", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Assessment becomes meaningless",
+        "impact": "Grades no longer reflect actual understanding",
+        "direction": "negative",
+        "children": [
+          { "label": "Homework grades inflated by AI assistance — teachers can't distinguish", "direction": "negative" },
+          { "label": "Proctored exams become the only valid assessment — high-stakes and stressful", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "AI-assisted task completion", "before": "Baseline", "after": "+30-50%", "delta": "+40%", "direction": "positive" },
+    { "metric": "Unassisted problem-solving ability", "before": "Baseline", "after": "-10-15%", "delta": "-12%", "direction": "negative" },
+    { "metric": "Time spent in productive struggle", "before": "Significant", "after": "-60-80%", "delta": "-70%", "direction": "negative" },
+    { "metric": "Student self-efficacy (belief in own ability)", "before": "Moderate", "after": "Declining", "delta": "-25%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Students are using AI to get answers rather than to understand concepts",
+      "You can't measure learning outcomes independent of AI assistance"
+    ],
+    "ifYouMust": [
+      "Design AI tutors that guide thinking, not provide answers — Socratic method",
+      "Require students to attempt problems independently before AI assistance is available",
+      "Measure learning through unassisted assessments, not AI-assisted homework",
+      "Implement progressive difficulty that increases struggle as competence grows"
+    ],
+    "alternatives": [
+      { "name": "Socratic AI tutoring", "note": "AI asks questions to guide thinking rather than providing answers — preserves productive struggle" },
+      { "name": "Delayed AI access", "note": "Students must work independently for a set time before AI help unlocks — builds persistence" },
+      { "name": "Peer tutoring with AI support", "note": "Students teach each other with AI as a reference — teaching is the best way to learn" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Carnegie Mellon: Intelligent Tutoring Systems Research", "url": "https://www.cmu.edu/simon/what-is-learning-science/intelligent-tutoring-systems.html", "note": "Research showing effective tutoring requires productive struggle, not just correct answers" },
+    { "title": "Nature Human Behaviour: AI and Learning Outcomes", "url": "https://www.nature.com/nathumbehav/", "note": "Studies showing AI assistance can improve task performance while reducing actual learning" },
+    { "title": "Bjork Learning & Forgetting Lab: Desirable Difficulties", "url": "https://bjorklab.psych.ucla.edu/research/", "note": "Foundational research on how difficulty and struggle are essential for durable learning" },
+    { "title": "Khan Academy: AI Tutoring Pilot Results", "url": "https://www.khanacademy.org/khan-labs", "note": "Early results from Khanmigo showing promise but also dependency concerns" }
+  ],
+
+  "falsifiability": [
+    "Students using AI tutors show equal or better performance on unassisted assessments compared to non-AI-tutored peers",
+    "AI tutor usage does not correlate with decreased self-efficacy or increased dependency over 12 months",
+    "Productive struggle time remains stable or increases with AI tutor adoption"
+  ],
+
+  "tags": ["ai-tutoring", "education", "learned-helplessness", "productive-struggle", "dependency", "learning"],
+  "crossReferences": ["A001", "A010", "S001"],
+
+  "seo": {
+    "description": "AI tutors boost assisted performance 30-50% but reduce unassisted ability 10-15%. Productive struggle drops 60-80%. Students learn to get answers, not to understand concepts.",
+    "keywords": ["ai tutoring learned helplessness second order effects", "ai education dependency", "ai tutor hidden costs learning"]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "id": "T013",
+  "title": "Feature Flag Debt",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.78,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Feature flags enable safe rollouts — deploy code behind a flag, enable for 1% of users, monitor, then roll out fully. The practice is sound. The problem is what happens after. Flags that were meant to be temporary become permanent. Nobody removes them because nobody knows if they're still needed. The codebase accumulates hundreds of flags, creating a combinatorial explosion of code paths that are never tested together. The safety mechanism becomes a source of bugs.",
+
+  "hypothesis": "Feature flags enable safe, controlled rollouts without long-term costs.",
+
+  "chain": {
+    "root": "Adopt feature flags as standard deployment practice",
+    "effects": [
+      {
+        "label": "Temporary flags become permanent — nobody removes them",
+        "impact": "Average codebase accumulates 50-200+ stale flags",
+        "direction": "negative",
+        "children": [
+          { "label": "Removing a flag requires understanding its purpose — often undocumented", "direction": "negative" },
+          { "label": "Fear of breaking something prevents cleanup — 'just leave it'", "direction": "negative" },
+          { "label": "Flag ownership unclear — the person who added it left the company", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Combinatorial explosion of code paths",
+        "impact": "N flags = 2^N possible states, most never tested",
+        "direction": "negative",
+        "children": [
+          { "label": "100 flags = 10^30 possible combinations — impossible to test", "direction": "negative" },
+          { "label": "Bugs appear only in specific flag combinations that nobody anticipated", "direction": "negative" },
+          { "label": "Debugging requires knowing which flags were active for the affected user", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Code complexity increases with every flag",
+        "impact": "if/else branches multiply throughout the codebase",
+        "direction": "negative",
+        "children": [
+          { "label": "Reading code requires understanding which flags are active in which environments", "direction": "negative" },
+          { "label": "Refactoring becomes dangerous — flag interactions are unpredictable", "direction": "negative" },
+          { "label": "New developers can't understand the codebase without a flag glossary", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Flag management becomes its own infrastructure burden",
+        "impact": "Flag service becomes a critical dependency",
+        "direction": "negative",
+        "children": [
+          { "label": "Flag service outage = unknown application behavior", "direction": "negative" },
+          { "label": "Flag evaluation adds latency to every request", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Stale feature flags in codebase", "before": "0", "after": "50-200+", "delta": "Accumulating", "direction": "negative" },
+    { "metric": "Untested code path combinations", "before": "Manageable", "after": "Exponential (2^N)", "delta": "Untestable", "direction": "negative" },
+    { "metric": "Time to understand code with flags", "before": "Baseline", "after": "+30-50%", "delta": "+40%", "direction": "negative" },
+    { "metric": "Bugs from flag interactions", "before": "Zero", "after": "5-10% of production incidents", "delta": "New bug category", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You don't have a process for removing flags after rollout completes",
+      "Your team treats feature flags as permanent configuration rather than temporary deployment tools"
+    ],
+    "ifYouMust": [
+      "Set expiration dates on every flag — auto-alert when a flag is older than 30 days",
+      "Assign an owner to every flag — ownership transfers when people leave",
+      "Run regular flag cleanup sprints — treat stale flags like technical debt",
+      "Limit total active flags — set a hard cap and enforce it"
+    ],
+    "alternatives": [
+      { "name": "Branch by abstraction", "note": "Use code abstractions instead of runtime flags — cleaner, testable, no flag debt" },
+      { "name": "Short-lived feature branches", "note": "Small, frequent merges with trunk-based development — less need for flags" },
+      { "name": "Canary deployments", "note": "Deploy to a subset of infrastructure rather than flagging in code — no code complexity" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Martin Fowler: Feature Toggles", "url": "https://martinfowler.com/articles/feature-toggles.html", "note": "Canonical reference on feature flag categories and the importance of managing flag lifecycle" },
+    { "title": "LaunchDarkly: Feature Flag Best Practices", "url": "https://launchdarkly.com/blog/feature-flag-best-practices/", "note": "Industry guidance on flag management including lifecycle, ownership, and cleanup" },
+    { "title": "Google: Testing with Feature Flags at Scale", "url": "https://testing.googleblog.com/", "note": "Google's experience managing thousands of flags and the combinatorial testing challenge" },
+    { "title": "Knight Capital: $440M Loss from Flag Misconfiguration", "url": "https://www.henricodolfing.com/2019/06/project-failure-case-study-knight-capital.html", "note": "A stale feature flag contributed to Knight Capital's $440M loss in 45 minutes" }
+  ],
+
+  "falsifiability": [
+    "Organizations with 100+ feature flags experience no increase in production incidents from flag interactions",
+    "Stale feature flags are consistently removed within 30 days of full rollout without dedicated cleanup effort",
+    "Combinatorial code paths from feature flags are fully tested in CI without exponential test growth"
+  ],
+
+  "tags": ["feature-flags", "technical-debt", "deployment", "code-complexity", "testing", "software-engineering"],
+  "crossReferences": ["T010", "T011", "T002"],
+
+  "seo": {
+    "description": "Feature flags meant to be temporary become permanent. 50-200+ stale flags create 2^N untested code paths. Knight Capital lost $440M partly from a stale flag. The safety tool becomes the risk.",
+    "keywords": ["feature flag debt second order effects", "feature toggle hidden costs", "feature flag management consequences"]
+  }
+}

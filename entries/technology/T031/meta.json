@@ -1,0 +1,104 @@
+{
+  "id": "T031",
+  "title": "Technical Interview Hazing",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.82,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Tech companies use algorithmic coding challenges (LeetCode-style problems) as the primary filter for engineering hires. The practice started at Google and spread industry-wide. Candidates spend months grinding algorithm problems that have no relationship to their daily work. Companies filter out experienced engineers who can't reverse a binary tree on a whiteboard while hiring puzzle-solvers who can't design a production system. The interview process selects for interview preparation skill, not engineering ability.",
+
+  "hypothesis": "Algorithmic coding interviews identify the best software engineers.",
+
+  "chain": {
+    "root": "Use LeetCode-style interviews as primary hiring filter",
+    "effects": [
+      {
+        "label": "Selects for interview preparation, not engineering skill",
+        "impact": "Correlation between interview score and job performance: 0.1-0.3",
+        "direction": "negative",
+        "children": [
+          { "label": "Candidates with 3 months of LeetCode prep outperform 10-year veterans", "direction": "negative" },
+          { "label": "System design, debugging, and collaboration skills go unmeasured", "direction": "negative" },
+          { "label": "New grads with time to prep are advantaged over working professionals", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Experienced engineers opt out of the process",
+        "impact": "Senior talent pipeline narrows",
+        "direction": "negative",
+        "children": [
+          { "label": "Staff engineers refuse to grind LeetCode — they have better options", "direction": "negative" },
+          { "label": "Companies miss domain experts who can't solve dynamic programming on demand", "direction": "negative" },
+          { "label": "Hiring pool skews young and inexperienced", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Massive candidate time waste at industry scale",
+        "impact": "100-300 hours of prep per candidate, millions of candidates",
+        "direction": "negative",
+        "children": [
+          { "label": "A $50B+ industry of prep courses, books, and platforms", "direction": "negative" },
+          { "label": "Candidates from lower-income backgrounds can't afford months of unpaid prep", "direction": "negative" },
+          { "label": "The prep time could be spent building actual projects or contributing to open source", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Homogeneous teams result from homogeneous filtering",
+        "impact": "Diversity decreases as process favors specific backgrounds",
+        "direction": "negative",
+        "children": [
+          { "label": "CS degree holders advantaged — self-taught engineers filtered out", "direction": "negative" },
+          { "label": "Career changers and non-traditional backgrounds systematically excluded", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Interview-to-performance correlation", "before": "Assumed high", "after": "0.1-0.3 (weak)", "delta": "Minimal predictive value", "direction": "negative" },
+    { "metric": "Candidate prep time", "before": "20-40 hours", "after": "100-300 hours", "delta": "+500%", "direction": "negative" },
+    { "metric": "Senior engineer application rate", "before": "Baseline", "after": "-30-50%", "delta": "-40%", "direction": "negative" },
+    { "metric": "Hiring diversity (non-CS backgrounds)", "before": "Moderate", "after": "Low", "delta": "-35%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your engineering work doesn't involve implementing algorithms from scratch",
+      "You're struggling to attract senior or diverse engineering talent"
+    ],
+    "ifYouMust": [
+      "Limit algorithmic questions to 20% of the interview — test other skills too",
+      "Allow candidates to use their preferred language and look up syntax",
+      "Evaluate problem-solving approach, not memorized solutions",
+      "Provide problems in advance to reduce prep anxiety and test real thinking"
+    ],
+    "alternatives": [
+      { "name": "Work sample tests", "note": "Give candidates a realistic task similar to actual work — review a PR, debug an issue, design a feature" },
+      { "name": "Paid trial projects", "note": "1-2 day paid project that simulates real work — best predictor of job performance" },
+      { "name": "Portfolio and past work review", "note": "Evaluate what candidates have actually built rather than what they can solve under pressure" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Google: Rethinking Technical Interviews", "url": "https://rework.withgoogle.com/guides/hiring-use-structured-interviewing/steps/introduction/", "note": "Google's own research found structured behavioral interviews predict performance better than brainteasers" },
+    { "title": "NCSU: Does Stress Impact Technical Interview Performance?", "url": "https://ieeexplore.ieee.org/document/9159120", "note": "Study showing whiteboard interviews measure anxiety management, not programming ability" },
+    { "title": "Hired: State of Tech Salaries Report", "url": "https://hired.com/state-of-tech-salaries", "note": "Senior engineers increasingly cite interview process as reason for declining to apply" },
+    { "title": "Triplebyte: Technical Interview Data Analysis", "url": "https://triplebyte.com/blog/technical-interview-performance-is-kind-of-arbitrary", "note": "Analysis of 100K+ interviews showing weak correlation between interview performance and job success" }
+  ],
+
+  "falsifiability": [
+    "LeetCode-style interview scores correlate with on-the-job performance at r > 0.5 across a large sample",
+    "Companies using algorithmic interviews hire more diverse teams than those using alternative methods",
+    "Senior engineers prefer algorithmic interviews over work-sample tests when given the choice"
+  ],
+
+  "tags": ["hiring", "interviews", "leetcode", "engineering-culture", "diversity", "talent-acquisition"],
+  "crossReferences": ["A012", "O005", "O007"],
+
+  "seo": {
+    "description": "LeetCode interviews correlate 0.1-0.3 with job performance. Candidates spend 100-300 hours prepping for puzzles unrelated to work. Senior engineers opt out, diversity suffers.",
+    "keywords": ["technical interview hazing second order effects", "leetcode interview hidden costs", "coding interview effectiveness"]
+  }
+}

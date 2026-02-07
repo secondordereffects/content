@@ -1,0 +1,104 @@
+{
+  "id": "A019",
+  "title": "Automation Complacency Effect",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.83,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Automated monitoring systems watch production infrastructure 24/7. Alerts fire when thresholds are breached. Dashboards show green across the board. Teams relax. Then the monitoring system itself fails — silently. Or it monitors the wrong things. Or alert fatigue causes the team to ignore the one alert that matters. The automation that was supposed to catch problems becomes the reason problems go undetected. The more reliable the automation, the less prepared humans are when it fails.",
+
+  "hypothesis": "Automated monitoring catches everything — we can rely on alerts to tell us when something is wrong.",
+
+  "chain": {
+    "root": "Rely on automated monitoring as primary failure detection",
+    "effects": [
+      {
+        "label": "Alert fatigue desensitizes the team",
+        "impact": "Teams receive 100-500+ alerts per day, ignore 90%+",
+        "direction": "negative",
+        "children": [
+          { "label": "Critical alerts buried in noise — the real signal gets missed", "direction": "negative" },
+          { "label": "On-call engineers develop 'alert blindness' — stop reading alert details", "direction": "negative" },
+          { "label": "Teams auto-acknowledge alerts without investigating", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Monitoring monitors the wrong things",
+        "impact": "Metrics that are easy to measure ≠ metrics that matter",
+        "direction": "negative",
+        "children": [
+          { "label": "CPU and memory monitored while business logic errors go undetected", "direction": "negative" },
+          { "label": "Synthetic checks pass while real users experience failures", "direction": "negative" },
+          { "label": "Dashboards show green while customers are churning", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Manual verification skills atrophy",
+        "impact": "Team can't diagnose issues without automated tools",
+        "direction": "negative",
+        "children": [
+          { "label": "When monitoring fails, nobody knows how to check manually", "direction": "negative" },
+          { "label": "New engineers never learn to read logs or trace requests without tooling", "direction": "negative" },
+          { "label": "Incident response depends entirely on automated runbooks that may not cover the scenario", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Silent failures accumulate undetected",
+        "impact": "Data corruption, slow degradation, and drift go unnoticed for weeks",
+        "direction": "negative",
+        "children": [
+          { "label": "Gradual performance degradation stays below alert thresholds", "direction": "negative" },
+          { "label": "Data inconsistencies compound silently until a customer reports them", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Alerts per day (typical production system)", "before": "5-10 meaningful", "after": "100-500+ (mostly noise)", "delta": "+5000%", "direction": "negative" },
+    { "metric": "Alert investigation rate", "before": "90%+", "after": "<10%", "delta": "-90%", "direction": "negative" },
+    { "metric": "Mean time to detect silent failures", "before": "Minutes (manual checks)", "after": "Days-weeks (nobody checking)", "delta": "+10000%", "direction": "negative" },
+    { "metric": "Incidents caught by monitoring vs customers", "before": "90% by monitoring", "after": "50-60% by monitoring", "delta": "-30%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your team has more than 50 alerts per day per on-call engineer",
+      "Nobody has manually verified your monitoring is working in the past month"
+    ],
+    "ifYouMust": [
+      "Ruthlessly prune alerts — if it doesn't require action, it shouldn't be an alert",
+      "Monitor the monitoring — dead man's switches that alert when monitoring stops reporting",
+      "Schedule regular 'monitoring fire drills' — inject failures and verify detection",
+      "Maintain manual verification procedures and practice them monthly"
+    ],
+    "alternatives": [
+      { "name": "SLO-based alerting", "note": "Alert on error budgets and SLO violations, not individual metric thresholds — fewer, more meaningful alerts" },
+      { "name": "Chaos engineering", "note": "Regularly inject failures to verify both monitoring and human response — Netflix's approach" },
+      { "name": "Observability over monitoring", "note": "Instrument for exploration (traces, logs, metrics) rather than just threshold-based alerts" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Google SRE Book: Monitoring Distributed Systems", "url": "https://sre.google/sre-book/monitoring-distributed-systems/", "note": "Google's framework for effective monitoring that avoids alert fatigue and complacency" },
+    { "title": "PagerDuty: State of Digital Operations", "url": "https://www.pagerduty.com/resources/reports/digital-operations/", "note": "Average team receives 500+ alerts per week, with 30% being noise that contributes to fatigue" },
+    { "title": "Charity Majors: Observability Engineering", "url": "https://www.honeycomb.io/observability-engineering", "note": "Framework for moving from monitoring (known-unknowns) to observability (unknown-unknowns)" },
+    { "title": "Netflix: Chaos Engineering Principles", "url": "https://principlesofchaos.org/", "note": "Netflix's approach to verifying system resilience by intentionally injecting failures" }
+  ],
+
+  "falsifiability": [
+    "Teams with comprehensive automated monitoring detect all production issues before customers do",
+    "Alert fatigue does not increase with the number of monitoring rules in production",
+    "Automated monitoring systems reliably detect their own failures without human verification"
+  ],
+
+  "tags": ["monitoring", "automation", "alert-fatigue", "observability", "devops", "incident-response"],
+  "crossReferences": ["A010", "T001", "I001"],
+
+  "seo": {
+    "description": "Teams receive 100-500+ alerts daily and investigate less than 10%. Monitoring monitors the wrong things. When automation fails silently, nobody knows how to check manually.",
+    "keywords": ["automation complacency effect second order effects", "alert fatigue hidden costs", "monitoring false confidence consequences"]
+  }
+}
