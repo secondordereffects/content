@@ -1,0 +1,104 @@
+{
+  "id": "O009",
+  "title": "Stack Ranking Collaboration Kill",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.83,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Companies implement forced ranking (stack ranking) to identify top performers and manage out low performers. Every review cycle, managers must rank employees on a curve — a fixed percentage get top ratings, a fixed percentage get bottom ratings. The system was popularized by Jack Welch at GE and adopted across tech. The result: employees compete against each other instead of against the market. Collaboration dies because helping a colleague succeed means you rank lower. The system optimizes for individual performance metrics while destroying the teamwork that actually drives organizational success.",
+
+  "hypothesis": "Forced ranking identifies top performers and motivates everyone to improve.",
+
+  "chain": {
+    "root": "Implement forced ranking / stack ranking system",
+    "effects": [
+      {
+        "label": "Collaboration becomes irrational — helping others hurts your ranking",
+        "impact": "Knowledge sharing drops 30-50%",
+        "direction": "negative",
+        "children": [
+          { "label": "Engineers hoard information that could help teammates", "direction": "negative" },
+          { "label": "Mentoring junior employees becomes a cost with no reward", "direction": "negative" },
+          { "label": "Cross-team projects avoided because credit is hard to claim", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Political behavior replaces productive behavior",
+        "impact": "Employees optimize for visibility, not impact",
+        "direction": "negative",
+        "children": [
+          { "label": "Self-promotion and credit-claiming become survival skills", "direction": "negative" },
+          { "label": "Employees choose high-visibility projects over high-impact ones", "direction": "negative" },
+          { "label": "Sabotaging colleagues becomes rational under the incentive structure", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Forced curve creates artificial losers",
+        "impact": "Bottom 10% must exist even on excellent teams",
+        "direction": "negative",
+        "children": [
+          { "label": "High-performing teams still must label someone as underperforming", "direction": "negative" },
+          { "label": "Managers game the system — hire sacrificial candidates for the bottom slot", "direction": "negative" },
+          { "label": "Morale collapses when good performers get low ratings due to the curve", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Top performers leave — they have options and hate the politics",
+        "impact": "Voluntary attrition among top quartile increases 20-30%",
+        "direction": "negative",
+        "children": [
+          { "label": "Best engineers go to companies without stack ranking", "direction": "negative" },
+          { "label": "Remaining team regresses toward mediocrity", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Cross-team collaboration", "before": "Baseline", "after": "-30-50%", "delta": "-40%", "direction": "negative" },
+    { "metric": "Knowledge sharing frequency", "before": "Regular", "after": "Minimal (hoarding)", "delta": "-50%", "direction": "negative" },
+    { "metric": "Top performer attrition", "before": "Baseline", "after": "+20-30%", "delta": "+25%", "direction": "negative" },
+    { "metric": "Employee satisfaction", "before": "Moderate-High", "after": "Low", "delta": "-40%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your company's success depends on cross-team collaboration",
+      "You're in a talent market where top performers have many options"
+    ],
+    "ifYouMust": [
+      "Rank teams, not individuals — incentivize collective performance",
+      "Include collaboration and mentoring as explicit ranking criteria",
+      "Allow managers to rate entire teams as high-performing without forced distribution",
+      "Separate development feedback from compensation decisions"
+    ],
+    "alternatives": [
+      { "name": "Peer feedback systems", "note": "360-degree feedback focused on growth, not ranking — collaboration becomes visible and rewarded" },
+      { "name": "Team-based incentives", "note": "Reward team outcomes rather than individual rankings — aligns incentives with how work actually happens" },
+      { "name": "Continuous feedback", "note": "Regular 1:1 coaching replaces annual ranking — addresses performance issues in real-time" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Vanity Fair: Microsoft's Lost Decade", "url": "https://www.vanityfair.com/news/business/2012/08/microsoft-lost-mojo-steve-ballmer", "note": "Stack ranking identified as a primary cause of Microsoft's innovation stagnation during the Ballmer era" },
+    { "title": "Harvard Business Review: The Case Against Stack Ranking", "url": "https://hbr.org/2015/11/the-best-and-the-rest-revisiting-the-norm-of-normality-of-individual-performance", "note": "Research showing forced ranking reduces collaboration and increases political behavior" },
+    { "title": "Deloitte: Reinventing Performance Management", "url": "https://www2.deloitte.com/us/en/insights/focus/human-capital-trends/2015/performance-management-redesign-human-capital-trends-2015.html", "note": "Analysis of why major companies (Microsoft, GE, Adobe) abandoned stack ranking" },
+    { "title": "Stanford GSB: The Dark Side of Forced Ranking", "url": "https://www.gsb.stanford.edu/insights/researchers-forced-ranking-employees-hurts-companies", "note": "Research showing forced ranking decreases overall team performance by 10-15%" }
+  ],
+
+  "falsifiability": [
+    "Companies using stack ranking show higher team performance than those using alternative evaluation methods",
+    "Collaboration metrics remain stable or improve under forced ranking systems",
+    "Top performers prefer companies with stack ranking over those without it"
+  ],
+
+  "tags": ["stack-ranking", "performance-review", "collaboration", "organizational-design", "talent-management", "incentives"],
+  "crossReferences": ["O007", "O005", "O012"],
+
+  "seo": {
+    "description": "Stack ranking kills collaboration — knowledge sharing drops 30-50%, political behavior replaces productive work, and top performers leave 20-30% faster. Microsoft's lost decade proved it.",
+    "keywords": ["stack ranking collaboration kill second order effects", "forced ranking hidden costs", "stack ranking consequences"]
+  }
+}

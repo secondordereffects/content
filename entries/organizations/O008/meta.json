@@ -1,0 +1,104 @@
+{
+  "id": "O008",
+  "title": "Meeting Culture Metastasis",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.84,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Organizations use meetings to ensure alignment, make decisions, and share information. As the company grows, meetings multiply. Each meeting spawns pre-meetings, follow-up meetings, and status update meetings. Calendars fill until there's no time left for the work being discussed in the meetings. The average knowledge worker now spends 60-70% of their time in meetings, leaving 2-3 hours of fragmented time for actual productive work.",
+
+  "hypothesis": "Meetings ensure alignment and improve organizational decision-making.",
+
+  "chain": {
+    "root": "Default to meetings for coordination and decisions",
+    "effects": [
+      {
+        "label": "Meeting count grows faster than headcount",
+        "impact": "Meetings per employee up 70% since 2020",
+        "direction": "negative",
+        "children": [
+          { "label": "Each new hire creates N new meeting connections — growth is quadratic", "direction": "negative" },
+          { "label": "Meetings spawn meetings — pre-meetings, follow-ups, status syncs", "direction": "negative" },
+          { "label": "Nobody cancels meetings — they only add new ones", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Deep work becomes impossible",
+        "impact": "Average uninterrupted block: 30-60 minutes",
+        "direction": "negative",
+        "children": [
+          { "label": "Complex problems require 2-4 hour focus blocks that don't exist", "direction": "negative" },
+          { "label": "Engineers and designers do real work before 9am, after 5pm, or on weekends", "direction": "negative" },
+          { "label": "Context switching between meetings destroys cognitive performance", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Most meetings are unnecessary for most attendees",
+        "impact": "71% of meetings rated unproductive by attendees",
+        "direction": "negative",
+        "children": [
+          { "label": "People attend defensively — fear of missing information or being seen as disengaged", "direction": "negative" },
+          { "label": "Meetings used for information sharing that could be an email or document", "direction": "negative" },
+          { "label": "Decision meetings where the decision was already made — theater", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Organizational velocity decreases despite feeling busy",
+        "impact": "Output per employee declining while hours worked increase",
+        "direction": "negative",
+        "children": [
+          { "label": "Teams confuse activity (meetings) with progress (shipped work)", "direction": "negative" },
+          { "label": "Burnout increases — long days with nothing to show for them", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Time in meetings per week", "before": "8-10 hours", "after": "20-25 hours", "delta": "+150%", "direction": "negative" },
+    { "metric": "Uninterrupted focus blocks per day", "before": "2-3 blocks of 2+ hours", "after": "0-1 blocks of 30-60 min", "delta": "-80%", "direction": "negative" },
+    { "metric": "Meetings rated productive by attendees", "before": "Assumed most", "after": "29%", "delta": "71% waste", "direction": "negative" },
+    { "metric": "After-hours work to compensate", "before": "Occasional", "after": "Routine (2+ hours/day)", "delta": "+200%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your team's primary work requires deep focus and concentration",
+      "You're adding meetings to solve problems caused by too many meetings"
+    ],
+    "ifYouMust": [
+      "Institute no-meeting days (at least 2 per week) and enforce them ruthlessly",
+      "Default to 25-minute meetings, not 60 — Parkinson's law applies",
+      "Require a written agenda and desired outcome for every meeting — no agenda, no meeting",
+      "Audit meeting load quarterly — kill any recurring meeting that can't justify its existence"
+    ],
+    "alternatives": [
+      { "name": "Async-first communication", "note": "Written updates, Loom videos, and documents replace 80% of status meetings" },
+      { "name": "Office hours model", "note": "Leaders hold open office hours instead of scheduling 1:1s with everyone" },
+      { "name": "Decision documents", "note": "Write proposals, collect async feedback, meet only if there's genuine disagreement" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Microsoft Work Trend Index 2024", "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/", "note": "Time spent in meetings has tripled since 2020, with the average employee in 25+ hours of meetings per week" },
+    { "title": "Harvard Business Review: Stop the Meeting Madness", "url": "https://hbr.org/2017/07/stop-the-meeting-madness", "note": "71% of senior managers say meetings are unproductive and inefficient" },
+    { "title": "Atlassian: You Waste a Lot of Time at Work", "url": "https://www.atlassian.com/time-wasting-at-work-infographic", "note": "Average employee attends 62 meetings per month, half considered time wasted" },
+    { "title": "Cal Newport: A World Without Email", "url": "https://www.calnewport.com/books/a-world-without-email/", "note": "Analysis of how hyperactive hive mind workflow (constant meetings and messages) destroys knowledge work" }
+  ],
+
+  "falsifiability": [
+    "Organizations with more meetings per employee show higher output per employee than those with fewer",
+    "Employees report meetings as their most productive use of time in anonymous surveys",
+    "Reducing meeting load by 50% decreases organizational alignment and decision quality"
+  ],
+
+  "tags": ["meetings", "productivity", "deep-work", "organizational-design", "time-management", "burnout"],
+  "crossReferences": ["O005", "O011", "O022"],
+
+  "seo": {
+    "description": "Meetings consume 20-25 hours per week per employee, up 150% since 2020. 71% are rated unproductive. Deep work blocks shrink to 30-60 minutes. Teams confuse activity with progress.",
+    "keywords": ["meeting culture metastasis second order effects", "too many meetings productivity cost", "meeting overload hidden consequences"]
+  }
+}

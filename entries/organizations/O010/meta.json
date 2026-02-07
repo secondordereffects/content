@@ -1,0 +1,103 @@
+{
+  "id": "O010",
+  "title": "Reorg Productivity Crater",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Large organizations reorganize frequently — the average Fortune 500 company undergoes a major reorg every 2-3 years. The stated goals are always rational: align teams to strategy, reduce silos, improve efficiency, flatten hierarchy. Leadership models the reorg on an org chart and announces it in an all-hands. What they don't model is the 6-12 month productivity crater that follows. Every reorg resets institutional knowledge networks, breaks informal communication channels, triggers political jockeying for new positions, and forces employees into a survival mode where they optimize for visibility over output. Studies consistently show that reorganizations destroy 20-40% of productive capacity for 6+ months, and most never achieve their stated efficiency goals.",
+
+  "hypothesis": "Reorganization improves organizational efficiency and alignment.",
+
+  "chain": {
+    "root": "Announce major organizational restructuring",
+    "effects": [
+      {
+        "label": "Informal knowledge networks shatter overnight",
+        "impact": "60-80% of work gets done through informal channels",
+        "direction": "negative",
+        "children": [
+          { "label": "Employees don't know who to ask for help in new structure", "direction": "negative" },
+          { "label": "Institutional knowledge walks out with departing managers", "direction": "negative" },
+          { "label": "Cross-team projects stall while new relationships form", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Political survival mode activates",
+        "impact": "3-6 months of reduced risk-taking",
+        "direction": "negative",
+        "children": [
+          { "label": "Employees optimize for visibility to new leadership, not output", "direction": "negative" },
+          { "label": "Top performers leave during uncertainty window", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "New reporting lines create authority confusion",
+        "impact": "Average 4-month decision-making paralysis",
+        "direction": "negative",
+        "children": [
+          { "label": "Duplicate work as teams discover overlapping mandates", "direction": "negative" },
+          { "label": "Approval chains reset — nobody knows who signs off on what", "direction": "negative" },
+          { "label": "Middle managers hoard information to establish relevance", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Reorg fatigue sets in across the organization",
+        "impact": "Employee engagement drops 15-25%",
+        "direction": "negative",
+        "children": [
+          { "label": "Cynicism about future reorgs becomes cultural norm", "direction": "negative" },
+          { "label": "Long-term planning stops — 'why invest if it'll change again'", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Productive output during transition", "before": "Baseline", "after": "-20 to -40%", "delta": "-30% avg", "direction": "negative" },
+    { "metric": "Voluntary attrition (6 months post-reorg)", "before": "12%", "after": "20%", "delta": "+8pp", "direction": "negative" },
+    { "metric": "Time to full productivity in new structure", "before": "N/A", "after": "6-12 months", "delta": "6-12 months", "direction": "negative" },
+    { "metric": "Employee engagement score", "before": "72%", "after": "55%", "delta": "-17pp", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The reorg is primarily cosmetic — renaming teams without changing actual work",
+      "You've reorganized within the last 18 months and haven't recovered yet"
+    ],
+    "ifYouMust": [
+      "Map informal knowledge networks before restructuring and preserve critical connections",
+      "Announce and execute quickly — prolonged uncertainty is worse than the change itself",
+      "Retain key knowledge holders with explicit retention packages during transition",
+      "Set a 24-month moratorium on further reorgs to allow the new structure to stabilize"
+    ],
+    "alternatives": [
+      { "name": "Process redesign without structural change", "note": "Fix workflows and communication channels without moving boxes on org charts" },
+      { "name": "Incremental team adjustments", "note": "Small, targeted team changes instead of wholesale restructuring" },
+      { "name": "Cross-functional task forces", "note": "Overlay temporary project teams on existing structure to address alignment gaps" }
+    ]
+  },
+
+  "sources": [
+    { "title": "McKinsey: Reorg Success Rate Study", "url": "https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/getting-organizational-redesign-right", "note": "Less than 25% of reorganizations achieve their stated performance goals" },
+    { "title": "Harvard Business Review: The Reorg Trap", "url": "https://hbr.org/2018/06/the-big-lie-of-strategic-planning", "note": "Average reorg creates 6-12 month productivity crater before any gains materialize" },
+    { "title": "Bain & Company: Organizational Effectiveness", "url": "https://www.bain.com/insights/topics/organization/", "note": "Frequent reorgs correlate with lower employee engagement and higher attrition" },
+    { "title": "Gallup: Employee Engagement During Change", "url": "https://www.gallup.com/workplace/285674/improve-employee-engagement-workplace.aspx", "note": "Engagement drops 15-25% during major organizational changes" }
+  ],
+
+  "falsifiability": [
+    "Organizations that reorganize show measurable productivity improvements within 3 months of restructuring",
+    "Voluntary attrition rates remain flat or decrease during and after major reorgs",
+    "Employee engagement scores recover to pre-reorg levels within 3 months"
+  ],
+
+  "tags": ["reorganization", "organizational-change", "productivity", "employee-engagement", "attrition", "management"],
+  "crossReferences": ["O007", "O005", "O022"],
+
+  "seo": {
+    "description": "Reorganizations destroy 20-40% of productive capacity for 6+ months. Less than 25% achieve their stated goals. The informal networks that actually get work done shatter overnight.",
+    "keywords": ["reorganization productivity loss", "reorg second order effects", "organizational restructuring hidden costs"]
+  }
+}

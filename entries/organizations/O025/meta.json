@@ -1,0 +1,104 @@
+{
+  "id": "O025",
+  "title": "Employee Surveillance Productivity Paradox",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.82,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "With the shift to remote work, companies deploy employee monitoring software — keystroke loggers, screenshot capture, mouse movement tracking, application usage monitoring. The stated goal: ensure remote workers are productive. The actual result: employees optimize for appearing busy rather than being productive. They jiggle their mouse, keep apps open, and perform visible-but-meaningless work. Trust collapses. The best employees leave for companies that treat them like adults. Surveillance doesn't measure productivity — it measures compliance with surveillance.",
+
+  "hypothesis": "Employee monitoring software ensures remote workers are productive.",
+
+  "chain": {
+    "root": "Deploy employee monitoring/surveillance software",
+    "effects": [
+      {
+        "label": "Employees optimize for surveillance metrics, not actual output",
+        "impact": "Visible activity increases, meaningful output doesn't",
+        "direction": "negative",
+        "children": [
+          { "label": "Mouse jigglers and activity simulators become common", "direction": "negative" },
+          { "label": "Employees keep monitored apps open while doing nothing productive", "direction": "negative" },
+          { "label": "Time spent on 'looking busy' displaces time spent on actual work", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Trust between employer and employee collapses",
+        "impact": "Employee engagement drops 20-30%",
+        "direction": "negative",
+        "children": [
+          { "label": "Surveillance signals 'we don't trust you' — employees reciprocate", "direction": "negative" },
+          { "label": "Psychological safety destroyed — people hide mistakes instead of learning from them", "direction": "negative" },
+          { "label": "Discretionary effort disappears — employees do the minimum to satisfy metrics", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Top performers leave — they have options and won't tolerate surveillance",
+        "impact": "Voluntary attrition increases 25-35% among high performers",
+        "direction": "negative",
+        "children": [
+          { "label": "Best engineers go to companies that measure output, not keystrokes", "direction": "negative" },
+          { "label": "Remaining workforce skews toward those who can't leave", "direction": "negative" },
+          { "label": "Employer brand damaged — word spreads about surveillance culture", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Legal and privacy risks accumulate",
+        "impact": "Surveillance data creates liability",
+        "direction": "negative",
+        "children": [
+          { "label": "Captured screenshots may contain personal information — GDPR/privacy violations", "direction": "negative" },
+          { "label": "Keystroke logging captures passwords and personal communications", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Visible activity (mouse, keystrokes)", "before": "Baseline", "after": "+20-30%", "delta": "Looks productive", "direction": "neutral" },
+    { "metric": "Actual output (features shipped, problems solved)", "before": "Baseline", "after": "Flat or declining", "delta": "No improvement", "direction": "negative" },
+    { "metric": "Employee engagement", "before": "Moderate-High", "after": "Low", "delta": "-25%", "direction": "negative" },
+    { "metric": "Top performer attrition", "before": "Baseline", "after": "+25-35%", "delta": "+30%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your employees are knowledge workers whose output can't be measured by keystrokes",
+      "You're deploying surveillance because you don't trust your hiring decisions"
+    ],
+    "ifYouMust": [
+      "Monitor outcomes (deliverables, milestones) not inputs (keystrokes, mouse movement)",
+      "Be fully transparent about what's monitored and why",
+      "Give employees the ability to pause monitoring for personal time",
+      "Use aggregate data for process improvement, not individual surveillance"
+    ],
+    "alternatives": [
+      { "name": "Output-based management", "note": "Define clear deliverables and deadlines — measure what gets done, not how long someone sits at a desk" },
+      { "name": "Regular 1:1 check-ins", "note": "Weekly conversations about progress and blockers — builds trust and catches issues early" },
+      { "name": "Team-level metrics", "note": "Track team velocity and outcomes rather than individual activity — aligns incentives" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Harvard Business Review: How to Monitor Employees Without Destroying Trust", "url": "https://hbr.org/2022/05/how-to-monitor-your-employees-while-respecting-their-privacy", "note": "Research showing surveillance reduces trust and engagement without improving actual productivity" },
+    { "title": "Gartner: Employee Monitoring Trends", "url": "https://www.gartner.com/en/articles/the-future-of-employee-monitoring", "note": "60% of large employers use monitoring software, but only 30% report productivity improvements" },
+    { "title": "ExpressVPN: Employee Surveillance Survey", "url": "https://www.expressvpn.com/blog/expressvpn-survey-employee-surveillance/", "note": "59% of monitored employees report stress and anxiety from surveillance, 43% consider it a violation of trust" },
+    { "title": "MIT Sloan: The Dark Side of Employee Monitoring", "url": "https://sloanreview.mit.edu/article/the-dark-side-of-monitoring-employees/", "note": "Research showing monitored employees are more likely to break rules and engage in deviant behavior" }
+  ],
+
+  "falsifiability": [
+    "Companies using employee monitoring software show measurably higher per-employee output than non-monitoring companies",
+    "Employee engagement and satisfaction remain stable after monitoring software deployment",
+    "Top performer attrition rates are unaffected by the introduction of surveillance tools"
+  ],
+
+  "tags": ["surveillance", "remote-work", "trust", "productivity", "employee-monitoring", "privacy"],
+  "crossReferences": ["O022", "O007", "O012"],
+
+  "seo": {
+    "description": "Employee surveillance increases visible activity but not actual output. Engagement drops 25%, top performers leave 30% faster, and employees optimize for looking busy instead of being productive.",
+    "keywords": ["employee surveillance productivity paradox second order effects", "employee monitoring hidden costs", "workplace surveillance consequences"]
+  }
+}

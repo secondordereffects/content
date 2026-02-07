@@ -1,0 +1,104 @@
+{
+  "id": "O023",
+  "title": "Slack/Teams Always-On Anxiety",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Organizations adopt Slack, Teams, or similar tools to replace email and reduce meetings. The promise: async communication that respects everyone's time. The reality: a firehose of messages that creates a new kind of always-on anxiety. The green dot becomes a surveillance signal. Channels multiply until nobody can keep up. And the 'async' tool becomes synchronous — people expect immediate responses, creating a more demanding communication environment than email ever was.",
+
+  "hypothesis": "Chat tools like Slack and Teams improve communication and reduce email overload.",
+
+  "chain": {
+    "root": "Adopt real-time chat as primary communication tool",
+    "effects": [
+      {
+        "label": "Communication volume explodes — messages replace emails AND meetings",
+        "impact": "Average employee sends/receives 200+ messages per day",
+        "direction": "negative",
+        "children": [
+          { "label": "Channels multiply — 50-200 active channels per team", "direction": "negative" },
+          { "label": "FOMO drives people to join more channels than they can follow", "direction": "negative" },
+          { "label": "Important messages buried in noise — critical info missed", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Async tool becomes synchronous — immediate response expected",
+        "impact": "Average response time expectation: under 10 minutes",
+        "direction": "negative",
+        "children": [
+          { "label": "Green dot = available = must respond now", "direction": "negative" },
+          { "label": "Going offline feels like abandoning the team", "direction": "negative" },
+          { "label": "Deep work impossible when checking Slack every 5-10 minutes", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Context switching becomes constant",
+        "impact": "Workers check messaging tools 77 times per day on average",
+        "direction": "negative",
+        "children": [
+          { "label": "Each check costs 10-15 minutes of refocus time", "direction": "negative" },
+          { "label": "Notifications create Pavlovian anxiety responses", "direction": "negative" },
+          { "label": "Productive hours shrink to gaps between message checks", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Work-life boundaries dissolve",
+        "impact": "50%+ of workers check messages outside work hours daily",
+        "direction": "negative",
+        "children": [
+          { "label": "Mobile app means work follows you everywhere", "direction": "negative" },
+          { "label": "Evening and weekend messages create implicit expectation of availability", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Daily messages sent/received", "before": "30-50 emails", "after": "200+ chat messages", "delta": "+400%", "direction": "negative" },
+    { "metric": "Context switches per day", "before": "10-15", "after": "50-77", "delta": "+400%", "direction": "negative" },
+    { "metric": "Uninterrupted focus time", "before": "2-3 hours", "after": "30-60 minutes", "delta": "-70%", "direction": "negative" },
+    { "metric": "After-hours work communication", "before": "Occasional email", "after": "50%+ check daily", "delta": "Normalized", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your team's work requires deep focus and concentration",
+      "You're replacing email with chat without changing communication norms"
+    ],
+    "ifYouMust": [
+      "Set explicit response time expectations — 'respond within 4 hours, not 4 minutes'",
+      "Encourage DND/focus modes and normalize being offline",
+      "Limit channels aggressively — archive inactive channels monthly",
+      "Ban after-hours messages or use scheduled send"
+    ],
+    "alternatives": [
+      { "name": "Async-first with chat for emergencies", "note": "Default to documents and email, use chat only for time-sensitive coordination" },
+      { "name": "Basecamp model", "note": "Long-form posts replace chat threads — forces thoughtful communication over rapid-fire messages" },
+      { "name": "Scheduled communication windows", "note": "Check messages 3x per day at set times — batch processing over real-time" }
+    ]
+  },
+
+  "sources": [
+    { "title": "RescueTime: Communication Overload Study", "url": "https://blog.rescuetime.com/communication-multitasking-switches/", "note": "Knowledge workers check communication tools 77 times per day, losing 2.5 hours to context switching" },
+    { "title": "Microsoft Work Trend Index", "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/", "note": "After-hours Teams messages increased 42% since 2020, blurring work-life boundaries" },
+    { "title": "Cal Newport: A World Without Email", "url": "https://www.calnewport.com/books/a-world-without-email/", "note": "Analysis of how real-time messaging tools create hyperactive hive mind workflow that destroys deep work" },
+    { "title": "Slack: State of Work Report", "url": "https://slack.com/blog/news/the-state-of-work-in-2023", "note": "Slack's own data showing average user sends 200+ messages per day in active organizations" }
+  ],
+
+  "falsifiability": [
+    "Teams using real-time chat tools show higher deep work output than teams using email-only communication",
+    "Chat tool adoption reduces total communication volume compared to email",
+    "Workers using chat tools report lower stress and better work-life balance than email-only workers"
+  ],
+
+  "tags": ["slack", "communication", "always-on", "deep-work", "burnout", "work-life-balance", "productivity"],
+  "crossReferences": ["O008", "O005", "O022"],
+
+  "seo": {
+    "description": "Slack and Teams create 400% more messages than email, trigger 77 context switches per day, and shrink focus time to 30-60 minutes. The async promise became always-on anxiety.",
+    "keywords": ["slack always-on anxiety second order effects", "chat tools productivity cost", "real-time messaging hidden consequences"]
+  }
+}
