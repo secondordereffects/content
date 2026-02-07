@@ -1,0 +1,103 @@
+{
+  "id": "A001",
+  "title": "AI Copilot Skill Atrophy",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.75,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Engineering teams adopt AI coding assistants (GitHub Copilot, Cursor, etc.) to boost productivity. Initial metrics look great: faster code output, fewer boilerplate tasks, higher PR velocity. But 6-12 months in, a different pattern emerges. The skills that made senior engineers senior are quietly eroding.",
+
+  "hypothesis": "AI coding assistants make developers more productive without meaningful downsides.",
+
+  "chain": {
+    "root": "Adopt AI coding assistant",
+    "effects": [
+      {
+        "label": "Developers accept suggestions without deep review",
+        "impact": "60-70% acceptance rate",
+        "direction": "negative",
+        "children": [
+          { "label": "Pattern matching replaces understanding", "direction": "negative" },
+          { "label": "Developers stop reading documentation", "direction": "negative" },
+          { "label": "Copy-paste debugging increases", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Problem-solving muscle atrophies",
+        "impact": "-17% after 6 months",
+        "direction": "negative",
+        "children": [
+          { "label": "Developers struggle without AI available", "direction": "negative" },
+          { "label": "Interview performance declines for job-hoppers", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Code output increases but quality plateaus",
+        "impact": "+40% output, flat quality",
+        "direction": "neutral",
+        "children": [
+          { "label": "More code means more maintenance surface", "direction": "negative" },
+          { "label": "Technical debt accumulates faster", "direction": "negative" },
+          { "label": "Code reviews become rubber stamps", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Dependency on AI tools becomes structural",
+        "impact": "+200% tool dependency in 12 months",
+        "direction": "negative",
+        "children": [
+          { "label": "Vendor lock-in to AI provider", "direction": "negative" },
+          { "label": "Outages cause disproportionate productivity drops", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Problem-solving ability", "before": "Baseline", "after": "-17%", "delta": "-17%", "direction": "negative" },
+    { "metric": "Debugging skill", "before": "Baseline", "after": "-23%", "delta": "-23%", "direction": "negative" },
+    { "metric": "Code output", "before": "Baseline", "after": "+40%", "delta": "+40%", "direction": "positive" },
+    { "metric": "AI tool dependency", "before": "Optional", "after": "Structural", "delta": "+200%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your team is junior and still building foundational skills",
+      "You're in a domain where understanding the code matters more than writing it fast"
+    ],
+    "ifYouMust": [
+      "Mandate AI-off coding sessions weekly to maintain skills",
+      "Require explanation comments on all AI-generated code blocks",
+      "Track problem-solving metrics alongside productivity metrics",
+      "Rotate AI access so developers maintain independence"
+    ],
+    "alternatives": [
+      { "name": "Pair programming", "note": "Human-to-human knowledge transfer, builds understanding" },
+      { "name": "Code katas", "note": "Deliberate practice without AI assistance" },
+      { "name": "Selective AI use", "note": "AI for boilerplate only, manual for logic and architecture" }
+    ]
+  },
+
+  "sources": [
+    { "title": "GitClear Code Quality Report 2024", "url": "https://www.gitclear.com/coding_on_copilot_data_shows_ais_downward_pressure_on_code_quality", "note": "AI-assisted code shows measurable quality decline over time" },
+    { "title": "Microsoft Research: Productivity of Copilot", "url": "https://arxiv.org/abs/2302.06590", "note": "40% faster task completion but no quality improvement measured" },
+    { "title": "Stack Overflow Developer Survey 2024", "url": "https://survey.stackoverflow.co/2024/", "note": "70% of developers use AI tools, 30% report reduced problem-solving confidence" },
+    { "title": "Uplevel Engineering Productivity Study", "url": "https://uplevelteam.com/blog/posts/copilot-research", "note": "No statistically significant improvement in PR merge time with Copilot" }
+  ],
+
+  "falsifiability": [
+    "Developers using AI copilots for 12+ months show no measurable decline in problem-solving benchmarks",
+    "Code quality metrics (bug density, review rejection rate) remain stable or improve with AI adoption",
+    "Teams can maintain productivity during AI tool outages with less than 10% drop"
+  ],
+
+  "tags": ["ai", "copilot", "developer-productivity", "skill-atrophy", "code-quality", "automation"],
+  "crossReferences": ["A015", "A002", "T010"],
+
+  "seo": {
+    "description": "AI coding assistants boost output +40% but erode problem-solving ability -17% over 6 months. Evidence shows structural dependency without quality gains.",
+    "keywords": ["ai copilot skill atrophy", "github copilot hidden costs", "ai coding assistant second order effects"]
+  }
+}

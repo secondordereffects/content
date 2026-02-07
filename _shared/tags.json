@@ -1,0 +1,42 @@
+{
+  "kubernetes": {
+    "name": "Kubernetes",
+    "description": "Effects of Kubernetes adoption on teams, costs, and complexity",
+    "seo": {
+      "title": "Kubernetes Effects — Second Order Effects",
+      "description": "All second-order effects related to Kubernetes adoption"
+    }
+  },
+  "ai": {
+    "name": "Artificial Intelligence",
+    "description": "Effects of AI adoption across industries and domains",
+    "seo": {
+      "title": "AI Effects — Second Order Effects",
+      "description": "All second-order effects related to artificial intelligence"
+    }
+  },
+  "remote-work": {
+    "name": "Remote Work",
+    "description": "Effects of remote and hybrid work policies on organizations and individuals",
+    "seo": {
+      "title": "Remote Work Effects — Second Order Effects",
+      "description": "All second-order effects related to remote work"
+    }
+  },
+  "hiring": {
+    "name": "Hiring",
+    "description": "Effects of hiring practices, processes, and tools",
+    "seo": {
+      "title": "Hiring Effects — Second Order Effects",
+      "description": "All second-order effects related to hiring and recruitment"
+    }
+  },
+  "microservices": {
+    "name": "Microservices",
+    "description": "Effects of microservices architecture on teams and systems",
+    "seo": {
+      "title": "Microservices Effects — Second Order Effects",
+      "description": "All second-order effects related to microservices architecture"
+    }
+  }
+}

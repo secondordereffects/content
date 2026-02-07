@@ -1,0 +1,103 @@
+{
+  "id": "A027",
+  "title": "Vibe Coding Quality Collapse",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.70,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Developers adopt 'vibe coding' — using AI to generate entire features by describing intent in natural language, accepting output with minimal review. The approach feels magical: describe what you want, get working code. Ship fast. But the codebase accumulates debt at a rate that traditional development never could.",
+
+  "hypothesis": "Vibe coding with AI lets developers ship features 10x faster with acceptable quality.",
+
+  "chain": {
+    "root": "Adopt vibe coding workflow",
+    "effects": [
+      {
+        "label": "Code volume explodes without proportional understanding",
+        "impact": "3-5x more code generated per day",
+        "direction": "negative",
+        "children": [
+          { "label": "Developers can't explain what their own code does", "direction": "negative" },
+          { "label": "Code reviews become impossible at this volume", "direction": "negative" },
+          { "label": "Test coverage drops because tests aren't vibed", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Technical debt accumulates at unprecedented speed",
+        "impact": "Debt accrual 5-10x faster",
+        "direction": "negative",
+        "children": [
+          { "label": "AI generates verbose, non-idiomatic code", "direction": "negative" },
+          { "label": "Duplicate logic across files — AI doesn't know your codebase", "direction": "negative" },
+          { "label": "Security vulnerabilities embedded in generated patterns", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Debugging becomes nearly impossible",
+        "direction": "negative",
+        "children": [
+          { "label": "Developer didn't write the code, can't reason about it", "direction": "negative" },
+          { "label": "AI-generated fixes often introduce new bugs", "direction": "negative" },
+          { "label": "Stack traces through code nobody understands", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Codebase becomes unmaintainable within months",
+        "impact": "Rewrite needed in 6-12 months",
+        "direction": "negative",
+        "children": [
+          { "label": "New team members can't onboard to AI-generated code", "direction": "negative" },
+          { "label": "Refactoring is harder than rewriting", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Feature shipping speed", "before": "Baseline", "after": "+300-500%", "delta": "+300-500%", "direction": "positive" },
+    { "metric": "Code churn rate", "before": "15%/month", "after": "45-60%/month", "delta": "+200-300%", "direction": "negative" },
+    { "metric": "Bug density", "before": "Baseline", "after": "+40-80%", "delta": "+40-80%", "direction": "negative" },
+    { "metric": "Time to rewrite", "before": "N/A", "after": "6-12 months", "delta": "Inevitable", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're building anything that needs to be maintained for more than 6 months",
+      "You're working in a regulated industry (healthcare, finance)",
+      "Your team doesn't have senior engineers who can review AI output critically"
+    ],
+    "ifYouMust": [
+      "Limit vibe coding to prototypes and throwaway experiments",
+      "Require human-written tests for all AI-generated code",
+      "Mandate code review by someone who understands the domain",
+      "Set a hard rule: if you can't explain it, you can't ship it"
+    ],
+    "alternatives": [
+      { "name": "AI-assisted coding", "note": "AI suggests, human decides — line by line, not feature by feature" },
+      { "name": "Prototype then rewrite", "note": "Vibe code the prototype, then rewrite properly with understanding" },
+      { "name": "AI for tests only", "note": "Write code manually, use AI to generate test cases" }
+    ]
+  },
+
+  "sources": [
+    { "title": "GitClear Code Quality Report 2024", "url": "https://www.gitclear.com/coding_on_copilot_data_shows_ais_downward_pressure_on_code_quality", "note": "AI-generated code shows 2x higher churn rate" },
+    { "title": "Andrej Karpathy — Vibe Coding", "url": "https://twitter.com/karpathy/status/1886192184808149383", "note": "Coined the term, described the workflow" },
+    { "title": "OWASP AI Security Guide", "url": "https://owasp.org/www-project-ai-security-and-privacy-guide/", "note": "AI-generated code frequently contains known vulnerability patterns" }
+  ],
+
+  "falsifiability": [
+    "Vibe-coded projects consistently maintain quality metrics comparable to traditionally-coded projects over 12 months",
+    "Code churn rates in vibe-coded projects remain under 20%/month",
+    "Teams can onboard new developers to vibe-coded codebases in under 2 weeks"
+  ],
+
+  "tags": ["ai", "vibe-coding", "code-quality", "technical-debt", "developer-productivity", "automation"],
+  "crossReferences": ["A001", "A015", "T010"],
+
+  "seo": {
+    "description": "Vibe coding ships features 3-5x faster but generates +200-300% code churn, +40-80% bug density, and codebases that need rewriting within 6-12 months.",
+    "keywords": ["vibe coding second order effects", "vibe coding hidden costs", "ai code generation quality"]
+  }
+}

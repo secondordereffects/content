@@ -1,0 +1,106 @@
+[
+  {
+    "id": "technology",
+    "name": "Technology",
+    "prefix": "T",
+    "color": "#3b82f6",
+    "icon": "cpu",
+    "description": "Engineering decisions and their hidden costs",
+    "seo": {
+      "title": "Technology — Second Order Effects",
+      "description": "Engineering decisions and their hidden costs. Kubernetes, microservices, TypeScript, rewrites, and more.",
+      "keywords": ["technology second order effects", "engineering hidden costs", "software decision consequences"]
+    }
+  },
+  {
+    "id": "ai",
+    "name": "AI & Automation",
+    "prefix": "A",
+    "color": "#ec4899",
+    "icon": "bot",
+    "description": "AI adoption, automation, and agent effects",
+    "seo": {
+      "title": "AI & Automation — Second Order Effects",
+      "description": "Hidden consequences of AI adoption, automation, and agent deployment. Copilots, content generation, hiring bias, and more.",
+      "keywords": ["ai second order effects", "automation hidden costs", "ai adoption consequences"]
+    }
+  },
+  {
+    "id": "markets",
+    "name": "Markets",
+    "prefix": "M",
+    "color": "#8b5cf6",
+    "icon": "trending-up",
+    "description": "Market dynamics, pricing, and economic effects",
+    "seo": {
+      "title": "Markets — Second Order Effects",
+      "description": "Hidden consequences in market dynamics, pricing strategies, and economic decisions. Freemium, tariffs, ZIRP, and more.",
+      "keywords": ["market second order effects", "economic hidden costs", "pricing consequences"]
+    }
+  },
+  {
+    "id": "policy",
+    "name": "Policy",
+    "prefix": "P",
+    "color": "#22c55e",
+    "icon": "scale",
+    "description": "Regulatory and policy decisions and their cascading effects",
+    "seo": {
+      "title": "Policy — Second Order Effects",
+      "description": "Hidden consequences of regulatory and policy decisions. Rent control, immigration, GDPR, UBI, and more.",
+      "keywords": ["policy second order effects", "regulation hidden costs", "government decision consequences"]
+    }
+  },
+  {
+    "id": "organizations",
+    "name": "Organizations",
+    "prefix": "O",
+    "color": "#f59e0b",
+    "icon": "building-2",
+    "description": "Organizational design, management, and workplace effects",
+    "seo": {
+      "title": "Organizations — Second Order Effects",
+      "description": "Hidden consequences of organizational decisions. RTO, layoffs, agile, open offices, unlimited PTO, and more.",
+      "keywords": ["organizational second order effects", "management hidden costs", "workplace decision consequences"]
+    }
+  },
+  {
+    "id": "society",
+    "name": "Society",
+    "prefix": "S",
+    "color": "#f97316",
+    "icon": "users",
+    "description": "Social dynamics, culture, and behavioral effects",
+    "seo": {
+      "title": "Society — Second Order Effects",
+      "description": "Hidden consequences in social dynamics and culture. Social media, productivity culture, gig economy, and more.",
+      "keywords": ["social second order effects", "cultural hidden costs", "societal consequences"]
+    }
+  },
+  {
+    "id": "infrastructure",
+    "name": "Infrastructure",
+    "prefix": "I",
+    "color": "#06b6d4",
+    "icon": "landmark",
+    "description": "Physical and digital infrastructure decisions",
+    "seo": {
+      "title": "Infrastructure — Second Order Effects",
+      "description": "Hidden consequences of infrastructure decisions. Cloud concentration, EV charging, data centers, and more.",
+      "keywords": ["infrastructure second order effects", "infrastructure hidden costs"]
+    }
+  },
+  {
+    "id": "science-health",
+    "name": "Science & Health",
+    "prefix": "H",
+    "color": "#a855f7",
+    "icon": "heart-pulse",
+    "description": "Health, science, and medical decision effects",
+    "seo": {
+      "title": "Science & Health — Second Order Effects",
+      "description": "Hidden consequences in health and science decisions. Ozempic, antibiotic resistance, telemedicine, and more.",
+      "keywords": ["health second order effects", "medical hidden costs", "science decision consequences"]
+    }
+  }
+]

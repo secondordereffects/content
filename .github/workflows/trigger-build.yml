@@ -1,0 +1,15 @@
+name: Trigger Site Build
+on:
+  push:
+    branches: [main]
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger engine rebuild
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.ENGINE_PAT }}
+          repository: secondordereffects/secondordereffects.github.io
+          event-type: content-updated

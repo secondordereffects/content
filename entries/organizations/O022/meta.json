@@ -1,0 +1,104 @@
+{
+  "id": "O022",
+  "title": "Return to Office Productivity Theater",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Post-pandemic, executives mandate return-to-office (RTO) policies citing collaboration, culture, and productivity. Employees return to offices designed for pre-pandemic work patterns. What follows is a cascade of second-order effects that often undermine the stated goals.",
+
+  "hypothesis": "Returning to the office will restore collaboration, culture, and productivity to pre-pandemic levels.",
+
+  "chain": {
+    "root": "Mandate return to office",
+    "effects": [
+      {
+        "label": "Top performers leave first",
+        "impact": "10-30% attrition in first 6 months",
+        "direction": "negative",
+        "children": [
+          { "label": "Senior engineers have the most options", "direction": "negative" },
+          { "label": "Replacement hiring takes 3-6 months", "direction": "negative" },
+          { "label": "Institutional knowledge walks out the door", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Office becomes Zoom-in-a-room",
+        "direction": "negative",
+        "children": [
+          { "label": "Distributed teams still exist — meetings stay virtual", "direction": "negative" },
+          { "label": "Open offices make video calls disruptive", "direction": "negative" },
+          { "label": "Commute time replaces productive time", "impact": "1-2 hours/day lost", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Presenteeism replaces productivity",
+        "direction": "negative",
+        "children": [
+          { "label": "Badge-swipe metrics replace output metrics", "direction": "negative" },
+          { "label": "Employees optimize for visibility, not impact", "direction": "negative" },
+          { "label": "Deep work becomes harder in open offices", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Real estate costs spike while utilization stays low",
+        "impact": "40-60% desk utilization typical",
+        "direction": "negative",
+        "children": [
+          { "label": "Hybrid means desks sit empty 2-3 days/week", "direction": "negative" },
+          { "label": "Companies pay for peak capacity, use average", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Voluntary attrition", "before": "12%/year", "after": "18-25%/year", "delta": "+50-100%", "direction": "negative" },
+    { "metric": "Productive hours/day", "before": "6.5h (remote)", "after": "5h (office)", "delta": "-23%", "direction": "negative" },
+    { "metric": "Desk utilization", "before": "N/A", "after": "40-60%", "delta": "40-60% waste", "direction": "negative" },
+    { "metric": "Employee satisfaction", "before": "72%", "after": "54%", "delta": "-25%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your best performers are already remote and productive",
+      "You can't articulate what specific collaboration problem RTO solves",
+      "Your office isn't redesigned for hybrid work patterns",
+      "You're using RTO as a stealth layoff mechanism"
+    ],
+    "ifYouMust": [
+      "Start with 2-3 days/week, not 5 — measure before expanding",
+      "Redesign office for collaboration spaces, not rows of desks",
+      "Measure output, not attendance",
+      "Grandfather remote arrangements for existing high performers"
+    ],
+    "alternatives": [
+      { "name": "Structured hybrid", "note": "Team-chosen in-office days for collaboration, remote for deep work" },
+      { "name": "Quarterly offsites", "note": "Intensive in-person time for planning, remote for execution" },
+      { "name": "Hub-and-spoke", "note": "Small local offices for optional co-working, no mandate" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Stanford WFH Research (Bloom et al.)", "url": "https://wfhresearch.com/", "note": "Hybrid workers are 3-4% more productive than full office" },
+    { "title": "Scoop Flex Index Q4 2024", "url": "https://www.flex.scoopforwork.com/", "note": "Companies with flexible policies grow revenue 4x faster" },
+    { "title": "Unispace Global Workplace Report", "url": "https://www.unispace.com/returning-for-good", "note": "42% of companies with RTO mandates report higher attrition than expected" },
+    { "title": "Gartner HR Survey 2024", "url": "https://www.gartner.com/en/human-resources", "note": "Employees forced to RTO show 20% lower engagement scores" }
+  ],
+
+  "falsifiability": [
+    "Companies with strict RTO mandates consistently show higher productivity than flexible competitors",
+    "Voluntary attrition does not increase within 12 months of RTO mandates",
+    "Office desk utilization consistently exceeds 80% under hybrid RTO policies"
+  ],
+
+  "tags": ["remote-work", "return-to-office", "productivity", "attrition", "workplace", "management"],
+  "crossReferences": ["O011", "O007", "O005"],
+
+  "seo": {
+    "description": "Return-to-office mandates trigger top-performer attrition (+50-100%), productivity theater, and 40-60% desk waste. Evidence shows hybrid outperforms full RTO.",
+    "keywords": ["return to office second order effects", "RTO hidden costs", "return to office productivity"]
+  }
+}

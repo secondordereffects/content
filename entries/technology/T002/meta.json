@@ -1,0 +1,106 @@
+{
+  "id": "T002",
+  "title": "Microservices Communication Tax",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.90,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "A growing engineering team decides to break their monolith into microservices. The promise: independent deployments, team autonomy, technology flexibility. The reality: every function call that was once in-process now crosses a network boundary. The communication tax compounds with every new service.",
+
+  "hypothesis": "Microservices give teams independence and allow faster, safer deployments.",
+
+  "chain": {
+    "root": "Decompose into microservices",
+    "effects": [
+      {
+        "label": "Every internal call becomes a network call",
+        "impact": "Latency +10-100x per hop",
+        "direction": "negative",
+        "children": [
+          { "label": "Cascading failures across service boundaries", "direction": "negative" },
+          { "label": "Need circuit breakers, retries, timeouts everywhere", "direction": "negative" },
+          { "label": "Partial failures become the norm, not the exception", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Data consistency becomes distributed",
+        "impact": "Eventual consistency by default",
+        "direction": "negative",
+        "children": [
+          { "label": "Saga patterns replace simple transactions", "direction": "negative" },
+          { "label": "Debugging data inconsistencies requires cross-service tracing", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Operational complexity multiplies",
+        "impact": "10x more deployment units",
+        "direction": "negative",
+        "children": [
+          { "label": "Need service mesh for traffic management", "direction": "negative" },
+          { "label": "Need distributed tracing (Jaeger/Zipkin)", "direction": "negative" },
+          { "label": "Need centralized logging across all services", "direction": "negative" },
+          { "label": "Need API gateway for external traffic", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Team coordination doesn't disappear — it shifts",
+        "direction": "negative",
+        "children": [
+          { "label": "API contracts require cross-team negotiation", "direction": "negative" },
+          { "label": "Breaking changes cascade across consumers", "direction": "negative" },
+          { "label": "Integration testing becomes exponentially harder", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "P99 latency", "before": "50ms", "after": "200-500ms", "delta": "+300-900%", "direction": "negative" },
+    { "metric": "Deployment units", "before": "1", "after": "10-50", "delta": "+900-4900%", "direction": "negative" },
+    { "metric": "Infrastructure cost", "before": "$5K/mo", "after": "$15-25K/mo", "delta": "+200-400%", "direction": "negative" },
+    { "metric": "Time to debug production issues", "before": "1 hour", "after": "4-8 hours", "delta": "+300-700%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your team is smaller than 30 engineers",
+      "Your monolith deploys in under 15 minutes",
+      "You don't have dedicated platform/infra engineers",
+      "Your scaling bottleneck is the database, not the application"
+    ],
+    "ifYouMust": [
+      "Start with 2-3 services at natural domain boundaries, not 50",
+      "Invest in observability before splitting — you'll need it",
+      "Define API contracts and versioning strategy upfront",
+      "Accept that you're trading code complexity for operational complexity"
+    ],
+    "alternatives": [
+      { "name": "Modular monolith", "note": "Domain boundaries without network boundaries" },
+      { "name": "Service-oriented monolith", "note": "Internal modules with clean interfaces, single deployment" },
+      { "name": "Selective extraction", "note": "Extract only the 1-2 services with genuine scaling needs" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Sam Newman — Building Microservices (2nd ed.)", "url": "https://samnewman.io/books/building_microservices_2nd_edition/", "note": "Canonical reference acknowledging microservices tax" },
+    { "title": "Martin Fowler — Microservice Prerequisites", "url": "https://martinfowler.com/bliki/MicroservicePrerequisites.html", "note": "Lists operational maturity requirements most teams lack" },
+    { "title": "Segment Engineering Blog — Goodbye Microservices", "url": "https://segment.com/blog/goodbye-microservices/", "note": "Segment moved back to monolith after microservices complexity" },
+    { "title": "Amazon Prime Video — Monolith Saves 90%", "url": "https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90", "note": "Prime Video moved from microservices to monolith, cut costs 90%" }
+  ],
+
+  "falsifiability": [
+    "Teams under 30 engineers consistently report net productivity gains from microservices",
+    "P99 latency does not increase meaningfully after decomposition",
+    "Infrastructure costs remain flat or decrease after microservices adoption"
+  ],
+
+  "tags": ["microservices", "architecture", "distributed-systems", "complexity", "monolith", "devops"],
+  "crossReferences": ["T001", "T010", "O005"],
+
+  "seo": {
+    "description": "Microservices replace code complexity with operational complexity: +300-900% latency, +200-400% infra cost, exponentially harder debugging. Evidence from Segment, Amazon Prime Video.",
+    "keywords": ["microservices hidden costs", "microservices second order effects", "microservices vs monolith consequences"]
+  }
+}

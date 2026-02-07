@@ -1,0 +1,105 @@
+{
+  "id": "T001",
+  "title": "Kubernetes Complexity Cascade",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-04",
+  "updated": "2026-02-07",
+
+  "context": "Organization with 10-50 engineers. The monolith is showing scaling pain. Someone proposes Kubernetes. The pitch sounds right: better scaling, deployment flexibility, industry-standard infrastructure. What they don't model is the cascade that follows. The decision to adopt K8s triggers a chain of second-order effects that compound over 12-24 months.",
+
+  "hypothesis": "Kubernetes will give us better scaling, deployment flexibility, and industry-standard infrastructure.",
+
+  "chain": {
+    "root": "Adopt Kubernetes",
+    "effects": [
+      {
+        "label": "Requires dedicated expertise",
+        "impact": "+20-40% salary premium",
+        "direction": "negative",
+        "children": [
+          { "label": "K8s engineers are scarce", "impact": "3:1 demand/supply", "direction": "negative" },
+          { "label": "Existing team must learn", "impact": "3-6 month productivity dip", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "K8s alone is insufficient — tooling sprawl",
+        "direction": "negative",
+        "children": [
+          { "label": "Need Helm for packaging" },
+          { "label": "Need Istio/Linkerd for mesh" },
+          { "label": "Need ArgoCD/Flux for GitOps" },
+          { "label": "Need Prometheus/Grafana for observability" }
+        ]
+      },
+      {
+        "label": "Debugging becomes distributed",
+        "impact": "MTTR +200%",
+        "direction": "negative",
+        "children": [
+          { "label": "'Works in my pod' problem" },
+          { "label": "Network issues masquerade as app issues" }
+        ]
+      },
+      {
+        "label": "Onboarding slows dramatically",
+        "impact": "2 weeks → 6 weeks",
+        "direction": "negative",
+        "children": [
+          { "label": "Must learn K8s concepts first" },
+          { "label": "Documentation debt accumulates" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Infra team size", "before": "2 FTE", "after": "4-5 FTE", "delta": "+100-150%", "direction": "negative" },
+    { "metric": "Onboarding time", "before": "2 weeks", "after": "6 weeks", "delta": "+200%", "direction": "negative" },
+    { "metric": "Monthly tooling cost", "before": "$2K", "after": "$8K", "delta": "+300%", "direction": "negative" },
+    { "metric": "Incident MTTR", "before": "30 min", "after": "90 min", "delta": "+200%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You have fewer than 50 services",
+      "You have fewer than 100 engineers",
+      "You don't have genuine multi-region requirements",
+      "Your scaling problems are actually database problems"
+    ],
+    "ifYouMust": [
+      "Start with managed K8s (EKS/GKE/AKS), never self-hosted",
+      "Budget 6-month learning curve",
+      "Dedicate 2 infra engineers minimum",
+      "Budget 3x current tooling cost"
+    ],
+    "alternatives": [
+      { "name": "Fly.io", "note": "Global edge deployment, low complexity" },
+      { "name": "Railway", "note": "Rapid prototyping, small teams" },
+      { "name": "Render", "note": "Straightforward web apps" },
+      { "name": "AWS ECS", "note": "AWS-native, simpler than K8s" }
+    ]
+  },
+
+  "sources": [
+    { "title": "CNCF Annual Survey 2024", "url": "https://www.cncf.io/reports/cncf-annual-survey-2024/", "note": "67% report complexity as top K8s challenge" },
+    { "title": "Datadog Container Report 2024", "url": "https://www.datadoghq.com/container-report/", "note": "K8s adoption correlates with 2.3x more services" },
+    { "title": "Honeycomb Observability Report", "url": "https://www.honeycomb.io/observability-report", "note": "Distributed systems debugging takes 3x longer" },
+    { "title": "Internal Data (Anonymized)", "note": "Interviews with 3 YC companies post-K8s adoption" }
+  ],
+
+  "falsifiability": [
+    "Orgs under 50 engineers consistently report less than 20% infra team increase post-K8s",
+    "Onboarding time consistently under 4 weeks post-K8s",
+    "No measurable increase in incident MTTR"
+  ],
+
+  "tags": ["kubernetes", "infrastructure", "devops", "complexity", "scaling"],
+  "crossReferences": ["T002", "T005", "O001"],
+
+  "seo": {
+    "description": "Kubernetes adoption triggers a complexity cascade: expertise scarcity, tooling sprawl, debugging overhead, and onboarding lag. Evidence shows +100-150% infra team growth.",
+    "keywords": ["kubernetes complexity", "kubernetes hidden costs", "k8s second order effects", "container orchestration costs"]
+  }
+}
