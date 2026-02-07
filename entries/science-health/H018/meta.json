@@ -1,0 +1,103 @@
+{
+  "id": "H018",
+  "title": "Remote Work Sedentary Health Spiral",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "The shift to remote work accelerated by the COVID-19 pandemic was widely celebrated for improving work-life balance. No commute means more time for exercise, better meals, and reduced stress. But population health data tells a different story. Without the incidental movement built into office life — walking to meetings, commuting by foot or bike, taking stairs, grabbing lunch — remote workers experience a dramatic reduction in daily movement. The average office worker takes 6,000-8,000 steps per day including commute. Remote workers average 2,000-3,000. This 60% reduction in baseline movement compounds over months and years into measurable health deterioration that most workers don't notice until symptoms appear.",
+
+  "hypothesis": "Remote work improves work-life balance and overall health outcomes.",
+
+  "chain": {
+    "root": "Shift to full-time remote work",
+    "effects": [
+      {
+        "label": "Daily incidental movement drops 50-60%",
+        "impact": "6,000 steps → 2,500 steps average",
+        "direction": "negative",
+        "children": [
+          { "label": "Metabolic rate decreases, weight gain begins", "direction": "negative" },
+          { "label": "Cardiovascular fitness declines within 8 weeks", "direction": "negative" },
+          { "label": "Musculoskeletal issues from prolonged sitting", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Work-home boundary dissolves",
+        "impact": "+2.5 hours average workday extension",
+        "direction": "negative",
+        "children": [
+          { "label": "Meal timing becomes irregular, snacking increases", "direction": "negative" },
+          { "label": "Exercise gets deprioritized for 'just one more task'", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Social isolation reduces accountability for health behaviors",
+        "impact": "-40% gym attendance vs. office workers",
+        "direction": "negative",
+        "children": [
+          { "label": "No walking meetings or lunch-break exercise groups", "direction": "negative" },
+          { "label": "Depression and anxiety increase, further reducing motivation to move", "direction": "negative" },
+          { "label": "Sleep quality degrades from lack of daylight exposure", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Ergonomic environment is worse than office",
+        "impact": "Only 25% of remote workers have proper setup",
+        "direction": "negative",
+        "children": [
+          { "label": "Chronic back and neck pain becomes normalized", "direction": "negative" },
+          { "label": "Eye strain from unregulated screen distance and lighting", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Daily step count", "before": "6,000-8,000", "after": "2,000-3,000", "delta": "-60%", "direction": "negative" },
+    { "metric": "Average weight gain (year 1)", "before": "Baseline", "after": "+7.5 lbs", "delta": "+7.5 lbs", "direction": "negative" },
+    { "metric": "Reported back/neck pain", "before": "25%", "after": "58%", "delta": "+33pp", "direction": "negative" },
+    { "metric": "Working hours per day", "before": "8.0", "after": "10.5", "delta": "+2.5 hrs", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You have no dedicated workspace and work from bed or couch regularly",
+      "You already have sedentary lifestyle risk factors like obesity or cardiovascular issues"
+    ],
+    "ifYouMust": [
+      "Set non-negotiable movement breaks every 90 minutes using a timer",
+      "Invest in a proper ergonomic setup: standing desk, external monitor, ergonomic chair",
+      "Schedule walking meetings for calls that don't require screen sharing",
+      "Use commute-replacement time for dedicated exercise, not more work"
+    ],
+    "alternatives": [
+      { "name": "Hybrid work (2-3 office days)", "note": "Restores incidental movement while keeping flexibility" },
+      { "name": "Coworking space membership", "note": "Forces commute and provides social movement cues" },
+      { "name": "Structured remote wellness program", "note": "Company-sponsored movement tracking with team accountability" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Fitbit Population Study: Steps During COVID", "url": "https://www.nature.com/articles/s41366-021-00956-y", "note": "Average daily steps dropped 27% globally, with remote workers showing 48% decline" },
+    { "title": "Stanford Remote Work Research", "url": "https://nbloom.people.stanford.edu/research", "note": "Remote workers report +2.5 hours longer workdays on average" },
+    { "title": "BMJ Occupational Health: Sedentary Behavior in Remote Workers", "url": "https://oem.bmj.com/content/78/Suppl_1/A1", "note": "Remote workers sit 2+ additional hours per day compared to office workers" },
+    { "title": "American Journal of Preventive Medicine: Weight Gain During Remote Work", "url": "https://www.ajpmonline.org/article/S0749-3797(21)00459-3/fulltext", "note": "Average weight gain of 1.5 lbs/month in first 6 months of remote work" }
+  ],
+
+  "falsifiability": [
+    "Remote workers show equal or better cardiovascular fitness markers compared to office workers after 12 months",
+    "Daily step counts for remote workers are within 20% of office worker averages",
+    "Remote work populations show no increase in musculoskeletal complaints compared to office populations"
+  ],
+
+  "tags": ["remote-work", "sedentary-lifestyle", "health", "ergonomics", "work-life-balance", "obesity"],
+  "crossReferences": ["O022", "O011", "S001"],
+
+  "seo": {
+    "description": "Remote work cuts daily movement by 60% and extends workdays by 2.5 hours. The health costs of eliminating incidental movement compound silently over months.",
+    "keywords": ["remote work health effects", "sedentary lifestyle second order effects", "work from home hidden costs"]
+  }
+}

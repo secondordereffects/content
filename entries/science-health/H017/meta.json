@@ -1,0 +1,104 @@
+{
+  "id": "H017",
+  "title": "Microplastic Bioaccumulation Cascade",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.83,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Plastic was marketed as recyclable. In reality, less than 9% of plastic ever produced has been recycled. The rest breaks down into microplastics — particles smaller than 5mm — that are now found everywhere: in ocean water, drinking water, food, air, human blood, placentas, and brain tissue. We are only beginning to understand the health effects of chronic microplastic exposure, but early research suggests endocrine disruption, inflammation, and potential carcinogenic effects. The plastic age created a contamination problem that will outlast every person alive today.",
+
+  "hypothesis": "Plastic is recyclable and its environmental impact is manageable.",
+
+  "chain": {
+    "root": "Produce and dispose of plastic at industrial scale for 70+ years",
+    "effects": [
+      {
+        "label": "Microplastics contaminate every environment on Earth",
+        "impact": "Found in deepest ocean trenches, highest mountains, and Arctic ice",
+        "direction": "negative",
+        "children": [
+          { "label": "Plastic breaks down but never disappears — fragments into smaller particles", "direction": "negative" },
+          { "label": "Microplastics in drinking water: average person ingests 5g of plastic per week", "direction": "negative" },
+          { "label": "Airborne microplastics inhaled with every breath", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Bioaccumulation through the food chain",
+        "impact": "Microplastics found in 90%+ of seafood samples tested",
+        "direction": "negative",
+        "children": [
+          { "label": "Plankton ingest microplastics → fish eat plankton → humans eat fish", "direction": "negative" },
+          { "label": "Agricultural soil contaminated by plastic mulch and sewage sludge", "direction": "negative" },
+          { "label": "Microplastics found in fruits, vegetables, meat, and dairy", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Human health effects emerging from research",
+        "impact": "Microplastics found in human blood, lungs, placentas, and brain tissue",
+        "direction": "negative",
+        "children": [
+          { "label": "Endocrine disruption from plastic additives (BPA, phthalates)", "direction": "negative" },
+          { "label": "Inflammatory response to plastic particles in tissues", "direction": "negative" },
+          { "label": "Potential links to cardiovascular disease, reproductive issues, and cancer", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "No viable cleanup or reversal technology exists",
+        "impact": "Contamination is effectively permanent on human timescales",
+        "direction": "negative",
+        "children": [
+          { "label": "Ocean cleanup addresses <1% of marine microplastics", "direction": "negative" },
+          { "label": "Particles too small to filter from water and air at scale", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Plastic recycled (cumulative, all time)", "before": "Marketed as recyclable", "after": "<9% actually recycled", "delta": "91% waste", "direction": "negative" },
+    { "metric": "Weekly plastic ingestion per person", "before": "Assumed zero", "after": "~5 grams (credit card equivalent)", "delta": "Ubiquitous", "direction": "negative" },
+    { "metric": "Environments contaminated", "before": "Assumed localized", "after": "Every environment on Earth", "delta": "Global", "direction": "negative" },
+    { "metric": "Human tissues containing microplastics", "before": "Assumed none", "after": "Blood, lungs, placenta, brain", "delta": "Systemic", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're relying on recycling to solve the plastic problem — it doesn't work at scale",
+      "You're assuming microplastic exposure is safe because regulations haven't caught up"
+    ],
+    "ifYouMust": [
+      "Reduce plastic use at the source — the only effective strategy",
+      "Avoid heating food in plastic containers — heat accelerates microplastic release",
+      "Use water filters that capture microplastics (reverse osmosis, activated carbon)",
+      "Support extended producer responsibility legislation"
+    ],
+    "alternatives": [
+      { "name": "Material substitution", "note": "Glass, metal, paper, and biodegradable materials for packaging — proven alternatives exist" },
+      { "name": "Extended producer responsibility", "note": "Make producers responsible for end-of-life disposal — changes incentives at the source" },
+      { "name": "Plastic production caps", "note": "Limit new plastic production rather than trying to manage waste after the fact" }
+    ]
+  },
+
+  "sources": [
+    { "title": "OECD: Global Plastics Outlook", "url": "https://www.oecd.org/environment/global-plastics-outlook-de747aef-en.htm", "note": "Only 9% of plastic waste has ever been recycled globally — the rest is landfilled, incinerated, or leaked" },
+    { "title": "Environment International: Microplastics in Human Blood", "url": "https://www.sciencedirect.com/science/article/pii/S0160412022001258", "note": "First study detecting microplastics in human blood — found in 80% of participants" },
+    { "title": "WWF: No Plastic in Nature", "url": "https://www.wwf.org.au/news/news/2019/revealed-plastic-ingestion-by-people-could-equate-to-a-credit-card-a-week", "note": "Research estimating average person ingests approximately 5 grams of plastic per week" },
+    { "title": "The Lancet: Health Effects of Microplastics", "url": "https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(23)00260-3/fulltext", "note": "Review of emerging evidence on microplastic health effects including endocrine disruption and inflammation" }
+  ],
+
+  "falsifiability": [
+    "Microplastic contamination levels stabilize or decrease without reducing plastic production",
+    "Long-term microplastic exposure in humans shows no measurable health effects in epidemiological studies",
+    "Recycling rates increase to 50%+ globally, meaningfully reducing environmental plastic accumulation"
+  ],
+
+  "tags": ["microplastics", "pollution", "health", "environment", "recycling", "bioaccumulation"],
+  "crossReferences": ["H016", "I001", "S001"],
+
+  "seo": {
+    "description": "Only 9% of plastic is recycled. Microplastics are in human blood, lungs, and brains. We ingest ~5g of plastic weekly. No cleanup technology exists at scale. The contamination is permanent.",
+    "keywords": ["microplastic bioaccumulation cascade second order effects", "plastic pollution hidden health costs", "microplastics human health consequences"]
+  }
+}

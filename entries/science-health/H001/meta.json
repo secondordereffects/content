@@ -1,0 +1,105 @@
+{
+  "id": "H001",
+  "title": "Antibiotic Resistance Acceleration",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.90,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Antibiotics are one of humanity's greatest achievements — they turned previously fatal infections into minor inconveniences. But bacteria evolve. Every use of antibiotics creates selection pressure that favors resistant strains. We use antibiotics not just for human medicine but for livestock growth promotion, agricultural disease prevention, and prophylactic treatment. 70-80% of antibiotics sold in the US go to animal agriculture. The result: antibiotic-resistant infections are rising exponentially, and the pipeline of new antibiotics has nearly dried up because they're not profitable enough for pharmaceutical companies to develop.",
+
+  "hypothesis": "Antibiotics reliably cure bacterial infections and will continue to do so.",
+
+  "chain": {
+    "root": "Use antibiotics at massive scale across medicine and agriculture",
+    "effects": [
+      {
+        "label": "Resistant bacteria emerge and spread",
+        "impact": "1.27 million deaths from resistant infections annually (2019)",
+        "direction": "negative",
+        "children": [
+          { "label": "MRSA, CRE, and drug-resistant TB spreading globally", "direction": "negative" },
+          { "label": "Resistance genes transfer between bacterial species — accelerating spread", "direction": "negative" },
+          { "label": "Hospital-acquired resistant infections increasing 15% annually", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Agricultural overuse drives resistance at population scale",
+        "impact": "70-80% of antibiotics used in animal agriculture",
+        "direction": "negative",
+        "children": [
+          { "label": "Sub-therapeutic doses in livestock feed are ideal for breeding resistance", "direction": "negative" },
+          { "label": "Resistant bacteria enter food supply and water systems", "direction": "negative" },
+          { "label": "Agricultural resistance transfers to human pathogens", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "New antibiotic development has nearly stopped",
+        "impact": "Only 2-3 new antibiotic classes in 40 years",
+        "direction": "negative",
+        "children": [
+          { "label": "Antibiotics are unprofitable — short courses, low prices, used as last resort", "direction": "negative" },
+          { "label": "Pharmaceutical companies invest in chronic disease drugs instead", "direction": "negative" },
+          { "label": "Several antibiotic startups have gone bankrupt despite successful drugs", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Modern medicine becomes dangerous without effective antibiotics",
+        "impact": "Surgery, chemotherapy, and organ transplants depend on antibiotics",
+        "direction": "negative",
+        "children": [
+          { "label": "Routine surgery becomes life-threatening if post-operative infections can't be treated", "direction": "negative" },
+          { "label": "Cancer treatment requires antibiotics for immunocompromised patients", "direction": "negative" },
+          { "label": "Projected 10 million deaths annually by 2050 from resistant infections", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Deaths from antibiotic-resistant infections", "before": "Rare (1950s)", "after": "1.27 million/year (2019)", "delta": "Exponential growth", "direction": "negative" },
+    { "metric": "New antibiotic classes developed", "before": "20+ (1940-1980)", "after": "2-3 (1980-2024)", "delta": "-90%", "direction": "negative" },
+    { "metric": "Antibiotics used in agriculture", "before": "Minimal", "after": "70-80% of total use", "delta": "Dominant use case", "direction": "negative" },
+    { "metric": "Projected deaths by 2050", "before": "Current 1.27M/year", "after": "10 million/year", "delta": "+700%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're prescribing antibiotics for viral infections (colds, flu)",
+      "You're using antibiotics for livestock growth promotion rather than treating actual infections"
+    ],
+    "ifYouMust": [
+      "Use narrow-spectrum antibiotics when possible — don't use broad-spectrum as default",
+      "Complete the full course — partial courses breed resistance",
+      "Implement antibiotic stewardship programs in hospitals",
+      "Support policies that ban sub-therapeutic antibiotic use in agriculture"
+    ],
+    "alternatives": [
+      { "name": "Phage therapy", "note": "Bacteriophages (viruses that kill bacteria) — naturally evolve alongside bacteria, harder to develop resistance" },
+      { "name": "Antibiotic stewardship", "note": "Systematic programs to optimize antibiotic use — reduce unnecessary prescriptions by 30-50%" },
+      { "name": "Pull incentives for development", "note": "Subscription models and market entry rewards that make antibiotic development profitable" }
+    ]
+  },
+
+  "sources": [
+    { "title": "The Lancet: Global Burden of Antimicrobial Resistance", "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)02724-0/fulltext", "note": "Landmark study estimating 1.27 million deaths directly attributable to antibiotic resistance in 2019" },
+    { "title": "WHO: Antimicrobial Resistance Global Report", "url": "https://www.who.int/publications/i/item/9789241564748", "note": "WHO declaring antibiotic resistance one of the top 10 global public health threats" },
+    { "title": "Review on Antimicrobial Resistance (O'Neill Report)", "url": "https://amr-review.org/", "note": "Commissioned report projecting 10 million annual deaths from AMR by 2050 without intervention" },
+    { "title": "FDA: Antimicrobials Sold for Food-Producing Animals", "url": "https://www.fda.gov/animal-veterinary/antimicrobial-resistance/fda-releases-annual-summary-report-antimicrobials-sold-or-distributed-2022-use-food-producing", "note": "FDA data showing majority of antibiotics sold in the US are for animal agriculture" }
+  ],
+
+  "falsifiability": [
+    "New antibiotic classes are developed at a rate that outpaces resistance emergence",
+    "Agricultural antibiotic use does not contribute to resistance in human pathogens",
+    "Antibiotic-resistant infection rates stabilize or decline without significant intervention"
+  ],
+
+  "tags": ["antibiotics", "resistance", "public-health", "agriculture", "pharmaceutical", "infectious-disease"],
+  "crossReferences": ["H016", "H017", "P012"],
+
+  "seo": {
+    "description": "Antibiotic resistance kills 1.27 million people annually, projected to reach 10 million by 2050. 70-80% of antibiotics go to agriculture. Only 2-3 new classes developed in 40 years.",
+    "keywords": ["antibiotic resistance acceleration second order effects", "antimicrobial resistance hidden costs", "antibiotic overuse consequences"]
+  }
+}

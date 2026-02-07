@@ -1,0 +1,104 @@
+{
+  "id": "H003",
+  "title": "Replication Crisis Trust Erosion",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.84,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Science is built on replication — if a finding is real, other researchers should be able to reproduce it. But when researchers tried to replicate landmark studies across psychology, medicine, and economics, the results were devastating. 50-70% of studies failed to replicate. The causes are systemic: publish-or-perish incentives, p-hacking, small sample sizes, and journals that only publish positive results. The replication crisis doesn't just affect academia — it undermines public trust in science at a time when that trust is desperately needed.",
+
+  "hypothesis": "Published peer-reviewed research is reliable and can be trusted as the basis for decisions.",
+
+  "chain": {
+    "root": "Build decisions on published research without verifying replicability",
+    "effects": [
+      {
+        "label": "50-70% of landmark studies fail to replicate",
+        "impact": "Reproducibility Project: 36% of psychology studies replicated",
+        "direction": "negative",
+        "children": [
+          { "label": "P-hacking: researchers test multiple hypotheses until one reaches p<0.05", "direction": "negative" },
+          { "label": "Publication bias: journals only publish positive results, file drawer effect", "direction": "negative" },
+          { "label": "Small sample sizes produce unreliable effect sizes that don't hold at scale", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Medical treatments based on unreplicable research",
+        "impact": "Billions spent on treatments that don't work as published",
+        "direction": "negative",
+        "children": [
+          { "label": "Drug trials that showed promise in small studies fail in large trials", "direction": "negative" },
+          { "label": "Nutritional guidelines based on weak evidence flip-flop every decade", "direction": "negative" },
+          { "label": "Patients receive treatments based on studies that wouldn't replicate", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Public trust in science erodes",
+        "impact": "Trust in scientists declining, especially among certain demographics",
+        "direction": "negative",
+        "children": [
+          { "label": "Anti-science movements cite replication failures as evidence science is unreliable", "direction": "negative" },
+          { "label": "Legitimate scientific consensus (climate, vaccines) questioned alongside weak studies", "direction": "negative" },
+          { "label": "Policy-makers cherry-pick studies that support their position — all have 'peer-reviewed' backing", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Perverse incentives persist despite awareness",
+        "impact": "Academic career still depends on publication volume, not replication",
+        "direction": "negative",
+        "children": [
+          { "label": "Replication studies are hard to publish — journals want novel findings", "direction": "negative" },
+          { "label": "Researchers who expose non-replication face professional retaliation", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Psychology studies that replicate", "before": "Assumed most", "after": "36% (Reproducibility Project)", "delta": "64% failure", "direction": "negative" },
+    { "metric": "Cancer biology studies that replicate", "before": "Assumed most", "after": "11-25% (Amgen, Bayer studies)", "delta": "75-89% failure", "direction": "negative" },
+    { "metric": "Public trust in scientists", "before": "High (pre-2020)", "after": "Declining", "delta": "-15-20%", "direction": "negative" },
+    { "metric": "Research waste (non-replicable studies)", "before": "Assumed minimal", "after": "$28B/year in US alone", "delta": "Massive", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're making major decisions based on a single study, no matter how prestigious the journal",
+      "You're citing research without checking if it's been replicated"
+    ],
+    "ifYouMust": [
+      "Look for meta-analyses and systematic reviews rather than individual studies",
+      "Check if the study has been replicated — and what the replication found",
+      "Be skeptical of small sample sizes, surprising effect sizes, and single-study claims",
+      "Prefer pre-registered studies where hypotheses were declared before data collection"
+    ],
+    "alternatives": [
+      { "name": "Pre-registration", "note": "Researchers declare hypotheses and methods before collecting data — prevents p-hacking" },
+      { "name": "Registered reports", "note": "Journals accept papers based on methodology before results are known — eliminates publication bias" },
+      { "name": "Open science practices", "note": "Open data, open code, and pre-prints enable verification and replication" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Science: Estimating the Reproducibility of Psychological Science", "url": "https://www.science.org/doi/10.1126/science.aac4716", "note": "Landmark Reproducibility Project finding only 36% of psychology studies replicated" },
+    { "title": "Nature: 1,500 Scientists Lift the Lid on Reproducibility", "url": "https://www.nature.com/articles/533452a", "note": "Survey showing 70% of researchers have tried and failed to reproduce another scientist's experiments" },
+    { "title": "Amgen: Drug Target Validation Study", "url": "https://www.nature.com/articles/483531a", "note": "Amgen could reproduce only 6 of 53 landmark cancer biology studies (11%)" },
+    { "title": "PLOS Medicine: Research Waste", "url": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001747", "note": "Estimated $28 billion per year wasted on non-reproducible preclinical research in the US alone" }
+  ],
+
+  "falsifiability": [
+    "Large-scale replication projects find that 80%+ of published studies replicate successfully",
+    "Pre-registration and open science practices become standard without changing replication rates",
+    "Public trust in science remains stable despite awareness of the replication crisis"
+  ],
+
+  "tags": ["replication-crisis", "science", "trust", "research-quality", "p-hacking", "publication-bias"],
+  "crossReferences": ["H016", "A002", "S001"],
+
+  "seo": {
+    "description": "50-70% of published studies fail to replicate. Only 11% of cancer biology landmarks reproduced. $28B/year wasted on non-replicable research. Public trust in science eroding as a result.",
+    "keywords": ["replication crisis trust erosion second order effects", "scientific reproducibility hidden costs", "research reliability consequences"]
+  }
+}
