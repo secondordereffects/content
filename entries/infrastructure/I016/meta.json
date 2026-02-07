@@ -1,0 +1,104 @@
+{
+  "id": "I016",
+  "title": "AI Data Center Power Grid Strain",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.84,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "AI training and inference require massive compute, which requires massive electricity. Data centers are being built at unprecedented rates to meet AI demand. But the power grid wasn't designed for this. A single large AI data center can consume as much electricity as a small city. Utilities are delaying coal plant retirements, building new natural gas plants, and raising rates for residential customers to meet data center demand. The clean energy transition is being slowed by the very technology companies that pledged to accelerate it.",
+
+  "hypothesis": "AI infrastructure scales efficiently within existing power grid capacity.",
+
+  "chain": {
+    "root": "Build AI data centers at scale to meet compute demand",
+    "effects": [
+      {
+        "label": "Power demand outpaces grid capacity in data center regions",
+        "impact": "Data center power demand growing 15-20% annually",
+        "direction": "negative",
+        "children": [
+          { "label": "Northern Virginia (largest data center market) facing power shortages", "direction": "negative" },
+          { "label": "New data center applications being denied due to insufficient grid capacity", "direction": "negative" },
+          { "label": "Grid upgrades take 5-10 years — demand is growing now", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Fossil fuel infrastructure extended to meet AI demand",
+        "impact": "Coal plant retirements delayed, new gas plants built",
+        "direction": "negative",
+        "children": [
+          { "label": "Utilities keeping coal plants online specifically for data center load", "direction": "negative" },
+          { "label": "New natural gas peaker plants built to handle AI compute spikes", "direction": "negative" },
+          { "label": "Corporate renewable energy purchases don't match actual grid mix", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Residential and commercial customers bear the cost",
+        "impact": "Electricity rates rising 10-20% in data center regions",
+        "direction": "negative",
+        "children": [
+          { "label": "Grid upgrades funded by all ratepayers, not just data center operators", "direction": "negative" },
+          { "label": "Low-income households hit hardest by rate increases", "direction": "negative" },
+          { "label": "Local communities get power bills, not jobs — data centers employ few people", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Water consumption for cooling strains local resources",
+        "impact": "Large data centers use 1-5 million gallons per day",
+        "direction": "negative",
+        "children": [
+          { "label": "Data centers compete with agriculture in water-stressed regions", "direction": "negative" },
+          { "label": "Thermal pollution from cooling water affects local ecosystems", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "US data center electricity consumption", "before": "2-3% of grid (2020)", "after": "Projected 8-12% by 2030", "delta": "+300%", "direction": "negative" },
+    { "metric": "Electricity rates in data center regions", "before": "Baseline", "after": "+10-20%", "delta": "+15%", "direction": "negative" },
+    { "metric": "Coal plant retirements delayed", "before": "On schedule", "after": "Delayed 3-5 years in key regions", "delta": "Significant", "direction": "negative" },
+    { "metric": "Water consumption per large data center", "before": "N/A", "after": "1-5 million gallons/day", "delta": "Massive", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're building data centers in water-stressed or grid-constrained regions",
+      "Your sustainability commitments don't account for actual grid mix"
+    ],
+    "ifYouMust": [
+      "Co-locate data centers with dedicated renewable energy generation",
+      "Invest in grid infrastructure as part of data center development",
+      "Use advanced cooling technologies that minimize water consumption",
+      "Be transparent about actual energy sources, not just renewable energy credit purchases"
+    ],
+    "alternatives": [
+      { "name": "Compute efficiency optimization", "note": "Smaller models, quantization, and caching reduce compute demand 10-100x for many tasks" },
+      { "name": "Edge computing", "note": "Distribute inference to edge devices — reduces data center load and latency" },
+      { "name": "Nuclear-powered data centers", "note": "Small modular reactors provide carbon-free baseload power — several tech companies exploring this" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Goldman Sachs: AI Power Demand Report", "url": "https://www.goldmansachs.com/insights/articles/AI-poised-to-drive-160-increase-in-data-center-power-demand", "note": "AI projected to drive 160% increase in data center power demand by 2030" },
+    { "title": "IEA: Electricity 2024", "url": "https://www.iea.org/reports/electricity-2024", "note": "Data center electricity consumption projected to double by 2026, driven primarily by AI" },
+    { "title": "Washington Post: Data Centers and the Grid", "url": "https://www.washingtonpost.com/business/2024/03/07/ai-data-centers-power/", "note": "Investigation into how AI data centers are straining power grids and delaying clean energy transition" },
+    { "title": "Dominion Energy: Northern Virginia Grid Capacity", "url": "https://www.dominionenergy.com/projects-and-facilities/electric-projects", "note": "Utility reporting grid capacity constraints in the world's largest data center market" }
+  ],
+
+  "falsifiability": [
+    "AI data center power demand stabilizes at current levels despite continued AI scaling",
+    "Renewable energy deployment keeps pace with data center demand without extending fossil fuel infrastructure",
+    "Electricity rates in data center regions remain stable or decrease despite growing data center load"
+  ],
+
+  "tags": ["data-centers", "power-grid", "ai-infrastructure", "energy", "sustainability", "water-consumption"],
+  "crossReferences": ["A016", "I001", "A008"],
+
+  "seo": {
+    "description": "AI data centers will consume 8-12% of US electricity by 2030, up from 2-3%. Coal plant retirements are being delayed. Residential rates rising 10-20%. The grid wasn't built for this.",
+    "keywords": ["ai data center power grid strain second order effects", "data center electricity demand", "ai infrastructure energy hidden costs"]
+  }
+}

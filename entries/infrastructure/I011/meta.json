@@ -1,0 +1,103 @@
+{
+  "id": "I011",
+  "title": "Data Center Water Consumption",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.83,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "Data centers generate enormous heat that must be dissipated. The most common cooling method uses water — evaporative cooling towers that consume millions of gallons per day. As AI drives explosive data center growth, water consumption is becoming a critical issue. Data centers are being built in regions already facing water stress. A single large data center can consume as much water as a small city, competing with agriculture, residential use, and ecosystems for an increasingly scarce resource.",
+
+  "hypothesis": "Cloud computing is environmentally efficient compared to on-premise infrastructure.",
+
+  "chain": {
+    "root": "Build and operate data centers at scale for cloud and AI workloads",
+    "effects": [
+      {
+        "label": "Water consumption at industrial scale",
+        "impact": "Large data center: 1-5 million gallons per day",
+        "direction": "negative",
+        "children": [
+          { "label": "Evaporative cooling is the most cost-effective method — and the most water-intensive", "direction": "negative" },
+          { "label": "A single Google data center uses as much water as 29,000 households", "direction": "negative" },
+          { "label": "AI workloads generate more heat per rack — requiring more cooling", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Data centers compete with communities for water in stressed regions",
+        "impact": "Data centers built in drought-prone areas for tax incentives",
+        "direction": "negative",
+        "children": [
+          { "label": "The Dalles, Oregon: Google data center uses 25% of city's water", "direction": "negative" },
+          { "label": "Mesa, Arizona: data centers approved despite severe drought conditions", "direction": "negative" },
+          { "label": "Agricultural water rights challenged by data center demand", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Corporate water reporting is opaque",
+        "impact": "Most tech companies don't disclose per-facility water use",
+        "direction": "negative",
+        "children": [
+          { "label": "Aggregate water reporting hides impact on specific communities", "direction": "negative" },
+          { "label": "'Water positive' pledges rely on offsets, not actual consumption reduction", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Climate change worsens the problem",
+        "impact": "Hotter temperatures require more cooling, while water becomes scarcer",
+        "direction": "negative",
+        "children": [
+          { "label": "Feedback loop: data centers contribute to warming, warming increases cooling needs", "direction": "negative" },
+          { "label": "Drought conditions make evaporative cooling unsustainable in many regions", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Water per large data center", "before": "N/A", "after": "1-5 million gallons/day", "delta": "Industrial scale", "direction": "negative" },
+    { "metric": "Water per AI query vs search", "before": "~0.3 mL (search)", "after": "~3-15 mL (AI query)", "delta": "+10-50x", "direction": "negative" },
+    { "metric": "Tech company water consumption growth", "before": "Stable", "after": "+20-30% annually", "delta": "Accelerating", "direction": "negative" },
+    { "metric": "Data centers in water-stressed regions", "before": "Few", "after": "Growing rapidly", "delta": "Increasing conflict", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're building data centers in water-stressed regions without alternative cooling",
+      "Your water reporting doesn't disclose per-facility consumption"
+    ],
+    "ifYouMust": [
+      "Use air cooling or liquid cooling instead of evaporative cooling where climate permits",
+      "Build in regions with abundant water and cool climates (Nordics, Pacific Northwest)",
+      "Disclose per-facility water consumption transparently",
+      "Invest in water recycling and treatment for cooling water"
+    ],
+    "alternatives": [
+      { "name": "Liquid cooling (direct-to-chip)", "note": "Uses 90% less water than evaporative cooling — becoming standard for AI workloads" },
+      { "name": "Nordic/cold climate locations", "note": "Free air cooling eliminates water use entirely — Iceland, Finland, Norway" },
+      { "name": "Waste heat recovery", "note": "Use data center heat for district heating — turns waste into community benefit" }
+    ]
+  },
+
+  "sources": [
+    { "title": "University of California: Making AI Less Thirsty", "url": "https://arxiv.org/abs/2304.03271", "note": "Research quantifying water consumption of AI training and inference at data center scale" },
+    { "title": "AP News: Data Centers and Water", "url": "https://apnews.com/article/data-centers-water-use-drought-technology-climate-change", "note": "Investigation into data center water consumption in drought-affected communities" },
+    { "title": "Google Environmental Report", "url": "https://sustainability.google/reports/google-2024-environmental-report/", "note": "Google's water consumption increased 17% in one year, driven by AI data center expansion" },
+    { "title": "Microsoft Environmental Sustainability Report", "url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report", "note": "Microsoft's water consumption increased 34% year-over-year, attributed to AI infrastructure growth" }
+  ],
+
+  "falsifiability": [
+    "Data center water consumption decreases despite growing compute demand through efficiency improvements",
+    "Data centers in water-stressed regions do not measurably impact local water availability",
+    "Alternative cooling technologies eliminate water consumption for data centers at comparable cost"
+  ],
+
+  "tags": ["data-centers", "water", "sustainability", "cooling", "infrastructure", "climate"],
+  "crossReferences": ["I016", "A016", "I001"],
+
+  "seo": {
+    "description": "A single large data center uses 1-5 million gallons of water daily. AI queries use 10-50x more water than search. Tech company water consumption growing 20-30% annually in drought-prone regions.",
+    "keywords": ["data center water consumption second order effects", "cloud computing water hidden costs", "data center cooling environmental impact"]
+  }
+}

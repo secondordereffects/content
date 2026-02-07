@@ -1,0 +1,103 @@
+{
+  "id": "I005",
+  "title": "Submarine Cable Geopolitical Chokepoint",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-08",
+  "updated": "2026-02-08",
+
+  "context": "The internet feels decentralized and resilient. In reality, 97% of intercontinental data flows through approximately 550 submarine fiber optic cables laid on the ocean floor. These cables are concentrated in a handful of geographic chokepoints: the Strait of Malacca, the Suez Canal corridor, the English Channel, and a few landing stations on each continent. A single cable cut can reroute traffic for millions. Coordinated cuts at chokepoints could sever entire regions from the global internet. Nation-states are increasingly aware of this vulnerability, and submarine cable sabotage has moved from theoretical risk to documented reality, with multiple suspected state-sponsored cable cuts in the Baltic Sea and Red Sea since 2023.",
+
+  "hypothesis": "The internet is decentralized and resilient to physical disruption.",
+
+  "chain": {
+    "root": "Global internet depends on ~550 submarine cables",
+    "effects": [
+      {
+        "label": "Traffic concentrates through geographic chokepoints",
+        "impact": "80% of EU-Asia traffic through 3 corridors",
+        "direction": "negative",
+        "children": [
+          { "label": "Single cable cut causes measurable latency spikes across regions", "direction": "negative" },
+          { "label": "Repair ships are scarce — 60+ vessels globally, weeks to deploy", "direction": "negative" },
+          { "label": "Insurance costs for cable operators rising 30% annually", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Nation-states weaponize cable vulnerability",
+        "impact": "12+ suspected state-sponsored incidents since 2023",
+        "direction": "negative",
+        "children": [
+          { "label": "Submarine cable sabotage becomes gray-zone warfare tactic", "direction": "negative" },
+          { "label": "Military cable protection programs divert defense budgets", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Cable ownership concentrates among tech giants",
+        "impact": "Google, Meta, Microsoft, Amazon own or lease 70%+ of new capacity",
+        "direction": "negative",
+        "children": [
+          { "label": "Private companies control critical public infrastructure", "direction": "negative" },
+          { "label": "Developing nations depend on foreign-owned cables with no redundancy", "direction": "negative" },
+          { "label": "Geopolitical leverage shifts to cable owners during disputes", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Satellite alternatives create false sense of redundancy",
+        "impact": "Starlink handles <1% of global bandwidth",
+        "direction": "neutral",
+        "children": [
+          { "label": "LEO satellite bandwidth is orders of magnitude below cable capacity", "direction": "negative" },
+          { "label": "Satellite links have higher latency, unsuitable for financial and real-time systems", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Intercontinental data via submarine cables", "before": "95%", "after": "97%", "delta": "+2pp", "direction": "negative" },
+    { "metric": "Cable repair time (average)", "before": "1-2 weeks", "after": "3-6 weeks (contested areas)", "delta": "+200%", "direction": "negative" },
+    { "metric": "Tech giant share of new cable capacity", "before": "10% (2010)", "after": "70%+ (2025)", "delta": "+60pp", "direction": "negative" },
+    { "metric": "Suspected state-sponsored cable incidents", "before": "~1/year (pre-2022)", "after": "6+/year (2024-2025)", "delta": "+500%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're building critical infrastructure that assumes always-on intercontinental connectivity",
+      "Your disaster recovery plan doesn't account for regional internet partitioning"
+    ],
+    "ifYouMust": [
+      "Design systems for graceful degradation during cable outages, not just data center failover",
+      "Maintain multi-region deployments that can operate independently during partitions",
+      "Monitor submarine cable status feeds for early warning of latency changes",
+      "Diversify CDN and DNS providers across cable-independent paths"
+    ],
+    "alternatives": [
+      { "name": "Multi-path routing with cable diversity", "note": "Ensure traffic uses cables through different geographic corridors" },
+      { "name": "Regional data sovereignty architecture", "note": "Keep critical data and compute within regions that share cable paths" },
+      { "name": "Hybrid satellite-cable failover", "note": "LEO satellite as degraded-mode backup for critical control plane traffic" }
+    ]
+  },
+
+  "sources": [
+    { "title": "TeleGeography Submarine Cable Map", "url": "https://www.submarinecablemap.com/", "note": "Comprehensive database of all 550+ active submarine cables and their routes" },
+    { "title": "Atlantic Council: Undersea Cables and Geopolitics", "url": "https://www.atlanticcouncil.org/in-depth-research-reports/report/undersea-cables/", "note": "Analysis of submarine cable vulnerability as geopolitical risk vector" },
+    { "title": "CSIS: Invisible and Vital — Submarine Cables", "url": "https://www.csis.org/analysis/invisible-and-vital-undersea-cables-and-transatlantic-security", "note": "97% of intercontinental data transits submarine cables" },
+    { "title": "Reuters: Baltic Sea Cable Sabotage Investigation", "url": "https://www.reuters.com/world/europe/baltic-sea-cable-damage/", "note": "Multiple submarine cable cuts in Baltic Sea attributed to state-sponsored activity" }
+  ],
+
+  "falsifiability": [
+    "Satellite networks achieve >10% of intercontinental bandwidth capacity, providing genuine redundancy",
+    "No major internet disruption occurs from submarine cable damage in a 5-year period",
+    "Cable ownership diversifies away from tech giants back toward telecom consortiums"
+  ],
+
+  "tags": ["submarine-cables", "internet-infrastructure", "geopolitics", "chokepoint", "cybersecurity", "resilience"],
+  "crossReferences": ["I001", "I016", "I011"],
+
+  "seo": {
+    "description": "97% of intercontinental data flows through ~550 submarine cables concentrated at geographic chokepoints. State-sponsored sabotage is now a documented reality.",
+    "keywords": ["submarine cable vulnerability", "internet infrastructure second order effects", "submarine cable geopolitics"]
+  }
+}
