@@ -1,0 +1,103 @@
+{
+  "id": "A002",
+  "title": "LLM Hallucination Normalization",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.79,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Large language models generate confident, fluent text that is sometimes factually wrong. Early users were shocked by hallucinations. But as LLMs become embedded in workflows — legal research, medical summaries, code generation, customer support — users gradually stop verifying outputs. The fluency of the text creates a trust heuristic: if it sounds right, it must be right. Hallucinations don't decrease. Humans just stop noticing them.",
+
+  "hypothesis": "LLM hallucinations are a temporary problem that will be solved with better models and guardrails.",
+
+  "chain": {
+    "root": "Deploy LLMs in knowledge-critical workflows",
+    "effects": [
+      {
+        "label": "Users initially verify LLM outputs carefully",
+        "impact": "Verification rate starts at 60-80%",
+        "direction": "positive",
+        "children": [
+          { "label": "Verification fatigue sets in within weeks", "direction": "negative" },
+          { "label": "High accuracy rate (90-95%) creates false sense of reliability", "direction": "negative" },
+          { "label": "Users develop automation bias — trusting the machine over their own judgment", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Hallucinations pass through undetected at increasing rates",
+        "impact": "Undetected hallucination rate rises from 5% to 20%+",
+        "direction": "negative",
+        "children": [
+          { "label": "Fabricated citations enter legal briefs and academic papers", "direction": "negative" },
+          { "label": "Incorrect medical information reaches patients", "direction": "negative" },
+          { "label": "Wrong code logic ships to production with confident comments", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Organizational knowledge base degrades",
+        "impact": "Compounding error rate over time",
+        "direction": "negative",
+        "children": [
+          { "label": "LLM-generated content trains future LLMs — error feedback loop", "direction": "negative" },
+          { "label": "Internal documentation becomes unreliable", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Epistemic standards erode at societal level",
+        "impact": "Fact-checking becomes optional",
+        "direction": "negative",
+        "children": [
+          { "label": "The bar for 'good enough' accuracy drops across professions", "direction": "negative" },
+          { "label": "Provenance and source verification become premium skills", "direction": "positive" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "User verification rate of LLM output", "before": "60-80%", "after": "10-30%", "delta": "-60%", "direction": "negative" },
+    { "metric": "Undetected hallucinations in production", "before": "~5%", "after": "15-25%", "delta": "+300%", "direction": "negative" },
+    { "metric": "Legal cases citing fabricated precedents", "before": "Near zero", "after": "Dozens documented", "delta": "Emerging", "direction": "negative" },
+    { "metric": "Trust in AI-generated content", "before": "Skeptical", "after": "Default trust", "delta": "Inverted", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your domain has zero tolerance for factual errors (legal, medical, financial)",
+      "Your users cannot independently verify the LLM's claims"
+    ],
+    "ifYouMust": [
+      "Require source citations for every factual claim and verify them programmatically",
+      "Implement confidence scoring and flag low-confidence outputs visibly",
+      "Build human-in-the-loop review for all high-stakes outputs",
+      "Rotate verification responsibility so no single person develops fatigue"
+    ],
+    "alternatives": [
+      { "name": "Retrieval-augmented generation (RAG)", "note": "Ground LLM outputs in verified source documents to reduce hallucination" },
+      { "name": "Structured output with validation", "note": "Constrain LLM to fill schemas rather than generate free text" },
+      { "name": "Human-first with AI assist", "note": "Humans draft, AI suggests edits — reverses the trust dynamic" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Stanford HAI: Hallucination in LLMs", "url": "https://hai.stanford.edu/news/hallucinating-law-legal-mistakes-large-language-models-are-pervasive", "note": "LLMs hallucinate legal citations in 69% of cases when asked for specific case law" },
+    { "title": "Nature: AI Hallucinations in Scientific Research", "url": "https://www.nature.com/articles/d41586-023-03023-4", "note": "Researchers increasingly finding fabricated references in AI-assisted papers" },
+    { "title": "Vectara Hallucination Leaderboard", "url": "https://github.com/vectara/hallucination-leaderboard", "note": "Even best models hallucinate 3-5% of the time in summarization tasks" },
+    { "title": "NYT: Lawyers Fined for AI-Generated Fake Citations", "url": "https://www.nytimes.com/2023/06/08/nyregion/lawyer-chatgpt-sanctions.html", "note": "Landmark case where lawyers submitted ChatGPT-fabricated case citations to federal court" }
+  ],
+
+  "falsifiability": [
+    "LLM hallucination rates drop below 0.1% across all domains within 3 years",
+    "Users maintain consistent verification rates (60%+) after 6 months of daily LLM use",
+    "No documented cases of LLM hallucinations causing material harm in professional settings"
+  ],
+
+  "tags": ["ai", "hallucination", "trust", "automation-bias", "epistemic-risk", "fact-checking"],
+  "crossReferences": ["A001", "A004", "A015"],
+
+  "seo": {
+    "description": "LLM hallucinations don't decrease — humans just stop checking. Verification rates drop from 80% to 10-30% as users normalize confident-sounding errors in critical workflows.",
+    "keywords": ["llm hallucination normalization second order effects", "ai hallucination hidden costs", "llm trust automation bias"]
+  }
+}

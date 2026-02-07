@@ -1,0 +1,104 @@
+{
+  "id": "O011",
+  "title": "Open Office Productivity Paradox",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.86,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Companies tear down walls and cubicles to create open floor plans. The stated goal: more collaboration, more spontaneous interaction, more innovation. The actual result: employees put on headphones, avoid eye contact, and communicate less face-to-face than they did with walls. The open office doesn't increase collaboration — it destroys the conditions that make collaboration productive: focus, privacy, and the ability to think without interruption.",
+
+  "hypothesis": "Open offices increase collaboration and innovation by removing physical barriers between employees.",
+
+  "chain": {
+    "root": "Convert to open floor plan office",
+    "effects": [
+      {
+        "label": "Face-to-face interaction decreases, not increases",
+        "impact": "-73% in face-to-face collaboration",
+        "direction": "negative",
+        "children": [
+          { "label": "Employees retreat to headphones and Slack to cope with noise", "direction": "negative" },
+          { "label": "Email and messaging increase 67% as substitutes for conversation", "direction": "negative" },
+          { "label": "People avoid spontaneous conversations because everyone can hear", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Deep work becomes nearly impossible",
+        "impact": "Interruptions every 3-5 minutes",
+        "direction": "negative",
+        "children": [
+          { "label": "Cognitive performance drops 15-28% in open environments", "direction": "negative" },
+          { "label": "Complex problem-solving suffers most — the work that matters most", "direction": "negative" },
+          { "label": "Employees work from home or arrive early/stay late to get real work done", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Stress and sick days increase",
+        "impact": "+62% more sick days",
+        "direction": "negative",
+        "children": [
+          { "label": "Noise stress elevates cortisol levels", "direction": "negative" },
+          { "label": "Illness spreads faster in open environments", "direction": "negative" },
+          { "label": "Lack of privacy creates constant low-grade anxiety", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Company saves on real estate but loses on productivity",
+        "impact": "Net negative ROI when productivity loss is factored",
+        "direction": "negative",
+        "children": [
+          { "label": "Real estate savings: 20-30% per employee", "direction": "positive" },
+          { "label": "Productivity loss: far exceeds real estate savings", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Face-to-face collaboration", "before": "Baseline", "after": "-73%", "delta": "-73%", "direction": "negative" },
+    { "metric": "Email/messaging volume", "before": "Baseline", "after": "+67%", "delta": "+67%", "direction": "negative" },
+    { "metric": "Sick days", "before": "Baseline", "after": "+62%", "delta": "+62%", "direction": "negative" },
+    { "metric": "Cognitive performance", "before": "Baseline", "after": "-15-28%", "delta": "-20%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your team's primary work requires deep focus and concentration",
+      "You're converting to open plan primarily to save on real estate costs"
+    ],
+    "ifYouMust": [
+      "Provide abundant private focus rooms and phone booths — at least 1 per 4 employees",
+      "Establish quiet zones with enforced no-talking rules",
+      "Allow flexible work-from-home for deep work days",
+      "Invest in high-quality sound masking systems"
+    ],
+    "alternatives": [
+      { "name": "Activity-based working", "note": "Different zones for different work types — focus, collaboration, social" },
+      { "name": "Team neighborhoods", "note": "Semi-enclosed spaces for teams with shared quiet norms" },
+      { "name": "Remote-first with collaboration spaces", "note": "Default to remote for focus work, office for intentional collaboration" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Harvard Business School: The Impact of Open Workspaces on Collaboration", "url": "https://royalsocietypublishing.org/doi/10.1098/rstb.2017.0239", "note": "Landmark study showing face-to-face interaction dropped 73% after converting to open plan" },
+    { "title": "Journal of Environmental Psychology: Open-Plan Office Noise", "url": "https://www.sciencedirect.com/science/article/pii/S0272494413000340", "note": "Open offices reduce cognitive performance by 15-28% due to noise and interruptions" },
+    { "title": "Scandinavian Journal of Work: Sick Leave in Open Offices", "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1600-0668.2011.00732.x", "note": "Employees in open offices take 62% more sick days than those in private offices" },
+    { "title": "Oxford Economics: When the Walls Come Down", "url": "https://www.oxfordeconomics.com/resource/when-the-walls-come-down/", "note": "63% of employees say lack of quiet space is their biggest workplace frustration" }
+  ],
+
+  "falsifiability": [
+    "Companies that convert to open offices show measurable increases in face-to-face collaboration over 12+ months",
+    "Cognitive performance metrics remain stable or improve after open office conversion",
+    "Sick day rates in open offices are comparable to private office environments"
+  ],
+
+  "tags": ["open-office", "productivity", "collaboration", "workplace-design", "deep-work", "noise"],
+  "crossReferences": ["O022", "O005", "S001"],
+
+  "seo": {
+    "description": "Open offices reduce face-to-face collaboration by 73%, increase sick days by 62%, and cut cognitive performance 15-28%. The collaboration promise is empirically false.",
+    "keywords": ["open office productivity paradox", "open plan office second order effects", "open office collaboration myth"]
+  }
+}

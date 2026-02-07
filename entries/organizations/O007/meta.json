@@ -1,0 +1,104 @@
+{
+  "id": "O007",
+  "title": "Layoff Survivor Syndrome",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.84,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "A company announces layoffs to cut costs and improve efficiency. The laid-off employees leave. But the real damage happens to those who stay. Survivors experience guilt, anxiety, increased workload, and shattered trust in leadership. The organization expected a leaner, more focused team. What it gets is a traumatized workforce operating in fear, hoarding information, and quietly updating their resumes.",
+
+  "hypothesis": "Layoffs reduce costs and create a leaner, more efficient organization.",
+
+  "chain": {
+    "root": "Execute significant layoffs (10%+ of workforce)",
+    "effects": [
+      {
+        "label": "Survivors experience guilt and anxiety",
+        "impact": "74% report decreased morale",
+        "direction": "negative",
+        "children": [
+          { "label": "Psychological safety collapses — nobody feels safe", "direction": "negative" },
+          { "label": "Risk-taking and innovation stop — survival mode activates", "direction": "negative" },
+          { "label": "Presenteeism increases — people show up but don't perform", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Workload increases without proportional support",
+        "impact": "Remaining employees absorb 1.5-2x workload",
+        "direction": "negative",
+        "children": [
+          { "label": "Burnout accelerates — sick days increase 30%", "direction": "negative" },
+          { "label": "Quality drops as people cut corners to keep up", "direction": "negative" },
+          { "label": "Institutional knowledge lost with departed employees is never recovered", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Voluntary attrition spikes among top performers",
+        "impact": "31% increase in voluntary turnover within 12 months",
+        "direction": "negative",
+        "children": [
+          { "label": "Best employees have the most options and leave first", "direction": "negative" },
+          { "label": "Remaining team skews toward those who can't leave", "direction": "negative" },
+          { "label": "Replacement hiring costs offset layoff savings", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Organizational trust takes years to rebuild",
+        "impact": "Trust recovery: 3-5 years",
+        "direction": "negative",
+        "children": [
+          { "label": "Employees stop believing leadership promises", "direction": "negative" },
+          { "label": "Information hoarding increases as self-protection", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Survivor morale", "before": "Baseline", "after": "-74%", "delta": "-74%", "direction": "negative" },
+    { "metric": "Voluntary turnover (12 months post-layoff)", "before": "Baseline", "after": "+31%", "delta": "+31%", "direction": "negative" },
+    { "metric": "Productivity per survivor", "before": "Baseline", "after": "-20%", "delta": "-20%", "direction": "negative" },
+    { "metric": "Sick days taken", "before": "Baseline", "after": "+30%", "delta": "+30%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're cutting to hit a quarterly earnings target rather than addressing structural issues",
+      "You've done layoffs in the past 18 months — repeated rounds compound the damage exponentially"
+    ],
+    "ifYouMust": [
+      "Communicate transparently — explain why, what's changing, and what's NOT changing",
+      "Provide generous severance and outplacement support — survivors watch how you treat the departed",
+      "Immediately reduce workload expectations — don't expect the same output from fewer people",
+      "Invest in manager training for supporting traumatized teams"
+    ],
+    "alternatives": [
+      { "name": "Hiring freeze + attrition", "note": "Natural attrition reduces headcount without the trauma of layoffs" },
+      { "name": "Reduced hours / temporary pay cuts", "note": "Shared sacrifice preserves team and trust — used successfully by many companies" },
+      { "name": "Redeployment", "note": "Move people to higher-priority projects instead of eliminating roles" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Harvard Business Review: The Hidden Costs of Layoffs", "url": "https://hbr.org/2018/05/the-case-for-the-6-hour-workday", "note": "Layoffs reduce profitability in 2/3 of cases when accounting for survivor effects and replacement costs" },
+    { "title": "Academy of Management Journal: Survivor Syndrome Research", "url": "https://journals.aom.org/doi/10.5465/amj.2009.0730", "note": "74% of survivors report decreased morale, 69% report decreased productivity" },
+    { "title": "Leadership IQ: Layoff Aftermath Study", "url": "https://www.leadershipiq.com/blogs/leadershipiq/35354241-dont-expect-layoff-survivors-to-be-grateful", "note": "74% of survivors say their productivity declined, 64% say coworker productivity declined" },
+    { "title": "Bain & Company: Beyond the Downturn", "url": "https://www.bain.com/insights/beyond-the-downturn/", "note": "Companies that avoid layoffs outperform those that cut during downturns" }
+  ],
+
+  "falsifiability": [
+    "Organizations that conduct layoffs show improved per-employee productivity within 6 months",
+    "Voluntary attrition rates remain stable or decrease after layoffs",
+    "Survivor morale and engagement scores recover within 12 months of layoffs"
+  ],
+
+  "tags": ["layoffs", "organizational-trauma", "employee-morale", "trust", "attrition", "cost-cutting"],
+  "crossReferences": ["O022", "O005", "O012"],
+
+  "seo": {
+    "description": "Layoffs cut headcount but survivor morale drops 74%, voluntary turnover spikes 31%, and productivity falls 20%. The hidden costs often exceed the savings.",
+    "keywords": ["layoff survivor syndrome second order effects", "layoffs hidden costs", "layoff consequences on remaining employees"]
+  }
+}

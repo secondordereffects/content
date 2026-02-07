@@ -1,0 +1,104 @@
+{
+  "id": "H016",
+  "title": "Weight-Loss Drug Metabolic Dependency",
+  "category": "science-health",
+  "status": "card",
+  "confidence": 0.72,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "A new class of weight-loss medications delivers clinically significant results — patients lose 15-20% of body weight. Adoption is the fastest for any drug class in recent history. But these drugs manage obesity rather than cure it. When patients stop, the majority of lost weight returns within a year. The medical system is creating millions of patients on indefinite prescriptions costing over $1,000/month, while long-term metabolic and body composition consequences remain understudied.",
+
+  "hypothesis": "Pharmaceutical weight-loss interventions solve obesity by helping people lose weight safely and sustainably.",
+
+  "chain": {
+    "root": "Prescribe weight-loss drugs at population scale",
+    "effects": [
+      {
+        "label": "Patients lose significant weight (15-20%)",
+        "impact": "Clinically meaningful in 85% of patients",
+        "direction": "positive",
+        "children": [
+          { "label": "Cardiovascular risk markers improve in the short term", "direction": "positive" },
+          { "label": "Patients attribute success to the drug, not behavior change", "direction": "negative" },
+          { "label": "Underlying metabolic patterns remain unaddressed", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Weight regain upon discontinuation",
+        "impact": "Majority of weight regained within 12 months of stopping",
+        "direction": "negative",
+        "children": [
+          { "label": "Patients become psychologically dependent on continued prescriptions", "direction": "negative" },
+          { "label": "Weight cycling may carry its own health risks independent of stable weight", "direction": "negative" },
+          { "label": "Lifetime drug dependency becomes the default treatment model", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Lean muscle mass lost alongside fat",
+        "impact": "25-40% of weight lost is lean tissue, not fat",
+        "direction": "negative",
+        "children": [
+          { "label": "Reduced metabolic rate makes future weight management harder without the drug", "direction": "negative" },
+          { "label": "Muscle loss increases frailty risk, especially in older patients", "direction": "negative" },
+          { "label": "Functional strength and mobility may decline", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Healthcare cost burden escalates systemically",
+        "impact": "$1,000+/month per patient indefinitely",
+        "direction": "negative",
+        "children": [
+          { "label": "Insurance systems strain under lifetime prescriptions for millions of patients", "direction": "negative" },
+          { "label": "Access gap widens — only insured or wealthy patients can afford ongoing treatment", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Body weight", "before": "Baseline", "after": "-15-20%", "delta": "-15-20%", "direction": "positive" },
+    { "metric": "Weight regain after stopping", "before": "N/A", "after": "Majority within 12 months", "delta": "Significant", "direction": "negative" },
+    { "metric": "Lean muscle mass", "before": "Baseline", "after": "25-40% of weight lost is lean tissue", "delta": "-30%", "direction": "negative" },
+    { "metric": "Annual drug cost per patient", "before": "$0", "after": "$12,000+", "delta": "+$12,000/year", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're seeking a short-term fix without commitment to long-term lifestyle changes",
+      "You have a history of disordered eating or body dysmorphia"
+    ],
+    "ifYouMust": [
+      "Combine with resistance training to preserve muscle mass — this is critical",
+      "Work with a nutrition professional to build sustainable eating habits during treatment",
+      "Plan for gradual dose reduction rather than abrupt discontinuation",
+      "Monitor body composition (lean mass vs fat), not just total weight"
+    ],
+    "alternatives": [
+      { "name": "Structured resistance training + nutrition", "note": "Slower weight loss but preserves muscle and builds sustainable habits" },
+      { "name": "Metabolic health focus", "note": "Target insulin sensitivity, sleep quality, and stress rather than weight alone" },
+      { "name": "Behavioral intervention programs", "note": "Address the psychological and environmental drivers of overeating" }
+    ]
+  },
+
+  "sources": [
+    { "title": "NEJM: Weight Regain After Discontinuation of Anti-Obesity Medication", "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2206038", "note": "Peer-reviewed study showing significant weight regain within one year of stopping treatment" },
+    { "title": "JAMA: Body Composition Changes During Pharmacological Weight Loss", "url": "https://jamanetwork.com/journals/jama/fullarticle/2812936", "note": "Research showing 25-40% of weight lost during drug-assisted weight loss is lean tissue" },
+    { "title": "KFF: Spending on Weight-Loss Drugs", "url": "https://www.kff.org/health-costs/issue-brief/what-we-know-about-glp-1-drugs/", "note": "Analysis of rapidly escalating healthcare spending on weight-loss prescriptions" },
+    { "title": "The Lancet: Long-term Outcomes of Pharmacological Weight Management", "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23)01185-6/fulltext", "note": "Long-term safety and efficacy data beyond 2 years remains limited" }
+  ],
+
+  "falsifiability": [
+    "Patients who discontinue weight-loss drugs maintain 80%+ of weight loss for 2+ years without medication",
+    "Long-term use (5+ years) shows no significant muscle mass decline or metabolic rate reduction",
+    "Drug costs decrease to under $100/month, making lifetime use economically sustainable at population scale"
+  ],
+
+  "tags": ["weight-loss", "pharmaceutical", "metabolic-health", "dependency", "body-composition", "healthcare-costs"],
+  "crossReferences": ["S001", "M009", "P012"],
+
+  "seo": {
+    "description": "Weight-loss drugs deliver 15-20% loss but most returns when stopped. 25-40% of loss is muscle. Lifetime dependency at $12K+/year becomes the default treatment model.",
+    "keywords": ["weight loss drug dependency second order effects", "pharmaceutical weight loss hidden costs", "weight loss medication metabolic consequences"]
+  }
+}

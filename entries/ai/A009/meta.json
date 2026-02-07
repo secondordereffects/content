@@ -1,0 +1,103 @@
+{
+  "id": "A009",
+  "title": "Autonomous Agent Trust Deficit",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.71,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "AI agents that can browse the web, write code, send emails, and execute multi-step workflows are being deployed across enterprises. The promise: autonomous task completion that frees humans for higher-level work. The reality: agents make confident mistakes, take irreversible actions, and operate in ways that are difficult to audit. The trust required to let an agent act autonomously is far higher than the trust required to use a chatbot, and current systems haven't earned it.",
+
+  "hypothesis": "AI agents can reliably handle complex, multi-step workflows with minimal human oversight.",
+
+  "chain": {
+    "root": "Deploy autonomous AI agents for business workflows",
+    "effects": [
+      {
+        "label": "Agents take irreversible actions based on flawed reasoning",
+        "impact": "5-15% of autonomous actions require human correction",
+        "direction": "negative",
+        "children": [
+          { "label": "Sent emails that shouldn't have been sent", "direction": "negative" },
+          { "label": "Made purchases or commitments without proper authorization", "direction": "negative" },
+          { "label": "Deleted or modified data based on misunderstood instructions", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Error compounding in multi-step chains",
+        "impact": "Error rate compounds: 95% per step → 77% accuracy over 5 steps",
+        "direction": "negative",
+        "children": [
+          { "label": "Early mistakes propagate through subsequent steps undetected", "direction": "negative" },
+          { "label": "Agents don't know what they don't know — no uncertainty awareness", "direction": "negative" },
+          { "label": "Debugging agent failures requires reconstructing entire reasoning chains", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Organizations add human oversight that negates efficiency gains",
+        "impact": "Review overhead consumes 40-60% of time saved",
+        "direction": "negative",
+        "children": [
+          { "label": "Every agent action needs approval — becomes a slower version of doing it yourself", "direction": "negative" },
+          { "label": "Approval fatigue leads to rubber-stamping — back to the original risk", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Liability and accountability gaps emerge",
+        "impact": "No clear framework for agent-caused damages",
+        "direction": "negative",
+        "children": [
+          { "label": "Who is responsible when an agent makes a costly mistake?", "direction": "negative" },
+          { "label": "Insurance and legal frameworks haven't caught up", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Autonomous action error rate", "before": "Expected <1%", "after": "Actual 5-15%", "delta": "+10x", "direction": "negative" },
+    { "metric": "Multi-step task accuracy (5 steps)", "before": "Expected 95%+", "after": "Actual 70-80%", "delta": "-20%", "direction": "negative" },
+    { "metric": "Human oversight overhead", "before": "Expected minimal", "after": "40-60% of time saved", "delta": "Significant", "direction": "negative" },
+    { "metric": "Net productivity gain", "before": "Projected 50-80%", "after": "Actual 10-25%", "delta": "-60%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your workflows involve irreversible actions with significant consequences",
+      "You cannot build reliable rollback mechanisms for agent actions"
+    ],
+    "ifYouMust": [
+      "Start with read-only agents before granting write/execute permissions",
+      "Implement mandatory human approval for any action above a defined risk threshold",
+      "Build comprehensive audit logs for every agent action and reasoning step",
+      "Set hard guardrails — spending limits, scope restrictions, forbidden actions"
+    ],
+    "alternatives": [
+      { "name": "Copilot pattern", "note": "AI suggests actions, human approves and executes — maintains human agency" },
+      { "name": "Constrained automation", "note": "Agents handle only well-defined, reversible, low-stakes tasks" },
+      { "name": "Human-in-the-loop workflows", "note": "Agent does research and preparation, human makes decisions and takes actions" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Anthropic: Building Effective Agents", "url": "https://www.anthropic.com/research/building-effective-agents", "note": "Framework showing that simpler agent architectures outperform complex autonomous ones in reliability" },
+    { "title": "Princeton SWE-bench: Agent Coding Benchmarks", "url": "https://www.swebench.com/", "note": "Even best coding agents solve only 30-50% of real-world software issues autonomously" },
+    { "title": "Microsoft Research: AutoGen Agent Framework", "url": "https://www.microsoft.com/en-us/research/project/autogen/", "note": "Research showing multi-agent systems require significant human oversight to maintain quality" },
+    { "title": "LangChain: State of AI Agents Report", "url": "https://blog.langchain.dev/state-of-ai-agents/", "note": "Survey showing enterprises deploying agents but with heavy guardrails and human oversight" }
+  ],
+
+  "falsifiability": [
+    "Autonomous AI agents achieve 99%+ accuracy on multi-step business workflows within 2 years",
+    "Organizations deploying autonomous agents reduce human oversight to less than 5% of agent actions",
+    "Clear legal and insurance frameworks for agent liability are established and widely adopted by 2028"
+  ],
+
+  "tags": ["ai-agents", "autonomy", "trust", "reliability", "human-oversight", "liability"],
+  "crossReferences": ["A001", "A002", "A005"],
+
+  "seo": {
+    "description": "AI agents promise autonomous workflows but error rates of 5-15% per action compound across steps. Human oversight consumes 40-60% of time saved. Net productivity gain: 10-25%, not 50-80%.",
+    "keywords": ["ai agent trust deficit second order effects", "autonomous ai agent reliability", "ai agent hidden costs oversight"]
+  }
+}

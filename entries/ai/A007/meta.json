@@ -1,0 +1,103 @@
+{
+  "id": "A007",
+  "title": "Synthetic Data Feedback Loop",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.78,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "The internet is running out of high-quality human-generated training data. AI companies turn to synthetic data — using AI to generate training data for AI. It seems elegant: infinite data at near-zero cost. But when models train on outputs of other models, errors compound. Biases amplify. The distribution of generated text narrows. Researchers call it model collapse — each generation becomes a slightly worse copy of the previous one, like photocopying a photocopy.",
+
+  "hypothesis": "Synthetic data can supplement or replace human-generated data for training AI models.",
+
+  "chain": {
+    "root": "Train AI models on AI-generated synthetic data",
+    "effects": [
+      {
+        "label": "Output diversity narrows with each generation",
+        "impact": "Tail distributions lost after 3-5 generations",
+        "direction": "negative",
+        "children": [
+          { "label": "Rare but important patterns disappear from training data", "direction": "negative" },
+          { "label": "Models converge toward 'average' outputs — creativity declines", "direction": "negative" },
+          { "label": "Minority perspectives and edge cases systematically erased", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Errors and biases amplify across generations",
+        "impact": "Bias amplification: 2-5x per generation",
+        "direction": "negative",
+        "children": [
+          { "label": "Small inaccuracies in generation N become confident assertions in generation N+3", "direction": "negative" },
+          { "label": "Stereotypes and biases present in initial data get reinforced", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Model collapse — progressive quality degradation",
+        "impact": "Measurable quality decline after 5-9 generations",
+        "direction": "negative",
+        "children": [
+          { "label": "Text becomes more generic and repetitive", "direction": "negative" },
+          { "label": "Factual accuracy degrades as hallucinations compound", "direction": "negative" },
+          { "label": "The model 'forgets' what real human text looks like", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Human-generated data becomes premium resource",
+        "impact": "Value of authentic human data increases dramatically",
+        "direction": "positive",
+        "children": [
+          { "label": "Data licensing deals with publishers and platforms surge", "direction": "positive" },
+          { "label": "Data provenance and authenticity verification become critical", "direction": "positive" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Output diversity (unique patterns)", "before": "Baseline", "after": "-30-50% after 5 generations", "delta": "-40%", "direction": "negative" },
+    { "metric": "Factual accuracy per generation", "before": "95%", "after": "Degrades 2-5% per generation", "delta": "Compounding", "direction": "negative" },
+    { "metric": "Bias amplification", "before": "Baseline", "after": "2-5x per generation", "delta": "+300%", "direction": "negative" },
+    { "metric": "Value of human-generated training data", "before": "Commodity", "after": "Premium asset", "delta": "10-100x", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your model needs to handle rare edge cases or minority perspectives accurately",
+      "You cannot verify the provenance of your training data"
+    ],
+    "ifYouMust": [
+      "Always mix synthetic data with verified human-generated data (minimum 30% human)",
+      "Implement quality filters that detect and remove degraded synthetic samples",
+      "Track data provenance — know which generation each training sample comes from",
+      "Regularly benchmark against human-only baselines to detect quality drift"
+    ],
+    "alternatives": [
+      { "name": "Human data licensing", "note": "License high-quality human-generated data from publishers, platforms, and creators" },
+      { "name": "Active learning", "note": "Use AI to identify which data points are most valuable, then collect those from humans" },
+      { "name": "Targeted synthetic augmentation", "note": "Use synthetic data only for specific underrepresented scenarios, not as bulk training data" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Nature: AI Models Collapse When Trained on Recursively Generated Data", "url": "https://www.nature.com/articles/s41586-024-07566-y", "note": "Landmark study demonstrating model collapse across text, image, and code generation models" },
+    { "title": "arXiv: The Curse of Recursion — Training on Generated Data Makes Models Forget", "url": "https://arxiv.org/abs/2305.17493", "note": "Mathematical framework showing how tail distributions are lost in recursive training" },
+    { "title": "MIT Technology Review: The Internet is Running Out of Training Data", "url": "https://www.technologyreview.com/2024/01/05/1086203/ai-training-data/", "note": "Analysis of the looming data scarcity problem driving synthetic data adoption" },
+    { "title": "Epoch AI: Data Scaling Analysis", "url": "https://epochai.org/blog/will-we-run-out-of-data", "note": "Projections showing high-quality text data exhaustion by 2026-2028" }
+  ],
+
+  "falsifiability": [
+    "Models trained exclusively on synthetic data for 10+ generations show no measurable quality degradation",
+    "Synthetic data produces models with equal or greater output diversity compared to human-data-trained models",
+    "Bias levels in synthetic-data-trained models remain stable or decrease across training generations"
+  ],
+
+  "tags": ["synthetic-data", "model-collapse", "training-data", "ai-quality", "data-provenance", "feedback-loop"],
+  "crossReferences": ["A002", "A004", "A017"],
+
+  "seo": {
+    "description": "Training AI on AI-generated data causes model collapse — output diversity drops 40%, biases amplify 2-5x per generation, and quality degrades measurably after 5 generations.",
+    "keywords": ["synthetic data feedback loop second order effects", "model collapse ai training", "ai training on ai data consequences"]
+  }
+}

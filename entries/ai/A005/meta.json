@@ -1,0 +1,103 @@
+{
+  "id": "A005",
+  "title": "Prompt Engineering Half-Life",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.73,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "As LLMs became mainstream, 'prompt engineering' emerged as a hot skill. Job postings appeared. Courses launched. People built careers around crafting the perfect prompt. But models improve with every release — techniques that worked on GPT-3.5 are unnecessary on GPT-4, and irrelevant on GPT-5. The skill has a half-life measured in months, not years. The better the models get, the less prompt engineering matters.",
+
+  "hypothesis": "Prompt engineering is a valuable, durable career skill worth investing in.",
+
+  "chain": {
+    "root": "Invest heavily in prompt engineering as a core skill",
+    "effects": [
+      {
+        "label": "Techniques become obsolete with each model generation",
+        "impact": "Half-life of specific prompt techniques: 6-12 months",
+        "direction": "negative",
+        "children": [
+          { "label": "Chain-of-thought prompting built into newer models by default", "direction": "negative" },
+          { "label": "Few-shot examples become unnecessary as models improve", "direction": "negative" },
+          { "label": "Prompt 'hacks' patched in subsequent model versions", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Models converge toward natural language understanding",
+        "impact": "Simple instructions increasingly match complex prompts",
+        "direction": "neutral",
+        "children": [
+          { "label": "The gap between expert and novice prompts narrows with each generation", "direction": "negative" },
+          { "label": "Domain expertise becomes more valuable than prompt syntax", "direction": "positive" }
+        ]
+      },
+      {
+        "label": "Prompt engineering roles get absorbed into existing jobs",
+        "impact": "Standalone prompt engineer roles declining",
+        "direction": "negative",
+        "children": [
+          { "label": "Every knowledge worker becomes a 'prompt engineer' by default", "direction": "neutral" },
+          { "label": "The skill commoditizes — like knowing how to use a search engine", "direction": "negative" },
+          { "label": "People who invested in prompt-only skills find them insufficient", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Agentic AI reduces prompting to configuration",
+        "impact": "Agents handle multi-step reasoning without manual prompt chains",
+        "direction": "negative",
+        "children": [
+          { "label": "Tool use and function calling replace elaborate prompt structures", "direction": "negative" },
+          { "label": "System-level orchestration matters more than individual prompts", "direction": "positive" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Prompt technique shelf life", "before": "Assumed years", "after": "6-12 months", "delta": "-80%", "direction": "negative" },
+    { "metric": "Expert vs novice output gap", "before": "Large (2-3x quality)", "after": "Narrowing (1.2-1.5x)", "delta": "-50%", "direction": "negative" },
+    { "metric": "Standalone prompt engineer job postings", "before": "Peak 2023", "after": "Declining 60%+ by 2025", "delta": "-60%", "direction": "negative" },
+    { "metric": "Value of domain expertise vs prompt skill", "before": "Prompt > Domain", "after": "Domain > Prompt", "delta": "Inverted", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're building a career exclusively around prompt engineering without domain expertise",
+      "You're investing in prompt engineering courses that teach model-specific techniques"
+    ],
+    "ifYouMust": [
+      "Focus on understanding model capabilities and limitations, not specific syntax tricks",
+      "Pair prompt skills with deep domain expertise — the combination is durable",
+      "Learn system design for AI applications, not just individual prompts",
+      "Stay current — what works today will change in 6 months"
+    ],
+    "alternatives": [
+      { "name": "AI application architecture", "note": "Designing systems that use AI effectively — durable regardless of model changes" },
+      { "name": "Domain expertise + AI literacy", "note": "Knowing your field deeply and understanding how to leverage AI within it" },
+      { "name": "Evaluation and testing", "note": "Knowing how to measure AI output quality — this skill grows more valuable as AI scales" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Ethan Mollick: Prompt Engineering is Dead, Long Live Prompt Engineering", "url": "https://www.oneusefulthing.org/p/prompt-engineering-is-dead-long-live", "note": "Analysis of how model improvements are making elaborate prompting techniques unnecessary" },
+    { "title": "OpenAI: GPT-4 Technical Report", "url": "https://arxiv.org/abs/2303.08774", "note": "Each model generation reduces the need for prompt engineering workarounds" },
+    { "title": "Indeed: Prompt Engineer Job Posting Trends", "url": "https://www.indeed.com/career/prompt-engineer", "note": "Prompt engineer job postings peaked in 2023 and have been declining as the role gets absorbed" },
+    { "title": "Anthropic: Building Effective Agents", "url": "https://www.anthropic.com/research/building-effective-agents", "note": "Agentic patterns shift value from individual prompts to system-level orchestration" }
+  ],
+
+  "falsifiability": [
+    "Prompt engineering techniques from 2023 remain equally effective on models released in 2026 without modification",
+    "Standalone prompt engineer roles grow as a percentage of AI job postings through 2027",
+    "Expert-crafted prompts consistently outperform simple natural language instructions by 2x+ on latest models"
+  ],
+
+  "tags": ["prompt-engineering", "ai-skills", "career", "llm", "obsolescence", "model-improvement"],
+  "crossReferences": ["A001", "A002", "A027"],
+
+  "seo": {
+    "description": "Prompt engineering techniques have a 6-12 month half-life. Each model generation makes elaborate prompting less necessary. Domain expertise outlasts prompt syntax every time.",
+    "keywords": ["prompt engineering half-life second order effects", "prompt engineering career risk", "prompt engineering obsolescence"]
+  }
+}

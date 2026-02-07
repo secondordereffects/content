@@ -1,0 +1,103 @@
+{
+  "id": "A008",
+  "title": "AI Moat Erosion",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Companies raise billions to build proprietary AI models, claiming their model is their moat. But the AI landscape commoditizes faster than any technology in history. Open-source models close the gap within months. Fine-tuning makes generic models competitive with specialized ones. The cost of training drops exponentially. What was a $100M advantage in January is a commodity by December. The moat isn't the model — it never was.",
+
+  "hypothesis": "A proprietary AI model is a durable competitive advantage.",
+
+  "chain": {
+    "root": "Build competitive strategy around proprietary AI model",
+    "effects": [
+      {
+        "label": "Open-source models close the capability gap rapidly",
+        "impact": "6-12 month lag between frontier and open-source",
+        "direction": "negative",
+        "children": [
+          { "label": "Meta releases competitive models for free", "direction": "negative" },
+          { "label": "Fine-tuned open models match proprietary ones on specific tasks", "direction": "negative" },
+          { "label": "Community improvements compound faster than any single company can innovate", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Training costs collapse — barrier to entry drops",
+        "impact": "Cost to train GPT-3 equivalent: $5M (2020) → $100K (2025)",
+        "direction": "negative",
+        "children": [
+          { "label": "Startups can train competitive models on modest budgets", "direction": "negative" },
+          { "label": "Algorithmic improvements reduce compute requirements faster than hardware improves", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Differentiation shifts from model to data and distribution",
+        "impact": "Model quality converges, product quality diverges",
+        "direction": "neutral",
+        "children": [
+          { "label": "Proprietary data becomes the real moat", "direction": "positive" },
+          { "label": "User experience and workflow integration matter more than raw model capability", "direction": "positive" },
+          { "label": "Companies that bet only on model quality find themselves commoditized", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Massive capital invested in depreciating assets",
+        "impact": "Billions in training compute with 12-month useful life",
+        "direction": "negative",
+        "children": [
+          { "label": "Investors realize AI model capex depreciates like hardware, not software", "direction": "negative" },
+          { "label": "Companies that raised on model moat thesis face valuation compression", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Open-source vs proprietary capability gap", "before": "2-3 years", "after": "6-12 months", "delta": "-75%", "direction": "negative" },
+    { "metric": "Cost to train frontier-equivalent model", "before": "$100M+", "after": "$1-10M and falling", "delta": "-95%", "direction": "negative" },
+    { "metric": "Model-based competitive advantage duration", "before": "Assumed years", "after": "6-18 months", "delta": "-80%", "direction": "negative" },
+    { "metric": "Value of proprietary data vs model", "before": "Model > Data", "after": "Data > Model", "delta": "Inverted", "direction": "positive" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your entire competitive strategy depends on model capability alone",
+      "You're spending more on model training than on product and data moats"
+    ],
+    "ifYouMust": [
+      "Build moats around proprietary data, not proprietary models",
+      "Invest in user experience and workflow integration that creates switching costs",
+      "Design for model-agnostic architecture — swap models as better ones emerge",
+      "Focus on fine-tuning and domain specialization rather than general capability"
+    ],
+    "alternatives": [
+      { "name": "Data moat strategy", "note": "Collect proprietary data through product usage that improves with scale" },
+      { "name": "Distribution moat", "note": "Win on go-to-market, integrations, and ecosystem — not raw AI capability" },
+      { "name": "Model-agnostic platform", "note": "Build the orchestration layer that works with any model — the picks-and-shovels play" }
+    ]
+  },
+
+  "sources": [
+    { "title": "a16z: Who Owns the Generative AI Platform?", "url": "https://a16z.com/who-owns-the-generative-ai-platform/", "note": "Analysis showing value accruing to applications and data layers, not model providers" },
+    { "title": "Epoch AI: Trends in Machine Learning Compute", "url": "https://epochai.org/blog/trends-in-machine-learning-hardware", "note": "Training costs declining 10x every 18 months through algorithmic and hardware improvements" },
+    { "title": "Hugging Face Open LLM Leaderboard", "url": "https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard", "note": "Open-source models consistently closing gap with proprietary models within months of release" },
+    { "title": "Sequoia Capital: AI's $600B Question", "url": "https://www.sequoiacap.com/article/ais-600b-question/", "note": "Analysis of the gap between AI infrastructure spending and actual revenue generation" }
+  ],
+
+  "falsifiability": [
+    "Proprietary AI models maintain a 2+ year capability lead over open-source alternatives through 2028",
+    "Companies whose primary moat is their AI model sustain premium valuations for 5+ years",
+    "Training costs stabilize rather than continuing to decline exponentially"
+  ],
+
+  "tags": ["ai-moat", "commoditization", "open-source", "competitive-advantage", "training-costs", "venture-capital"],
+  "crossReferences": ["A004", "A007", "M009"],
+
+  "seo": {
+    "description": "Proprietary AI models depreciate in 6-18 months as open-source closes the gap. Training costs dropped 95% in 5 years. The moat is data and distribution, not the model.",
+    "keywords": ["ai moat erosion second order effects", "proprietary ai model commoditization", "ai competitive advantage hidden costs"]
+  }
+}

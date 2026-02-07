@@ -1,0 +1,104 @@
+{
+  "id": "I001",
+  "title": "Cloud Concentration Risk",
+  "category": "infrastructure",
+  "status": "card",
+  "confidence": 0.82,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Organizations migrate to cloud providers (AWS, Azure, GCP) for agility, scalability, and cost efficiency. The migration works. Then dependency deepens. Proprietary services, managed databases, serverless functions, and cloud-native tooling create lock-in that makes switching providers a multi-year, multi-million dollar project. When the provider has an outage, your business has an outage. When they raise prices, you pay. The cloud promised freedom from infrastructure. It delivered a different kind of dependency.",
+
+  "hypothesis": "Cloud migration reduces infrastructure risk and cost while increasing operational flexibility.",
+
+  "chain": {
+    "root": "Migrate infrastructure to a single cloud provider",
+    "effects": [
+      {
+        "label": "Teams adopt provider-specific services for speed",
+        "impact": "70-80% of workloads use proprietary services within 3 years",
+        "direction": "negative",
+        "children": [
+          { "label": "Lambda/Cloud Functions, DynamoDB, Cosmos DB — no portable equivalents", "direction": "negative" },
+          { "label": "IAM, networking, and monitoring deeply coupled to provider", "direction": "negative" },
+          { "label": "Engineers develop provider-specific skills, not portable cloud skills", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Switching costs become prohibitive",
+        "impact": "Migration estimated at 2-4 years and $5-50M for mid-size companies",
+        "direction": "negative",
+        "children": [
+          { "label": "Provider knows you can't leave — pricing leverage shifts permanently", "direction": "negative" },
+          { "label": "Annual price increases of 5-15% become non-negotiable", "direction": "negative" },
+          { "label": "Contract negotiations become adversarial — you have no BATNA", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Single points of failure at provider level",
+        "impact": "Major outages affect thousands of companies simultaneously",
+        "direction": "negative",
+        "children": [
+          { "label": "us-east-1 outage takes down half the internet", "direction": "negative" },
+          { "label": "Your DR plan assumes the provider works — it doesn't protect against provider failure", "direction": "negative" },
+          { "label": "Correlated failure: your app, your monitoring, your alerting all go down together", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Cloud costs grow faster than revenue",
+        "impact": "Cloud spend grows 20-30% annually vs 10-15% revenue growth",
+        "direction": "negative",
+        "children": [
+          { "label": "Repatriation becomes attractive but lock-in makes it nearly impossible", "direction": "negative" },
+          { "label": "FinOps teams created to manage costs — adding headcount to save on infrastructure", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Proprietary service adoption", "before": "Minimal", "after": "70-80% of workloads", "delta": "+75%", "direction": "negative" },
+    { "metric": "Provider switching cost", "before": "Moderate", "after": "$5-50M+ and 2-4 years", "delta": "Prohibitive", "direction": "negative" },
+    { "metric": "Annual cloud cost growth", "before": "Projected 10-15%", "after": "Actual 20-30%", "delta": "+100% over projection", "direction": "negative" },
+    { "metric": "Outage blast radius", "before": "Single service", "after": "Entire infrastructure", "delta": "Correlated failure", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your business cannot tolerate any single provider having outage-level control over your operations",
+      "Your cloud spend already exceeds 20% of revenue and is growing faster"
+    ],
+    "ifYouMust": [
+      "Use portable abstractions (Kubernetes, Terraform, PostgreSQL) over proprietary services where possible",
+      "Maintain a cloud exit plan — document what it would take to migrate, even if you never do",
+      "Negotiate multi-year contracts with price caps and egress fee waivers",
+      "Run critical workloads across at least two availability zones, ideally two regions"
+    ],
+    "alternatives": [
+      { "name": "Multi-cloud strategy", "note": "Distribute workloads across providers — higher complexity but lower concentration risk" },
+      { "name": "Hybrid cloud", "note": "Keep sensitive or high-volume workloads on-premise, use cloud for burst and non-critical" },
+      { "name": "Cloud-agnostic stack", "note": "Kubernetes + Terraform + open-source databases — portable by design, higher initial effort" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Gartner: Cloud Concentration Risk Report", "url": "https://www.gartner.com/en/articles/is-the-cloud-secure", "note": "60% of enterprises identify single-cloud dependency as a top-5 technology risk" },
+    { "title": "Andreessen Horowitz: The Cost of Cloud", "url": "https://a16z.com/the-cost-of-cloud-a-trillion-dollar-paradox/", "note": "Cloud costs consume 50%+ of revenue for many SaaS companies, repatriation could save 30-50%" },
+    { "title": "AWS us-east-1 Outage Post-Mortem (2021)", "url": "https://aws.amazon.com/message/12721/", "note": "Single region outage cascaded across thousands of companies including major SaaS providers" },
+    { "title": "Flexera State of the Cloud Report 2024", "url": "https://www.flexera.com/blog/cloud/cloud-computing-trends/", "note": "Cloud waste estimated at 28% of total spend, cost management is top cloud challenge" }
+  ],
+
+  "falsifiability": [
+    "Companies with single-cloud strategies show lower total infrastructure costs than multi-cloud or hybrid approaches over 5 years",
+    "Major cloud provider outages affect fewer than 1% of dependent companies' operations",
+    "Cloud provider pricing remains stable or decreases for locked-in customers over 5-year contract periods"
+  ],
+
+  "tags": ["cloud", "vendor-lock-in", "infrastructure", "concentration-risk", "aws", "cost-management"],
+  "crossReferences": ["T002", "M025", "O005"],
+
+  "seo": {
+    "description": "Single-cloud dependency locks in 70-80% of workloads on proprietary services, making switching a $5-50M multi-year project. Costs grow 2x faster than projected while outage risk correlates.",
+    "keywords": ["cloud concentration risk second order effects", "cloud vendor lock-in hidden costs", "single cloud provider consequences"]
+  }
+}

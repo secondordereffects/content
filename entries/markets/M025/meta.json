@@ -1,0 +1,104 @@
+{
+  "id": "M025",
+  "title": "Tariff Retaliation Cascade",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.83,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "A country imposes tariffs on imports to protect domestic industries and reduce trade deficits. The first-order effect is straightforward: imported goods become more expensive, domestic producers gain a price advantage. But trading partners retaliate with their own tariffs. Supply chains reorganize. Consumers pay more. The industries the tariffs were meant to protect often end up worse off as their export markets shrink and input costs rise.",
+
+  "hypothesis": "Tariffs protect domestic industries and reduce trade deficits by making imports more expensive.",
+
+  "chain": {
+    "root": "Impose tariffs on imported goods",
+    "effects": [
+      {
+        "label": "Trading partners retaliate with counter-tariffs",
+        "impact": "85% of tariff actions trigger retaliation",
+        "direction": "negative",
+        "children": [
+          { "label": "Export markets shrink for domestic producers", "direction": "negative" },
+          { "label": "Agricultural sector hit hardest — perishable goods can't wait out trade wars", "direction": "negative" },
+          { "label": "Retaliation targets politically sensitive industries for maximum pressure", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Consumer prices rise across the economy",
+        "impact": "Tariff cost passed through 90-100% to consumers",
+        "direction": "negative",
+        "children": [
+          { "label": "Low-income households hit hardest — tariffs are regressive taxes", "direction": "negative" },
+          { "label": "Downstream manufacturers pay more for inputs", "direction": "negative" },
+          { "label": "Inflation pressure complicates monetary policy", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Supply chains reorganize — but not to domestic production",
+        "impact": "Trade diverts to third countries, not home",
+        "direction": "negative",
+        "children": [
+          { "label": "Manufacturing moves to Vietnam, Mexico, India — not back home", "direction": "negative" },
+          { "label": "Supply chain complexity increases, not decreases", "direction": "negative" },
+          { "label": "Transition costs and delays disrupt production for years", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Trade deficit persists or worsens",
+        "impact": "No sustained deficit reduction in historical cases",
+        "direction": "negative",
+        "children": [
+          { "label": "Currency appreciation offsets tariff effects", "direction": "negative" },
+          { "label": "Deficit shifts to different countries rather than shrinking", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Consumer prices (tariffed goods)", "before": "Market price", "after": "+10-25%", "delta": "+15%", "direction": "negative" },
+    { "metric": "Export revenue (retaliatory sectors)", "before": "Baseline", "after": "-15-30%", "delta": "-20%", "direction": "negative" },
+    { "metric": "Domestic manufacturing jobs (protected)", "before": "Baseline", "after": "+1-3% in protected sector", "delta": "+2%", "direction": "positive" },
+    { "metric": "Jobs lost in downstream/export sectors", "before": "Baseline", "after": "-5x jobs gained", "delta": "Net negative", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your domestic industry depends on imported inputs that will also be tariffed",
+      "Your major trading partners have credible retaliation capacity"
+    ],
+    "ifYouMust": [
+      "Target tariffs narrowly at specific products, not broad categories",
+      "Set explicit sunset dates — tariffs should be temporary, not permanent",
+      "Pair tariffs with domestic investment in the protected industry's competitiveness",
+      "Negotiate exemptions for critical inputs that domestic producers need"
+    ],
+    "alternatives": [
+      { "name": "Industrial policy and subsidies", "note": "Invest directly in domestic capacity rather than taxing imports" },
+      { "name": "Trade adjustment assistance", "note": "Help displaced workers transition rather than protecting uncompetitive industries" },
+      { "name": "Multilateral trade agreements", "note": "Negotiate market access collectively rather than through bilateral tariff wars" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Federal Reserve Bank of New York: Who Pays the Tariffs?", "url": "https://www.newyorkfed.org/research/staff_reports/sr877", "note": "US tariffs were almost entirely paid by US importers and consumers, not foreign exporters" },
+    { "title": "Peterson Institute: US-China Trade War Analysis", "url": "https://www.piie.com/research/piie-charts/us-china-trade-war-tariffs-date-chart", "note": "Comprehensive timeline showing escalation pattern and economic impact of tariff retaliation" },
+    { "title": "USDA: Agricultural Trade Impact of Tariffs", "url": "https://www.ers.usda.gov/topics/international-markets-us-trade/trade-and-tariffs/", "note": "US agricultural exports to China fell 53% during tariff escalation, requiring $28B in farmer bailouts" },
+    { "title": "Brookings: The Economic Effects of Tariffs", "url": "https://www.brookings.edu/articles/what-are-the-economic-effects-of-tariffs/", "note": "Historical analysis showing tariffs consistently fail to reduce trade deficits" }
+  ],
+
+  "falsifiability": [
+    "Countries that impose broad tariffs achieve sustained trade deficit reduction within 5 years",
+    "Tariff-protected industries show net job growth that exceeds job losses in downstream and export sectors",
+    "Consumer prices in tariffed categories return to pre-tariff levels within 3 years as domestic production scales"
+  ],
+
+  "tags": ["tariffs", "trade-war", "retaliation", "consumer-prices", "supply-chain", "protectionism"],
+  "crossReferences": ["P012", "M009", "I001"],
+
+  "seo": {
+    "description": "Tariffs trigger retaliation 85% of the time, raise consumer prices 10-25%, and destroy 5x more jobs in downstream sectors than they create. Trade deficits persist regardless.",
+    "keywords": ["tariff retaliation cascade second order effects", "trade war hidden consequences", "tariff consumer cost analysis"]
+  }
+}

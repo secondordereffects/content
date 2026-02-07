@@ -1,0 +1,103 @@
+{
+  "id": "O005",
+  "title": "Agile Ceremony Bloat",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Organizations adopt Agile (usually Scrum) to move faster. Initially it works — small teams, short cycles, rapid feedback. Then the organization scales. More teams mean more coordination. Coordination means more ceremonies. Stand-ups, sprint planning, backlog grooming, retrospectives, PI planning, scrum-of-scrums, demo days. What started as a lightweight process becomes a calendar-consuming bureaucracy that leaves less time for actual building.",
+
+  "hypothesis": "Agile ceremonies improve team coordination and delivery speed at scale.",
+
+  "chain": {
+    "root": "Scale Agile across multiple teams",
+    "effects": [
+      {
+        "label": "Ceremony count multiplies with team count",
+        "impact": "8-15 hours/week in meetings per developer",
+        "direction": "negative",
+        "children": [
+          { "label": "Deep work time shrinks to 2-3 hour fragments", "direction": "negative" },
+          { "label": "Context switching between meetings destroys flow state", "direction": "negative" },
+          { "label": "Senior engineers spend more time talking about work than doing it", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Ceremonies become performative rather than productive",
+        "impact": "60-70% of attendees report meetings are wasteful",
+        "direction": "negative",
+        "children": [
+          { "label": "Stand-ups become status reports to managers, not team sync", "direction": "negative" },
+          { "label": "Retrospectives produce action items nobody follows up on", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Process compliance replaces outcome focus",
+        "impact": "Teams optimize for ceremony metrics, not delivery",
+        "direction": "negative",
+        "children": [
+          { "label": "Velocity becomes a vanity metric gamed by point inflation", "direction": "negative" },
+          { "label": "Scrum masters become process police rather than enablers", "direction": "negative" },
+          { "label": "Teams that skip ceremonies are labeled 'not Agile' regardless of output", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Best engineers leave or disengage",
+        "impact": "Top performer attrition increases",
+        "direction": "negative",
+        "children": [
+          { "label": "High performers seek environments with more autonomy", "direction": "negative" },
+          { "label": "Remaining team regresses to mean productivity", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Developer time in meetings", "before": "4-6 hrs/week", "after": "12-18 hrs/week", "delta": "+200%", "direction": "negative" },
+    { "metric": "Uninterrupted deep work blocks", "before": "4+ hours", "after": "1-2 hours", "delta": "-60%", "direction": "negative" },
+    { "metric": "Feature delivery speed", "before": "Baseline", "after": "-20-30%", "delta": "-25%", "direction": "negative" },
+    { "metric": "Developer satisfaction", "before": "High", "after": "Moderate-Low", "delta": "-35%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your teams are already shipping well with lighter processes",
+      "You're adopting SAFe primarily because a consultant recommended it"
+    ],
+    "ifYouMust": [
+      "Cap total ceremony time at 10% of available work hours",
+      "Make every meeting optional for individual contributors — attendance by choice",
+      "Kill any ceremony that can't demonstrate concrete value in a 30-day review",
+      "Replace synchronous ceremonies with async updates wherever possible"
+    ],
+    "alternatives": [
+      { "name": "Shape Up", "note": "Basecamp's methodology — 6-week cycles, no daily stand-ups, small autonomous teams" },
+      { "name": "Async-first Kanban", "note": "Pull-based work with async status updates, meetings only when blocked" },
+      { "name": "Team-chosen process", "note": "Let each team pick their own process and measure outcomes, not compliance" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Atlassian: State of Teams 2024", "url": "https://www.atlassian.com/blog/teamwork/new-research-agile-teams", "note": "72% of developers report too many meetings, average 8-15 hours/week in ceremonies" },
+    { "title": "Microsoft Research: The Cost of Interrupted Work", "url": "https://ics.uci.edu/~gmark/chi08-mark.pdf", "note": "It takes 23 minutes to recover focus after an interruption — each ceremony fragments deep work" },
+    { "title": "Stack Overflow Developer Survey 2024", "url": "https://survey.stackoverflow.co/2024/", "note": "Meeting overload consistently ranked as top productivity killer by developers" },
+    { "title": "Basecamp: Shape Up", "url": "https://basecamp.com/shapeup", "note": "Alternative methodology that explicitly rejects ceremony-heavy Agile" }
+  ],
+
+  "falsifiability": [
+    "Organizations with more Agile ceremonies per week deliver features faster than those with fewer",
+    "Developer satisfaction increases as ceremony count scales with team size",
+    "Velocity metrics from ceremony-heavy teams correlate with actual customer value delivered"
+  ],
+
+  "tags": ["agile", "scrum", "meetings", "developer-productivity", "process-bloat", "organizational-design"],
+  "crossReferences": ["O022", "O011", "O012"],
+
+  "seo": {
+    "description": "Scaling Agile triples developer meeting time to 12-18 hrs/week, cuts deep work by 60%, and reduces actual delivery speed by 25%. Ceremonies become performative bureaucracy.",
+    "keywords": ["agile ceremony bloat second order effects", "scrum meetings productivity cost", "agile at scale hidden consequences"]
+  }
+}

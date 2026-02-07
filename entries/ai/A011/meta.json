@@ -1,0 +1,104 @@
+{
+  "id": "A011",
+  "title": "Deepfake Trust Collapse",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.82,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "AI-generated images, audio, and video have become indistinguishable from real media. Anyone with a laptop can create a convincing video of anyone saying anything. The first-order concern is misinformation — fake videos of politicians, fabricated evidence, scam calls using cloned voices. But the deeper second-order effect is worse: when anything can be faked, nothing can be trusted. Real evidence gets dismissed as 'probably AI.' The liar's dividend — guilty parties claim authentic evidence is fabricated — becomes the default defense.",
+
+  "hypothesis": "Deepfake detection technology will keep pace with generation technology and maintain trust in media.",
+
+  "chain": {
+    "root": "Deepfake generation becomes accessible and indistinguishable from real media",
+    "effects": [
+      {
+        "label": "Detection falls permanently behind generation",
+        "impact": "Detection accuracy drops below 50% for state-of-the-art fakes",
+        "direction": "negative",
+        "children": [
+          { "label": "Generative models improve faster than detection models", "direction": "negative" },
+          { "label": "Adversarial training specifically optimizes against detectors", "direction": "negative" },
+          { "label": "Detection tools produce false positives that erode trust in real content", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "The liar's dividend — real evidence dismissed as fake",
+        "impact": "Plausible deniability for any recorded evidence",
+        "direction": "negative",
+        "children": [
+          { "label": "Politicians dismiss authentic recordings as AI-generated", "direction": "negative" },
+          { "label": "Legal evidence challenged on authenticity grounds regardless of origin", "direction": "negative" },
+          { "label": "Whistleblower evidence loses credibility", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Baseline trust in all media erodes",
+        "impact": "Public trust in video/audio evidence declining year over year",
+        "direction": "negative",
+        "children": [
+          { "label": "Journalism faces credibility crisis — even real footage questioned", "direction": "negative" },
+          { "label": "Personal relationships affected — voice calls and video chats no longer proof of identity", "direction": "negative" },
+          { "label": "Historical documentation becomes unreliable for future generations", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Provenance and verification become essential infrastructure",
+        "impact": "New industry emerges around content authentication",
+        "direction": "positive",
+        "children": [
+          { "label": "Cryptographic signing of media at capture becomes standard", "direction": "positive" },
+          { "label": "Chain-of-custody for digital evidence becomes legally required", "direction": "positive" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Deepfake detection accuracy (state-of-the-art)", "before": "80-90%", "after": "<50% for best fakes", "delta": "-40%", "direction": "negative" },
+    { "metric": "Public trust in video evidence", "before": "High", "after": "Declining 15-20% annually", "delta": "-50% over 3 years", "direction": "negative" },
+    { "metric": "Cost to create convincing deepfake", "before": "$10,000+", "after": "<$10", "delta": "-99.9%", "direction": "negative" },
+    { "metric": "Legal cases challenging evidence authenticity", "before": "Rare", "after": "Routine", "delta": "+500%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're relying solely on detection technology to solve the deepfake problem",
+      "Your organization treats all digital media as inherently trustworthy"
+    ],
+    "ifYouMust": [
+      "Implement cryptographic content provenance (C2PA standard) for all organizational media",
+      "Establish multi-factor verification for any high-stakes communication — don't trust voice or video alone",
+      "Train employees on deepfake awareness and verification procedures",
+      "Maintain chain-of-custody documentation for any media used as evidence"
+    ],
+    "alternatives": [
+      { "name": "Content provenance standards (C2PA)", "note": "Cryptographically sign media at the point of capture — prove origin, not detect fakes" },
+      { "name": "Multi-factor identity verification", "note": "Combine video/voice with out-of-band confirmation for high-stakes interactions" },
+      { "name": "Institutional trust networks", "note": "Rely on trusted sources and institutions rather than individual pieces of media" }
+    ]
+  },
+
+  "sources": [
+    { "title": "MIT Media Lab: Deepfake Detection Challenges", "url": "https://www.media.mit.edu/projects/detect-fakes/overview/", "note": "Research showing detection accuracy declining as generation quality improves" },
+    { "title": "Brookings: The Liar's Dividend", "url": "https://www.brookings.edu/articles/fighting-deepfakes-when-detection-fails/", "note": "Analysis of how deepfakes enable plausible deniability for authentic evidence" },
+    { "title": "C2PA: Coalition for Content Provenance and Authenticity", "url": "https://c2pa.org/", "note": "Industry standard for cryptographic content provenance as alternative to detection" },
+    { "title": "World Economic Forum: Global Risks Report 2024", "url": "https://www.weforum.org/publications/global-risks-report-2024/", "note": "AI-generated misinformation ranked as top global risk for 2024-2025" }
+  ],
+
+  "falsifiability": [
+    "Deepfake detection technology maintains 90%+ accuracy against state-of-the-art generation through 2028",
+    "Public trust in video and audio evidence remains stable or increases despite deepfake proliferation",
+    "Legal systems develop reliable standards for authenticating digital evidence that are widely adopted by 2027"
+  ],
+
+  "tags": ["deepfake", "trust", "media-authenticity", "misinformation", "content-provenance", "detection"],
+  "crossReferences": ["A002", "A004", "A007"],
+
+  "seo": {
+    "description": "Deepfake detection falls behind generation — accuracy below 50% for best fakes. The real damage: real evidence gets dismissed as AI. The liar's dividend becomes the default defense.",
+    "keywords": ["deepfake trust collapse second order effects", "deepfake liar dividend", "ai generated media trust consequences"]
+  }
+}

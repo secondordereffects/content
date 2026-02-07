@@ -1,0 +1,104 @@
+{
+  "id": "O012",
+  "title": "Unlimited PTO Guilt Tax",
+  "category": "organizations",
+  "status": "card",
+  "confidence": 0.80,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Companies replace fixed vacation policies with 'unlimited PTO' — take as much time as you need. It sounds generous. In practice, employees take less vacation, not more. Without a defined entitlement, there's no anchor. Nobody wants to be the person who takes 'too much.' Managers don't model healthy usage. The company saves money on accrued vacation liability while employees burn out faster.",
+
+  "hypothesis": "Unlimited PTO gives employees more flexibility and leads to better work-life balance.",
+
+  "chain": {
+    "root": "Implement unlimited PTO policy",
+    "effects": [
+      {
+        "label": "Employees take fewer vacation days, not more",
+        "impact": "Average drops from 15 to 10 days/year",
+        "direction": "negative",
+        "children": [
+          { "label": "No anchor — employees don't know what's 'acceptable'", "direction": "negative" },
+          { "label": "Social pressure and guilt prevent time off requests", "direction": "negative" },
+          { "label": "High performers take the least time off — they feel most indispensable", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Company eliminates vacation accrual liability",
+        "impact": "Saves $1,500-3,000 per employee annually",
+        "direction": "positive",
+        "children": [
+          { "label": "No payout required when employees leave", "direction": "positive" },
+          { "label": "Employees realize the policy benefits the company, not them", "direction": "negative" },
+          { "label": "Trust erodes when employees see the financial incentive", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Burnout increases despite 'unlimited' time off",
+        "impact": "Burnout rates rise 15-25%",
+        "direction": "negative",
+        "children": [
+          { "label": "Employees work through illness and personal needs", "direction": "negative" },
+          { "label": "Guilt about taking time off creates chronic stress", "direction": "negative" },
+          { "label": "Managers who don't take PTO set implicit expectations", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Inequity emerges across teams and demographics",
+        "impact": "Usage varies 3-5x between teams",
+        "direction": "negative",
+        "children": [
+          { "label": "Manager personality determines actual PTO culture per team", "direction": "negative" },
+          { "label": "Junior employees and minorities take less time off due to visibility concerns", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Average vacation days taken", "before": "15 days/year", "after": "10 days/year", "delta": "-33%", "direction": "negative" },
+    { "metric": "Company vacation liability", "before": "$1,500-3,000/employee", "after": "$0", "delta": "-100%", "direction": "positive" },
+    { "metric": "Employee burnout rate", "before": "Baseline", "after": "+15-25%", "delta": "+20%", "direction": "negative" },
+    { "metric": "PTO usage variance between teams", "before": "Low (policy-defined)", "after": "3-5x difference", "delta": "High inequity", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your company culture already has workaholic tendencies",
+      "Your managers don't model healthy time-off behavior"
+    ],
+    "ifYouMust": [
+      "Set a minimum required PTO (e.g., 'take at least 15 days') — make it a floor, not a ceiling",
+      "Require managers to take and visibly communicate their own PTO",
+      "Track and publish anonymized PTO usage data by team to surface inequities",
+      "Auto-schedule company-wide shutdown weeks to normalize time off"
+    ],
+    "alternatives": [
+      { "name": "Generous fixed PTO", "note": "25-30 days with mandatory minimums — clear entitlement removes guilt" },
+      { "name": "Minimum + flexible", "note": "15 mandatory days plus flexible additional days — anchors healthy behavior" },
+      { "name": "Company shutdown weeks", "note": "2-3 weeks per year where the entire company closes — eliminates individual guilt" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Namely HR: Unlimited PTO Data Analysis", "url": "https://www.namely.com/blog/unlimited-vacation-is-a-lie/", "note": "Employees with unlimited PTO take an average of 10 days vs 15 days with traditional policies" },
+    { "title": "Harvard Business Review: The Problem with Unlimited Vacation", "url": "https://hbr.org/2023/01/rethinking-unlimited-vacation", "note": "Analysis of how unlimited PTO shifts risk from employer to employee" },
+    { "title": "Glassdoor: Employee Sentiment on Unlimited PTO", "url": "https://www.glassdoor.com/blog/unlimited-pto-policies/", "note": "42% of employees with unlimited PTO report feeling guilty about taking time off" },
+    { "title": "SHRM: Paid Leave Trends 2024", "url": "https://www.shrm.org/topics-tools/research/employee-benefits-survey", "note": "Companies with unlimited PTO save an average of $1,898 per employee in accrued liability" }
+  ],
+
+  "falsifiability": [
+    "Employees with unlimited PTO take equal or more vacation days than those with fixed 15-day policies",
+    "Burnout rates are lower in companies with unlimited PTO compared to generous fixed PTO",
+    "PTO usage is equitable across teams, seniority levels, and demographics under unlimited policies"
+  ],
+
+  "tags": ["unlimited-pto", "burnout", "workplace-policy", "employee-benefits", "guilt", "work-life-balance"],
+  "crossReferences": ["O007", "O005", "O022"],
+
+  "seo": {
+    "description": "Unlimited PTO reduces actual vacation taken from 15 to 10 days per year. Companies save on liability while employees burn out faster under guilt-driven ambiguity.",
+    "keywords": ["unlimited pto guilt tax second order effects", "unlimited vacation hidden costs", "unlimited pto takes less time off"]
+  }
+}

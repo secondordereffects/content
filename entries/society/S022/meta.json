@@ -1,0 +1,104 @@
+{
+  "id": "S022",
+  "title": "Productivity Porn Procrastination",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.77,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "A growing industry of productivity content — YouTube videos, podcasts, apps, books, courses, and Twitter threads — promises to help people get more done. The irony: consuming productivity content is itself a form of procrastination. People spend hours optimizing their Notion setup, watching 'morning routine' videos, and reading about time management instead of doing the work. The feeling of learning about productivity substitutes for the feeling of being productive.",
+
+  "hypothesis": "Consuming productivity content and optimizing systems makes people more productive.",
+
+  "chain": {
+    "root": "Consume productivity content and tools extensively",
+    "effects": [
+      {
+        "label": "Learning about productivity feels like being productive",
+        "impact": "Dopamine reward without actual output",
+        "direction": "negative",
+        "children": [
+          { "label": "Watching a productivity video triggers the same satisfaction as completing a task", "direction": "negative" },
+          { "label": "Users confuse motion (organizing, planning, optimizing) with progress", "direction": "negative" },
+          { "label": "The more overwhelmed someone feels, the more they consume productivity content", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Tool and system churn replaces actual work",
+        "impact": "Average knowledge worker tries 4-6 productivity apps per year",
+        "direction": "negative",
+        "children": [
+          { "label": "Migrating between tools consumes hours that could be spent working", "direction": "negative" },
+          { "label": "Each new system requires setup, learning, and customization", "direction": "negative" },
+          { "label": "The 'perfect system' becomes the goal instead of the output", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Guilt and shame cycle intensifies",
+        "impact": "Self-worth tied to productivity metrics",
+        "direction": "negative",
+        "children": [
+          { "label": "Failing to follow the 'optimal' routine feels like personal failure", "direction": "negative" },
+          { "label": "Comparison with productivity influencers creates unrealistic standards", "direction": "negative" },
+          { "label": "Burnout from trying to optimize every minute of every day", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Actual output decreases despite feeling busier",
+        "impact": "Net productivity loss for heavy consumers",
+        "direction": "negative",
+        "children": [
+          { "label": "Time spent on meta-work (planning, organizing, optimizing) crowds out real work", "direction": "negative" },
+          { "label": "Decision fatigue from too many systems and options", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Time spent on productivity content/tools", "before": "Minimal", "after": "5-10 hours/week", "delta": "+8 hrs/week", "direction": "negative" },
+    { "metric": "Actual task completion rate", "before": "Baseline", "after": "-10-20%", "delta": "-15%", "direction": "negative" },
+    { "metric": "Productivity app subscriptions", "before": "0-1", "after": "3-6 active", "delta": "+$50-200/month", "direction": "negative" },
+    { "metric": "Self-reported productivity satisfaction", "before": "Moderate", "after": "Low (despite more 'knowledge')", "delta": "-30%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You've already read more than 3 productivity books this year but haven't finished your main project",
+      "You spend more time customizing your task manager than completing tasks in it"
+    ],
+    "ifYouMust": [
+      "Cap productivity content consumption at 30 minutes per week — treat it like a budget",
+      "Pick one system and commit to it for 6 months minimum — no switching",
+      "Measure output (things completed) not input (hours planned or systems built)",
+      "Apply the 'one in, one out' rule — learn one new technique only after mastering the previous one"
+    ],
+    "alternatives": [
+      { "name": "Simple paper to-do list", "note": "Zero setup time, zero migration cost, forces prioritization through physical constraints" },
+      { "name": "Time blocking with a calendar", "note": "One tool you already have — block time for work, then do the work" },
+      { "name": "Accountability partner", "note": "A real human who asks 'did you do the thing?' is more effective than any app" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Cal Newport: Digital Minimalism", "url": "https://www.calnewport.com/books/digital-minimalism/", "note": "Analysis of how tool optimization becomes a substitute for meaningful work" },
+    { "title": "Psychological Science: The Mere Urgency Effect", "url": "https://journals.sagepub.com/doi/10.1177/0956797618761554", "note": "People prioritize urgent-seeming tasks (organizing, planning) over important but less urgent actual work" },
+    { "title": "Statista: Productivity App Market Size", "url": "https://www.statista.com/outlook/tmo/app/productivity/worldwide", "note": "Productivity app market exceeds $90B globally, growing 13% annually despite no measurable productivity gains" },
+    { "title": "RescueTime: Productivity Pulse Data", "url": "https://blog.rescuetime.com/productivity-data/", "note": "Average knowledge worker spends 2.5 hours/day on communication and meta-work, only 2.8 hours on focused work" }
+  ],
+
+  "falsifiability": [
+    "Heavy consumers of productivity content (10+ hours/week) show measurably higher output than non-consumers",
+    "People who use 4+ productivity tools complete more tasks than those who use 1 or none",
+    "The productivity app market growth correlates with measurable workforce productivity gains"
+  ],
+
+  "tags": ["productivity", "procrastination", "self-improvement", "tools", "meta-work", "dopamine"],
+  "crossReferences": ["S001", "O005", "A001"],
+
+  "seo": {
+    "description": "Productivity content consumption is itself procrastination. Heavy consumers spend 5-10 hours/week on meta-work while actual task completion drops 15%. The $90B industry grows while output doesn't.",
+    "keywords": ["productivity porn procrastination second order effects", "productivity content hidden costs", "productivity tools paradox"]
+  }
+}

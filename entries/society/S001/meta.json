@@ -1,0 +1,103 @@
+{
+  "id": "S001",
+  "title": "Social Media Loneliness Paradox",
+  "category": "society",
+  "status": "card",
+  "confidence": 0.83,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Social media platforms promise connection. They deliver the appearance of it. Users maintain hundreds of 'friends' and 'followers' while reporting record levels of loneliness. The platforms optimize for engagement — likes, comments, shares — not for the depth of human connection that actually reduces loneliness. The result is a generation that is more connected than any in history and more lonely than any measured.",
+
+  "hypothesis": "Social media helps people stay connected and reduces loneliness.",
+
+  "chain": {
+    "root": "Adopt social media as primary social connection tool",
+    "effects": [
+      {
+        "label": "Weak ties multiply, strong ties atrophy",
+        "impact": "Average close friendships drop from 3 to 2",
+        "direction": "negative",
+        "children": [
+          { "label": "Scrolling replaces calling — passive consumption replaces active connection", "direction": "negative" },
+          { "label": "Users feel 'caught up' on friends without actual interaction", "direction": "negative" },
+          { "label": "In-person meetups decline as online feels 'enough'", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Social comparison intensifies",
+        "impact": "Depression risk +25% with heavy use",
+        "direction": "negative",
+        "children": [
+          { "label": "Curated highlight reels create unrealistic baselines", "direction": "negative" },
+          { "label": "Users feel inadequate despite objectively normal lives", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Dopamine-driven engagement replaces meaningful interaction",
+        "impact": "Average session: 2.5 hours/day",
+        "direction": "negative",
+        "children": [
+          { "label": "Time spent on social media displaces time for real relationships", "direction": "negative" },
+          { "label": "Notification loops create anxiety when disconnected", "direction": "negative" },
+          { "label": "Users report feeling worse after sessions but can't stop", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Loneliness epidemic emerges at population scale",
+        "impact": "US Surgeon General declares loneliness epidemic",
+        "direction": "negative",
+        "children": [
+          { "label": "Health effects equivalent to smoking 15 cigarettes per day", "direction": "negative" },
+          { "label": "Economic cost estimated at $406B annually in the US alone", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Close friendships (average)", "before": "3-5", "after": "1-2", "delta": "-50%", "direction": "negative" },
+    { "metric": "Self-reported loneliness (18-25)", "before": "Baseline", "after": "+63%", "delta": "+63%", "direction": "negative" },
+    { "metric": "Daily social media time", "before": "30 min", "after": "2.5 hours", "delta": "+400%", "direction": "negative" },
+    { "metric": "In-person social time (weekly)", "before": "6-8 hours", "after": "3-4 hours", "delta": "-50%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're already experiencing loneliness or depression symptoms",
+      "Social media is your primary form of social interaction"
+    ],
+    "ifYouMust": [
+      "Set hard daily time limits (30 minutes) and enforce them with app blockers",
+      "Use social media to schedule in-person meetups, not as a substitute for them",
+      "Unfollow accounts that trigger comparison — curate ruthlessly",
+      "Turn off all non-essential notifications"
+    ],
+    "alternatives": [
+      { "name": "Phone calls and video chats", "note": "Active conversation builds connection in ways passive scrolling cannot" },
+      { "name": "Community groups", "note": "Local clubs, sports leagues, volunteer organizations — in-person by default" },
+      { "name": "Small group messaging", "note": "Group chats with close friends replace the broadcast model with intimate conversation" }
+    ]
+  },
+
+  "sources": [
+    { "title": "US Surgeon General: Our Epidemic of Loneliness and Isolation", "url": "https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf", "note": "Official advisory declaring loneliness a public health epidemic with mortality risk equivalent to smoking" },
+    { "title": "American Journal of Preventive Medicine: Social Media Use and Loneliness", "url": "https://www.ajpmonline.org/article/S0749-3797(17)30016-8/fulltext", "note": "Heavy social media users are 2x more likely to report feeling socially isolated" },
+    { "title": "Cigna Loneliness Index 2024", "url": "https://newsroom.thecignagroup.com/loneliness-epidemic-persists", "note": "58% of US adults report feeling lonely, with Gen Z reporting highest rates" },
+    { "title": "Jonathan Haidt: The Anxious Generation", "url": "https://www.anxiousgeneration.com/", "note": "Comprehensive analysis of how phone-based childhood rewired social development" }
+  ],
+
+  "falsifiability": [
+    "Heavy social media users (3+ hours/day) report equal or lower loneliness than light users over a 2-year period",
+    "Increasing social media use correlates with increasing number of close friendships",
+    "Populations with highest social media adoption show declining loneliness rates"
+  ],
+
+  "tags": ["social-media", "loneliness", "mental-health", "connection", "dopamine", "public-health"],
+  "crossReferences": ["S022", "A004", "O011"],
+
+  "seo": {
+    "description": "Social media promises connection but delivers a 63% increase in loneliness among young adults. Close friendships drop 50% as passive scrolling replaces real interaction.",
+    "keywords": ["social media loneliness paradox", "social media hidden consequences", "social media isolation second order effects"]
+  }
+}

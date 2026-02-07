@@ -1,0 +1,108 @@
+{
+  "id": "A012",
+  "title": "AI Hiring Bias Amplification",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.79,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Organizations adopt AI-powered resume screening and hiring tools to reduce costs, speed up recruitment, and eliminate human subjectivity. These systems are trained on historical hiring data — who was hired, promoted, and rated highly in the past. The problem: that historical data encodes decades of systemic bias. If a company historically hired mostly men for engineering roles, the model learns that male candidates are 'better.' If certain zip codes or university names correlate with race, the model learns those proxies. Amazon discovered this in 2018 when its internal AI recruiting tool systematically downgraded resumes containing the word 'women's' and penalized graduates of all-women's colleges. The tool was scrapped, but the underlying dynamic persists across the industry. Companies believe they are being more objective by removing human judgment. In reality, they are automating discrimination at scale, laundering bias through algorithmic legitimacy, and creating a feedback loop where biased outputs generate more biased training data.",
+
+  "hypothesis": "AI hiring tools remove human bias and make recruitment more objective and fair.",
+
+  "chain": {
+    "root": "Deploy AI-powered resume screening and candidate ranking",
+    "effects": [
+      {
+        "label": "Model learns historical bias patterns as 'quality signals'",
+        "impact": "Encodes decades of systemic discrimination into weights",
+        "direction": "negative",
+        "children": [
+          { "label": "Proxy discrimination emerges — zip codes, names, university prestige correlate with protected characteristics", "direction": "negative" },
+          { "label": "Qualified candidates from underrepresented groups rejected at higher rates", "direction": "negative" },
+          { "label": "Bias becomes invisible — hidden in model weights instead of visible in human decisions", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Feedback loop entrenches bias — biased hiring creates more biased training data",
+        "impact": "Each cycle amplifies discrimination 15-30%",
+        "direction": "negative",
+        "children": [
+          { "label": "Workforce homogeneity increases over time despite 'objective' process", "direction": "negative" },
+          { "label": "Diversity pipeline narrows as AI filters out non-traditional candidates early", "direction": "negative" },
+          { "label": "Model confidence in biased patterns increases with each training cycle", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Algorithmic legitimacy shields discrimination from scrutiny",
+        "impact": "Organizations defer to 'the algorithm' instead of examining outcomes",
+        "direction": "negative",
+        "children": [
+          { "label": "Hiring managers stop questioning screening results — 'the AI decided'", "direction": "negative" },
+          { "label": "Accountability diffuses — nobody owns the biased outcome", "direction": "negative" },
+          { "label": "Candidates cannot challenge opaque algorithmic rejections", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Legal and regulatory liability accumulates",
+        "impact": "EEOC guidance, NYC Local Law 144, EU AI Act classify hiring AI as high-risk",
+        "direction": "negative",
+        "children": [
+          { "label": "Companies face disparate impact lawsuits they cannot explain or defend", "direction": "negative" },
+          { "label": "Audit requirements create compliance costs that offset efficiency gains", "direction": "negative" },
+          { "label": "Vendor contracts shift liability to buyers who lack technical ability to audit", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Callback rate gap (underrepresented groups)", "before": "1.3x disparity (human screening)", "after": "1.5-2.1x disparity (AI screening)", "delta": "+15-62%", "direction": "negative" },
+    { "metric": "Hiring pipeline diversity", "before": "Baseline", "after": "-20-35%", "delta": "-20-35%", "direction": "negative" },
+    { "metric": "Time-to-screen per resume", "before": "5-7 minutes", "after": "<1 second", "delta": "-99%", "direction": "positive" },
+    { "metric": "Disparate impact lawsuits (AI-related)", "before": "Near zero (2019)", "after": "Growing rapidly (2024+)", "delta": "+400%", "direction": "negative" },
+    { "metric": "Audit and compliance cost per vendor", "before": "$0", "after": "$50K-200K/year", "delta": "New cost", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your historical hiring data reflects known demographic imbalances in your workforce",
+      "You cannot conduct regular bias audits with disaggregated demographic data",
+      "Your vendor cannot explain how the model makes decisions or provide audit access"
+    ],
+    "ifYouMust": [
+      "Conduct independent bias audits before deployment and at least annually — disaggregate results by race, gender, age, and disability status",
+      "Maintain human review for all rejection decisions — never let AI be the sole decision-maker",
+      "Use AI for candidate surfacing (additive) rather than candidate filtering (subtractive)",
+      "Comply with NYC Local Law 144 requirements even outside NYC — it sets the emerging standard"
+    ],
+    "alternatives": [
+      { "name": "Structured interviews", "note": "Standardized questions with rubrics reduce bias more effectively than AI screening and are legally defensible" },
+      { "name": "Blind resume review", "note": "Remove names, addresses, university names, and graduation dates before human review" },
+      { "name": "Skills-based assessments", "note": "Evaluate candidates on job-relevant tasks rather than resume pattern matching" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Reuters: Amazon scraps secret AI recruiting tool that showed bias against women", "url": "https://www.reuters.com/article/us-amazon-com-jobs-automation-insight-idUSKCN1MK08G", "note": "Amazon's AI recruiting tool penalized resumes containing 'women's' and downgraded graduates of women's colleges" },
+    { "title": "EEOC: The Americans with Disabilities Act and the Use of Software, Algorithms, and Artificial Intelligence", "url": "https://www.eeoc.gov/laws/guidance/americans-disabilities-act-and-use-software-algorithms-and-artificial-intelligence", "note": "EEOC guidance establishing that employers are liable for discriminatory outcomes from AI hiring tools" },
+    { "title": "NYC Local Law 144: Automated Employment Decision Tools", "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page", "note": "First US law requiring bias audits for AI hiring tools, effective July 2023" },
+    { "title": "Raghavan et al.: Mitigating Bias in Algorithmic Hiring (Brookings)", "url": "https://www.brookings.edu/articles/mitigating-bias-in-algorithmic-hiring-is-it-possible/", "note": "Academic analysis showing AI hiring tools can amplify existing disparities by 15-30% per training cycle" },
+    { "title": "Dastin, J. — Insight: How Amazon's AI hiring tool discriminated against women", "url": "https://www.reuters.com/article/us-amazon-com-jobs-automation-insight-idUSKCN1MK08G", "note": "Detailed investigation of how proxy variables in training data encode gender and racial bias" }
+  ],
+
+  "falsifiability": [
+    "AI hiring tools consistently produce equal callback rates across demographic groups without explicit bias correction or constraint",
+    "Organizations using AI screening show improved workforce diversity compared to matched organizations using human-only screening",
+    "Feedback loops in AI hiring systems self-correct toward fairness without external auditing or intervention"
+  ],
+
+  "tags": ["ai", "hiring-bias", "algorithmic-discrimination", "employment-law", "diversity", "feedback-loops", "proxy-discrimination"],
+  "crossReferences": ["A001", "A002", "O007"],
+
+  "seo": {
+    "description": "AI hiring tools trained on historical data amplify bias by 15-62%, reject underrepresented candidates at higher rates, and create feedback loops that entrench discrimination.",
+    "keywords": ["ai hiring bias second order effects", "algorithmic hiring discrimination hidden costs", "ai resume screening unintended consequences"]
+  }
+}

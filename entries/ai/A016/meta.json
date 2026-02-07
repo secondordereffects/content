@@ -1,0 +1,103 @@
+{
+  "id": "A016",
+  "title": "AI Energy Consumption Externality",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.83,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "AI is marketed as software — weightless, scalable, efficient. In reality, training and running large AI models requires enormous amounts of electricity and water. A single large model training run can consume as much energy as 100 US homes use in a year. Inference at scale — billions of queries per day — consumes even more. Data centers are being built at unprecedented rates, straining power grids, consuming freshwater for cooling, and in many cases running on fossil fuels. The environmental cost of AI is real, growing, and largely unaccounted for.",
+
+  "hypothesis": "AI is just software — it scales efficiently without significant environmental impact.",
+
+  "chain": {
+    "root": "Scale AI training and inference to billions of users",
+    "effects": [
+      {
+        "label": "Energy consumption grows exponentially with model scale",
+        "impact": "AI data center power demand doubling every 2-3 years",
+        "direction": "negative",
+        "children": [
+          { "label": "Training a frontier model: 10-50 GWh (equivalent to 1,000-5,000 US homes for a year)", "direction": "negative" },
+          { "label": "Inference at scale consumes 10x more energy than training over model lifetime", "direction": "negative" },
+          { "label": "Each model generation requires more compute, not less", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Power grid strain in data center regions",
+        "impact": "Data centers consuming 3-5% of US electricity, projected 8-12% by 2030",
+        "direction": "negative",
+        "children": [
+          { "label": "Local communities face power shortages and rate increases", "direction": "negative" },
+          { "label": "Utilities delay coal plant retirements to meet AI demand", "direction": "negative" },
+          { "label": "New natural gas plants built specifically for AI data centers", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Water consumption for cooling at massive scale",
+        "impact": "A single large data center: 1-5 million gallons per day",
+        "direction": "negative",
+        "children": [
+          { "label": "Data centers compete with agriculture and residential use in water-stressed regions", "direction": "negative" },
+          { "label": "A single AI query uses 10-50x more water than a traditional search", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Corporate carbon pledges undermined",
+        "impact": "Tech company emissions rising despite net-zero commitments",
+        "direction": "negative",
+        "children": [
+          { "label": "Companies buy renewable energy credits but actual grid mix is fossil-heavy", "direction": "negative" },
+          { "label": "Scope 3 emissions from AI supply chain largely untracked", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "AI data center electricity demand", "before": "~2% of US grid", "after": "Projected 8-12% by 2030", "delta": "+400%", "direction": "negative" },
+    { "metric": "Water per AI query vs traditional search", "before": "~0.3 mL (search)", "after": "~3-15 mL (AI query)", "delta": "+10-50x", "direction": "negative" },
+    { "metric": "Tech company carbon emissions", "before": "Declining (pre-AI)", "after": "Rising 30-50% (post-AI scaling)", "delta": "Reversed", "direction": "negative" },
+    { "metric": "Energy cost per AI query", "before": "Assumed negligible", "after": "3-10x traditional compute", "delta": "+500%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're deploying AI at scale without accounting for energy and water costs in your unit economics",
+      "Your sustainability commitments don't include AI compute in their scope"
+    ],
+    "ifYouMust": [
+      "Use smaller, more efficient models where possible — not every task needs a frontier model",
+      "Implement inference optimization (quantization, distillation, caching) to reduce per-query energy",
+      "Choose data center locations with clean energy grids and adequate water supply",
+      "Include AI compute in corporate sustainability reporting and carbon accounting"
+    ],
+    "alternatives": [
+      { "name": "Smaller specialized models", "note": "Fine-tuned small models use 10-100x less energy than general-purpose large models for specific tasks" },
+      { "name": "Edge inference", "note": "Run models on-device where possible to reduce data center load" },
+      { "name": "Compute-aware architecture", "note": "Design systems that route queries to the smallest capable model, not the largest available" }
+    ]
+  },
+
+  "sources": [
+    { "title": "IEA: Electricity 2024 — Data Centre Energy Demand", "url": "https://www.iea.org/reports/electricity-2024", "note": "Data center electricity consumption projected to double by 2026, driven primarily by AI workloads" },
+    { "title": "University of California: Making AI Less Thirsty", "url": "https://arxiv.org/abs/2304.03271", "note": "Research quantifying water consumption of AI training and inference — a single GPT-4 conversation uses 500mL of water" },
+    { "title": "Goldman Sachs: AI Power Demand Report", "url": "https://www.goldmansachs.com/insights/articles/AI-poised-to-drive-160-increase-in-data-center-power-demand", "note": "AI projected to drive 160% increase in data center power demand by 2030" },
+    { "title": "The Guardian: Tech Companies' Emissions Rising Despite Pledges", "url": "https://www.theguardian.com/technology/2024/jul/02/google-ai-emissions", "note": "Major tech companies reporting rising emissions driven by AI data center expansion" }
+  ],
+
+  "falsifiability": [
+    "AI model efficiency improvements reduce total energy consumption per query by 90%+ within 3 years, offsetting scale growth",
+    "AI data center power demand stabilizes at current levels despite continued scaling",
+    "Tech companies achieve their carbon reduction targets while scaling AI infrastructure"
+  ],
+
+  "tags": ["ai-energy", "data-centers", "sustainability", "water-consumption", "carbon-emissions", "environmental-cost"],
+  "crossReferences": ["A003", "A008", "I001"],
+
+  "seo": {
+    "description": "AI data centers are projected to consume 8-12% of US electricity by 2030. A single AI query uses 10-50x more water than a search. Tech company emissions are rising despite net-zero pledges.",
+    "keywords": ["ai energy consumption second order effects", "ai data center environmental cost", "ai water consumption hidden impact"]
+  }
+}

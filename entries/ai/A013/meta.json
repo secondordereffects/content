@@ -1,0 +1,104 @@
+{
+  "id": "A013",
+  "title": "Chatbot Customer Service Spiral",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.81,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Companies deploy AI chatbots to handle customer support at scale. The math is compelling: a chatbot costs pennies per interaction versus $5-15 for a human agent. First-line resolution rates look good — 60-70% of queries handled without human escalation. But the 30-40% that need a human now face longer queues because the company cut human staff. And the chatbot's confident-but-wrong answers create new support tickets. Customer satisfaction drops. The customers who matter most — high-value, complex-problem customers — are the ones most frustrated.",
+
+  "hypothesis": "AI chatbots reduce support costs while maintaining or improving customer satisfaction.",
+
+  "chain": {
+    "root": "Replace front-line customer support with AI chatbots",
+    "effects": [
+      {
+        "label": "Simple queries resolved, complex queries bottleneck",
+        "impact": "60-70% first-line resolution, 30-40% need human escalation",
+        "direction": "neutral",
+        "children": [
+          { "label": "Human agent headcount reduced based on chatbot resolution rates", "direction": "negative" },
+          { "label": "Remaining human queue grows — wait times increase 2-3x", "direction": "negative" },
+          { "label": "Customers with complex problems forced through chatbot gauntlet first", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Chatbot generates new support volume",
+        "impact": "15-25% of chatbot interactions create follow-up tickets",
+        "direction": "negative",
+        "children": [
+          { "label": "Confident wrong answers lead customers down wrong paths", "direction": "negative" },
+          { "label": "Customers retry with different phrasing, inflating 'resolution' metrics", "direction": "negative" },
+          { "label": "Frustrated customers call, email, AND chat — multiplying touchpoints", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Customer satisfaction drops, especially for high-value customers",
+        "impact": "CSAT drops 10-20% within 6 months",
+        "direction": "negative",
+        "children": [
+          { "label": "High-value customers expect human service and feel devalued", "direction": "negative" },
+          { "label": "Social media complaints about chatbot experiences go viral", "direction": "negative" },
+          { "label": "Competitors offering human support gain switching advantage", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Churn increases among most profitable customer segments",
+        "impact": "Revenue impact exceeds support cost savings",
+        "direction": "negative",
+        "children": [
+          { "label": "Cost savings: $2-5M. Revenue loss from churn: $5-15M", "direction": "negative" },
+          { "label": "Company re-hires human agents at premium rates to stop bleeding", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Support cost per interaction", "before": "$5-15", "after": "$0.10-0.50", "delta": "-95%", "direction": "positive" },
+    { "metric": "Customer satisfaction (CSAT)", "before": "Baseline", "after": "-10-20%", "delta": "-15%", "direction": "negative" },
+    { "metric": "Human agent wait time", "before": "2-5 minutes", "after": "15-30 minutes", "delta": "+400%", "direction": "negative" },
+    { "metric": "High-value customer churn", "before": "Baseline", "after": "+15-25%", "delta": "+20%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your competitive advantage depends on customer service quality",
+      "Your highest-value customers have complex, nuanced support needs"
+    ],
+    "ifYouMust": [
+      "Maintain human agent capacity for complex issues — don't cut headcount proportional to chatbot resolution",
+      "Provide an obvious, immediate path to a human agent — never trap customers in chatbot loops",
+      "Measure actual resolution (customer didn't contact again) not chatbot-reported resolution",
+      "Segment by customer value — high-value customers should get human-first support"
+    ],
+    "alternatives": [
+      { "name": "AI-assisted human agents", "note": "AI drafts responses and surfaces information, human agent reviews and sends — best of both" },
+      { "name": "Tiered support by customer value", "note": "Chatbot for self-service, human for high-value — match service level to customer value" },
+      { "name": "Proactive support", "note": "Use AI to predict and prevent issues rather than react to complaints" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Gartner: Customer Service AI Predictions", "url": "https://www.gartner.com/en/newsroom/press-releases/2023-08-30-gartner-reveals-three-technologies-that-will-transform-customer-service-and-support-by-2028", "note": "Predicts chatbot adoption will grow but warns of customer satisfaction risks without proper human escalation" },
+    { "title": "Harvard Business Review: The Problem with Chatbots", "url": "https://hbr.org/2023/03/chatbots-still-fall-short-of-customer-expectations", "note": "Analysis showing chatbot interactions have 20% lower satisfaction than human interactions for complex issues" },
+    { "title": "Forrester: Customer Service Automation Report", "url": "https://www.forrester.com/report/the-state-of-customer-service-automation/", "note": "Companies that over-automate support see 15-25% increase in high-value customer churn" },
+    { "title": "Zendesk CX Trends Report 2024", "url": "https://www.zendesk.com/cx-trends-report/", "note": "72% of customers say being transferred from chatbot to human is their biggest frustration" }
+  ],
+
+  "falsifiability": [
+    "Companies replacing front-line support with chatbots maintain or improve CSAT scores over 12 months",
+    "High-value customer churn rates remain stable after chatbot deployment",
+    "Chatbot-resolved interactions have equal or lower re-contact rates compared to human-resolved interactions"
+  ],
+
+  "tags": ["chatbot", "customer-service", "automation", "customer-satisfaction", "churn", "support-costs"],
+  "crossReferences": ["A010", "A002", "M009"],
+
+  "seo": {
+    "description": "AI chatbots cut support costs 95% but drop CSAT 10-20% and increase high-value customer churn 15-25%. The revenue loss from churn often exceeds the cost savings.",
+    "keywords": ["chatbot customer service spiral second order effects", "ai chatbot hidden costs", "customer service automation consequences"]
+  }
+}

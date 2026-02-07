@@ -1,0 +1,103 @@
+{
+  "id": "A017",
+  "title": "Model Collapse from Self-Training",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.79,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "As AI-generated content floods the internet, future AI models inevitably train on data that includes outputs from previous models. This creates a recursive loop. Researchers have demonstrated that models trained on model-generated data progressively lose the ability to represent the full distribution of human language and thought. The tails of the distribution — unusual ideas, minority perspectives, creative expression — disappear first. What remains is an increasingly narrow, generic, homogenized output that converges toward mediocrity.",
+
+  "hypothesis": "More training data always improves AI model quality, regardless of source.",
+
+  "chain": {
+    "root": "Train new AI models on internet data contaminated with AI-generated content",
+    "effects": [
+      {
+        "label": "Distribution tails collapse — rare patterns lost",
+        "impact": "Measurable after 3-5 recursive generations",
+        "direction": "negative",
+        "children": [
+          { "label": "Unusual writing styles, niche knowledge, and creative expression disappear", "direction": "negative" },
+          { "label": "Models converge toward a 'mean' output — everything sounds the same", "direction": "negative" },
+          { "label": "Cultural and linguistic diversity in training data erodes", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Factual accuracy degrades across generations",
+        "impact": "Each generation introduces and amplifies errors",
+        "direction": "negative",
+        "children": [
+          { "label": "Hallucinations from generation N become 'facts' in generation N+1", "direction": "negative" },
+          { "label": "Consensus bias — models amplify popular opinions, suppress minority views", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Pre-AI data becomes irreplaceable resource",
+        "impact": "Data collected before 2022 gains premium value",
+        "direction": "positive",
+        "children": [
+          { "label": "Archives, libraries, and pre-internet text become critical training assets", "direction": "positive" },
+          { "label": "Companies race to license 'clean' human-generated datasets", "direction": "positive" },
+          { "label": "Data provenance and contamination detection become essential infrastructure", "direction": "positive" }
+        ]
+      },
+      {
+        "label": "AI capability plateau despite increasing compute",
+        "impact": "Diminishing returns from scaling on contaminated data",
+        "direction": "negative",
+        "children": [
+          { "label": "Throwing more compute at contaminated data doesn't fix the problem", "direction": "negative" },
+          { "label": "The 'scaling laws' that drove AI progress may hit a data quality wall", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Output diversity (unique patterns)", "before": "Full human distribution", "after": "-30-50% after 5 generations", "delta": "-40%", "direction": "negative" },
+    { "metric": "Tail distribution representation", "before": "Present", "after": "Lost after 3-5 generations", "delta": "Eliminated", "direction": "negative" },
+    { "metric": "Value of pre-2022 training data", "before": "Standard", "after": "Premium (10-100x)", "delta": "+1000%", "direction": "positive" },
+    { "metric": "Model improvement per compute dollar", "before": "Consistent scaling", "after": "Diminishing returns", "delta": "Plateau risk", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You cannot verify that your training data is free from AI-generated contamination",
+      "Your use case requires representing the full diversity of human expression"
+    ],
+    "ifYouMust": [
+      "Invest in AI content detection and filtering for training data pipelines",
+      "Maintain curated datasets of verified human-generated content",
+      "Benchmark each model generation against human-only baselines for diversity metrics",
+      "Prioritize data quality over data quantity — clean data beats more data"
+    ],
+    "alternatives": [
+      { "name": "Curated human data pipelines", "note": "Partner with publishers, universities, and archives for verified human-generated training data" },
+      { "name": "Data provenance tracking", "note": "Implement chain-of-custody for training data — know the source of every sample" },
+      { "name": "Hybrid training strategies", "note": "Use synthetic data only for augmentation of underrepresented scenarios, not as bulk training data" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Nature: AI Models Collapse When Trained on Recursively Generated Data", "url": "https://www.nature.com/articles/s41586-024-07566-y", "note": "Definitive study demonstrating model collapse across multiple model types and data modalities" },
+    { "title": "arXiv: The Curse of Recursion", "url": "https://arxiv.org/abs/2305.17493", "note": "Mathematical proof that recursive training on model outputs leads to distribution collapse" },
+    { "title": "Epoch AI: Will We Run Out of Data?", "url": "https://epochai.org/blog/will-we-run-out-of-data", "note": "Analysis projecting high-quality human text data exhaustion and the implications for AI training" },
+    { "title": "Rice University: Self-Consuming Generative Models", "url": "https://arxiv.org/abs/2307.01850", "note": "Research showing image generation models degrade when trained on their own outputs" }
+  ],
+
+  "falsifiability": [
+    "Models trained on 10+ generations of recursive data show no measurable quality degradation",
+    "AI content filtering achieves 99%+ accuracy in removing model-generated text from training data",
+    "Scaling compute continues to improve model quality at historical rates despite data contamination"
+  ],
+
+  "tags": ["model-collapse", "training-data", "recursive-training", "data-quality", "ai-scaling", "distribution-collapse"],
+  "crossReferences": ["A007", "A004", "A002"],
+
+  "seo": {
+    "description": "AI models trained on AI-generated data lose distribution tails after 3-5 generations. Output diversity drops 40%, rare perspectives vanish, and capability plateaus despite more compute.",
+    "keywords": ["model collapse self-training second order effects", "ai recursive training data degradation", "model collapse consequences"]
+  }
+}

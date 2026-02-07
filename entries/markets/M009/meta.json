@@ -1,0 +1,103 @@
+{
+  "id": "M009",
+  "title": "Freemium Conversion Ceiling",
+  "category": "markets",
+  "status": "card",
+  "confidence": 0.81,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "SaaS companies adopt freemium models to reduce acquisition friction. Give the product away, let users experience value, then convert them to paid. The model works brilliantly for a few (Slack, Dropbox, Zoom) and fails quietly for most. The median freemium conversion rate is 2-5%. The free tier attracts users who never intended to pay, consumes support and infrastructure resources, and creates a ceiling that most companies cannot break through.",
+
+  "hypothesis": "Freemium models drive growth by converting free users into paying customers at scale.",
+
+  "chain": {
+    "root": "Launch freemium pricing model",
+    "effects": [
+      {
+        "label": "Free tier attracts high volume of non-paying users",
+        "impact": "95-98% of users never convert",
+        "direction": "negative",
+        "children": [
+          { "label": "Infrastructure costs scale with users, not revenue", "direction": "negative" },
+          { "label": "Support burden from free users diverts resources from paying customers", "direction": "negative" },
+          { "label": "Free users set expectations that the product should remain free", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Product decisions optimize for free user retention, not paid conversion",
+        "impact": "Feature prioritization skews toward free tier",
+        "direction": "negative",
+        "children": [
+          { "label": "Free tier becomes too good — no reason to upgrade", "direction": "negative" },
+          { "label": "Paywalling features feels punitive to established free users", "direction": "negative" },
+          { "label": "Product team can't distinguish between 'engaged free' and 'will-pay' users", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Unit economics deteriorate",
+        "impact": "CAC/LTV ratio worsens as free users grow",
+        "direction": "negative",
+        "children": [
+          { "label": "Investors see user growth but revenue doesn't follow", "direction": "negative" },
+          { "label": "Company raises prices on paid tier to compensate — alienating paying customers", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Conversion ceiling becomes structural",
+        "impact": "2-5% conversion rate becomes permanent",
+        "direction": "negative",
+        "children": [
+          { "label": "Growth requires ever-larger top-of-funnel to maintain revenue growth", "direction": "negative" },
+          { "label": "Company pivots to enterprise sales — freemium becomes a lead gen tool, not a business model", "direction": "neutral" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Free-to-paid conversion rate", "before": "Projected 10-15%", "after": "Actual 2-5%", "delta": "-70%", "direction": "negative" },
+    { "metric": "Infrastructure cost per user", "before": "Covered by revenue", "after": "95% of users generate zero revenue", "delta": "Negative unit economics", "direction": "negative" },
+    { "metric": "Support ticket volume", "before": "Proportional to paying users", "after": "60% from free users", "delta": "+300%", "direction": "negative" },
+    { "metric": "Time to profitability", "before": "18-24 months projected", "after": "36-48 months actual", "delta": "+100%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your product's value is immediately obvious and doesn't need a trial period",
+      "Your marginal cost per user is high (video, storage, compute-heavy products)"
+    ],
+    "ifYouMust": [
+      "Design the free tier as a time-limited or usage-limited trial, not an indefinite product",
+      "Instrument conversion triggers — know exactly what actions predict paid conversion",
+      "Set a hard ceiling on free tier infrastructure spend as a percentage of revenue",
+      "Build the paywall around the 'aha moment' — the feature that makes users say 'I need this'"
+    ],
+    "alternatives": [
+      { "name": "Free trial (time-limited)", "note": "14-30 day full access creates urgency and qualifies intent" },
+      { "name": "Reverse trial", "note": "Start on paid features, downgrade to free after trial — users feel the loss" },
+      { "name": "Usage-based pricing", "note": "Pay for what you use — aligns cost with value, no freeloaders" }
+    ]
+  },
+
+  "sources": [
+    { "title": "OpenView Partners: Product Benchmarks 2024", "url": "https://openviewpartners.com/product-benchmarks/", "note": "Median freemium conversion rate is 2-5%, top quartile reaches 7-10%" },
+    { "title": "ProfitWell: Freemium vs Free Trial Analysis", "url": "https://www.profitwell.com/recur/all/freemium-vs-free-trial", "note": "Free trials convert at 2-3x the rate of freemium models" },
+    { "title": "a16z: The Freemium Business Model", "url": "https://a16z.com/the-freemium-business-model/", "note": "Analysis of when freemium works (low marginal cost, network effects) and when it doesn't" },
+    { "title": "Lenny Rachitsky: Freemium Conversion Benchmarks", "url": "https://www.lennysnewsletter.com/p/freemium-conversion-benchmarks", "note": "Comprehensive benchmark data across SaaS categories" }
+  ],
+
+  "falsifiability": [
+    "The median SaaS freemium conversion rate exceeds 10% across a representative sample of 100+ companies",
+    "Free users generate positive unit economics through referrals, data, or indirect revenue that exceeds their cost to serve",
+    "Companies with freemium models reach profitability faster than comparable companies with paid-only models"
+  ],
+
+  "tags": ["freemium", "saas", "pricing", "conversion", "unit-economics", "business-model"],
+  "crossReferences": ["A004", "M025", "O005"],
+
+  "seo": {
+    "description": "Freemium models project 10-15% conversion but deliver 2-5%. 95% of users never pay while consuming infrastructure and support. Unit economics quietly deteriorate.",
+    "keywords": ["freemium conversion ceiling second order effects", "freemium model hidden costs", "saas freemium pricing consequences"]
+  }
+}

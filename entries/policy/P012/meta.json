@@ -1,0 +1,103 @@
+{
+  "id": "P012",
+  "title": "Rent Control Supply Destruction",
+  "category": "policy",
+  "status": "card",
+  "confidence": 0.88,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Cities facing housing affordability crises implement rent control to protect tenants from rising costs. The policy delivers immediate relief to current renters. But it simultaneously destroys the economic incentive to build new housing, maintain existing units, or enter the rental market. Over 5-15 years, the housing supply shrinks, quality deteriorates, and the affordability crisis deepens for everyone not already locked into a controlled unit.",
+
+  "hypothesis": "Rent control makes housing more affordable and protects tenants from displacement.",
+
+  "chain": {
+    "root": "Implement rent control policy",
+    "effects": [
+      {
+        "label": "Current tenants get immediate rent relief",
+        "impact": "15-25% below market rate",
+        "direction": "positive",
+        "children": [
+          { "label": "Tenants stay in units longer — reduced mobility", "direction": "neutral" },
+          { "label": "Misallocation: empty nesters in 3-bedrooms, families in studios", "direction": "negative" },
+          { "label": "Tenants afraid to move because they'll lose controlled rate", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Landlords reduce maintenance and investment",
+        "impact": "Maintenance spending drops 20-30%",
+        "direction": "negative",
+        "children": [
+          { "label": "Housing quality deteriorates over time", "direction": "negative" },
+          { "label": "Units eventually become uninhabitable and exit the market", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "New construction declines",
+        "impact": "15-20% reduction in new rental housing starts",
+        "direction": "negative",
+        "children": [
+          { "label": "Developers build condos or commercial instead of rentals", "direction": "negative" },
+          { "label": "Supply shortage worsens over time", "direction": "negative" },
+          { "label": "Market-rate units become even more expensive due to scarcity", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Black and gray markets emerge",
+        "impact": "Key money, illegal subletting, discrimination",
+        "direction": "negative",
+        "children": [
+          { "label": "Landlords screen tenants more aggressively — discrimination increases", "direction": "negative" },
+          { "label": "Under-the-table payments become normalized", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Rent for controlled tenants", "before": "Market rate", "after": "-15-25%", "delta": "-20%", "direction": "positive" },
+    { "metric": "Rental housing supply", "before": "Baseline", "after": "-15% over 10 years", "delta": "-15%", "direction": "negative" },
+    { "metric": "Market-rate rents (uncontrolled units)", "before": "Baseline", "after": "+5-7% above trend", "delta": "+6%", "direction": "negative" },
+    { "metric": "Housing quality (controlled units)", "before": "Adequate", "after": "Declining", "delta": "-25%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your city already has a housing supply shortage",
+      "You're implementing rent control as a substitute for building more housing"
+    ],
+    "ifYouMust": [
+      "Pair rent control with aggressive supply-side incentives (zoning reform, tax breaks for builders)",
+      "Include vacancy decontrol so units reset to market rate between tenants",
+      "Exempt new construction for 15-20 years to avoid chilling development",
+      "Fund maintenance requirements with landlord tax credits"
+    ],
+    "alternatives": [
+      { "name": "Upzoning and density bonuses", "note": "Increase supply by allowing more housing to be built — addresses root cause" },
+      { "name": "Housing vouchers", "note": "Subsidize tenants directly without distorting the rental market" },
+      { "name": "Community land trusts", "note": "Remove land from speculative market while maintaining housing quality" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Stanford: The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality", "url": "https://web.stanford.edu/~diamMDR/DMQ.pdf", "note": "San Francisco rent control reduced rental supply by 15% and increased rents for non-controlled units by 5.1%" },
+    { "title": "Brookings: What Does Economic Evidence Tell Us About Rent Control?", "url": "https://www.brookings.edu/articles/what-does-economic-evidence-tell-us-about-the-effects-of-rent-control/", "note": "Comprehensive review finding rent control reduces supply and misallocates housing" },
+    { "title": "IGM Forum: Rent Control Survey of Economists", "url": "https://www.igmchicago.org/surveys/rent-control/", "note": "81% of economists agree rent control reduces housing quantity and quality over time" },
+    { "title": "NBER: Housing Market Spillovers from Rent Control", "url": "https://www.nber.org/papers/w24181", "note": "Rent control causes landlords to convert rentals to condos, reducing rental supply" }
+  ],
+
+  "falsifiability": [
+    "Cities with rent control show equal or greater rental housing supply growth compared to similar cities without it over 10+ years",
+    "Housing quality in rent-controlled units remains comparable to market-rate units over 15+ years",
+    "Market-rate rents in cities with rent control grow at the same rate as comparable cities without it"
+  ],
+
+  "tags": ["rent-control", "housing", "supply-demand", "urban-policy", "affordability", "economics"],
+  "crossReferences": ["M025", "S001", "H016"],
+
+  "seo": {
+    "description": "Rent control saves current tenants 15-25% but reduces housing supply by 15% over a decade and pushes market-rate rents higher. 81% of economists agree it backfires.",
+    "keywords": ["rent control second order effects", "rent control supply destruction", "rent control hidden consequences"]
+  }
+}

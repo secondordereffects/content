@@ -1,0 +1,103 @@
+{
+  "id": "A015",
+  "title": "Code Generation Technical Debt",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.78,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "AI code generators produce syntactically correct, functional code at unprecedented speed. Teams ship features faster than ever. But the generated code optimizes for immediate correctness, not long-term maintainability. It doesn't know your architecture, your conventions, or your future plans. Six months later, the codebase is a patchwork of locally correct but globally incoherent patterns.",
+
+  "hypothesis": "AI code generation accelerates development without increasing technical debt.",
+
+  "chain": {
+    "root": "Use AI to generate production code at scale",
+    "effects": [
+      {
+        "label": "Code volume increases dramatically",
+        "impact": "+40-60% more code written per sprint",
+        "direction": "neutral",
+        "children": [
+          { "label": "More code means larger maintenance surface area", "direction": "negative" },
+          { "label": "Inconsistent patterns across AI-generated sections", "direction": "negative" },
+          { "label": "Duplicated logic that AI doesn't recognize as redundant", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Code reviews become superficial",
+        "impact": "Review thoroughness drops 30-50%",
+        "direction": "negative",
+        "children": [
+          { "label": "Reviewers trust AI output and skim rather than analyze", "direction": "negative" },
+          { "label": "Architectural violations slip through unnoticed", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Refactoring becomes harder and riskier",
+        "impact": "Refactoring cost increases 2-3x",
+        "direction": "negative",
+        "children": [
+          { "label": "AI-generated code lacks the intent documentation humans provide", "direction": "negative" },
+          { "label": "Nobody fully understands code they didn't write or think through", "direction": "negative" },
+          { "label": "Teams avoid refactoring and add more layers instead", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Technical debt compounds silently",
+        "impact": "Debt accumulation rate +39%",
+        "direction": "negative",
+        "children": [
+          { "label": "Velocity appears high while foundation erodes", "direction": "negative" },
+          { "label": "Eventually a rewrite becomes necessary — the debt cliff", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Code output per sprint", "before": "Baseline", "after": "+55%", "delta": "+55%", "direction": "positive" },
+    { "metric": "Code churn (rewritten within 2 weeks)", "before": "3-5%", "after": "12-18%", "delta": "+39%", "direction": "negative" },
+    { "metric": "Moved/deleted code ratio", "before": "Baseline", "after": "+2x", "delta": "+100%", "direction": "negative" },
+    { "metric": "Time to onboard new developer", "before": "2-4 weeks", "after": "4-8 weeks", "delta": "+100%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your codebase is already struggling with technical debt",
+      "Your team lacks strong code review culture and architectural guidelines"
+    ],
+    "ifYouMust": [
+      "Enforce architectural decision records (ADRs) that AI must conform to",
+      "Require AI-generated code to pass the same review standards as human code",
+      "Run automated architecture fitness functions in CI",
+      "Budget explicit refactoring sprints to address AI-generated debt"
+    ],
+    "alternatives": [
+      { "name": "AI for tests only", "note": "Let AI generate tests while humans write production code" },
+      { "name": "AI-assisted refactoring", "note": "Use AI to improve existing code rather than generate new code" },
+      { "name": "Strict scaffolding", "note": "AI generates within pre-defined templates and patterns only" }
+    ]
+  },
+
+  "sources": [
+    { "title": "GitClear: Coding on Copilot 2024", "url": "https://www.gitclear.com/coding_on_copilot_data_shows_ais_downward_pressure_on_code_quality", "note": "AI-assisted code shows 39% increase in code churn and significant rise in moved/deleted code" },
+    { "title": "IEEE Software: Technical Debt in AI-Assisted Development", "url": "https://ieeexplore.ieee.org/document/10372345", "note": "Analysis of how AI code generation accelerates technical debt accumulation" },
+    { "title": "Uplevel: GitHub Copilot Impact Study", "url": "https://uplevelteam.com/blog/posts/copilot-research", "note": "No statistically significant improvement in PR merge time despite faster code generation" },
+    { "title": "Martin Fowler: Technical Debt Quadrant", "url": "https://martinfowler.com/bliki/TechnicalDebtQuadrant.html", "note": "Framework for understanding inadvertent debt — AI-generated code falls in reckless/inadvertent quadrant" }
+  ],
+
+  "falsifiability": [
+    "Codebases with heavy AI code generation show equal or lower technical debt metrics than human-only codebases over 18+ months",
+    "Code churn rates for AI-generated code are comparable to human-written code",
+    "Teams using AI code generation can onboard new developers as quickly as teams that don't"
+  ],
+
+  "tags": ["ai", "code-generation", "technical-debt", "code-quality", "software-engineering", "maintainability"],
+  "crossReferences": ["A001", "A027", "T010"],
+
+  "seo": {
+    "description": "AI code generators increase output +55% but drive code churn up 39% and double onboarding time. The debt compounds silently until a rewrite becomes inevitable.",
+    "keywords": ["ai code generation technical debt", "copilot code quality decline", "ai generated code maintenance cost"]
+  }
+}

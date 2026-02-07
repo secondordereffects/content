@@ -1,0 +1,103 @@
+{
+  "id": "T010",
+  "title": "Rewrite Fallacy",
+  "category": "technology",
+  "status": "card",
+  "confidence": 0.85,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "A codebase has accumulated years of technical debt, inconsistent patterns, and legacy decisions. The team is frustrated. Someone proposes the solution that feels obvious: rewrite it from scratch. Clean slate. Modern stack. Do it right this time. Leadership approves. The rewrite begins with optimism and ends — if it ends at all — years later, over budget, with a new system that has its own set of problems and has lost years of battle-tested edge case handling.",
+
+  "hypothesis": "Rewriting a legacy system from scratch is faster and cheaper than incrementally improving it.",
+
+  "chain": {
+    "root": "Decide to rewrite legacy system from scratch",
+    "effects": [
+      {
+        "label": "Team underestimates scope by 3-5x",
+        "impact": "Estimated 6 months, actual 18-36 months",
+        "direction": "negative",
+        "children": [
+          { "label": "Legacy system encoded thousands of implicit business rules", "direction": "negative" },
+          { "label": "Edge cases discovered only when users hit them in production", "direction": "negative" },
+          { "label": "Second system effect — team over-engineers the replacement", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Two systems must be maintained simultaneously",
+        "impact": "Engineering cost doubles during transition",
+        "direction": "negative",
+        "children": [
+          { "label": "Bug fixes must be applied to both old and new systems", "direction": "negative" },
+          { "label": "Feature development stalls — all capacity goes to rewrite", "direction": "negative" },
+          { "label": "Competitors ship features while you rewrite plumbing", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Organizational patience runs out",
+        "impact": "50-70% of rewrites are abandoned or scaled back",
+        "direction": "negative",
+        "children": [
+          { "label": "Leadership loses confidence in engineering estimates", "direction": "negative" },
+          { "label": "Team morale collapses when rewrite is cancelled or descoped", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "New system accumulates its own debt within 2 years",
+        "impact": "Debt cycle restarts",
+        "direction": "negative",
+        "children": [
+          { "label": "The same organizational pressures that created the original debt still exist", "direction": "negative" },
+          { "label": "Team proposes another rewrite — the cycle repeats", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Project timeline vs estimate", "before": "6-12 months estimated", "after": "18-36 months actual", "delta": "+200-300%", "direction": "negative" },
+    { "metric": "Feature development during rewrite", "before": "Normal velocity", "after": "Near zero", "delta": "-80%", "direction": "negative" },
+    { "metric": "Rewrite completion rate", "before": "100% planned", "after": "30-50% completed as designed", "delta": "-50-70%", "direction": "negative" },
+    { "metric": "Engineering cost", "before": "Baseline", "after": "2-3x during transition", "delta": "+150%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "The existing system is still generating revenue and serving users",
+      "You cannot articulate exactly which business rules the legacy system encodes"
+    ],
+    "ifYouMust": [
+      "Use the strangler fig pattern — replace incrementally, not all at once",
+      "Define a strict feature freeze on the new system — parity first, improvements later",
+      "Set a hard deadline and scope cut ruthlessly if behind",
+      "Keep the old system running as fallback for at least 6 months post-migration"
+    ],
+    "alternatives": [
+      { "name": "Strangler fig pattern", "note": "Incrementally replace components while keeping the old system running" },
+      { "name": "Modular extraction", "note": "Extract the worst modules into services, leave the rest" },
+      { "name": "Invest in tests first", "note": "Add comprehensive tests to legacy code, then refactor safely" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Joel Spolsky: Things You Should Never Do", "url": "https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/", "note": "The canonical essay on why rewrites fail — Netscape's rewrite killed the company" },
+    { "title": "Martin Fowler: Strangler Fig Application", "url": "https://martinfowler.com/bliki/StranglerFigApplication.html", "note": "The incremental alternative to big-bang rewrites" },
+    { "title": "Fred Brooks: The Mythical Man-Month (Second System Effect)", "url": "https://en.wikipedia.org/wiki/Second-system_effect", "note": "Teams over-engineer the second system, making it bloated and late" },
+    { "title": "Herb Caudill: Lessons from 6 Software Rewrite Stories", "url": "https://medium.com/@herbcaudill/lessons-from-6-software-rewrite-stories-635e4c8f7c22", "note": "Analysis of Basecamp, FogBugz, Gmail, Netscape, and others — most rewrites fail or barely succeed" }
+  ],
+
+  "falsifiability": [
+    "A majority of ground-up rewrites are completed on time and within budget",
+    "Rewritten systems show measurably lower technical debt than incrementally improved systems after 3 years",
+    "Feature velocity during a rewrite period remains within 20% of pre-rewrite levels"
+  ],
+
+  "tags": ["rewrite", "technical-debt", "software-engineering", "legacy-systems", "project-management", "strangler-fig"],
+  "crossReferences": ["A015", "T002", "O005"],
+
+  "seo": {
+    "description": "Software rewrites take 2-3x longer than estimated, stall feature development by 80%, and 50-70% are abandoned. The strangler fig pattern is almost always better.",
+    "keywords": ["software rewrite fallacy second order effects", "big bang rewrite hidden costs", "legacy system rewrite consequences"]
+  }
+}

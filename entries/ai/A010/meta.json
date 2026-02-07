@@ -1,0 +1,104 @@
+{
+  "id": "A010",
+  "title": "AI-Assisted Decision Atrophy",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.76,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Organizations deploy AI recommendation systems for hiring, lending, medical diagnosis, content moderation, and strategic planning. The AI provides suggestions. Humans are supposed to review and decide. In practice, humans defer to the AI 85-95% of the time. The decision-making muscle atrophies. When the AI is wrong — and it is, systematically, in ways humans would catch if they were still thinking — nobody catches it because nobody is really deciding anymore.",
+
+  "hypothesis": "AI recommendations improve human decision quality by providing data-driven insights.",
+
+  "chain": {
+    "root": "Deploy AI recommendation systems for critical decisions",
+    "effects": [
+      {
+        "label": "Humans defer to AI recommendations at increasing rates",
+        "impact": "Acceptance rate: 85-95% without meaningful review",
+        "direction": "negative",
+        "children": [
+          { "label": "Automation bias — humans trust the algorithm over their own judgment", "direction": "negative" },
+          { "label": "Overriding the AI requires justification; accepting it doesn't", "direction": "negative" },
+          { "label": "Decision-makers stop gathering independent information", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Human judgment skills deteriorate from disuse",
+        "impact": "Decision quality without AI drops 20-30% after 12 months",
+        "direction": "negative",
+        "children": [
+          { "label": "Intuition built from experience stops developing", "direction": "negative" },
+          { "label": "Pattern recognition skills that took years to build erode", "direction": "negative" },
+          { "label": "New employees never develop judgment — they only learn to follow the AI", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Systematic AI errors go undetected",
+        "impact": "Blind spots in AI become blind spots in the organization",
+        "direction": "negative",
+        "children": [
+          { "label": "AI biases become organizational biases — amplified at scale", "direction": "negative" },
+          { "label": "Edge cases the AI handles poorly are never caught", "direction": "negative" },
+          { "label": "Feedback loops reinforce AI errors — wrong decisions generate data that trains more wrong decisions", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Organizational dependency becomes structural",
+        "impact": "Cannot operate without AI — single point of failure",
+        "direction": "negative",
+        "children": [
+          { "label": "AI system outage paralyzes decision-making", "direction": "negative" },
+          { "label": "Vendor has leverage — you can't switch without retraining your entire workforce to think again", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "AI recommendation acceptance rate", "before": "Expected 60-70%", "after": "Actual 85-95%", "delta": "+30%", "direction": "negative" },
+    { "metric": "Human decision quality without AI", "before": "Baseline", "after": "-20-30% after 12 months of AI use", "delta": "-25%", "direction": "negative" },
+    { "metric": "Undetected AI errors", "before": "Expected <5%", "after": "Actual 15-25%", "delta": "+300%", "direction": "negative" },
+    { "metric": "Organizational AI dependency", "before": "Supplementary tool", "after": "Cannot operate without it", "delta": "Structural", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "Your decisions have irreversible consequences for people's lives (sentencing, medical, lending)",
+      "Your team has already stopped independently evaluating AI recommendations"
+    ],
+    "ifYouMust": [
+      "Require decision-makers to form an independent assessment before seeing the AI recommendation",
+      "Randomly withhold AI recommendations to maintain human judgment skills",
+      "Track override rates — if they drop below 10%, humans aren't really deciding",
+      "Audit AI recommendations against outcomes regularly to catch systematic errors"
+    ],
+    "alternatives": [
+      { "name": "AI as second opinion", "note": "Human decides first, then sees AI recommendation — preserves independent judgment" },
+      { "name": "Structured decision frameworks", "note": "Checklists and frameworks that guide human thinking rather than replacing it" },
+      { "name": "Adversarial review", "note": "Assign someone to argue against the AI recommendation — forces critical evaluation" }
+    ]
+  },
+
+  "sources": [
+    { "title": "Journal of Experimental Psychology: Automation Bias in Decision Making", "url": "https://psycnet.apa.org/record/2000-03146-006", "note": "Foundational research showing humans defer to automated recommendations even when they have contradicting information" },
+    { "title": "Harvard Business Review: When Should You Trust AI?", "url": "https://hbr.org/2023/02/when-should-you-trust-ai-and-when-shouldnt-you", "note": "Analysis of automation bias in organizational decision-making with AI systems" },
+    { "title": "ProPublica: Machine Bias in Criminal Sentencing", "url": "https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing", "note": "Investigation showing AI risk scores adopted uncritically by judges, with racial bias going undetected" },
+    { "title": "Nature Medicine: AI in Clinical Decision Support", "url": "https://www.nature.com/articles/s41591-023-02437-x", "note": "Study showing clinicians override AI recommendations less than 10% of the time, even when AI is wrong" }
+  ],
+
+  "falsifiability": [
+    "Decision-makers using AI recommendations maintain independent judgment quality equal to non-AI-assisted peers over 2+ years",
+    "AI recommendation override rates remain above 15% in organizations using AI for 12+ months",
+    "Systematic AI errors are caught by human reviewers at rates above 80%"
+  ],
+
+  "tags": ["ai-decisions", "automation-bias", "judgment", "dependency", "human-oversight", "decision-quality"],
+  "crossReferences": ["A001", "A002", "A012"],
+
+  "seo": {
+    "description": "Humans accept AI recommendations 85-95% of the time without real review. Decision-making skills degrade 20-30% after 12 months. Systematic AI errors go undetected at scale.",
+    "keywords": ["ai decision atrophy second order effects", "automation bias decision making", "ai recommendation dependency consequences"]
+  }
+}

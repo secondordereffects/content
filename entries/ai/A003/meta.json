@@ -1,0 +1,103 @@
+{
+  "id": "A003",
+  "title": "Automation Job Displacement Lag",
+  "category": "ai",
+  "status": "card",
+  "confidence": 0.74,
+  "added": "2026-02-07",
+  "updated": "2026-02-07",
+
+  "context": "Every wave of automation triggers the same debate: will machines take our jobs? Economists point to history — the industrial revolution, ATMs, spreadsheets — and argue that automation creates more jobs than it destroys. This is true in aggregate and over decades. But the lag between job destruction and job creation can be 10-20 years, concentrated in specific regions and demographics. The people who lose jobs are rarely the people who get the new ones.",
+
+  "hypothesis": "Automation creates more jobs than it destroys, so displaced workers will find new employment.",
+
+  "chain": {
+    "root": "Deploy automation at scale across an industry",
+    "effects": [
+      {
+        "label": "Routine jobs eliminated faster than new roles emerge",
+        "impact": "Displacement-to-creation lag: 5-15 years",
+        "direction": "negative",
+        "children": [
+          { "label": "New jobs require different skills than eliminated ones", "direction": "negative" },
+          { "label": "Retraining programs have 15-30% completion rates", "direction": "negative" },
+          { "label": "Geographic mismatch — new jobs appear in different cities", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Middle-skill jobs hollowed out — polarization accelerates",
+        "impact": "Middle-income jobs shrink while low and high-skill grow",
+        "direction": "negative",
+        "children": [
+          { "label": "Former middle-class workers compete for lower-wage service jobs", "direction": "negative" },
+          { "label": "Income inequality widens within affected regions", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Affected communities enter economic decline spirals",
+        "impact": "Tax base shrinks, services degrade, talent leaves",
+        "direction": "negative",
+        "children": [
+          { "label": "Local businesses lose customers as spending power drops", "direction": "negative" },
+          { "label": "Property values decline, trapping homeowners", "direction": "negative" },
+          { "label": "Opioid and mental health crises correlate with job loss regions", "direction": "negative" }
+        ]
+      },
+      {
+        "label": "Political backlash against technology and trade",
+        "impact": "Populist movements gain support in affected areas",
+        "direction": "negative",
+        "children": [
+          { "label": "Anti-technology regulation proposed that slows beneficial innovation", "direction": "negative" },
+          { "label": "Protectionist trade policies that raise costs for everyone", "direction": "negative" }
+        ]
+      }
+    ]
+  },
+
+  "impact": [
+    { "metric": "Job displacement-to-creation lag", "before": "Assumed immediate", "after": "5-15 years", "delta": "Decade+ gap", "direction": "negative" },
+    { "metric": "Retraining program success rate", "before": "Projected 60-80%", "after": "Actual 15-30%", "delta": "-60%", "direction": "negative" },
+    { "metric": "Middle-skill job share", "before": "40% of workforce", "after": "25% and declining", "delta": "-37%", "direction": "negative" },
+    { "metric": "Income inequality (affected regions)", "before": "Baseline", "after": "+15-25%", "delta": "+20%", "direction": "negative" }
+  ],
+
+  "navigation": {
+    "dontIf": [
+      "You're automating without any plan for affected workers",
+      "Your region has no alternative employment opportunities for displaced workers"
+    ],
+    "ifYouMust": [
+      "Fund retraining programs before automation deploys, not after",
+      "Phase automation gradually to allow labor market adjustment",
+      "Invest in the communities where jobs are being eliminated",
+      "Track displacement metrics alongside efficiency gains"
+    ],
+    "alternatives": [
+      { "name": "Augmentation over replacement", "note": "Use automation to make existing workers more productive rather than replacing them" },
+      { "name": "Gradual transition with income support", "note": "Wage insurance or transition payments bridge the gap during retraining" },
+      { "name": "Place-based economic development", "note": "Invest in new industries in affected regions rather than expecting workers to relocate" }
+    ]
+  },
+
+  "sources": [
+    { "title": "MIT Work of the Future Report", "url": "https://workofthefuture.mit.edu/research-post/the-work-of-the-future-building-better-jobs-in-an-age-of-intelligent-machines/", "note": "Automation creates jobs in aggregate but with significant geographic and demographic displacement lags" },
+    { "title": "Brookings: Automation and Artificial Intelligence", "url": "https://www.brookings.edu/research/automation-and-artificial-intelligence-how-machines-affect-people-and-places/", "note": "25% of US jobs face high automation risk, concentrated in specific regions and demographics" },
+    { "title": "OECD Employment Outlook: Automation and Skills", "url": "https://www.oecd.org/employment/outlook/", "note": "Retraining programs reach only 15-30% of displaced workers, with lower rates for older workers" },
+    { "title": "David Autor: Work of the Past, Work of the Future", "url": "https://economics.mit.edu/people/faculty/david-h-autor", "note": "Seminal research on job polarization and the hollowing out of middle-skill employment" }
+  ],
+
+  "falsifiability": [
+    "Workers displaced by automation find equivalent-paying employment within 2 years at rates above 80%",
+    "Retraining programs achieve completion and placement rates above 60%",
+    "Regions experiencing heavy automation show stable or improving median incomes within 5 years"
+  ],
+
+  "tags": ["automation", "job-displacement", "inequality", "retraining", "labor-market", "economic-transition"],
+  "crossReferences": ["A001", "A004", "A016"],
+
+  "seo": {
+    "description": "Automation creates jobs in aggregate but the lag is 5-15 years. Retraining works for only 15-30% of displaced workers. The people who lose jobs aren't the ones who get new ones.",
+    "keywords": ["automation job displacement lag second order effects", "automation hidden costs workers", "ai job loss retraining failure"]
+  }
+}
